@@ -15376,6 +15376,9 @@ main {
   .theme-pink-sheet .quick-facts__list--ul li:before use > svg {
     fill: #BC608C; }
 
+.theme-pink-sheet .action-flag--red {
+  color: #d82b6a; }
+
 .theme-pink-sheet .article-topics__li ul li:before,
 .theme-pink-sheet .quickfactsbulleted li ul li:before,
 .theme-pink-sheet .quick-facts__list--ul li ul li:before {
@@ -15770,6 +15773,9 @@ main {
   .theme-rose-sheet .quickfactsbulleted li:before use > svg,
   .theme-rose-sheet .quick-facts__list--ul li:before use > svg {
     fill: #DD3580; }
+
+.theme-rose-sheet .action-flag--red {
+  color: #c8206e; }
 
 .theme-rose-sheet .article-topics__li ul li:before,
 .theme-rose-sheet .quickfactsbulleted li ul li:before,
@@ -16166,6 +16172,9 @@ main {
   .theme-medtech .quick-facts__list--ul li:before use > svg {
     fill: #034a7c; }
 
+.theme-medtech .action-flag--red {
+  color: #007cc3; }
+
 .theme-medtech .article-topics__li ul li:before,
 .theme-medtech .quickfactsbulleted li ul li:before,
 .theme-medtech .quick-facts__list--ul li ul li:before {
@@ -16561,6 +16570,9 @@ main {
   .theme-invivo .quick-facts__list--ul li:before use > svg {
     fill: #7e2718; }
 
+.theme-invivo .action-flag--red {
+  color: #ca4d2c; }
+
 .theme-invivo .article-topics__li ul li:before,
 .theme-invivo .quickfactsbulleted li ul li:before,
 .theme-invivo .quick-facts__list--ul li ul li:before {
@@ -16955,6 +16967,9 @@ main {
   .theme-commodities .quickfactsbulleted li:before use > svg,
   .theme-commodities .quick-facts__list--ul li:before use > svg {
     fill: #c12d3b; }
+
+.theme-commodities .action-flag--red {
+  color: #9E310D; }
 
 .theme-commodities .article-topics__li ul li:before,
 .theme-commodities .quickfactsbulleted li ul li:before,
@@ -17391,6 +17406,9 @@ main {
   .theme-insurance-day .quick-facts__list--ul li:before use > svg {
     fill: #b0173d; }
 
+.theme-insurance-day .action-flag--red {
+  color: #DE4361; }
+
 .theme-insurance-day .article-topics__li ul li:before,
 .theme-insurance-day .quickfactsbulleted li ul li:before,
 .theme-insurance-day .quick-facts__list--ul li ul li:before {
@@ -17825,6 +17843,9 @@ main {
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
     fill: #1191D1; }
+
+.theme-lloydslist .action-flag--red {
+  color: #1191D1; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,
