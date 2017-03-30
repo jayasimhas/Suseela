@@ -2256,6 +2256,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-size: 1.25rem;
   margin-bottom: 20px; }
 
+#main-carousel .li-content-company p.view-more-info.li-content-company__headline {
+  font-size: 14px;
+  font-size: 0.875rem; }
+
 #main-carousel .li-content-graph {
   border: none;
   background-color: #eeeeee;
@@ -2509,15 +2513,14 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #mycarousel1 .companylogo, #mycarousel2 .companylogo {
     float: left;
     width: 43%;
-    margin-top: 20px; }
+    margin-top: 9px; }
     #mycarousel1 .companylogo img, #mycarousel2 .companylogo img {
       max-width: 100px;
       max-height: 60px; }
   #mycarousel1 .companyLinks, #mycarousel2 .companyLinks {
     float: left;
     width: 57%;
-    margin-top: 10px;
-    margin-top: 0.625rem;
+    margin-top: 3px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.25em;
     font-weight: 400; }
@@ -7671,7 +7674,9 @@ section: UI Elements
   height: 464px;
   overflow: auto;
   margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  margin-top: 24px;
+  margin-top: 1.5rem; }
 
 .companyList .article-topics__li:before {
   position: relative; }
@@ -7802,15 +7807,10 @@ section: UI Elements
 
 .compareChart {
   font-family: "Roboto", Arial Narrow, sans-serif;
-  width: 790px;
+  width: 100%;
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
-  @media screen and (min-width: 801px) and (max-width: 1024px) {
-    .compareChart {
-      width: 594px; } }
-  @media (max-width: 800px) {
-    .compareChart {
-      width: 100%; } }
+  margin-bottom: 2rem;
+  position: relative; }
   .compareChart .eachChartData {
     margin-bottom: 10px; }
     @media (max-width: 480px) {
@@ -10875,13 +10875,30 @@ div#feedbacklite.fbl_r {
 
 .rolling-stream {
   background-color: #f1f2f2;
-  padding: 20px 25px; }
+  padding: 20px 25px;
+  width: 100%; }
   .rolling-stream.white-bg {
     background-color: #ffffff; }
     .rolling-stream.white-bg .rolling-stream-wrapper:after {
       display: none; }
     .rolling-stream.white-bg .scrollbar-container {
       background-color: #ffffff !important; }
+  .rolling-stream h3, .rolling-stream .article-call-to-action__title {
+    position: relative; }
+    .rolling-stream h3:after, .rolling-stream .article-call-to-action__title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      width: calc( 100% - 15px);
+      background: #be1e2d;
+      left: 0; }
+  .rolling-stream h5 a, .rolling-stream .alert-success p a, .alert-success .rolling-stream p a, .rolling-stream .alert-error p a, .alert-error .rolling-stream p a, .rolling-stream .article-call-to-action__subtitle a, .rolling-stream h5 .pop-out__reset-password, .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .rolling-stream p .pop-out__reset-password, .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .rolling-stream p .pop-out__reset-password, .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .rolling-stream h5 .sortable-table__list-toggler, .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .rolling-stream p .sortable-table__list-toggler, .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .rolling-stream p .sortable-table__list-toggler, .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .rolling-stream h5 .mobile-table-exit, .rolling-stream .alert-success p .mobile-table-exit, .alert-success .rolling-stream p .mobile-table-exit, .rolling-stream .alert-error p .mobile-table-exit, .alert-error .rolling-stream p .mobile-table-exit, .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+    color: #231f20; }
+    .rolling-stream h5 a:hover, .rolling-stream .alert-success p a:hover, .alert-success .rolling-stream p a:hover, .rolling-stream .alert-error p a:hover, .alert-error .rolling-stream p a:hover, .rolling-stream .article-call-to-action__subtitle a:hover, .rolling-stream h5 .pop-out__reset-password:hover, .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .rolling-stream p .pop-out__reset-password:hover, .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .rolling-stream p .pop-out__reset-password:hover, .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .rolling-stream h5 .sortable-table__list-toggler:hover, .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .rolling-stream p .sortable-table__list-toggler:hover, .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .rolling-stream p .sortable-table__list-toggler:hover, .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .rolling-stream h5 .mobile-table-exit:hover, .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .rolling-stream p .mobile-table-exit:hover, .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .rolling-stream p .mobile-table-exit:hover, .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+      color: #be1e2d; }
+  .rolling-stream .article-related-content__date {
+    color: #be1e2d; }
   .rolling-stream h3, .rolling-stream .article-call-to-action__title {
     padding-bottom: 15px;
     margin-bottom: 20px; }

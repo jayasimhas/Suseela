@@ -3,156 +3,168 @@
 @model AnalyticsViewModel
 
 <script type="text/javascript">
-	/* * *
+    /* * *
 	ANALYTICS DATA
 	* * */
-	var analytics_data = {
-		//"actual_publish_date": "@Model.ArticlePublishDate",
-		"article_author": "@Html.Raw(Model.ArticleAuthors)",
-		"article_content_type": "@Model.ArticleContentType",
-		"article_embargo": "@Model.ArticleEmbargoed",
-		"article_entitlements": "@Model.ArticleEntitlements",
-		"article_media_type": "@Model.ArticleMediaType",
-		"article_number": "@Model.ArcticleNumber",
-		"company_Id": "@Model.CompanyId",
-		"company": "@Model.UserCompany",
-		"created_date": "@Model.DateCreated",
-		"current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)",
-		"custom_tags": "@Model.CustomTags",
-		"entitlement_status": "@Html.Raw(Model.UserEntitlementStatus)",
-		"industry": "@Model.UserIndustry",
-		"IsArticleFree": "@Model.IsFree",
-		"login_status": "@Model.IsUserLoggedIn",
-		"page_description": "@Model.PageDescription",
-		"page_keywords": "@Model.MetaKeyWords",
-		"page_name": "@Model.PageTitleAnalytics",
-		"page_title_override": "@Model.PageTitleOverride",
-		"page_type": "@Model.PageType",
-		"publication": "@Model.PublicationName",
-		"salesforce_account_id": "@Model.AccountId",
-		"salesforce_contact_id": "@Model.ContactId",
-		"taxonomy_region": "@Html.Raw(Model.ArticleRegions)",
-		"taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)",
-		"taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)",
-		"user_email": "@Model.UserEmail",
-		"user_entitlement_type": "@Html.Raw(Model.UserEntitlements)",
-		"user_id": "@Model.UserName",
-		"User_IP_Address": "@Model.UserIp",
-		"content_entitlement_type": "@Model.ContentEntitlementType",
-		"entitlement_type": "@Model.EntitlementType",
-		"entitlement_type": "@Model.EntitlementType",
+    var analytics_data = {
+        //"actual_publish_date": "@Model.ArticlePublishDate",
+        "article_author": "@Html.Raw(Model.ArticleAuthors)",
+        "article_content_type": "@Model.ArticleContentType",
+        "article_embargo": "@Model.ArticleEmbargoed",
+        "article_entitlements": "@Model.ArticleEntitlements",
+        "article_media_type": "@Model.ArticleMediaType",
+        "article_number": "@Model.ArcticleNumber",
+        "company_Id": "@Model.CompanyId",
+        "company": "@Model.UserCompany",
+        "created_date": "@Model.DateCreated",
+        "current_email_subscriptions": "@Html.Raw(Model.SubscribedProducts)",
+        "custom_tags": "@Model.CustomTags",
+        "entitlement_status": "@Html.Raw(Model.UserEntitlementStatus)",
+        "industry": "@Model.UserIndustry",
+        "IsArticleFree": "@Model.IsFree",
+        "login_status": "@Model.IsUserLoggedIn",
+        "page_description": "@Model.PageDescription",
+        "page_keywords": "@Model.MetaKeyWords",
+        "page_name": "@Model.PageTitleAnalytics",
+        "page_title_override": "@Model.PageTitleOverride",
+        "page_type": "@Model.PageType",
+        "publication": "@Model.PublicationName",
+        "salesforce_account_id": "@Model.AccountId",
+        "salesforce_contact_id": "@Model.ContactId",
+        "taxonomy_region": "@Html.Raw(Model.ArticleRegions)",
+        "taxonomy_subjects": "@Html.Raw(Model.ArticleSubject)",
+        "taxonomy_therapy_areas": "@Html.Raw(Model.ArticleTherapy)",
+        "user_email": "@Model.UserEmail",
+        "user_entitlement_type": "@Html.Raw(Model.UserEntitlements)",
+        "user_id": "@Model.UserName",
+        "User_IP_Address": "@Model.UserIp",
+        "content_entitlement_type": "@Model.ContentEntitlementType",
+        "entitlement_type": "@Model.EntitlementType",
+        "entitlement_type": "@Model.EntitlementType",
         "opportunity_id": "@Model.OpportunityIds",
-	    "opportunity_line_item_id": "@Model.OpportunityLineItemIds",
-	    "deal": "@Model.DealName",
+        "opportunity_line_item_id": "@Model.OpportunityLineItemIds",
+        "deal": "@Model.DealName",
         "company_name": "@Model.CompanyName"
-	};
+    };
 
     if ('@Model.ArcticleNumber' != '')
         analytics_data["actual_publish_date"] = "@Model.ArticlePublishDate";
 
-	var utag_data = analytics_data;
+    var utag_data = analytics_data;
 
-	(function (a, b, c, d) {
-		a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
-		b = document; c = 'script'; d = b.createElement(c); d.src = a;
-		d.type = 'text/java' + c; d.async = true;
-		a = b.getElementsByTagName(c)[0];
-		a.parentNode.insertBefore(d, a);
-	})();
+    (function (a, b, c, d) {
+        a = '//tags.tiqcdn.com/utag/informa/main/@Model.SiteEnvrionment/utag.js';
+        b = document; c = 'script'; d = b.createElement(c); d.src = a;
+        d.type = 'text/java' + c; d.async = true;
+        a = b.getElementsByTagName(c)[0];
+        a.parentNode.insertBefore(d, a);
+    })();
 
-	function getCorrespondingSectr(sector) {
-		if (sector == 'comment' || sector == 'features' || sector == 'analysis') {
-			sector = 'analysis';
-		} else if (sector == 'supplementsreports' || sector == 'multimedia' || sector == 'scienceabstracts') {
-			sector = 'home';
-		} else if (sector == 'therapysector' || sector == 'other') {
-			sector = 'therapy';
-		} else if (sector == 'cardiovascular') {
-			sector = 'cardio';
-		} else if (sector == 'musculoskeletal') {
-			sector = 'musculo';
-		} else if (sector == 'gastrointestinal') {
-			sector = 'gastro';
-		} else if (sector == 'genericsbusiness') {
-			sector = 'genbusiness';
-		} else if (sector == 'manda') {
-			sector = 'merger';
-		} else if (sector == 'businessstrategy') {
-			sector = 'corp';
-		} else if (sector == 'lifecyclemanagement') {
-			sector = 'lifecycle';
-		} else if (sector == 'policyregulation') {
-			sector = 'policyandreg';
-		} else if (sector == 'pricingreimbursement') {
-			sector = 'pandr';
-		} else if (sector == 'healthcarepolicy') {
-			sector = 'hpolicy';
-		} else if (sector == 'pharmacovigilance') {
-			sector = 'pharmacv';
-		} else if (sector == 'intellectualproperty') {
-			sector = 'ip';
-		} else if (sector == 'researchdevelopment') {
-			sector = 'randd';
-		} else if (sector == 'productapprovals') {
-			sector = 'approvals';
-		} else if (sector == 'clinicaltrials') {
-			sector = 'ctrials';
-		} else if (sector == 'productfilings') {
-			sector = 'filings';
-		} else if (sector == 'productsafety') {
-			sector = 'safety';
-		} else if (sector == 'productdelays') {
-			sector = 'delays';
-		} else if (sector == 'latinamerica') {
-			sector = 'lamerica';
-		} else if (sector == 'world') {
-			sector = 'row';
-		}
-		return sector;
-	}
+    function getCorrespondingSectr(sector) {
+        if (sector == 'comment' || sector == 'features' || sector == 'analysis') {
+            sector = 'analysis';
+        } else if (sector == 'supplementsreports' || sector == 'multimedia' || sector == 'scienceabstracts') {
+            sector = 'home';
+        } else if (sector == 'therapysector' || sector == 'other') {
+            sector = 'therapy';
+        } else if (sector == 'cardiovascular') {
+            sector = 'cardio';
+        } else if (sector == 'musculoskeletal') {
+            sector = 'musculo';
+        } else if (sector == 'gastrointestinal') {
+            sector = 'gastro';
+        } else if (sector == 'genericsbusiness') {
+            sector = 'genbusiness';
+        } else if (sector == 'manda') {
+            sector = 'merger';
+        } else if (sector == 'businessstrategy') {
+            sector = 'corp';
+        } else if (sector == 'lifecyclemanagement') {
+            sector = 'lifecycle';
+        } else if (sector == 'policyregulation') {
+            sector = 'policyandreg';
+        } else if (sector == 'pricingreimbursement') {
+            sector = 'pandr';
+        } else if (sector == 'healthcarepolicy') {
+            sector = 'hpolicy';
+        } else if (sector == 'pharmacovigilance') {
+            sector = 'pharmacv';
+        } else if (sector == 'intellectualproperty') {
+            sector = 'ip';
+        } else if (sector == 'researchdevelopment') {
+            sector = 'randd';
+        } else if (sector == 'productapprovals') {
+            sector = 'approvals';
+        } else if (sector == 'clinicaltrials') {
+            sector = 'ctrials';
+        } else if (sector == 'productfilings') {
+            sector = 'filings';
+        } else if (sector == 'productsafety') {
+            sector = 'safety';
+        } else if (sector == 'productdelays') {
+            sector = 'delays';
+        } else if (sector == 'latinamerica') {
+            sector = 'lamerica';
+        } else if (sector == 'world') {
+            sector = 'row';
+        }
+        return sector;
+    }
 
     //configuration
-OAS_publication = '@Model.AdDomain' + '/';
-OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
-OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
-OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';
+    OAS_publication = '@Model.AdDomain' + '/';
+    OAS_url = 'https://oasc-eu1.247realmedia.com/RealMedia/ads/';
+    OAS_sitepage = OAS_publication + getCorrespondingSectr('home');
+    OAS_listpos = 'Top,Top1,Bottom,Right,Right1,TopRight,Top2,Top3,Middle,Middle1,Position2,Position3';
     //ISW 338 Serving ads based on section taxonomy
-OAS_query = '@Html.Raw(Model.TaxonomyName)';    
-OAS_target = 'ad';
-//end of configuration
-OAS_version = 11;
-OAS_rn = '001234567890';
-OAS_rns = '1234567890';
-OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
+    OAS_query = '@Html.Raw(Model.TaxonomyName)';
+    OAS_target = 'ad';
+    //end of configuration
+    OAS_version = 11;
+    OAS_rn = '001234567890';
+    OAS_rns = '1234567890';
+    OAS_rn = new String (Math.random()); OAS_rns = OAS_rn.substring (2, 11);
 
-function OAS_NORMAL(pos,sector,keyword) {
-    document.write('<A HREF="' + OAS_url + 'click_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '" TARGET="' + OAS_target + '">');
-    document.write('<IMG SRC="' + OAS_url + 'adstream_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '" BORDER=0 ALT="Advertisement" Title=""></a>');
-}
-
-if (navigator.userAgent.indexOf('Mozilla/3') != -1)
-    OAS_version = 10;
-if (OAS_version >= 11)
-    document.write('<SC'+'RIPT LANGUAGE="JavaScript1.1" SRC="' + OAS_url + 'adstream_mjx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + OAS_query + '"><\/SCRIPT>');
-
-document.write('');
-function OAS_AD(pos,sector) {
-    if (OAS_version >= 11 && typeof(OAS_RICH)!='undefined')
-        OAS_RICH(pos);
-    else
-        OAS_NORMAL(pos,sector,'');
-}
-function OAS_AD_SEARCH(pos,sector,keyword) {
-
-    var sectorName = getCorrespondingSectr(sector);
-
-    if (OAS_version >= 11 && typeof(OAS_RICH)!='undefined'){
-        OAS_RICH(pos);
+    function OAS_NORMAL(pos,sector,keyword) {
+        document.write('<A HREF="' + OAS_url + 'click_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '" TARGET="' + OAS_target + '">');
+        document.write('<IMG SRC="' + OAS_url + 'adstream_nx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + '!' + pos + OAS_query + '" BORDER=0 ALT="Advertisement" Title=""></a>');
     }
-    else{
-        OAS_NORMAL(pos,sectorName,keyword);
-    }
-}
 
+    if (navigator.userAgent.indexOf('Mozilla/3') != -1)
+        OAS_version = 10;
+    if (OAS_version >= 11)
+        document.write('<SC'+'RIPT LANGUAGE="JavaScript1.1" SRC="' + OAS_url + 'adstream_mjx.ads/' + OAS_sitepage + '/1' + OAS_rns + '%40' + OAS_listpos + OAS_query + '"><\/SCRIPT>');
+
+    document.write('');
+    function OAS_AD(pos,sector) {
+        if (OAS_version >= 11 && typeof(OAS_RICH)!='undefined')
+            OAS_RICH(pos);
+        else
+            OAS_NORMAL(pos,sector,'');
+    }
+    function OAS_AD_SEARCH(pos,sector,keyword) {
+
+        var sectorName = getCorrespondingSectr(sector);
+
+        if (OAS_version >= 11 && typeof(OAS_RICH)!='undefined'){
+            OAS_RICH(pos);
+        }
+        else{
+            OAS_NORMAL(pos,sectorName,keyword);
+        }
+    }
+    </script>
+
+<script src='https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit' async defer></script>
+<script>
+    var recaptchaAskTheAnalyst;
+    var recaptchaEmail;
+    var myCallBack = function() {        
+        recaptchaAskTheAnalyst = grecaptcha.render('recaptchaAskTheAnalyst', {
+            'sitekey': '@Model.CaptchaSiteKey' 
+        });                
+        recaptchaEmail = grecaptcha.render('recaptchaEmail', {
+            'sitekey': '@Model.CaptchaSiteKey' 
+        });
+    };
 </script>
-<script src='https://www.google.com/recaptcha/api.js'></script>

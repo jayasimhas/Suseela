@@ -5485,9 +5485,9 @@ $(function () {
 
                     if (data.articles[i].listableImage == null) {
 
-                        Template += '<div class="section-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+                        Template += '<div class="section-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
                     } else {
-                        Template += '<div class="section-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+                        Template += '<div class="section-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
                     }
                 }
             }
@@ -5503,9 +5503,9 @@ $(function () {
                 for (var i = 0; i < 3; i++) {
                     var addCls = data.articles[i].isSonsoredBy ? 'sponsored_cont' : '';
                     if (data.articles[i].listableImage == null) {
-                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
                     } else {
-                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
                     }
                 }
             }
@@ -11213,6 +11213,21 @@ function formController(opts) {
 			} else {
 				currentForm = $(event.target).closest('form');
 			}
+			var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id'),
+			    sendRecaptcha = captchaId === 'recaptchaAskTheAnalyst' ? recaptchaAskTheAnalyst : recaptchaEmail;
+			// If In Future More Captcha will come in same page
+			/*
+             var sendRecaptcha;
+             if(captchaId === 'recaptchaAskTheAnalyst'){
+                 sendRecaptcha = recaptchaAskTheAnalyst;
+             }
+             else if(captchaId === 'recaptchaEmail'){   
+                  sendRecaptcha recaptchaEmail;
+             }
+             else{
+                  sendRecaptcha otherIdval; 
+             }
+         */
 
 			if ($(currentForm).data('force-confirm')) {
 				actionConfirmed = window.confirm($(currentForm).data('force-confirm'));
@@ -11271,6 +11286,9 @@ function formController(opts) {
 					//// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
 					var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse();
+					// add recaptcha if it exists in the form
+					if (sendRecaptcha !== undefined) var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse(sendRecaptcha);
+
 					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
 
 					if (!$(currentForm).data('on-submit')) {
@@ -13503,6 +13521,23 @@ $(document).ready(function () {
             return $('.header__wrapper').offset().top + $('.header__wrapper').height();
         };
 
+        var addFixedMenu = function addFixedMenu() {
+            if ($(window).width() >= 1024) {
+                $('.main-menu').addClass('fixed');
+                $('.main__wrapper').css('margin-left', '330px');
+            }
+        };
+        var removeFixedMenu = function removeFixedMenu() {
+            if ($(window).width() >= 1024) {
+                $('.main-menu').removeClass('fixed');
+                $('.main__wrapper').css('margin-left', '0');
+                if ($(window).scrollTop() > getHeaderEdge()) {
+                    $('.main-menu').addClass('fixed');
+                    $('.main__wrapper').css('margin-left', '330px');
+                }
+            }
+        };
+
         var showMenu = function showMenu() {
             $('.main-menu').addClass('is-active');
             $('.menu-toggler').addClass('is-active');
@@ -13517,6 +13552,9 @@ $(document).ready(function () {
             if ($(window).scrollTop() <= getHeaderEdge()) {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
             }
+            removeFixedMenu();
+            $('.main-menu').removeClass('shift-main-content');
+            $('body').removeClass('shift-content');
         };
 
         /* Toggle menu visibility */
@@ -13527,8 +13565,8 @@ $(document).ready(function () {
         });
 
         /*  If the menu is closed, let any clicks on the menu element open
-            the menu. This includes the border—visible when the menu is closed—
-            so it's easier to open. */
+        the menu. This includes the border—visible when the menu is closed—
+        so it's easier to open. */
         $('.js-full-menu-toggle').on('click', function toggleMenu() {
             $('.main-menu').hasClass('is-active') ? null : showMenu();
         });
@@ -13538,8 +13576,10 @@ $(document).ready(function () {
             // Only stick if the header (including toggler) isn't visible
             if ($(window).scrollTop() > getHeaderEdge() || $('.main-menu').hasClass('is-active')) {
                 $('.header__wrapper .menu-toggler').addClass('is-sticky');
+                addFixedMenu();
             } else {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
+                removeFixedMenu();
             }
         });
 
@@ -13547,35 +13587,35 @@ $(document).ready(function () {
         $('.js-toggle-menu-section').on('click', function toggleMenuItems(e) {
             e.target !== this ? this.click() : $(e.target).toggleClass('is-active');
         });
+    })();
 
-        $('.show-demo').click(function () {
+    $('.show-demo').click(function () {
 
-            $(this).closest('.js-toggle-demo').toggleClass('collapsed');
-            //IPMP-616 
-            if ($(this).parent().hasClass('collapsed')) {
-                sessionStorage.setItem("mykey", "false");
-                $('.sd').show();
-                $('.hd').hide();
-                $('.toggle-demo').hide();
-            } else {
-                sessionStorage.setItem("mykey", "true");
-                $('.hd').show();
-                $('.sd').hide();
-                $('.toggle-demo').show();
-            }
-        });
-        var persistedval = sessionStorage.getItem("mykey");
-        if (persistedval == 'false') {
+        $(this).closest('.js-toggle-demo').toggleClass('collapsed');
+        //IPMP-616 
+        if ($(this).parent().hasClass('collapsed')) {
+            sessionStorage.setItem("mykey", "false");
             $('.sd').show();
             $('.hd').hide();
             $('.toggle-demo').hide();
-            $('.js-toggle-demo').addClass('collapsed');
         } else {
+            sessionStorage.setItem("mykey", "true");
             $('.hd').show();
             $('.sd').hide();
             $('.toggle-demo').show();
         }
-    })();
+    });
+    var persistedval = sessionStorage.getItem("mykey");
+    if (persistedval == 'false') {
+        $('.sd').show();
+        $('.hd').hide();
+        $('.toggle-demo').hide();
+        $('.js-toggle-demo').addClass('collapsed');
+    } else {
+        $('.hd').show();
+        $('.sd').hide();
+        $('.toggle-demo').show();
+    }
 
     /* * *
         When a banner is dismissed, the banner ID is stored in the
@@ -13772,6 +13812,15 @@ $(document).ready(function () {
                     smoothScroll(200, 'left');
                 }
             });
+
+            if ($(window).width() >= 1024) {
+                var mainMenuListItems = $('ul.main-menu__section, dl.main-menu__footer');
+                mainMenuListItems.remove();
+                $('.main-menu').append("<div class='main-menu-list'></div>");
+                mainMenuListItems.each(function () {
+                    $('.main-menu-list').append($(this));
+                });
+            }
         };
 
         var scrollToTimerCache;

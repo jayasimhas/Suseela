@@ -5,15 +5,9 @@
 
 .compareChart {
 	font-family: "Roboto", Arial Narrow, sans-serif;
-	width: 790px;
+	width: 100%;
 	margin-bottom: 2rem;
-	
-	@media screen and (min-width: 801px) and (max-width: 1024px) {
-		width: 594px;
-	}
-	@include breakpoint('medium') {
-		width: 100%;
-	}
+	position: relative;
 	.eachChartData {
 		margin-bottom: 10px;
 		@include breakpoint('small') {

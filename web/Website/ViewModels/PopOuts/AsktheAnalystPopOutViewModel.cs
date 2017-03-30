@@ -15,21 +15,18 @@ namespace Informa.Web.ViewModels.PopOuts
 		protected readonly IRenderingItemContext ArticleRenderingContext;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IArticle Article;
-		protected readonly IRecaptchaService RecaptchaSettings;
         protected readonly ISiteRootContext SiteRootContext;
 
         public AsktheAnalystPopOutViewModel(
             ISiteRootContext siteRootContext,
                 ITextTranslator textTranslator,
 				IRenderingItemContext articleRenderingContext,
-				IAuthenticatedUserContext userContext,
-				IRecaptchaService recaptchaSettings)
+				IAuthenticatedUserContext userContext)
 		{
             SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
 			ArticleRenderingContext = articleRenderingContext;
 			UserContext = userContext;
-			RecaptchaSettings = recaptchaSettings;
 			Article = ArticleRenderingContext.Get<IArticle>();
 		}
 
@@ -68,9 +65,6 @@ namespace Informa.Web.ViewModels.PopOuts
         public string SendText => TextTranslator.Translate("Article.ATAPopout.Send");
 
         public string PublicationName => TextTranslator.Translate("Article.PubName");
-
-        public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
-
         public string AskTheAnalystLink => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Ask_The_Analyst;
         public string AskTheAnalystEmailID => SiteRootContext.Item == null ? string.Empty : SiteRootContext.Item.Analyst_Email_ID;
 

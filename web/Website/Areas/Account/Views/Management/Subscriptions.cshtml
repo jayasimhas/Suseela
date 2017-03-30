@@ -3,6 +3,7 @@
 
 @if (Model.IsAuthenticated)
 {
+    <input type="hidden" id="SitecorepublicationsCount" value="@Model.Sitecorepublications.Count()" />
     <div class="page-account subscriptionPan">
         @Html.Sitecore().Placeholder("page-account")
         <span class="page-account_text">
@@ -284,3 +285,5 @@
                                                             @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
                                                         </div>
                                                                 }
+
+
