@@ -519,9 +519,8 @@ namespace Informa.Web.Areas.Account.Controllers
                     for (int i = 0; i < sub.SubscribedChannels.Count; i++)
                     {
                         if(SalesforceConfigurationContext.IsNewSalesforceEnabled)
-                        {
-                            sub.SubscribedChannels[i].ChannelId = sub.SubscribedChannels[i].ChannelId.Split('.')[1] ?? string.Empty;
-                            channels = sortedChannels.Where(y => y.ChannelCode.Contains(sub.SubscribedChannels[i].ChannelId)).FirstOrDefault();
+                        {                      
+                            channels = sortedChannels.Where(y => string.Format("{0}.{1}", SiterootContext.Item.Publication_Code, y.ChannelCode).Contains(sub.SubscribedChannels[i].ChannelId)).FirstOrDefault();
                             topics = channels.Topics.Where(topic => topic.IsFollowing).OrderBy(topic => topic.TopicOrder).ToList();
                             CreateSectionsFromChannels(channels, sections, UserPreferences.Preferences.IsNewUser, ref topics);
                         }
