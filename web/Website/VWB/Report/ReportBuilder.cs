@@ -19,6 +19,7 @@ using Sitecore.Web;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 using Informa.Library.Search.Results;
 using Saplin.Controls;
+using System.Configuration;
 
 namespace Elsevier.Web.VWB.Report
 {
@@ -240,6 +241,13 @@ namespace Elsevier.Web.VWB.Report
             }
 
             var client = new WebClient();
+
+            string disableSSLCertificateValidation = ConfigurationManager.AppSettings["DisableSSLCertificateValidation"];
+            if (!string.IsNullOrWhiteSpace(disableSSLCertificateValidation) && Convert.ToBoolean(disableSSLCertificateValidation))
+            {
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            }
+
             var content = client.DownloadString(url);
 
             var results = JsonConvert.DeserializeObject<SearchResults>(content);
