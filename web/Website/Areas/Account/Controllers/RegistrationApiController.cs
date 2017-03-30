@@ -111,17 +111,6 @@ namespace Informa.Web.Areas.Account.Controllers
 
             if(success)
             {
-                //string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
-                ////Current vertical cookiename
-                //string cookieName = curVertical + "_LoggedInUser";
-                ////Current Vertical subdomain
-                //string domain = ConfigurationManager.AppSettings[curVertical];
-
-                //HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
-                //LoggedinKeyCookie.Value = request.Username;
-                //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-                //LoggedinKeyCookie.Domain = domain;
-                //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
                 VerticalLogin.CreateLoginCookie(request.Username, null);
             }
 
@@ -188,17 +177,6 @@ namespace Informa.Web.Areas.Account.Controllers
 
             if (orderResult.Success)
             {
-                //string curVertical = HttpContext.Current.Request.QueryString["vid"] ?? HttpContext.Current.Request.QueryString["vid"];
-                ////Current vertical cookiename
-                //string cookieName = curVertical + "_LoggedInUser";
-                ////Current Vertical subdomain
-                //string domain = ConfigurationManager.AppSettings[curVertical];
-
-                //HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical + "_LoggedInUser");
-                //LoggedinKeyCookie.Value = form.Username;
-                //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-                //LoggedinKeyCookie.Domain = domain;
-                //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
                 VerticalLogin.CreateLoginCookie(form.Username, null);
             }
 
