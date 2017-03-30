@@ -34,6 +34,7 @@
     }
 	
 	.action-flag--red { color: $color-primary-orange; }
+	.topic-subtopic__title{ border-left: 12px solid $color-primary-orange;}
 	
     .article-topics__li ul li:before,
     .quickfactsbulleted li ul li:before,
