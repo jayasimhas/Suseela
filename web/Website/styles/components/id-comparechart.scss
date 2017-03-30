@@ -7,7 +7,7 @@
 	font-family: "Roboto", Arial Narrow, sans-serif;
 	width: 100%;
 	margin-bottom: 2rem;
-	
+	position: relative;
 	.eachChartData {
 		margin-bottom: 10px;
 		@include breakpoint('small') {

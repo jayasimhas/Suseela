@@ -7804,7 +7804,8 @@ section: UI Elements
   font-family: "Roboto", Arial Narrow, sans-serif;
   width: 100%;
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+  position: relative; }
   .compareChart .eachChartData {
     margin-bottom: 10px; }
     @media (max-width: 480px) {
