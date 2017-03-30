@@ -5503,9 +5503,9 @@ $(function () {
                 for (var i = 0; i < 3; i++) {
                     var addCls = data.articles[i].isSonsoredBy ? 'sponsored_cont' : '';
                     if (data.articles[i].listableImage == null) {
-                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
                     } else {
-                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
+                        Template += '<div class="contentRecomm-article ' + addCls + '">' + '<div class="article-metadata">' + '<ul><li><time class="article-metadata__date sponsored_title">' + data.articles[i].sponsoredByTitle + '</time></li>' + '<li><img src="' + data.articles[i].sponsoredByLogo + '"></li></ul>' + '</div>' + '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' + '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' + '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through, recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' + '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' + '</div>';
                     }
                 }
             }
@@ -5625,6 +5625,7 @@ $(function () {
 			    category = "";
 
 			Parent.find('.table').empty();
+			debugger;
 			for (var key in HeaderData) {
 				if (key !== "ID") {
 					Header += "<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
@@ -5702,7 +5703,7 @@ $(function () {
 		InitiateCarousel: function InitiateCarousel(Parent) {
 
 			Parent.find('.owl-carousel').owlCarousel({
-				loop: false,
+				loop: true,
 				margin: 0,
 				merge: true,
 				nav: false,
@@ -13580,6 +13581,12 @@ $(document).ready(function () {
             } else {
                 $('.header__wrapper .menu-toggler').removeClass('is-sticky');
                 removeFixedMenu();
+            }
+        });
+        $(window).on('resize', function () {
+            if ($(window).width() < 1024) {
+                $('.main-menu').removeClass('fixed');
+                $('.main__wrapper').removeAttr('style');
             }
         });
 

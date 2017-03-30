@@ -32,6 +32,9 @@
 			@include textMix('Roboto', 1em, bold);
         }
     }
+    &#modal-comparefinancialresults .table-wrapper {
+        overflow: hidden;
+    }
 }
 .idi-table-heading {
     color: $color-white;  
