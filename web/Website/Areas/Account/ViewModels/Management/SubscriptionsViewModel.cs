@@ -16,6 +16,8 @@ using log4net;
 using Informa.Library.Utilities.References;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Site;
+using Sitecore.Data.Items;
+using Sitecore.Data.Fields;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
@@ -59,14 +61,15 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
 
         }
 
-        public IEnumerable<ISite_Root> Sitecorepublications
+        public IEnumerable<Item> Sitecorepublications
         {
             get
             {
-                ////var verticalRootItem = GlassModel.GetAncestors<IVertical_Root>().FirstOrDefault();
-                ////return verticalRootItem._ChildrenWithInferType.OfType<ISite_Root>();
+                var verticalItem = Sitecore.Context.Item.Axes.GetAncestors().
+                    Where(item => item.TemplateID.Equals(IVertical_RootConstants.TemplateId)).
+                    FirstOrDefault();
 
-                return SiteRootContext?.Item?._Parent?._ChildrenWithInferType.OfType<ISite_Root>();
+                return verticalItem.GetChildren().Where(item => item.TemplateID.Equals(ISite_RootConstants.TemplateId));
             }
         }
 
@@ -78,13 +81,13 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 {
                     var subscriptionsList = Sitecorepublications.Select(s => new SubscriptionViewModel
                     {
-                        Expiration = _subcriptions.Any(p => p.ProductCode.Equals(s.Publication_Code)) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(s.Publication_Code)).ExpirationDate : DateTime.MinValue,
-                        Publication = s.Publication_Name,
-                        Renewable = IsRenewable(s.Publication_Code),
-                        Subscribable = IsSubScribed(s.Publication_Code),
-                        ChannelItems = GetChannelItemsByProductCode(s.Publication_Code),
-                        IsCurrentPublication = GlassModel.GetAncestors<ISite_Root>().FirstOrDefault().Publication_Code.Equals(s.Publication_Code),
-                        Entitlement_Type = GetEntitlementType(s.Publication_Code)
+                        Expiration = _subcriptions.Any(p => p.ProductCode.Equals(s["Publication Code"])) ? _subcriptions.FirstOrDefault(p => p.ProductCode.Equals(s["Publication Code"])).ExpirationDate : DateTime.MinValue,
+                        Publication = s["Publication Name"],
+                        Renewable = IsRenewable(s["Publication Code"]),
+                        Subscribable = IsSubScribed(s["Publication Code"]),
+                        ChannelItems = GetChannelItemsByProductCode(s["Publication Code"]),
+                        IsCurrentPublication = GlassModel.GetAncestors<ISite_Root>().FirstOrDefault().Publication_Code.Equals(s["Publication Code"]),
+                        Entitlement_Type = GetEntitlementType(s["Publication Code"])
                     });
                     var filteredsubscriptionsList = subscriptionsList.Where(p => p.Subscribable == true && p.Renewable == false).Concat(subscriptionsList.Where(q => q.Renewable == true)).Concat(subscriptionsList.Where(r => r.Subscribable == false));
                     return filteredsubscriptionsList;
@@ -104,10 +107,11 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         {
             try
             {
-                var siteRoot = Sitecorepublications.FirstOrDefault(eachChild => eachChild.Publication_Code.Equals(publication_Code));
-                if (siteRoot != null && siteRoot.Entitlement_Type != null)
+                var siteRoot = Sitecorepublications.FirstOrDefault(eachChild => eachChild["Publication Code"].Equals(publication_Code));
+                LookupField entitlementType = (LookupField)siteRoot.Fields["Entitlement Type"];
+                if (siteRoot != null && entitlementType != null)
                 {
-                    if (siteRoot.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
+                    if (entitlementType.TargetItem.ID.ToString().Equals(ItemReferences.ChannelLevelEntitlementType))
                     {
                         return EntitlementLevel.Channel;
                     }
