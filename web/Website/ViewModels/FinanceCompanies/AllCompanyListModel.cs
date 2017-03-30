@@ -10,13 +10,20 @@ using Jabberwocky.Glass.Models;
 
 namespace Informa.Web.ViewModels.FinanceCompanies
 {
-    public class AllCompanyListModel:GlassViewModel<IGlassBase>  
+    public class AllCompanyListModel : GlassViewModel<IGlassBase>
     {
-        public IEnumerable<ICompany_Detail_Page> FinanceCompanies 
+        protected readonly ITextTranslator TextTranslator;
+
+        public AllCompanyListModel(ITextTranslator textTranslator)
+        {
+            TextTranslator = textTranslator;
+        }
+        public string ComponentTitle => TextTranslator.Translate("Company.AllCompaniesComponentTitle");
+        public IEnumerable<ICompany_Detail_Page> FinanceCompanies
         {
             get
             {
-                var financeCompaniesFolder = GlassModel._Parent;
+                var financeCompaniesFolder = GlassModel?._Parent;
                 return financeCompaniesFolder._ChildrenWithInferType.OfType<ICompany_Detail_Page>();
             }
         }

@@ -3,7 +3,7 @@
 @{
     <div class="ContentRecomm-RelatedContent-vertical @Model.Parameters.CompanyNewsAlignment">
         <div class="article-related-content">
-            
+
             @if (@Model.CompanyNewsSectionName != null)
             {
                 <h2>@Model.CompanyName @Model.CompanyNewsSectionName</h2>
@@ -14,9 +14,9 @@
                     <div class="section-article-text">
                         <h5>
                             <a class="click-utag" href="@(Model.CompanyManualArticlePage._Url)">
-                                @(Model.CompanyManualArticlePage.Title)
+                                @Html.Raw(Model.CompanyManualArticlePage.Title)
                             </a>
-                        </h5>                        
+                        </h5>
                         <p>@(Html.Raw(Model.CompanyNewsSummary))</p>
                         <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
                     </div>
@@ -25,34 +25,34 @@
 
             @if (Model.CompanyNews != null && Model.CompanyNews.Any())
             {
-            foreach (var listable in Model.CompanyNews)
-            {
-                <div class="section-article">
+                foreach (var listable in Model.CompanyNews)
+                {
+                    <div class="section-article">
 
-                    <div class="section-article-img">
-                        @if (listable.Featured_Image_16_9 != null)
-                        {                            
-                           @RenderImage(listable, model => model.Featured_Image_16_9)                          
-                        }
+                        <div class="section-article-img">
+                            @if (listable.Featured_Image_16_9 != null)
+                            {
+                                @RenderImage(listable, model => model.Featured_Image_16_9)
+                            }
+                        </div>
+
+                        <div class="section-article-text">
+
+                            <h5>
+                                <a class="click-utag" href="@listable._Url">
+                                    @Html.Raw(listable.Title)
+                                </a>
+                            </h5>
+                            <div>@Html.Raw(listable.Summary)</div>
+                            <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMMM yyyy}", listable.Actual_Publish_Date) </time>
+                        </div>
+
                     </div>
-
-                    <div class="section-article-text" >
-
-                        <h5>
-                            <a class="click-utag" href="@listable._Url">
-                                @listable.Title
-                            </a>
-                        </h5>
-                        <div>@Html.Raw(listable.Summary)</div>
-                        <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMMM yyyy}", listable.Actual_Publish_Date) </time>
-                    </div>
-
-                </div>
-            }
+                }
             }
 
+        </div>
     </div>
-  </div>
 }
 
 

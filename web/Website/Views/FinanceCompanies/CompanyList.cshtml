@@ -1,12 +1,12 @@
 ﻿@model  Informa.Web.ViewModels.FinanceCompanies.AllCompanyListModel
 <div class="messaging_webUsers article-sidebar">
-    <h2><a href="#">COMPANIES</a></h2>
+    <h2>@Model.ComponentTitle</h2>
     <div class="companyList">
         <ul>
             @foreach (var company in Model.FinanceCompanies)
             {
                 <li class="article-topics__li">
-                    <a href="/financecompanies/@company._Name">@company.Companyname</a>
+                    <a href="/@company._Parent._Name/@company._Name">@company.Companyname</a>
                 </li>
             }
         </ul>
