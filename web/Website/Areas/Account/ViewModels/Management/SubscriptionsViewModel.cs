@@ -26,6 +26,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
         private readonly ILog _logger;
+        protected readonly ISiteRootContext SiterootContext;
         protected readonly IFindSitePublicationByCode FindSitePublication;
         private string channelCodeFormat = "{0}.{1}";
         private readonly Dictionary<string, bool> RenewBtnSettings;
@@ -48,6 +49,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             SignInViewModel = signInViewModel;
             FindSitePublication = findSitePublication;
             _logger = logger;
+            SiterootContext = siteRootContext;
             RenewBtnSettings = new Dictionary<string, bool>();
             SubscriptionBtnSettings = new Dictionary<string, bool>();
             ItemReferences = itemReferences;
@@ -104,13 +106,15 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         {
             try
             {
-                var siteRoot = Sitecorepublications.FirstOrDefault(eachChild => eachChild.Publication_Code.Equals(publication_Code));
-                if (siteRoot != null && siteRoot.Entitlement_Type != null)
+                if (SiterootContext.Item.Entitlement_Type != null &&
+                   SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.SiteLevelEntitlementType))
                 {
-                    if (siteRoot.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
-                    {
-                        return EntitlementLevel.Channel;
-                    }
+                    return EntitlementLevel.Site;
+                }
+                else if (SiterootContext.Item.Entitlement_Type != null &&
+                   SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
+                {
+                    return EntitlementLevel.Channel;
                 }
             }
             catch (Exception ex)
@@ -118,7 +122,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 _logger.Error("Error in Entitlement Type", ex);
             }
             return EntitlementLevel.Site;
-
         }
 
 
