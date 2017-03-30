@@ -66,15 +66,21 @@ namespace Informa.Library.Search.Results
 		[DataMember]
 		public string Byline { get; set; }
 
-        //[IndexField("facetcontenttype_s")]
+        [IndexField("facetcontenttype_s")]       
+        [DataMember]
+		public string ContentType { get; set; }
+
+        [IndexField("searchmediaicon_s")]
+        [DataMember]
+        public string MediaType { get; set; }
+
         [IndexField("content_type_s")]
         [DataMember]
-		public Guid ContentType { get; set; }
+        public Guid ContentTypeVWB { get; set; }       
 
-        //[IndexField("searchmediaicon_s")]
         [IndexField("media_type_s")]
         [DataMember]
-		public Guid MediaType { get; set; }
+        public Guid MediaTypeVWB { get; set; }
 
         [IndexField("searchmediatooltip_s")]
         [DataMember]
