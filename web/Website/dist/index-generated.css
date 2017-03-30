@@ -10879,6 +10879,22 @@ div#feedbacklite.fbl_r {
     .rolling-stream.white-bg .scrollbar-container {
       background-color: #ffffff !important; }
   .rolling-stream h3, .rolling-stream .article-call-to-action__title {
+    position: relative; }
+    .rolling-stream h3:after, .rolling-stream .article-call-to-action__title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      width: calc( 100% - 15px);
+      background: #be1e2d;
+      left: 0; }
+  .rolling-stream h5 a, .rolling-stream .alert-success p a, .alert-success .rolling-stream p a, .rolling-stream .alert-error p a, .alert-error .rolling-stream p a, .rolling-stream .article-call-to-action__subtitle a, .rolling-stream h5 .pop-out__reset-password, .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .rolling-stream p .pop-out__reset-password, .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .rolling-stream p .pop-out__reset-password, .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .rolling-stream h5 .sortable-table__list-toggler, .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .rolling-stream p .sortable-table__list-toggler, .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .rolling-stream p .sortable-table__list-toggler, .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .rolling-stream h5 .mobile-table-exit, .rolling-stream .alert-success p .mobile-table-exit, .alert-success .rolling-stream p .mobile-table-exit, .rolling-stream .alert-error p .mobile-table-exit, .alert-error .rolling-stream p .mobile-table-exit, .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+    color: #231f20; }
+    .rolling-stream h5 a:hover, .rolling-stream .alert-success p a:hover, .alert-success .rolling-stream p a:hover, .rolling-stream .alert-error p a:hover, .alert-error .rolling-stream p a:hover, .rolling-stream .article-call-to-action__subtitle a:hover, .rolling-stream h5 .pop-out__reset-password:hover, .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .rolling-stream p .pop-out__reset-password:hover, .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .rolling-stream p .pop-out__reset-password:hover, .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .rolling-stream h5 .sortable-table__list-toggler:hover, .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .rolling-stream p .sortable-table__list-toggler:hover, .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .rolling-stream p .sortable-table__list-toggler:hover, .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .rolling-stream h5 .mobile-table-exit:hover, .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .rolling-stream p .mobile-table-exit:hover, .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .rolling-stream p .mobile-table-exit:hover, .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+      color: #be1e2d; }
+  .rolling-stream .article-related-content__date {
+    color: #be1e2d; }
+  .rolling-stream h3, .rolling-stream .article-call-to-action__title {
     padding-bottom: 15px;
     margin-bottom: 20px; }
   .rolling-stream .rolling-stream-wrapper {

@@ -12,6 +12,29 @@
 		}
 	}
 	h3 {
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            height: 4px;
+            width: calc( 100% - 15px);
+            background: #be1e2d;
+            left: 0;
+        }
+    }
+    h5 {
+        a {
+            color:  #231f20;
+            &:hover {
+                color: #be1e2d;
+            }
+        }
+    }
+    .article-related-content__date {
+        color: #be1e2d;
+    }
+	h3 {
 		padding-bottom: 15px;
 		margin-bottom: 20px;
 	}
