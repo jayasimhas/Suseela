@@ -3688,6 +3688,8 @@ body.lightboxed {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1em;
       font-weight: bold; }
+  .ID-responsive-table-modal#modal-comparefinancialresults .table-wrapper {
+    overflow: hidden; }
 
 .idi-table-heading {
   color: #ffffff;
@@ -4097,7 +4099,8 @@ body.lightboxed {
 
 #tankerPureChemPage .R16 .sub-item, #onOrderTable .R16 .sub-item {
   width: 32%;
-  text-align: right; }
+  text-align: right;
+  border: 1px solid transparent; }
   #tankerPureChemPage .R16 .sub-item:nth-child(even), #onOrderTable .R16 .sub-item:nth-child(even) {
     width: 50%; }
 
