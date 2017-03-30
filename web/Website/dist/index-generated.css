@@ -2256,6 +2256,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-size: 1.25rem;
   margin-bottom: 20px; }
 
+#main-carousel .li-content-company p.view-more-info.li-content-company__headline {
+  font-size: 14px;
+  font-size: 0.875rem; }
+
 #main-carousel .li-content-graph {
   border: none;
   background-color: #eeeeee;
@@ -2509,15 +2513,14 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #mycarousel1 .companylogo, #mycarousel2 .companylogo {
     float: left;
     width: 43%;
-    margin-top: 20px; }
+    margin-top: 9px; }
     #mycarousel1 .companylogo img, #mycarousel2 .companylogo img {
       max-width: 100px;
       max-height: 60px; }
   #mycarousel1 .companyLinks, #mycarousel2 .companyLinks {
     float: left;
     width: 57%;
-    margin-top: 10px;
-    margin-top: 0.625rem;
+    margin-top: 3px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.25em;
     font-weight: 400; }
