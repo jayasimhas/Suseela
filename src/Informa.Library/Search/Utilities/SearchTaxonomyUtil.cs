@@ -21,23 +21,22 @@ namespace Informa.Library.Search.Utilities
         private const string AgencyRegulator = "agencyRegulator";
         private const string AnimalHealth = "animalhealth";
         private const string Commercial = "commercial";
-        private const string Commodities = "commodities";
+        private const string Commodities = "iegvu";
         private const string CommodityFactors = "commodityfactors";
         private const string Companies = "companies";
         private const string CropProtection = "cropprotection";
-        private const string AgriIndustries = "agriindustries";
+        private const string AgriIndustries = "industries";
         //Maritime        
-        private const string MaritimeCompanies = "maritimecompanies";
-        private const string HotPicks = "hotpicks";
+        private const string MaritimeCompanies = "companies";       
         private const string Markets = "markets";
         private const string Regulars = "regulars";
         private const string Sectors = "sectors";
         private const string Topic = "topic";
         //pharma
         private const string Subjects = "subjects";
-        private const string TherapyAreas = "therapyareas";
+        private const string TherapyAreas = "areas";
         private const string DeviceAreas = "deviceareas";
-        private const string PharmaIndustries = "pharmaindustries";
+        private const string PharmaIndustries = "industries";
 
 
         public static string GetSearchUrl(params ITaxonomy_Item[] taxonomyItems)
@@ -111,10 +110,6 @@ namespace Informa.Library.Search.Utilities
                         else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CompaniesTaxonomyFolder"), parentPath))
                         {
                             key = MaritimeCompanies;
-                        }
-                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.HotTopicsTaxonomyFolder"), parentPath))
-                        {
-                            key = HotPicks;
                         }
                         else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.MarketsTaxonomyFolder"), parentPath))
                         {
