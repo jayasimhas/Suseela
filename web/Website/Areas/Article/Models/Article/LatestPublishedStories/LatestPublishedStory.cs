@@ -16,8 +16,8 @@ namespace Informa.Web.Areas.Article.Models.Article.LatestPublishedStories
         public IEnumerable<Guid> ContentType { get; set; }
         public IEnumerable<Guid> MediaType { get; set; }
         public string LoadMoreText { get; set; }
-        public bool IsDisplayDate { get; set; }
-        public string LatestStoriesComponentTitle { get; set; }
+        public bool IsDisplayDate { get; set; }       
         public bool IsDisableBackground { get; set; }
+        public string ComponentTitle { get; set; }
     }
 }
