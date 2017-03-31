@@ -17,7 +17,8 @@ namespace Informa.Library.Publishing.Scheduled.Events
                 Assert.ArgumentNotNull(args, "args");
                 Item item = Sitecore.Events.Event.ExtractParameter(args, 0) as Item;
                 var now = DateTime.Now;
-                if (item != null && item.Database.Name.ToLower() == "master" && string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase) && item.Versions.Count > 0)
+                var wfState = item.State.GetWorkflowState();
+                if (item != null && item.Database.Name.ToLower() == "master" && string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase) && item.Versions.Count > 0 && wfState.FinalState)
                 {
                     if (((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime == default(DateTime) || ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime == null)
                     {
