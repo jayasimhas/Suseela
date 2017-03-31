@@ -43,7 +43,7 @@
           'lineHeight'      : $this.css('lineHeight'),
           'fontWeight'      : 'normal',
           'letterSpacing'   : $this.css('letterSpacing'),
-          'backgroundColor' : 'rgb(255, 255, 255)',
+          'backgroundColor' : '#fff',
           'color'           : settings.suggestionColor,
           'fontKerning'     : $this.css('fontKerning'),
           'top'             : '0',

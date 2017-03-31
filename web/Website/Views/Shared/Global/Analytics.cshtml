@@ -159,12 +159,16 @@
 <script>
     var recaptchaAskTheAnalyst;
     var recaptchaEmail;
-    var myCallBack = function() {        
-        recaptchaAskTheAnalyst = grecaptcha.render('recaptchaAskTheAnalyst', {
-            'sitekey': '@Model.CaptchaSiteKey' 
-        });                
-        recaptchaEmail = grecaptcha.render('recaptchaEmail', {
-            'sitekey': '@Model.CaptchaSiteKey' 
-        });
+    var myCallBack = function () {
+        if ($('#recaptchaAskTheAnalyst').length > 0) {
+            recaptchaAskTheAnalyst = grecaptcha.render('recaptchaAskTheAnalyst', {
+                'sitekey': '@Model.CaptchaSiteKey'
+            });
+        }
+        if ($('#recaptchaEmail').length > 0) {
+            recaptchaEmail = grecaptcha.render('recaptchaEmail', {
+                'sitekey': '@Model.CaptchaSiteKey'
+            });
+        }
     };
 </script>

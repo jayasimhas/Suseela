@@ -18,13 +18,16 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.Site;
 using Sitecore.Data.Items;
 using Sitecore.Data.Fields;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Web.Areas.Account.ViewModels.Management
 {
     public class SubscriptionsViewModel : GlassViewModel<ISubscriptions_Page>
     {
         public readonly ITextTranslator TextTranslator;
+        public readonly IVerticalRootContext VerticalRootContext;
         public readonly ISiteRootContext SiterootContext;
+        public readonly ISiteRootsContext SiterootsContext;
         public readonly IAuthenticatedUserContext UserContext;
         public readonly ISignInViewModel SignInViewModel;
         private readonly ILog _logger;
@@ -43,7 +46,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             IFindSitePublicationByCode findSitePublication,
             IItemReferences itemReferences,
             ILog logger,
-            ISiteRootContext siteRootContext)
+            ISiteRootContext siteRootContext,
+            ISiteRootsContext siterootsContext,
+            IVerticalRootContext verticalRootContext)
         {
             TextTranslator = translator;
             UserContext = userContext;
@@ -58,6 +63,9 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
                 && w.ExpirationDate >= DateTime.Now.AddMonths(-6))
                 .OrderByDescending(o => o.ExpirationDate);
             SiterootContext = siteRootContext;
+            SiterootsContext = siterootsContext;
+            VerticalRootContext = verticalRootContext;
+
 
         }
 
@@ -108,15 +116,20 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         {
             try
             {
-                if (SiterootContext.Item.Entitlement_Type != null &&
-                   SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.SiteLevelEntitlementType))
+                var siteRoot = Sitecorepublications.FirstOrDefault(eachChild => eachChild["Publication Code"].Equals(publication_Code));
+                if (siteRoot != null)
                 {
-                    return EntitlementLevel.Site;
-                }
-                else if (SiterootContext.Item.Entitlement_Type != null &&
-                   SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
-                {
-                    return EntitlementLevel.Channel;
+                    LookupField entitlementType = (LookupField)siteRoot.Fields["Entitlement Type"];
+                    if (entitlementType != null && entitlementType.TargetItem != null &&
+                       entitlementType.TargetItem.ID.Guid.Equals(ItemReferences.SiteLevelEntitlementType))
+                    {
+                        return EntitlementLevel.Site;
+                    }
+                    else if (entitlementType != null && entitlementType.TargetItem != null &&
+                      entitlementType.TargetItem.ID.Guid.Equals(ItemReferences.ChannelLevelEntitlementType))
+                    {
+                        return EntitlementLevel.Channel;
+                    }
                 }
             }
             catch (Exception ex)
@@ -153,53 +166,48 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
         {
             IEnumerable<SubscriptionChannelViewModel> mappedChannelItems = new List<SubscriptionChannelViewModel>();
             IChannels_Page ChannelPage = null;
-            var verticalRootItem = GlassModel.GetAncestors<IVertical_Root>().FirstOrDefault();
-            if (verticalRootItem != null)
+            try
             {
-                try
+                var siteRoot = SiterootsContext?.SiteRoots.FirstOrDefault(eachChild => eachChild.Publication_Code.Equals(productCode));
+                if (siteRoot != null)
                 {
-                    var siteRoot =
-                        verticalRootItem._ChildrenWithInferType.OfType<ISite_Root>()
-                            .FirstOrDefault(eachChild => eachChild.Publication_Code.Equals(productCode));
-                    if (siteRoot != null)
+                    if (siteRoot.Entitlement_Type != null)
                     {
-                        if (siteRoot.Entitlement_Type != null)
+                        if (siteRoot.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
                         {
-                            if (siteRoot.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType))
-                            {
-                                ChannelPage = siteRoot._ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault()
-                              ._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
-                            }
+                            ChannelPage = siteRoot._ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault()
+                          ._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
                         }
+                    }
 
-                        if (ChannelPage != null)
+                    if (ChannelPage != null)
+                    {
+                        var channelItems = ChannelPage._ChildrenWithInferType.OfType<IChannel_Page>();
+                        if (channelItems.Any())
                         {
-                            var channelItems = ChannelPage._ChildrenWithInferType.OfType<IChannel_Page>();
-                            if (channelItems.Any())
-                            {
-                                mappedChannelItems =
-                                (from ch in channelItems
-                                 let expirationdate = GetChannelExpirationDate(productCode, ch.Channel_Code, ch._Path)
-                                 select new SubscriptionChannelViewModel
-                                 {
-                                     ChannelName = ch.Display_Text,
-                                     ChannelExpirationdate = expirationdate,
-                                     Renewable = WithinRenewRange(expirationdate),
-                                     Subscribable = IsValidSubscription(expirationdate)
-                                 }
-                                );
-                                var filteredChannelItems = mappedChannelItems.Where(p => p.Subscribable == true && p.Renewable == false).Concat(mappedChannelItems.Where(q => q.Renewable == true)).Concat(mappedChannelItems.Where(r => r.Subscribable == false));
-                                return filteredChannelItems;
+                            mappedChannelItems =
+                            (from ch in channelItems
+                             let expirationdate = GetChannelExpirationDate(productCode, ch.Channel_Code, ch._Path)
+                             select new SubscriptionChannelViewModel
+                             {
+                                 ChannelName = ch.Display_Text,
+                                 ChannelExpirationdate = expirationdate,
+                                 Renewable = WithinRenewRange(expirationdate),
+                                 Subscribable = IsValidSubscription(expirationdate)
+                             }
+                            );
+                            var filteredChannelItems = mappedChannelItems.Where(p => p.Subscribable == true && p.Renewable == false).Concat(mappedChannelItems.Where(q => q.Renewable == true)).Concat(mappedChannelItems.Where(r => r.Subscribable == false));
+                            return filteredChannelItems;
 
-                            }
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    _logger.Error("Error in Subscription page", ex);
-                }
             }
+            catch (Exception ex)
+            {
+                _logger.Error("Error in Subscription page", ex);
+            }
+
             return mappedChannelItems;
         }
 
