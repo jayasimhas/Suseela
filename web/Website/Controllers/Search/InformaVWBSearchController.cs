@@ -53,7 +53,7 @@ namespace Informa.Web.Controllers.Search
             _cacheProvider = cacheProvider;
         }
         // GET: InformaVWBSearch       
-        public VWBSearchQueryResults Get(string vertCode, string pubCode)
+        public VWBSearchQueryResults Get(string verticalroot, string pubCode)
         {
             if (string.IsNullOrEmpty(pubCode))
             {
