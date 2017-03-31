@@ -9,7 +9,7 @@ namespace Informa.Library.Utilities.WebUtils
 		public void Refresh()
 		{
             if (!HttpContext.Current.Response.IsRequestBeingRedirected)
-                HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl);
+                HttpContext.Current.Response.Redirect(HttpContext.Current.Request.RawUrl,true);
 		}
 	}
 }

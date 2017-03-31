@@ -1,7 +1,6 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.Presentation;
 using Informa.Library.User.Authentication;
-using Informa.Library.Services.Captcha;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Jabberwocky.Glass.Autofac.Attributes;
 using Informa.Library.Authors;
@@ -17,7 +16,6 @@ namespace Informa.Web.ViewModels.PopOuts
 		protected readonly IRenderingItemContext ArticleRenderingContext;
 		protected readonly IAuthenticatedUserContext UserContext;
 		protected readonly IStaff_Item Author;
-		protected readonly IRecaptchaService RecaptchaSettings;
         protected readonly IAuthorIndexClient AuthorIndexClient;
         protected readonly IHttpContextProvider HttpContext;
 
@@ -25,14 +23,12 @@ namespace Informa.Web.ViewModels.PopOuts
 				ITextTranslator textTranslator,
 				IRenderingItemContext articleRenderingContext,
 				IAuthenticatedUserContext userContext,
-				IRecaptchaService recaptchaSettings,
                 IAuthorIndexClient authorIndexClient,
                 IHttpContextProvider httpContext)
 		{
 			TextTranslator = textTranslator;
 			ArticleRenderingContext = articleRenderingContext;
 			UserContext = userContext;
-			RecaptchaSettings = recaptchaSettings;
             AuthorIndexClient = authorIndexClient;
             HttpContext = httpContext;
 
@@ -58,8 +54,5 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string NoticeText => TextTranslator.Translate("Article.EmailPopout.Notice");
 		public string AuthorName => Author.First_Name + " " + Author.Last_Name;
         public string AuthorId => Author._Id.ToString("B");
-		public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
-
-
 	}
 }

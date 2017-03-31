@@ -55,7 +55,7 @@ namespace Informa.Web.Controllers
 				return;
 
 			string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
-			HttpContext.Current.Response.RedirectPermanent(newPath);
+			HttpContext.Current.Response.RedirectPermanent(newPath,true);
 		}
 
 		/// <summary>
@@ -69,7 +69,7 @@ namespace Informa.Web.Controllers
 				return;
 
 			string newPath = ArticleSearch.GetArticleCustomPath(a);
-			HttpContext.Current.Response.RedirectPermanent(newPath);
+			HttpContext.Current.Response.RedirectPermanent(newPath,true);
 		}
 
 	}
