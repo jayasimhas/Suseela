@@ -3939,7 +3939,8 @@ body.lightboxed {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100%;
-    display: block; }
+    display: block;
+    text-align: right; }
     .ID-Responsive-Table .owl-item .year_heading span.sub-item {
       width: 50%;
       float: left; }

@@ -5625,7 +5625,7 @@ $(function () {
 			    category = "";
 
 			Parent.find('.table').empty();
-			debugger;
+
 			for (var key in HeaderData) {
 				if (key !== "ID") {
 					Header += "<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
@@ -11214,8 +11214,9 @@ function formController(opts) {
 			} else {
 				currentForm = $(event.target).closest('form');
 			}
-			var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id'),
-			    sendRecaptcha = captchaId === 'recaptchaAskTheAnalyst' ? recaptchaAskTheAnalyst : recaptchaEmail;
+			var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id');
+			var sendRecaptcha = undefined;
+			if (captchaId != undefined) sendRecaptcha = captchaId === 'recaptchaAskTheAnalyst' ? recaptchaAskTheAnalyst : recaptchaEmail;
 			// If In Future More Captcha will come in same page
 			/*
              var sendRecaptcha;
@@ -11286,9 +11287,11 @@ function formController(opts) {
 
 					//// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse();
+					var captchaResponse = undefined;
 					// add recaptcha if it exists in the form
-					if (sendRecaptcha !== undefined) var captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse(sendRecaptcha);
+					if (sendRecaptcha !== undefined) {
+						captchaResponse = grecaptcha == null ? undefined : grecaptcha.getResponse(sendRecaptcha);
+					}
 
 					if (captchaResponse !== undefined) inputData['RecaptchaResponse'] = captchaResponse;
 
@@ -16918,7 +16921,7 @@ var Zepto = (function () {
           'lineHeight': $this.css('lineHeight'),
           'fontWeight': 'normal',
           'letterSpacing': $this.css('letterSpacing'),
-          'backgroundColor': 'rgb(255, 255, 255)',
+          'backgroundColor': '#fff',
           'color': settings.suggestionColor,
           'fontKerning': $this.css('fontKerning'),
           'top': '0',
