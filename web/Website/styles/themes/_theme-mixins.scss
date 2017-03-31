@@ -76,6 +76,10 @@
         &__hoverable:hover:before {
             background-color: $hover-bars;
         }
+		
+		&__hoverable.activate:before {
+            background-color: $hover-bars;
+        }
 
         &__section-title a {
             color: inherit;
