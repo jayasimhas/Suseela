@@ -231,7 +231,7 @@ namespace Informa.Web.ViewModels
 
             var company = DcdReader.GetCompanyByRecordId(id);
             if (!(company?.RecordNumber).HasContent()) return;
-            HttpContext.Current.Response.Redirect($"/companies/{company.RecordNumber}");
+            HttpContext.Current.Response.Redirect($"/companies/{company.RecordNumber}",true);
         }
     }
 }
