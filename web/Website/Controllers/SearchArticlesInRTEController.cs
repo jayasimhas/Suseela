@@ -54,7 +54,7 @@ namespace Informa.Web.Controllers
                     var result = new ArticleItem
                     {
                         _Id = article.ID.ToGuid(),
-                        _Name = article.Name,
+                        _Name = article.Fields[IArticleConstants.TitleFieldName].Value,
                         _Path = article.Paths.Path
                     };
                     return result;
