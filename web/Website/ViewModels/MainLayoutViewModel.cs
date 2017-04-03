@@ -13,6 +13,8 @@ using Informa.Library.Services.AccountManagement;
 using System.Collections.Generic;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using System;
+using System.Configuration;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Web.ViewModels
 {
@@ -20,8 +22,12 @@ namespace Informa.Web.ViewModels
 	{
 
 	    private readonly IDependencies _dependencies;
+        protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        //protected readonly ISiteRootContext SiteRootContext;
+        protected readonly IGlobalSitecoreService GlobalService;
 
-	    [AutowireService(true)]
+        [AutowireService(true)]
 	    public interface IDependencies
 	    {
             ISiteDebuggingAllowedContext SiteDebuggingAllowedContext { get; }
@@ -35,10 +41,14 @@ namespace Informa.Web.ViewModels
         }
 
         protected readonly ISiteRootContext SiteRootContext;
-        public MainLayoutViewModel(IDependencies dependencies, ISiteRootContext siteRootContext)
+        public MainLayoutViewModel(IDependencies dependencies, ISiteRootContext siteRootContext, IAuthenticatedUserContext authenticatedUserContext, ISalesforceConfigurationContext salesforceConfigurationContext, IGlobalSitecoreService globalService)
 	    {
 	        _dependencies = dependencies;
             SiteRootContext = siteRootContext;
+            AuthenticatedUserContext = authenticatedUserContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+            GlobalService = globalService;
+            SeamlessLogin();
         }
         
 	    public bool IsSiteDebuggingAllowed => _dependencies.SiteDebuggingAllowedContext.IsAllowed;
@@ -87,6 +97,36 @@ namespace Informa.Web.ViewModels
                 }
             }
             return verticalDomains;
+        }
+
+       public void SeamlessLogin()
+            {
+                // Check seamless login is enabled
+                if (ConfigurationManager.AppSettings["EnableSeamlessLogin"] != "true")
+                    return;
+                // Check if IDE is enabled (Enabled for Agri & Maritime), if not return, else proceed
+                if (!SalesforceConfigurationContext.IsNewSalesforceEnabled)
+                    return;
+                // Check user is authenticated, if authenticated return, else proceed
+                if (AuthenticatedUserContext.IsAuthenticated)
+                    return;
+                //Check if the seamless login cookie exists. if not exist return, else proceed.
+                if (HttpContext.Current.Request.Cookies["Seamless"] == null)
+                    return;
+                //Redirect user to Salesforce
+                HttpContext.Current.Response.Redirect(GetAuthorizationRequestUrl(), true);
+                HttpContext.Current.Response.End();
+                HttpContext.Current.Response.Flush();
+                return;
+            }
+        private string GetAuthorizationRequestUrl()
+        {
+            string CurVerticalName = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
+            return SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
+        }
+        private string GetCallbackUrl(string url)
+        {
+            return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{url}";
         }
     }
 }

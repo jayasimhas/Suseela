@@ -14,6 +14,6 @@ namespace Informa.Library.User.Authentication
      string GetVerticalCookieName();
      int GetCookieTimeOut();
      string GetLoginCookieSubdomain();
-     
-    }
+     void CreateSeamlessCookie();
+   }
 }

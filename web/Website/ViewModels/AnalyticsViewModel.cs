@@ -100,7 +100,7 @@ namespace Informa.Web.ViewModels
 
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
-        public string PageTitleAnalytics => GlassModel?.Title ?? string.Empty;
+        public string PageTitleAnalytics => GlassModel?.Title ?? (Sitecore.Context.Item.Fields["Title"] != null? Sitecore.Context.Item.Fields["Title"].Value : string.Empty);
         public string PageType => Sitecore.Context.Item.TemplateName;
         public string AdDomain => SiteRootContext.Item.Ad_Domain;
         public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
