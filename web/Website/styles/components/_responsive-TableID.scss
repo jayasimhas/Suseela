@@ -151,6 +151,7 @@
 				.year_heading span{ 
 					width:100%;
 					display: block;
+					text-align: right;
 					&.sub-item {
 						width: 50%;
 						float: left;
@@ -352,6 +353,7 @@
 		.sub-item{
 			width: 32%;
 			text-align: right;
+			border: 1px solid transparent;
 			&:nth-child(even){
 				width: 50%;
 			}

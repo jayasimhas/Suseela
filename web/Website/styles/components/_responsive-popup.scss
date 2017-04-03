@@ -32,6 +32,9 @@
 			@include textMix('Roboto', 1em, bold);
         }
     }
+    &#modal-comparefinancialresults .table-wrapper {
+        overflow: hidden;
+    }
 }
 .idi-table-heading {
     color: $color-white;  
@@ -86,7 +89,7 @@
 .table-wrapper {
     width: 100%;
     border-top: none;
-    @include breakpoint('medium') {
+    @media (max-width: 1024px) {
         overflow-x: scroll;
         border: 1px solid #d1d3d4;
     }
@@ -152,11 +155,11 @@
                 fill: $color-white !important;
             }
             &[type="ascending"] {
-                top: -5px;
+                top: 5px;
                 transform: rotate(180deg);
             }
             &[type="descending"] {
-                top: 10px;
+                top: 20px;
             }
             svg {
                 height: 25px;
@@ -168,5 +171,18 @@
                 }
             }
         }
+    }
+    .tableRow {
+        .tableHead, .tableCell {
+            &:first-child {
+                padding-left: 20px;
+            }
+            &:last-child {
+                padding-right: 20px;
+            }
+        }
+    }
+    .tableHead:last-child {
+        padding-right: 40px !important;
     }
 }

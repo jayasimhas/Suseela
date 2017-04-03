@@ -46,6 +46,7 @@ namespace Informa.Web.Areas.Article.Controllers
             PublicationName = rootContext.Item.Publication_Name;
             IsDisplayDate = Parameters?.Display_Published_Date ?? false;
             IsDisableBackground = Parameters?.Disable_Background ?? false;
+            ComponentTitle = Parameters?.Component_Title;
         }
         /// <summary>
         /// Get latest published strories in first call
@@ -78,8 +79,8 @@ namespace Informa.Web.Areas.Article.Controllers
             latest.MediaType = MediaType;
             latest.IsDisplayDate = IsDisplayDate;
             latest.IsDisableBackground = IsDisableBackground;
-            latest.LoadMoreText = TextTranslator.Translate("Load.More.Text");
-            latest.LatestStoriesComponentTitle = TextTranslator.Translate("Latest.Published.Stories.Component.Title");
+            latest.LoadMoreText = TextTranslator.Translate("Load.More.Text");            
+            latest.ComponentTitle = ComponentTitle;
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
         }
 
@@ -93,6 +94,7 @@ namespace Informa.Web.Areas.Article.Controllers
         public IList<Guid> MediaType { get; set; }
         public bool IsDisplayDate { get; set; }
         public bool IsDisableBackground { get; set; }
+        public string ComponentTitle { get; set; }
         public string RemoveSpecialCharactersFromGuid(string guid)
         {
             return guid.Replace("-", "").Replace("{", "").Replace("}", "").ToLower();

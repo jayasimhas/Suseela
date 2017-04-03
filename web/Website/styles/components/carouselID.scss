@@ -84,7 +84,9 @@
 		  font-size: 1.25rem;
 		  margin-bottom: 20px;
 		}
-		
+		.li-content-company p.view-more-info.li-content-company__headline {
+		   font-size: 0.875rem;
+		}
 		.li-content-graph {
 		  border: none;
 		  background-color: #eeeeee;
@@ -389,7 +391,7 @@
 	.companylogo{
 		float: left;
 		width: 43%;
-		margin-top: 20px;
+		margin-top: 9px;
 		img{
 			max-width: 100px;
 			max-height: 60px;
@@ -398,7 +400,7 @@
 	.companyLinks{
 		float: left;
 		width: 57%;
-		margin-top: 0.625rem;
+		margin-top: 3px;
 		@include textMix('Roboto', 1.25em, 400);
 		
 	}

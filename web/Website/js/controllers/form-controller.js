@@ -44,7 +44,9 @@ function formController(opts) {
 			} else {
 				currentForm = $(event.target).closest('form');
 			}
-			var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id'),
+			var captchaId = $(currentForm).find('.g-recaptcha:visible').attr('id');
+			var sendRecaptcha = undefined;
+			if(captchaId != undefined)
                 sendRecaptcha = (captchaId === 'recaptchaAskTheAnalyst') ? recaptchaAskTheAnalyst : recaptchaEmail;
 		    // If In Future More Captcha will come in same page
 		    /*
@@ -120,10 +122,11 @@ function formController(opts) {
 
 				    //// 25/10/2016 Commented captcha code to fix the js console error. Raju/Sonia will provide fix of this.
 					// add recaptcha if it exists in the form
-					var captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse();
+					var captchaResponse = undefined;
 					// add recaptcha if it exists in the form
-                    if (sendRecaptcha !== undefined)
-                        var captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse(sendRecaptcha); 
+                    if (sendRecaptcha !== undefined) {
+                        captchaResponse = (grecaptcha == null) ? undefined : grecaptcha.getResponse(sendRecaptcha); 
+                    }
 
 					if (captchaResponse !== undefined)
 						inputData['RecaptchaResponse'] = captchaResponse;

@@ -53,7 +53,7 @@ namespace Informa.Web.Controllers.Search
             _cacheProvider = cacheProvider;
         }
         // GET: InformaVWBSearch       
-        public VWBSearchQueryResults Get(string vertCode, string pubCode)
+        public VWBSearchQueryResults Get(string verticalroot, string pubCode)
         {
             if (string.IsNullOrEmpty(pubCode))
             {
@@ -100,7 +100,16 @@ namespace Informa.Web.Controllers.Search
                     {
                         if (!vwb.Taxonomies.ContainsKey(tax._Id.ToString()))
                         {
-                            vwb.Taxonomies.Add(tax._Id.ToString(), !string.IsNullOrEmpty(tax.Item_Name) ? tax.Item_Name : tax._Name);
+                            if (tax._Path.Contains("Environment Globals"))
+                                vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path.Replace("/sitecore/content/Environment Globals/Taxonomy/", ""));
+                            else if (tax._Path.Contains("Agri"))
+                                vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path.Replace("/sitecore/content/Agri/Vertical Globals/Taxonomy/", ""));
+                            else if (tax._Path.Contains("Maritime"))
+                                vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path.Replace("/sitecore/content/Maritime/Vertical Globals/Taxonomy/", ""));
+                            else if (tax._Path.Contains("Pharma"))
+                                vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path.Replace("/sitecore/content/Pharma/Vertical Globals/Taxonomy/", ""));
+                            else
+                                vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path);
                         }
                     }
                 }

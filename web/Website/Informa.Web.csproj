@@ -2126,6 +2126,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\UserDefined\CmsCustomization.config" />
+    <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config.template" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />

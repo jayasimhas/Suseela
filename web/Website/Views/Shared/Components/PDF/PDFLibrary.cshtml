@@ -3,7 +3,6 @@
 
 <div class="pdfs-section">
     @*commodities*@
-
     <table width="100%" border="0" cellpadding="15" cellspacing="0" id="pdfLibrary">
         <tbody>
             <tr>
@@ -15,6 +14,15 @@
             {
                 foreach (var pdf in Model.Pdfs)
                 {
+                    var data_info = "{";
+                    data_info += "\"event_name\":\"download_pdf_click\",";
+                    data_info += "\"page_name\":\"" + Model.PageName + "\",";
+                    data_info += "\"ga_eventCategory\" : \"PDF Download\" , \"ga_eventAction\" : \"Download PDF Click\",";
+                    data_info += "\"ga_eventLabel\":\" " + pdf.IssueNumber + "\",";
+                    data_info += "\"download_file_category \": \"PDF Download\",";
+                    data_info += "\"download_file_name \":\" " + pdf.IssueNumber + "\",\"download_file_url \":\"" + pdf.PdfPageUrl + "\"";
+                    data_info += "}";
+
                     //Listing Static PDFs
                     if (pdf.TypeOfPdf == PdfType.Static)
                     {
@@ -22,16 +30,25 @@
                             <td align="left" id="pdfLibrary">@pdf.IssueDate.ToString("dd MMM yyyy")</td>
                             @if (!string.IsNullOrEmpty(@pdf.PdfPageUrl))
                             {
-                                <td align="left"><a href="@pdf.PdfPageUrl" target="_blank" class="click-utag"
-                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@pdf.IssueNumber</a>&nbsp;</td> 
-                                <td align="left"><a href="@pdf.PdfPageUrl" target="_blank" class="click-utag"
-                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
+                                <td align="left">
+                                    <a href="@pdf.PdfPageUrl" target="_blank" class="click-utag"
+                                       data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@pdf.IssueNumber</a>&nbsp;
+                                </td>
+                                <td align="left">
+                                    <a href="@pdf.PdfPageUrl" target="_blank" class="click-utag"
+                                       data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@Model.DownloadLinkText&nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a>
+                                </td>
                             }
                             else
                             {
-                                <td align="left"><a href="@pdf.PdfPageUrl" onclick="return false" class="click-utag"
-                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@pdf.IssueNumber</a>&nbsp;</td>
-                                <td align="left"><a href="@pdf.PdfPageUrl" onclick="return false">@Model.DownloadLinkText &nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a></td>
+                                <td align="left">
+                                    <a href="@pdf.PdfPageUrl" onclick="return false" class="click-utag"
+                                       data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@pdf.IssueNumber</a>&nbsp;
+                                </td>
+                                <td align="left">
+                                    <a href="@pdf.PdfPageUrl" onclick="return false" class="click-utag"
+                                       data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>@Model.DownloadLinkText&nbsp;<img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" /></a>
+                                </td>
                             }
 
                         </tr>
@@ -44,17 +61,17 @@
 
                             @if (!string.IsNullOrEmpty(pdf.IssueNumber))
                             {
-                                <td align="left">@Html.ActionLink(pdf.IssueNumber, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })&nbsp;</td>
+                                <td align="left">@Html.ActionLink(pdf.IssueNumber, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank", @class = "click-utag", @data_info })&nbsp;</td>
                             }
                             else
                             {
                                 <td></td>
                             }
                             <td align="left">
-                                @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText}, new { target="_blank"})
+                                @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank", @class = "click-utag", @data_info })
                                 &nbsp;
                                 <a href="@Url.Action("GenerateAndDownloadPdf", "PdfDownload", new { pdfPageUrl = pdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = pdf.PdfTitle, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank" class="click-utag"
-                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.PdfTitle", "download_file_category": "PDF Download", "download_file_name": "@pdf.PdfTitle", "download_file_url": "@pdf.PdfPageUrl"}'>
+                                   data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@pdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@pdf.IssueNumber", "download_file_url": "@pdf.PdfPageUrl"}'>
                                     <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
                                 </a>
 
@@ -64,49 +81,45 @@
 
                 }
             }
-
             @if (Model != null && Model.PersonalizedPdfs != null && Model.PersonalizedPdfs.Count() > 0)
-               {
+            {
 
-                            foreach(var perPdf in Model.PersonalizedPdfs)
+                foreach (var perPdf in Model.PersonalizedPdfs)
+                {
+                    var data_info = "{";
+                    data_info += "\"event_name\":\"download_pdf_click\",";
+                    data_info += "\"page_name\":\"" + Model.PageName + "\",";
+                    data_info += "\"ga_eventCategory\" : \"PDF Download\" , \"ga_eventAction\" : \"Download PDF Click\",";
+                    data_info += "\"ga_eventLabel\":\" " + perPdf.IssueNumber + "\",";
+                    data_info += "\"download_file_category \": \"PDF Download\",";
+                    data_info += "\"download_file_name \":\" " + perPdf.IssueNumber + "\",\"download_file_url \":\"" + perPdf.PdfPageUrl + "\"";
+                    data_info += "}";
+
+
+                    if (perPdf.TypeOfPdf == PdfType.Personalized)
+                    {
+                        <tr>
+                            <td align="left" id="pdfLibrary"> @perPdf.IssueDate.ToString("dd MMM yyyy") </td>
+                            @if (!string.IsNullOrEmpty(perPdf.IssueNumber))
                             {
-                                if (perPdf.TypeOfPdf == PdfType.Personalized)
-                                {
-                            <tr>
-                                <td align = "left" id = "pdfLibrary" > @perPdf.IssueDate.ToString("dd MMM yyyy") </td>
-                                @if (!string.IsNullOrEmpty(perPdf.IssueNumber))
-                                {
-                                    <td align="left">@Html.ActionLink(perPdf.IssueNumber, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })&nbsp;</td>
-                                }
-                                else
-                                {
-                                    <td></td>
-                                }
-                                    <td align="left">
-                                        @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank" })
-                                        &nbsp;
-                                        <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank" class="click-utag"
-                                            data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@perPdf.PdfTitle", "download_file_category": "PDF Download", "download_file_name": "@perPdf.PdfTitle", "download_file_url": "@perPdf.PdfPageUrl"}'>
-                                            <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
-                                        </a>
-                                    </td>
-                            </tr>
-                                }
+                                <td align="left">@Html.ActionLink(perPdf.IssueNumber, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank", @class = "click-utag", @data_info })&nbsp;</td>
                             }
+                            else
+                            {
+                                <td></td>
+                            }
+                            <td align="left">
+                                @Html.ActionLink(Model.DownloadLinkText, "GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText }, new { target = "_blank", @class = "click-utag", @data_info })
+                                &nbsp;
+                                <a href="@Url.Action("GenerateAndDownloadPersonalizePdf", "PdfDownload", new { pdfPageUrl = perPdf.PdfPageUrl, userEmail = Model.userEmail, PdfTitle = perPdf.PdfTitle, perPdf.PubStartDate, perPdf.PubEndDate, perPdf.ArticleSize, DataToolLinkDesc = Model.DataToolLinkDesc, DataToolLinkText = Model.DataToolLinkText })" target="_blank" class="click-utag"
+                                   data-info='{"event_name": "download_pdf_click", "page_name": "@Model.PageName", "ga_eventCategory": "PDF Download", "ga_eventAction":"Download PDF Click", "ga_eventLabel": "@perPdf.IssueNumber", "download_file_category": "PDF Download", "download_file_name": "@perPdf.IssueNumber", "download_file_url": "@perPdf.PdfPageUrl"}'>
+                                    <img src="-/media/441ff771e0904a09972d06d5e2774c69.ashx?h=20&amp;w=23" alt="download-arrow" width="23" height="20" class="download-icon" style="border-width: 0px; border-style: solid;" />
+                                </a>
+                            </td>
+                        </tr>
+                    }
                 }
+            }
         </tbody>
     </table>
-    @*<input type="hidden" id="jobTilesCount" value="2" />
-    <input type="hidden" id="noofJobsPerPage" value="1" />
-
-    @if (true)
-    {
-        <div class="pagination clearfix">
-            <ul class="nums">
-                <li><a href="javascript:void(0);" class="prev"></a></li>
-                <li><span></span></li>
-                <li><a href="javascript:void(0);" class="next"></a></li>
-            </ul>
-        </div>
-    }*@
 </div>

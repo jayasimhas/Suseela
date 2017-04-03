@@ -51,6 +51,21 @@ namespace Informa.Library.User.Authentication
             HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
         }
 
+        public void CreateSeamlessCookie()
+        {
+            if(HttpContext.Current.Request.Cookies["Seamless"] == null)
+            {
+                //Current Vertical subdomain
+                string domain = GetLoginCookieSubdomain();
+                HttpCookie LoggedinKeyCookie = new HttpCookie("Seamless");
+                LoggedinKeyCookie.Value = "yes";
+                LoggedinKeyCookie.Expires = DateTime.MaxValue;
+                LoggedinKeyCookie.Domain = domain;
+                HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
+            }
+               
+        }
+
         public void DeleteLoginCookie()
         {
             //Current vertical cookiename

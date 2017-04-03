@@ -18,15 +18,16 @@
 				Parent = $('#' + ModalId),
 				HeaderData = data[0],
 				Header = "",
-				category = "";
+				category = "",
+				CreateList = window.jsonMappingData;
 
 			
 			Parent.find('.table').empty();
-			for(var key in HeaderData) {
-				if(key !== "ID") {
-					Header+="<div class='tableHead'><strong>" + key + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
-				}
-			}
+	        var Header = "<div class='tableHead' data-head='Company'><strong>Company</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
+            for(var key in CreateList) {
+                    Header+="<div class='tableHead' data-head='"+ CreateList[key].Key +"'><strong>" + CreateList[key].Value + "</strong><a href='#' class='sort-modal' type='ascending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a><a href='#' class='sort-modal' type='descending'><svg class='sorting-arrows__arrow sorting-arrows__arrow--down'><use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='/dist/img/svg-sprite.svg#sorting-arrow-table'></use></svg></a></div>";
+            }
+
 			Parent.find('.table').append('<div class="tableRow">' + Header + '</div>');
 			for(var key in data) {
 				var Item = data[key],
@@ -102,7 +103,7 @@
 
 			
 			Parent.find('.owl-carousel').owlCarousel({
-               loop:false,
+               loop:true,
                margin:0,
                merge:true,
                nav:false,
@@ -158,7 +159,7 @@
         			Category = $(this).attr('category'),
         			ModalData = window.ResponsiveModalJSON,
         			UpdatedJson = [],
-        			HeadingText = $(this).parents('.tableHead').find('strong').text();
+        			HeadingText = $(this).parents('.tableHead').attr('data-head');
 
 
         		$('#modal-comparefinancialresults .tableRow').each(function() {

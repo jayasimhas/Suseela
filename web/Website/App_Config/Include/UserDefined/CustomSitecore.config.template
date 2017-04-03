@@ -350,6 +350,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Search.NewerArticlesBoosting.Enabled" value="${Search.NewerArticlesBoosting.Enabled}" />
       <setting name="Search.NewerArticlesBoosting.BoostFunction" value="${Search.NewerArticlesBoosting.BoostFunction}" />
       <!--Vertical names-->
+      <setting name="Environment.Globals" value="Environment Globals"></setting>
       <setting name="Vertical.Pharma" value="Pharma"></setting>
       <setting name="Vertical.Agri" value="Agri"></setting>
       <setting name="Vertical.Maritime" value="Maritime"></setting>

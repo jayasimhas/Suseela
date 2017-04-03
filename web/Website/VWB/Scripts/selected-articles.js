@@ -201,7 +201,7 @@ $(document)
             } 
 			$.ajax({
 				url: 'api/InformaVWBSearch',
-				data: { 'vertCode': ddlVerticals, 'pubCode': getSelectedVal },
+				data: { 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal },
 				dataType: 'json',
 				type: 'GET',
 				success: function (data) {

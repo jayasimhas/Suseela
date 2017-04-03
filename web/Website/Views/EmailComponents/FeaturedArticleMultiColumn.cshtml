@@ -112,108 +112,124 @@
                                                     {
                                                         <tr>
                                                             <tdaily-alert-bodyd valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; line-height: 150%; text-align: left;">
-                                                                <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@article.Title</span></a>
+                                                                <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@Editable(article, m=>m.Title))</span></a>
                                                             </tdaily-alert-bodyd>
                                                         </tr>
                                                     }
                                                     <tr>
                                                         <td>
-                                                            @if (article.Featured_Image_16_9 != null)
-                                                            {
-                                                                <img src="@article.Featured_Image_16_9.Src" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
-                                                            }
-                                                            <div>
-                                                                @if ((Model.GlassModel != null && Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
-                                                                {
-                                                                    <p class="daily-alert-body" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777777;margin-bottom: 0;text-align: left">
-                                                                        <strong style="color: #@Model.GetBrandingFontColor()">@Html.Raw(Model.GetAuthorByLine(index))</strong>
-                                                                    </p>
-                                                                }
-                                                                @if (Model.GlassModel != null && Model.GlassModel.ShowShortDescription)
-                                                           {
-                                                                    <span style="padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Georgia, serif; font-size: 14px; line-height: 150%; color: #777777; text-transform: none !important; text-align: left;">
-                                                                        @{
-                                                                            if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index]))
-                                                                            {
-                                                                                if (Model.ShortDescrpitons[index].Length > 220)
-                                                                                {
-                                                                                    if (IsInEditingMode)
-                                                                                    {
-                                                                                        if (index == 0)
-                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
-                                                                                        }
-                                                                                        if (index == 1)
-                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
-                                                                                        }
-                                                                                        if (index == 2)
-                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
-                                                                                        }
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if (index == 0)
-                                                                                        {
-                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleOne.Substring(0, 220));
-                                                                                        }
-                                                                                        if (index == 1)
-                                                                                        {
-                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleTwo.Substring(0, 220));
-                                                                                        }
-                                                                                        if (index == 2)
-                                                                                        {
-                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleThree.Substring(0, 220));
-                                                                                        }
-                                                                                    }
+    @if (article.Featured_Image_16_9 != null)
+    {
+        if (IsInEditingMode)
+        {
+            <table>
+                <tr>
+                    <td class="one-third layout-padded-right" valign="top">
+                        @RenderImage(article, m => m.Featured_Image_16_9, isEditable: true)
+                    </td>
+                </tr>
+            </table>
+        }
+        else
+        {
 
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    if (IsInEditingMode)
-                                                                                    {
-                                                                                        if (index == 0)
-                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
-                                                                                        }
-                                                                                        if (index == 1)
-                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
-                                                                                        }
-                                                                                        if (index == 2)
-                                                                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
-                                                                                        }
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if (index == 0)
-                                                                                        {
-                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleOne);
-                                                                                        }
-                                                                                        if (index == 1)
-                                                                                        {
-                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleTwo);
-                                                                                        }
-                                                                                        if (index == 2)
-                                                                                        {
-                                                                                            @Html.Raw(Model.GlassModel.DescriptionArticleThree);
-                                                                                        }
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                if (IsInEditingMode)
-                                                                                {
-                                                                                    @Editable(Model, m => m.Articles[index].Summary);
-                                                                                }
-                                                                                else
-                                                                                {
-                                                                                    @Html.Raw(Model.Articles[index].Summary);
-                                                                                }
+            <img src="@article.Featured_Image_16_9.Src" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
+        }
+    }
 
-                                                                            }
-                                                                        }
-                                                                    </span>
-                                                                            }
-                                                            </div>
-                                                        </td>
+            }
+            <div>
+                @if ((Model.GlassModel != null && Model.GlassModel.ShowGreyBackground || Model.GlassModel.ShowPinkBackground) && !Model.GlassModel.HideAuthorByLine)
+                {
+                    <p class="daily-alert-body" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777777;margin-bottom: 0;text-align: left">
+                        <strong style="color: #@Model.GetBrandingFontColor()">@Html.Raw(Model.GetAuthorByLine(index))</strong>
+                    </p>
+                }
+                @if (Model.GlassModel != null && Model.GlassModel.ShowShortDescription)
+                {
+                    <span style="padding: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;  font-family: Georgia, serif; font-size: 14px; line-height: 150%; color: #777777; text-transform: none !important; text-align: left;">
+                        @{
+                            if (Model.ShortDescrpitons != null && !string.IsNullOrWhiteSpace(Model.ShortDescrpitons[index]))
+                            {
+                                if (Model.ShortDescrpitons[index].Length > 220)
+                                {
+                                    if (IsInEditingMode)
+                                    {
+                                        if (index == 0)
+                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
+                                        }
+                                        if (index == 1)
+                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
+                                        }
+                                        if (index == 2)
+                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (index == 0)
+                                        {
+                                            @Html.Raw(Model.GlassModel.DescriptionArticleOne.Substring(0, 220));
+                                        }
+                                        if (index == 1)
+                                        {
+                                            @Html.Raw(Model.GlassModel.DescriptionArticleTwo.Substring(0, 220));
+                                        }
+                                        if (index == 2)
+                                        {
+                                            @Html.Raw(Model.GlassModel.DescriptionArticleThree.Substring(0, 220));
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+                                    if (IsInEditingMode)
+                                    {
+                                        if (index == 0)
+                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleOne);
+                                        }
+                                        if (index == 1)
+                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleTwo);
+                                        }
+                                        if (index == 2)
+                                        { @Editable(Model, m => Model.GlassModel.DescriptionArticleThree);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (index == 0)
+                                        {
+                                            @Html.Raw(Model.GlassModel.DescriptionArticleOne);
+                                        }
+                                        if (index == 1)
+                                        {
+                                            @Html.Raw(Model.GlassModel.DescriptionArticleTwo);
+                                        }
+                                        if (index == 2)
+                                        {
+                                            @Html.Raw(Model.GlassModel.DescriptionArticleThree);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                if (IsInEditingMode)
+                                {
+                                    @Editable(Model, m => m.Articles[index].Summary);
+                                }
+                                else
+                                {
+                                    @Html.Raw(Model.Articles[index].Summary);
+                                }
+
+                            }
+                        }
+                    </span>
+                            }
+            </div>
+        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -334,7 +350,7 @@ if (Model.Articles != null && Model.Articles.Any() &&
                                                                                                             <tr>
                                                                                                                 <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
                                                                                                                     <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl">
-                                                                                                                        <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #@Model.GetBrandingFontColor() !important;text-decoration: none;padding: 0px" class="featured__title">@article.Title</span>
+                                                                                                                        <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #@Model.GetBrandingFontColor() !important;text-decoration: none;padding: 0px" class="featured__title">@Editable(article, m=>m.Title)</span>
                                                                                                                     </a>
                                                                                                                 </td>
                                                                                                             </tr>
@@ -455,7 +471,7 @@ if (Model.Articles != null && Model.Articles.Any() &&
                                                             <td height="110" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="pad">
                                                                 <a href="@article.LinkableUrl" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #@Model.GetBrandingFontColor() !important; text-decoration: none !important">
                                                                     <span style="font-size: 20px; line-height: 28px; color: #@Model.GetBrandingFontColor() !important; text-decoration: none !important; font-weight: bold;">
-                                                                        @article.Title
+                                                                       @Editable(article, m=>m.Title)
                                                                     </span>
                                                                 </a>
                                                             </td>
@@ -592,7 +608,7 @@ if (Model.Articles != null && Model.Articles.Any() &&
                                                                                                                     <tr>
                                                                                                                         <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
                                                                                                                             <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl">
-                                                                                                                                <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #@Model.GetBrandingFontColor() !important;text-decoration: none;padding: 0px" class="featured__title">@article.Title</span>
+                                                                                                                                <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #@Model.GetBrandingFontColor() !important;text-decoration: none;padding: 0px" class="featured__title">@Editable(article,m=>m.Title)</span>
                                                                                                                             </a>
                                                                                                                         </td>
                                                                                                                     </tr>

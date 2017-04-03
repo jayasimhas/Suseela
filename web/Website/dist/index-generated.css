@@ -2256,6 +2256,10 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   font-size: 1.25rem;
   margin-bottom: 20px; }
 
+#main-carousel .li-content-company p.view-more-info.li-content-company__headline {
+  font-size: 14px;
+  font-size: 0.875rem; }
+
 #main-carousel .li-content-graph {
   border: none;
   background-color: #eeeeee;
@@ -2509,15 +2513,14 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   #mycarousel1 .companylogo, #mycarousel2 .companylogo {
     float: left;
     width: 43%;
-    margin-top: 20px; }
+    margin-top: 9px; }
     #mycarousel1 .companylogo img, #mycarousel2 .companylogo img {
       max-width: 100px;
       max-height: 60px; }
   #mycarousel1 .companyLinks, #mycarousel2 .companyLinks {
     float: left;
     width: 57%;
-    margin-top: 10px;
-    margin-top: 0.625rem;
+    margin-top: 3px;
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 1.25em;
     font-weight: 400; }
@@ -3685,6 +3688,8 @@ body.lightboxed {
       font-family: "Roboto", Helvetica, Arial, sans-serif;
       font-size: 1em;
       font-weight: bold; }
+  .ID-responsive-table-modal#modal-comparefinancialresults .table-wrapper {
+    overflow: hidden; }
 
 .idi-table-heading {
   color: #ffffff;
@@ -3737,7 +3742,7 @@ body.lightboxed {
 .table-wrapper {
   width: 100%;
   border-top: none; }
-  @media (max-width: 800px) {
+  @media (max-width: 1024px) {
     .table-wrapper {
       overflow-x: scroll;
       border: 1px solid #d1d3d4; } }
@@ -3792,16 +3797,25 @@ body.lightboxed {
     #modal-annualresults .tableHead .sort-modal svg, #modal-comparefinancialresults .tableHead .sort-modal svg {
       fill: #ffffff !important; }
     #modal-annualresults .tableHead .sort-modal[type="ascending"], #modal-comparefinancialresults .tableHead .sort-modal[type="ascending"] {
-      top: -5px;
+      top: 5px;
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
     #modal-annualresults .tableHead .sort-modal[type="descending"], #modal-comparefinancialresults .tableHead .sort-modal[type="descending"] {
-      top: 10px; }
+      top: 20px; }
     #modal-annualresults .tableHead .sort-modal svg, #modal-comparefinancialresults .tableHead .sort-modal svg {
       height: 25px;
       width: 20px; }
     #modal-annualresults .tableHead .sort-modal.active svg, #modal-comparefinancialresults .tableHead .sort-modal.active svg {
       fill: #ffffff; }
+
+#modal-annualresults .tableRow .tableHead:first-child, #modal-annualresults .tableRow .tableCell:first-child, #modal-comparefinancialresults .tableRow .tableHead:first-child, #modal-comparefinancialresults .tableRow .tableCell:first-child {
+  padding-left: 20px; }
+
+#modal-annualresults .tableRow .tableHead:last-child, #modal-annualresults .tableRow .tableCell:last-child, #modal-comparefinancialresults .tableRow .tableHead:last-child, #modal-comparefinancialresults .tableRow .tableCell:last-child {
+  padding-right: 20px; }
+
+#modal-annualresults .tableHead:last-child, #modal-comparefinancialresults .tableHead:last-child {
+  padding-right: 40px !important; }
 
 .ID-Responsive-Table {
   position: relative;
@@ -3934,7 +3948,8 @@ body.lightboxed {
     float: right; }
   .ID-Responsive-Table .owl-item .year_heading span {
     width: 100%;
-    display: block; }
+    display: block;
+    text-align: right; }
     .ID-Responsive-Table .owl-item .year_heading span.sub-item {
       width: 50%;
       float: left; }
@@ -4094,7 +4109,8 @@ body.lightboxed {
 
 #tankerPureChemPage .R16 .sub-item, #onOrderTable .R16 .sub-item {
   width: 32%;
-  text-align: right; }
+  text-align: right;
+  border: 1px solid transparent; }
   #tankerPureChemPage .R16 .sub-item:nth-child(even), #onOrderTable .R16 .sub-item:nth-child(even) {
     width: 50%; }
 
@@ -4228,7 +4244,6 @@ body.lightboxed {
     transform: scaleY(1);
     max-height: 999px; }
   .main-menu__section-title.is-active:before {
-    background-color: #f7941e;
     content: "";
     display: block;
     height: 100%;
@@ -7671,7 +7686,9 @@ section: UI Elements
   height: 464px;
   overflow: auto;
   margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  margin-top: 16px;
+  margin-top: 1rem; }
 
 .companyList .article-topics__li:before {
   position: relative; }
@@ -7802,15 +7819,10 @@ section: UI Elements
 
 .compareChart {
   font-family: "Roboto", Arial Narrow, sans-serif;
-  width: 790px;
+  width: 100%;
   margin-bottom: 32px;
-  margin-bottom: 2rem; }
-  @media screen and (min-width: 801px) and (max-width: 1024px) {
-    .compareChart {
-      width: 594px; } }
-  @media (max-width: 800px) {
-    .compareChart {
-      width: 100%; } }
+  margin-bottom: 2rem;
+  position: relative; }
   .compareChart .eachChartData {
     margin-bottom: 10px; }
     @media (max-width: 480px) {
@@ -10884,6 +10896,22 @@ div#feedbacklite.fbl_r {
     .rolling-stream.white-bg .scrollbar-container {
       background-color: #ffffff !important; }
   .rolling-stream h3, .rolling-stream .article-call-to-action__title {
+    position: relative; }
+    .rolling-stream h3:after, .rolling-stream .article-call-to-action__title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 4px;
+      width: calc( 100% - 15px);
+      background: #be1e2d;
+      left: 0; }
+  .rolling-stream h5 a, .rolling-stream .alert-success p a, .alert-success .rolling-stream p a, .rolling-stream .alert-error p a, .alert-error .rolling-stream p a, .rolling-stream .article-call-to-action__subtitle a, .rolling-stream h5 .pop-out__reset-password, .rolling-stream .alert-success p .pop-out__reset-password, .alert-success .rolling-stream p .pop-out__reset-password, .rolling-stream .alert-error p .pop-out__reset-password, .alert-error .rolling-stream p .pop-out__reset-password, .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password, .rolling-stream h5 .sortable-table__list-toggler, .rolling-stream .alert-success p .sortable-table__list-toggler, .alert-success .rolling-stream p .sortable-table__list-toggler, .rolling-stream .alert-error p .sortable-table__list-toggler, .alert-error .rolling-stream p .sortable-table__list-toggler, .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler, .rolling-stream h5 .mobile-table-exit, .rolling-stream .alert-success p .mobile-table-exit, .alert-success .rolling-stream p .mobile-table-exit, .rolling-stream .alert-error p .mobile-table-exit, .alert-error .rolling-stream p .mobile-table-exit, .rolling-stream .article-call-to-action__subtitle .mobile-table-exit {
+    color: #231f20; }
+    .rolling-stream h5 a:hover, .rolling-stream .alert-success p a:hover, .alert-success .rolling-stream p a:hover, .rolling-stream .alert-error p a:hover, .alert-error .rolling-stream p a:hover, .rolling-stream .article-call-to-action__subtitle a:hover, .rolling-stream h5 .pop-out__reset-password:hover, .rolling-stream .alert-success p .pop-out__reset-password:hover, .alert-success .rolling-stream p .pop-out__reset-password:hover, .rolling-stream .alert-error p .pop-out__reset-password:hover, .alert-error .rolling-stream p .pop-out__reset-password:hover, .rolling-stream .article-call-to-action__subtitle .pop-out__reset-password:hover, .rolling-stream h5 .sortable-table__list-toggler:hover, .rolling-stream .alert-success p .sortable-table__list-toggler:hover, .alert-success .rolling-stream p .sortable-table__list-toggler:hover, .rolling-stream .alert-error p .sortable-table__list-toggler:hover, .alert-error .rolling-stream p .sortable-table__list-toggler:hover, .rolling-stream .article-call-to-action__subtitle .sortable-table__list-toggler:hover, .rolling-stream h5 .mobile-table-exit:hover, .rolling-stream .alert-success p .mobile-table-exit:hover, .alert-success .rolling-stream p .mobile-table-exit:hover, .rolling-stream .alert-error p .mobile-table-exit:hover, .alert-error .rolling-stream p .mobile-table-exit:hover, .rolling-stream .article-call-to-action__subtitle .mobile-table-exit:hover {
+      color: #be1e2d; }
+  .rolling-stream .article-related-content__date {
+    color: #be1e2d; }
+  .rolling-stream h3, .rolling-stream .article-call-to-action__title {
     padding-bottom: 15px;
     margin-bottom: 20px; }
   .rolling-stream .rolling-stream-wrapper {
@@ -11218,7 +11246,8 @@ div#feedbacklite.fbl_r {
   margin-bottom: 20px;
   margin-bottom: 1.25rem; }
   .package-img-wrapper img {
-    width: 100%; }
+    width: 100%;
+    height: 100%; }
   .package-img-wrapper.first {
     height: 220px; }
   .package-img-wrapper.second {
@@ -15218,6 +15247,9 @@ main {
 .theme-pink-sheet .main-menu__hoverable:hover:before {
   background-color: #BC608C; }
 
+.theme-pink-sheet .main-menu__hoverable.activate:before {
+  background-color: #BC608C; }
+
 .theme-pink-sheet .main-menu__section-title a, .theme-pink-sheet .main-menu__section-title .pop-out__reset-password, .theme-pink-sheet .main-menu__section-title .sortable-table__list-toggler, .theme-pink-sheet .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
@@ -15355,6 +15387,12 @@ main {
   .theme-pink-sheet .quickfactsbulleted li:before use > svg,
   .theme-pink-sheet .quick-facts__list--ul li:before use > svg {
     fill: #BC608C; }
+
+.theme-pink-sheet .action-flag--red {
+  color: #d82b6a; }
+
+.theme-pink-sheet .topic-subtopic__title {
+  border-left: 12px solid #d82b6a; }
 
 .theme-pink-sheet .article-topics__li ul li:before,
 .theme-pink-sheet .quickfactsbulleted li ul li:before,
@@ -15613,6 +15651,9 @@ main {
 .theme-rose-sheet .main-menu__hoverable:hover:before {
   background-color: #DD3580; }
 
+.theme-rose-sheet .main-menu__hoverable.activate:before {
+  background-color: #DD3580; }
+
 .theme-rose-sheet .main-menu__section-title a, .theme-rose-sheet .main-menu__section-title .pop-out__reset-password, .theme-rose-sheet .main-menu__section-title .sortable-table__list-toggler, .theme-rose-sheet .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
@@ -15750,6 +15791,12 @@ main {
   .theme-rose-sheet .quickfactsbulleted li:before use > svg,
   .theme-rose-sheet .quick-facts__list--ul li:before use > svg {
     fill: #DD3580; }
+
+.theme-rose-sheet .action-flag--red {
+  color: #c8206e; }
+
+.theme-rose-sheet .topic-subtopic__title {
+  border-left: 12px solid #c8206e; }
 
 .theme-rose-sheet .article-topics__li ul li:before,
 .theme-rose-sheet .quickfactsbulleted li ul li:before,
@@ -16008,6 +16055,9 @@ main {
 .theme-medtech .main-menu__hoverable:hover:before {
   background-color: #FDD95F; }
 
+.theme-medtech .main-menu__hoverable.activate:before {
+  background-color: #FDD95F; }
+
 .theme-medtech .main-menu__section-title a, .theme-medtech .main-menu__section-title .pop-out__reset-password, .theme-medtech .main-menu__section-title .sortable-table__list-toggler, .theme-medtech .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
@@ -16145,6 +16195,12 @@ main {
   .theme-medtech .quickfactsbulleted li:before use > svg,
   .theme-medtech .quick-facts__list--ul li:before use > svg {
     fill: #034a7c; }
+
+.theme-medtech .action-flag--red {
+  color: #007cc3; }
+
+.theme-medtech .topic-subtopic__title {
+  border-left: 12px solid #007cc3; }
 
 .theme-medtech .article-topics__li ul li:before,
 .theme-medtech .quickfactsbulleted li ul li:before,
@@ -16403,6 +16459,9 @@ main {
 .theme-invivo .main-menu__hoverable:hover:before {
   background-color: #b03718; }
 
+.theme-invivo .main-menu__hoverable.activate:before {
+  background-color: #b03718; }
+
 .theme-invivo .main-menu__section-title a, .theme-invivo .main-menu__section-title .pop-out__reset-password, .theme-invivo .main-menu__section-title .sortable-table__list-toggler, .theme-invivo .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
@@ -16540,6 +16599,12 @@ main {
   .theme-invivo .quickfactsbulleted li:before use > svg,
   .theme-invivo .quick-facts__list--ul li:before use > svg {
     fill: #7e2718; }
+
+.theme-invivo .action-flag--red {
+  color: #ca4d2c; }
+
+.theme-invivo .topic-subtopic__title {
+  border-left: 12px solid #ca4d2c; }
 
 .theme-invivo .article-topics__li ul li:before,
 .theme-invivo .quickfactsbulleted li ul li:before,
@@ -16798,6 +16863,9 @@ main {
 .theme-commodities .main-menu__hoverable:hover:before {
   background-color: #F5821F; }
 
+.theme-commodities .main-menu__hoverable.activate:before {
+  background-color: #F5821F; }
+
 .theme-commodities .main-menu__section-title a, .theme-commodities .main-menu__section-title .pop-out__reset-password, .theme-commodities .main-menu__section-title .sortable-table__list-toggler, .theme-commodities .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
@@ -16935,6 +17003,12 @@ main {
   .theme-commodities .quickfactsbulleted li:before use > svg,
   .theme-commodities .quick-facts__list--ul li:before use > svg {
     fill: #c12d3b; }
+
+.theme-commodities .action-flag--red {
+  color: #9E310D; }
+
+.theme-commodities .topic-subtopic__title {
+  border-left: 12px solid #9E310D; }
 
 .theme-commodities .article-topics__li ul li:before,
 .theme-commodities .quickfactsbulleted li ul li:before,
@@ -17233,6 +17307,9 @@ main {
 .theme-insurance-day .main-menu__hoverable:hover:before {
   background-color: #b0173d; }
 
+.theme-insurance-day .main-menu__hoverable.activate:before {
+  background-color: #b0173d; }
+
 .theme-insurance-day .main-menu__section-title a, .theme-insurance-day .main-menu__section-title .pop-out__reset-password, .theme-insurance-day .main-menu__section-title .sortable-table__list-toggler, .theme-insurance-day .main-menu__section-title .mobile-table-exit {
   color: inherit; }
 
@@ -17370,6 +17447,12 @@ main {
   .theme-insurance-day .quickfactsbulleted li:before use > svg,
   .theme-insurance-day .quick-facts__list--ul li:before use > svg {
     fill: #b0173d; }
+
+.theme-insurance-day .action-flag--red {
+  color: #DE4361; }
+
+.theme-insurance-day .topic-subtopic__title {
+  border-left: 12px solid #DE4361; }
 
 .theme-insurance-day .article-topics__li ul li:before,
 .theme-insurance-day .quickfactsbulleted li ul li:before,
@@ -17666,7 +17749,10 @@ main {
     color: #ffffff; }
 
 .theme-lloydslist .main-menu__hoverable:hover:before {
-  background-color: #1191D1; }
+  background-color: #002d4f; }
+
+.theme-lloydslist .main-menu__hoverable.activate:before {
+  background-color: #002d4f; }
 
 .theme-lloydslist .main-menu__section-title a, .theme-lloydslist .main-menu__section-title .pop-out__reset-password, .theme-lloydslist .main-menu__section-title .sortable-table__list-toggler, .theme-lloydslist .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -17674,7 +17760,7 @@ main {
 .theme-lloydslist .main-menu__footer-link a, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler, .theme-lloydslist .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-lloydslist .main-menu__footer-link a:hover, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:hover, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:hover, .theme-lloydslist .main-menu__footer-link a:active, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:active, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:active, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:active, .theme-lloydslist .main-menu__footer-link a:focus, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:focus, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:focus {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .main-menu__section-link, .theme-lloydslist .main-menu__section-link:hover, .theme-lloydslist .main-menu__section-link:active, .theme-lloydslist .main-menu__section-link:focus {
   color: #58595b; }
@@ -17787,8 +17873,8 @@ main {
   border-bottom: 4px solid #1191D1; }
 
 .theme-lloydslist .article-interview__question:before {
-  background-color: rgba(15, 84, 135, 0.3);
-  border-color: rgba(15, 84, 135, 0.5); }
+  background-color: rgba(0, 45, 79, 0.3);
+  border-color: rgba(0, 45, 79, 0.5); }
 
 .theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }
@@ -17805,6 +17891,12 @@ main {
   .theme-lloydslist .quickfactsbulleted li:before use > svg,
   .theme-lloydslist .quick-facts__list--ul li:before use > svg {
     fill: #1191D1; }
+
+.theme-lloydslist .action-flag--red {
+  color: #1191D1; }
+
+.theme-lloydslist .topic-subtopic__title {
+  border-left: 12px solid #1191D1; }
 
 .theme-lloydslist .article-topics__li ul li:before,
 .theme-lloydslist .quickfactsbulleted li ul li:before,

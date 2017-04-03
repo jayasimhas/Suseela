@@ -8982,6 +8982,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Disable_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Disable_Background { get; set; }
+        /// <summary>
+        /// The Component Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 11237427-87CC-4F29-8442-1D595505C7A0</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Component_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Component_Title { get; set; }
     }
     /// <summary>
     /// ILatest_Published_Stories_Options Interface
@@ -9055,6 +9064,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
         /// </summary>
         [SitecoreField(ILatest_Published_Stories_OptionsConstants.Disable_BackgroundFieldName, Setting = SitecoreFieldSettings.InferType)]
         bool Disable_Background { get; set; }
+        /// <summary>
+        /// The Component Title field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 11237427-87CC-4F29-8442-1D595505C7A0</para> 
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Published_Stories_OptionsConstants.Component_TitleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Component_Title { get; set; }
     }
 
     public static partial class ILatest_Published_Stories_OptionsConstants
@@ -9084,6 +9102,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Tem
 
         public static readonly ID Disable_BackgroundFieldId = new ID("384C0B79-F74C-4A15-A370-F9146452D681");
         public const string Disable_BackgroundFieldName = "Disable Background";
+
+        public static readonly ID Component_TitleFieldId = new ID("11237427-87CC-4F29-8442-1D595505C7A0");
+        public const string Component_TitleFieldName = "Component Title";
     }
 
 }
