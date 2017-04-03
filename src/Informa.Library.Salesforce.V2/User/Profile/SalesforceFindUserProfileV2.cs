@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace Informa.Library.Salesforce.V2.User.Profile
 {
-    public class SalesforceFindUserProfileV2 : ISalesforceFindUserProfileV2, IUserProfileFactory, IFindUserProfileByUsernameV2
+    public class SalesforceFindUserProfileV2 : ISalesforceFindUserProfileV2, IUserProfileFactoryV2, IFindUserProfileByUsernameV2
     {
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IHttpClientHelper HttpClientHelper;

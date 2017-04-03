@@ -12,15 +12,18 @@ namespace Informa.Library.User.Entitlement
         protected readonly IEntitlementChecksEnabled EntitlementChecksEnabled;
         protected readonly IEntitlementsContexts EntitlementsContexts;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
 
         public EntitlementAccessContext(
             IEntitlementChecksEnabled entitlementChecksEnabled,
             IEntitlementsContexts entitlementsContexts,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext)
         {
             EntitlementChecksEnabled = entitlementChecksEnabled;
             EntitlementsContexts = entitlementsContexts;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            AuthenticatedUserEntitlementsContext = authenticatedUserEntitlementsContext;
         }
 
         public IEntitlementAccess Find(IEntitledProduct entitledProduct)
@@ -35,13 +38,23 @@ namespace Informa.Library.User.Entitlement
                 return Create(null, EntitledAccessLevel.None);
             }
 
-            var entitlements = EntitlementsContexts.
+            IEnumerable<EntitlementAccess> entitlements = null;
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            {
+                entitlements = EntitlementsContexts.
                 SelectMany(ec => ec.Entitlements.Where(e => CheckEntitlement(entitledProduct, e)).
                 Select(e => Create(e, ec.AccessLevel)));
+            }
+            else
+            {
+                entitlements = EntitlementsContexts.
+                SelectMany(ec => ec.Entitlements.Where(e => CheckEntitlement(entitledProduct, e)).
+                Select(e => Create(e, ec.AccessLevel)));
+            }
 
             foreach (var accessLevel in OrderedAccessLevels)
             {
-                var entitlementAccess = entitlements.FirstOrDefault(e => e.AccessLevel == accessLevel);
+                var entitlementAccess = entitlements != null ? entitlements.FirstOrDefault(e => e.AccessLevel == accessLevel) : null;
 
                 if (entitlementAccess != null)
                 {
@@ -79,7 +92,7 @@ namespace Informa.Library.User.Entitlement
             {
                 return entitledProduct.Channels.Contains(entitlement.ProductCode) || (!entitledProduct.Channels.Any() && !entitledProduct.IsFree && !string.IsNullOrEmpty(entitlement.ProductCode));
             }
-            else if(entitledProduct.EntitlementLevel == EntitlementLevel.Item)
+            else if (entitledProduct.EntitlementLevel == EntitlementLevel.Item)
             {
                 return entitledProduct.Channels.Contains(entitlement.ProductCode);
             }

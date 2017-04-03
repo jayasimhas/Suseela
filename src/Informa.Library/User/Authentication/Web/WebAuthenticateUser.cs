@@ -13,14 +13,14 @@ namespace Informa.Library.User.Authentication.Web
         protected readonly IAuthenticateUserV2 AuthenticateUserV2;
         protected readonly IWebLoginUser LoginWebUser;
         protected readonly IUserSession UserSession;
-        protected readonly IverticalLogin VerticalLogin;
+        protected readonly IVerticalLogin VerticalLogin;
         private const string sessionKey = nameof(WebAuthenticateUser);
         public WebAuthenticateUser(
             IAuthenticateUser authenticateUser,
             IWebLoginUser loginWebUser,
             IUserSession userSession,
             IAuthenticateUserV2 authenticateUserV2,
-            ISalesforceConfigurationContext salesforceConfigurationContext, IverticalLogin verticalLogin)
+            ISalesforceConfigurationContext salesforceConfigurationContext, IVerticalLogin verticalLogin)
         {
             AuthenticateUser = authenticateUser;
             LoginWebUser = loginWebUser;

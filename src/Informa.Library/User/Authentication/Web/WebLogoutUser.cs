@@ -10,10 +10,10 @@ namespace Informa.Library.User.Authentication.Web
     {
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IWebLogoutUserActions Actions;
-        protected readonly IverticalLogin VerticalLogin;
+        protected readonly IVerticalLogin VerticalLogin;
         public WebLogoutUser(
             IAuthenticatedUserContext authenticatedUserContext,
-            IWebLogoutUserActions actions, IverticalLogin verticalLogin)
+            IWebLogoutUserActions actions, IVerticalLogin verticalLogin)
         {
             AuthenticatedUserContext = authenticatedUserContext;
             Actions = actions;

@@ -13,17 +13,18 @@ using Informa.Library.Services.AccountManagement;
 using System.Collections.Generic;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using System;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Web.ViewModels
 {
     public class MainLayoutViewModel : GlassViewModel<I___BasePage>
-	{
+    {
 
-	    private readonly IDependencies _dependencies;
+        private readonly IDependencies _dependencies;
 
-	    [AutowireService(true)]
-	    public interface IDependencies
-	    {
+        [AutowireService(true)]
+        public interface IDependencies
+        {
             ISiteDebuggingAllowedContext SiteDebuggingAllowedContext { get; }
             ITextTranslator TextTranslator { get; }
             IAuthenticatedUserContext AuthenticatedUserContext { get; }
@@ -32,26 +33,27 @@ namespace Informa.Web.ViewModels
             IUserCompanyContext UserCompanyContext { get; }
             IHeadMetaDataGenerator HeadMetaDataGenerator { get; }
             IAccountManagementService AccountManagementService { get; }
+            ISalesforceConfigurationContext SalesforceConfigurationContext { get; }
         }
 
         protected readonly ISiteRootContext SiteRootContext;
         public MainLayoutViewModel(IDependencies dependencies, ISiteRootContext siteRootContext)
-	    {
-	        _dependencies = dependencies;
+        {
+            _dependencies = dependencies;
             SiteRootContext = siteRootContext;
         }
-        
-	    public bool IsSiteDebuggingAllowed => _dependencies.SiteDebuggingAllowedContext.IsAllowed;
+
+        public bool IsSiteDebuggingAllowed => _dependencies.SiteDebuggingAllowedContext.IsAllowed;
         public string PrintedByText => _dependencies.TextTranslator.Translate("Header.PrintedBy");
-		public string UserName => _dependencies.AuthenticatedUserContext.User?.Name ?? string.Empty;
-		public string CorporateName => _dependencies.UserCompanyContext?.Company?.Name;
-	    public string Title => _dependencies.GlobalSitecoreService.GetPageTitle(GlassModel);
-	    public string BodyCssClass => _dependencies.SiteRootContext.GetBodyCssClass();
+        public string UserName => _dependencies.AuthenticatedUserContext.User?.Name ?? string.Empty;
+        public string CorporateName => _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ? string.Empty : _dependencies.UserCompanyContext?.Company?.Name;
+        public string Title => _dependencies.GlobalSitecoreService.GetPageTitle(GlassModel);
+        public string BodyCssClass => _dependencies.SiteRootContext.GetBodyCssClass();
         public string FavIcon => _dependencies.SiteRootContext?.Item.FavIcon?.Src;
         public HtmlString PrintPageHeaderMessage => _dependencies.SiteRootContext.GetPrintHeaderMessage();
         public string CanonicalUrl => GlassModel?.Canonical_Link?.GetLink();
-	    public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
-	    public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
+        public string MetaDataHtml => _dependencies.HeadMetaDataGenerator.GetMetaHtml();
+        public bool IsRestricted => _dependencies.AccountManagementService.IsUserRestricted(GlassModel);
         public string CustomTagsHeader => _dependencies.HeadMetaDataGenerator.GetCustomTags(0);
         public string CustomTagsFooter => _dependencies.HeadMetaDataGenerator.GetCustomTags(1);
         private IVertical_Root VerticalRoot => _dependencies.GlobalSitecoreService.GetVerticalRootAncestor(GlassModel._Id);
@@ -76,13 +78,13 @@ namespace Informa.Web.ViewModels
             if (VerticalRoot != null)
             {
                 var siteRoots = VerticalRoot._ChildrenWithInferType;
-                foreach(var root in siteRoots)
+                foreach (var root in siteRoots)
                 {
-                    if(root._Id != currentRoot_ID && root._TemplateId.Equals(rootTemplate_ID))
+                    if (root._Id != currentRoot_ID && root._TemplateId.Equals(rootTemplate_ID))
                     {
                         var siteSettings = Sitecore.Sites.SiteManager.GetSite(root._Name);
                         if (siteSettings != null)
-                            verticalDomains.Add(root._Name+"|"+siteSettings.Properties["hostName"]);
+                            verticalDomains.Add(root._Name + "|" + siteSettings.Properties["hostName"]);
                     }
                 }
             }
