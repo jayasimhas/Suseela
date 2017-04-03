@@ -1,6 +1,5 @@
 ﻿using Informa.Library.Globalization;
 using Informa.Library.User.Authentication;
-using Informa.Library.Services.Captcha;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Models;
 
@@ -10,16 +9,13 @@ namespace Informa.Web.ViewModels.PopOuts
 	{
 		protected readonly ITextTranslator TextTranslator;
 		protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly IRecaptchaService RecaptchaSettings;
 
 		public EmailSearchPopOutViewModel(
 				ITextTranslator textTranslator,
-				IAuthenticatedUserContext userContext,
-				IRecaptchaService recaptchaSettings)
+				IAuthenticatedUserContext userContext)
 		{
 			TextTranslator = textTranslator;
 			UserContext = userContext;
-			RecaptchaSettings = recaptchaSettings;
 		}
 
 		public string AuthUserEmail => UserContext.User?.Email ?? string.Empty;
@@ -43,6 +39,5 @@ namespace Informa.Web.ViewModels.PopOuts
 		public string EmailLabel => TextTranslator.Translate("Search.EmailPopout.EmailLabel");
 		public string SubjectLabel => TextTranslator.Translate("Search.EmailPopout.SubjectLabel");
 		public string AddMessageLabel => TextTranslator.Translate("Search.EmailPopout.AddMessageLabel");
-		public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
 	}
 }

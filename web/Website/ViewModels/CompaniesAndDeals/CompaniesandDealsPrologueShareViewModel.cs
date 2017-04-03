@@ -1,5 +1,4 @@
 ﻿using Informa.Library.Globalization;
-using Informa.Library.Services.Captcha;
 using Informa.Library.User.Authentication;
 using Informa.Library.Utilities.WebUtils;
 using Informa.Library.Wrappers;
@@ -18,21 +17,18 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 		protected readonly IDCDReader DCDReader;
 		protected readonly IHttpContextProvider HttpContextProvider;
 		protected readonly IAuthenticatedUserContext UserContext;
-		protected readonly IRecaptchaService RecaptchaSettings;
 
 		public CompaniesandDealsShareViewModel(
 								ITextTranslator textTranslator,
 								IDCDReader dcdReader,
 								IHttpContextProvider context,
 								IAuthenticatedUserContext userContext,
-								I___BasePage glassModel,
-								IRecaptchaService recaptchaSettings)
+								I___BasePage glassModel)
 		{
 			TextTranslator = textTranslator;
 			DCDReader = dcdReader;
 			HttpContextProvider = context;
 			UserContext = userContext;
-			RecaptchaSettings = recaptchaSettings;
 
 			var wildcardValue = UrlUtils.GetLastUrlSement(HttpContextProvider.Current);
 			if (glassModel._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
@@ -72,6 +68,5 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 		public string InvalidEmailText => TextTranslator.Translate("DCD.EmailPopout.InvalidEmail");
 		public string EmptyFieldText => TextTranslator.Translate("DCD.EmailPopout.EmptyField");
 		public string NoticeText => TextTranslator.Translate("DCD.EmailPopout.Notice");
-		public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
 	}
 }
