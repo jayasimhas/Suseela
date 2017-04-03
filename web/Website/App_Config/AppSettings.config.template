@@ -33,5 +33,6 @@
   <add key="SSOTimeout" value="${Vertical.SSOTimeout}"/>
   <add key="SSOSubdomain" value="${Vertical.SSOSubdomain}"/>
   <add key="EnableVerticalLogin" value="${VerticalLoginSwitch}"/>
+  <add key="EnableSeamlessLogin" value="true"/>
   <add key="DisableSSLCertificateValidation" value="${CM.DisableSSLCertificateValidation}"/>
 </appSettings>
