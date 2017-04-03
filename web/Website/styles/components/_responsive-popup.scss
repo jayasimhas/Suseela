@@ -155,11 +155,11 @@
                 fill: $color-white !important;
             }
             &[type="ascending"] {
-                top: -5px;
+                top: 5px;
                 transform: rotate(180deg);
             }
             &[type="descending"] {
-                top: 10px;
+                top: 20px;
             }
             svg {
                 height: 25px;
@@ -171,5 +171,18 @@
                 }
             }
         }
+    }
+    .tableRow {
+        .tableHead, .tableCell {
+            &:first-child {
+                padding-left: 20px;
+            }
+            &:last-child {
+                padding-right: 20px;
+            }
+        }
+    }
+    .tableHead:last-child {
+        padding-right: 40px !important;
     }
 }
