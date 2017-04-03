@@ -2,20 +2,19 @@
 
 @if (Model != null)
 {
-    <div class="video-demo">
-        <div class="visible-lg">
-            <div class="video-mini-container">
-                <div class="embed-responsive embed-responsive-16by9">
-                    @if (!string.IsNullOrEmpty(Model.VideoLink))
-                    {
+    if (!string.IsNullOrEmpty(Model.VideoLink) && !string.IsNullOrEmpty(Model.Thumbnail))
+    {
+        <div class="video-demo">
+            <div class="visible-lg">
+                <div class="video-mini-container">
+                    <div class="embed-responsive embed-responsive-16by9">
                         <img src="@Model.Thumbnail" data-videotype="wistia" data-videourl="@Model.VideoLink" alt="@Model.AlternativeText" width="100%" class="video-img img-responsive">
                         <span class="play-icon click-utag" style="display: block;" data-info='{"event_name":"data_tool_watch_video","page_name":"@Sitecore.Context.Item.Fields["Title"].Value","ga_eventCategory":"Data Tool Page","ga_eventAction":"Watch Video","ga_eventLabel":"@Sitecore.Context.Item.Fields["Title"].Value"}'></span>
-                    }
+                    </div>
                 </div>
             </div>
+            <div class="visible-sm">
+            </div>
         </div>
-        <div class="visible-sm">
-        </div>
-    </div>
-
+    }
 }

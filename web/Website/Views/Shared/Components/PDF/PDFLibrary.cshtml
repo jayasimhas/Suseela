@@ -18,9 +18,9 @@
                     data_info += "\"event_name\":\"download_pdf_click\",";
                     data_info += "\"page_name\":\"" + Model.PageName + "\",";
                     data_info += "\"ga_eventCategory\" : \"PDF Download\" , \"ga_eventAction\" : \"Download PDF Click\",";
-                    data_info += "\"ga_eventLabel\":\" " + pdf.IssueNumber + "\",";
-                    data_info += "\"download_file_category \": \"PDF Download\",";
-                    data_info += "\"download_file_name \":\" " + pdf.IssueNumber + "\",\"download_file_url \":\"" + pdf.PdfPageUrl + "\"";
+                    data_info += "\"ga_eventLabel\":" + pdf.IssueNumber + ",";
+                    data_info += "\"download_file_category\":\"PDF Download\",";
+                    data_info += "\"download_file_name\":" + pdf.IssueNumber + "\",download_file_url\":" + pdf.PdfPageUrl + "\"";
                     data_info += "}";
 
                     //Listing Static PDFs
@@ -90,9 +90,9 @@
                     data_info += "\"event_name\":\"download_pdf_click\",";
                     data_info += "\"page_name\":\"" + Model.PageName + "\",";
                     data_info += "\"ga_eventCategory\" : \"PDF Download\" , \"ga_eventAction\" : \"Download PDF Click\",";
-                    data_info += "\"ga_eventLabel\":\" " + perPdf.IssueNumber + "\",";
-                    data_info += "\"download_file_category \": \"PDF Download\",";
-                    data_info += "\"download_file_name \":\" " + perPdf.IssueNumber + "\",\"download_file_url \":\"" + perPdf.PdfPageUrl + "\"";
+                    data_info += "\"ga_eventLabel\":" + perPdf.IssueNumber + ",";
+                    data_info += "\"download_file_category\":\"PDF Download\",";
+                    data_info += "\"download_file_name\":" + perPdf.IssueNumber + "\",download_file_url\":" + perPdf.PdfPageUrl + "\"";
                     data_info += "}";
 
 
