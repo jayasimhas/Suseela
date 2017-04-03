@@ -118,6 +118,17 @@ namespace Informa.Web.Controllers
             return null;
         }
 
+        public Item GetArticleItemByEscenic(string Escenic, Guid publicationGuid = default(Guid))
+        {
+            ArticleItem articleItem = GetArticleByEscenic(Escenic, publicationGuid);
+            if (articleItem != null)
+            {
+                var article = _sitecoreMasterService.GetItem<Item>(articleItem._Id);
+                return article;
+            }
+            return null;
+        }
+
         /// <summary>
         /// Returns the Article which has the corresonding Article Number. Return Type is IArticle
         /// </summary>
@@ -128,10 +139,34 @@ namespace Informa.Web.Controllers
             return GetArticleByNumber(articleNumber, Constants.MasterDb, publicationGuid);
         }
 
+        public ArticleItem GetArticleByEscenic(string EscenicId, Guid publicationGuid = default(Guid))
+        {
+            return GetArticleByEscenic(EscenicId, Constants.MasterDb, publicationGuid);
+        }
+
+
         public ArticleItem GetArticleByNumber(string articleNumber, string databaseName, Guid publicationGuid = default(Guid))
         {
             IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+            
             filter.ArticleNumbers = articleNumber.SingleToList();
+            var results = _articleSearcher.SearchCustomDatabase(filter, databaseName, publicationGuid);
+            if (results.Articles.Any())
+            {
+                var foundArticle = results.Articles.FirstOrDefault();
+                var service = SitecoreFactory(databaseName);
+                if (foundArticle != null)
+                    return service.GetItem<ArticleItem>(foundArticle._Id);
+            }
+            return null;
+        }
+
+
+        public ArticleItem GetArticleByEscenic(string EscenicId, string databaseName, Guid publicationGuid = default(Guid))
+        {
+            IArticleSearchFilter filter = _articleSearcher.CreateFilter();
+
+            filter.EScenicID = EscenicId;
             var results = _articleSearcher.SearchCustomDatabase(filter, databaseName, publicationGuid);
             if (results.Articles.Any())
             {
