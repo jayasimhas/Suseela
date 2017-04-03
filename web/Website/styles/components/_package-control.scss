@@ -292,12 +292,21 @@
 	}
 	&.first{
 		height: 220px;
+		@include breakpoint('small'){
+			height: auto;
+		}
 	}
 	&.second{
 		height: 165.56px;
+		@include breakpoint('small'){
+			height: auto;
+		}
 	}
 	&.third{
 		height: 200px;
+		@include breakpoint('small'){
+			height: auto;
+		}
 	}
 }
 .moreText{
