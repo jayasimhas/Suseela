@@ -19,12 +19,12 @@ namespace Informa.Web.ViewModels.FinanceCompanies
             TextTranslator = textTranslator;
         }
         public string ComponentTitle => TextTranslator.Translate("Company.AllCompaniesComponentTitle");
+        public string financeCompaniesFolder => GlassModel?._Parent._Url;
         public IEnumerable<ICompany_Detail_Page> FinanceCompanies
         {
             get
             {
-                var financeCompaniesFolder = GlassModel?._Parent;
-                return financeCompaniesFolder._ChildrenWithInferType.OfType<ICompany_Detail_Page>();
+                return GlassModel?._Parent._ChildrenWithInferType.OfType<ICompany_Detail_Page>();
             }
         }
     }

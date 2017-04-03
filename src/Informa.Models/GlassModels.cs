@@ -16249,6 +16249,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         Image Logo { get; set; }
 
         /// <summary>
+        /// Logo Call to Action field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: DE302C21-1BA7-4BA5-AEDD-8205F21EAB16</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Logo_Call_to_ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Logo_Call_to_Action { get; set; }
+
+        /// <summary>
         /// Title field.
         /// <para></para>
         /// <para>Field Type: Single-Line-Text</para>		
@@ -16309,6 +16319,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// </summary>
         [SitecoreField(ILatest_Casualties_ComponentConstants.LogoFieldName, Setting = SitecoreFieldSettings.InferType)]
         Image Logo { get; set; }
+
+        /// <summary>
+        /// Logo Call to Action field.
+        /// <para></para>
+        /// <para>Field Type: General Link</para>		
+        /// <para>Field ID: DE302C21-1BA7-4BA5-AEDD-8205F21EAB16</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ILatest_Casualties_ComponentConstants.Logo_Call_to_ActionFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Logo_Call_to_Action { get; set; }
 
         /// <summary>
         /// Title field.
@@ -16374,6 +16394,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
 
         public static readonly ID Casualty_Detail_Page_LinkFieldId = new ID("3A93093B-3FF6-4447-838C-7CB7B25FFBB0");
         public const string Casualty_Detail_Page_LinkFieldName = "Casualty Detail Page Link";
+
+        public static readonly ID Logo_Call_to_ActionFieldId = new ID("DE302C21-1BA7-4BA5-AEDD-8205F21EAB16");
+        public const string Logo_Call_to_ActionFieldName = "Logo Call to Action";
     }
 
 }

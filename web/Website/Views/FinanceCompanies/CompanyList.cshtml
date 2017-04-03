@@ -1,6 +1,7 @@
 ﻿@model  Informa.Web.ViewModels.FinanceCompanies.AllCompanyListModel
+
 <div class="messaging_webUsers article-sidebar">
-    <h2>@Model.ComponentTitle</h2>
+    <h2><a href="@Model.financeCompaniesFolder">@Model.ComponentTitle</a></h2>
     <div class="companyList">
         <ul>
             @foreach (var company in Model.FinanceCompanies)

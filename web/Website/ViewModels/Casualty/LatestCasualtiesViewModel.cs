@@ -43,9 +43,13 @@ namespace Informa.Web.ViewModels.Casualty
         /// </summary>
         public string FeedUrl => GlassModel?.External_Feed_Url;
         /// <summary>
-        /// Casual
+        /// Casualty Detail Page Url
         /// </summary>
         public string CasualtyDetailPageUrl => GlassModel?.Casualty_Detail_Page_Link?.Url;
+        /// <summary>
+        /// Call to action for Logo
+        /// </summary>
+        public string LogoCallToAction => GlassModel?.Logo_Call_to_Action?.Url;
         /// <summary>
         /// Json Latest casualties data
         /// </summary>
