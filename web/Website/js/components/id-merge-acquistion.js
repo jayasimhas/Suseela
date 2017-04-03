@@ -318,7 +318,7 @@
 		autoSuggest: function(data) {
 			var haystackMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-				$('input[deal="Month"]').suggest(this.MonthNames);
+				$('tr.visible-lg input[deal="Month"]').suggest(this.MonthNames);
 
 				var haystackAcquirer = [], haystackTarget = [], haystackTargetSector = [], haystackTargetLocation = [];
 				for(var i = 0; i < data.length; i++) {
@@ -348,10 +348,10 @@
 					}
 				}
 				
-				$('input[deal="Acquirer"]').suggest(haystackAcquirer);
-				$('input[deal="Target"]').suggest(haystackTarget);
-				$('input[deal="TargetSector"]').suggest(haystackTargetSector);
-				$('input[deal="TargetLocation"]').suggest(haystackTargetLocation);
+				$('tr.visible-lg input[deal="Acquirer"]').suggest(haystackAcquirer);
+				$('tr.visible-lg input[deal="Target"]').suggest(haystackTarget);
+				$('tr.visible-lg input[deal="TargetSector"]').suggest(haystackTargetSector);
+				$('tr.visible-lg input[deal="TargetLocation"]').suggest(haystackTargetLocation);
 		},
 		scrollbarSticky: function() {},
 		init: function(data, Parent) {
