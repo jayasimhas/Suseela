@@ -17749,10 +17749,10 @@ main {
     color: #ffffff; }
 
 .theme-lloydslist .main-menu__hoverable:hover:before {
-  background-color: #1191D1; }
+  background-color: #002d4f; }
 
 .theme-lloydslist .main-menu__hoverable.activate:before {
-  background-color: #1191D1; }
+  background-color: #002d4f; }
 
 .theme-lloydslist .main-menu__section-title a, .theme-lloydslist .main-menu__section-title .pop-out__reset-password, .theme-lloydslist .main-menu__section-title .sortable-table__list-toggler, .theme-lloydslist .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -17760,7 +17760,7 @@ main {
 .theme-lloydslist .main-menu__footer-link a, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler, .theme-lloydslist .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-lloydslist .main-menu__footer-link a:hover, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:hover, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:hover, .theme-lloydslist .main-menu__footer-link a:active, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:active, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:active, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:active, .theme-lloydslist .main-menu__footer-link a:focus, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:focus, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:focus {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .main-menu__section-link, .theme-lloydslist .main-menu__section-link:hover, .theme-lloydslist .main-menu__section-link:active, .theme-lloydslist .main-menu__section-link:focus {
   color: #58595b; }
@@ -17873,8 +17873,8 @@ main {
   border-bottom: 4px solid #1191D1; }
 
 .theme-lloydslist .article-interview__question:before {
-  background-color: rgba(15, 84, 135, 0.3);
-  border-color: rgba(15, 84, 135, 0.5); }
+  background-color: rgba(0, 45, 79, 0.3);
+  border-color: rgba(0, 45, 79, 0.5); }
 
 .theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }
