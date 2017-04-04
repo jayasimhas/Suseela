@@ -2190,7 +2190,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   float: left; }
   @media only screen and (min-width: 420px) and (max-width: 1024px) {
     #main-carousel .item-wrapper {
-      width: 50%; } }
+      width: 50%;
+      height: 265px; } }
   @media (max-width: 480px) {
     #main-carousel .item-wrapper {
       width: 100%; } }
@@ -4625,6 +4626,9 @@ header .header-account-access {
         padding: 40px 0;
         padding: 2.5rem 0;
         margin-right: 0px; } }
+    @media (max-width: 480px) {
+      header .header-account-access .header-account-right-access.nomyView {
+        padding: 9px 0; } }
     @media only screen and (min-width: 768px) and (max-width: 1000px) {
       header .header-account-access .header-account-right-access.nomyView {
         margin-right: 16px;
