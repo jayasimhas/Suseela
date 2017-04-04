@@ -45,6 +45,7 @@ namespace Informa.Web.App_Start.Registrations
             builder.RegisterType<Library.User.ResetPassword.Entity.EntityStoreUserResetPassword>().As<IStoreUserResetPassword>();
 
             builder.RegisterType<SalesforceFindUserProfile>().As<IUserProfileFactory>();
+            builder.RegisterType<SalesforceFindUserProfileV2>().As<IUserProfileFactoryV2>();
             builder.RegisterType<SalesforceFindUserProfile>().As<IFindUserProfileByUsername>();
             builder.RegisterType<SalesforceFindUserProfileV2>().As<IFindUserProfileByUsernameV2>();
 

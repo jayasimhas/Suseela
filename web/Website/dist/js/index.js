@@ -12749,19 +12749,19 @@ require('./components/amGraphParam');
 
 require('./components/table_charts');
 
-require('./components/scrollbar.js');
+require('./components/scrollbar');
 
-require('./components/ll-ship-coal-export.js');
+require('./components/ll-ship-coal-export');
 
-require('./components/ll-tanker-pure-chem-page.js');
+require('./components/ll-tanker-pure-chem-page');
 
-require('./components/ll-marketdata-drycargo-ssyal.js');
+require('./components/ll-marketdata-drycargo-ssyal');
 
-require('./components/ll-cockett-bunker.js');
+require('./components/ll-cockett-bunker');
 
-require('./components/ll-ship-roro.js');
+require('./components/ll-ship-roro');
 
-require('./components/ll-ship-container-ship.js');
+require('./components/ll-ship-container-ship');
 
 require('./components/ll-shipContainerShipFixtures');
 
@@ -12775,9 +12775,9 @@ var _newsletterSignup = require('./newsletter-signup');
 
 var _newsletterSignup2 = _interopRequireDefault(_newsletterSignup);
 
-var _searchPageJs = require('./search-page.js');
+var _searchPage = require('./search-page');
 
-var _searchPageJs2 = _interopRequireDefault(_searchPageJs);
+var _searchPage2 = _interopRequireDefault(_searchPage);
 
 var _toggleIcons = require('./toggle-icons');
 
@@ -13553,6 +13553,7 @@ $(document).ready(function () {
             $('.menu-toggler').addClass('is-active');
             $('.header__wrapper .menu-toggler').addClass('is-sticky');
             $('body').addClass('is-frozen');
+            addFixedMenu();
         };
 
         var hideMenu = function hideMenu() {
@@ -13836,6 +13837,23 @@ $(document).ready(function () {
                 mainMenuListItems.each(function () {
                     $('.main-menu-list').append($(this));
                 });
+                if ($('div.main-menu__section').length > 0) {
+                    var mainMenuList = $('div.main-menu__section, div.main-menu-list');
+                    mainMenuList.remove();
+                    $('.main-menu').append("<div class='main-menu-section-list'></div>");
+                    mainMenuList.each(function () {
+                        $('.main-menu-section-list').append($(this));
+                    });
+                    $('.main-menu-section-list').css({
+                        'height': '100%',
+                        'overflow': 'scroll'
+                    });
+                } else {
+                    $('.main-menu-list').css({
+                        'height': '100%',
+                        'overflow': 'scroll'
+                    });
+                }
             }
         };
 
@@ -14103,7 +14121,7 @@ $(document).ready(function () {
     });
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/dynamic-content-recomendation":8,"./components/id-comparechart":9,"./components/id-comparefinancialresults":10,"./components/id-financial-responsive-table":11,"./components/id-merge-acquistion":12,"./components/id-quarterly-responsive-table":13,"./components/id-responsive-table":14,"./components/latest-casuality":15,"./components/ll-casuality-detail":16,"./components/ll-casuality-listing":17,"./components/ll-cockett-bunker.js":18,"./components/ll-fisDryBulk":19,"./components/ll-howeRobinson":20,"./components/ll-market-data":23,"./components/ll-market-data-dryCargo":22,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-marketdata-drycargo-ssyal.js":24,"./components/ll-ship-coal-export.js":25,"./components/ll-ship-container-ship.js":26,"./components/ll-ship-roro.js":27,"./components/ll-shipContainerShipFixtures":28,"./components/ll-tanker-fixtures":29,"./components/ll-tanker-pure-chem-page.js":30,"./components/myview-settings":31,"./components/pagination":32,"./components/personalisation":33,"./components/save-search-component":34,"./components/scrollbar.js":35,"./components/table_charts":36,"./components/video-mini":37,"./controllers/analytics-controller":38,"./controllers/bookmark-controller":39,"./controllers/form-controller":40,"./controllers/lightbox-modal-controller":41,"./controllers/pop-out-controller":42,"./controllers/register-controller":43,"./controllers/reset-password-controller":44,"./controllers/sortable-table-controller":45,"./controllers/tooltip-controller":46,"./jscookie":48,"./modal":49,"./newsletter-signup":50,"./search-page.js":51,"./selectivity-full":52,"./svg4everybody":53,"./toggle-icons":54,"./zepto.dragswap":55,"./zepto.min":56,"./zepto.suggest":57}],48:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/dynamic-content-recomendation":8,"./components/id-comparechart":9,"./components/id-comparefinancialresults":10,"./components/id-financial-responsive-table":11,"./components/id-merge-acquistion":12,"./components/id-quarterly-responsive-table":13,"./components/id-responsive-table":14,"./components/latest-casuality":15,"./components/ll-casuality-detail":16,"./components/ll-casuality-listing":17,"./components/ll-cockett-bunker":18,"./components/ll-fisDryBulk":19,"./components/ll-howeRobinson":20,"./components/ll-market-data":23,"./components/ll-market-data-dryCargo":22,"./components/ll-market-data-dryCargo-bulkFixture":21,"./components/ll-marketdata-drycargo-ssyal":24,"./components/ll-ship-coal-export":25,"./components/ll-ship-container-ship":26,"./components/ll-ship-roro":27,"./components/ll-shipContainerShipFixtures":28,"./components/ll-tanker-fixtures":29,"./components/ll-tanker-pure-chem-page":30,"./components/myview-settings":31,"./components/pagination":32,"./components/personalisation":33,"./components/save-search-component":34,"./components/scrollbar":35,"./components/table_charts":36,"./components/video-mini":37,"./controllers/analytics-controller":38,"./controllers/bookmark-controller":39,"./controllers/form-controller":40,"./controllers/lightbox-modal-controller":41,"./controllers/pop-out-controller":42,"./controllers/register-controller":43,"./controllers/reset-password-controller":44,"./controllers/sortable-table-controller":45,"./controllers/tooltip-controller":46,"./jscookie":48,"./modal":49,"./newsletter-signup":50,"./search-page":51,"./selectivity-full":52,"./svg4everybody":53,"./toggle-icons":54,"./zepto.dragswap":55,"./zepto.min":56,"./zepto.suggest":57}],48:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie

@@ -34,7 +34,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly ISetPublicationsNewsletterUserOptIns SetNewsletterUserOptInsContext;
         protected readonly IUpdateOfferUserOptInContext OffersOptIn;
         private readonly ILog Logger;
-        protected readonly IverticalLogin VerticalLogin;
+        protected readonly IVerticalLogin VerticalLogin;
 
         public RegistrationApiController(
             IFindUserByEmail findUser,
@@ -46,7 +46,7 @@ namespace Informa.Web.Areas.Account.Controllers
             IUserCompanyContext userCompanyContext,
             ISetPublicationsNewsletterUserOptIns setNewsletterUserOptInsContext,
             IUpdateOfferUserOptInContext offersOptIn,
-            ILog logger, IverticalLogin verticalLogin)
+            ILog logger, IVerticalLogin verticalLogin)
         {
             FindUser = findUser;
             NewUserFactory = newUserFactory;

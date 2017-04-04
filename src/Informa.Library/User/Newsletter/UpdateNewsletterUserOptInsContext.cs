@@ -44,7 +44,7 @@ namespace Informa.Library.User.Newsletter
             {
                 return false;
             }
-            var success = SalesforceConfigurationContext.IsNewSalesforceEnabled ? UpdateUserProductPreference.UpdateNewsletterUserOptIns(UserContext.User?.AccessToken,UserContext.User?.Username, UserContext?.User.Name,optIns) : UpdateUserOptIns.Update(optIns, UserContext.User?.Username);
+            var success = SalesforceConfigurationContext.IsNewSalesforceEnabled ? UpdateUserProductPreference.UpdateNewsletterUserOptIns(UserContext.User?.AccessToken,UserContext.User?.Username, SiteRootContext?.Item?.Publication_Code, optIns) : UpdateUserOptIns.Update(optIns, UserContext.User?.Username);
 
             if (success)
             {

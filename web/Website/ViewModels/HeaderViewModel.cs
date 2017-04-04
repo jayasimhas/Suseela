@@ -87,7 +87,7 @@ namespace Informa.Web.ViewModels
         public HtmlString RightSubMenuContent => new HtmlString(SiteRootContext.Item?.Right_SubMenu_Content);
         public string PrintedByText => TextTranslator.Translate("Header.PrintedBy");
         public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
-        public string CorporateName => CompanyNameContext.Name;
+        public string CorporateName => SalesforceConfigurationContext.IsNewSalesforceEnabled ? string.Empty : CompanyNameContext.Name;
         public bool UseNewSalesForce => SalesforceConfigurationContext.IsNewSalesforceEnabled;
 
         public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);

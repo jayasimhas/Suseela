@@ -2,6 +2,7 @@
 using Sitecore.Security.Authentication;
 using Informa.Library.User.Profile;
 using System;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Library.User.Authentication.Web
 {
@@ -13,24 +14,34 @@ namespace Informa.Library.User.Authentication.Web
         protected readonly ISitecoreUserContext SitecoreUserContext;
         protected readonly IWebLoginUserActions LoginActions;
         protected readonly IUserSession UserSession;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IUserProfileFactoryV2 UserProfileFactoryV2;
 
         public WebLoginUser(
             IUserProfileFactory userProfileFactory,
             ISitecoreVirtualUsernameFactory virtualUsernameFactory,
-            IWebLoginUserActions loginActions, IUserSession userSession, ISitecoreUserContext sitecoreUserContext)
+            IWebLoginUserActions loginActions, 
+            IUserSession userSession, 
+            ISitecoreUserContext sitecoreUserContext,
+            IUserProfileFactoryV2 userProfileFactoryV2,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             UserProfileFactory = userProfileFactory;
             VirtualUsernameFactory = virtualUsernameFactory;
             LoginActions = loginActions;
             UserSession = userSession;
             SitecoreUserContext = sitecoreUserContext;
+            UserProfileFactoryV2 = userProfileFactoryV2;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
         public IWebLoginUserResult Login(IUser user, bool persist)
         {
             var sitecoreUsername = VirtualUsernameFactory.Create(user);
             var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
-            var userProfile = UserProfileFactory.Create(user);
+            var userProfile = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                        UserProfileFactoryV2.Create(user) : 
+                        UserProfileFactory.Create(user);
             if (userProfile != null)
             {
                 sitecoreVirtualUser.Profile.Email = userProfile.Email;
@@ -55,25 +66,15 @@ namespace Informa.Library.User.Authentication.Web
         {
            
             string loggedInVertical = string.Empty;
-            //if (SitecoreUserContext.User.IsAuthenticated)
-            //{
-            //    var sitecoreUser = SitecoreUserContext.User;
-            //    loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
-            //    if (string.IsNullOrEmpty(loggedInVertical))
-            //        verticalName = verticalName + "|" + loggedInVertical;
-            //}
             var sitecoreUsername = VirtualUsernameFactory.Create(user);
             var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
             
-            var userProfile = UserProfileFactory.Create(user);
+            var userProfile = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                        UserProfileFactoryV2.Create(user) : UserProfileFactory.Create(user);
             if (userProfile != null)
             {
                 sitecoreVirtualUser.Profile.Email = userProfile.Email;
                 sitecoreVirtualUser.Profile.Name = string.Format("{0} {1}", userProfile.FirstName, userProfile.LastName);
-                //Setting the vertical name as part of the user profile object
-                //sitecoreVirtualUser.Profile.SetCustomProperty("vertical", verticalName);
-                // Setting the in user session for double check in the authenticated user context.
-                //UserSession.Set("user_vertical", verticalName);
             }
             sitecoreVirtualUser.Profile.Comment = string.IsNullOrWhiteSpace(user.AccessToken) ? string.Empty : user.AccessToken;
             sitecoreVirtualUser.Profile.Save();
