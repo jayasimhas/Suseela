@@ -14,6 +14,7 @@
     	float: left;
     	@media only screen and (min-width: 420px) and (max-width: 1024px) {
     		width: 50%;
+    		height: 265px;
     	}
     	@include breakpoint('small') {
     		width: 100%;
