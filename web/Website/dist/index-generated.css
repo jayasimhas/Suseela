@@ -1354,8 +1354,8 @@ section: Alerts
 .agroBuyers .buyers-guide-listing {
   width: 100%;
   float: left;
-  margin-bottom: 24px;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 4px;
+  margin-bottom: 0.25rem; }
   .agroBuyers .buyers-guide-listing .buyers-guide-row {
     width: 100%;
     float: left; }
@@ -1364,15 +1364,15 @@ section: Alerts
       float: left;
       margin-top: 12px;
       margin-top: 0.75rem;
-      margin-bottom: 32px;
-      margin-bottom: 2rem;
+      margin-bottom: 26px;
+      margin-bottom: 1.625rem;
       margin-right: 3%; }
       @media (max-width: 480px) {
         .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide {
           width: 100%; } }
       .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image {
         width: 360px;
-        height: 200px;
+        height: 152px;
         text-align: center;
         vertical-align: top;
         display: table-cell; }
@@ -1382,7 +1382,7 @@ section: Alerts
             height: auto; } }
         .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
           max-width: 100%;
-          max-height: 200px; }
+          max-height: 132px; }
           @media (max-width: 480px) {
             .agroBuyers .buyers-guide-listing .buyers-guide-row .buyers-guide .image img {
               width: 100%;
@@ -1522,8 +1522,8 @@ section: Alerts
         display: block; }
 
 .agroBuyers hr {
-  margin-bottom: 32px;
-  margin-bottom: 2rem; }
+  margin-bottom: 34px;
+  margin-bottom: 2.125rem; }
 
 .agroBuyers .contact_terms {
   margin-bottom: 24px;
@@ -6347,10 +6347,10 @@ main .action-flags-bar, main .banner--highlights {
       .personalisationhome .latestSubject .fllatestSub {
         position: absolute;
         float: left; } }
-    @media screen and (min-width: 768px) and (min-width: 768px) and (min-width: 1024px) {
+    @media screen and (min-width: 768px) and (min-width: 768px) and (max-width: 1024px) {
       .personalisationhome .latestSubject .fllatestSub {
         margin-bottom: 10px; } }
-    @media screen and (min-width: 768px) and (min-width: 767px) and (min-width: 768px) {
+    @media screen and (min-width: 768px) and (min-width: 767px) and (max-width: 768px) {
       .personalisationhome .latestSubject .fllatestSub {
         margin: 20px 0 10px; } }
 
@@ -10279,17 +10279,17 @@ div#feedbacklite.fbl_r {
           margin-right: 10%; } }
     #market-data .marketDataTable span.fall {
       color: #f40600;
-      text-align: right;
       width: 50px;
+      text-align: right;
       display: inline-block; }
       @media (max-width: 480px) {
         #market-data .marketDataTable span.fall {
           width: 40px;
           margin-right: 16px; } }
-      @media only screen and (min-width: 768px) and (max-width: 1023px) {
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
         #market-data .marketDataTable span.fall {
-          width: 30px;
-          margin-right: 3px; } }
+          width: 40%;
+          margin-right: 10%; } }
 
 .article-preview {
   clear: both; }
@@ -11250,10 +11250,19 @@ div#feedbacklite.fbl_r {
     height: 100%; }
   .package-img-wrapper.first {
     height: 220px; }
+    @media (max-width: 480px) {
+      .package-img-wrapper.first {
+        height: auto; } }
   .package-img-wrapper.second {
     height: 165.56px; }
+    @media (max-width: 480px) {
+      .package-img-wrapper.second {
+        height: auto; } }
   .package-img-wrapper.third {
     height: 200px; }
+    @media (max-width: 480px) {
+      .package-img-wrapper.third {
+        height: auto; } }
 
 .moreText {
   text-align: right;
@@ -17749,10 +17758,10 @@ main {
     color: #ffffff; }
 
 .theme-lloydslist .main-menu__hoverable:hover:before {
-  background-color: #1191D1; }
+  background-color: #002d4f; }
 
 .theme-lloydslist .main-menu__hoverable.activate:before {
-  background-color: #1191D1; }
+  background-color: #002d4f; }
 
 .theme-lloydslist .main-menu__section-title a, .theme-lloydslist .main-menu__section-title .pop-out__reset-password, .theme-lloydslist .main-menu__section-title .sortable-table__list-toggler, .theme-lloydslist .main-menu__section-title .mobile-table-exit {
   color: inherit; }
@@ -17760,7 +17769,7 @@ main {
 .theme-lloydslist .main-menu__footer-link a, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler, .theme-lloydslist .main-menu__footer-link .mobile-table-exit {
   color: #58595b; }
   .theme-lloydslist .main-menu__footer-link a:hover, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:hover, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:hover, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:hover, .theme-lloydslist .main-menu__footer-link a:active, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:active, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:active, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:active, .theme-lloydslist .main-menu__footer-link a:focus, .theme-lloydslist .main-menu__footer-link .pop-out__reset-password:focus, .theme-lloydslist .main-menu__footer-link .sortable-table__list-toggler:focus, .theme-lloydslist .main-menu__footer-link .mobile-table-exit:focus {
-    color: #002d4f; }
+    color: #1191D1; }
 
 .theme-lloydslist .main-menu__section-link, .theme-lloydslist .main-menu__section-link:hover, .theme-lloydslist .main-menu__section-link:active, .theme-lloydslist .main-menu__section-link:focus {
   color: #58595b; }
@@ -17873,8 +17882,8 @@ main {
   border-bottom: 4px solid #1191D1; }
 
 .theme-lloydslist .article-interview__question:before {
-  background-color: rgba(15, 84, 135, 0.3);
-  border-color: rgba(15, 84, 135, 0.5); }
+  background-color: rgba(0, 45, 79, 0.3);
+  border-color: rgba(0, 45, 79, 0.5); }
 
 .theme-lloydslist .article-interview__answer, .theme-lloydslist .article-interview__answer:before {
   border-color: rgba(17, 145, 209, 0.5); }

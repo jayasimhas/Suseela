@@ -27,7 +27,7 @@ namespace Informa.Library.Search.Utilities
         private const string CropProtection = "cropprotection";
         private const string AgriIndustries = "industries";
         //Maritime        
-        private const string MaritimeCompanies = "companies";       
+        private const string MaritimeCompanies = "companies";
         private const string Markets = "markets";
         private const string Regulars = "regulars";
         private const string Sectors = "sectors";
@@ -52,6 +52,10 @@ namespace Informa.Library.Search.Utilities
 
                 if (currentItem != null)
                     rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
+                if (rootItem == null)
+                {
+                    rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("EnvironmentGlobalsTempate.global"));
+                }
             }
             var dict = new Dictionary<string, string>();
             if (rootItem != null)
@@ -61,14 +65,16 @@ namespace Informa.Library.Search.Utilities
                     string parentPath = item._Parent._Path;
                     string key = string.Empty;
                     string verticalName = (rootItem != null) ? rootItem.Name : string.Empty;
-
-                    if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Agri"), StringComparison.OrdinalIgnoreCase))
+                    if (string.Equals(rootItem.Name, Settings.GetSetting("Environment.Globals"), StringComparison.OrdinalIgnoreCase))
                     {
                         if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.RegionsTaxonomyFolder"), parentPath))
                         {
                             key = Regions;
                         }
-                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.AgencyRegulatorTaxonomyFolder"), parentPath))
+                    }
+                    else if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Agri"), StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.AgencyRegulatorTaxonomyFolder"), parentPath))
                         {
                             key = AgencyRegulator;
                         }
@@ -103,11 +109,8 @@ namespace Informa.Library.Search.Utilities
                     }
                     else if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Maritime"), StringComparison.OrdinalIgnoreCase))
                     {
-                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.RegionsTaxonomyFolder"), parentPath))
-                        {
-                            key = Regions;
-                        }
-                        else if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CompaniesTaxonomyFolder"), parentPath))
+
+                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CompaniesTaxonomyFolder"), parentPath))
                         {
                             key = MaritimeCompanies;
                         }

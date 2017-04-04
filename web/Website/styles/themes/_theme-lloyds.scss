@@ -10,7 +10,7 @@
         $color-primary-hover,
         $color-white);
 
-    @include theme-main-menu( $color-primary-default, $color-primary-hover);
+    @include theme-main-menu($color-primary-hover,$color-primary-default);
 
     @include theme-subnav($color-primary-hover);
 
@@ -21,8 +21,8 @@
     @include theme-bordered-elements($color-primary-default);
 
     @include theme-interviews(
-        transparentize($color-secondary-color, 0.7),
-        transparentize($color-secondary-color, 0.5),
+        transparentize($color-primary-hover, 0.7),
+        transparentize($color-primary-hover, 0.5),
         transparentize($color-primary-default, 0.85),
         transparentize($color-primary-default, 0.5));
 
