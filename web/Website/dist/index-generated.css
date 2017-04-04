@@ -2227,7 +2227,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   background: #fff; }
 
 #main-carousel .li-content-company {
-  border: none;
+  border: 1px solid transparent;
   background-color: #fff;
   height: 234px;
   padding: 15px 18px;
