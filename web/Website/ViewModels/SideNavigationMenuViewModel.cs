@@ -244,7 +244,7 @@ namespace Informa.Web.ViewModels
                 {
                     if (subscription != null)
                     {
-                        channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.ProductCode, ChannelName = subscription.Publication, ExpirationDate = subscription.ExpirationDate, _ChannelId = subscription.ProductCode });
+                        channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.ProductCode, ChannelName = subscription.Publication, ExpirationDate = subscription.ExpirationDate });
                     }
                 }
                 subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions, IsTopicSubscription = false });
