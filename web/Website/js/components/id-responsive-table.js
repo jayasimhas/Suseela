@@ -346,7 +346,19 @@
 	}
 
 	if($('#annualresults').length > 0) {
-		ResponsiveTable.init(window.jsonResultAnnual, $('#annualresults'));	
+		if(window.jsonResultAnnual && Array.isArray(window.jsonResultAnnual) &&  window.jsonResultAnnual.length > 0) {
+			ResponsiveTable.init(window.jsonResultAnnual, $('#annualresults'));	
+		} else {
+			var ErrorMessage = window.ErrorMessageAnnual;
+			$('#annualresults').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
+											'<svg class="alert__icon">'+
+                        						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+
+                    						'</svg>'+
+											'<p class="page-account-contact__error">'+
+                        						ErrorMessage+
+                    						'</p>'+
+                						'</div>');
+		}
 	}
 	
 
