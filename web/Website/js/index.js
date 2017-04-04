@@ -7,7 +7,7 @@ import Cookies from './jscookie';
 import DrapSwap from './zepto.dragswap';
 import DropBox from './DragDropTouch';
 
-// CAROUSEL
+// CAROUSEL 
 //import highlight from './carousel/highlight.pack';
 import zeptoData from './carousel/zepto.data';
 //import app from './carousel/app';
@@ -48,19 +48,19 @@ import './components/ll-market-data-dryCargo-bulkFixture';
 import './components/accordionStockChart';
 import './components/amGraphParam';
 import './components/table_charts';
-import './components/scrollbar.js';
-import './components/ll-ship-coal-export.js';
-import './components/ll-tanker-pure-chem-page.js';
-import './components/ll-marketdata-drycargo-ssyal.js';
-import './components/ll-cockett-bunker.js';
-import './components/ll-ship-roro.js';
-import './components/ll-ship-container-ship.js';
+import './components/scrollbar';
+import './components/ll-ship-coal-export';
+import './components/ll-tanker-pure-chem-page';
+import './components/ll-marketdata-drycargo-ssyal';
+import './components/ll-cockett-bunker';
+import './components/ll-ship-roro';
+import './components/ll-ship-container-ship';
 import './components/ll-shipContainerShipFixtures';
 import './components/ll-fisDryBulk';
 import './components/ll-howeRobinson'; 
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
-import SearchScript from './search-page.js';
+import SearchScript from './search-page';
 
 import { toggleIcons } from './toggle-icons';
 // Global scope to play nicely with Angular

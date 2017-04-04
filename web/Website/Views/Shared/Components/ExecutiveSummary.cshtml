@@ -4,7 +4,9 @@
 @if (Model.ShowSummary) {
 
     <div class="article-executive-summary">
-        <h4>@(Model.IsArticlePage ? Model.ExecutiveSummary : string.Empty)</h4>
-        @Html.Glass().Editable(Model.GlassModel, model => Model.summary)
-    </div>
+        @if (Model.IsArticlePage)
+        {  <h4>@Model.ExecutiveSummary</h4>}
+        else
+        {  @Model.summary}
+     </div>
 }

@@ -9,6 +9,8 @@
     using Library.Site;
     using Library.User.Authentication;
     using Library.User.UserPreference;
+    using Library.SalesforceConfiguration;
+
     public class PersonalizationMessageViewModel : GlassViewModel<IGlassBase>
     {
         protected readonly ITextTranslator TextTranslator;
@@ -16,15 +18,22 @@
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IUserPreferenceContext UserPreferences;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         private const string DISMISS_COOKIE_NAME = "dismiss_cookie";
-        public PersonalizationMessageViewModel(ITextTranslator textTranslator, IUserCompanyContext userCompanyContext,
-            ISiteRootContext siterootContext, IAuthenticatedUserContext authenticatedUserContext, IUserPreferenceContext userPreferences)
+        public PersonalizationMessageViewModel
+            (ITextTranslator textTranslator, 
+            IUserCompanyContext userCompanyContext,
+            ISiteRootContext siterootContext, 
+            IAuthenticatedUserContext authenticatedUserContext, 
+            IUserPreferenceContext userPreferences,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             TextTranslator = textTranslator;
             UserCompanyContext = userCompanyContext;
             SiterootContext = siterootContext;
             AuthenticatedUserContext = authenticatedUserContext;
             UserPreferences = userPreferences;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
         public string RightRailMessage => GetMessageForRightRail();
         public string LandingPageMessage => GetMessageForLandingPage();
@@ -71,10 +80,10 @@
         /// <returns></returns>
         private string GetMessageForRightRail()
         {
-            if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
+            if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
                 return TextTranslator.Translate("IPAuthenticatedUser.RightRailMessage");
 
-            else if (UserCompanyContext?.Company?.Type == null)
+            else if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && UserCompanyContext?.Company?.Type == null)
                 return TextTranslator.Translate("RegisteredUser.RightRailMessage");
 
             return TextTranslator.Translate("CorporateUser.RightRailMessage");
@@ -86,10 +95,10 @@
         /// <returns></returns>
         private string GetMessageForLandingPage()
         {
-            if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
+            if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
                 return TextTranslator.Translate("IPAuthenticatedUser.LandingPageMessage");
 
-            else if (UserCompanyContext?.Company?.Type == null)
+            else if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && UserCompanyContext?.Company?.Type == null)
                 return TextTranslator.Translate("RegisteredUser.LandingPageMessage");
 
             return TextTranslator.Translate("CorporateUser.LandingPageMessage");
@@ -101,10 +110,10 @@
         /// <returns></returns>
         private string GetMessageForArticlePage()
         {
-            if (UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
+            if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && UserCompanyContext?.Company?.Type == CompanyType.TransparentIP)
                 return TextTranslator.Translate("IPAuthenticatedUser.ArticlePageMessage");
 
-            else if (UserCompanyContext?.Company?.Type == null)
+            else if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && UserCompanyContext?.Company?.Type == null)
                 return TextTranslator.Translate("RegisteredUser.ArticlePageMessage");
 
             return TextTranslator.Translate("CorporateUser.ArticlePageMessage");

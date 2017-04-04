@@ -56,6 +56,8 @@ namespace Informa.Library.Salesforce
             where TResult : IEbiResponse
         {
             DebugLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}");
+
+            ErrorLogger.Log($"Salesforced called by: {CallerMemberName}, File: {CallerFilePath}, Line Number {CallerLineNumber}", new Exception());
             if (!ServiceContextEnabled.Enabled)
             {
                 return default(TResult);

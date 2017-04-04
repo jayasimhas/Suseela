@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Informa.Library.User.Authentication
 {
-   public interface IverticalLogin
+   public interface IVerticalLogin
     {
      string curVertical { get; set; }
      void CreateLoginCookie(string userName, string userToken);

@@ -29,6 +29,7 @@ using Jabberwocky.Glass.Autofac.Util;
 using Autofac;
 using System.Compat.Web;
 using Informa.Library.Services.Captcha;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Web.ViewModels
 {
@@ -53,6 +54,7 @@ namespace Informa.Web.ViewModels
         protected readonly ITaxonomyService TaxonomyService;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IRecaptchaService RecaptchaSettings;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
         public AnalyticsViewModel(
             IItemReferences itemReferences,
@@ -69,13 +71,17 @@ namespace Informa.Web.ViewModels
             ISiteRootContext siteRootContext,
             IHttpContextProvider httpContextProvider,
             IDCDReader dcdReader,
-            ITaxonomyService taxonomyService, IGlobalSitecoreService globalService, IRecaptchaService recaptchaSettings)
+            ITaxonomyService taxonomyService, 
+            IGlobalSitecoreService globalService, 
+            IRecaptchaService recaptchaSettings,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
             ArticleSearch = articleSearch;
             SiteSettings = siteSettings;
             AuthenticatedUserContext = authenticatedUserContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
             UserCompanyContext = userCompanyContext;
             UserProfileContext = userProfileContext;
             UserSubscriptionsContext = userSubscriptionsContext;
@@ -141,11 +147,11 @@ namespace Informa.Web.ViewModels
         public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;
         //ISW-1102 (No longer able to Email Article to friend + ReCaptcha now missing)
         public string CaptchaSiteKey => RecaptchaSettings.SiteKey;
-        public string UserCompany => UserCompanyContext?.Company?.Name;
-        public string CorporateName => UserCompanyContext?.Company?.Name;
+        public string UserCompany => SalesforceConfigurationContext.IsNewSalesforceEnabled ? UserProfileContext?.Profile?.Company : UserCompanyContext?.Company?.Name;
+        public string CorporateName => SalesforceConfigurationContext.IsNewSalesforceEnabled ? UserProfileContext?.Profile?.Company : UserCompanyContext?.Company?.Name;
         public string UserEmail => UserProfileContext.Profile?.Email ?? string.Empty;
         public string UserIndustry => UserProfileContext.Profile?.JobIndustry ?? string.Empty;
-        public string CompanyId => UserCompanyContext?.Company?.Id;
+        public string CompanyId => SalesforceConfigurationContext.IsNewSalesforceEnabled ? string.Empty : UserCompanyContext?.Company?.Id;
         public string SubscribedProducts { get; }
         public string CustomTags => GlassModel?.Custom_Meta_Tags ?? string.Empty;
         public string ContactId => WebAuthenticateUser.AuthenticatedUser?.ContactId ?? string.Empty;
@@ -240,12 +246,12 @@ namespace Informa.Web.ViewModels
                 return "Free Trial";
             }
 
-            if (context.Company == null)
+            if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && context.Company == null)
             {
                 return "Free User";
             }
 
-            if (context.Company.Type == CompanyType.TransparentIP)
+            if (!SalesforceConfigurationContext.IsNewSalesforceEnabled && context.Company.Type == CompanyType.TransparentIP)
             {
                 return "Transparent IP";
             }
