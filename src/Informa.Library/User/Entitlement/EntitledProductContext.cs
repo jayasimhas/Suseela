@@ -3,6 +3,8 @@ using System;
 using System.Linq;
 using Informa.Library.User.Authentication;
 using Informa.Library.SalesforceConfiguration;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Informa.Library.User.Entitlement
 {
@@ -10,17 +12,20 @@ namespace Informa.Library.User.Entitlement
     public class EntitledProductContext : IEntitledProductContext
     {
         protected readonly IEntitlementAccessContexts EntitlementAccessContexts;
+        protected readonly IEntitlementAccessContext EntitlementAccessContext;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
         public EntitledProductContext(
             IEntitlementAccessContexts entitlementAccessContexts,
             IAuthenticatedUserContext authenticatedUserContext,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            IEntitlementAccessContext entitlementAccessContext)
         {
             EntitlementAccessContexts = entitlementAccessContexts;
             AuthenticatedUserContext = authenticatedUserContext;
             SalesforceConfigurationContext = salesforceConfigurationContext;
+            EntitlementAccessContext = entitlementAccessContext;
         }
 
         public bool IsEntitled(IEntitledProduct entitledProduct)
@@ -35,15 +40,25 @@ namespace Informa.Library.User.Entitlement
                 return true;
             }
 
-            var entitlementAccesses = EntitlementAccessContexts.Select(eac => eac.Find(entitledProduct));
-            var filteredEntitlementAccesses = entitlementAccesses
-                .Where(ea =>
-                    ea != null &&
-                    ea.AccessLevel != EntitledAccessLevel.None
-                    && isValidEntitlement(ea.Entitlement, entitledProduct)
-                )
-                .ToList();
+            IList<IEntitlementAccess> entitlementAccesses = null;
 
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            {
+                entitlementAccesses = new List<IEntitlementAccess>();
+                entitlementAccesses.Add(EntitlementAccessContext.Find(entitledProduct));
+            }
+            else
+            {
+                entitlementAccesses = EntitlementAccessContexts.Select(eac => eac.Find(entitledProduct)).ToList();
+            }
+
+            var filteredEntitlementAccesses = entitlementAccesses
+                   .Where(ea =>
+                       ea != null &&
+                       ea.AccessLevel != EntitledAccessLevel.None
+                       && isValidEntitlement(ea.Entitlement, entitledProduct)
+                   )
+                   .ToList();
             return filteredEntitlementAccesses.Any();
         }
 
@@ -66,7 +81,7 @@ namespace Informa.Library.User.Entitlement
             {
                 return false;
             }
-            if(SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
                 var accessEndDate = Convert.ToDateTime(entitlement.AccessEndDate);
                 return accessEndDate >= DateTime.Now;
