@@ -853,6 +853,23 @@ $(document).ready(function() {
 				mainMenuListItems.each(function(){
 					$('.main-menu-list').append($(this));
 				});
+                if($('div.main-menu__section').length > 0){
+                    var mainMenuList = $('div.main-menu__section, div.main-menu-list');
+                    mainMenuList.remove();
+                    $('.main-menu').append("<div class='main-menu-section-list'></div>");
+                    mainMenuList.each(function () {
+                        $('.main-menu-section-list').append($(this));
+                    });
+                    $('.main-menu-section-list').css({
+                        'height' : '100%',
+                        'overflow' : 'scroll'
+                    })
+                }else{
+                    $('.main-menu-list').css({
+                        'height' : '100%',
+                        'overflow' : 'scroll'
+                    })
+                }
 			}
 		};
 
