@@ -1060,48 +1060,51 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             string Publication = null;
             // XmlNodeList relatedelemList = d.GetElementsByTagName("RELATED_ARTICLE");
 
-            string[] files = Directory.GetFiles(this.Query);
-
-            foreach (string node in files)
+            if (WebConfigurationManager.AppSettings["DeleteArticleWithSpecialChar"].Equals("true"))
             {
-                string url;
 
-                System.Collections.Generic.IEnumerable<String> lines = File.ReadLines(node);
-                foreach (string Esce in lines)
+                string[] files = Directory.GetFiles(this.Query);
+
+                foreach (string node in files)
                 {
-                    relatedArticle = Esce;
+                    string url;
 
-                    Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
-                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                    XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
-                    url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
-
-                    using (var client = new HttpClient())
+                    System.Collections.Generic.IEnumerable<String> lines = File.ReadLines(node);
+                    foreach (string Esce in lines)
                     {
-                        var response = client.GetStringAsync(url).Result;
-                        if (!(response == "null" || response == ""))
-                        {
-                            var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
-                            relatedArticles = resultarticles._Id.ToString();
-                            using (new Sitecore.SecurityModel.SecurityDisabler())
-                            {
-                                Item item = MasterDB.GetItem(relatedArticles);
+                        relatedArticle = Esce;
 
-                                if (item != null)
+                        Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
+                        string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                        XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
+                        url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
+
+                        using (var client = new HttpClient())
+                        {
+                            var response = client.GetStringAsync(url).Result;
+                            if (!(response == "null" || response == ""))
+                            {
+                                var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
+                                relatedArticles = resultarticles._Id.ToString();
+                                using (new Sitecore.SecurityModel.SecurityDisabler())
                                 {
-                                    XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
-                                    item.Delete();
+                                    Item item = MasterDB.GetItem(relatedArticles);
+
+                                    if (item != null)
+                                    {
+                                        XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
+                                        item.Delete();
+                                    }
                                 }
+
                             }
 
                         }
-
                     }
                 }
+
+
             }
-
-
-
 
 
 

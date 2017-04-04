@@ -20,7 +20,7 @@
   <add key="InsuranceDayColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,SECTORS,SECTINREF" />
   <add key="LloydslistColHeaders" value="ArticleId,Article Headline,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COUNTRY,COMPANIES,MARKET,TOPICS,REGULARS,SECTORS,SECTINREF" />
 
-
+  <add key="DeleteArticleWithSpecialChar" value="false"/>
   <add key="ArticlePrefix" value="CO000001"/>
   <add key="PublishedYear" value="90"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
