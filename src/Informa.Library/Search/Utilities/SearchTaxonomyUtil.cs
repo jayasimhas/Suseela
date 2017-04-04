@@ -51,11 +51,7 @@ namespace Informa.Library.Search.Utilities
                 currentItem = dbContext.GetItem(new ID(taxonomyItems[0]._Id));
 
                 if (currentItem != null)
-                    rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global"));
-                if (rootItem == null)
-                {
-                    rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("EnvironmentGlobalsTempate.global"));
-                }
+                    rootItem = currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("VerticalTemplate.global")) ?? currentItem.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("EnvironmentGlobalsTempate.global"));
             }
             var dict = new Dictionary<string, string>();
             if (rootItem != null)
