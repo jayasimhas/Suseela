@@ -1764,7 +1764,6 @@
     <Content Include="App_Config\Include\UserDefined\Publishing.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\UserDefined\Salesforce.config" />
     <Content Include="App_Config\Include\UserDefined\ScheduledPublishing.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1787,7 +1786,6 @@
     <Content Include="App_Config\Portraits.config" />
     <Content Include="App_Config\Prefetch\Common.config" />
     <Content Include="App_Config\Prototypes.config" />
-    <Content Include="App_Config\Salesforce.config" />
     <Content Include="App_Config\Security\Domains.config">
       <SubType>Designer</SubType>
     </Content>
@@ -2106,7 +2104,6 @@
     <Content Include="App_Config\Include\Sitecore.Buckets.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.config" />
     <Content Include="App_Config\Include\Sitecore.ContentSearch.DefaultConfigurations.config" />
-    <Content Include="App_Config\Include\UserDefined\Salesforce.config.template" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config" />
     <Content Include="App_Config\Include\UserDefined\WebClientAuth.config.template" />
     <Content Include="App_Config\Include\ZZ.UserDefined\LoginRedirect.config" />

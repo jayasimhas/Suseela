@@ -1,19 +1,21 @@
-﻿using Sitecore.Configuration;
+﻿using Informa.Library.SalesforceConfiguration;
+using Sitecore.Configuration;
 
 namespace Informa.Library.Salesforce
 {
-	public class SalesforceSessionFactoryConfiguration : ISalesforceSessionFactoryConfiguration
-	{
-		private const string UrlConfigKey = "SalesforceSessionFactoryConfiguration.Url";
-		private const string UsernameConfigKey = "SalesforceSessionFactoryConfiguration.Username";
-		private const string PasswordConfigKey = "SalesforceSessionFactoryConfiguration.Password";
-		private const string TokenConfigKey = "SalesforceSessionFactoryConfiguration.Token";
-		private const string TimeoutConfigKey = "SalesforceSessionFactoryConfiguration.Timeout";
+    public class SalesforceSessionFactoryConfiguration : ISalesforceSessionFactoryConfiguration
+    {
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        public SalesforceSessionFactoryConfiguration(
+            ISalesforceConfigurationContext salesforceConfigurationContext)
+        {
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+        }
 
-		public string Url => Settings.GetSetting(UrlConfigKey);
-		public string Username => Settings.GetSetting(UsernameConfigKey);
-		public string Password => Settings.GetSetting(PasswordConfigKey);
-		public string Token => Settings.GetSetting(TokenConfigKey);
-		public int Timeout => Settings.GetIntSetting(TimeoutConfigKey, 3000);
-	}
+       public string Url => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Url?.Url;
+        public string Username => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username;
+        public string Password => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Password;
+        public string Token => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Token;
+        public int Timeout => int.Parse(SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Timeout);
+    }
 }
