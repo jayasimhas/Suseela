@@ -112,7 +112,7 @@
                                                     {
                                                         <tr>
                                                             <tdaily-alert-bodyd valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; line-height: 150%; text-align: left;">
-                                                                <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@Editable(article, m=>m.Title))</span></a>
+                                                                <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article._Url"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@Editable(article, m=>m.Title))</span></a>
                                                             </tdaily-alert-bodyd>
                                                         </tr>
                                                     }
@@ -349,7 +349,7 @@ if (Model.Articles != null && Model.Articles.Any() &&
 
                                                                                                             <tr>
                                                                                                                 <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
-                                                                                                                    <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl">
+                                                                                                                    <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article._Url">
                                                                                                                         <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #@Model.GetBrandingFontColor() !important;text-decoration: none;padding: 0px" class="featured__title">@Editable(article, m=>m.Title)</span>
                                                                                                                     </a>
                                                                                                                 </td>
@@ -469,7 +469,7 @@ if (Model.Articles != null && Model.Articles.Any() &&
 
                                                         <tr>
                                                             <td height="110" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="pad">
-                                                                <a href="@article.LinkableUrl" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #@Model.GetBrandingFontColor() !important; text-decoration: none !important">
+                                                                <a href="@article._Url" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #@Model.GetBrandingFontColor() !important; text-decoration: none !important">
                                                                     <span style="font-size: 20px; line-height: 28px; color: #@Model.GetBrandingFontColor() !important; text-decoration: none !important; font-weight: bold;">
                                                                        @Editable(article, m=>m.Title)
                                                                     </span>
@@ -607,12 +607,12 @@ if (Model.Articles != null && Model.Articles.Any() &&
 
                                                                                                                     <tr>
                                                                                                                         <td valign="top" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 110px; min-height: 110px;display: table-cell;vertical-align: middle">
-                                                                                                                            <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article.LinkableUrl">
+                                                                                                                            <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article._Url">
                                                                                                                                 <span style="margin: 0px;margin-bottom: 8px;font-size: 20px;line-height: 28px;color: #@Model.GetBrandingFontColor() !important;text-decoration: none;padding: 0px" class="featured__title">@Editable(article,m=>m.Title)</span>
                                                                                                                             </a>
                                                                                                                         </td>
                                                                                                                     </tr>
-                                                                                                                    @if (Model.GlassModel != null && !Model.GlassModel.ShowShortDescription)
+                                                                                                                    @if (Model.GlassModel != null && Model.GlassModel.ShowShortDescription)
                                                                                                                   {
                                                                                                                         <tr>
                                                                                                                             <td valign="top" height="120">

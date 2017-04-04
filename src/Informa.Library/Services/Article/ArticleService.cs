@@ -281,15 +281,36 @@ namespace Informa.Library.Services.Article
             return fullLink;
         }
 
+        public string GetCmsUrl(IArticle article)
+        {
+            if (article != null)
+            {
+                string cacheKey = CreateCacheKey($"GetCmsLink-{article._Id}");
+                return CacheProvider.GetFromCache(cacheKey, () => BuildCmsUrl(article));
+            }
+            return null;
+        }
+
+        protected string BuildCmsUrl(IArticle article)
+        {
+            if (article != null)
+            {
+                string load = "/sitecore/shell/Applications/Content%20Manager/Default.aspx?fo=" + article._Id + "&sc_lang=en";                
+                string cmsUrl = HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + load;
+                string fullLink = $"/VWB/Util/LoginRedirectToPreview.aspx?redirect={HttpUtility.UrlEncode(cmsUrl)}";
+                return fullLink;
+            }
+            return null;
+        }
         public ISponsored_Content GetSponsoredContent(IArticle article)
         {
-            if(article!=null)
+            if (article != null)
             {
                 string cacheKey = CreateCacheKey($"Sponsored-{article._Id}");
                 return CacheProvider.GetFromCache(cacheKey, () => BuildSponsoredContent(article));
             }
             return null;
-            
+
         }
 
         private ISponsored_Content BuildSponsoredContent(IArticle article)
