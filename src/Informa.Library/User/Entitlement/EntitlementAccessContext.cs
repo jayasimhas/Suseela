@@ -41,9 +41,8 @@ namespace Informa.Library.User.Entitlement
             IEnumerable<EntitlementAccess> entitlements = null;
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
-                entitlements = EntitlementsContexts.
-                SelectMany(ec => ec.Entitlements.Where(e => CheckEntitlement(entitledProduct, e)).
-                Select(e => Create(e, ec.AccessLevel)));
+                entitlements = AuthenticatedUserEntitlementsContext.Entitlements.Where(e => CheckEntitlement(entitledProduct, e)).
+                Select(e => Create(e, AuthenticatedUserEntitlementsContext.AccessLevel));
             }
             else
             {

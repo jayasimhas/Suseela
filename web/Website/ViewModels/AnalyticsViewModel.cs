@@ -81,6 +81,7 @@ namespace Informa.Web.ViewModels
             ArticleSearch = articleSearch;
             SiteSettings = siteSettings;
             AuthenticatedUserContext = authenticatedUserContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
             UserCompanyContext = userCompanyContext;
             UserProfileContext = userProfileContext;
             UserSubscriptionsContext = userSubscriptionsContext;
@@ -98,7 +99,6 @@ namespace Informa.Web.ViewModels
             TaxonomyService = taxonomyService;
             GlobalService = globalService;
             RecaptchaSettings = recaptchaSettings;
-            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
 
