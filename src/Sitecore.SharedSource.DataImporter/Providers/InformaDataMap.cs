@@ -139,6 +139,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 using (var client = new HttpClient())
                                 {
+
+                                    ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                                     var response = client.GetStringAsync(url).Result;
                                     if (!(response == "null" || response == ""))
                                     {
