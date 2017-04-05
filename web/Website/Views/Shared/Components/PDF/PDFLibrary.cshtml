@@ -14,13 +14,17 @@
             {
                 foreach (var pdf in Model.Pdfs)
                 {
+                    var pageName = !string.IsNullOrEmpty(Model.PageName) ? Model.PageName : "";
+                    var issueNumber = !string.IsNullOrEmpty(pdf.IssueNumber) ? pdf.IssueNumber : "";
+                    var pdfPageUrl = !string.IsNullOrEmpty(pdf.PdfPageUrl) ? pdf.PdfPageUrl : "";
+
                     var data_info = "{";
                     data_info += "\"event_name\":\"download_pdf_click\",";
-                    data_info += "\"page_name\":\"" + Model.PageName + "\",";
+                    data_info += "\"page_name\":\"" + pageName + "\",";
                     data_info += "\"ga_eventCategory\" : \"PDF Download\" , \"ga_eventAction\" : \"Download PDF Click\",";
-                    data_info += "\"ga_eventLabel\":\" " + pdf.IssueNumber + "\",";
-                    data_info += "\"download_file_category \": \"PDF Download\",";
-                    data_info += "\"download_file_name \":\" " + pdf.IssueNumber + "\",\"download_file_url \":\"" + pdf.PdfPageUrl + "\"";
+                    data_info += "\"ga_eventLabel\":\"" + issueNumber + "\",";
+                    data_info += "\"download_file_category\":\"PDF Download\",";
+                    data_info += "\"download_file_name\":\"" + issueNumber + "\",\"download_file_url\":\"" + pdfPageUrl + "\"";
                     data_info += "}";
 
                     //Listing Static PDFs
@@ -86,13 +90,17 @@
 
                 foreach (var perPdf in Model.PersonalizedPdfs)
                 {
+                    var pageName = !string.IsNullOrEmpty(Model.PageName) ? Model.PageName : "";
+                    var issueNumber = !string.IsNullOrEmpty(perPdf.IssueNumber) ? perPdf.IssueNumber : "";
+                    var pdfPageUrl = !string.IsNullOrEmpty(perPdf.PdfPageUrl) ? perPdf.PdfPageUrl : "";
+
                     var data_info = "{";
                     data_info += "\"event_name\":\"download_pdf_click\",";
-                    data_info += "\"page_name\":\"" + Model.PageName + "\",";
+                    data_info += "\"page_name\":\"" + pageName + "\",";
                     data_info += "\"ga_eventCategory\" : \"PDF Download\" , \"ga_eventAction\" : \"Download PDF Click\",";
-                    data_info += "\"ga_eventLabel\":\" " + perPdf.IssueNumber + "\",";
-                    data_info += "\"download_file_category \": \"PDF Download\",";
-                    data_info += "\"download_file_name \":\" " + perPdf.IssueNumber + "\",\"download_file_url \":\"" + perPdf.PdfPageUrl + "\"";
+                    data_info += "\"ga_eventLabel\":\"" + issueNumber + "\",";
+                    data_info += "\"download_file_category\":\"PDF Download\",";
+                    data_info += "\"download_file_name\":\"" + issueNumber + "\",\"download_file_url\":\"" + pdfPageUrl + "\"";
                     data_info += "}";
 
 

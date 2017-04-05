@@ -58,11 +58,13 @@
                 <br />
                 <div class="registrationSubmit_div">
                     <div class="page-registration__labeled-checkbox label-check">
-                        <input name="Offers" id="Offers" type="checkbox"
-                               data-checkbox-type="boolean" />
+                        <div class="is-hidden">
+                            <input name="Offers" id="Offers" type="checkbox"
+                                   data-checkbox-type="boolean" />
 
-                        <span class="chk_box"></span>
-                        <label class="checkbox-label" for="Offers">@Model.OffersLabelText.Replace("#PubName#", CurrentPublication)</label>
+                            <span class="chk_box"></span>
+                            <label class="checkbox-label" for="Offers">@Model.OffersLabelText.Replace("#PubName#", CurrentPublication)</label>
+                        </div>
                     </div>
                     <div class="page-account__submit-wrapper">
                         <button type="submit" class="button--filled registration-final js-register-final">@Model.SubmitText</button>

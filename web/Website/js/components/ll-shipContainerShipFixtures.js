@@ -7,19 +7,25 @@
 		},
 		loadDropdownData: function(options){
 			var optionStr = '';
-			$.each(options, function(idx, val){
-				if(idx == 0){
-					optionStr += '<option value="'+val.Value+'" selected="selected">'+val.Text+'</option>';
-				}
-				else{
-					optionStr += '<option value="'+val.Value+'">'+val.Text+'</option>';
-				}
-			});
-			return optionStr;
+			try {
+				$.each(options, function(idx, val){
+					if(idx == 0){
+						optionStr += '<option value="'+val.Value+'" selected="selected">'+val.Text+'</option>';
+					}
+					else{
+						optionStr += '<option value="'+val.Value+'">'+val.Text+'</option>';
+					}
+				});
+				return optionStr;
+			}
+			catch(err) {
+				$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			}
 		},
 		renderTable: function(){
 			var self = this, loadDateVal = $('#shipfixselectDay option').val();
-			self.callAjaxFn(loadDateVal);
+			
+			//self.callAjaxFn(loadDateVal);
 			$(document).on('change', '#shipfixselectDay', function(){
 				var selectDateVal = $('#shipfixselectDay option').val();
 				self.callAjaxFn(selectDateVal);
@@ -33,10 +39,15 @@
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {
-					self.sendHTTPRequest(searchData);
+					if(searchData && searchData.length){
+						self.sendHTTPRequest(searchData);
+					}
+					else{
+						$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+					}
 				},
-				error: function (err) {
-					console.log('Data is not there: ' + JSON.stringify(err));
+				error: function (err) { 
+					$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
 				}
 			});
 		},
@@ -60,8 +71,13 @@
 	}
 	
 	$(document).ready(function() {
-		if($('#shipContainerFixtures').length > 0) {
-			shipContainerFixtures.init(shipContShipFixDateOptions);
+		if($('#shipContainerFixtures').length > 0) { 
+			if(typeof window.shipContShipFixDateOptions !== 'undefined' && window.shipContShipFixDateOptions.length !== 0){
+				shipContainerFixtures.init(window.shipContShipFixDateOptions);
+			}
+			else{
+				$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			}
 		}
 	});
 })();

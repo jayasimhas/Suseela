@@ -11,7 +11,7 @@ using System.Web;
 namespace Informa.Library.User.Authentication
 {
     [AutowireService(LifetimeScope.Default)]
-    public class VerticalLogin : IverticalLogin
+    public class VerticalLogin : IVerticalLogin
     {
         protected readonly ISitecoreUserContext SitecoreUserContext;
         protected readonly IGlobalSitecoreService GlobalService;

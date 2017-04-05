@@ -2190,7 +2190,8 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   float: left; }
   @media only screen and (min-width: 420px) and (max-width: 1024px) {
     #main-carousel .item-wrapper {
-      width: 50%; } }
+      width: 50%;
+      height: 265px; } }
   @media (max-width: 480px) {
     #main-carousel .item-wrapper {
       width: 100%; } }
@@ -2226,7 +2227,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   background: #fff; }
 
 #main-carousel .li-content-company {
-  border: none;
+  border: 1px solid transparent;
   background-color: #fff;
   height: 234px;
   padding: 15px 18px;
@@ -4149,9 +4150,6 @@ body.lightboxed {
     position: fixed;
     top: 0;
     height: 100%; }
-  .main-menu .main-menu-list {
-    height: 100%;
-    overflow-y: scroll; }
   @media (max-width: 800px) {
     .main-menu {
       border-right: 1px solid #d1d3d4;
@@ -4625,6 +4623,9 @@ header .header-account-access {
         padding: 40px 0;
         padding: 2.5rem 0;
         margin-right: 0px; } }
+    @media (max-width: 480px) {
+      header .header-account-access .header-account-right-access.nomyView {
+        padding: 9px 0; } }
     @media only screen and (min-width: 768px) and (max-width: 1000px) {
       header .header-account-access .header-account-right-access.nomyView {
         margin-right: 16px;
@@ -9660,6 +9661,9 @@ div#feedbacklite.fbl_r {
     top: 100% !important;
     left: auto !important; }
 
+.casualtyPan .alert-error {
+  width: 100%; }
+
 .casualtyPan h2, .casualtyPan .article-topics__header {
   font-size: 46px;
   font-weight: bold; }
@@ -9704,6 +9708,9 @@ div#feedbacklite.fbl_r {
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
 #cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex, #shipVehicle-Page, #shipCoalExport-page {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  #market-data-tool .alert-error, #dry-cargo .alert-error, #dry-cargo-cap .alert-error, #dry-cargo-bulk-fixtures .alert-error, #tanker-fixtures .alert-error, #ship-Container-ShipFixtures .alert-error, #ship-Coal-Export .alert-error, #market-Data-Dry-Cargo .alert-error,
+  #cockett-Bunker .alert-error, #ship-Roro .alert-error, #ship-Container-Ship .alert-error, #ship-Vehicle .alert-error, #tanker-Pure-ChemPage .alert-error, #shipContainerFixtures .alert-error, #fisDryBulkContainer .alert-error, #howeRobinsonContainer .alert-error, #market-imarex .alert-error, #shipVehicle-Page .alert-error, #shipCoalExport-page .alert-error {
+    width: 100%; }
   #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop, #ship-Container-ShipFixtures .borTop, #ship-Coal-Export .borTop, #market-Data-Dry-Cargo .borTop,
   #cockett-Bunker .borTop, #ship-Roro .borTop, #ship-Container-Ship .borTop, #ship-Vehicle .borTop, #tanker-Pure-ChemPage .borTop, #shipContainerFixtures .borTop, #fisDryBulkContainer .borTop, #howeRobinsonContainer .borTop, #market-imarex .borTop, #shipVehicle-Page .borTop, #shipCoalExport-page .borTop {
     height: 1px;
@@ -10103,6 +10110,8 @@ div#feedbacklite.fbl_r {
   margin-bottom: 32px;
   margin-bottom: 2rem;
   width: 100%; }
+  #market-data .alert-error {
+    width: 100%; }
   #market-data .owl-wrapper {
     width: 80%;
     float: left; }
@@ -11250,10 +11259,19 @@ div#feedbacklite.fbl_r {
     height: 100%; }
   .package-img-wrapper.first {
     height: 220px; }
+    @media (max-width: 480px) {
+      .package-img-wrapper.first {
+        height: auto; } }
   .package-img-wrapper.second {
     height: 165.56px; }
+    @media (max-width: 480px) {
+      .package-img-wrapper.second {
+        height: auto; } }
   .package-img-wrapper.third {
     height: 200px; }
+    @media (max-width: 480px) {
+      .package-img-wrapper.third {
+        height: auto; } }
 
 .moreText {
   text-align: right;
@@ -17031,7 +17049,7 @@ main {
 .theme-commodities .table.theme-table thead tr th {
   background-color: #c44c0a; }
 
-.theme-commodities #tanker-fixtures.table-responsive .table .table_head {
+.theme-commodities #tanker-fixtures.table-responsive .table .table_head, .theme-commodities #casualty-detail-table .table_head {
   background-color: #F5821F; }
 
 .theme-commodities .ID-Responsive-Table .owl-dots {
@@ -17475,7 +17493,7 @@ main {
 .theme-insurance-day .table.theme-table thead tr th {
   background-color: #DE4361; }
 
-.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head {
+.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head, .theme-insurance-day #casualty-detail-table .table_head {
   background-color: #b0173d; }
 
 .theme-insurance-day .ID-Responsive-Table .owl-dots {
@@ -17919,7 +17937,7 @@ main {
 .theme-lloydslist .table.theme-table thead tr th {
   background-color: #1191D1; }
 
-.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head {
+.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head, .theme-lloydslist #casualty-detail-table .table_head {
   background-color: #1191D1; }
 
 .theme-lloydslist .ID-Responsive-Table .owl-dots {
@@ -18156,163 +18174,5 @@ main {
   background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20enable-background%3D%22new%200%200%2016%2016%22%20xml%3Aspace%3D%22preserve%22%3E%3Crect%20id%3D%22backgroundrect%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20x%3D%220%22%20y%3D%220%22%20fill%3D%22none%22%20stroke%3D%22none%22/%3E%0A%0A%3Cg%20class%3D%22currentLayer%22%3E%3Ctitle%3ELayer%201%3C/title%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20stroke-width%3D%223%22%20stroke-miterlimit%3D%2210%22%20points%3D%222.473933666944504%2C6%206.473933666944504%2C10%2014.473933666944504%2C2%20%22%20id%3D%22svg_1%22%20class%3D%22%22%20stroke-opacity%3D%221%22/%3E%3C/g%3E%3C/svg%3E); }
   .facets__section-list input[type="checkbox"]:checked + label:after use > svg {
     fill: #231f20; }
-/*
- *  Owl Carousel - Core
- */
-.owl-carousel {
-  display: none;
-  width: 100%;
-  -webkit-tap-highlight-color: transparent;
-  /* position relative and z-index fix webkit rendering fonts issue */
-  position: relative;
-  z-index: 1; }
-  .owl-carousel .owl-stage {
-    position: relative;
-    -ms-touch-action: pan-Y; }
-  .owl-carousel .owl-stage:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0; }
-  .owl-carousel .owl-stage-outer {
-    position: relative;
-    overflow: hidden;
-    /* fix for flashing background */
-    -webkit-transform: translate3d(0px, 0px, 0px); }
-  .owl-carousel .owl-item {
-    position: relative;
-    min-height: 1px;
-    float: left;
-    -webkit-backface-visibility: hidden;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none; }
-  .owl-carousel .owl-item img {
-    display: block;
-    width: 100%;
-    -webkit-transform-style: preserve-3d; }
-  .owl-carousel .owl-nav.disabled,
-  .owl-carousel .owl-dots.disabled {
-    display: none; }
-  .owl-carousel .owl-nav .owl-prev,
-  .owl-carousel .owl-nav .owl-next,
-  .owl-carousel .owl-dot {
-    cursor: pointer;
-    cursor: hand;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-loaded {
-    display: block; }
-  .owl-carousel.owl-loading {
-    opacity: 0;
-    display: block; }
-  .owl-carousel.owl-hidden {
-    opacity: 0; }
-  .owl-carousel.owl-refresh .owl-item {
-    display: none; }
-  .owl-carousel.owl-drag .owl-item {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; }
-  .owl-carousel.owl-grab {
-    cursor: move;
-    cursor: grab; }
-  .owl-carousel.owl-rtl {
-    direction: rtl; }
-  .owl-carousel.owl-rtl .owl-item {
-    float: right; }
-
-/* No Js */
-.no-js .owl-carousel {
-  display: block; }
-
-/*
- *  Owl Carousel - Animate Plugin
- */
-.owl-carousel .animated {
-  -webkit-animation-duration: 1000ms;
-          animation-duration: 1000ms;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both; }
-
-.owl-carousel .owl-animated-in {
-  z-index: 0; }
-
-.owl-carousel .owl-animated-out {
-  z-index: 1; }
-
-.owl-carousel .fadeOut {
-  -webkit-animation-name: fadeOut;
-          animation-name: fadeOut; }
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-
-/*
- * 	Owl Carousel - Auto Height Plugin
- */
-.owl-height {
-  -webkit-transition: height 500ms ease-in-out;
-          transition: height 500ms ease-in-out; }
-/*
- * 	Default theme - Owl Carousel CSS File
- */
-.owl-theme .owl-nav {
-  margin-top: 10px;
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: #D6D6D6;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px; }
-    .owl-theme .owl-nav [class*='owl-']:hover {
-      background: #869791;
-      color: #FFF;
-      text-decoration: none; }
-  .owl-theme .owl-nav .disabled {
-    opacity: 0.5;
-    cursor: default; }
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  margin-top: 10px; }
-
-.owl-theme .owl-dots {
-  text-align: center;
-  -webkit-tap-highlight-color: transparent; }
-  .owl-theme .owl-dots .owl-dot {
-    display: inline-block;
-    zoom: 1;
-    *display: inline; }
-    .owl-theme .owl-dots .owl-dot span {
-      width: 10px;
-      height: 10px;
-      margin: 5px 7px;
-      background: #D6D6D6;
-      display: block;
-      -webkit-backface-visibility: visible;
-      -webkit-transition: opacity 200ms ease;
-              transition: opacity 200ms ease;
-      border-radius: 30px; }
-    .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-      background: #869791; }
 
 /*# sourceMappingURL=index-generated.css.map */

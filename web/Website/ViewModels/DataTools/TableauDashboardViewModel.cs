@@ -15,6 +15,7 @@ using Informa.Library.User.Authentication;
 using Sitecore.Data.Fields;
 using System;
 using Informa.Library.User.Entitlement;
+using Informa.Library.SalesforceConfiguration;
 
 namespace Informa.Web.ViewModels.DataTools
 {
@@ -29,6 +30,9 @@ namespace Informa.Web.ViewModels.DataTools
         private readonly IAuthenticatedUserContext _authenticatedUserContext;
         public readonly ICallToActionViewModel CallToActionViewModel;
         protected readonly IEntitlementsContexts EntitlementsContexts;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
+
         public TableauDashboardViewModel(
             ISiteRootContext siteRootContext,
             IGlobalSitecoreService globalService,
@@ -39,7 +43,9 @@ namespace Informa.Web.ViewModels.DataTools
             IArticleSearch searcher,
             ICallToActionViewModel callToActionViewModel,
              IAuthenticatedUserContext authenticatedUserContext,
-             IEntitlementsContexts entitlementsContexts)
+             IEntitlementsContexts entitlementsContexts,
+             IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext,
+             ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
@@ -51,6 +57,8 @@ namespace Informa.Web.ViewModels.DataTools
             CallToActionViewModel = callToActionViewModel;
             _authenticatedUserContext = authenticatedUserContext;
             EntitlementsContexts = entitlementsContexts;
+            AuthenticatedUserEntitlementsContext = authenticatedUserEntitlementsContext;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
         #region Tableau Dashboard Parameters/details
@@ -71,7 +79,9 @@ namespace Informa.Web.ViewModels.DataTools
 
         private string GetTableauFilters()
         {
-            var entitlements = EntitlementsContexts.SelectMany(ec => ec.Entitlements);
+            var entitlements = SalesforceConfigurationContext.IsNewSalesforceEnabled ? 
+                AuthenticatedUserEntitlementsContext.Entitlements : 
+                EntitlementsContexts.SelectMany(ec => ec.Entitlements);
             if (GlassModel.Enable_Entitlement_Check && entitlements != null && entitlements.Any())
             {
                 if (GlassModel != null && !string.IsNullOrEmpty(GlassModel?.Filter))

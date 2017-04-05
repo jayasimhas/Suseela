@@ -142,7 +142,12 @@
 	
 	$(document).ready(function() {
 		if($('#casualty-listing-table').length > 0) {
-			CasualityListing.init(window.jsonCasualtyListing, $('#casualty-listing-table'));
+			if(typeof window.jsonCasualtyListing !== 'undefined' && window.jsonCasualtyListing.length !== 0){
+				CasualityListing.init(window.jsonCasualtyListing, $('#casualty-listing-table'));
+			}
+			else{
+				$('#casualty-listing-table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			}
 		}
 	});
 })();

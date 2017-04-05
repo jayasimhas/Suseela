@@ -18,7 +18,7 @@
                             </a>
                         </h5>
                         <p>@(Html.Raw(Model.CompanyNewsSummary))</p>
-                        <time class="article-related-content__date">@(String.Format("{0:HH:MM, d MMMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
+                        <time class="article-related-content__date">@(String.Format("{0:dd MMM yyyy}", Model.CompanyManualArticlePage.Actual_Publish_Date))</time>
                     </div>
                 </div>
             }
@@ -44,7 +44,7 @@
                                 </a>
                             </h5>
                             <div>@Html.Raw(listable.Summary)</div>
-                            <time class="article-related-content__date">@String.Format("{0:HH:MM, d MMMM yyyy}", listable.Actual_Publish_Date) </time>
+                            <time class="article-related-content__date">@String.Format("{0:dd MMM yyyy}", listable.Actual_Publish_Date) </time>
                         </div>
 
                     </div>

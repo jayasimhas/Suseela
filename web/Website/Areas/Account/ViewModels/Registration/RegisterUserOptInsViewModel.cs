@@ -2,11 +2,11 @@
 using Informa.Library.Company;
 using Informa.Library.Globalization;
 using Informa.Library.Navigation;
+using Informa.Library.SalesforceConfiguration;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.Newsletter;
 using Informa.Library.Utilities.Extensions;
-using Informa.Library.Utilities.References;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
@@ -25,6 +25,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
         protected readonly IReturnUrlContext ReturnUrlContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiteRootContext;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IPublicationsNewsletterUserOptInContext PublicationNewsletterUserOptInContext;
 
         public RegisterUserOptInsViewModel(
@@ -33,7 +34,8 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
             IReturnUrlContext returnUrlContext,
             IGlobalSitecoreService globalService,
             ISiteRootContext siteRootContext,
-            IPublicationsNewsletterUserOptInContext publicationNewsletterUserOptInContext)
+            IPublicationsNewsletterUserOptInContext publicationNewsletterUserOptInContext,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
         {
             UserCompanyContext = userCompanyContext;
             TextTranslator = textTranslator;
@@ -41,7 +43,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
             GlobalService = globalService;
             SiteRootContext = siteRootContext;
             PublicationNewsletterUserOptInContext = publicationNewsletterUserOptInContext;
-
+            SalesforceConfigurationContext = salesforceConfigurationContext;
             PublicationNewsletterOptIns = PublicationNewsletterUserOptInContext.OptIns.ToList();
             PublicationNewsletterOptIns.Where(w => w.Publication.Code == SiteRootContext.Item.Publication_Code).FirstOrDefault().OptIn = true;
         }
@@ -66,7 +68,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Registration
         }
         public List<IPublicationNewsletterUserOptIn> PublicationNewsletterOptIns { get; set; }// => PublicationNewsletterUserOptInContext.OptIns.ToList();
         public string Title => GlassModel?.Title;
-        public string SubTitle => UserCompanyContext.Company == null ? GlassModel?.Sub_Title : GlassModel?.Company_Sub_Title.ReplacePatternCaseInsensitive("#User_Company_Name#", UserCompanyContext.Company.Name);
+        public string SubTitle => SalesforceConfigurationContext.IsNewSalesforceEnabled ||  UserCompanyContext.Company == null ? GlassModel?.Sub_Title : GlassModel?.Company_Sub_Title.ReplacePatternCaseInsensitive("#User_Company_Name#", UserCompanyContext.Company.Name);
         public IHtmlString Body => new MvcHtmlString(GlassModel?.Body);
         public string SubmitText => TextTranslator.Translate("Registration.OptIn.Submit");
         public string GeneralErrorText => TextTranslator.Translate("Registration.OptIn.GeneralError");

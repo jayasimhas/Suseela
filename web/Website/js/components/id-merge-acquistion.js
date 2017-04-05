@@ -318,7 +318,7 @@
 		autoSuggest: function(data) {
 			var haystackMonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-				$('input[deal="Month"]').suggest(this.MonthNames);
+				$('tr.visible-lg input[deal="Month"]').suggest(this.MonthNames);
 
 				var haystackAcquirer = [], haystackTarget = [], haystackTargetSector = [], haystackTargetLocation = [];
 				for(var i = 0; i < data.length; i++) {
@@ -348,10 +348,10 @@
 					}
 				}
 				
-				$('input[deal="Acquirer"]').suggest(haystackAcquirer);
-				$('input[deal="Target"]').suggest(haystackTarget);
-				$('input[deal="TargetSector"]').suggest(haystackTargetSector);
-				$('input[deal="TargetLocation"]').suggest(haystackTargetLocation);
+				$('tr.visible-lg input[deal="Acquirer"]').suggest(haystackAcquirer);
+				$('tr.visible-lg input[deal="Target"]').suggest(haystackTarget);
+				$('tr.visible-lg input[deal="TargetSector"]').suggest(haystackTargetSector);
+				$('tr.visible-lg input[deal="TargetLocation"]').suggest(haystackTargetLocation);
 		},
 		scrollbarSticky: function() {},
 		init: function(data, Parent) {
@@ -372,7 +372,19 @@
 	}
 
 	if($('.merge-acquistion').length > 0) {
-		MergeAcquistion.init(window.jsonMergeAcquistion, $('.merge-acquistion'));
+		if(window.jsonMergeAcquistion && Array.isArray(window.jsonMergeAcquistion) && window.jsonMergeAcquistion.length > 0) {
+			MergeAcquistion.init(window.jsonMergeAcquistion, $('.merge-acquistion'));
+		} else {
+			var ErrorMessage = window.ErrorMessageMergeAcquistion;
+			$('.id-merges-acquisition').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
+											'<svg class="alert__icon">'+
+                        						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+
+                    						'</svg>'+
+											'<p class="page-account-contact__error">'+
+                        						ErrorMessage+
+                    						'</p>'+
+                						'</div>');
+		}
 	}
 })();
 if (!String.prototype.includes) {

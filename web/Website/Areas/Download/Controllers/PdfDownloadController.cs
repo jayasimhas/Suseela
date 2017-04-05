@@ -244,9 +244,9 @@ namespace Informa.Web.Areas.Account.Controllers
                 {
                     foreach (var tableNode in tableNodes)
                     {
-                        tableNode.SetAttributeValue("width", "688px");
-                        tableNode.SetAttributeValue("style", "color:#58595b");
-                        //tableNode.SetAttributeValue("border", "1px solid #e2e4e4");
+                        tableNode.SetAttributeValue("width", "100%");
+                        tableNode.SetAttributeValue("style", "color:#58595b;");
+                        //tableNode.SetAttributeValue("style", "border: 1px solid #e2e4e4;");
                     }
                 }
                 var CommonHeaderHtml = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-header']");

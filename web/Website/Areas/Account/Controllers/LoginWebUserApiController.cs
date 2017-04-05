@@ -19,13 +19,13 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IWebAuthenticateUser AuthenticateWebUser;
         protected readonly IMyViewToggleRedirectUrlFactory MyViewRedirectUrlFactory;
         protected readonly ISitecoreUserContext SitecoreUserContext;
-        protected readonly IverticalLogin VerticalLogin;
+        protected readonly IVerticalLogin VerticalLogin;
 
         public LoginWebUserApiController(
             IGenerateUserResetPassword generateUserResetPassword,
             IWebUserResetPasswordUrlFactory userResetPasswordUrlFactory,
             IWebAuthenticateUser authenticateWebUser,
-            IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory, ISitecoreUserContext sitecoreUserContext, IverticalLogin verticalLogin)
+            IMyViewToggleRedirectUrlFactory myViewRedirectUrlFactory, ISitecoreUserContext sitecoreUserContext, IVerticalLogin verticalLogin)
         {
             GenerateUserResetPassword = generateUserResetPassword;
             UserResetPasswordUrlFactory = userResetPasswordUrlFactory;
