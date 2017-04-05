@@ -7,15 +7,20 @@
 		},
 		loadDropdownData: function(options){
 			var optionStr = '';
-			$.each(options, function(idx, val){
-				if(idx == 0){
-					optionStr += '<option value="'+val.Value+'" selected="selected">'+val.Text+'</option>';
-				}
-				else{
-					optionStr += '<option value="'+val.Value+'">'+val.Text+'</option>';
-				}
-			});
-			return optionStr;
+			try {
+				$.each(options, function(idx, val){
+					if(idx == 0){
+						optionStr += '<option value="'+val.Value+'" selected="selected">'+val.Text+'</option>';
+					}
+					else{
+						optionStr += '<option value="'+val.Value+'">'+val.Text+'</option>';
+					}
+				});
+				return optionStr;
+			}
+			catch(err) {
+				$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			}
 		},
 		renderTable: function(tableData){
 			var self = this, loadDateVal = $('#tankerselectDay option').val();
@@ -36,14 +41,19 @@
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {
-					$('#tankerFixtures').empty();
-					for(var prop in searchData[0]){
-						self.sendHTTPRequest(searchData[0][prop], prop);
+					if(searchData && searchData.length){
+						$('#tankerFixtures').empty();
+						for(var prop in searchData[0]){
+							self.sendHTTPRequest(searchData[0][prop], prop);
+						}
+					}
+					else{
+						$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
 					}
 					
 				},
 				error: function (err) {
-					console.log('Feed url is getting error: ' + JSON.stringify(err));
+					$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
 				}
 			});
 		},
@@ -113,7 +123,12 @@
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			tankerFixtures.init(TankerFixturesDateOptions);
+			if(typeof window.TankerFixturesDateOptions !== 'undefined' && window.TankerFixturesDateOptions.length !== 0){
+				tankerFixtures.init(window.TankerFixturesDateOptions);
+			}
+			else{
+				$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			} 
 		}
 	});
 })();

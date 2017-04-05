@@ -9222,8 +9222,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -9661,6 +9661,9 @@ div#feedbacklite.fbl_r {
     top: 100% !important;
     left: auto !important; }
 
+.casualtyPan .alert-error {
+  width: 100%; }
+
 .casualtyPan h2, .casualtyPan .article-topics__header {
   font-size: 46px;
   font-weight: bold; }
@@ -9705,6 +9708,9 @@ div#feedbacklite.fbl_r {
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
 #cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex, #shipVehicle-Page, #shipCoalExport-page {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  #market-data-tool .alert-error, #dry-cargo .alert-error, #dry-cargo-cap .alert-error, #dry-cargo-bulk-fixtures .alert-error, #tanker-fixtures .alert-error, #ship-Container-ShipFixtures .alert-error, #ship-Coal-Export .alert-error, #market-Data-Dry-Cargo .alert-error,
+  #cockett-Bunker .alert-error, #ship-Roro .alert-error, #ship-Container-Ship .alert-error, #ship-Vehicle .alert-error, #tanker-Pure-ChemPage .alert-error, #shipContainerFixtures .alert-error, #fisDryBulkContainer .alert-error, #howeRobinsonContainer .alert-error, #market-imarex .alert-error, #shipVehicle-Page .alert-error, #shipCoalExport-page .alert-error {
+    width: 100%; }
   #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop, #ship-Container-ShipFixtures .borTop, #ship-Coal-Export .borTop, #market-Data-Dry-Cargo .borTop,
   #cockett-Bunker .borTop, #ship-Roro .borTop, #ship-Container-Ship .borTop, #ship-Vehicle .borTop, #tanker-Pure-ChemPage .borTop, #shipContainerFixtures .borTop, #fisDryBulkContainer .borTop, #howeRobinsonContainer .borTop, #market-imarex .borTop, #shipVehicle-Page .borTop, #shipCoalExport-page .borTop {
     height: 1px;
@@ -10104,6 +10110,8 @@ div#feedbacklite.fbl_r {
   margin-bottom: 32px;
   margin-bottom: 2rem;
   width: 100%; }
+  #market-data .alert-error {
+    width: 100%; }
   #market-data .owl-wrapper {
     width: 80%;
     float: left; }
@@ -13573,7 +13581,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
