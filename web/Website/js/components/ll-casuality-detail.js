@@ -46,7 +46,7 @@
 				CasualityDetail.init(window.jsonCasualtyDetailData, $('#casualty-detail-table'));
 			}
 			else{
-				$('#casualty-detail-table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+				$('#casualty-detail-table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
 			}
 		}
 	});

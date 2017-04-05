@@ -226,7 +226,7 @@
 		}
 		else{
 			$('#tankerPureChemPage').css('margin-bottom', '1rem');
-			$('#tankerPureChemPage').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			$('#tankerPureChemPage').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
 		}
 		
 	}
@@ -236,7 +236,7 @@
 		}
 		else{
 			$('#onOrderTable').css('margin-bottom', '1rem');
-			$('#onOrderTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">Table data is not loading</p></div>');
+			$('#onOrderTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
 		}
 	}
 
