@@ -205,7 +205,7 @@
 		if(window.jsonResultFinancial && Array.isArray(window.jsonResultFinancial) &&  window.jsonResultFinancial.length > 0) {
 			ResponsiveFinancialTable.init(window.jsonResultFinancial, $('#financialresults'));	
 		} else {
-			var ErrorMessage = window.ErrorMessageFinancial;
+			var ErrorMessage = $('#hdnErrormessage').val();
 			$('#financialresults').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
 											'<svg class="alert__icon">'+
                         						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+

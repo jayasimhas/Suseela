@@ -201,27 +201,32 @@
 			}
 		},
 		init: function(data, id) {
-			var self = this, dataObj = data[0], idx = 0;
-			
-			for(var prop in dataObj){
-				for(var key in dataObj[prop][0]){
-					idx++;
+			if(data.length !== 0){
+				var self = this, dataObj = data[0], idx = 0;
+				
+				for(var prop in dataObj){
+					for(var key in dataObj[prop][0]){
+						idx++;
+					}
+					break;
 				}
-				break;
+				if($(window).width() < 780 || idx > 5)
+					self.RenderCarousel(dataObj, id);
+				else
+					self.RenderTable(dataObj, id);
+				
+				$(window).resize(function() {
+					self.setColHeight(id);
+				});
 			}
-			if($(window).width() < 780 || idx > 5)
-				self.RenderCarousel(dataObj, id);
-			else
-				self.RenderTable(dataObj, id);
-			
-			$(window).resize(function() {
-				self.setColHeight(id);
-			});
+			else{
+				id.html('<div class="alert-error" style="display: block; margin-bottom: 1rem;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+			}
 		}
 	}
 
 	if($('#tankerPureChemPage').length > 0) {
-		if(typeof window.currentFleetTableData !== 'undefined' && window.currentFleetTableData.length !== 0){
+		if(typeof window.currentFleetTableData !== 'undefined'){
 			tankerPureChem.init(window.currentFleetTableData, $('#tankerPureChemPage'));
 		}
 		else{
@@ -231,7 +236,7 @@
 		
 	}
 	if($('#onOrderTable').length > 0) {
-		if(typeof window.onOrderTableData !== 'undefined' && window.onOrderTableData.length !== 0){
+		if(typeof window.onOrderTableData !== 'undefined'){
 			tankerPureChem.init(window.onOrderTableData, $('#onOrderTable'));
 		}
 		else{

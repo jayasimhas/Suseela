@@ -67,7 +67,7 @@
 				}
 			}
 		},
-		RenderTable: function(data, Parent) {
+		RenderTable: function(data, Parent) { 
 			Parent.empty();
 			this.DesktopVersion(data, Parent);
 			this.MobileVersion(data, Parent);
@@ -79,7 +79,7 @@
 				else{
 					$(window).scrollTop(tablePos);
 				}
-			});
+			}); 
 		},
 		FindHeaderLinks: function(data) {
 			for(var key in data) {
@@ -130,19 +130,24 @@
 				window.scrollTo(0, Top);
 			});
 		},
-		init: function(data, Parent) {
-			var FirstValue = $('#relDate').val(),
-				CurrentObj = data[0][FirstValue];
+		init: function(data, Parent) { 
+			if(data.length !== 0){
+				var FirstValue = $('#relDate').val(),
+					CurrentObj = data[0][FirstValue];
 
-			this.FindHeaderLinks(CurrentObj);
-			this.RenderTable(CurrentObj, Parent);
-			this.ChangeReport();
+				this.FindHeaderLinks(CurrentObj);
+				this.RenderTable(CurrentObj, Parent);
+				this.ChangeReport();
+			}
+			else{
+				$('#casualty-listing-table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+			}
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#casualty-listing-table').length > 0) {
-			if(typeof window.jsonCasualtyListing !== 'undefined' && window.jsonCasualtyListing.length !== 0){
+			if(typeof window.jsonCasualtyListing !== 'undefined'){
 				CasualityListing.init(window.jsonCasualtyListing, $('#casualty-listing-table'));
 			}
 			else{
