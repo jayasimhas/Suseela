@@ -131,17 +131,7 @@ namespace Informa.Library.Article.Search
                 query = query.OrderByDescending(i => i.ActualPublishDate);                
 
                 var results = query.GetResults();
-                foreach(var result in results)
-                {
-                    Sitecore.Diagnostics.Log.Warn("result value from query", result.Document.ItemId.Guid);
-                }
-                var articlestest = results.Hits.Select(w => GlobalService.GetItem<IArticle>(w.Document.ItemId.Guid));
-                foreach(var article in articlestest)
-                {
-                    Sitecore.Diagnostics.Log.Warn("article after getitem , ID", article._Id);
-                    Sitecore.Diagnostics.Log.Warn("article after getitem ,articlenumber", article.Article_Number);
-                }                
-
+              
                 return new ArticleSearchResults
                 {
                     Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))
