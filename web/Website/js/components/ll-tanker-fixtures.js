@@ -48,7 +48,12 @@
 						}
 					}
 					else{
-						$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+						if(searchData.length == 0){
+							$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+						}
+						else{
+							$('#tankerFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+						}
 					}
 					
 				},
@@ -123,7 +128,7 @@
 	
 	$(document).ready(function() {
 		if($('#tanker-fixtures').length > 0) {
-			if(typeof window.TankerFixturesDateOptions !== 'undefined' && window.TankerFixturesDateOptions.length !== 0){
+			if(typeof window.TankerFixturesDateOptions !== 'undefined'){
 				tankerFixtures.init(window.TankerFixturesDateOptions);
 			}
 			else{

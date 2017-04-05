@@ -121,37 +121,52 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     }
 
-                    if (WebConfigurationManager.AppSettings["RelatedArticleFlag"].Equals("true"))
+                    if (publication == "Lloydslist")
                     {
-
-                        XmlNodeList relatedelemList = d.GetElementsByTagName("RELATED_ARTICLE");
-                        foreach (XmlNode node in relatedelemList)
+                        if (WebConfigurationManager.AppSettings["RelatedArticleFlag"].Equals("true"))
                         {
-                            string url;
 
-                            using (new Sitecore.SecurityModel.SecurityDisabler())
+                            XmlNodeList relatedelemList = d.GetElementsByTagName("RELATED_ARTICLE");
+                            foreach (XmlNode node in relatedelemList)
                             {
-                                relatedArticle = node.InnerText;
-                                string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                                url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, ao["ARTICLE NUMBER"].ToString(), relatedArticle);
-                            }
-                            using (var client = new HttpClient())
-                            {
-                                var response = client.GetStringAsync(url).Result;
-                                if (!(response == "null" || response == ""))
+                                string url;
+
+                                using (new Sitecore.SecurityModel.SecurityDisabler())
                                 {
-                                    var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
+                                    relatedArticle = node.InnerText;
+                                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                                    url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, ao["ARTICLE NUMBER"].ToString(), relatedArticle);
+                                }
+                                using (var client = new HttpClient())
+                                {
+                                    var response = client.GetStringAsync(url).Result;
+                                    if (!(response == "null" || response == ""))
+                                    {
+                                        var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
 
 
-                                    relatedArticles = relatedArticles + resultarticles._Id.ToString() + "|";
+                                        relatedArticles = relatedArticles + resultarticles._Id.ToString() + "|";
+                                    }
+
+                                    else
+                                    {
+                                        string EscenictestLog = "ArticleEscenic: " + relatedArticle;
+                                        XMLDataLogger.WriteLog(EscenictestLog + " File Name " + f, "RelatedArticleMissingLog");
+                                    }
+
                                 }
 
                             }
 
+                            ao.Add("RelatedArticle", relatedArticles);
+
+
                         }
+                        string imageCaption = GetXMLData(d, "CAPTION");
+                        ao.Add("Image Caption", imageCaption);
 
-                        ao.Add("RelatedArticle", relatedArticles);
-
+                        string imageAlternateText = GetXMLData(d, "ALTTEXT");
+                        ao.Add("Image Alternate", imageAlternateText);
 
                     }
                     ao.Add(authorNode, AuthorName);
@@ -2053,9 +2068,32 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 }
 
                 // adding image an video tag  
-                if (nodeName.Equals("LEADIMAGE"))
+                if (nodeName.Equals("LEADIMAGE")|| nodeName.Equals("CAPTION")||nodeName.Equals("ALTTEXT"))
                 {
-                    return (xn != null) ? "<img src='" + xn["SRC"].InnerText + "' >" : string.Empty;
+                    if (!nodeName.Equals("LEADIMAGE"))
+                    {
+                        XmlNodeList leadImageList = xd.SelectSingleNode($"//{"LEADIMAGE"}").ChildNodes;
+                        foreach (XmlNode node in leadImageList)
+                        {
+                            if (node.Name == nodeName && node.InnerText != null)
+                            {
+                                return node.InnerText;
+                            }
+
+                            if (node.Name == nodeName && node.InnerText != null)
+                            {
+                                return node.InnerText;
+                            }
+
+                           
+                        }
+                        return "";
+                    }
+
+                    else
+                    {
+                        return (xn != null) ? "<img src='" + xn["SRC"].InnerText + "' >" : string.Empty;
+                    }
                 }
                 //else if (nodeName.Equals("IMAGE"))
                 //{

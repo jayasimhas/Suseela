@@ -43,7 +43,12 @@
 						self.sendHTTPRequest(searchData);
 					}
 					else{
-						$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+						if(searchData.length == 0){
+							$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+						}
+						else{
+							$('#shipFixtures').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+						}
 					}
 				},
 				error: function (err) { 
@@ -72,7 +77,7 @@
 	
 	$(document).ready(function() {
 		if($('#shipContainerFixtures').length > 0) { 
-			if(typeof window.shipContShipFixDateOptions !== 'undefined' && window.shipContShipFixDateOptions.length !== 0){
+			if(typeof window.shipContShipFixDateOptions !== 'undefined'){
 				shipContainerFixtures.init(window.shipContShipFixDateOptions);
 			}
 			else{

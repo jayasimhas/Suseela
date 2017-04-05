@@ -375,7 +375,10 @@
 		if(window.jsonMergeAcquistion && Array.isArray(window.jsonMergeAcquistion) && window.jsonMergeAcquistion.length > 0) {
 			MergeAcquistion.init(window.jsonMergeAcquistion, $('.merge-acquistion'));
 		} else {
-			var ErrorMessage = window.ErrorMessageMergeAcquistion;
+			var ErrorMessage = $('#hdnErrormessage').val();
+			if(window.jsonMergeAcquistion.length == 0) {
+                 var ErrorMessage = $('#hdnInfomessage').val();
+            }
 			$('.id-merges-acquisition').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
 											'<svg class="alert__icon">'+
                         						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+

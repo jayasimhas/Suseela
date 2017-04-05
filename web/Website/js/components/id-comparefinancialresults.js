@@ -343,7 +343,10 @@
 		if(window.jsonFinancialResultForCompare && Array.isArray(window.jsonFinancialResultForCompare) &&  window.jsonFinancialResultForCompare.length > 0) {
 			ResponsiveCompareTable.init(window.jsonFinancialResultForCompare, $('#comparefinancialresults'));	
 		} else {
-			var ErrorMessage = window.ErrorMessageCompareFinancial;
+			var ErrorMessage = $('#hdnErrormessage').val();
+			if(window.jsonFinancialResultForCompare.length == 0) {
+                 var ErrorMessage = $('#hdnInfomessage').val();
+            }
 			$('#comparefinancialresults').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
 											'<svg class="alert__icon">'+
                         						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+

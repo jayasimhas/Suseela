@@ -22,6 +22,7 @@
 
   <add key="DeleteArticleWithSpecialChar" value="false"/>
   <add key="ArticlePrefix" value="CO000001"/>
+  <add key="RelatedArticleFlag" value="true"/>
   <add key="PublishedYear" value="90"/>
   <add key="NewRelic.AppName" value="${NewRelic.AppName}" />
   <add key="unlocktimer" value="20" />

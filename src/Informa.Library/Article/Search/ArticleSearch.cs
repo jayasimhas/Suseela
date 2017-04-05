@@ -128,10 +128,10 @@ namespace Informa.Library.Article.Search
                     query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
                 }
 
-                query = query.OrderByDescending(i => i.ActualPublishDate);
+                query = query.OrderByDescending(i => i.ActualPublishDate);                
 
                 var results = query.GetResults();
-
+              
                 return new ArticleSearchResults
                 {
                     Articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid))

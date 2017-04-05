@@ -349,7 +349,10 @@
 		if(window.jsonResultAnnual && Array.isArray(window.jsonResultAnnual) &&  window.jsonResultAnnual.length > 0) {
 			ResponsiveTable.init(window.jsonResultAnnual, $('#annualresults'));	
 		} else {
-			var ErrorMessage = window.ErrorMessageAnnual;
+			var ErrorMessage = $('#hdnErrormessage').val();
+			if(window.jsonResultAnnual.length == 0) {
+                 var ErrorMessage = $('#hdnInfomessage').val();
+            }
 			$('#annualresults').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
 											'<svg class="alert__icon">'+
                         						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+

@@ -68,14 +68,19 @@
 			return Table;
 		},
 		init: function(data, id) {
-			var self = this;
-			self.RenderTable(data, id);
-			id.closest('.small_table').css('width', '100%');
+			if(data.length !== 0){ 
+				var self = this;
+				self.RenderTable(data, id);
+				id.closest('.small_table').css('width', '100%');
+			}
+			else{
+				$('#cockettBunker').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+			}
 		}
 	}
 	
 	if($('#cockettBunker').length > 0) { 
-		if(typeof window.jsonCockettBunker !== 'undefined' && window.jsonCockettBunker.length !== 0){
+		if(typeof window.jsonCockettBunker !== 'undefined'){
 			cockettBunker.init(window.jsonCockettBunker, $('#cockettBunker'));
 		}
 		else{
