@@ -2857,7 +2857,7 @@
 				<reg name="agrow_markets_regulatory_asia">Asia</reg>
 				<reg name="agrow_markets_regulatory_australasia">Australasia</reg>
 				<reg name="agrow_markets_regulatory_africa">Africa</reg>
-				<reg name="agrow_markets_regulatory_global">Global</reg>
+				<reg name="agrow_markets_regulatory_global">International</reg>
 			</region>
 			<commercial>
 				<comm name="agrow_appointments">People</comm>
@@ -4107,6 +4107,7 @@
         <top name="it">Technology</top>
       </topics>
       <sectors>
+        
         <sector name="regulation">Regulation</sector>
         <sector name="marine">Marine</sector>
         <sector name="lloyds">Lloyd's</sector>
@@ -4145,7 +4146,7 @@
         <reg name="greek_shipowners">Greece</reg>
         <reg name="nordic-baltic">Europe</reg>
         <reg name="ukraine">Ukraine</reg>
-        <reg name="maritime-americas">Americas</reg>
+        <reg name="maritime-americas">North America,South America</reg>
         <reg name="germany">Germany</reg>
         <reg name="spotlightonchina">China</reg>
         <reg name="greek-crisis">Greece</reg>
@@ -4153,7 +4154,7 @@
         <reg name="world-northamerica">North America</reg>
         <reg name="world-europe">Europe</reg>
         <reg name="world-africa"><![CDATA[Middle East & Africa]]></reg>
-        <reg name="world-candsamerica">South America</reg>
+        <reg name="world-candsamerica">North America,South America</reg>
         <reg name="world-asia">Asia</reg>
         <reg name="countries-afghanistan">Afghanistan</reg>
         <reg name="countries-alandislands">Åland Islands</reg>

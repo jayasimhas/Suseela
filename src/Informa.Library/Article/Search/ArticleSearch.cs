@@ -128,9 +128,19 @@ namespace Informa.Library.Article.Search
                     query = query.Page(filter.Page > 0 ? filter.Page - 1 : 0, filter.PageSize);
                 }
 
-                query = query.OrderByDescending(i => i.ActualPublishDate);
+                query = query.OrderByDescending(i => i.ActualPublishDate);                
 
                 var results = query.GetResults();
+                foreach(var result in results)
+                {
+                    Sitecore.Diagnostics.Log.Warn("result value from query", result.Document.ItemId.Guid);
+                }
+                var articlestest = results.Hits.Select(w => GlobalService.GetItem<IArticle>(w.Document.ItemId.Guid));
+                foreach(var article in articlestest)
+                {
+                    Sitecore.Diagnostics.Log.Warn("article after getitem , ID", article._Id);
+                    Sitecore.Diagnostics.Log.Warn("article after getitem ,articlenumber", article.Article_Number);
+                }                
 
                 return new ArticleSearchResults
                 {

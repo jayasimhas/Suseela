@@ -298,7 +298,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         map.Logger.Log(articlePath, $"content contains a(n) {nodeName}'", ProcessStatus.Warning, NewItemField, html);
 
                     //replace images
-                    if (nodeName.Equals("image"))
+                    if (nodeName.Equals("image")|| nodeName.Equals("img"))
                     {
 
                         // see if it exists
@@ -309,7 +309,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                         if (newImg != null)
                         {
                             string newSrc = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
-
+                           
                             // replace the node with sitecore tag
                             node.SetAttributeValue("src", newSrc);
 
@@ -348,7 +348,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                             if (newImg != null)
                             {
                                 string href = $"-/media/{newImg.ID.ToShortID().ToString()}.ashx";
-
+                                
                                 // replace the node with sitecore tag
                                 node.SetAttributeValue("href", href);
 
@@ -692,7 +692,7 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                 options.Versioned = false;
                 options.Destination = newPath;
                 options.Database = Sitecore.Configuration.Factory.GetDatabase("master");
-
+                options.AlternateText = "ddd";
                 // upload to sitecore
                 MediaCreator creator = new MediaCreator();
                 using (new SecurityDisabler()) // Use the SecurityDisabler object to override the security settings
