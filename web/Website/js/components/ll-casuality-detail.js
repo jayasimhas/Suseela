@@ -34,15 +34,25 @@
 					}
 				}
 			}
-		},
+		}, 
 		init: function(data, Parent) {
-			this.RenderTable(data, Parent);
+			if(data.length !== 0){
+				this.RenderTable(data, Parent);
+			}
+			else{
+				$('#casualty-detail-table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+			}
 		}
 	}
 	
 	$(document).ready(function() {
 		if($('#casualty-detail-table').length > 0) {
-			CasualityDetail.init(window.jsonCasualtyDetailData, $('#casualty-detail-table'));
+			if(typeof window.jsonCasualtyDetailData !== 'undefined'){
+				CasualityDetail.init(window.jsonCasualtyDetailData, $('#casualty-detail-table'));
+			}
+			else{
+				$('#casualty-detail-table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+			}
 		}
 	});
 })();

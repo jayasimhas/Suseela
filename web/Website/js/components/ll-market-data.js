@@ -2,28 +2,32 @@
 	var marketData = {
 		recreateArr: [],
 		renderTable: function(dataObj, renderId){
-			console.log('Length of object is: ' + dataObj.length);
-			for(var i=0; i<dataObj.length; i++){
-				var filterObj = Object.keys(dataObj[i]), createObj = {}, filterKeys;
-				if(filterObj[1].split('-').length == 2){
-					filterKeys = this.sortDateOptions(filterObj);
-				}
-				else{
-					filterKeys = filterObj.sort().reverse();
-				}
-				for(var j=0; j<filterKeys.length; j++){
-					for(var prop in dataObj[i]){
-						if(prop == filterKeys[j]){
-							createObj[prop] = dataObj[i][prop]; 
+			if(dataObj.length !== 0){
+				for(var i=0; i<dataObj.length; i++){
+					var filterObj = Object.keys(dataObj[i]), createObj = {}, filterKeys;
+					if(filterObj[1].split('-').length == 2){
+						filterKeys = this.sortDateOptions(filterObj);
+					}
+					else{
+						filterKeys = filterObj.sort().reverse();
+					}
+					for(var j=0; j<filterKeys.length; j++){
+						for(var prop in dataObj[i]){
+							if(prop == filterKeys[j]){
+								createObj[prop] = dataObj[i][prop]; 
+							}
 						}
 					}
+					this.recreateArr.push(createObj);
 				}
-				this.recreateArr.push(createObj);
+				this.loadMobileView(this.recreateArr, renderId[0]);
+				this.loadDescView(this.recreateArr, renderId[1]);
+				this.initiateCarousel(renderId[0]);
+				this.setColHeight(renderId);
 			}
-			this.loadMobileView(this.recreateArr, renderId[0]);
-			this.loadDescView(this.recreateArr, renderId[1]);
-			this.initiateCarousel(renderId[0]);
-			this.setColHeight(renderId);
+			else{
+				$('.marketDataTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
+			}
 		},
 		loadMobileView: function(tableData, id){
 			var self = this, headObj = tableData[0], indx = 0, titflag = true, colInd = 0;
@@ -188,7 +192,13 @@
 	
 	$(document).ready(function() {
 		if($('#market-data').length > 0) {
-			marketData.init(window.jsonBalticIndices, $('.marketDataTable'));
+			if(typeof window.jsonBalticIndices !== 'undefined'){
+				marketData.init(window.jsonBalticIndices, $('.marketDataTable'));
+			}
+			else{
+				$('.marketDataTable').closest('.owl-wrapper').css('width', '100%');
+				$('.marketDataTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+			}
 		}
 	});
 })();

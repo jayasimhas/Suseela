@@ -2227,7 +2227,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
   background: #fff; }
 
 #main-carousel .li-content-company {
-  border: none;
+  border: 1px solid transparent;
   background-color: #fff;
   height: 234px;
   padding: 15px 18px;
@@ -4150,9 +4150,6 @@ body.lightboxed {
     position: fixed;
     top: 0;
     height: 100%; }
-  .main-menu .main-menu-list {
-    height: 100%;
-    overflow-y: scroll; }
   @media (max-width: 800px) {
     .main-menu {
       border-right: 1px solid #d1d3d4;
@@ -9664,6 +9661,9 @@ div#feedbacklite.fbl_r {
     top: 100% !important;
     left: auto !important; }
 
+.casualtyPan .alert-error {
+  width: 100%; }
+
 .casualtyPan h2, .casualtyPan .article-topics__header {
   font-size: 46px;
   font-weight: bold; }
@@ -9708,6 +9708,9 @@ div#feedbacklite.fbl_r {
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
 #cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex, #shipVehicle-Page, #shipCoalExport-page {
   font-family: "Roboto", Helvetica, Arial, sans-serif; }
+  #market-data-tool .alert-error, #dry-cargo .alert-error, #dry-cargo-cap .alert-error, #dry-cargo-bulk-fixtures .alert-error, #tanker-fixtures .alert-error, #ship-Container-ShipFixtures .alert-error, #ship-Coal-Export .alert-error, #market-Data-Dry-Cargo .alert-error,
+  #cockett-Bunker .alert-error, #ship-Roro .alert-error, #ship-Container-Ship .alert-error, #ship-Vehicle .alert-error, #tanker-Pure-ChemPage .alert-error, #shipContainerFixtures .alert-error, #fisDryBulkContainer .alert-error, #howeRobinsonContainer .alert-error, #market-imarex .alert-error, #shipVehicle-Page .alert-error, #shipCoalExport-page .alert-error {
+    width: 100%; }
   #market-data-tool .borTop, #dry-cargo .borTop, #dry-cargo-cap .borTop, #dry-cargo-bulk-fixtures .borTop, #tanker-fixtures .borTop, #ship-Container-ShipFixtures .borTop, #ship-Coal-Export .borTop, #market-Data-Dry-Cargo .borTop,
   #cockett-Bunker .borTop, #ship-Roro .borTop, #ship-Container-Ship .borTop, #ship-Vehicle .borTop, #tanker-Pure-ChemPage .borTop, #shipContainerFixtures .borTop, #fisDryBulkContainer .borTop, #howeRobinsonContainer .borTop, #market-imarex .borTop, #shipVehicle-Page .borTop, #shipCoalExport-page .borTop {
     height: 1px;
@@ -10107,6 +10110,8 @@ div#feedbacklite.fbl_r {
   margin-bottom: 32px;
   margin-bottom: 2rem;
   width: 100%; }
+  #market-data .alert-error {
+    width: 100%; }
   #market-data .owl-wrapper {
     width: 80%;
     float: left; }
@@ -14728,8 +14733,6 @@ main {
           -ms-flex: 0 0 auto;
               flex: 0 0 auto;
       margin-left: 330px; } }
-  .main__wrapper.shift-main-content {
-    margin-left: 300px; }
   @media (max-width: 480px) {
     .main__wrapper {
       width: 100%;
@@ -14744,7 +14747,9 @@ main {
   width: 100%; }
 
 .shift-main-content {
-  margin-left: -330px; }
+  left: 0;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important; }
 
 .main__content {
   max-width: 1240px;
@@ -17044,7 +17049,7 @@ main {
 .theme-commodities .table.theme-table thead tr th {
   background-color: #c44c0a; }
 
-.theme-commodities #tanker-fixtures.table-responsive .table .table_head {
+.theme-commodities #tanker-fixtures.table-responsive .table .table_head, .theme-commodities #casualty-detail-table .table_head {
   background-color: #F5821F; }
 
 .theme-commodities .ID-Responsive-Table .owl-dots {
@@ -17488,7 +17493,7 @@ main {
 .theme-insurance-day .table.theme-table thead tr th {
   background-color: #DE4361; }
 
-.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head {
+.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head, .theme-insurance-day #casualty-detail-table .table_head {
   background-color: #b0173d; }
 
 .theme-insurance-day .ID-Responsive-Table .owl-dots {
@@ -17932,7 +17937,7 @@ main {
 .theme-lloydslist .table.theme-table thead tr th {
   background-color: #1191D1; }
 
-.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head {
+.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head, .theme-lloydslist #casualty-detail-table .table_head {
   background-color: #1191D1; }
 
 .theme-lloydslist .ID-Responsive-Table .owl-dots {

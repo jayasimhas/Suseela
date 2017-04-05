@@ -5,9 +5,12 @@
 {
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation1)
     {
-        <script type="text/javascript">
-            var TankerFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
-        </script>
+        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        {
+            <script type="text/javascript">
+                var TankerFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
+            </script>
+        }
         <div class="small_table">
             <div class="table-responsive" id="tanker-fixtures">
                 <h2>@Model.PageTitle</h2>
@@ -46,9 +49,12 @@
     }
     if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation2)
     {
-        <script type="text/javascript">
-            var DryBulkFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
-        </script>
+        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        {
+            <script type="text/javascript">
+                var DryBulkFixturesDateOptions=@Html.Raw(Model.jsonDropdownData);
+            </script>
+        }
         <div class="small_table">
             <div class="table-responsive casualty-table-theme" id="dry-cargo-bulk-fixtures">
                 <h2>@Model.PageTitle</h2>
@@ -89,10 +95,12 @@
     }
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation3)
     {
-        <script type="text/javascript">
-            var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
-        </script>
-
+        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        {
+            <script type="text/javascript">
+                var shipContShipFixDateOptions=@Html.Raw(Model.jsonDropdownData);
+            </script>
+        }
         <div class="small_table">
             <div class="table-responsive" id="shipContainerFixtures">
                 <h2>@Model.PageTitle</h2>
@@ -130,16 +138,18 @@
     }
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation4)
     {
-        <script type="text/javascript">
-            var currentFleetTableData=@Html.Raw(Model.jsonTableData);
-        </script>
+        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        {
+            <script type="text/javascript">
+                var currentFleetTableData=@Html.Raw(Model.jsonTableData);
+            </script>
+        }
         if (!string.IsNullOrEmpty(Model.jsonAdditionalTableData))
         {
             <script type="text/javascript">
                 var onOrderTableData=@Html.Raw(Model.jsonAdditionalTableData);
             </script>
         }
-
         <div class="table-responsive" id="tanker-Pure-ChemPage">
             <h2>@Model.PageTitle</h2>
             <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
@@ -165,10 +175,12 @@
     }
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation5)
     {
-        <script type="text/javascript">
-            var fisDryBulkDateOptions=@Html.Raw(Model.jsonDropdownData);
-        </script>
-
+        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        {
+            <script type="text/javascript">
+                var fisDryBulkDateOptions=@Html.Raw(Model.jsonDropdownData);
+            </script>
+        }
         <div class="small_table">
             <div class="table-responsive" id="fisDryBulkContainer">
                 <h2>@Model.PageTitle</h2>
@@ -209,10 +221,12 @@
     }
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation6)
     {
-        <script type="text/javascript">
-            var jsonCockettBunker=@Html.Raw(Model.jsonTableData);
-        </script>
-
+        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        {
+            <script type="text/javascript">
+                var jsonCockettBunker=@Html.Raw(Model.jsonTableData);
+            </script>
+        }
         <div class="small_table">
             <div class="table-responsive" id="cockett-Bunker">
                 <h2>@Model.PageTitle</h2>
@@ -360,7 +374,7 @@
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation10)
     {
         <script type="text/javascript">
-            var shipVehicleDateOptions=@Html.Raw(Model.jsonDropdownData);            
+            var shipVehicleDateOptions=@Html.Raw(Model.jsonDropdownData);
         </script>
         <div class="table-responsive" id="shipVehicle-Page">
             <h2>@Model.PageTitle</h2>

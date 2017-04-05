@@ -39,7 +39,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Management
             IsAuthenticated = userContext.IsAuthenticated;
             Username = userContext.User.Username;
             Profile = profileContext.Profile;
-            AssociatedCompany = userCompanyContext?.Company?.Name ?? string.Empty;
+            AssociatedCompany = salesforceConfigurationContext.IsNewSalesforceEnabled ? string.Empty : userCompanyContext?.Company?.Name ?? string.Empty;
             Salutations = globalService.GetSalutations();
             Suffixes = globalService.GetNameSuffixes();
             JobFunctions = globalService.GetJobFunctions();

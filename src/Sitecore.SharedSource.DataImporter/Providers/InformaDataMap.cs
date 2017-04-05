@@ -1055,19 +1055,80 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         {
             Database MasterDB = Sitecore.Configuration.Factory.GetDatabase("master");
 
-            Item[] itemstoRemove = MasterDB.SelectItems(this.Query);
-            if (itemstoRemove != null && itemstoRemove.Any())
+            //Item[] itemstoRemove = MasterDB.SelectItems(this.Query);
+            //if (itemstoRemove != null && itemstoRemove.Any())
+            //{
+            //    foreach (var item in itemstoRemove)
+            //    {
+            //        if (item.ParentID.Guid.ToString().Equals("ef2014a1-819c-46e7-a841-ee0bd952a0e2") && item.TemplateName.Equals("Article"))
+            //            item.Delete();
+            //    }
+            //}
+
+            ////        Item department1 = MasterDB.GetItem(this.Query);
+            ////department1.DeleteChildren().Equals(depar;
+            //return Enumerable.Empty<object>();
+
+
+            string relatedArticle = null;
+            string relatedArticles = "";
+            string Publication = null;
+            // XmlNodeList relatedelemList = d.GetElementsByTagName("RELATED_ARTICLE");
+
+
+
+            string[] files = Directory.GetFiles(this.Query);
+
+            foreach (string node in files)
             {
-                foreach (var item in itemstoRemove)
-                {
-                    if (item.ParentID.Guid.ToString().Equals("ef2014a1-819c-46e7-a841-ee0bd952a0e2") && item.TemplateName.Equals("Article"))
-                        item.Delete();
-                }
+                string url;
+
+
+                XmlDocument doc = new XmlDocument();
+                doc.Load(node);
+                XmlNode ID = doc.SelectSingleNode($"//ID");
+
+                //  System.Collections.Generic.IEnumerable<String> lines = File.ReadLines(node);
+                //  foreach (string Esce in lines)
+                //  {
+
+                relatedArticle = ID.InnerText;
+
+                    Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
+                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                    XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
+                    url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
+
+                    using (var client = new HttpClient())
+                    {
+                        var response = client.GetStringAsync(url).Result;
+                        if (!(response == "null" || response == ""))
+                        {
+                            var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
+                            relatedArticles = resultarticles._Id.ToString();
+                            using (new Sitecore.SecurityModel.SecurityDisabler())
+                            { 
+                                Item item = MasterDB.GetItem(relatedArticles);
+
+                                if (item != null)
+                                {
+                                    XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
+                                    XMLDataLogger.WriteLog("Article Path:" + item.Name, "ArticleCleanup");
+                                    if (WebConfigurationManager.AppSettings["DeleteArticleWithSpecialChar"].Equals("true"))
+                                    {
+                                        item.Delete();
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
             }
 
-            //        Item department1 = MasterDB.GetItem(this.Query);
-            //department1.DeleteChildren().Equals(depar;
             return Enumerable.Empty<object>();
+
+
         }
 
         public override IEnumerable<object> ImportImages(IDataMap map)

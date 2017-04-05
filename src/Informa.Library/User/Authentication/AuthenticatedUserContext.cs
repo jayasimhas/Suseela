@@ -1,4 +1,5 @@
-﻿using Informa.Library.Services.Global;
+﻿using Informa.Library.SalesforceConfiguration;
+using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.Profile;
 using Jabberwocky.Glass.Autofac.Attributes;
@@ -12,36 +13,48 @@ using System.Web.Security;
 
 namespace Informa.Library.User.Authentication
 {
-	[AutowireService(LifetimeScope.SingleInstance)]
-	public class AuthenticatedUserContext : IAuthenticatedUserContext
-	{
-		protected readonly ISitecoreUserContext SitecoreUserContext;
+    [AutowireService(LifetimeScope.SingleInstance)]
+    public class AuthenticatedUserContext : IAuthenticatedUserContext
+    {
+        protected readonly ISitecoreUserContext SitecoreUserContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IUserSession UserSession;
         protected readonly IUserProfileFactory UserProfileFactory;
+        protected readonly IUserProfileFactoryV2 UserProfileFactoryV2;
         protected readonly ISitecoreVirtualUsernameFactory VirtualUsernameFactory;
-        protected readonly IverticalLogin VerticalLogin;
+        protected readonly IVerticalLogin VerticalLogin;
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
 
-        public AuthenticatedUserContext(ISitecoreUserContext sitecoreUserContext, IGlobalSitecoreService globalService, ISiteRootContext siteRootContext, IUserSession userSession, IUserProfileFactory userProfileFactory,
-            ISitecoreVirtualUsernameFactory virtualUsernameFactory, IverticalLogin verticalLogin)
-		{
-			SitecoreUserContext = sitecoreUserContext;
+        public AuthenticatedUserContext(
+            ISitecoreUserContext sitecoreUserContext,
+            IGlobalSitecoreService globalService,
+            ISiteRootContext siteRootContext,
+            IUserSession userSession,
+            IUserProfileFactory userProfileFactory,
+            ISitecoreVirtualUsernameFactory virtualUsernameFactory,
+            IVerticalLogin verticalLogin,
+            IUserProfileFactoryV2 userProfileFactoryV2,
+            ISalesforceConfigurationContext salesforceConfigurationContext)
+        {
+            SitecoreUserContext = sitecoreUserContext;
             GlobalService = globalService;
             SiteRootContext = siteRootContext;
             UserSession = userSession;
             UserProfileFactory = userProfileFactory;
             VirtualUsernameFactory = virtualUsernameFactory;
             VerticalLogin = verticalLogin;
+            UserProfileFactoryV2 = userProfileFactoryV2;
+            SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
         public IAuthenticatedUser User
-		{
-			get
-			{
-                if(!IsAuthenticated) { return null; }
+        {
+            get
+            {
+                if (!IsAuthenticated) { return null; }
 
-				var sitecoreUser = SitecoreUserContext.User;
+                var sitecoreUser = SitecoreUserContext.User;
 
                 //Although sitecoreUser.Profile.Email gets filled and saved when creating the user, after the browser gets closed and reopened the Email becomes NULL.
                 //So had to find another way to retrieve it when extranet
@@ -50,22 +63,22 @@ namespace Informa.Library.User.Authentication
                 {
                     sitecoreUser.RuntimeSettings.IsVirtual = true;
                     sitecoreUser.Profile.Email = sitecoreUser.LocalName;
-                    
+
                 }
 
-                
+
 
                 return new AuthenticatedUser
-				{
-					Email = sitecoreUser.LocalName,
-					Name = sitecoreUser.Profile.Name,
-					Username = sitecoreUser.LocalName,
+                {
+                    Email = sitecoreUser.LocalName,
+                    Name = sitecoreUser.Profile.Name,
+                    Username = sitecoreUser.LocalName,
                     AccessToken = sitecoreUser.Profile.Comment
-				};
-			}
-		}
+                };
+            }
+        }
 
-		public bool IsAuthenticated => AuthenticatedUserCheck();
+        public bool IsAuthenticated => AuthenticatedUserCheck();
 
         private bool AuthenticatedUserCheck()
         {
@@ -78,18 +91,20 @@ namespace Informa.Library.User.Authentication
             VerticalLogin.curVertical = curVertical;
             string cookieName = VerticalLogin.GetVerticalCookieName();
             if (SitecoreUserContext.User.IsAuthenticated && HttpContext.Current.Request.Cookies[cookieName] != null)
-            return true;
-          
+                return true;
+
             if (HttpContext.Current.Request.Cookies[cookieName] != null)
             {
                 string username = HttpContext.Current.Request.Cookies[cookieName].Value;
                 if (!string.IsNullOrEmpty(username))
                 {
                     string uToken = username.Contains("|") ? username.Split('|')[1] : string.Empty;
-                    IAuthenticatedUser user = new AuthenticatedUser() { Username = username ,AccessToken = uToken };
+                    IAuthenticatedUser user = new AuthenticatedUser() { Username = username, AccessToken = uToken };
                     var sitecoreUsername = VirtualUsernameFactory.Create(user);
                     var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
-                    var userProfile = UserProfileFactory.Create(user);
+                    var userProfile = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                        UserProfileFactoryV2.Create(user) :
+                    UserProfileFactory.Create(user);
                     if (userProfile != null)
                     {
                         sitecoreVirtualUser.Profile.Email = userProfile.Email;
@@ -101,35 +116,9 @@ namespace Informa.Library.User.Authentication
                     var success = AuthenticationManager.Login(sitecoreVirtualUser.Name, true);
                     return true;
                 }
-                //if (success)
-                //{
-                //    LoginActions.Process(user);
-                //}
             }
             return false;
-            //if (!SitecoreUserContext.User.IsAuthenticated) return false;
-            //var sitecoreUser = SitecoreUserContext.User;
-            //string loggedInVertical = sitecoreUser.Profile.GetCustomProperty("vertical");
-            ////The below code tries to read the user session to find the vertical. 
-            //if (string.IsNullOrEmpty(loggedInVertical))
-            //{
-            //    var vertical_Session = UserSession.Get<string>("user_vertical");
-            //    if(vertical_Session != null && !string.IsNullOrEmpty(vertical_Session.Value))
-            //    {
-            //        loggedInVertical = vertical_Session.Value;
-            //        sitecoreUser.Profile.SetCustomProperty("vertical", loggedInVertical);
-            //        if(sitecoreUser.Domain.Name == "extranet")
-            //            sitecoreUser.Profile.Save();
-            //    }
-            //}
-            //if (!string.IsNullOrEmpty(loggedInVertical))
-            //{
-            //    var curVertical = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
-            //    if (!loggedInVertical.Contains(curVertical))
-            //        return false;
-            //}
-            //return true;
         }
 
-    }                                      
+    }
 }

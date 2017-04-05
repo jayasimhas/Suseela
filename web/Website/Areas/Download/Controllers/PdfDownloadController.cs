@@ -88,9 +88,9 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="DataToolLinkDesc">Data tool description</param>
         /// <param name="DataToolLinkText">Data Tool Link Text</param>
         /// <returns></returns>
-        public ActionResult GenerateAndDownloadPdf(string pdfPageUrl, string userEmail, string PdfTitle, string DataToolLinkDesc, string DataToolLinkText)
+        public ActionResult GenerateAndDownloadPdf(string pdfPageUrl, string userEmail, string PdfTitle, string DataToolLinkDesc, string DataToolLinkText, string PdfIssueNumber, string PdfCreatedDate)
         {
-            GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfType.Manual, null);
+            GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfIssueNumber, PdfCreatedDate, PdfType.Manual, null);
             return new EmptyResult();
         }
 
@@ -106,7 +106,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="DataToolLinkDesc"></param>
         /// <param name="DataToolLinkText"></param>
         /// <returns></returns>
-        public ActionResult GenerateAndDownloadPersonalizePdf(string pdfPageUrl, string userEmail, string PdfTitle, DateTime? PubStartDate, DateTime? PubEndDate, int ArticleSize, string DataToolLinkDesc, string DataToolLinkText)
+        public ActionResult GenerateAndDownloadPersonalizePdf(string pdfPageUrl, string userEmail, string PdfTitle, DateTime? PubStartDate, DateTime? PubEndDate, int ArticleSize, string DataToolLinkDesc, string DataToolLinkText, string PdfIssueNumber, string PdfCreatedDate)
         {
             if (PubStartDate == default(DateTime) && PubEndDate == default(DateTime))
             {
@@ -178,7 +178,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     strngHtml += perHtml;
             }
 
-            GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfType.Personalized, strngHtml);
+            GeneratePdfDocument(pdfPageUrl, userEmail, PdfTitle, DataToolLinkDesc, DataToolLinkText, PdfIssueNumber, PdfCreatedDate, PdfType.Personalized, strngHtml);
             return new EmptyResult();
         }
 
@@ -192,7 +192,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="PdfTitle">PDF Title</param>
         /// <param name="DataToolLinkDesc">Data tool description</param>
         /// <param name="DataToolLinkText">Data Tool Link Text</param>
-        private void GeneratePdfBody(PdfWriter writer, Document document, string userEmail, string DataToolLinkDesc, string DataToolLinkText, string pdfPageUrl, PdfType pdfType, string strngHtml = null)
+        private void GeneratePdfBody(PdfWriter writer, Document document, string userEmail, string DataToolLinkDesc, string DataToolLinkText, string pdfPageUrl, string PdfIssueNumber, string PdfCreatedDate, PdfType pdfType, string strngHtml = null)
         {
             string fullPageHtml = string.Empty;
             string html = string.Empty;
@@ -223,14 +223,14 @@ namespace Informa.Web.Areas.Account.Controllers
                     }
                 }
                 html = doc.GetElementbyId("mainContentPdf").InnerHtml;
-
+                string pdfCreatedDate = !string.IsNullOrEmpty(PdfCreatedDate) ? Convert.ToDateTime(PdfCreatedDate).ToString("dd MMMM yyyy") : DateTime.Now.ToString("dd MMMM yyyy");
                 var replacements = new Dictionary<string, string>
                 {
                     ["<p"] = "<p style=\"color:#58595b; font-size:13px; line-height:20px; padding: 0px; margin: 0px; padding-bottom: 10px;\"",
                     ["<li>"] = "<li style=\"color:#58595b; font-size:13px; line-height:20px;\">",
                     ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail ?? "Admin",
-                    ["#HeaderDate#"] = DateTime.Now.ToString("dd MMMM yyyy"),
+                    ["#HeaderDate#"] = PdfIssueNumber + "  " + pdfCreatedDate,
                     ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
                 };
                 html = html.ReplacePatternCaseInsensitive(replacements);
@@ -446,7 +446,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="DataToolLinkDesc"></param>
         /// <param name="DataToolLinkText"></param>
         /// <param name="fullPersonalizedHtml"></param>
-        private void GeneratePdfDocument(string pdfPageUrl, string userEmail, string PdfTitle, string DataToolLinkDesc, string DataToolLinkText, PdfType pdfType, string strngHtml)
+        private void GeneratePdfDocument(string pdfPageUrl, string userEmail, string PdfTitle, string DataToolLinkDesc, string DataToolLinkText, string PdfIssueNumber, string PdfCreatedDate, PdfType pdfType, string strngHtml)
         {
             using (MemoryStream ms = new MemoryStream())
             {
@@ -457,7 +457,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 writer.PageEvent = globalElement;
                 document.Open();
 
-                GeneratePdfBody(writer, document, userEmail, DataToolLinkDesc, DataToolLinkText, pdfPageUrl, pdfType, strngHtml);
+                GeneratePdfBody(writer, document, userEmail, DataToolLinkDesc, DataToolLinkText, pdfPageUrl, PdfIssueNumber, PdfCreatedDate, pdfType, strngHtml);
                 writer.StrictImageSequence = true;
 
                 //Add meta information to the document
@@ -498,7 +498,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
             }
             if (sections.Count == 0 && UserPreferences.Preferences.PreferredChannels.Count == 0)
-            {  
+            {
                 List<Channel> sortedChannels = new List<Channel>();
                 var channels = new Channel();
                 bool IsTopicSubscription = false;
@@ -514,12 +514,12 @@ namespace Informa.Web.Areas.Account.Controllers
 
                 //IsTopicSubscription = subscriptions.Select(a => a.IsTopicSubscription);
                 foreach (var sub in subscriptions)
-                {                                    
+                {
                     IsTopicSubscription = sub.IsTopicSubscription;
                     for (int i = 0; i < sub.SubscribedChannels.Count; i++)
                     {
-                        if(SalesforceConfigurationContext.IsNewSalesforceEnabled)
-                        {                      
+                        if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
+                        {
                             channels = sortedChannels.Where(y => string.Format("{0}.{1}", SiterootContext.Item.Publication_Code, y.ChannelCode).Contains(sub.SubscribedChannels[i].ChannelId)).FirstOrDefault();
                             topics = channels.Topics.Where(topic => topic.IsFollowing).OrderBy(topic => topic.TopicOrder).ToList();
                             CreateSectionsFromChannels(channels, sections, UserPreferences.Preferences.IsNewUser, ref topics);
@@ -527,7 +527,7 @@ namespace Informa.Web.Areas.Account.Controllers
                         else
                         {
                             CreateSectionsFromChannels(sub.SubscribedChannels[i], sections, IsTopicSubscription);
-                        }                                             
+                        }
                     }
                 }
             }

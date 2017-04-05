@@ -250,7 +250,7 @@
     .table.theme-table thead tr th {
         background-color: $seconday-color;
     }
-    #tanker-fixtures.table-responsive .table .table_head {
+    #tanker-fixtures.table-responsive .table .table_head, #casualty-detail-table .table_head {
         background-color: $tertiary-color;
     }
     .ID-Responsive-Table {
