@@ -54,6 +54,8 @@ namespace Informa.Web.ViewModels
 
         public bool IsSiteDebuggingAllowed => _dependencies.SiteDebuggingAllowedContext.IsAllowed;
         public string PrintedByText => _dependencies.TextTranslator.Translate("Header.PrintedBy");
+        public string ErrorMessage => _dependencies.TextTranslator.Translate("General.ErrorMessage");
+        public string InfoMessage => _dependencies.TextTranslator.Translate("General.InfoMessage");
         public string UserName => _dependencies.AuthenticatedUserContext.User?.Name ?? string.Empty;
         public string CorporateName => _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
             string.Empty : _dependencies.UserCompanyContext?.Company?.Name;
