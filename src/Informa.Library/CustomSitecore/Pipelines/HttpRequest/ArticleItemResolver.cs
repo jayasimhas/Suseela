@@ -51,7 +51,10 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
             string urlTitle = ArticleSearch.GetCleansedArticleTitle(a); // a._Name.ToLower().Replace(" ", "-");
             if (!urlTitle.Equals(match.ArticleTitle, System.StringComparison.InvariantCultureIgnoreCase))
-                HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a),true);
+                if (!HttpContext.Current.Response.IsRequestBeingRedirected)
+                {
+                    HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a), true);
+                }
 
             Item i = SitecoreContext.GetItem<Item>(a._Id);
             if (i == null)

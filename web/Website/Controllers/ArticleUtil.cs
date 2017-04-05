@@ -55,6 +55,7 @@ namespace Informa.Web.Controllers
 				return;
 
 			string newPath = ArticleSearch.GetArticleCustomPath(results.Articles.First());
+            if(!HttpContext.Current.Response.IsRequestBeingRedirected)
 			HttpContext.Current.Response.RedirectPermanent(newPath,true);
 		}
 
