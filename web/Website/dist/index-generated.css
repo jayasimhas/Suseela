@@ -17049,7 +17049,7 @@ main {
 .theme-commodities .table.theme-table thead tr th {
   background-color: #c44c0a; }
 
-.theme-commodities #tanker-fixtures.table-responsive .table .table_head {
+.theme-commodities #tanker-fixtures.table-responsive .table .table_head, .theme-commodities #casualty-detail-table .table_head {
   background-color: #F5821F; }
 
 .theme-commodities .ID-Responsive-Table .owl-dots {
@@ -17493,7 +17493,7 @@ main {
 .theme-insurance-day .table.theme-table thead tr th {
   background-color: #DE4361; }
 
-.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head {
+.theme-insurance-day #tanker-fixtures.table-responsive .table .table_head, .theme-insurance-day #casualty-detail-table .table_head {
   background-color: #b0173d; }
 
 .theme-insurance-day .ID-Responsive-Table .owl-dots {
@@ -17937,7 +17937,7 @@ main {
 .theme-lloydslist .table.theme-table thead tr th {
   background-color: #1191D1; }
 
-.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head {
+.theme-lloydslist #tanker-fixtures.table-responsive .table .table_head, .theme-lloydslist #casualty-detail-table .table_head {
   background-color: #1191D1; }
 
 .theme-lloydslist .ID-Responsive-Table .owl-dots {

@@ -67,7 +67,7 @@
 		},
 		loadDesktopView: function(tableData, prop){
 			var tableStr = '', tableHead = tableData[0], rowIdx = 0;
-				tableStr += '<table class="table descView"><thead class="table_head">';
+				tableStr += '<table class="table theme-table descView"><thead class="table_head">';
 				tableStr += '<tr>';
 				tableStr += '<th colspan="8" class="pad-full-10">'+prop+'</th>';
 				tableStr += '</tr>';
