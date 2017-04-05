@@ -42,6 +42,9 @@
 }
 
 .casualtyPan{
+	.alert-error{
+		width: 100%;
+	}
 	h2{
 		font-size: 46px;
 		font-weight: bold; 
@@ -107,6 +110,10 @@
 #market-data-tool, #dry-cargo, #dry-cargo-cap, #dry-cargo-bulk-fixtures, #tanker-fixtures, #ship-Container-ShipFixtures, #ship-Coal-Export, #market-Data-Dry-Cargo,
 #cockett-Bunker, #ship-Roro, #ship-Container-Ship, #ship-Vehicle, #tanker-Pure-ChemPage, #shipContainerFixtures, #fisDryBulkContainer, #howeRobinsonContainer, #market-imarex, #shipVehicle-Page, #shipCoalExport-page{
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	
+	.alert-error{
+		width: 100%;
+	}
 	.borTop{
 		height: 1px;
 		border-top: 1px solid #d1d3d4;
@@ -392,6 +399,9 @@
 	@include textMix('Roboto', 1em, 400);
 	margin-bottom: 2rem;
 	width: 100%;
+	.alert-error{
+		width: 100%;
+	}
 	.owl-wrapper{
 		width: 80%;
 		float: left;

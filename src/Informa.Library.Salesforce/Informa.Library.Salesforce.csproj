@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
+    </Reference>
     <Reference Include="Jabberwocky.Glass, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Jabberwocky.Glass.1.0.1.0\lib\net45\Jabberwocky.Glass.dll</HintPath>

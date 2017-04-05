@@ -186,7 +186,12 @@
 	}
 	
 	if($('#marketDataDryCargo').length > 0) {
-		marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargo, $('#marketDataDryCargo'));	
+		if(typeof window.jsonMarketdataDryCargo !== 'undefined' && window.jsonMarketdataDryCargo.length !== 0){
+			marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargo, $('#marketDataDryCargo'));
+		}
+		else{
+			$('#marketDataDryCargo').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+		}		
 	}
 
 	

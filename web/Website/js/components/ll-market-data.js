@@ -188,7 +188,13 @@
 	
 	$(document).ready(function() {
 		if($('#market-data').length > 0) {
-			marketData.init(window.jsonBalticIndices, $('.marketDataTable'));
+			if(typeof window.jsonBalticIndices !== 'undefined' && window.jsonBalticIndices.length !== 0){
+				marketData.init(window.jsonBalticIndices, $('.marketDataTable'));
+			}
+			else{
+				$('.marketDataTable').closest('.owl-wrapper').css('width', '100%');
+				$('.marketDataTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+			}
 		}
 	});
 })();

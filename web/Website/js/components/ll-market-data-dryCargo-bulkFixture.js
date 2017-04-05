@@ -27,11 +27,16 @@
 				data: {'dateVal': seldateVal, 'feedUrl': $('#drycargoHiddenVal').val()},
 				dataType: 'json',
 				type: 'GET',
-				success: function (searchData) {
-					self.sendHTTPRequest(searchData);
+				success: function (searchData) { 
+					if(searchData && searchData.length){
+						self.sendHTTPRequest(searchData);
+					}
+					else{
+						$('#dryCargoBulkFixtures table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+					}
 				},
 				error: function (err) {
-					console.log('Feed url is getting error: ' + JSON.stringify(err));
+					$('#dryCargoBulkFixtures table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
 				}
 			});
 		},
@@ -116,8 +121,13 @@
 	}
 	
 	$(document).ready(function() {
-		if($('#dryCargoBulkFixtures').length > 0) {
-			dryCargoBulkFixtures.init(DryBulkFixturesDateOptions);
+		if($('#dryCargoBulkFixtures').length > 0) { 
+			if(typeof window.DryBulkFixturesDateOptions !== 'undefined' && window.DryBulkFixturesDateOptions.length !== 0){
+				dryCargoBulkFixtures.init(window.DryBulkFixturesDateOptions);
+			}
+			else{
+				$('#dryCargoBulkFixtures table').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+			}
 		}
 	});
 })();

@@ -221,10 +221,23 @@
 	}
 
 	if($('#tankerPureChemPage').length > 0) {
-		tankerPureChem.init(window.currentFleetTableData, $('#tankerPureChemPage'));	
+		if(typeof window.currentFleetTableData !== 'undefined' && window.currentFleetTableData.length !== 0){
+			tankerPureChem.init(window.currentFleetTableData, $('#tankerPureChemPage'));
+		}
+		else{
+			$('#tankerPureChemPage').css('margin-bottom', '1rem');
+			$('#tankerPureChemPage').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+		}
+		
 	}
 	if($('#onOrderTable').length > 0) {
-		tankerPureChem.init(window.onOrderTableData, $('#onOrderTable'));	
+		if(typeof window.onOrderTableData !== 'undefined' && window.onOrderTableData.length !== 0){
+			tankerPureChem.init(window.onOrderTableData, $('#onOrderTable'));
+		}
+		else{
+			$('#onOrderTable').css('margin-bottom', '1rem');
+			$('#onOrderTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+		}
 	}
 
 	

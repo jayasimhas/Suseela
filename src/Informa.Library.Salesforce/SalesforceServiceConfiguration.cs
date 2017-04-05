@@ -1,12 +1,17 @@
-﻿using Sitecore.Configuration;
+﻿using Informa.Library.SalesforceConfiguration;
+using Sitecore.Configuration;
 
 namespace Informa.Library.Salesforce
 {
 	public class SalesforceServiceConfiguration : ISalesforceServiceConfiguration
 	{
-		public const string UrlConfigKey = "SalesforceServiceConfiguration.Url";
+        protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
+        public SalesforceServiceConfiguration(
+            ISalesforceConfigurationContext salesforceConfigurationContext)
+        {
+            SalesforceConfigurationContext = salesforceConfigurationContext;
+        }
 
-		private string _url;
-		public string Url => _url ?? (_url = Settings.GetSetting(UrlConfigKey));
+        public string Url => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url;
 	}
 }

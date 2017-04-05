@@ -7,19 +7,26 @@
 		},
 		loadDropdownData: function(options){
 			var optionStr = '';
-			$.each(options, function(idx, val){
-				if(idx == 0){
-					optionStr += '<option value="'+val.Value+'" selected="selected">'+val.Text+'</option>';
-				}
-				else{
-					optionStr += '<option value="'+val.Value+'">'+val.Text+'</option>';
-				}
-			});
-			return optionStr;
+			try {
+				$.each(options, function(idx, val){
+					if(idx == 0){
+						optionStr += '<option value="'+val.Value+'" selected="selected">'+val.Text+'</option>';
+					}
+					else{
+						optionStr += '<option value="'+val.Value+'">'+val.Text+'</option>';
+					}
+				});
+				return optionStr;
+			}
+			catch(err) {
+				$('.fisDryBulkTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+			}
+			
 		},
 		renderTable: function(renderEle){
 			var self = this, loadDateVal = $('#fisDryBulkselectDay option').val();
-			 
+			
+			//self.sendHTTPRequest(tableObj, renderEle)
 			self.callAjaxFn(loadDateVal, renderEle);
 			$(document).on('change', '#fisDryBulkselectDay', function(){
 				var selectDateVal = $('#fisDryBulkselectDay option').val();
@@ -34,7 +41,12 @@
 				dataType: 'json',
 				type: 'GET',
 				success: function (searchData) {
-					self.sendHTTPRequest(searchData, renderEle);
+					if(searchData && searchData.length){
+						self.sendHTTPRequest(searchData, renderEle);
+					} 
+					else{
+						$('.fisDryBulkTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+					}
 				},
 				error: function (err) {
 					console.log('Feed url is getting error: ' + JSON.stringify(err));
@@ -130,7 +142,12 @@
 	
 	$(document).ready(function() {
 		if($('#fisDryBulkContainer').length > 0) {
-			fisDryBulk.init(fisDryBulkDateOptions, '.fisDryBulkTable');
+			if(typeof window.fisDryBulkDateOptions !== 'undefined' && window.fisDryBulkDateOptions.length !== 0){
+				fisDryBulk.init(window.fisDryBulkDateOptions, '.fisDryBulkTable');
+			}
+			else{
+				$('.fisDryBulkTable').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+			}
 		}
 	});
 })();
