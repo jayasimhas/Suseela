@@ -171,22 +171,27 @@
 			});
 		},
 		init: function(data, id) {
-			var self = this;
-			if($(window).width() > 1024){
-				self.RenderTable(data, id);
+			if(data.length !== 0){
+				var self = this;
+				if($(window).width() > 1024){
+					self.RenderTable(data, id); 
+				}
+				else{
+					self.RenderCarousel(data, id);
+				}
+				
+				$(window).resize(function() {
+					self.setColHeight(id);
+				});
 			}
 			else{
-				self.RenderCarousel(data, id);
+				$('#marketDataDryCargo').html('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnInfomessage').val()+'</p></div>');
 			}
-			
-			$(window).resize(function() {
-				self.setColHeight(id);
-			});
 		}
 	}
 	
 	if($('#marketDataDryCargo').length > 0) {
-		if(typeof window.jsonMarketdataDryCargo !== 'undefined' && window.jsonMarketdataDryCargo.length !== 0){
+		if(typeof window.jsonMarketdataDryCargo !== 'undefined'){
 			marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargo, $('#marketDataDryCargo'));
 		}
 		else{
