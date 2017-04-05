@@ -1060,61 +1060,57 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             string Publication = null;
             // XmlNodeList relatedelemList = d.GetElementsByTagName("RELATED_ARTICLE");
 
-            if (WebConfigurationManager.AppSettings["DeleteArticleWithSpecialChar"].Equals("true"))
+
+
+            string[] files = Directory.GetFiles(this.Query);
+
+            foreach (string node in files)
             {
+                string url;
 
-                string[] files = Directory.GetFiles(this.Query);
 
-                foreach (string node in files)
-                {
-                    string url;
+                XmlDocument doc = new XmlDocument();
+                doc.Load(node);
+                XmlNode ID = doc.SelectSingleNode($"//ID");
 
-                    System.Collections.Generic.IEnumerable<String> lines = File.ReadLines(node);
-                    foreach (string Esce in lines)
+                //  System.Collections.Generic.IEnumerable<String> lines = File.ReadLines(node);
+                //  foreach (string Esce in lines)
+                //  {
+
+                relatedArticle = ID.InnerText;
+
+                    Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
+                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                    XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
+                    url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
+
+                    using (var client = new HttpClient())
                     {
-                        relatedArticle = Esce;
-
-                        Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
-                        string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                        XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
-                        url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
-
-                        using (var client = new HttpClient())
+                        var response = client.GetStringAsync(url).Result;
+                        if (!(response == "null" || response == ""))
                         {
-                            var response = client.GetStringAsync(url).Result;
-                            if (!(response == "null" || response == ""))
-                            {
-                                var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
-                                relatedArticles = resultarticles._Id.ToString();
-                                using (new Sitecore.SecurityModel.SecurityDisabler())
-                                {
-                                    Item item = MasterDB.GetItem(relatedArticles);
+                            var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
+                            relatedArticles = resultarticles._Id.ToString();
+                            using (new Sitecore.SecurityModel.SecurityDisabler())
+                            { 
+                                Item item = MasterDB.GetItem(relatedArticles);
 
-                                    if (item != null)
+                                if (item != null)
+                                {
+                                    XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
+                                    XMLDataLogger.WriteLog("Article Path:" + item.Name, "ArticleCleanup");
+                                    if (WebConfigurationManager.AppSettings["DeleteArticleWithSpecialChar"].Equals("true"))
                                     {
-                                        XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
                                         item.Delete();
                                     }
                                 }
-
                             }
 
                         }
                     }
-                }
-
 
             }
 
-
-
-
-
-
-
-
-
-            //  department1.DeleteChildren().Equals(depar;
             return Enumerable.Empty<object>();
 
 
