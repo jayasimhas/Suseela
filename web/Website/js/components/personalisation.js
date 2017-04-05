@@ -793,15 +793,13 @@ $(function () {
 										loadLayoutData = loadLayoutOneData(data, idx);
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
-										window.findTooltips();
-										window.indexBookmarks();
+										window.findTooltips(); 
 									} else {
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
-										window.findTooltips();
-										window.indexBookmarks();
+										window.findTooltips(); 
 									}
 								}
 							},
@@ -968,13 +966,11 @@ $(function () {
 										if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
-											window.findTooltips();
-											window.indexBookmarks();
+											window.findTooltips(); 
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
-											window.findTooltips();
-											window.indexBookmarks();
+											window.findTooltips(); 
 										}
 									}
 								},

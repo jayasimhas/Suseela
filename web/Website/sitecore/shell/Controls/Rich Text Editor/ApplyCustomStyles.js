@@ -12,12 +12,12 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
               ["quick-facts__header", "h3"],
 			  ["quick-facts__list--ul", "ul"],
 			  ["quick-facts__list--ol", "ol"],
-			  ["quick-facts__source", "p"],
+			  ["quick-facts__source", "span"],
 			  ["quick-facts", "p"],
-			  ["article-exhibit__header", "p"],
-			  ["article-exhibit__title", "p"],
-			  ["article-exhibit__caption", "p"],  
-			  ["article-exhibit__source", "p"],
+			  ["article-exhibit__header", "span"],
+			  ["article-exhibit__title", "span"],
+			  ["article-exhibit__caption", "span"],  
+			  ["article-exhibit__source", "span"],
 			  ["companyname","p"],
 			  ["header colored","td"],
 			  ["tablesubhead","td"],
@@ -80,34 +80,61 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 	  }	
 	else if(value=="quick-facts__header" || value=="quick-facts__source")
 	{	
+		var entirehtml=editor.get_html(true);
+		var parsedHtml=jQuery.parseHTML(entirehtml);
+		
 		contentElement.setAttribute('class',block[0]);
 		contentElement.innerHTML=selectedtext;
+		if(entirehtml.indexOf('<div class="quick-facts">') == -1) {
+		
 		 var qfdiv=document.createElement("div");
 		 qfdiv.setAttribute('class','quick-facts');
 		 qfdiv.append(contentElement);
-		 if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
+		 //if(selectedtag.nodeName!='BODY'){selectedtag.outerHTML.replace(selectedtext, '');}
 		  editor.pasteHtml(qfdiv.outerHTML);
+		} else {
+			var UpdatedHTML = AppendToQuickFacts(parsedHtml, contentElement, selectedtag, entirehtml, selectedtext);			
+			editor.set_html(UpdatedHTML);
+		}
 	}
 	  else if(value=="quick-facts")
 		{			
+		var entirehtml=editor.get_html(true);
+		var parsedHtml=jQuery.parseHTML(entirehtml);		
 			contentElement.innerHTML=selectedtext;
+			
+		if(entirehtml.indexOf('<div class="quick-facts">') == -1) {
 		 var qfdiv=document.createElement("div");
 		 qfdiv.setAttribute('class','quick-facts');
 		 qfdiv.append(contentElement);
 		 if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
 		  editor.pasteHtml(qfdiv.outerHTML);
+		}else{
+			var UpdatedHTML = AppendToQuickFacts(parsedHtml, contentElement, selectedtag, entirehtml, selectedtext);			
+			editor.set_html(UpdatedHTML);
 		}
+	}
 		else if(value=="quick-facts__list--ul" || value=="quick-facts__list--ol")
 		{
+			var entirehtml=editor.get_html(true);
+			var parsedHtml=jQuery.parseHTML(entirehtml);
+			
 			 var qfdiv=document.createElement("div");
 		 qfdiv.setAttribute('class','quick-facts');
 			 contentElement.setAttribute('class',block[0]);
-		  var liTag=document.createElement("li");
-		  liTag.innerHTML=selectedtext;
-		  contentElement.append(liTag);
-		  qfdiv.append(contentElement);
-		  editor.pasteHtml(qfdiv.outerHTML);
+			  var liTag=document.createElement("li");
+			  liTag.innerHTML=selectedtext;
+			  contentElement.append(liTag);
+			  
+			  if(entirehtml.indexOf('<div class="quick-facts">') == -1) {
+			  qfdiv.append(contentElement);
+			  editor.pasteHtml(qfdiv.outerHTML);
+			} else {
+				var UpdatedHTML = AppendToQuickFacts(parsedHtml, contentElement, selectedtag, entirehtml, selectedtext);
+				editor.set_html(UpdatedHTML);
+			}
 		}		
+		
 		else if(value=="article-exhibit__header" || value=="article-exhibit__title" || value=="article-exhibit__caption"|| value=="article-exhibit__source")
 		{
 			var sec=document.createElement("section");
@@ -115,7 +142,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 			 contentElement.setAttribute('class',block[0]);	
 			 contentElement.innerHTML=selectedtext;
 			 sec.append(contentElement);
-			 if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
+			 //if(selectedtag.nodeName!='BODY'){selectedtag.remove();}
 			 editor.pasteHtml(sec.outerHTML);
 		}	
 		else if(value=='header colored')
@@ -161,4 +188,19 @@ function ApplyStyleWithoutClass(value)
       contentElement.innerHTML = selectedtext;
 	 editor.pasteHtml(contentElement.outerHTML);
 	 }
+}
+function AppendToQuickFacts(parsedHtml, contentElement, selectedtag, entirehtml, selectedtext) {
+	var temp="";
+	var Str ="";			
+	for(var i = 0; i < parsedHtml.length; i++) {
+		if(parsedHtml[i].className == 'quick-facts') {		
+			var old = parsedHtml[i].outerHTML;
+			parsedHtml[i].append(contentElement);
+			selectedtag.outerHTML.replace(selectedtext, '');
+			temp = entirehtml.replace(selectedtext, '');
+			Str = temp.replace(old, parsedHtml[i].outerHTML);
+			
+		}
+	}
+	return Str;
 }
