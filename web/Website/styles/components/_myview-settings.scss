@@ -171,6 +171,9 @@
 			background: #ff8f18;
 			color: #fff;
 			border: 1px solid $color-tree-poppy-orange;
+			@include breakpoint('medium-small'){
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+			}
 			@media screen and (min-width: 768px) and (max-width: 1024px){
 				border: 1px solid #ADADAD;
 				color: #58595b;
