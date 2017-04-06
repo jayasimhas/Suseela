@@ -15,8 +15,6 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IHttpClientHelper HttpClientHelper;
         protected readonly ISalesforceInfoLogger InfoLogger;
-        private const string UserDetailsSeparatorKey = "UserDetailsSeparator";
-        private string _userDetailsSeparator = Settings.GetSetting(UserDetailsSeparatorKey);
 
         public SalesforceFindUserProfileV2(
             IHttpClientHelper httpClientHelper,
