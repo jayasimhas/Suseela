@@ -86,17 +86,17 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             };
         }
 
-        public bool AddUserContentPreferences(string userName, string accessToken, string verticleCode
+        public bool AddUserContentPreferences(string userName, string accessToken, string verticalPreferenceLocale
             , string publicationCode, string contentPreferences)
         {
 
-            if (!new[] { userName, accessToken, verticleCode, publicationCode, contentPreferences }.Any(string.IsNullOrEmpty))
+            if (!new[] { userName, accessToken, verticalPreferenceLocale, publicationCode, contentPreferences }.Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceContentPreferencesFactory.Create(userName, verticleCode, publicationCode, contentPreferences);
+                var request = SalesforceContentPreferencesFactory.Create(userName, verticalPreferenceLocale, publicationCode, contentPreferences);
                 if (request != null)
                 {
                     var deleteResponse = SalesforceDeleteUserProductPreferences.DeleteUserProductPreferences(
-                        userName, accessToken, publicationCode, ProductPreferenceType.PersonalPreferences);
+                        userName, accessToken, publicationCode, ProductPreferenceType.ContentPreferences);
                     if (deleteResponse.Success)
                     {
                         using (var client = new HttpClient())
@@ -124,11 +124,11 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             return false;
         }
 
-        public ISavedDocumentWriteResult AddSavedDocument(string verticalName, string publicationCode, string Username, string documentName, string documentDescription, string documentId, string accessToken)
+        public ISavedDocumentWriteResult AddSavedDocument(string verticalPreferenceLocale, string publicationCode, string Username, string documentName, string documentDescription, string documentId, string accessToken)
         {
             if (!new[] { Username, documentId, documentDescription, documentName }.Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceSaveDocumentFactory.Create(verticalName, publicationCode, Username, documentName, documentDescription, documentId);
+                var request = SalesforceSaveDocumentFactory.Create(verticalPreferenceLocale, publicationCode, Username, documentName, documentDescription, documentId);
 
                 if (request != null)
                 {
@@ -167,11 +167,11 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             };
         }
 
-        public bool AddNewsletterUserOptIns(string verticalName, string publicationCode, string username, string accessToken,IEnumerable<INewsletterUserOptIn> optIns)
+        public bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string publicationCode, string username, string accessToken,IEnumerable<INewsletterUserOptIn> optIns)
         {
-            if ((!new[] { verticalName, publicationCode, username }.Any(string.IsNullOrEmpty)) && optIns != null)
+            if ((!new[] { verticalPreferenceLocale, publicationCode, username }.Any(string.IsNullOrEmpty)) && optIns != null)
             {
-                var request = SalesforceContentNewsletterFactory.Create(username, verticalName, publicationCode, optIns);
+                var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, optIns);
                 if (request != null)
                 {
                     using (var client = new HttpClient())
@@ -200,11 +200,11 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         }
 
 
-        public bool AddOffersOptIns(string verticalName, string publicationCode, string username, string accessToken, bool optIn)
+        public bool AddOffersOptIns(string verticalPreferenceLocale, string publicationCode, string username, string accessToken, bool optIn)
         {
-            if ((!new[] { verticalName, publicationCode, username }.Any(string.IsNullOrEmpty)))
+            if ((!new[] { verticalPreferenceLocale, publicationCode, username }.Any(string.IsNullOrEmpty)))
             {
-                var request = SalesforceContentNewsletterFactory.Create(username, verticalName, publicationCode, !optIn);
+                var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, !optIn);
                 if (request != null)
                 {
                     using (var client = new HttpClient())

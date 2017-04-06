@@ -6,7 +6,7 @@
         SavedSearches,
         SavedDocuments,
         EmailSignUp,
-        PersonalPreferences,
+        ContentPreferences,
         EmailPreference
     }
 }

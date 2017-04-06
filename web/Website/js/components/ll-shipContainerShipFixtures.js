@@ -77,7 +77,7 @@
 	
 	$(document).ready(function() {
 		if($('#shipContainerFixtures').length > 0) { 
-			if(typeof window.shipContShipFixDateOptions !== 'undefined'){
+			if(typeof window.shipContShipFixDateOptions !== 'undefined' && typeof window.shipContShipFixDateOptions !== 'string'){
 				shipContainerFixtures.init(window.shipContShipFixDateOptions);
 			}
 			else{

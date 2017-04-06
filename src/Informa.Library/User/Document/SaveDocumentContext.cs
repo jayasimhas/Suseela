@@ -47,7 +47,7 @@ namespace Informa.Library.User.Document
 				};
 			}
 			var result =SalesforceConfigurationContext.IsNewSalesforceEnabled ?
-                AddUserProductPreference.AddSavedDocument(VerticalRootContext?.Item?.Vertical_Name ?? string.Empty, SiteRootContext?.Item?.Publication_Code ?? string.Empty, UserContext?.User?.Username, documentName, documentDescription, documentId, UserContext.User?.AccessToken ?? string.Empty) : 
+                AddUserProductPreference.AddSavedDocument(VerticalRootContext?.Item?.Vertical_Preference_Locale ?? string.Empty, SiteRootContext?.Item?.Publication_Code ?? string.Empty, UserContext?.User?.Username, documentName, documentDescription, documentId, UserContext.User?.AccessToken ?? string.Empty) : 
                 SaveDocument.Save(UserContext.User?.Username, documentName, documentDescription, documentId);
 
 			if (result.Success)

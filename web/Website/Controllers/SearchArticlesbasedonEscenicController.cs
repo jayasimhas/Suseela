@@ -11,11 +11,11 @@ using System.Net.Http;
 using System.Web.Http;
 using log4net;
 using Informa.Library.Services.Global;
-
+using Sitecore.SharedSource.DataImporter.Providers;
 
 namespace Informa.Web.Controllers
 {
-    public class SearchArticlesbasedonEscenicController : ApiController
+    public class SearchArticlesbasedonEscenicController : System.Web.Http.ApiController
     {
         private readonly ArticleUtil _articleUtil;
         protected readonly IGlobalSitecoreService GlobalService;
@@ -40,26 +40,40 @@ namespace Informa.Web.Controllers
         [HttpGet]
         public object Get(string articleNumber, string EscenicId)
         {
-            var pubPrefixes = _articleUtil.GetPublicationsPrefixes();
-            if (pubPrefixes.Any(n => articleNumber.StartsWith(n)))
+            try
             {
-                var publicationId = _articleUtil.GetVerticalRootByPubPrefix(new string(articleNumber.Take(2).ToArray()));
-                Item article = _articleUtil.GetArticleItemByEscenic(EscenicId, publicationId.ToGuid());
-                if (article != null)
+              
+                var pubPrefixes = _articleUtil.GetPublicationsPrefixes();
+             
+                if (pubPrefixes.Any(n => articleNumber.StartsWith(n)))
                 {
+                    var publicationId = _articleUtil.GetVerticalRootByPubPrefix(new string(articleNumber.Take(2).ToArray()));
+                  
 
-                    var result = new ArticleItem
+                    Item article = _articleUtil.GetArticleItemByEscenic(EscenicId, publicationId.ToGuid());
+                
+                    if (article != null)
                     {
-                        _Id = article.ID.ToGuid(),
-                        _Name = article.Name,
-                        _Path = article.Paths.Path
-                    };
-                    return result;
-                }
-            }
-            //ArticleItem article = _articleUtil.GetArticlesByNumberWithinRTE(articleNumber, "master");
 
-            return null;
+                        var result = new ArticleItem
+                        {
+                            _Id = article.ID.ToGuid(),
+                            _Name = article.Name,
+                            _Path = article.Paths.Path
+                        };
+                      
+                        return result;
+                    }
+                }
+                
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                XMLDataLogger.WriteLog("ex :" + ex.Message, "ArticleCleanup");
+                throw new Exception();
+            }
         }
     }
 }
