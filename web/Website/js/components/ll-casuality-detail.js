@@ -47,7 +47,7 @@
 	
 	$(document).ready(function() {
 		if($('#casualty-detail-table').length > 0) {
-			if(typeof window.jsonCasualtyDetailData !== 'undefined'){
+			if(typeof window.jsonCasualtyDetailData !== 'undefined' && typeof window.jsonCasualtyDetailData !== 'string'){
 				CasualityDetail.init(window.jsonCasualtyDetailData, $('#casualty-detail-table'));
 			}
 			else{

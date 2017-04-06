@@ -191,7 +191,7 @@
 	}
 	
 	if($('#marketDataDryCargo').length > 0) {
-		if(typeof window.jsonMarketdataDryCargo !== 'undefined'){
+		if(typeof window.jsonMarketdataDryCargo !== 'undefined' && typeof window.jsonMarketdataDryCargo !== 'string'){
 			marketDataDryCargoSsyAtl.init(window.jsonMarketdataDryCargo, $('#marketDataDryCargo'));
 		}
 		else{

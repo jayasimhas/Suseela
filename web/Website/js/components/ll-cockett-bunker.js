@@ -80,7 +80,7 @@
 	}
 	
 	if($('#cockettBunker').length > 0) { 
-		if(typeof window.jsonCockettBunker !== 'undefined'){
+		if(typeof window.jsonCockettBunker !== 'undefined' && typeof window.jsonCockettBunker !== 'string'){
 			cockettBunker.init(window.jsonCockettBunker, $('#cockettBunker'));
 		}
 		else{

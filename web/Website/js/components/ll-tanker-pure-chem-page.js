@@ -226,7 +226,7 @@
 	}
 
 	if($('#tankerPureChemPage').length > 0) {
-		if(typeof window.currentFleetTableData !== 'undefined'){
+		if(typeof window.currentFleetTableData !== 'undefined' && typeof window.currentFleetTableData !== 'string'){
 			tankerPureChem.init(window.currentFleetTableData, $('#tankerPureChemPage'));
 		}
 		else{
@@ -236,7 +236,7 @@
 		
 	}
 	if($('#onOrderTable').length > 0) {
-		if(typeof window.onOrderTableData !== 'undefined'){
+		if(typeof window.onOrderTableData !== 'undefined' && typeof window.onOrderTableData !== 'string'){
 			tankerPureChem.init(window.onOrderTableData, $('#onOrderTable'));
 		}
 		else{

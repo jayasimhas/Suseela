@@ -192,7 +192,7 @@
 	
 	$(document).ready(function() {
 		if($('#market-data').length > 0) {
-			if(typeof window.jsonBalticIndices !== 'undefined'){
+			if(typeof window.jsonBalticIndices !== 'undefined' && typeof window.jsonBalticIndices !== 'string'){
 				marketData.init(window.jsonBalticIndices, $('.marketDataTable'));
 			}
 			else{
