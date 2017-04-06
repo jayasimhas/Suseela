@@ -497,7 +497,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     }
                 }
             }
-            if (sections.Count == 0 && (UserPreferences.Preferences != null && UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count == 0))
+            if (sections.Count == 0 && (UserPreferences.Preferences == null || UserPreferences.Preferences.PreferredChannels == null || UserPreferences.Preferences.PreferredChannels.Count < 1))
             {
                 List<Channel> sortedChannels = new List<Channel>();
                 var channels = new Channel();
