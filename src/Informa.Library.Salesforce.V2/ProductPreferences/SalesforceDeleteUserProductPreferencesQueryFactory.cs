@@ -18,7 +18,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 query = "UserName__c='" + userName + "' and Type__c='" + Bookmark + "' and Value1__c='" + publicationCode + "'";
             }
-            else if (type == ProductPreferenceType.PersonalPreferences)
+            else if (type == ProductPreferenceType.ContentPreferences)
             {
                 query = "UserName__c='" + userName + "' and Type__c='" + ContentPersonalization + "' and Value1__c='" + publicationCode + "'";
             }

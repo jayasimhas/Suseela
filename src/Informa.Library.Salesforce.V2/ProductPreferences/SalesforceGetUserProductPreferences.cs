@@ -31,14 +31,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
             SalesforceContentNewsletterFactory = salesforceContentNewsletterFactory;
         }
-        public T GetProductPreferences<T>(IAuthenticatedUser user, string verticle, string publicationCode, ProductPreferenceType type)
+        public T GetProductPreferences<T>(IAuthenticatedUser user, string verticalPreferenceLocale, string publicationCode, ProductPreferenceType type)
         {
             if (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.AccessToken)
-                && !string.IsNullOrWhiteSpace(publicationCode) && !string.IsNullOrWhiteSpace(verticle) &&
+                && !string.IsNullOrWhiteSpace(publicationCode) && !string.IsNullOrWhiteSpace(verticalPreferenceLocale) &&
                 type != ProductPreferenceType.None)
             {
                 var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
-                      user.Username, verticle, publicationCode, type);
+                      user.Username, verticalPreferenceLocale, publicationCode, type);
                 if (!string.IsNullOrWhiteSpace(query))
                 {
                     using (var client = new HttpClient())
@@ -58,7 +58,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 {
                                     return (T)SalesforceSavedSearchRequestFactory.Create(productPreferences);
                                 }
-                                else if (type == ProductPreferenceType.PersonalPreferences)
+                                else if (type == ProductPreferenceType.ContentPreferences)
                                 {
                                     return (T)SalesforceContentPreferencesFactory.Create(productPreferences);
                                 }
