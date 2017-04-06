@@ -61,7 +61,15 @@ namespace Informa.Web.ViewModels.Casualty
         /// <returns></returns>
         private string GetLatestCasualties()
         {
-            return !string.IsNullOrEmpty(FeedUrl) ? CompanyResultService.GetCompanyFeeds(FeedUrl).Result : string.Empty;
+            try
+            {
+                return !string.IsNullOrEmpty(FeedUrl) ? CompanyResultService.GetCompanyFeeds(FeedUrl).Result : string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
+
         }
     }
 }

@@ -5,6 +5,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templat
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 using Jabberwocky.Glass.Models;
+using System;
 using System.Net;
 
 namespace Informa.Web.ViewModels.Casualty
@@ -36,8 +37,15 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (RenderingParameters != null && !string.IsNullOrEmpty(RenderingParameters.External_Feed_URL))
             {
-                var client = new WebClient();
-                return client.DownloadString(RenderingParameters.External_Feed_URL);
+                try
+                {
+                    var client = new WebClient();
+                    return client.DownloadString(RenderingParameters.External_Feed_URL);
+                }
+                catch(Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {
