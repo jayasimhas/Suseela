@@ -31,31 +31,34 @@
     string publicationHiddenClass = string.Empty;
     string bgFollowing = string.Empty;
     string expanCollap = string.Empty;
+    string hidePara = string.Empty;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
     <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.TopicFollowButtonText" />
     <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.TopicFollowingButtonText" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in sortedChannels)
-        {
-            channelOrder = Model.IsNewUser ? ++channelOrder : channel.ChannelOrder;
-            IsFollowingAllTopics = !channel.Topics.Where(ch => !ch.IsFollowing).Any();
-            NotFollowingAnyTopic = !channel.Topics.Where(ch => ch.IsFollowing).Any();
-            IsFollowingAnyTopics = channel.Topics.Where(ch => ch.IsFollowing).Any();
-            subscribeButtonClass = channel.IsSubscribed ? "" : "subscribe";
-            followAllButtonClass = IsFollowingAllTopics ? "hideBtn" : NotFollowingAnyTopic ? "fr" : "";
-            unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
-            tboadyClass = isFirst ? "" : "tbodyhidden";
-            collapsedClss = isFirst ? "expanded" : "";
-            borderClass = isFirst && (collapsedClss == "expanded" && IsFollowingAnyTopics) && (flag != 1) ? "active" : "";
-            pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
-            publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
-            publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
-            publicationStatusText = IsFollowingAnyTopics ? Model.ChannelFollowingButtonText : Model.ChannelFollowButtonText;
-            mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
-            pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
-            publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
-            expanCollap = isFirst ? "expanded" : "collapsed";
+            {
+                channelOrder = Model.IsNewUser ? ++channelOrder : channel.ChannelOrder;
+                IsFollowingAllTopics = !channel.Topics.Where(ch => !ch.IsFollowing).Any();
+                NotFollowingAnyTopic = !channel.Topics.Where(ch => ch.IsFollowing).Any();
+                IsFollowingAnyTopics = channel.Topics.Where(ch => ch.IsFollowing).Any();
+                subscribeButtonClass = channel.IsSubscribed ? "" : "subscribe";
+                followAllButtonClass = IsFollowingAllTopics ? "hideBtn" : NotFollowingAnyTopic ? "fr" : "";
+                unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
+                tboadyClass = isFirst ? "" : "tbodyhidden";
+                collapsedClss = isFirst ? "expanded" : "";
+                borderClass = isFirst && (collapsedClss == "expanded" && IsFollowingAnyTopics) && (flag != 1) ? "active" : "";
+                pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
+                publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
+                publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
+                publicationStatusText = IsFollowingAnyTopics ? Model.ChannelFollowingButtonText : Model.ChannelFollowButtonText;
+                mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
+                pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
+                publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
+                expanCollap = isFirst ? "expanded" : "collapsed";
+                hidePara = expanCollap == "expanded" ? "":"hideRow"; 
+
             isFirst = false;
             bgFollowing = IsFollowingAnyTopics ? "followingbg" : NotFollowingAnyTopic ? "followbg" : "";
 
@@ -96,7 +99,7 @@
                             </tr>
                             @if (!Model.isFromRegistration && !channel.IsSubscribed)
                             {
-                                <tr class="showinview">
+                                <tr class="accordionStatus pickTxt @hidePara">
                                     <th colspan="3">
                                         <p>@Model.SubscribeMessageText</p>
                                     </th>
