@@ -10,7 +10,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
     public class SalesforceSaveDocumentFactory : ISalesforceSaveDocumentFactory
     {
         private const string SaveDocument = "Bookmark";
-        public AddProductPreferenceRequest Create(string verticalName, string publicationCode, string Username, string documentName, string documentDescription, string documentId)
+        public AddProductPreferenceRequest Create(string verticalPreferenceLocale, string publicationCode, string Username, string documentName, string documentDescription, string documentId)
         {
             return new AddProductPreferenceRequest()
             {
@@ -23,14 +23,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                     type = "Product_Preference__c",
                                     referenceId = Guid.NewGuid().ToString()
                             },
-                            Product_Vertical__c = verticalName,
+                            Preference_Locale__c = verticalPreferenceLocale,
                             Type__c = SaveDocument,
                             Username__c = Username,
                             Value1__c = publicationCode,
                             Value2__c = documentName,
                             Value3__c = documentDescription,
                             Value4__c = documentId,
-                            Value5__c = DateTime.Now.ToString(),
+                            Value9__c = DateTime.Now.ToString("yyyy-MM-dd")
 
                         }
                     }
@@ -51,7 +51,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                       Description = record.Value3__c,
                       Name = record.Value2__c,
                       SalesforceId = record.Id,
-                      SaveDate= string.IsNullOrWhiteSpace(record.Value5__c) ? DateTime.MinValue : Convert.ToDateTime(record.Value5__c)
+                      SaveDate= Convert.ToDateTime(record.Value9__c)
                     });
                 }
             }

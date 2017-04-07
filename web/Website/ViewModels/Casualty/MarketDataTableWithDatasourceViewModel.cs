@@ -8,6 +8,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
@@ -73,8 +74,15 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
             {
-                var client = new WebClient();
-                return client.DownloadString(GlassModel.Dropdowns_Feed_URL);
+                try
+                {
+                    var client = new WebClient();
+                    return client.DownloadString(GlassModel.Dropdowns_Feed_URL);
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {
@@ -85,8 +93,15 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Table_Result_Feed_URL))
             {
-                var client = new WebClient();
-                return client.DownloadString(GlassModel.Table_Result_Feed_URL);
+                try
+                {
+                    var client = new WebClient();
+                    return client.DownloadString(GlassModel.Table_Result_Feed_URL);
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {
@@ -97,8 +112,15 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Additional_Feed_URL))
             {
-                var client = new WebClient();
-                return client.DownloadString(GlassModel.Additional_Feed_URL);
+                try
+                {
+                    var client = new WebClient();
+                    return client.DownloadString(GlassModel.Additional_Feed_URL);
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {

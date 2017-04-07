@@ -143,7 +143,7 @@ namespace Informa.Library.User.Search
             entity.HasAlert = input.AlertEnabled;
             entity.PublicationCode = _dependencies.SiteRootContext?.Item?.Publication_Code;
             entity.PublicationName = _dependencies.SiteRootContext?.Item?.Publication_Name;
-            entity.VerticalName = _dependencies.VerticalRootContext?.Item?._Name;
+            entity.VerticalPreferenceLocale = _dependencies.VerticalRootContext?.Item?.Vertical_Preference_Locale;
             var addResponse = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                 _dependencies.AddUserProductPreference.AddUserSavedSearch(_dependencies.UserContext.User.AccessToken, entity) :
                 _dependencies.Repository.Add(entity);
@@ -242,7 +242,7 @@ namespace Informa.Library.User.Search
             {
                 var results = _dependencies.SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     _dependencies.GetUserProductPreferences.GetProductPreferences<IList<ISavedSearchEntity>>
-                    (_dependencies.UserContext.User,_dependencies?.VerticalRootContext?.Item?.Vertical_Name,
+                    (_dependencies.UserContext.User,_dependencies?.VerticalRootContext?.Item?.Vertical_Preference_Locale,
                     _dependencies.SiteRootContext?.Item?.Publication_Code,
                     ProductPreferenceType.SavedSearches) :
                     _dependencies.Repository.GetMany(_dependencies.UserContext.User?.Username).ToList();

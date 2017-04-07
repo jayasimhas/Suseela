@@ -1165,12 +1165,12 @@ $(document).ready(function(){
                     });
                     $('.main-menu-section-list').css({
                         'height' : '100%',
-                        'overflow' : 'scroll'
+                        'overflow-y' : 'scroll'
                     })
                 }else{
                     $('.main-menu-list').css({
                         'height' : '100%',
-                        'overflow' : 'scroll'
+                        'overflow-y' : 'scroll'
                     })
                 }
             }

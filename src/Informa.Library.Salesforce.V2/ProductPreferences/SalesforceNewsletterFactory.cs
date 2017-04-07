@@ -13,7 +13,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
     {
         private const string EmailPreference = "Email Preference";
         private const string EmailSignUp = "Email Signup";
-        public AddProductPreferenceRequest Create(string username, string verticalName, string publicationCode, IEnumerable<INewsletterUserOptIn> optIns)
+        public AddProductPreferenceRequest Create(string username, string verticalPreferenceLocale, string publicationCode, IEnumerable<INewsletterUserOptIn> optIns)
         {
             if (optIns != null)
             {
@@ -30,13 +30,13 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                            type = "Product_Preference__c",
                            referenceId = Guid.NewGuid().ToString()
                        },
-                       Product_Vertical__c = verticalName,
+                       Preference_Locale__c = verticalPreferenceLocale,
                        Type__c = EmailPreference,
                        Username__c = username,
                        Value1__c = publicationCode,
                        Value2__c = item.OptIn.ToString(),
                        Value3__c = item.NewsletterType,
-                       Value4__c = DateTime.Now.ToString()
+                       Value9__c = DateTime.Now.ToString("yyyy-MM-dd")
 
                    });
                 }
@@ -82,7 +82,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             return null;
         }
 
-        public AddProductPreferenceRequest Create(string username, string verticalName, string publicationCode, bool optIns)
+        public AddProductPreferenceRequest Create(string username, string verticalPreferenceLocale, string publicationCode, bool optIns)
         {
             return new AddProductPreferenceRequest()
             {
@@ -95,12 +95,12 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                     type = "Product_Preference__c",
                                     referenceId = Guid.NewGuid().ToString()
                             },
-                            Product_Vertical__c = verticalName,
+                            Preference_Locale__c = verticalPreferenceLocale,
                             Type__c = EmailSignUp,
                             Username__c = username,
                             Value1__c = publicationCode,
                             Value2__c = optIns.ToString(),
-                            Value3__c = DateTime.Now.ToString(),
+                            Value9__c = DateTime.Now.ToString("yyyy-MM-dd")
 
                         }
                     }

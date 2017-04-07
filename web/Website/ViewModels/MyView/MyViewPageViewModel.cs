@@ -218,7 +218,8 @@ namespace Informa.Web.ViewModels.MyView
                 sec.ChannelName = channelPageItem?.Display_Text;
                 sec.ChannelId = channelPageItem._Id.ToString();
                 string taxonomyId = string.Empty;
-                if (channel.IsFollowing && (topics == null || !topics.Any()))
+                if ((channel.IsFollowing && (topics == null || !topics.Any())) ||
+                    (topics != null && !topics.Any(topic => !topic.IsFollowing)))
                 {
                     taxonomyId = channelPageItem.Taxonomies != null && channelPageItem.Taxonomies.Any() ? channelPageItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
                     if (!string.IsNullOrWhiteSpace(taxonomyId))
