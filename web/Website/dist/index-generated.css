@@ -5385,6 +5385,10 @@ main .action-flags-bar, main .banner--highlights {
           @media screen and (min-width: 800px) {
             .myview-settings .table-responsive .table thead th .accordionImg {
               width: 120px; } }
+          @media screen and (max-width: 480px) {
+            .myview-settings .table-responsive .table thead th .accordionImg {
+              float: right;
+              margin-right: 20px; } }
           .myview-settings .table-responsive .table thead th .accordionImg .mobileMode {
             height: 17px;
             height: 1.0625rem;
@@ -5424,6 +5428,9 @@ main .action-flags-bar, main .banner--highlights {
           @media screen and (max-width: 600px) {
               .myview-settings .table-responsive .table thead th .accordionImg span.expanded {
                 background-position: 0 0; } }
+          @media screen and (max-width: 480px) {
+            .myview-settings .table-responsive .table thead th .accordionImg span {
+              left: 0px; } }
           .myview-settings .table-responsive .table thead th .accordionImg span.accImg {
             float: left;
             position: relative;
@@ -6890,6 +6897,19 @@ main .action-flags-bar, main .banner--highlights {
 
 .gridView .gridViewCont {
   display: block; }
+
+@media screen and (max-width: 767px) {
+  .gridView .article-preview__tags a, .gridView .article-preview__tags .pop-out__reset-password, .gridView .article-preview__tags .sortable-table__list-toggler, .gridView .article-preview__tags .mobile-table-exit {
+    max-width: 29%; } }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .gridView .article-preview__tags a.tabTexonomy, .gridView .article-preview__tags .tabTexonomy.pop-out__reset-password, .gridView .article-preview__tags .tabTexonomy.sortable-table__list-toggler, .gridView .article-preview__tags .tabTexonomy.mobile-table-exit {
+    max-width: 16%; } }
+
+@media screen and (min-width: 767px) and (max-width: 768px) {
+  .gridView .topic-featured-article__image {
+    margin-bottom: 128px;
+    margin-bottom: 8rem; } }
 
 .personalisationhome .layout2 .article-preview--small.topics .article-metadata.sponsored_cont {
   height: 153px; }

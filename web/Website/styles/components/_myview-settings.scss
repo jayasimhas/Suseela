@@ -536,6 +536,10 @@
 						}
 						float: left;
 						text-align: right;
+						@media screen and (max-width: 480px){
+							float: right;
+							margin-right: 20px;
+						}
 						.mobileMode { 
 							height: 1.0625rem;
 							width: 2rem;
@@ -571,6 +575,11 @@
 								&.expanded{
 									background-position: 0 0;
 								} 
+							}
+						}
+						@media screen and (max-width: 480px){
+							span{
+								left: 0px;
 							}
 						}
 						span.accImg{
