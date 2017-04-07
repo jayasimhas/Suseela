@@ -98,12 +98,13 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                         }
 
                         //update planned publish date on save as part of article publish scheduler changes.
-                        if (((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime == default(DateTime) || ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime == null || ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime <= DateTime.Now)
+                        var plannedPubDate = ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime;                        
+                        if (plannedPubDate == default(DateTime) || plannedPubDate == null || (plannedPubDate <= DateTime.UtcNow && plannedPubDate.TimeOfDay.TotalHours <= DateTime.UtcNow.TimeOfDay.TotalHours && plannedPubDate.TimeOfDay.TotalMinutes <= DateTime.UtcNow.TimeOfDay.TotalMinutes))
                         {
                             using (new SecurityDisabler())
                             {
                                 item.Editing.BeginEdit();
-                                item[IArticleConstants.Planned_Publish_DateFieldName] = DateUtil.ToIsoDate(DateTime.Now);
+                                item[IArticleConstants.Planned_Publish_DateFieldName] = DateUtil.ToIsoDate(DateTime.UtcNow);
                             }
                         }
                         //update workflow to "edit after publish" if its in "ready for production" state as part article publish scheduler changes.
@@ -174,7 +175,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
             }
             return referencedArticlesInBody;
         }
-      
+
         /// <summary>
         /// Get the "Edited after publish" workflow state based on the field "Is edited after publish".
         /// </summary>
