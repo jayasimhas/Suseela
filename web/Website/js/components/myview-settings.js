@@ -452,6 +452,7 @@ $(function () {
 					}
 					allPublications.find('.sorting_arrow--up').removeClass('act').addClass('hide');
 					allPublications.find('.sorting_arrow--down').removeClass('hide');
+					allpubpans.find('.expandTxt').removeAttr('style');
 					pPan.removeClass('active');
 					var position = $this.closest('.publicationPan').position();
 					$(window).scrollTop(position.top); 
@@ -473,7 +474,8 @@ $(function () {
 					
 					pPan.find('.sorting_arrow--up').addClass('act').removeClass('hide');
 					pPan.find('.sorting_arrow--down').addClass('hide');
-					pPan.find('.expandTxt').removeAttr('style');
+					allpubpans.find('.expandTxt').html('');
+					pPan.find('.expandTxt').html(pPan.find('.expandTxt').attr('data-close'));
 					pPan.find('.mvTxt').removeAttr('style');
 					
 					allPublications.find('.publicationPan').removeClass('active');
@@ -499,12 +501,12 @@ $(function () {
 		if($this.hasClass('collapsed') && lableStatus == 'followinglbl'){
 			thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
 			thead.find('.mvTxt').css('visibility', 'visible');
-			thead.find('.expandTxt').css('visibility', 'visible');
+			thead.find('.expandTxt').css('visibility', 'visible').html(thead.find('.expandTxt').attr('data-expand'));
 			thead.find('.accImg .sorting_arrow--down').addClass('act'); 
 		}
 		else if($this.hasClass('collapsed') && lableStatus == 'followlbl'){
 			//thead.removeClass('followinglbl-txt followlbl-txt').addClass(lableStatus + '-txt');
-			thead.find('.expandTxt').css('visibility', 'visible');
+			thead.find('.expandTxt').css('visibility', 'visible').html(thead.find('.expandTxt').attr('data-expand'));
 		}
 	}).on('mouseleave', 'thead.hidden-xs tr:first-child', function() {
 		var $this = $(this), firstTrtds = $this.find('th'), thead = $this.closest('thead.hidden-xs');
