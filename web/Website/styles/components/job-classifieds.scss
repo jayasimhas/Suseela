@@ -179,6 +179,11 @@
 		p{
 			margin-bottom:0;
 		}
+		span{
+			.date{
+				font-size: 1.125rem;
+			}
+		}
 	}
 	.job_logo{
 		border-top: 1px solid $color-light-gray;
