@@ -6,7 +6,8 @@
             <h1>@Model.JobTitle</h1>
             <div class="sub-heading-text">
                 <p>@Model.JobSubTitle</p>
-                <p>@Model.PublishedText @Model.PublishedDate.ToString("d MMMM yyyy")</p>
+                <p>@Model.PublishedText 
+                    <span class="date">@Model.PublishedDate.ToString("d MMMM yyyy")</span></p>
             </div>
             <div class="job_logo">                
                     @if (!string.IsNullOrEmpty(Model.JobLogo?.Src))

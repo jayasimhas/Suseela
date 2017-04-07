@@ -536,6 +536,10 @@
 						}
 						float: left;
 						text-align: right;
+						@media screen and (max-width: 480px){
+							float: right;
+							margin-right: 20px;
+						}
 						.mobileMode { 
 							height: 1.0625rem;
 							width: 2rem;
@@ -545,6 +549,7 @@
 							float: left;
 							padding-left: 35px;
 							text-align: right;
+							width: 5.0625rem;
 							@include textMix('Roboto Condensed', 0.875rem, 400);
 							text-transform: uppercase;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
@@ -571,6 +576,11 @@
 								&.expanded{
 									background-position: 0 0;
 								} 
+							}
+						}
+						@media screen and (max-width: 480px){
+							span{
+								left: 0px;
 							}
 						}
 						span.accImg{

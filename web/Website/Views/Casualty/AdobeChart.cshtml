@@ -28,9 +28,7 @@
         var chartData1 = [];
         AmCharts.ready(function () {
             generateChartData();
-            createStockChart();
-            setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
-            CalculateDifference();
+           
         });
 
         function CalculateDifference() {
@@ -66,41 +64,53 @@
 
         function generateChartData() {
             var feedata = '@AMGraph.FinanceResult';
-            if (feedata.indexOf("-$-") > 0)
-            {
-                var feedataSrcOne = feedata.split("-$-")[0];
-                var feedataSrcTwo = feedata.split("-$-")[1];
+            if (feedata.length > 0) {
+                if (feedata.indexOf("-$-") > 0) {
+                    var feedataSrcOne = feedata.split("-$-")[0];
+                    var feedataSrcTwo = feedata.split("-$-")[1];
+                } else {
+                    var feedataSrcOne = feedata;
+                }
+
+                if (feedataSrcOne.length > 0) {
+                    var graphdata = feedataSrcOne.split("|");
+                    for (var i = 0; i <= graphdata.length; i++) {
+                        if (graphdata[i] != undefined && graphdata[i].indexOf(",") > 0) {
+                            var year = graphdata[i].split(",")[0];
+                            var val = graphdata[i].split(",")[1];
+                            chartData.push({
+                                date: year,
+                                value: val,
+                            });
+                        }
+                    }
+                }
+
+                if (feedataSrcTwo) {
+                    var graphdata1 = feedataSrcTwo.split("|");
+                    for (var i = 0; i <= graphdata.length; i++) {
+                        if (graphdata1[i] != undefined && graphdata1[i].indexOf(",") > 0) {
+                            var year = graphdata1[i].split(",")[0];
+                            var val = graphdata1[i].split(",")[1];
+                            chartData1.push({
+                                date: year,
+                                value: val,
+                            });
+                        }
+                    }
+                }
+                createStockChart();
+                setTimeout(function () { $("a[title='JavaScript charts']").hide() }, 600);
+                CalculateDifference();
             } else {
-                var feedataSrcOne = feedata;
+                var Errormessage =
+                                document.getElementById('hdnErrormessage').value;
+
+                document.getElementById("chartdiv").innerHTML = '<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink="http://www.w3.org/1999/xlink&quot;" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">' + Errormessage + '</p></div>';
+
+                document.getElementById("chartdiv").style.height = "auto";
             }
 
-            if (feedataSrcOne.length > 0) {
-                var graphdata = feedataSrcOne.split("|");
-                for (var i = 0; i <= graphdata.length; i++) {
-                    if (graphdata[i] != undefined && graphdata[i].indexOf(",") > 0) {
-                        var year = graphdata[i].split(",")[0];
-                        var val = graphdata[i].split(",")[1];
-                        chartData.push({
-                            date: year,
-                            value: val,
-                        });
-                    }
-                }
-            }
-
-            if (feedataSrcTwo) {
-                var graphdata1 = feedataSrcTwo.split("|");
-                for (var i = 0; i <= graphdata.length; i++) {
-                    if (graphdata1[i] != undefined && graphdata1[i].indexOf(",") > 0) {
-                        var year = graphdata1[i].split(",")[0];
-                        var val = graphdata1[i].split(",")[1];
-                        chartData1.push({
-                            date: year,
-                            value: val,
-                        });
-                    }
-                }
-            }
         }
 
 
