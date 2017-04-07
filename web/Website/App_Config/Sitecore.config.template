@@ -1412,10 +1412,10 @@
     <!-- Agent to clean up client data -->
     <agent type="Sitecore.Tasks.CompactClientDataAgent" method="Run" interval="04:00:00" />
     <!-- Agent to clean up history data -->
-    <agent type="Sitecore.Tasks.CleanupHistory" method="Run" interval="04:00:00" />
+    <agent type="Sitecore.Tasks.CleanupHistory" method="Run" interval="02:00:00"/>
     <!-- Agent to clean up publishing queue -->
-    <agent type="Sitecore.Tasks.CleanupPublishQueue, Sitecore.Kernel" method="Run" interval="04:00:00">
-      <DaysToKeep>30</DaysToKeep>
+    <agent type="Sitecore.Tasks.CleanupPublishQueue, Sitecore.Kernel" method="Run" interval="02:00:00">
+      <DaysToKeep>2</DaysToKeep>
     </agent>
     <!-- Agent that cleans up the event queue.
         The length of time that the EventQueue information should be kept.
@@ -1424,7 +1424,7 @@
         DaysToKeep = The number of days that the EventQueue information should be kept. Example:<DaysToKeep>1</DaysToKeep>
         IntervalToKeep = The time in hh:mm:ss that the EventQueue information should be kept. Example: <IntervalToKeep>04:00:00</IntervalToKeep>
       -->
-    <agent type="Sitecore.Tasks.CleanupEventQueue, Sitecore.Kernel" method="Run" interval="04:00:00">
+    <agent type="Sitecore.Tasks.CleanupEventQueue, Sitecore.Kernel" method="Run" interval="02:00:00">
       <DaysToKeep>1</DaysToKeep>
     </agent>
     <!-- Agent to clear the HTML cache periodically -->
