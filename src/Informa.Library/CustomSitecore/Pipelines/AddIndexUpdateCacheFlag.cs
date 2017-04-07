@@ -10,7 +10,8 @@ namespace Informa.Library.CustomSitecore.Pipelines
 		
 		public override void Process(RenderRenderingArgs args)
 		{
-			Assert.ArgumentNotNull(args, "args");
+            Sitecore.Diagnostics.Log.Info("Started AddIndexUpdateCacheFlag", " AddIndexUpdateCacheFlag ");
+            Assert.ArgumentNotNull(args, "args");
 			if (args.Rendered || !args.Cacheable || 
 				args.Rendering == null || args.Rendering.RenderingItem == null || args.Rendering.RenderingItem.InnerItem == null)
 				return;
@@ -19,6 +20,7 @@ namespace Informa.Library.CustomSitecore.Pipelines
 			{
 				args.CacheKey = (args.CacheKey ?? string.Empty) + "_#index";
 			}
-		}
+            Sitecore.Diagnostics.Log.Info("Ended AddIndexUpdateCacheFlag", " AddIndexUpdateCacheFlag");
+        }
 	}
 }
