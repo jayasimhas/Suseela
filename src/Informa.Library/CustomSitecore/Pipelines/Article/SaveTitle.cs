@@ -27,11 +27,19 @@ using Sitecore.Web;
 using Newtonsoft.Json;
 using Informa.Library.Rss;
 using System.Configuration;
+using Sitecore.Workflows;
+using Sitecore;
+using Informa.Models.Informa.Models.sitecore.templates.System.Workflow;
+using Glass.Mapper.Sc;
 
 namespace Informa.Library.CustomSitecore.Pipelines.Article
 {
     public class SaveTitle
     {
+        /// <summary>
+        /// Updates the following fields based on conditions - planned publish date, title field, workflow state field, referenced articles treelist field based on the references provided in body.
+        /// </summary>
+        /// <param name="args"></param>
         public void Process(SaveArgs args)
         {
             foreach (var saveItem in args.Items) //loop through item(s) being saved
@@ -41,57 +49,87 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                     continue;
                 if (string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase))
                 {
-                    var allreferencedArticlesIds = GetReferencedArticleFromBody(item);
-                    if (allreferencedArticlesIds.Count() > 0)
-                    {                       
-                        string updatedValue = string.Empty;
-                        var referencedArticles = item.Fields[IArticleConstants.Referenced_ArticlesFieldName];
-                        if (referencedArticles != null)
+                    try
+                    {
+                        var allreferencedArticlesIds = GetReferencedArticleFromBody(item);
+                        if (allreferencedArticlesIds.Count() > 0)
                         {
-                            using (new SecurityDisabler())
+                            string updatedValue = string.Empty;
+                            var referencedArticles = item.Fields[IArticleConstants.Referenced_ArticlesFieldName];
+                            if (referencedArticles != null)
                             {
-                                item.Editing.BeginEdit();
-                                foreach (var id in allreferencedArticlesIds)
+                                using (new SecurityDisabler())
                                 {
-                                    if (!referencedArticles.Value.Contains(id))
+                                    item.Editing.BeginEdit();
+                                    foreach (var id in allreferencedArticlesIds)
                                     {
-                                        if (!string.IsNullOrEmpty(referencedArticles.Value))
+                                        if (!referencedArticles.Value.Contains(id))
                                         {
-                                            updatedValue = referencedArticles.Value;
-                                            updatedValue += "|" + id;
-                                        }
-                                        else
-                                            updatedValue = id;
-                                        if (!string.IsNullOrEmpty(updatedValue))
-                                        {
-                                            item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
+                                            if (!string.IsNullOrEmpty(referencedArticles.Value))
+                                            {
+                                                updatedValue = referencedArticles.Value;
+                                                updatedValue += "|" + id;
+                                            }
+                                            else
+                                                updatedValue = id;
+                                            if (!string.IsNullOrEmpty(updatedValue))
+                                            {
+                                                item.Fields[IArticleConstants.Referenced_ArticlesFieldName].Value = updatedValue;
+                                            }
                                         }
                                     }
+
                                 }
-                                //item.Fields[IArticleConstants.BodyFieldName].Value = updatedBody;
-                                item.Editing.EndEdit();
                             }
                         }
-                    }
+                        //item name and title sync
+                        item.Fields.ReadAll();
+                        var field = item.Fields[IArticleConstants.TitleFieldId];
+                        if (field != null && !string.IsNullOrEmpty(field.Value))
+                        {
+                            if (!string.Equals(item.Name, field.Value, StringComparison.OrdinalIgnoreCase))
+                            {
+                                using (new SecurityDisabler())
+                                {
+                                    item.Editing.BeginEdit();
+                                    item.Name = ItemUtil.ProposeValidItemName(field.Value.Length > 100 ? new string(field.Value.Take(100).ToArray()) : field.Value);
+                                }
+                            }
+                        }
 
-                    item.Fields.ReadAll();
-                    var field = item.Fields[IArticleConstants.TitleFieldId];
-                    if (field != null && !string.IsNullOrEmpty(field.Value))
-                    {
-                        if (!string.Equals(item.Name, field.Value, StringComparison.OrdinalIgnoreCase))
+                        //update planned publish date on save as part of article publish scheduler changes.
+                        if (((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime == default(DateTime) || ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime == null || ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime <= DateTime.Now)
                         {
                             using (new SecurityDisabler())
                             {
                                 item.Editing.BeginEdit();
-                                item.Name = ItemUtil.ProposeValidItemName(field.Value.Length > 100 ? new string(field.Value.Take(100).ToArray()) : field.Value);
-                                item.Editing.EndEdit();
+                                item[IArticleConstants.Planned_Publish_DateFieldName] = DateUtil.ToIsoDate(DateTime.Now);
                             }
                         }
+                        //update workflow to "edit after publish" if its in "ready for production" state as part article publish scheduler changes.
+                        var wfState = item.State.GetWorkflowState();
+                        var editAfterPublishState = getEditAfterPublishState(item);
+                        if (wfState.StateID != editAfterPublishState.StateID && wfState.FinalState)
+                        {
+                            item[FieldIDs.WorkflowState] = editAfterPublishState.StateID.ToString();
+                        }
+                    }
+                    catch
+                    {
+                        Sitecore.Diagnostics.Log.Error("Error updating the fields from savetitle", item.ID);
+                    }
+                    finally
+                    {
+                        item.Editing.EndEdit();
                     }
                 }
             }
         }
-
+        /// <summary>
+        /// Gets the referenced articles in the format [A#{ArticleNumber}], search using article number and gets the GUID of all referenced articles.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public List<string> GetReferencedArticleFromBody(Item item)
         {
             List<string> referencedPlaceholder = new List<string>();
@@ -108,33 +146,65 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                     string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
                     url = string.Format("{0}://{1}/api/SearchArticlesInRTE?articleNumber={2}", HttpContext.Current.Request.Url.Scheme, hostName, articleNumber);
                 }
-                using (var client = new HttpClient())
+                try
                 {
-                    string disableSSLCertificateValidation = ConfigurationManager.AppSettings["DisableSSLCertificateValidation"];
-                    if (!string.IsNullOrWhiteSpace(disableSSLCertificateValidation) && Convert.ToBoolean(disableSSLCertificateValidation))
+                    using (var client = new HttpClient())
                     {
-                        ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
-                    }
-                    var response = client.GetStringAsync(url).Result;
-                    if (!string.IsNullOrEmpty(response))
-                    {
-                        var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
-                        if (resultarticles != null)
+                        string disableSSLCertificateValidation = ConfigurationManager.AppSettings["DisableSSLCertificateValidation"];
+                        if (!string.IsNullOrWhiteSpace(disableSSLCertificateValidation) && System.Convert.ToBoolean(disableSSLCertificateValidation))
                         {
-                            referencedArticlesInBody.Add(resultarticles._Id.ToString().ToUpper());
+                            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                         }
-                        //var resultarticles = JsonConvert.DeserializeObject<SearchResults>(response);
-                        //if (resultarticles.results.Any())
-                        //{
-                        //    var id = resultarticles.results.FirstOrDefault().ItemId;
-                        //    return id.ToString().ToUpper();
-                        //}
+                        var response = client.GetStringAsync(url).Result;
+                        if (!string.IsNullOrEmpty(response))
+                        {
+                            var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
+                            if (resultarticles != null)
+                            {
+                                referencedArticlesInBody.Add(resultarticles._Id.ToString().ToUpper());
+                            }
+                        }
+
                     }
-                    //return response.IsSuccessStatusCode;
+                }
+                catch
+                {
+                    Sitecore.Diagnostics.Log.Error("Error searching the referenced article from body in savetitle class", item.ID);
                 }
             }
             return referencedArticlesInBody;
         }
-        
+      
+        /// <summary>
+        /// Get the "Edited after publish" workflow state based on the field "Is edited after publish".
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        private WorkflowState getEditAfterPublishState(Item item)
+        {
+            try
+            {
+                var workflow = item.Database.WorkflowProvider.GetWorkflow(item);
+                var states = workflow.GetStates();
+                if (states.Count() > 0)
+                {
+                    foreach (var state in states)
+                    {
+                        var stateID = state.StateID;
+                        var istate = Sitecore.Context.ContentDatabase.GetItem(stateID);
+                        if (istate.Fields[IStateConstants.Is_Edit_After_PublishFieldName].Value == "1")
+                        {
+                            return state;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                Sitecore.Diagnostics.Log.Error("Error occurred while getting the workflow states from savetitle class", item.ID);
+            }
+            return null;
+        }
+
     }
 }
