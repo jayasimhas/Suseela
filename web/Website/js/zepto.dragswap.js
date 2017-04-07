@@ -142,6 +142,8 @@ import { analyticsEvent } from './controllers/analytics-controller';
                     onAnimEnd(this);
                     onAnimEnd(dragSrcEl);
                 }
+				$(this).removeClass(settings.overClass);
+				$(dragSrcEl).removeClass(settings.overClass);
                 $(this).siblings().removeAttr('draggable');
                 $(this).siblings().filter(settings.excludePatt).attr('draggable', true);
                 console.log('dropped');

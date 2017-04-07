@@ -374,8 +374,7 @@ $(function () {
 
         if ($this.hasClass('expanded')) {
             setFlag = false;
-            tbody.addClass('tbodyhidden');
-            //pPan.find('.smfollowingBtn').hide();  
+            tbody.addClass('tbodyhidden');   
             accStatusflwLbl.removeClass('hideRow');
             accStatusflwBtn.addClass('hideRow');
             thead.find('.mtp').addClass('hideBtn');
@@ -434,6 +433,7 @@ $(function () {
 			
 			if(e.target.className !== 'subscribed' && e.target.className !== 'rowlines' && e.target.className !== 'pull-left' && e.target.className !== 'mv' && e.target.className !== 'subscr'){
 				if ($this.hasClass('expanded')) {
+					allpubpans.addClass('dragChannel');
 					$this.removeClass('expanded').addClass('collapsed');
 					tbody.addClass('tbodyhidden');
 					thead.find('.mtp').addClass('hideBtn');
@@ -457,6 +457,8 @@ $(function () {
 					$(window).scrollTop(position.top); 
 				}
 				else {
+					allpubpans.addClass('dragChannel');
+					$this.closest('.publicationPan.donesubscribe').removeClass('dragChannel');
 					allPublications.find('tbody').addClass('tbodyhidden');
 					allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--up').removeClass('act').addClass('hide');
 					allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--down').removeClass('hide');
@@ -607,10 +609,13 @@ $(function () {
         });
 
         $('#allPublicationsPan').dragswap({
-            element: '.publicationPan.donesubscribe',
+            element: '.publicationPan.donesubscribe.dragChannel',
             dropAnimation: true
         });
     }
+	
+	
+	$('.publicationPan.dragChannel:first').removeClass('dragChannel').removeAttr('draggable');
 	
 	$(document).on('click', '.editView', function(){
 		var eventDetails = {"event_name":"myview_edit_my_view","page_name": analytics_data["page_name"], "ga_eventCategory":"My View Page Link", "ga_eventAction":"Link Click", "ga_eventLabel":"EDIT MY VIEW"};
