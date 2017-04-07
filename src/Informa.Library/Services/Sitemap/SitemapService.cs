@@ -231,6 +231,46 @@ namespace Informa.Library.Services.Sitemap
             }
         }
 
+
+        private int GetAllPagesCount(string startPath)
+        {
+            int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
+
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<GeneralContentResult>()
+                    .Filter(j
+                    => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
+                    && j.Path.StartsWith(startPath.ToLower())
+                    && !j.ExcludeFromGoogleSearch).Take(10);
+
+                var results = query.GetResults();
+                return results.TotalSearchResults;
+            }
+        }
+
+        private IEnumerable<I___BasePage> Get200Items(string startPath)
+        {
+            int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
+
+            using (var context = SearchContextFactory.Create())
+            {
+                var query = context.GetQueryable<GeneralContentResult>()
+                    .Filter(j
+                    => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
+                    && j.Path.StartsWith(startPath.ToLower())
+                    && !j.ExcludeFromGoogleSearch).Skip(200 * (pageNo - 1)).Take(200);
+                //.Skip(200 * (pageNo - 1)).Take(200)
+                var results = query.GetResults();
+
+                var pages = results.Hits.Select(h => SitecoreContext.GetItem<I___BasePage>(h.Document.ItemId.Guid)).Where(a => a != null);
+                return (!pages.Any())
+                ? Enumerable.Empty<I___BasePage>()
+                : pages;
+            }
+        }
+
+
         private IEnumerable<IArticle> GetNewsPages(string startPath)
         {
             using (var context = SearchContextFactory.Create())
@@ -255,7 +295,7 @@ namespace Informa.Library.Services.Sitemap
             string xmlResult = string.Empty;
             ///////////////////////////////////////////////////
             string pageNo = HttpContext.Current.Request.QueryString["page"];
-            
+
 
             int page = 0;
             int.TryParse(pageNo, out page);
@@ -267,7 +307,9 @@ namespace Informa.Library.Services.Sitemap
                 var home = SitecoreContext.GetHomeItem<IHome_Page>();
                 string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
                 int pageSize = 200; // To Be Configured Later
-                int TotalArticles = GetAllPages(home._Path).Count();
+                //int TotalArticles = GetAllPages(home._Path).Count();
+                int TotalArticles = GetAllPagesCount(home._Path);
+
                 int TotalCount = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(TotalArticles) / Convert.ToDecimal(pageSize)));
 
                 //start xml doc
@@ -286,7 +328,6 @@ namespace Informa.Library.Services.Sitemap
                 //append an xml node for each item
                 for (int i = 1; i <= TotalCount; i++)
                 {
-
                     //create location
                     string url = string.Empty;
                     try
@@ -319,7 +360,8 @@ namespace Informa.Library.Services.Sitemap
                 //xml declaration
                 XmlNode declarationNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
                 doc.AppendChild(declarationNode);
-                IEnumerable<I___BasePage> items = GetAllPages(home._Path).Skip(200 * (page - 1)).Take(200);
+                //IEnumerable<I___BasePage> items = GetAllPages(home._Path).Skip(200 * (page - 1)).Take(200);
+                IEnumerable<I___BasePage> items = Get200Items(home._Path);
                 //urlset
                 XmlNode urlsetNode = doc.CreateElement("urlset");
                 //xmlnls
@@ -349,11 +391,16 @@ namespace Informa.Library.Services.Sitemap
                     {
                         try
                         {
-                            var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
-                            if (articleItem != null)
-                                url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                            if (itm._TemplateId == IArticleConstants.TemplateId.Guid)
+                            {
+                                var articleItem = GlobalService.GetItem<IArticle>(itm._Id);
+                                if (articleItem != null)
+                                    url = "/" + articleItem.Article_Number + "/" + articleItem._Name;
+                            }
                             else
+                            {
                                 url = itm._Url;
+                            }
                         }
                         catch (Exception ex)
                         {
