@@ -27,6 +27,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
         public void Process(HttpRequestArgs args)
         {
+            Sitecore.Diagnostics.Log.Info("Started ArticleItemResolver", " ArticleItemResolver ");
             Assert.ArgumentNotNull((object)args, "args");
             if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
                 return;
@@ -60,6 +61,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             Context.Item = i;
             args.Url.ItemPath = i.Paths.FullPath;
             Context.Request.ItemPath = i.Paths.FullPath;
+            Sitecore.Diagnostics.Log.Info("Ended ArticleItemResolver", " ArticleItemResolver");
         }
 
         public struct ArticleMatch

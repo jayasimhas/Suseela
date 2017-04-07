@@ -36,11 +36,12 @@ namespace Informa.Library.Navigation
             }
 
             string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
+            Sitecore.Diagnostics.Log.Info("Started GetFromCache BuildNavigation", " BuildNavigation ");
             return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
         }
 
         private IEnumerable<INavigation> BuildNavigation(INavigation_Root navigationRootItem) {
-            
+            Sitecore.Diagnostics.Log.Info("Started BuildNavigation", " BuildNavigation ");
             if (navigationRootItem == null)
 			{
 				return Enumerable.Empty<INavigation>();
@@ -77,7 +78,9 @@ namespace Informa.Library.Navigation
 			}
 
 			return navigation;
-		}
+
+            Sitecore.Diagnostics.Log.Info("Ended BuildNavigation", " BuildNavigation ");
+        }
 
 		public Navigation CreateNavigation(INavigation_Link navigationLinkItem)
 		{
