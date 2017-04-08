@@ -458,8 +458,8 @@ $(function () {
 					$(window).scrollTop(position.top); 
 				}
 				else {
-					allpubpans.addClass('dragChannel');
-					$this.closest('.publicationPan.donesubscribe').removeClass('dragChannel');
+					allpubpans.addClass('dragChannel').attr('draggable', true);
+					$this.closest('.publicationPan.donesubscribe').removeClass('dragChannel').removeAttr('draggable');
 					allPublications.find('tbody').addClass('tbodyhidden');
 					allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--up').removeClass('act').addClass('hide');
 					allPublications.find('.publicationPan .accordionImg span.accImg .sorting_arrow--down').removeClass('hide');

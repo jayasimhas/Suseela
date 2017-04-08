@@ -292,7 +292,7 @@
 	.editView{
 		@include editView(8.75rem);
 		float: left;
-		margin: 1.125rem 0 0;
+		margin: 0.625rem 0 0;
 	}
 	.seeAllChannels{
 		@include editView(auto);
