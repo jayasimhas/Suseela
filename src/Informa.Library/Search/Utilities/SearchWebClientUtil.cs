@@ -17,17 +17,11 @@ namespace Informa.Library.Search.Utilities
         {
             try
             {
-                var client = new WebClient();
-
-                if (AuthenticateWebClientApiCall())
-                {
-                    client.Credentials = new NetworkCredential(Settings.GetSetting(WebClientAuthUsernameSetting), 
-                        Settings.GetSetting(WebClientAuthPasswordSetting), Settings.GetSetting(WebClientAuthDomainSetting));
+                using (var client = new WebClient())
+                {                   
+                    return JsonConvert.DeserializeObject<SearchResults>(client.DownloadString(url));
                 }
 
-                var content = client.DownloadString(url);
-
-                return JsonConvert.DeserializeObject<SearchResults>(content);
             }
             catch (Exception exc)
             {
@@ -36,7 +30,6 @@ namespace Informa.Library.Search.Utilities
                 return null;
             }
         }
-
         public static bool AuthenticateWebClientApiCall()
         {
             return (!string.IsNullOrEmpty(Settings.GetSetting(WebClientAuthUsernameSetting)) &&

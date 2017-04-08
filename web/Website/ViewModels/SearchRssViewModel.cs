@@ -35,15 +35,17 @@ namespace Informa.Web.ViewModels
             I_Base_Rss_Feed rssFeedItem = currentItem.GlassCast<I_Base_Rss_Feed>(inferType: false);
 
             SyndicationFeed feed = null;
-
+            Sitecore.Diagnostics.Log.Info("GetFeedGenerator_start" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             var feedGenerator = GetFeedGenerator(rssFeedItem);
+            Sitecore.Diagnostics.Log.Info("GetFeedGenerator_end" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             if (feedGenerator == null)
             {
                 Log.Error("Could Not Create RSS Feed Geneartor " + rssFeedItem.Rss_Feed_Generation, this);
                 return string.Empty;
             }
-
+            Sitecore.Diagnostics.Log.Info("GetRssFeed_start" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             feed = feedGenerator.GetRssFeed(rssFeedItem, _sitecoreContext, _itemReferences);
+            Sitecore.Diagnostics.Log.Info("GetRssFeed_start" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
 
             if (feed == null)
             {
@@ -53,8 +55,9 @@ namespace Informa.Web.ViewModels
 
             var formatter = new Rss20FeedFormatter(feed);
             formatter.SerializeExtensionsAsAtom = false;
-
+            Sitecore.Diagnostics.Log.Info("GetItemRetriever_start" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             var itemRetriever = GetItemRetriever(rssFeedItem);
+            Sitecore.Diagnostics.Log.Info("GetItemRetrieverr_end" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             if (itemRetriever == null)
             {
                 Log.Error("Could Not Create Item Retriever With " + rssFeedItem.Sitecore_Item_Retrieval, this);
@@ -67,9 +70,9 @@ namespace Informa.Web.ViewModels
                 Log.Error("Could Not Create Item Generator With " + rssFeedItem.Rss_Item_Generation, this);
                 return string.Empty;
             }
-
+            Sitecore.Diagnostics.Log.Info("GetSitecoreItems_start" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             var sitecoreItems = itemRetriever.GetSitecoreItems(currentItem);
-
+            Sitecore.Diagnostics.Log.Info("GetSitecoreItems_end" + DateTime.Now.ToString("hh.mm.ss.ffffff"), "GetSearchRssXml");
             List<SyndicationItem> syndicationItems = new List<SyndicationItem>();
             foreach (Item sitecoreItem in sitecoreItems)
             {
