@@ -730,11 +730,8 @@
 	.gridViewCont{
 		display: block;
 	}
-	
-	.article-preview__tags a{
-		@media screen and (max-width: 767px){
-			max-width: 29%;
-		}
+	.article-preview__tags a{ 
+		max-width: 29%; 
 		@media screen and (min-width: 768px) and (max-width: 1024px){
 			&.tabTexonomy{ 
 				max-width: 16%;

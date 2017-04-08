@@ -7007,13 +7007,11 @@ main .action-flags-bar, main .banner--highlights {
 .gridView .gridViewCont {
   display: block; }
 
-@media screen and (max-width: 767px) {
-  .gridView .article-preview__tags a, .gridView .article-preview__tags .pop-out__reset-password, .gridView .article-preview__tags .sortable-table__list-toggler, .gridView .article-preview__tags .mobile-table-exit {
-    max-width: 29%; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .gridView .article-preview__tags a.tabTexonomy, .gridView .article-preview__tags .tabTexonomy.pop-out__reset-password, .gridView .article-preview__tags .tabTexonomy.sortable-table__list-toggler, .gridView .article-preview__tags .tabTexonomy.mobile-table-exit {
-    max-width: 16%; } }
+.gridView .article-preview__tags a, .gridView .article-preview__tags .pop-out__reset-password, .gridView .article-preview__tags .sortable-table__list-toggler, .gridView .article-preview__tags .mobile-table-exit {
+  max-width: 29%; }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .gridView .article-preview__tags a.tabTexonomy, .gridView .article-preview__tags .tabTexonomy.pop-out__reset-password, .gridView .article-preview__tags .tabTexonomy.sortable-table__list-toggler, .gridView .article-preview__tags .tabTexonomy.mobile-table-exit {
+      max-width: 16%; } }
 
 @media screen and (min-width: 767px) and (max-width: 768px) {
   .gridView .topic-featured-article__image {
