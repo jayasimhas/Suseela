@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.Services.Global;
 using Jabberwocky.Core.Caching;
-
+using Informa.Library.Utilities.Extensions;
 namespace Informa.Library.Navigation
 {
 	[AutowireService(LifetimeScope.SingleInstance)]
@@ -35,13 +35,13 @@ namespace Informa.Library.Navigation
                 return Enumerable.Empty<INavigation>();
             }
 
+            StringExtensions.WriteSitecoreLogs("Reached Create method at :", DateTime.Now, "ItemSideNavigationTreeFactory");
             string cacheKey = $"{nameof(ItemNavigationTreeFactory)}-Create-{navigationRootItem._Id}";
-            Sitecore.Diagnostics.Log.Info("Started GetFromCache BuildNavigation", " BuildNavigation ");
             return _dependencies.CacheProvider.GetFromCache(cacheKey, () => BuildNavigation(navigationRootItem));
         }
 
         private IEnumerable<INavigation> BuildNavigation(INavigation_Root navigationRootItem) {
-            Sitecore.Diagnostics.Log.Info("Started BuildNavigation", " BuildNavigation ");
+           StringExtensions.WriteSitecoreLogs("Reached Build Navigation method at :", DateTime.Now, "ItemSideNavigationTreeFactory");
             if (navigationRootItem == null)
 			{
 				return Enumerable.Empty<INavigation>();
@@ -77,9 +77,11 @@ namespace Informa.Library.Navigation
 				});
 			}
 
-			return navigation;
+            StringExtensions.WriteSitecoreLogs("Reached Build Naviugation method end at:", DateTime.Now, "ItemSideNavigationTreeFactory");
 
-            Sitecore.Diagnostics.Log.Info("Ended BuildNavigation", " BuildNavigation ");
+            return navigation;
+
+          
         }
 
 		public Navigation CreateNavigation(INavigation_Link navigationLinkItem)
