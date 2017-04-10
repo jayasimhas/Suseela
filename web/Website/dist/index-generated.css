@@ -3173,7 +3173,7 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-size: 1rem; } }
   .job_detail .sub-heading-text p {
     margin-bottom: 0; }
-  .job_detail .sub-heading-text span .date {
+  .job_detail .sub-heading-text span.date {
     font-size: 18px;
     font-size: 1.125rem; }
 
