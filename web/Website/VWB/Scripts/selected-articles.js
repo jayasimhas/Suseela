@@ -1,3 +1,4 @@
+var createTexonamyArr = [], createauthCodesArr = [], createcontTypeArr = [], createmedTypeArr = [];
 var selectedArticlesUpdated = function () {
     if ($('.js-article-checkbox input:checked').length) {
 
@@ -49,6 +50,11 @@ function loadDropdownVals(data) {
             }
             taxonomiesDrop += '</div>';
             $('#ddlTaxonomies_dv').html(taxonomiesDrop);
+			if(createTexonamyArr.length){
+				for(var i=0; i<createTexonamyArr.length; i++){
+					$('#' + createTexonamyArr[i]).attr('checked', true);
+				}
+			}
         }
         else if (key == 'authors') {
             var authorsDrop = '<div id="checks">';
@@ -60,6 +66,11 @@ function loadDropdownVals(data) {
             }
             authorsDrop += '</div>';
             $('#ddlAuthors_dv').html(authorsDrop);
+			if(createauthCodesArr.length){
+				for(var i=0; i<createauthCodesArr.length; i++){
+					$('#' + createauthCodesArr[i]).attr('checked', true);
+				}
+			}
         }
         else if (key == 'contentTypes') {
             var contentTypesDrop = '<div id="checks">';
@@ -71,6 +82,11 @@ function loadDropdownVals(data) {
             }
             contentTypesDrop += '</div>';
             $('#ddlContentType_dv').html(contentTypesDrop);
+			if(createcontTypeArr.length){
+				for(var i=0; i<createcontTypeArr.length; i++){
+					$('#' + createcontTypeArr[i]).attr('checked', true);
+				}
+			}
         }
         else if (key == 'mediaTypes') {
             var mediaTypesDrop = '<div id="checks">';
@@ -82,10 +98,55 @@ function loadDropdownVals(data) {
             }
             mediaTypesDrop += '</div>';
             $('#ddlMediaType_dv').html(mediaTypesDrop);
+			if(createmedTypeArr.length){
+				for(var i=0; i<createmedTypeArr.length; i++){
+					$('#' + createmedTypeArr[i]).attr('checked', true);
+				}
+			}
         }
     };
 }
 
+function recreateIds(id){
+	if(id.indexOf('-') === -1){
+		var spl = id.split(''), recreateStr = '';
+		
+		for(var i=0; i<spl.length; i++){
+			if(i == 7 || i == 11 || i == 15 || i == 19){
+				recreateStr += spl[i] + '-';
+			}
+			else{
+				recreateStr += spl[i];
+			}
+		}
+		return recreateStr;
+	}
+	else{
+		return id;
+	}
+}
+
+function loadAjaxData(){
+	 var ddlVerticals = $('#ddlVerticals').val(), ddlPublications = $('#ddlPublications_sl input[type=checkbox]:checked'), getSelectedVal = '';
+			
+	for (var i = 0; i < ddlPublications.length; i++) {
+		var coma = (i+1 == ddlPublications.length) ? '' : ',';
+		getSelectedVal += ddlPublications[i].value + coma;
+	} 
+	$.ajax({
+		url: 'api/InformaVWBSearch',
+		data: { 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal },
+		dataType: 'json',
+		type: 'GET',
+		success: function (data) {
+			loadDropdownVals(data);
+		},
+		error: function (err) {
+			console.log(err);
+		}
+	});
+}
+		
 $(document)
     .ready(function () {
 
@@ -191,26 +252,35 @@ $(document)
                 }
             }
         });
-
+		
+		var href = window.location.href;
+		if(href.indexOf('taxCodes') !== -1){
+			var taxCodes = href.split('taxCodes=')[1].split('&')[0], texTexonamyArr = taxCodes.split(',');
+			for(var i=0; i<texTexonamyArr.length; i++){
+				createTexonamyArr.push(recreateIds(texTexonamyArr[i]));
+			}
+		}
+		if(href.indexOf('authCodes') !== -1){
+			var authCodes = href.split('authCodes=')[1].split('&')[0], authArr = authCodes.split(',');
+			for(var i=0; i<authArr.length; i++){
+				createauthCodesArr.push(recreateIds(authArr[i]));
+			}
+		}
+		if(href.indexOf('contTypeCodes') !== -1){
+			var contTypeCodes = href.split('contTypeCodes=')[1].split('&')[0], contTypeArr = contTypeCodes.split(',');
+			for(var i=0; i<contTypeArr.length; i++){
+				createcontTypeArr.push(recreateIds(contTypeArr[i]));
+			}
+		}
+		if(href.indexOf('medTypeCodes') !== -1){
+			var medTypeCodes = href.split('medTypeCodes=')[1].split('&')[0], medTypeArr = medTypeCodes.split(',');
+			for(var i=0; i<medTypeArr.length; i++){
+				createmedTypeArr.push(recreateIds(medTypeArr[i]));
+			}
+		} 
+		
         $('#ddlPublications').on('click', 'input[type=checkbox]', function () {
-            var ddlVerticals = $('#ddlVerticals').val(), ddlPublications = $('#ddlPublications_sl input[type=checkbox]:checked'), getSelectedVal = '';
-			
-            for (var i = 0; i < ddlPublications.length; i++) {
-				var coma = (i+1 == ddlPublications.length) ? '' : ',';
-                getSelectedVal += ddlPublications[i].value + coma;
-            } 
-			$.ajax({
-				url: 'api/InformaVWBSearch',
-				data: { 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal },
-				dataType: 'json',
-				type: 'GET',
-				success: function (data) {
-					loadDropdownVals(data);
-				},
-				error: function (err) {
-					console.log(err);
-				}
-			}); 
+			loadAjaxData();  
         });
 		
 		$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').on('click', 'input[type=checkbox]', function(){
@@ -250,23 +320,14 @@ $(document)
 			$('#hdnSelectedTaxs').val(Taxonomies_dvStr);
 			$('#hdnSelectedAuths').val(Authors_dvStr);
 			$('#hdnSelectedContTypes').val(ContentType_dvStr);
-			$('#hdnSelectedMedTypes').val(MediaType_dvStr);
-			
-			sessionStorage.clear();
-			sessionStorage.setItem('getDropdownDetails', JSON.stringify({taxonomies: $('#ddlTaxonomies_dv').html(), authors: $('#ddlAuthors_dv').html(), contentTypes:$('#ddlContentType_dv').html(), mediaTypes:  $('#ddlMediaType_dv').html()}));
+			$('#hdnSelectedMedTypes').val(MediaType_dvStr); 
 		});
 		
-		if(!!sessionStorage.getItem('getDropdownDetails')){
-			if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
-				$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
-			}
-			else{
-				var getDropdownData = JSON.parse(sessionStorage.getItem('getDropdownDetails'));
-				$('#ddlTaxonomies_dv').html(getDropdownData.taxonomies);
-				$('#ddlAuthors_dv').html(getDropdownData.authors);
-				$('#ddlContentType_dv').html(getDropdownData.contentTypes);
-				$('#ddlMediaType_dv').html(getDropdownData.mediaTypes);
-			}
+		if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
+			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
+		}
+		else{
+			loadAjaxData();
 		}
     });
 
