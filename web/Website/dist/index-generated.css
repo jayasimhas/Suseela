@@ -5949,14 +5949,15 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #f7941e;
         color: #ffffff;
         background: #f7941e; } }
-  .theme-lloydslist .myview-settings .followBtn:hover {
-    background: #1191D1;
-    border: 1px solid #1191D1; }
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      .theme-lloydslist .myview-settings .followBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+  @media screen and (min-width: 1025px) {
+    .theme-lloydslist .myview-settings .followBtn:hover {
+      background: #1191D1;
+      border: 1px solid #1191D1; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .theme-lloydslist .myview-settings .followBtn:hover {
+      border: 1px solid #ADADAD;
+      color: #58595b;
+      background: none; } }
   .theme-lloydslist .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -6078,14 +6079,15 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #f7941e;
         color: #ffffff;
         background: #f7941e; } }
-  .theme-insurance-day .myview-settings .followBtn:hover {
-    background: #DE4361;
-    border: 1px solid #DE4361; }
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      .theme-insurance-day .myview-settings .followBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+  @media screen and (min-width: 1025px) {
+    .theme-insurance-day .myview-settings .followBtn:hover {
+      background: #DE4361;
+      border: 1px solid #DE4361; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .theme-insurance-day .myview-settings .followBtn:hover {
+      border: 1px solid #ADADAD;
+      color: #58595b;
+      background: none; } }
   .theme-insurance-day .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
@@ -6207,14 +6209,15 @@ main .action-flags-bar, main .banner--highlights {
         border: 1px solid #f7941e;
         color: #ffffff;
         background: #f7941e; } }
-  .theme-commodities .myview-settings .followBtn:hover {
-    background: #F5821F;
-    border: 1px solid #F5821F; }
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-      .theme-commodities .myview-settings .followBtn:hover {
-        border: 1px solid #ADADAD;
-        color: #58595b;
-        background: none; } }
+  @media screen and (min-width: 1025px) {
+    .theme-commodities .myview-settings .followBtn:hover {
+      background: #F5821F;
+      border: 1px solid #F5821F; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .theme-commodities .myview-settings .followBtn:hover {
+      border: 1px solid #ADADAD;
+      color: #58595b;
+      background: none; } }
   .theme-commodities .myview-settings .followingrow .rowlines {
     float: right;
     margin-top: 7px;
