@@ -182,26 +182,27 @@ namespace Informa.Web.ViewModels
             var channelSubscriptions = new List<ChannelSubscription>();
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-
                 //channel based subscriptions
                 var currentPublication = SiterootContext.Item.Publication_Code;
                 var userSubscriptions = UserSubcriptions?.Subscriptions;
-
-                foreach (var subscription in userSubscriptions)
+                if (userSubscriptions != null)
                 {
-                    if (subscription != null && subscription.SubscriptionType == "channel")
+                    foreach (var subscription in userSubscriptions)
                     {
-                        bool isTopicsSubscribed = subscription.SubscribedChannels != null ?
-                            subscription.SubscribedChannels.Any(n => n.SubscribedTopics != null && n.SubscribedTopics.Any(tp => tp.ExpirationDate > DateTime.Now)) : false;
-                        if (subscription != null && (subscription.ExpirationDate > DateTime.Now || isTopicsSubscribed))
+                        if (subscription != null && subscription.SubscriptionType == "channel")
                         {
-                            subscriptions.Add(subscription);
+                            bool isTopicsSubscribed = subscription.SubscribedChannels != null ?
+                                subscription.SubscribedChannels.Any(n => n.SubscribedTopics != null && n.SubscribedTopics.Any(tp => tp.ExpirationDate > DateTime.Now)) : false;
+                            if (subscription != null && (subscription.ExpirationDate > DateTime.Now || isTopicsSubscribed))
+                            {
+                                subscriptions.Add(subscription);
+                            }
                         }
                     }
+                    return subscriptions;
                 }
-                return subscriptions;
             }
-            return  Enumerable.Empty<ISubscription>();
+            return Enumerable.Empty<ISubscription>();
             #endregion
         }
 

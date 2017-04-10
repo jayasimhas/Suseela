@@ -32,6 +32,7 @@
     string bgFollowing = string.Empty;
     string expanCollap = string.Empty;
     string hidePara = string.Empty;
+    bool isFirstchannel = false;
     <input type="hidden" name="isChannelBasedRegistration" id="isChannelBasedRegistration" value="@Model.isChannelBasedRegistration.ToString().ToLower()" />
     <input type="hidden" name="enableSavePreferencesCheck" id="enableSavePreferencesCheck" value="@Model.enableSavePreferencesCheck.ToString().ToLower()" />
     <input type="hidden" name="followButtonText" id="followButtonText" value="@Model.TopicFollowButtonText" />
@@ -61,6 +62,7 @@
 
             isFirst = false;
             bgFollowing = IsFollowingAnyTopics ? "followingbg" : NotFollowingAnyTopic ? "followbg" : "";
+            isFirstchannel = channel.Equals(sortedChannels.First()) ? true : false;
 
 
             <div class="publicationPan donesubscribe dragChannel @borderClass" data-row="@channelOrder">
@@ -224,7 +226,14 @@
                                     @if (!Model.isFromRegistration)
                                     {
                                         <div class="accordionImg">
-                                            <span class="expandTxt">Expand</span>
+                                            @if (isFirstchannel)
+                                            {
+                                                <span data-expand="Expand" data-close="Close" class="expandTxt" style="visibility: visible;">Close</span>
+                                            }
+                                            else
+                                            {
+                                                <span data-expand="Expand" data-close="Close" class="expandTxt">Expand</span>
+                                            }                                            
                                             <span class="desktopMode accImg @collapsedClss" href="javascript: void(0);">
                                                 @if (collapsedClss == "expanded")
                                                 {
