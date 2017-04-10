@@ -3173,6 +3173,9 @@ This isn't a "real" button; rather, a link styled like many other buttons on the
       font-size: 1rem; } }
   .job_detail .sub-heading-text p {
     margin-bottom: 0; }
+  .job_detail .sub-heading-text span .date {
+    font-size: 18px;
+    font-size: 1.125rem; }
 
 .job_detail .job_logo {
   border-top: 1px solid #d1d3d4;
@@ -5399,6 +5402,10 @@ main .action-flags-bar, main .banner--highlights {
             float: left;
             padding-left: 35px;
             text-align: right;
+            width: 81px;
+            width: 5.0625rem;
+            position: relative;
+            top: -1px;
             font-family: "Roboto Condensed", Arial Narrow, sans-serif;
             font-size: 14px;
             font-size: 0.875rem;
@@ -5885,7 +5892,49 @@ main .action-flags-bar, main .banner--highlights {
     display: none !important; } }
 
 .theme-lloydslist {
-  /************ drag and drop styles ***********/ }
+  /************ drag and drop styles ***********/
+  /* 
+@-moz-keyframes drop {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-webkit-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $tc;
+	}
+}
+@-ms-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-o-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+*/ }
   .theme-lloydslist .myview-settings .publicationPan.active {
     border: 1px solid #1191D1; }
   @media screen and (min-width: 480px) {
@@ -5971,16 +6020,50 @@ main .action-flags-bar, main .banner--highlights {
   .theme-lloydslist .followingrow.over {
     background: #1191D1; }
 
-@-webkit-keyframes "drop" {
-  0%, 100% {
-    background: #1191D1;
-    color: #ffffff; }
-  50% {
-    color: #1191D1;
-    background: #1191D1; } }
-
 .theme-insurance-day {
-  /************ drag and drop styles ***********/ }
+  /************ drag and drop styles ***********/
+  /* 
+@-moz-keyframes drop {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-webkit-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $tc;
+	}
+}
+@-ms-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-o-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+*/ }
   .theme-insurance-day .myview-settings .publicationPan.active {
     border: 1px solid #DE4361; }
   @media screen and (min-width: 480px) {
@@ -6066,16 +6149,50 @@ main .action-flags-bar, main .banner--highlights {
   .theme-insurance-day .followingrow.over {
     background: #DE4361; }
 
-@-webkit-keyframes "drop" {
-  0%, 100% {
-    background: #DE4361;
-    color: #ffffff; }
-  50% {
-    color: #DE4361;
-    background: #DE4361; } }
-
 .theme-commodities {
-  /************ drag and drop styles ***********/ }
+  /************ drag and drop styles ***********/
+  /* 
+@-moz-keyframes drop {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-webkit-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $tc;
+	}
+}
+@-ms-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+@-o-keyframes "drop" {
+	0%, 100% {
+		background: $tc;
+		color: $color-white;
+	}
+	50% {
+		color: $tc;
+		background: $color-white;
+	}
+}
+*/ }
   .theme-commodities .myview-settings .publicationPan.active {
     border: 1px solid #F5821F; }
   @media screen and (min-width: 480px) {
@@ -6160,14 +6277,6 @@ main .action-flags-bar, main .banner--highlights {
     animation: drop 1s ease; }
   .theme-commodities .followingrow.over {
     background: #F5821F; }
-
-@-webkit-keyframes "drop" {
-  0%, 100% {
-    background: #F5821F;
-    color: #ffffff; }
-  50% {
-    color: #F5821F;
-    background: #F5821F; } }
 
 .personalisationhome .article-preview--small.topics {
   padding: 0px; }
@@ -6466,8 +6575,8 @@ main .action-flags-bar, main .banner--highlights {
   background: #f7941e;
   color: #ffffff;
   float: left;
-  margin: 18px 0 0;
-  margin: 1.125rem 0 0; }
+  margin: 10px 0 0;
+  margin: 0.625rem 0 0; }
 
 .personalisationhome .seeAllChannels {
   cursor: pointer;
@@ -6898,13 +7007,11 @@ main .action-flags-bar, main .banner--highlights {
 .gridView .gridViewCont {
   display: block; }
 
-@media screen and (max-width: 767px) {
-  .gridView .article-preview__tags a, .gridView .article-preview__tags .pop-out__reset-password, .gridView .article-preview__tags .sortable-table__list-toggler, .gridView .article-preview__tags .mobile-table-exit {
-    max-width: 29%; } }
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .gridView .article-preview__tags a.tabTexonomy, .gridView .article-preview__tags .tabTexonomy.pop-out__reset-password, .gridView .article-preview__tags .tabTexonomy.sortable-table__list-toggler, .gridView .article-preview__tags .tabTexonomy.mobile-table-exit {
-    max-width: 16%; } }
+.gridView .article-preview__tags a, .gridView .article-preview__tags .pop-out__reset-password, .gridView .article-preview__tags .sortable-table__list-toggler, .gridView .article-preview__tags .mobile-table-exit {
+  max-width: 29%; }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .gridView .article-preview__tags a.tabTexonomy, .gridView .article-preview__tags .tabTexonomy.pop-out__reset-password, .gridView .article-preview__tags .tabTexonomy.sortable-table__list-toggler, .gridView .article-preview__tags .tabTexonomy.mobile-table-exit {
+      max-width: 16%; } }
 
 @media screen and (min-width: 767px) and (max-width: 768px) {
   .gridView .topic-featured-article__image {
