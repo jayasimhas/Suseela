@@ -2073,22 +2073,25 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 // adding image an video tag  
                 if (nodeName.Equals("LEADIMAGE")|| nodeName.Equals("CAPTION")||nodeName.Equals("ALTTEXT"))
                 {
-                    if (!nodeName.Equals("LEADIMAGE"))
+                    if (!(nodeName.Equals("LEADIMAGE")) && xd.SelectSingleNode($"//{"LEADIMAGE"}") != null)
                     {
                         XmlNodeList leadImageList = xd.SelectSingleNode($"//{"LEADIMAGE"}").ChildNodes;
-                        foreach (XmlNode node in leadImageList)
+                        if (leadImageList != null)
                         {
-                            if (node.Name == nodeName && node.InnerText != null)
+                            foreach (XmlNode node in leadImageList)
                             {
-                                return node.InnerText;
-                            }
+                                if (node.Name == nodeName && node.InnerText != null)
+                                {
+                                    return node.InnerText;
+                                }
 
-                            if (node.Name == nodeName && node.InnerText != null)
-                            {
-                                return node.InnerText;
-                            }
+                                if (node.Name == nodeName && node.InnerText != null)
+                                {
+                                    return node.InnerText;
+                                }
 
-                           
+
+                            }
                         }
                         return "";
                     }
