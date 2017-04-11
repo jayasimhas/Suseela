@@ -474,7 +474,7 @@ $(function () {
 					
 					pPan.find('.sorting_arrow--up').addClass('act').removeClass('hide');
 					pPan.find('.sorting_arrow--down').addClass('hide');
-					allpubpans.find('.expandTxt').html('');
+					allpubpans.find('.expandTxt').html(allpubpans.find('.expandTxt').attr('data-expand'));
 					pPan.find('.expandTxt').html(pPan.find('.expandTxt').attr('data-close'));
 					pPan.find('.mvTxt').removeAttr('style');
 					
