@@ -68,7 +68,7 @@ $main-menu-smartphone-width: 62px;
 		justify-content: space-between;
 
 		@include breakpoint('medium') {
-			//height: 97px; Fix for IPMP-2486
+			height: 97px;
 			padding: 0;
 			position: relative;
 		}
@@ -82,10 +82,7 @@ $main-menu-smartphone-width: 62px;
 	// Header logo image
 	// -------------------------------------------------------------------------
 	&__logo {
-		height: 100%; 
-		@include breakpoint('medium') {
-			height: 97px; //Fix for IPMP-2486
-		}
+		height: 100%;
 		flex: 0 0 auto;
 		align-self: center;
 		width: auto;
