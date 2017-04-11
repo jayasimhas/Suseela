@@ -3,7 +3,7 @@
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {
     <div class="article-related-content">
-        <h2>Related Content</h2>
+        <h2>@Model.RelatedArticleComponentTitle</h2>
 
         @foreach (var article in Model.RelatedArticles)
         {

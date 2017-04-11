@@ -44,8 +44,7 @@ namespace Informa.Web.ViewModels.Articles
         }
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
-
-        public string EditorPicksText => TextTranslator.Translate("Article.EditorsPicks");
+        
         public string WhatToReadNextText => TextTranslator.Translate("Article.WhatToReadNext");
         public string SuggestedForYouText => TextTranslator.Translate("Article.Suggestedforyou");
         public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
