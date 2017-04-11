@@ -48,6 +48,9 @@ section: Advertising
 			text-align: left;
 			width: 728px;
             text-align:center;
+            @include breakpoint('small') {//IPMP-2256
+            	width: 100%;
+            }
 		}
 	}
 
