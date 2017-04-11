@@ -147,7 +147,7 @@
 	
 	$(document).ready(function() {
 		if($('#fisDryBulkContainer').length > 0) {
-			if(typeof window.fisDryBulkDateOptions !== 'undefined'){
+			if(typeof window.fisDryBulkDateOptions !== 'undefined' && typeof window.fisDryBulkDateOptions !== 'string'){
 				fisDryBulk.init(window.fisDryBulkDateOptions, '.fisDryBulkTable');
 			}
 			else{

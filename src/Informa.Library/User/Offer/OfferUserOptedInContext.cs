@@ -60,7 +60,7 @@ namespace Informa.Library.User.Offer
 
 				var optedIn = OptedIn = SalesforceConfigurationContext.IsNewSalesforceEnabled ? 
                     GetUserProductPreferences.GetProductPreferences<OffersOptIn>(UserContext.User,
-                    VerticalRootContext?.Item?.Vertical_Name,
+                    VerticalRootContext?.Item?.Vertical_Preference_Locale,
                     SiteRootContext?.Item?.Publication_Code,
                     ProductPreferenceType.EmailSignUp) :  
                     OfferOptedIn.OptedIn(UserContext.User?.Username);

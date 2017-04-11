@@ -12,7 +12,6 @@ namespace Informa.Library.User.Search
         string Publication { get; set; }
         string PublicationCode { get; set; }
         string PublicationName { get; set; }
-        string VerticalName { get; set; }
-
+        string VerticalPreferenceLocale { get; set; }
     }
 }

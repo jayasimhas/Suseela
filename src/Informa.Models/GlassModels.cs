@@ -32947,6 +32947,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(IVertical_ConfigConstants.Auther_Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Auther_Search_Index_Name { get; set; }
 
+        [SitecoreField(IVertical_ConfigConstants.Vertical_Preference_LocaleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Vertical_Preference_Locale { get; set; }
+
     }
 
     /// <summary>
@@ -32974,6 +32977,10 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         [SitecoreField(IVertical_ConfigConstants.Search_Index_NameFieldName, Setting = SitecoreFieldSettings.InferType)]
         string Search_Index_Name { get; set; }
 
+        [SitecoreField(IVertical_ConfigConstants.Vertical_Preference_LocaleFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Vertical_Preference_Locale { get; set; }
+
+
     }
 
     public static partial class IVertical_ConfigConstants
@@ -32991,6 +32998,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID Auther_Search_Index_NameFieldId = new ID("a36845e9-4975-4328-8ad7-c5ce9e51353c");
         public const string Auther_Search_Index_NameFieldName = "Auther Index Name";
+
+        public static readonly ID Vertical_Preference_LocaleFieldId = new ID("349F9B40-B892-470A-9D13-3FB8BABDD1EE");
+        public const string Vertical_Preference_LocaleFieldName = "Vertical Preference Locale";
     }
 
 

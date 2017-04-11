@@ -135,8 +135,15 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL))
             {
-                var client = new WebClient();
-                return  client.DownloadString(feedUrlConfigurationItem.External_Feed_URL);
+                try
+                {
+                    var client = new WebClient();
+                    return client.DownloadString(feedUrlConfigurationItem.External_Feed_URL);
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {

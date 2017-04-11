@@ -841,13 +841,13 @@ $(document).ready(function(){
         };
 
         var addFixedMenu = function(){
-            if($(window).width() >= 1024){
+            if($(window).width() > 1024){
                 $('.main-menu').addClass('fixed');
                 $('.main__wrapper').css('margin-left','330px');
             }
         };
         var removeFixedMenu = function(){
-            if($(window).width() >= 1024){
+            if($(window).width() > 1024){
                 $('.main-menu').removeClass('fixed');
                 $('.main__wrapper').css('margin-left','0');
                 if($(window).scrollTop() > getHeaderEdge()) {
@@ -1165,12 +1165,12 @@ $(document).ready(function(){
                     });
                     $('.main-menu-section-list').css({
                         'height' : '100%',
-                        'overflow' : 'scroll'
+                        'overflow-y' : 'scroll'
                     })
                 }else{
                     $('.main-menu-list').css({
                         'height' : '100%',
-                        'overflow' : 'scroll'
+                        'overflow-y' : 'scroll'
                     })
                 }
             }

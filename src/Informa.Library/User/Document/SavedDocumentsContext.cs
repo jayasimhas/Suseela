@@ -58,7 +58,7 @@ namespace Informa.Library.User.Document
 
                 var savedDocuments = SavedDocuments = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     GetUserProductPreferences.GetProductPreferences<IList<ISavedDocument>>(UserContext.User, 
-                    VerticalRootContext?.Item?.Vertical_Name,
+                    VerticalRootContext?.Item?.Vertical_Preference_Locale,
                     SiteRootContext?.Item?.Publication_Code,
                     ProductPreferenceType.SavedDocuments) :
                     FindSavedDocuments.Find(UserContext.User?.Username);
