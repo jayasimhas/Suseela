@@ -7,6 +7,13 @@ namespace Informa.Library.Utilities.Extensions
 {
 	public static class StringExtensions
 	{
+
+        public static void WriteSitecoreLogs(string Message, System.Diagnostics.Stopwatch sw, string LoggerName)
+        {
+          sw.Stop();
+          Sitecore.Diagnostics.Log.Info(Message + sw.Elapsed.TotalMilliseconds, LoggerName);           
+        }
+
 		public static string StripHtml(this string source)
 		{
 			return Regex.Replace(source, "<[^>]*>", "", RegexOptions.Compiled).Replace("  ", " ");

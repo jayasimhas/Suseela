@@ -4,6 +4,7 @@ using Informa.Library.Rss;
 using Newtonsoft.Json;
 using Sitecore.Configuration;
 using Sitecore.Diagnostics;
+using System.Net.Http;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -17,8 +18,16 @@ namespace Informa.Library.Search.Utilities
         {
             try
             {
+
+                ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
                 using (var client = new WebClient())
-                {                   
+                {
+                    if (AuthenticateWebClientApiCall())
+                    {
+                        client.Credentials = new NetworkCredential(Settings.GetSetting(WebClientAuthUsernameSetting),
+                            Settings.GetSetting(WebClientAuthPasswordSetting), Settings.GetSetting(WebClientAuthDomainSetting));
+
+                    }
                     return JsonConvert.DeserializeObject<SearchResults>(client.DownloadString(url));
                 }
 
@@ -30,6 +39,8 @@ namespace Informa.Library.Search.Utilities
                 return null;
             }
         }
+
+
         public static bool AuthenticateWebClientApiCall()
         {
             return (!string.IsNullOrEmpty(Settings.GetSetting(WebClientAuthUsernameSetting)) &&
