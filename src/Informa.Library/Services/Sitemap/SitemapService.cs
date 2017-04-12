@@ -14,6 +14,7 @@ using Sitecore.ContentSearch.Linq;
 using System;
 using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
+using System.Diagnostics;
 
 namespace Informa.Library.Services.Sitemap
 {
@@ -31,10 +32,10 @@ namespace Informa.Library.Services.Sitemap
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IGlobalSitecoreService GlobalService;
-
+       
         protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
-
+       
         public SitemapService(
             IProviderSearchContextFactory searchContextFactory,
             ISitecoreContext context,
@@ -49,6 +50,7 @@ namespace Informa.Library.Services.Sitemap
             GlobalService = globalService;
         }
 
+       
         public string GetSitemapXML_Old()
         {
             var home = SitecoreContext.GetHomeItem<IHome_Page>();
@@ -125,7 +127,7 @@ namespace Informa.Library.Services.Sitemap
         {
             try
             {
-                StringExtensions.WriteSitecoreLogs("Reached GetNewsSitemapXML method at :", DateTime.Now, "SitemapService");
+                Stopwatch sw = Stopwatch.StartNew();
                 var home = SitecoreContext.GetHomeItem<IHome_Page>();
                 string publisherName = TextTranslator.Translate("Article.PubName");
                 string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
@@ -182,7 +184,7 @@ namespace Informa.Library.Services.Sitemap
                     newsNode.AppendChild(MakeNode(doc, "news:title", HttpUtility.HtmlDecode(encodedItemTitle)));
                     newsNode.AppendChild(MakeNode(doc, "news:keywords", (itm.Taxonomies != null && itm.Taxonomies.Any()) ? string.Join(",", itm.Taxonomies.Select(a => a.Item_Name)) : string.Empty));
                 }
-                StringExtensions.WriteSitecoreLogs("Reached GetNewsSitemapXML method End at :", DateTime.Now, "SitemapService");
+                StringExtensions.WriteSitecoreLogs("Reached GetNewsSitemapXML method End at :",sw,"SitemapService");
                 /*
                 <?xml version="1.0" encoding="UTF-8"?>
                 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -224,7 +226,7 @@ namespace Informa.Library.Services.Sitemap
         {
             try
             {
-                StringExtensions.WriteSitecoreLogs("Reached GetAllPages method at :", DateTime.Now, "SitemapService");
+                Stopwatch sw = Stopwatch.StartNew();
                 int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
 
                 using (var context = SearchContextFactory.Create())
@@ -239,13 +241,13 @@ namespace Informa.Library.Services.Sitemap
 
                     var pages = results.Hits.Select(h => SitecoreContext.GetItem<I___BasePage>(h.Document.ItemId.Guid)).Where(a => a != null);
 
-                    StringExtensions.WriteSitecoreLogs("Reached GetAllPages method at :", DateTime.Now, "SitemapService");
+                    StringExtensions.WriteSitecoreLogs("Reached GetAllPages method at :", sw, "SitemapService");
 
                     return (!pages.Any())
                     ? Enumerable.Empty<I___BasePage>()
                     : pages;
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -254,28 +256,39 @@ namespace Informa.Library.Services.Sitemap
             }
         }
 
-
+        //ISW-1202 Modified Code
         private int GetAllPagesCount(string startPath)
         {
             try
             {
-                StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method at :", DateTime.Now, "SitemapService");
-
+                Stopwatch sw = Stopwatch.StartNew();
+                string duration = !string.IsNullOrEmpty(TextTranslator.Translate("Sitemap.Cache.Clear.Time")) ? TextTranslator.Translate("MainNavigation.Menu.Cache.Time") : "180";
                 int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
 
-                using (var context = SearchContextFactory.Create())
+                string cacheKey = "SitemapTotalItemCount";
+
+                if (HttpRuntime.Cache[cacheKey] != null)
                 {
-                    var query = context.GetQueryable<GeneralContentResult>()
-                        .Filter(j
-                        => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
-                        && j.Path.StartsWith(startPath.ToLower())
-                        && !j.ExcludeFromGoogleSearch).Take(10);
+                    StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method read from Cache at :", sw, "SitemapService");
+                    return (int)HttpRuntime.Cache[cacheKey];
+                }
+                else
+                {
 
-                    var results = query.GetResults();
+                    using (var context = SearchContextFactory.Create())
+                    {
+                        var query = context.GetQueryable<GeneralContentResult>()
+                            .Filter(j
+                            => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
+                            && j.Path.StartsWith(startPath.ToLower())
+                            && !j.ExcludeFromGoogleSearch).Take(1);
 
-                    StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method End at :", DateTime.Now, "SitemapService");
+                        var results = query.GetResults();
 
-                    return results.TotalSearchResults;
+                        StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method read from sitecore at :", sw, "SitemapService");
+                        HttpRuntime.Cache.Add(cacheKey, results.TotalSearchResults, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
+                        return results.TotalSearchResults;
+                    }
                 }
             }
             catch (Exception ex)
@@ -284,31 +297,43 @@ namespace Informa.Library.Services.Sitemap
                 throw ex;
             }
         }
-
+        //ISW-1202 Modified Code
         private IEnumerable<I___BasePage> Get200Items(string startPath)
         {
             try
             {
-                StringExtensions.WriteSitecoreLogs("Reached Get200Items method at :", DateTime.Now, "SitemapService");
+                Stopwatch sw = Stopwatch.StartNew();
                 int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
+                string duration = !string.IsNullOrEmpty(TextTranslator.Translate("Sitemap.Cache.Clear.Time")) ? TextTranslator.Translate("MainNavigation.Menu.Cache.Time") : "180";
+                string cacheKey = "Sitemap200ItemsPageNo"+pageNo;
 
-                using (var context = SearchContextFactory.Create())
+                if (HttpRuntime.Cache[cacheKey] != null)
                 {
-                    var query = context.GetQueryable<GeneralContentResult>()
-                        .Filter(j
-                        => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
-                        && j.Path.StartsWith(startPath.ToLower())
-                        && !j.ExcludeFromGoogleSearch).Skip(200 * (pageNo - 1)).Take(200);
-                    //.Skip(200 * (pageNo - 1)).Take(200)
-                    var results = query.GetResults();
+                    StringExtensions.WriteSitecoreLogs("Reached Get200Items method read from Cache at :", sw, "SitemapService");
+                    return (IEnumerable<I___BasePage>)HttpRuntime.Cache[cacheKey];
+                }
+                else
+                {
+                    using (var context = SearchContextFactory.Create())
+                    {
+                        var query = context.GetQueryable<GeneralContentResult>()
+                            .Filter(j
+                            => (j.TemplateId == IGeneral_Content_PageConstants.TemplateId || j.TemplateId == IArticleConstants.TemplateId || j.TemplateId == ITopic_PageConstants.TemplateId)
+                            && j.Path.StartsWith(startPath.ToLower())
+                            && !j.ExcludeFromGoogleSearch).Skip(200 * (pageNo - 1)).Take(200);
+                        
+                        var results = query.GetResults();
 
-                    var pages = results.Hits.Select(h => SitecoreContext.GetItem<I___BasePage>(h.Document.ItemId.Guid)).Where(a => a != null);
+                        var pages = results.Hits.Select(h => SitecoreContext.GetItem<I___BasePage>(h.Document.ItemId.Guid)).Where(a => a != null);
 
-                    StringExtensions.WriteSitecoreLogs("Reached Get200Items method End at :", DateTime.Now, "SitemapService");
+                        HttpRuntime.Cache.Add(cacheKey, pages, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
 
-                    return (!pages.Any())
-                    ? Enumerable.Empty<I___BasePage>()
-                    : pages;
+                        StringExtensions.WriteSitecoreLogs("Reached Get200Items method read from sitecore at :", sw, "SitemapService");
+
+                        return (!pages.Any())
+                        ? Enumerable.Empty<I___BasePage>()
+                        : pages;
+                    }
                 }
             }
             catch (Exception ex)
@@ -323,7 +348,7 @@ namespace Informa.Library.Services.Sitemap
         {
             try
             {
-                StringExtensions.WriteSitecoreLogs("Reached GetNewsPages method at :", DateTime.Now, "SitemapService");
+                Stopwatch sw = Stopwatch.StartNew();
                 using (var context = SearchContextFactory.Create())
                 {
                     var query = context.GetQueryable<ArticleSearchResultItem>()
@@ -335,7 +360,7 @@ namespace Informa.Library.Services.Sitemap
 
                     var articles = results.Hits.Select(h => SitecoreContext.GetItem<IArticle>(h.Document.ItemId.Guid)).Where(a => a != null);
 
-                    StringExtensions.WriteSitecoreLogs("Reached GetNewsPages method End at :", DateTime.Now, "SitemapService");
+                    StringExtensions.WriteSitecoreLogs("Reached GetNewsPages method End at :", sw, "SitemapService");
 
                     return (!articles.Any())
                     ? Enumerable.Empty<IArticle>()
@@ -361,14 +386,16 @@ namespace Informa.Library.Services.Sitemap
 
             if (page == 0)
             {
-                StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method if Condition at :", DateTime.Now, "SitemapService");
+                Stopwatch sw = Stopwatch.StartNew();
                 #region Get Sitemap Index
                 try
                 {
                     var home = SitecoreContext.GetHomeItem<IHome_Page>();
                     string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
                     int pageSize = 200; // To Be Configured Later
-                                        //int TotalArticles = GetAllPages(home._Path).Count();
+                    //ISW-1202 Earlier Code
+                    //int TotalArticles = GetAllPages(home._Path).Count();
+                    //ISW-1202 Modified Code
                     int TotalArticles = GetAllPagesCount(home._Path);
 
                     int TotalCount = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(TotalArticles) / Convert.ToDecimal(pageSize)));
@@ -409,10 +436,10 @@ namespace Informa.Library.Services.Sitemap
                     }
 
                     xmlResult = doc.OuterXml;
-                    StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method if Condition End at :", DateTime.Now, "SitemapService");
+                    StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method if Condition End at :", sw, "SitemapService");
                 }
                 catch (Exception ex)
-                {              
+                {
                     throw ex;
                 }
                 #endregion
@@ -422,7 +449,7 @@ namespace Informa.Library.Services.Sitemap
                 #region Get Sitemap Page
                 try
                 {
-                    StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method else Condition at :", DateTime.Now, "SitemapService");
+                    Stopwatch sw = Stopwatch.StartNew();
                     var home = SitecoreContext.GetHomeItem<IHome_Page>();
                     string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
                     //start xml doc
@@ -430,7 +457,9 @@ namespace Informa.Library.Services.Sitemap
                     //xml declaration
                     XmlNode declarationNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
                     doc.AppendChild(declarationNode);
+                    //ISW-1202 Earlier Code
                     //IEnumerable<I___BasePage> items = GetAllPages(home._Path).Skip(200 * (page - 1)).Take(200);
+                    //ISW-1202 Modified Code
                     IEnumerable<I___BasePage> items = Get200Items(home._Path);
                     //urlset
                     XmlNode urlsetNode = doc.CreateElement("urlset");
@@ -494,11 +523,11 @@ namespace Informa.Library.Services.Sitemap
                         urlNode.AppendChild(MakeNode(doc, "loc", pageUrl));
                     }
                     xmlResult = doc.OuterXml;
-                    StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method else Condition End at :", DateTime.Now, "SitemapService");
+                    StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method else Condition End at :", sw, "SitemapService");
                 }
                 catch (Exception ex)
                 {
-                  throw ex;
+                    throw ex;
                 }
                 #endregion
             }

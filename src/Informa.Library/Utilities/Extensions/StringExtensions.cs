@@ -8,9 +8,10 @@ namespace Informa.Library.Utilities.Extensions
 	public static class StringExtensions
 	{
 
-        public static void WriteSitecoreLogs(string Message,DateTime currentTime,string LoggerName)
+        public static void WriteSitecoreLogs(string Message, System.Diagnostics.Stopwatch sw, string LoggerName)
         {
-            Sitecore.Diagnostics.Log.Info(Message + currentTime.ToString(), LoggerName);
+          sw.Stop();
+          Sitecore.Diagnostics.Log.Info(Message + sw.Elapsed.TotalMilliseconds, LoggerName);           
         }
 
 		public static string StripHtml(this string source)
