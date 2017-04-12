@@ -30,7 +30,7 @@ namespace Informa.Web.ViewModels.Articles
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
 
         public ArticlePackageViewModel(IGlassBase datasource,
-            IRenderingContextService renderingParametersService, ISiteRootContext siteRootContext,ITextTranslator textTranslator, ILog logger, IGlobalSitecoreService globalService, ISitecoreContext sitecoreContext, IArticleListItemModelFactory articleListableFactory)
+            IRenderingContextService renderingParametersService, ISiteRootContext siteRootContext, ITextTranslator textTranslator, ILog logger, IGlobalSitecoreService globalService, ISitecoreContext sitecoreContext, IArticleListItemModelFactory articleListableFactory)
         {
             SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
@@ -51,7 +51,7 @@ namespace Informa.Web.ViewModels.Articles
         /// <returns></returns>
         private IEnumerable<IArticle_Package> GetSelectedPackages()
         {
-            if(PackageSettings != null && PackageSettings.Select_Package.Any())
+            if (PackageSettings != null && PackageSettings.Select_Package.Any())
             {
                 var selectedPackages = PackageSettings.Select_Package.OfType<IArticle_Package>()?.Where(p => p.IsInActive.Equals(false));
                 return selectedPackages;
@@ -75,12 +75,15 @@ namespace Informa.Web.ViewModels.Articles
                     {
                         packageArticles = packageArticles.Where(i => !i._Id.ToString().Equals(curItemID.ToString(), StringComparison.InvariantCultureIgnoreCase));
                     }
-                    if(packageArticles != null && packageArticles.Any())
+                    if (packageArticles != null && packageArticles.Any())
                     {
-                         listablePackageArticles = packageArticles.Select(a => ArticleListableFactory.Create(a));
+                        listablePackageArticles = packageArticles.Select(a => ArticleListableFactory.Create(a));
+                        if (listablePackageArticles.Count() > 4)
+                        {
+                            return listablePackageArticles.Take(4);
+                        }
                         return listablePackageArticles;
                     }
-                    
                 }
                 return Enumerable.Empty<IListableViewModel>();
             }
@@ -96,7 +99,7 @@ namespace Informa.Web.ViewModels.Articles
         /// <returns></returns>
         public IEnumerable<IArticle_Package> GetPackageReferrers()
         {
-           
+
             Item curItem = GlobalService.GetItem<Item>(curItemID);
             if (curItem == null) return null;
             IEnumerable<IArticle_Package> articlePackage;
@@ -106,7 +109,7 @@ namespace Informa.Web.ViewModels.Articles
             var linkedItems = links.Select(i => i.GetSourceItem()).Where(i => i != null && !i.Name.Equals("__standard values", StringComparison.InvariantCultureIgnoreCase));
             if (linkedItems != null && linkedItems.Any())
                 linkedItems = linkedItems.Where(i => i.TemplateID.ToString().Equals(Constants.PackageTemplateID, StringComparison.InvariantCultureIgnoreCase));
-            if(linkedItems != null && linkedItems.Any())
+            if (linkedItems != null && linkedItems.Any())
             {
                 articlePackage = linkedItems.OfType<IArticle_Package>()?.Where(p => p.IsInActive.Equals(false));
                 return articlePackage;
@@ -121,7 +124,7 @@ namespace Informa.Web.ViewModels.Articles
         {
             try
             {
-               Item curItem = GlobalService.GetItem<Item>(curItemID);
+                Item curItem = GlobalService.GetItem<Item>(curItemID);
                 if (curItem == null) return null;
                 //IEnumerable<IArticle_Package> articlePackage;
                 //Get the packages root item
@@ -132,7 +135,7 @@ namespace Informa.Web.ViewModels.Articles
                 var referedPackage = articlePackages.Where(p => p.Package_Articles.Any(i => i._Id.Equals(curItemID)));
                 return referedPackage;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.Error("Error Finding the package reference", ex);
                 return null;
