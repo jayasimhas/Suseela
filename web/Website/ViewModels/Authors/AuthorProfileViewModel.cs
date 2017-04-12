@@ -39,6 +39,7 @@ namespace Informa.Web.ViewModels.Authors
 		private void HandleNullAuthor()
 		{
 			var curUrl = HttpContext.Current.Request.RawUrl;
+            if(!HttpContext.Current.Response.IsRequestBeingRedirected)
 			HttpContext.Current.Response.Redirect($"/404?url={curUrl}", true);
 		}
 
