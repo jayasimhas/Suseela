@@ -339,8 +339,8 @@ $(document)
 			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
 		}
 		else{
-			$('.loadTexonamyData').addClass('in');
-			loadAjaxData();
+			//$('.loadTexonamyData').addClass('in');
+			//loadAjaxData();
 		}
     });
 
