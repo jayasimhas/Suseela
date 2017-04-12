@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Informa.Library.Globalization;
-using Informa.Library.Salesforce.EBIWebServices;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.Profile;
 using System.Net.Http;
 using Informa.Library.SalesforceConfiguration;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
-using Sitecore.Configuration;
 
 namespace Informa.Library.Salesforce.V2.User.Profile
 {
@@ -20,6 +16,8 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
+        protected readonly ISalesforceErrorLogger ErrorLogger;
+
         protected string RequestFailedKey => TextTranslator.Translate("ContactInfo.RequestFailed");
         private string SalutationFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.Salutation");
         private string FirstNameFieldName => TextTranslator.Translate("ContactInfo.SalesforceFields.FirstName");
@@ -40,11 +38,13 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         public SalesforceManageAccountInfoV2(
 ITextTranslator textTranslator,
 ISalesforceConfigurationContext salesforceConfigurationContext,
-ISalesforceInfoLogger infoLogger)
+ISalesforceInfoLogger infoLogger,
+ ISalesforceErrorLogger errorLogger)
         {
             TextTranslator = textTranslator;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             InfoLogger = infoLogger;
+            ErrorLogger = errorLogger;
         }
 
         public IAccountInfoWriteResult UpdateContactInfo(
@@ -69,96 +69,108 @@ ISalesforceInfoLogger infoLogger)
             if (string.IsNullOrEmpty(user?.Username))
                 return WriteErrorResult(RequestFailedKey);
 
-            UpdateUserDeatilsRequest request = new UpdateUserDeatilsRequest();
-            request.Preferences = new List<SalesforceField>();
-
-            // Name 
-            if (!string.IsNullOrWhiteSpace(SalutationFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = SalutationFieldName, FieldValue = Salutation, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(FirstNameFieldName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = FirstNameFieldName, FieldValue = FirstName, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(LastNameFieldName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = LastNameFieldName, FieldValue = LastName, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(MiddleNameFieldName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = MiddleNameFieldName, FieldValue = MiddleInitial, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(CompanyNameFieldName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = CompanyNameFieldName, FieldValue = Company, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(JobTitleFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = JobTitleFieldName, FieldValue = JobTitle, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(Job_Function__cFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = Job_Function__cFieldName, FieldValue = JobFunction, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(Industry__cFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = Industry__cFieldName, FieldValue = JobIndustry, Reference = ContactReferenceName });
-
-            if (!string.IsNullOrWhiteSpace(PhoneFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                {
-                    FieldName = PhoneFieldName,
-                    FieldValue = Phone,
-                    Reference = ContactReferenceName
-                });
-
-            if (!string.IsNullOrWhiteSpace(MobileFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                {
-                    FieldName = MobileFieldName,
-                    FieldValue = Mobile,
-                    Reference = ContactReferenceName
-                });
-
-            // Address
-            if (!string.IsNullOrWhiteSpace(MailingStreetFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingStreetFieldName, FieldValue = ShipAddress1, Reference = ContactReferenceName });
-            if (!string.IsNullOrWhiteSpace(MailingCityFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingCityFieldName, FieldValue = ShipCity, Reference = ContactReferenceName });
-            if (!string.IsNullOrWhiteSpace(MailingStateFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingStateFieldName, FieldValue = ShipState, Reference = ContactReferenceName });
-            if (!string.IsNullOrWhiteSpace(MailingCountryFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingCountryFieldName, FieldValue = ShipCountry, Reference = ContactReferenceName });
-            if (!string.IsNullOrWhiteSpace(MailingPostalCodeFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
-                request.Preferences.Add(new SalesforceField()
-                { FieldName = MailingPostalCodeFieldName, FieldValue = ShipPostalCode, Reference = ContactReferenceName });
-
-
-            using (var client = new HttpClient())
+            try
             {
-                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
-                var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                var result = client.PostAsync(SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username), content).Result;
+                UpdateUserDeatilsRequest request = new UpdateUserDeatilsRequest();
+                request.Preferences = new List<SalesforceField>();
 
-                InfoLogger.Log(SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username), this.GetType().Name);
-                InfoLogger.Log(result.Content.ReadAsStringAsync().Result, this.GetType().Name);
-                if (!result.IsSuccessStatusCode)
+                // Name 
+                if (!string.IsNullOrWhiteSpace(SalutationFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = SalutationFieldName, FieldValue = Salutation, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(FirstNameFieldName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = FirstNameFieldName, FieldValue = FirstName, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(LastNameFieldName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = LastNameFieldName, FieldValue = LastName, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(MiddleNameFieldName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = MiddleNameFieldName, FieldValue = MiddleInitial, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(CompanyNameFieldName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = CompanyNameFieldName, FieldValue = Company, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(JobTitleFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = JobTitleFieldName, FieldValue = JobTitle, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(Job_Function__cFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = Job_Function__cFieldName, FieldValue = JobFunction, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(Industry__cFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = Industry__cFieldName, FieldValue = JobIndustry, Reference = ContactReferenceName });
+
+                if (!string.IsNullOrWhiteSpace(PhoneFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    {
+                        FieldName = PhoneFieldName,
+                        FieldValue = Phone,
+                        Reference = ContactReferenceName
+                    });
+
+                if (!string.IsNullOrWhiteSpace(MobileFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    {
+                        FieldName = MobileFieldName,
+                        FieldValue = Mobile,
+                        Reference = ContactReferenceName
+                    });
+
+                // Address
+                if (!string.IsNullOrWhiteSpace(MailingStreetFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = MailingStreetFieldName, FieldValue = ShipAddress1, Reference = ContactReferenceName });
+                if (!string.IsNullOrWhiteSpace(MailingCityFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = MailingCityFieldName, FieldValue = ShipCity, Reference = ContactReferenceName });
+                if (!string.IsNullOrWhiteSpace(MailingStateFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = MailingStateFieldName, FieldValue = ShipState, Reference = ContactReferenceName });
+                if (!string.IsNullOrWhiteSpace(MailingCountryFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = MailingCountryFieldName, FieldValue = ShipCountry, Reference = ContactReferenceName });
+                if (!string.IsNullOrWhiteSpace(MailingPostalCodeFieldName) && !string.IsNullOrWhiteSpace(ContactReferenceName))
+                    request.Preferences.Add(new SalesforceField()
+                    { FieldName = MailingPostalCodeFieldName, FieldValue = ShipPostalCode, Reference = ContactReferenceName });
+
+
+                using (var client = new HttpClient())
                 {
-                    return WriteErrorResult(RequestFailedKey);
+                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
+                    var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
+
+
+                    var updateUserDetailsEndPoints = SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username);
+                    InfoLogger.Log(updateUserDetailsEndPoints, this.GetType().Name);
+                    var result = client.PostAsync(updateUserDetailsEndPoints, content).Result;
+                    var responseString = result.Content.ReadAsStringAsync().Result;
+                    InfoLogger.Log(responseString, this.GetType().Name);
+
+                    if (!result.IsSuccessStatusCode || !string.IsNullOrWhiteSpace(responseString))
+                    {
+                        return WriteErrorResult(RequestFailedKey);
+                    }
                 }
-            }
 
-            return new AccountInfoWriteResult()
+                return new AccountInfoWriteResult()
+                {
+                    Success = true,
+                    Message = string.Empty
+                };
+            }
+            catch (Exception e)
             {
-                Success = true,
-                Message = string.Empty
-            };
+                ErrorLogger.Log("ID&E Salesforce - Call : Update User Profile", e);
+                return WriteErrorResult(RequestFailedKey);
+            }
         }
 
         public IAccountInfoWriteResult WriteErrorResult(string message)

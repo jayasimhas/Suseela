@@ -23,6 +23,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
+        protected readonly ISalesforceErrorLogger ErrorLogger;
         protected readonly ISalesforceDeleteUserProductPreferences SalesforceDeleteUserProductPreferences;
         protected readonly ISalesforceNewsletterFactory SalesforceContentNewsletterFactory;
         public SalesforceAddUserProductPreference(
@@ -33,7 +34,8 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
             ISalesforceDeleteUserProductPreferences salesforceDeleteUserProductPreferences,
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
-            ISalesforceNewsletterFactory salesforceContentNewsletterFactory)
+            ISalesforceNewsletterFactory salesforceContentNewsletterFactory,
+            ISalesforceErrorLogger errorLogger)
         {
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
@@ -43,6 +45,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             SalesforceContentPreferencesFactory = salesforceContentPreferencesFactory;
             SalesforceDeleteUserProductPreferences = salesforceDeleteUserProductPreferences;
             SalesforceContentNewsletterFactory = salesforceContentNewsletterFactory;
+            ErrorLogger = errorLogger;
         }
         public IContentResponse AddUserSavedSearch(string accessToken, ISavedSearchEntity entity)
         {
@@ -51,31 +54,48 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
               !new[] { entity.Username, entity.Name, entity.SearchString, entity.UnsubscribeToken, entity.PublicationCode }
               .Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceSavedSearchRequestFactory.Create(entity);
-                if (request != null)
+                try
                 {
-                    using (var client = new HttpClient())
+                    var request = SalesforceSavedSearchRequestFactory.Create(entity);
+                    if (request != null)
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
-                        if (result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            var responseString = result.Content.ReadAsStringAsync().Result;
-                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
-                            InfoLogger.Log(responseString, this.GetType().Name);
-                            if (!response.hasErrors)
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                            var addUserProductPreferencesEndPoints = SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints();
+                            InfoLogger.Log(addUserProductPreferencesEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var requestJosn = JsonConvert.SerializeObject(request).ToString();
+                            InfoLogger.Log(requestJosn, this.GetType().Name);
+                            var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+
+                            if (result.IsSuccessStatusCode)
                             {
-                                return new ContentResponse
+                                var responseString = result.Content.ReadAsStringAsync().Result;
+                                InfoLogger.Log(responseString, this.GetType().Name);
+                                var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                if (!response.hasErrors)
                                 {
-                                    Success = true,
-                                    Message = string.Empty
-                                };
+                                    return new ContentResponse
+                                    {
+                                        Success = true,
+                                        Message = string.Empty
+                                    };
+                                }
                             }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Add User Saved Search", e);
+                    return new ContentResponse
+                    {
+                        Success = false,
+                        Message = "Invalid input has been provided."
+                    };
                 }
             }
 
@@ -92,32 +112,44 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 
             if (!new[] { userName, accessToken, verticalPreferenceLocale, publicationCode, contentPreferences }.Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceContentPreferencesFactory.Create(userName, verticalPreferenceLocale, publicationCode, contentPreferences);
-                if (request != null)
+                try
                 {
-                    var deleteResponse = SalesforceDeleteUserProductPreferences.DeleteUserProductPreferences(
-                        userName, accessToken, publicationCode, ProductPreferenceType.ContentPreferences);
-                    if (deleteResponse.Success)
+                    var request = SalesforceContentPreferencesFactory.Create(userName, verticalPreferenceLocale, publicationCode, contentPreferences);
+                    if (request != null)
                     {
-                        using (var client = new HttpClient())
+                        var deleteResponse = SalesforceDeleteUserProductPreferences.DeleteUserProductPreferences(
+                            userName, accessToken, publicationCode, ProductPreferenceType.ContentPreferences);
+                        if (deleteResponse.Success)
                         {
-                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                            InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
-                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                            var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                            var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
-                            if (result.IsSuccessStatusCode)
+                            using (var client = new HttpClient())
                             {
-                                var responseString = result.Content.ReadAsStringAsync().Result;
-                                var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
-                                InfoLogger.Log(responseString, this.GetType().Name);
-                                if (!response.hasErrors)
+                                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                                var addUserProductPreferencesEndPoints = SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints();
+                                InfoLogger.Log(addUserProductPreferencesEndPoints, this.GetType().Name);
+                                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                                var requestJosn = JsonConvert.SerializeObject(request).ToString();
+                                InfoLogger.Log(requestJosn, this.GetType().Name);
+                                var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                                var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                                if (result.IsSuccessStatusCode)
                                 {
-                                    return true;
+                                    var responseString = result.Content.ReadAsStringAsync().Result;
+                                    var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                    InfoLogger.Log(responseString, this.GetType().Name);
+                                    if (!response.hasErrors)
+                                    {
+                                        return true;
+                                    }
                                 }
                             }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Add User Content Preferences", e);
+                    return false;
                 }
             }
 
@@ -128,35 +160,52 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         {
             if (!new[] { Username, documentId, documentDescription, documentName }.Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceSaveDocumentFactory.Create(verticalPreferenceLocale, publicationCode, Username, documentName, documentDescription, documentId);
-
-                if (request != null)
+                try
                 {
-                    using (var client = new HttpClient())
+                    var request = SalesforceSaveDocumentFactory.Create(verticalPreferenceLocale, publicationCode, Username, documentName, documentDescription, documentId);
+
+                    if (request != null)
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
-                        if (result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            var responseString = result.Content.ReadAsStringAsync().Result;
-                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
-                            InfoLogger.Log(responseString, this.GetType().Name);
-                            if (!response.hasErrors)
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                            var addUserProductPreferencesEndPoints = SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints();
+                            InfoLogger.Log(addUserProductPreferencesEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var requestJosn = JsonConvert.SerializeObject(request).ToString();
+                            InfoLogger.Log(requestJosn, this.GetType().Name);
+                            var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                            if (result.IsSuccessStatusCode)
                             {
-                                return new SavedDocumentWriteResult
+                                var responseString = result.Content.ReadAsStringAsync().Result;
+                                var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                InfoLogger.Log(responseString, this.GetType().Name);
+                                if (!response.hasErrors)
                                 {
-                                    Success = true,
-                                    Message = string.Empty,
-                                    SalesforceId = response.results != null ?
-                                    !string.IsNullOrEmpty(response.results.FirstOrDefault().id) ?
-                                    response.results.FirstOrDefault().id : string.Empty : string.Empty
-                                };
+                                    return new SavedDocumentWriteResult
+                                    {
+                                        Success = true,
+                                        Message = string.Empty,
+                                        SalesforceId = response.results != null ?
+                                        !string.IsNullOrEmpty(response.results.FirstOrDefault().id) ?
+                                        response.results.FirstOrDefault().id : string.Empty : string.Empty
+                                    };
+                                }
                             }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Add User Saved Document", e);
+                    return new SavedDocumentWriteResult
+                    {
+                        Success = false,
+                        Message = "Invalid input has been provided.",
+                        SalesforceId = string.Empty
+                    };
                 }
             }
             return new SavedDocumentWriteResult
@@ -167,32 +216,44 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             };
         }
 
-        public bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string publicationCode, string username, string accessToken,IEnumerable<INewsletterUserOptIn> optIns)
+        public bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string publicationCode, string username, string accessToken, IEnumerable<INewsletterUserOptIn> optIns)
         {
             if ((!new[] { verticalPreferenceLocale, publicationCode, username }.Any(string.IsNullOrEmpty)) && optIns != null)
             {
-                var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, optIns);
-                if (request != null)
+                try
                 {
-                    using (var client = new HttpClient())
+                    var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, optIns);
+                    if (request != null)
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
-                        if (result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            var responseString = result.Content.ReadAsStringAsync().Result;
-                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
-                            InfoLogger.Log(responseString, this.GetType().Name);
-                            if (!response.hasErrors)
-                            {
-                                return true;
-                            }
-                        }
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
 
+                            var addUserProductPreferencesEndPoints = SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints();
+                            InfoLogger.Log(addUserProductPreferencesEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var requestJosn = JsonConvert.SerializeObject(request).ToString();
+                            InfoLogger.Log(requestJosn, this.GetType().Name);
+                            var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                            if (result.IsSuccessStatusCode)
+                            {
+                                var responseString = result.Content.ReadAsStringAsync().Result;
+                                var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                InfoLogger.Log(responseString, this.GetType().Name);
+                                if (!response.hasErrors)
+                                {
+                                    return true;
+                                }
+                            }
+
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Add User Email Preferences", e);
+                    return false;
                 }
             }
 
@@ -204,28 +265,40 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         {
             if ((!new[] { verticalPreferenceLocale, publicationCode, username }.Any(string.IsNullOrEmpty)))
             {
-                var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, !optIn);
-                if (request != null)
+                try
                 {
-                    using (var client = new HttpClient())
+                    var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, !optIn);
+                    if (request != null)
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                        var result = client.PostAsync(SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints(), content).Result;
-                        if (result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            var responseString = result.Content.ReadAsStringAsync().Result;
-                            var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
-                            InfoLogger.Log(responseString, this.GetType().Name);
-                            if (!response.hasErrors)
-                            {
-                                return true;
-                            }
-                        }
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
 
+                            var addUserProductPreferencesEndPoints = SalesforceConfigurationContext?.AddUserProductPreferencesEndPoints();
+                            InfoLogger.Log(addUserProductPreferencesEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var requestJosn = JsonConvert.SerializeObject(request).ToString();
+                            InfoLogger.Log(requestJosn, this.GetType().Name);
+                            var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                            if (result.IsSuccessStatusCode)
+                            {
+                                var responseString = result.Content.ReadAsStringAsync().Result;
+                                var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                InfoLogger.Log(responseString, this.GetType().Name);
+                                if (!response.hasErrors)
+                                {
+                                    return true;
+                                }
+                            }
+
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Add User Offers Email OptIns", e);
+                    return false;
                 }
             }
 

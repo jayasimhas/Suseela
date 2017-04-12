@@ -796,12 +796,14 @@ $(function () {
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips(); 
+										OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
 									} else {
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
-										window.findTooltips(); 
+										window.findTooltips();
+										OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
 									}
 								}
 							},
@@ -910,6 +912,7 @@ $(function () {
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
+							OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
 							$('.spinnerIcon').addClass('hidespin');
@@ -917,6 +920,7 @@ $(function () {
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
+							OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
 						}
 					}
 				},
@@ -969,10 +973,12 @@ $(function () {
 											loadLayoutData = loadLayoutOneData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips(); 
+											OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips(); 
+											OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
 										}
 									}
 								},
