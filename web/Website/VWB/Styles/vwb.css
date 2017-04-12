@@ -369,6 +369,12 @@ tr.doubletop > td
 }
 .inputWrapper input{
 	margin-bottom: 5px;
+	width: 75px;
+}
+.loadFilters {
+	float: inherit;
+    clear: both;
+    margin-left: 246px;
 }
 #dateRangeWrapper {
     clear: both;
