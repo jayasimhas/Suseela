@@ -4500,7 +4500,6 @@ header .header__wrapper {
 
 @media only screen and (min-width: 768px) and (max-width: 1000px) {
   header .header-publication-links {
-    top: 50px !important;
     margin-right: 0 !important; } }
 
 @media only screen and (max-width: 1024px) {
@@ -4571,12 +4570,12 @@ header .header-account-access {
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
           font-weight: 400; } }
-      @media only screen and (min-device-width: 414px) and (max-device-width: 736px) {
+      @media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
           color: #9E310D;
           padding: 0;
-          width: 60px;
+          width: 70px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
           font-weight: 400; } }
@@ -4665,11 +4664,33 @@ main .advertising--leaderboard.visible-desktop {
 main .action-flags-bar, main .banner--highlights {
   margin-top: 0 !important; }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 767px) and (max-width: 768px) {
   .header__wrapper.tabheader_wrapper {
     height: 120px; }
   .header__wrapper .header__logo.tabheader_logo {
-    height: 97px; } }
+    height: 97px; }
+  .header__wrapper .header-publication-links.tabheader-publication {
+    top: 58px;
+    margin-right: 5px !important; }
+  .header__wrapper .header-account-right-access.tabheader-account {
+    margin-top: 15px; } }
+
+@media only screen and (min-width: 1020px) and (max-width: 1024px) {
+  .header__wrapper .header-publication-links.tabheader-publication {
+    top: 65px; }
+  .header__wrapper .header-account-right-access.tabheader-account {
+    margin-top: 15px; } }
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .header__wrapper.tabheader_wrapper {
+    height: 120px; }
+  .header__wrapper .header__logo.tabheader_logo {
+    height: 97px; }
+  .header__wrapper .header-publication-links.tabheader-publication {
+    top: 38px;
+    margin-right: 5px !important; }
+  .header__wrapper .header-account-right-access.tabheader-account {
+    margin-top: 25px; } }
 
 .messaging_webUsers {
   width: 100% !important;

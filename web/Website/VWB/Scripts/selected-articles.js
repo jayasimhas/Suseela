@@ -132,14 +132,25 @@ function loadAjaxData(){
 	for (var i = 0; i < ddlPublications.length; i++) {
 		var coma = (i+1 == ddlPublications.length) ? '' : ',';
 		getSelectedVal += ddlPublications[i].value + coma;
-	} 
+	}
+	if($('#rbDateRange').is(':checked')){
+		var txtStart = $('#txtStart').val(), txtEnd = $('#txtEnd').val();
+	}
+	else{
+		var txtStart = '', txtEnd = '';
+	}
 	$.ajax({
 		url: 'api/InformaVWBSearch',
-		data: { 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal },
+		data: { 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal, startDate: , endDate:  },
 		dataType: 'json',
 		type: 'GET',
+		beforeSend: function(){
+			$('.loadingIcon').css('display', 'block');
+		},
 		success: function (data) {
 			loadDropdownVals(data);
+			$('.loadingIcon').removeAttr('style');
+			$('body').removeClass('loadTexonamyData');
 		},
 		error: function (err) {
 			console.log(err);
@@ -279,7 +290,8 @@ $(document)
 			}
 		} 
 		
-        $('#ddlPublications').on('click', 'input[type=checkbox]', function () {
+        $(document).on('click', '#btnLoadFilters', function () {
+			$('body').addClass('loadTexonamyData');
 			loadAjaxData();  
         });
 		
@@ -327,6 +339,7 @@ $(document)
 			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
 		}
 		else{
+			$('body').addClass('loadTexonamyData');
 			loadAjaxData();
 		}
     });
