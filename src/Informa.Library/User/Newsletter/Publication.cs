@@ -9,6 +9,7 @@ namespace Informa.Library.User.Newsletter
     public class Publications
     {
         public string publication { get; set; }
+        public bool OptIns { get; set; }
         public bool DailyPublications { get; set; }
         public bool WeeklyPublications { get; set; }
     }

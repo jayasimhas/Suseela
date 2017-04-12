@@ -77,7 +77,8 @@ namespace Informa.Library.User.Newsletter
             }
             else
             {
-                foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => Publication.Any(p => string.Equals(p.publication, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
+                foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => Publication.Any(p =>p.OptIns && 
+                string.Equals(p.publication, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
                 {
                     AddType(siteTypes.Breaking, ref newsletterTypes);
                     AddType(siteTypes.Daily, ref newsletterTypes);
