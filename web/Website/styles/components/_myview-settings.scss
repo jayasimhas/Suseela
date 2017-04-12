@@ -171,6 +171,9 @@
 			background: #ff8f18;
 			color: #fff;
 			border: 1px solid $color-tree-poppy-orange;
+			@include breakpoint('medium-small'){
+				background: url(/dist/img/sprite-image.png) no-repeat -3px -266px;
+			}
 			@media screen and (min-width: 768px) and (max-width: 1024px){
 				border: 1px solid #ADADAD;
 				color: #58595b;
@@ -533,6 +536,10 @@
 						}
 						float: left;
 						text-align: right;
+						@media screen and (max-width: 480px){
+							float: right;
+							margin-right: 20px;
+						}
 						.mobileMode { 
 							height: 1.0625rem;
 							width: 2rem;
@@ -542,6 +549,9 @@
 							float: left;
 							padding-left: 35px;
 							text-align: right;
+							width: 5.0625rem;
+							position: relative;
+							top: -1px;
 							@include textMix('Roboto Condensed', 0.875rem, 400);
 							text-transform: uppercase;
 							@media screen and (min-width: 768px) and (max-width: 1024px){
@@ -568,6 +578,11 @@
 								&.expanded{
 									background-position: 0 0;
 								} 
+							}
+						}
+						@media screen and (max-width: 480px){
+							span{
+								left: 0px;
 							}
 						}
 						span.accImg{
@@ -779,6 +794,11 @@
 			width: 21.875rem;
 			margin-left: -10.9375rem;
 		}
+		@media screen and (max-width: 320px){
+			width: 90%;
+			margin-left: 5%;
+			left: 0px;
+		}
 		&.preferences{
 			h3{ 
 				@include textMix('Roboto', 1rem, 700);
@@ -809,8 +829,11 @@
 				float: left;
 				width: 8.125rem;
 				height: 2rem;
-				color: #f8;
+				color: #fff;
 				margin-right: 20px;
+				@media screen and (max-width: 320px){
+					width: 90px;
+				}
 			}
 			.registrationBtn.validationChk{
 				@include textMix('Roboto', 0.6875rem, 700);
@@ -826,20 +849,6 @@
 				height: 2rem;
 				color: #f8;
 				margin-right: 20px;
-                /*border: 1px solid $color-tree-poppy-orange;
-                color: $color-zeus-black;
-                text-align: center;
-                float: left;
-                height: 1.5rem;
-                width: 4.375rem;
-                text-transform: uppercase;
-                font-size: 0.6875rem;
-                cursor: pointer;
-                line-height: 1.4375rem;
-                font-weight: bold;
-                &:hover{
-                    background: $color-tree-poppy-orange;
-                }*/
 			}
 			.cancel{
 				@include textMix('Roboto', 0.6875rem, 700);
@@ -853,6 +862,9 @@
 				padding: 0px;
 				color: #747474;
 				border: 1px solid #adadad;
+				@media screen and (max-width: 320px){
+					width: 90px;
+				}
 			}
 		}
 	  .modal-inner {
@@ -1069,8 +1081,10 @@
 		}
 		.followBtn{
  			&:hover{
-				background: $tc;
-				border: 1px solid $tc;
+				@media screen and (min-width: 1025px){
+					background: $tc;
+					border: 1px solid $tc;
+				}
 				@media screen and (min-width: 768px) and (max-width: 1024px){
 					border: 1px solid #ADADAD;
 					color: #58595b;
@@ -1168,10 +1182,10 @@
 	animation: drop 1s ease;
 }
 
-.followingrow.over{
+.followingrow.over{ 
 	background: $tc;
 }
- 
+/* 
 @-moz-keyframes drop {
 	0%, 100% {
 		background: $tc;
@@ -1212,6 +1226,7 @@
 		background: $color-white;
 	}
 }
+*/
 }
 
 .theme-lloydslist{

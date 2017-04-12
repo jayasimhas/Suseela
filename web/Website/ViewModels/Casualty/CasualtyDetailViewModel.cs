@@ -14,17 +14,17 @@ namespace Informa.Web.ViewModels.Casualty
 {
     public class CasualtyDetailViewModel : GlassViewModel<I___BasePage>
     {
-        protected readonly ICompaniesResultService CompanyResultService;       
+        protected readonly ICompaniesResultService CompanyResultService;
         public readonly ICallToActionViewModel CallToActionViewModel;
         public CasualtyDetailViewModel(ICompaniesResultService companyResultService,
             IRenderingContextService renderingParametersService,
             IAuthenticatedUserContext authenticatedUserContext,
             ICallToActionViewModel callToActionViewModel)
         {
-            CompanyResultService = companyResultService;            
+            CompanyResultService = companyResultService;
             CallToActionViewModel = callToActionViewModel;
             feedUrlConfigurationItem = renderingParametersService.GetCurrentRenderingParameters<IExternal_Feed_Url_Configuration>();
-        }      
+        }
         /// <summary>
         /// External Fee URL
         /// </summary>
@@ -47,8 +47,15 @@ namespace Informa.Web.ViewModels.Casualty
             string incidentId = HttpContext.Current.Request.QueryString["incidentId"];
             if (feedUrlConfigurationItem != null && !string.IsNullOrEmpty(feedUrlConfigurationItem.External_Feed_URL) && !string.IsNullOrEmpty(incidentId))
             {
-                var client = new WebClient();
-                return client.DownloadString(string.Format(feedUrlConfigurationItem.External_Feed_URL, incidentId));                
+                try
+                {
+                    var client = new WebClient();
+                    return client.DownloadString(string.Format(feedUrlConfigurationItem.External_Feed_URL, incidentId));
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {

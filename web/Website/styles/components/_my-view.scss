@@ -12,9 +12,7 @@ header{
 		@include breakpoint('medium-small') {
 			top: 50px;
 		}
-		
 		@media only screen and (min-width: 768px) and (max-width: 1000px){
-			top: 50px !important;
 			margin-right: 0 !important;
 		}
 		@media only screen and (max-width: 1024px) {
@@ -81,11 +79,11 @@ header{
 						font-style: normal;
 						font-weight: 400;
 					}
-					@media only screen and (min-device-width: 414px) and (max-device-width: 736px) { 
+					@media only screen and (min-device-width: 414px) and (max-device-width: 767px) { 
 						background: none; 
 						color: $color-my-view;
 						padding: 0;
-						width: 60px;
+						width: 70px;
 						font-family: 'Roboto', Arial Narrow, sans-serif;
 						font-style: normal;
 						font-weight: 400;
@@ -184,5 +182,64 @@ main{
 	}
 	.action-flags-bar, .banner--highlights{
 		margin-top: 0 !important;
+	}
+}
+
+.header__wrapper{
+	@media only screen and (min-width: 767px) and (max-width: 768px){
+		&.tabheader_wrapper{
+			height: 120px;
+		}
+		.header__logo{
+			&.tabheader_logo{
+				height: 97px;
+			}
+		}
+		.header-publication-links{
+			&.tabheader-publication{
+				top: 58px;
+				margin-right: 5px !important;
+			}
+		}
+		
+		.header-account-right-access{
+			&.tabheader-account{
+				margin-top: 15px;
+			}
+		}
+	}
+	@media only screen and (min-width: 1020px) and (max-width: 1024px){ 
+		.header-publication-links{
+			&.tabheader-publication{
+				top: 65px;
+			}
+		} 
+		.header-account-right-access{
+			&.tabheader-account{
+				margin-top: 15px;
+			}
+		}
+	}
+	@media only screen and (min-width: 480px) and (max-width: 767px){
+		&.tabheader_wrapper{
+			height: 120px;
+		}
+		.header__logo{
+			&.tabheader_logo{
+				height: 97px;
+			}
+		}
+		.header-publication-links{
+			&.tabheader-publication{
+				top: 38px;
+				margin-right: 5px !important;
+			}
+		}
+		
+		.header-account-right-access{
+			&.tabheader-account{
+				margin-top: 25px;
+			}
+		}
 	}
 }

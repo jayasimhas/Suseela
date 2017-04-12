@@ -16,6 +16,7 @@
 
 </head>
 <body>
+    <div class="loadTexonamyData"></div>
     <form id="form1" runat="server">
         <asp:HiddenField runat="server" ID="IssueTitleInput"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField>
@@ -53,15 +54,20 @@
                     <div class="left inputWrapper">
                         <div class="left dateRangeLabel">From</div>
                         <asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox>
+                        
                         <asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox>
                         <br />
                         <div class="left dateRangeLabel">To</div>
                         <asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
+                        
                         <asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox>
                         <br />
                         <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
                     </div>
-
+                    <div class="loadFilters">
+                        <asp:Button ID="btnLoadFilters" runat="server" Text="Populate Filters" />                        
+                    </div>
+                    <asp:Image ID="loadIcon" class="loadingIcon" runat="server" ImageUrl="/VWB/images/vwb/spinner_gray_160.gif"/>
                     <div class="mediatypes">
                         <asp:DropDownCheckBoxes ID="ddlTaxonomies" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
                         <Style SelectBoxWidth="260" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />

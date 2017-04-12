@@ -6,6 +6,7 @@ using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Sitecore.Web;
+using Informa.Library.Globalization;
 
 namespace Informa.Web.ViewModels.Articles
 {
@@ -26,19 +27,21 @@ namespace Informa.Web.ViewModels.Articles
 		protected readonly IArticleSearch Searcher;
 		protected readonly IArticleListItemModelFactory ArticleListableFactory;
 		protected readonly IGlobalSitecoreService GlobalService;
-
-		public RelatedArticlesModel(IArticle model,
+        protected readonly ITextTranslator TextTranslator;
+        public RelatedArticlesModel(IArticle model,
 						IArticleListItemModelFactory articleListableFactory,
 						IArticleSearch searcher,
-						IGlobalSitecoreService globalService)
+						IGlobalSitecoreService globalService,
+                        ITextTranslator textTranslator)
 		{
 			ArticleListableFactory = articleListableFactory;
 			Searcher = searcher;
             GlobalService = globalService;
 			RelatedArticles = GetRelatedArticles(model);
+            TextTranslator = textTranslator;
 		}
-
-		private IEnumerable<IListable> GetRelatedArticles(IArticle article)
+        public string RelatedArticleComponentTitle => TextTranslator.Translate("Article.RelatedContentTitle");
+        private IEnumerable<IListable> GetRelatedArticles(IArticle article)
 		{
 			var relatedArticles = article.Related_Articles.Concat(article.Referenced_Articles).Take(10).ToList();
 

@@ -60,9 +60,9 @@
 
                 IUserPreferences preferences = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                     GetUserProductPreferences.GetProductPreferences<UserPreferences>(UserContext.User,
-                    VerticalRootContext?.Item?.Vertical_Name,
+                    VerticalRootContext?.Item?.Vertical_Preference_Locale,
                     SiteRootContext?.Item?.Publication_Code ?? string.Empty, 
-                    ProductPreferenceType.PersonalPreferences) :
+                    ProductPreferenceType.ContentPreferences) :
                     FindUserPreferences.Find(UserContext.User?.Username ?? string.Empty);
 
                 Preferences = preferences;
@@ -87,7 +87,7 @@
                 return false;
             var status = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                 AddUserProductPreference.AddUserContentPreferences(UserContext.User?.Username ?? string.Empty,
-                UserContext.User?.AccessToken ?? string.Empty, VerticalRootContext?.Item?.Vertical_Name ?? string.Empty,
+                UserContext.User?.AccessToken ?? string.Empty, VerticalRootContext?.Item?.Vertical_Preference_Locale ?? string.Empty,
                 SiteRootContext?.Item?.Publication_Code ?? string.Empty, channelPreferences) :
                 SetUserPreferences.Set(UserContext.User?.Username ?? string.Empty, channelPreferences);
             if (status)

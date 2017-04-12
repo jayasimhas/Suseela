@@ -220,7 +220,9 @@ p.nomargin {
     font-weight: 400;
     color: #58595b;
     float: right;
-    font-style: italic; }
+    font-style: italic;
+    width: 100%;
+    text-align: right;	}
   .quick-facts hr {
     border: 0;
     background-color: #fbb040;
@@ -319,7 +321,7 @@ p.quick-facts__source{
 	border-bottom: 3px solid #000;
 	margin-bottom:8pt; 
 } */
-p.article-exhibit__title{
+.article-exhibit__title{
 	 font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: 700; 
@@ -337,7 +339,7 @@ p.article-exhibit__title{
 	margin-bottom:8pt; 
 	font-weight: bold; */
 }
-p.article-exhibit__caption{
+.article-exhibit__caption{
 	 font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -359,7 +361,7 @@ p.article-exhibit__caption{
 	border-bottom: 3px solid #000;
 	margin-bottom:8pt;  */
 }
-p.article-exhibit__source{
+.article-exhibit__source{
 	  font-family: "Roboto", Helvetica, Arial, sans-serif;
     font-size: 13px;
     font-weight: 400;

@@ -1,21 +1,17 @@
 ﻿using Jabberwocky.Glass.Autofac.Mvc.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.Site;
 using Informa.Library.Globalization;
-using Jabberwocky.Glass.Models;
-using Glass.Mapper.Sc;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Library.User.Authentication;
 using Informa.Library.User.UserPreference;
 using Informa.Library.Services.Global;
 using Informa.Web.Models;
-using Newtonsoft.Json;
 using Informa.Library.User.Entitlement;
-
+using Informa.Library.Article.Search;
+using Informa.Models.FactoryInterface;
 namespace Informa.Web.ViewModels.Articles
 {
     public class ArticleRecommendationViewModel : GlassViewModel<IArticle>
@@ -26,14 +22,16 @@ namespace Informa.Web.ViewModels.Articles
         protected readonly IUserPreferenceContext UserPreferencesContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
-
-
+        protected readonly IArticleSearch Searcher;
+        protected readonly IArticleListItemModelFactory ArticleListableFactory;
         public ArticleRecommendationViewModel(ISiteRootContext siteRootContext,
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
             IUserPreferenceContext userPreferences,
             IGlobalSitecoreService globalService,
-            IUserEntitlementsContext userEntitlementsContext)
+            IUserEntitlementsContext userEntitlementsContext,
+            IArticleSearch searcher,
+            IArticleListItemModelFactory articleListableFactory)
         {
             SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
@@ -41,12 +39,12 @@ namespace Informa.Web.ViewModels.Articles
             UserPreferencesContext = userPreferences;
             GlobalService = globalService;
             UserEntitlementsContext = userEntitlementsContext;
-
+            Searcher = searcher;
+            ArticleListableFactory = articleListableFactory;
         }
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
-
-        public string EditorPicksText => TextTranslator.Translate("Article.EditorsPicks");
+        
         public string WhatToReadNextText => TextTranslator.Translate("Article.WhatToReadNext");
         public string SuggestedForYouText => TextTranslator.Translate("Article.Suggestedforyou");
         public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
@@ -57,9 +55,22 @@ namespace Informa.Web.ViewModels.Articles
         private List<IArticle> GetEditorsPicks()
         {
             List<IArticle> editorsPickList = new List<IArticle>();
-            if (GlassModel.Editors_Picks != null && GlassModel.Editors_Picks.Any())
-                editorsPickList = GlassModel.Editors_Picks.Select(x => (IArticle)x).ToList();
-            return editorsPickList;
+            //if (GlassModel.Editors_Picks != null && GlassModel.Editors_Picks.Any())
+            //    editorsPickList = GlassModel.Editors_Picks.Select(x => (IArticle)x).ToList();
+
+            var relatedArticles = GlassModel.Related_Articles.Concat(GlassModel.Referenced_Articles).Take(10).ToList();
+
+            if (relatedArticles.Count < 10)
+            {
+                var filter = Searcher.CreateFilter();
+                filter.ReferencedArticle = GlassModel._Id;
+                filter.PageSize = 10 - relatedArticles.Count;
+
+                var results = Searcher.Search(filter);
+                relatedArticles.AddRange(results.Articles);
+            }
+            return relatedArticles.Where(r => r != null).Select(x => (IArticle)x).ToList().OrderByDescending(x=>x.Actual_Publish_Date).ToList();
+            //return editorsPickList;
         }
         public string TaxonomyItems
         {

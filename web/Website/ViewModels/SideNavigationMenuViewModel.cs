@@ -63,6 +63,7 @@ namespace Informa.Web.ViewModels
         public Navigation Preferencelst { get; set; }
         public bool IsGlobalToggleEnabled => SiterootContext.Item.Enable_MyView_Toggle;
         public Navigation MyViewPreferences => GetUserPreferences();
+        public string PublicationCode => SiteRootContext?.Item?.Publication_Code;
         #endregion
 
         /// <summary>
@@ -181,52 +182,27 @@ namespace Informa.Web.ViewModels
             var channelSubscriptions = new List<ChannelSubscription>();
             if (IsAuthenticated && IsGlobalToggleEnabled)
             {
-
                 //channel based subscriptions
                 var currentPublication = SiterootContext.Item.Publication_Code;
-                var userSubscriptions = UserSubcriptions?.Subscriptions?.Where(n => n.ProductCode == currentPublication).FirstOrDefault();
-                if (userSubscriptions != null && userSubscriptions.SubscribedChannels != null && userSubscriptions.SubscribedChannels.Count() > 0)
+                var userSubscriptions = UserSubcriptions?.Subscriptions;
+                if (userSubscriptions != null)
                 {
-
-                    if (userSubscriptions.SubscribedChannels.FirstOrDefault().ChannelId != SiterootContext.Item.Publication_Code)
+                    foreach (var subscription in userSubscriptions)
                     {
-                        foreach (var subscription in userSubscriptions.SubscribedChannels)
+                        if (subscription != null && subscription.SubscriptionType == "channel")
                         {
-                            bool isTopicsSubscribed = subscription.SubscribedTopics != null ? subscription.SubscribedTopics.Any(tp => tp.ExpirationDate > DateTime.Now) : false;
+                            bool isTopicsSubscribed = subscription.SubscribedChannels != null ?
+                                subscription.SubscribedChannels.Any(n => n.SubscribedTopics != null && n.SubscribedTopics.Any(tp => tp.ExpirationDate > DateTime.Now)) : false;
                             if (subscription != null && (subscription.ExpirationDate > DateTime.Now || isTopicsSubscribed))
                             {
-                                channelSubscriptions.Add(subscription);
+                                subscriptions.Add(subscription);
                             }
                         }
-                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions, IsTopicSubscription = false });
-                    }
-
-                    //Topic based subscriptions
-                    else
-                    {
-                        if (userSubscriptions.SubscribedChannels != null
-                            && userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics) != null
-                            && userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics).Count() > 0)
-                            foreach (var subscription in userSubscriptions.SubscribedChannels.SelectMany(n => n.SubscribedTopics))
-                            {
-                                if (!string.IsNullOrWhiteSpace(subscription.TopicId) && subscription.ExpirationDate > DateTime.Now)
-                                {
-                                    channelSubscriptions.Add(new ChannelSubscription { ChannelId = subscription.TopicId, ChannelName = subscription.TopicName, ExpirationDate = subscription.ExpirationDate, _ChannelId = subscription.TopicId });
-                                }
-                            }
-                        subscriptions.Add(new SalesforceSubscription { SubscribedChannels = channelSubscriptions, IsTopicSubscription = true });
                     }
                     return subscriptions;
                 }
-                else
-                {
-                    return Enumerable.Empty<ISubscription>();
-                }
             }
-            else
-            {
-                return Enumerable.Empty<ISubscription>();
-            }
+            return Enumerable.Empty<ISubscription>();
             #endregion
         }
 

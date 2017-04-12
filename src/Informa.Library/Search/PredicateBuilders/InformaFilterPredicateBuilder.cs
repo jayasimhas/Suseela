@@ -65,7 +65,7 @@ namespace Informa.Library.Search.PredicateBuilders
 
                 foreach (var tax in taxs)
                 {
-                    codesPredicate = codesPredicate.And(x => x.Taxonomies.Contains(tax));
+                    codesPredicate = codesPredicate.Or(x => x.Taxonomies.Contains(tax));
                 }
 
                 predicate = predicate.And(codesPredicate);
@@ -78,7 +78,7 @@ namespace Informa.Library.Search.PredicateBuilders
 
                 foreach (var auth in auths)
                 {
-                    codesPredicate = codesPredicate.And(x => x.Authors.Contains(auth));
+                    codesPredicate = codesPredicate.Or(x => x.Authors.Contains(auth));
                 }
 
                 predicate = predicate.And(codesPredicate);

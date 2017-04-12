@@ -33,8 +33,8 @@ namespace Informa.Library.Utilities.References
         public static string StrategicTransactionsComponent = ItemIdResolver.GetItemIdByKey("StrategicTransactionsComponent");
         public static string DCDSubscribeComponent = ItemIdResolver.GetItemIdByKey("DCDSubscribeComponent");
 
-        public static string VirtualWhiteboardIssuesFolder = ItemIdResolver.GetItemIdByKey("VirtualWhiteboardIssuesFolder");
-        public static string VirtualWhiteboardArchivedIssuesFolder = ItemIdResolver.GetItemIdByKey("VirtualWhiteboardArchivedIssuesFolder");
+        public static string VirtualWhiteboardIssuesFolder = !string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("VirtualWhiteboardIssuesFolder")) ? ItemIdResolver.GetItemIdByKey("VirtualWhiteboardIssuesFolder") : Guid.Empty.ToString();
+        public static string VirtualWhiteboardArchivedIssuesFolder = !string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("VirtualWhiteboardArchivedIssuesFolder")) ? ItemIdResolver.GetItemIdByKey("VirtualWhiteboardArchivedIssuesFolder") : Guid.Empty.ToString();
 
 
         public static string ScripRootNode = ItemIdResolver.GetItemIdByKey("ScripRootNode");

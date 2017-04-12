@@ -15,7 +15,7 @@ namespace Informa.Library.User.Search
         public string Publication { get; set; }
         public string PublicationCode { get; set; }
         public string PublicationName { get; set; }
-        public string VerticalName { get; set; }
+        public string VerticalPreferenceLocale { get; set; }
     }
 
     public class SavedSearchItemId : ISavedSearchItemId, IEquatable<ISavedSearchItemId>

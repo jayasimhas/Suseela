@@ -104,6 +104,8 @@
     </div>
     @* end pseudo-if *@
 
+    <input type="hidden" id="hdnErrormessage" value="@Model.ErrorMessage" />
+    <input type="hidden" id="hdnInfomessage" value="@Model.InfoMessage" />
     <script src="/dist/js/index.js"></script>
     @if (Model.IsSiteDebuggingAllowed) {
         @Html.Sitecore().Placeholder("site-debugger")
@@ -113,7 +115,5 @@
 {
     @Html.Raw(@Model.CustomTagsFooter)
 }
-<input type="hidden" id="hdnErrormessage" value="@Model.ErrorMessage" />
-<input type="hidden" id="hdnInfomessage" value="@Model.InfoMessage" />
 </body>
 </html>
