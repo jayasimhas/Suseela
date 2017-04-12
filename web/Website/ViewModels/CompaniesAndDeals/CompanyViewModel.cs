@@ -57,8 +57,9 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             if (!int.TryParse(segment.Substring(3), out id)) return;
 
             var company = _dependencies.DcdReader.GetCompanyByRecordId(id);
-            if ((company?.RecordNumber).HasContent() && !_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
+            if ((company?.RecordNumber).HasContent())
             {
+                if(!_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
                 _dependencies.HttpContextProvider.Current.Response.Redirect($"/companies/{company.RecordNumber}",true);
             }
         }
