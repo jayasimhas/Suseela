@@ -18,31 +18,36 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
         protected readonly ISalesforceGetUserEntitlementsV2 SalesforceGetUserEntitlementsV2;
         protected readonly ISalesforceFindUserProfileV2 FindUserProfile;
         protected readonly ISalesforceInfoLogger InfoLogger;
+        protected readonly ISalesforceErrorLogger ErrorLogger;
 
         public SalesforceAuthenticateUserV2(
             IHttpClientHelper httpClientHelper,
             ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserEntitlementsV2 salesforceGetUserEntitlementsV2,
             ISalesforceFindUserProfileV2 findUserProfile,
-            ISalesforceInfoLogger infoLogger)
+            ISalesforceInfoLogger infoLogger,
+            ISalesforceErrorLogger errorLogger)
         {
             HttpClientHelper = httpClientHelper;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserEntitlementsV2 = salesforceGetUserEntitlementsV2;
             FindUserProfile = findUserProfile;
             InfoLogger = infoLogger;
+            ErrorLogger = errorLogger;
         }
 
         public IAuthenticateUserResult Authenticate(string code, string grant_type,
             string client_id, string client_secret, string redirect_uri)
         {
-            using (var client = new HttpClient())
+            try
             {
-                string accessToken = string.Empty;
-                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url);
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
-                var pairs = new Dictionary<string, string>
+                using (var client = new HttpClient())
+                {
+                    string accessToken = string.Empty;
+                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Service_Url?.Url);
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
+                    var pairs = new Dictionary<string, string>
             {
                         { "code", code },
                         { "grant_type", "authorization_code" },
@@ -50,46 +55,51 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                         { "client_secret", client_secret },
                         { "redirect_uri", redirect_uri }
                     };
-                HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
-                    SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()),
-                    new FormUrlEncodedContent(pairs)).Result;
-                InfoLogger.Log(CreateRequestUri(client.BaseAddress.AbsolutePath,
-                    SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()), this.GetType().Name);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseString = response.Content.ReadAsStringAsync().Result;
-                    if (!string.IsNullOrWhiteSpace(responseString))
+                    HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
+                        SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()),
+                        new FormUrlEncodedContent(pairs)).Result;
+                    InfoLogger.Log(CreateRequestUri(client.BaseAddress.AbsolutePath,
+                        SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()), this.GetType().Name);
+                    if (response.IsSuccessStatusCode)
                     {
-                        InfoLogger.Log(responseString, this.GetType().Name);
-                        var values = HttpUtility.ParseQueryString(responseString);
-                        accessToken = values["access_token"];
+                        var responseString = response.Content.ReadAsStringAsync().Result;
+                        if (!string.IsNullOrWhiteSpace(responseString))
+                        {
+                            InfoLogger.Log(responseString, this.GetType().Name);
+                            var values = HttpUtility.ParseQueryString(responseString);
+                            accessToken = values["access_token"];
+                        }
                     }
-                }
-                if (string.IsNullOrWhiteSpace(accessToken))
-                {
-                    return ErrorResult;
-                }
-
-                var profile = FindUserProfile.Find(accessToken);
-
-                if (profile == null)
-                {
-                    return ErrorResult;
-                }
-
-                return new SalesforceAuthenticateUserResult
-                {
-                    State = AuthenticateUserResultState.Success,
-                    User = new SalesforceAuthenticatedUser
+                    if (string.IsNullOrWhiteSpace(accessToken))
                     {
-                        Username = profile.UserName,
-                        Email = profile.Email,
-                        Name = string.Format("{0} {1}", profile.FirstName, profile.LastName),
-                        AccessToken = accessToken
+                        return ErrorResult;
                     }
-                };
+
+                    var profile = FindUserProfile.Find(accessToken);
+
+                    if (profile == null)
+                    {
+                        return ErrorResult;
+                    }
+
+                    return new SalesforceAuthenticateUserResult
+                    {
+                        State = AuthenticateUserResultState.Success,
+                        User = new SalesforceAuthenticatedUser
+                        {
+                            Username = profile.UserName,
+                            Email = profile.Email,
+                            Name = string.Format("{0} {1}", profile.FirstName, profile.LastName),
+                            AccessToken = accessToken
+                        }
+                    };
+                }
             }
-
+            catch (Exception e)
+            {
+                ErrorLogger.Log("ID&E Salesforce - Call : Authenticate User", e);
+                return ErrorResult;
+            }
         }
 
         public SalesforceAuthenticateUserResult ErrorResult => new SalesforceAuthenticateUserResult

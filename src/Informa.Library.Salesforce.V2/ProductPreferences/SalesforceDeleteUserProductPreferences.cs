@@ -14,35 +14,52 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceDeleteUserProductPreferencesQueryFactory SalesforceDeleteUserProductPreferencesQueryFactory;
         protected readonly ISalesforceInfoLogger InfoLogger;
+        protected readonly ISalesforceErrorLogger ErrorLogger;
 
         public SalesforceDeleteUserProductPreferences(
     ISalesforceConfigurationContext salesforceConfigurationContext,
     ISalesforceInfoLogger infoLogger,
-    ISalesforceDeleteUserProductPreferencesQueryFactory salesforceDeleteUserProductPreferencesQueryFactory)
+    ISalesforceDeleteUserProductPreferencesQueryFactory salesforceDeleteUserProductPreferencesQueryFactory,
+    ISalesforceErrorLogger errorLogger)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             InfoLogger = infoLogger;
             SalesforceDeleteUserProductPreferencesQueryFactory = salesforceDeleteUserProductPreferencesQueryFactory;
+            ErrorLogger = errorLogger;
         }
         public IContentResponse DeleteUserProductPreference(string accessToken, string itemId)
         {
             if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(itemId))
             {
-                using (var client = new HttpClient())
+                try
                 {
-                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                    InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId), this.GetType().Name);
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                    var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId)).Result;
-                    InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
-                    if (result.IsSuccessStatusCode)
+                    using (var client = new HttpClient())
                     {
-                        return new ContentResponse
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                        var deleteUserProductPreferenceEndPoints = SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId);
+                        InfoLogger.Log(deleteUserProductPreferenceEndPoints, this.GetType().Name);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        var result = client.DeleteAsync(deleteUserProductPreferenceEndPoints).Result;
+                        InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
+                        if (result.IsSuccessStatusCode)
                         {
-                            Success = true,
-                            Message = string.Empty
-                        };
+                            return new ContentResponse
+                            {
+                                Success = true,
+                                Message = string.Empty
+                            };
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Delete User Product Preference", e);
+                    return new ContentResponse
+                    {
+                        Success = false,
+                        Message = "Invalid input has been provided."
+                    };
                 }
             }
             return new ContentResponse
@@ -51,25 +68,39 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 Message = "Invalid input has been provided."
             };
         }
-        public ISavedDocumentWriteResult DeleteSavedocument(string accessToken, string itemId)
+        public ISavedDocumentWriteResult DeleteSavedDocument(string accessToken, string itemId)
         {
             if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(itemId))
             {
-                using (var client = new HttpClient())
+                try
                 {
-                    client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                    InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId), this.GetType().Name);
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                    var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId)).Result;
-                    InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
-                    if (result.IsSuccessStatusCode)
+                    using (var client = new HttpClient())
                     {
-                        return new SavedDocumentWriteResult
+                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                        var deleteUserProductPreferenceEndPoints = SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId);
+                        InfoLogger.Log(deleteUserProductPreferenceEndPoints, this.GetType().Name);
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        var result = client.DeleteAsync(deleteUserProductPreferenceEndPoints).Result;
+                        InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
+                        if (result.IsSuccessStatusCode)
                         {
-                            Success = true,
-                            Message = string.Empty
-                        };
+                            return new SavedDocumentWriteResult
+                            {
+                                Success = true,
+                                Message = string.Empty
+                            };
+                        }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Delete Saved Document", e);
+                    return new SavedDocumentWriteResult
+                    {
+                        Success = false,
+                        Message = "Invalid input has been provided."
+                    };
                 }
             }
             return new SavedDocumentWriteResult
@@ -83,26 +114,40 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(accessToken)
                && !string.IsNullOrWhiteSpace(publicationCode) && type != ProductPreferenceType.None)
             {
-                var query = SalesforceDeleteUserProductPreferencesQueryFactory.Create(
-                        userName, publicationCode, type);
-                if (!string.IsNullOrWhiteSpace(query))
+                try
                 {
-                    using (var client = new HttpClient())
+                    var query = SalesforceDeleteUserProductPreferencesQueryFactory.Create(
+                            userName, publicationCode, type);
+                    if (!string.IsNullOrWhiteSpace(query))
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var result = client.DeleteAsync(SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query)).Result;
-                        InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
-                        if (result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            return new ContentResponse
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                            var deleteUserProductPreferencesEndPoints = SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query);
+                            InfoLogger.Log(deleteUserProductPreferencesEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var result = client.DeleteAsync(deleteUserProductPreferencesEndPoints).Result;
+                            InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
+                            if (result.IsSuccessStatusCode)
                             {
-                                Success = true,
-                                Message = string.Empty
-                            };
+                                return new ContentResponse
+                                {
+                                    Success = true,
+                                    Message = string.Empty
+                                };
+                            }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Delete User Product Preferences", e);
+                    return new ContentResponse
+                    {
+                        Success = false,
+                        Message = "Invalid input has been provided."
+                    };
                 }
             }
             return new ContentResponse

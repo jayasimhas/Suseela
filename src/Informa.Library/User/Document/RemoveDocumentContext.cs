@@ -31,7 +31,7 @@ namespace Informa.Library.User.Document
 
 		public ISavedDocumentWriteResult Remove(string documentId, string salesforceId)
 		{
-			var result =SalesforceConfigurationContext.IsNewSalesforceEnabled ? DeleteUserProductPreferences?.DeleteSavedocument(UserContext.User?.AccessToken, salesforceId) :  RemoveDocument.Remove(UserContext.User?.Username, documentId);
+			var result =SalesforceConfigurationContext.IsNewSalesforceEnabled ? DeleteUserProductPreferences?.DeleteSavedDocument(UserContext.User?.AccessToken, salesforceId) :  RemoveDocument.Remove(UserContext.User?.Username, documentId);
 
 			if (result.Success)
 			{

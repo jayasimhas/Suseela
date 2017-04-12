@@ -20,6 +20,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         protected readonly ITextTranslator TextTranslator;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly ISalesforceInfoLogger InfoLogger;
+        protected readonly ISalesforceErrorLogger ErrorLogger;
         private readonly ISalesforceNewsletterFactory SalesforceContentNewsletterFactory;
 
         public SalesforceUpdateUserProductPreference(
@@ -27,13 +28,15 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             ITextTranslator textTranslator,
     ISalesforceConfigurationContext salesforceConfigurationContext,
     ISalesforceInfoLogger infoLogger,
-    ISalesforceNewsletterFactory salesforceContentNewsletterFactory)
+    ISalesforceNewsletterFactory salesforceContentNewsletterFactory,
+    ISalesforceErrorLogger errorLogger)
         {
             SalesforceSavedSearchRequestFactory = salesforceSavedSearchRequestFactory;
             TextTranslator = textTranslator;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             InfoLogger = infoLogger;
             SalesforceContentNewsletterFactory = salesforceContentNewsletterFactory;
+            ErrorLogger = errorLogger;
         }
         public IContentResponse UpdateUserSavedSearch(string accessToken, ISavedSearchEntity entity)
         {
@@ -41,27 +44,45 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             !new[] { entity.Username, entity.Name, entity.SearchString, entity.UnsubscribeToken, entity.PublicationCode }
             .Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceSavedSearchRequestFactory.CreateUpdateRequest(entity);
-                if (request != null)
+                try
                 {
-                    using (var client = new HttpClient())
+                    var request = SalesforceSavedSearchRequestFactory.CreateUpdateRequest(entity);
+                    if (request != null)
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(entity.Id), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                        var result = HttpClientExtension.PatchAsync(client, SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(entity.Id), content).Result;
-                        if (result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
-                            return new ContentResponse
-                            {
-                                Success = true,
-                                Message = string.Empty
-                            };
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
 
+                            var updateUserProductPreferenceEndPoints = SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(entity.Id);
+                            InfoLogger.Log(updateUserProductPreferenceEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var requestJson = JsonConvert.SerializeObject(request).ToString();
+                            InfoLogger.Log(requestJson, this.GetType().Name);
+                            var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+                            var result = HttpClientExtension.PatchAsync(client, updateUserProductPreferenceEndPoints, content).Result;
+                            InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
+
+                            if (result.IsSuccessStatusCode)
+                            {
+
+                                return new ContentResponse
+                                {
+                                    Success = true,
+                                    Message = string.Empty
+                                };
+
+                            }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Update User Saved Search", e);
+                    return new ContentResponse
+                    {
+                        Success = false,
+                        Message = "Invalid input has been provided."
+                    };
                 }
             }
 
@@ -78,28 +99,42 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             !new[] { username, publicationCode }
             .Any(string.IsNullOrEmpty))
             {
-
-                foreach (var item in optIns)
+                try
                 {
-                    var request = SalesforceContentNewsletterFactory.CreateUpdateRequest(item);
-                    if (request != null)
+                    string updateUserProductPreferenceEndPoints = string.Empty;
+                    string requestJson = string.Empty;
+                    foreach (var item in optIns)
                     {
-                        using (var client = new HttpClient())
+                        var request = SalesforceContentNewsletterFactory.CreateUpdateRequest(item);
+                        if (request != null)
                         {
-                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                            InfoLogger.Log(SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(item.SalesforceId), this.GetType().Name);
-                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                            var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                            var result = HttpClientExtension.PatchAsync(client, SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(item.SalesforceId), content).Result;
-                            if (!result.IsSuccessStatusCode)
+                            using (var client = new HttpClient())
                             {
+                                client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                                updateUserProductPreferenceEndPoints = SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(item.SalesforceId);
+                                InfoLogger.Log(updateUserProductPreferenceEndPoints, this.GetType().Name);
+                                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                                requestJson = JsonConvert.SerializeObject(request).ToString();
+                                InfoLogger.Log(requestJson, this.GetType().Name);
+                                var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+                                var result = HttpClientExtension.PatchAsync(client, updateUserProductPreferenceEndPoints, content).Result;
                                 InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
-                                return false;
+
+                                if (!result.IsSuccessStatusCode)
+                                {
+                                    return false;
+                                }
                             }
                         }
                     }
+                    return true;
                 }
-                return true;
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call :Update Newsletter User OptIns", e);
+                    return false;
+                }
 
             }
 
@@ -111,24 +146,37 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             if (!new[] { username, publicationCode }
             .Any(string.IsNullOrEmpty))
             {
-                var request = SalesforceContentNewsletterFactory.CreateUpdateRequest(optIn);
-                if (request != null)
+                try
                 {
-                    using (var client = new HttpClient())
+                    var request = SalesforceContentNewsletterFactory.CreateUpdateRequest(optIn);
+                    if (request != null)
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        InfoLogger.Log(SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(optIn.SalesforceId), this.GetType().Name);
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-                        var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
-                        var result = HttpClientExtension.PatchAsync(client, SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(optIn.SalesforceId), content).Result;
-                        if (!result.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                            var updateUserProductPreferenceEndPoints = SalesforceConfigurationContext?.UpdateUserProductPreferenceEndPoints(optIn.SalesforceId);
+                            InfoLogger.Log(updateUserProductPreferenceEndPoints, this.GetType().Name);
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            var requestJson = JsonConvert.SerializeObject(request).ToString();
+                            InfoLogger.Log(requestJson, this.GetType().Name);
+                            var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+                            var result = HttpClientExtension.PatchAsync(client, updateUserProductPreferenceEndPoints, content).Result;
                             InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
-                            return false;
+
+                            if (!result.IsSuccessStatusCode)
+                            {
+                                return false;
+                            }
                         }
                     }
+                    return true;
                 }
-                return true;
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call :Update Offers OptIns", e);
+                    return false;
+                }
             }
 
             return false;
