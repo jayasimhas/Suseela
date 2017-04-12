@@ -65,7 +65,7 @@
                         <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
                     </div>
                     <div class="loadFilters">
-                        <asp:Button ID="btnLoadFilters" runat="server" Text="Populate Filters" />                        
+                        <input type="button" id="btnLoadFilters" value="Populate Filters" />                
                     </div>
                     <asp:Image ID="loadIcon" class="loadingIcon" runat="server" ImageUrl="/VWB/images/vwb/spinner_gray_160.gif"/>
                     <div class="mediatypes">
