@@ -1,5 +1,11 @@
 @inherits CustomGlassView<SideNavigationMenuViewModel>
+@using System.Diagnostics;
+@using Informa.Library.Utilities.Extensions
+@{ 
 
+    Stopwatch sw = Stopwatch.StartNew();
+
+}
 <div class="main-menu js-full-menu-toggle">
     <div class="menu-toggler js-menu-toggle-button">
         <button class="menu-toggler__button">
@@ -52,7 +58,7 @@
                         }
                     </li>
                     @if (navigation.Children.Any())
-                    {                        
+                    {
                         <li class="main-menu__section-wrapper">
                             <ul>
                                 @foreach (var navigationChild in navigation.Children)
@@ -68,9 +74,12 @@
                                 }
                             </ul>
                         </li>
-					}
+                    }
                 </ul>
-			}
-		}
-	}
+            }
+        }
+    }
 </div>
+@{ 
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Naviugation View End at :", sw, "SitemapService");
+    }
