@@ -65,7 +65,7 @@
                     <div class="loadFilters">
                         <asp:Button ID="btnLoadFilters" runat="server" Text="Populate Filters" />                        
                     </div>
-                    <asp:Image ID="loadIcon" class="loadingIcon" runat="server" ImageUrl="/VWB/images/vwb/spinner_gray_160.gif"  Width="32"/>
+                    <asp:Image ID="loadIcon" class="loadingIcon" runat="server" ImageUrl="/VWB/images/vwb/spinner_gray_160.gif"/>
                     <div class="mediatypes">
                         <asp:DropDownCheckBoxes ID="ddlTaxonomies" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
                         <Style SelectBoxWidth="260" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
