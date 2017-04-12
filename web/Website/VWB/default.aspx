@@ -16,6 +16,7 @@
 
 </head>
 <body>
+    <div class="loadTexonamyData"></div>
     <form id="form1" runat="server">
         <asp:HiddenField runat="server" ID="IssueTitleInput"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="IssuePublishedDateInput"></asp:HiddenField>
