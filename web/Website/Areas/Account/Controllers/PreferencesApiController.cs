@@ -48,9 +48,8 @@ namespace Informa.Web.Areas.Account.Controllers
         [ArgumentsRequired]
         public IHttpActionResult Update(PreferencesRequest request)
         {
-            var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request.Publications ?? Enumerable.Empty<string>(), NewsletterUserOptInsContext.OptIns != null && NewsletterUserOptInsContext.OptIns.Count() > 0);
+            var newsletterUpdated = SetNewsletterUserOptInsContext.SetUpdate(request.NewsletterPublications);     
             var offersUpdated = OffersOptIn.Update(!request.DoNotSendOffersOptIn, OfferUserOptedInContext.OptedIn != null && !string.IsNullOrEmpty(OfferUserOptedInContext.OptedIn.SalesforceId));
-
             return Ok(new
             {
                 success = newsletterUpdated && offersUpdated

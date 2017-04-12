@@ -221,7 +221,7 @@ namespace Informa.Web.Areas.Account.Controllers
         {
             try
             {
-                var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request?.Newsletters?.Where(w => w.NewsletterChecked).Select(s => s.PublicationCode).ToList() ?? Enumerable.Empty<string>(), false);
+                var newsletterUpdated = SetNewsletterUserOptInsContext.Set(request?.Newsletters?.Where(w => w.NewsletterChecked).Select(s => s.PublicationCode).ToList() ?? Enumerable.Empty<string>());
                 Logger.Error("Var newsletterUpdated = " + newsletterUpdated.ToString());
                 var offersUpdated = OffersOptIn.Update(!request.Offers,false);
                 Logger.Error("Var offersUpdated = " + offersUpdated.ToString());
