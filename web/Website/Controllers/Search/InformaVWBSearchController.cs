@@ -68,7 +68,7 @@ namespace Informa.Web.Controllers.Search
             request.QueryParameters.Add("PublicationCode", pubCode);
             string stDate = !string.IsNullOrEmpty(startDate) ? startDate : DateTime.MinValue.ToString("MM/dd/yyyy");
             string enDate = !string.IsNullOrEmpty(endDate) ? endDate : DateTime.MaxValue.ToString("MM/dd/yyyy");
-            request.QueryParameters.Add("plannedpublishdate", stDate + ";" + enDate);
+            request.QueryParameters.Add("PlannedPublishDate", stDate + ";" + enDate);
 
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
             q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);

@@ -54,10 +54,12 @@
                     <div class="left inputWrapper">
                         <div class="left dateRangeLabel">From</div>
                         <asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox>
+                        
                         <asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox>
                         <br />
                         <div class="left dateRangeLabel">To</div>
                         <asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
+                        
                         <asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox>
                         <br />
                         <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
