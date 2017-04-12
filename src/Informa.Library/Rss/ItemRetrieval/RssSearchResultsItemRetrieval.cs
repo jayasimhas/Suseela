@@ -14,6 +14,7 @@ using Sitecore.Data.Items;
 using Sitecore.Web;
 using Velir.Search.Models;
 using Log = Sitecore.Diagnostics.Log;
+using System.Diagnostics;
 
 namespace Informa.Library.Rss.ItemRetrieval
 {
@@ -119,9 +120,11 @@ namespace Informa.Library.Rss.ItemRetrieval
 		{
 			try
 			{
-				var results = SearchWebClientUtil.GetSearchResultsFromApi(apiUrl);
+                Stopwatch sw = Stopwatch.StartNew();
+                var results = SearchWebClientUtil.GetSearchResultsFromApi(apiUrl);
+                StringExtensions.WriteSitecoreLogs("Time taken to execute GetSearchResultsFromApi", sw, "GetSearchResultsFromApi");
 
-				if (results == null)
+                if (results == null)
 				{
 					return new List<Item>();
 				}
