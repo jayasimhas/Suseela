@@ -138,8 +138,12 @@ function loadAjaxData(){
 		data: { 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal },
 		dataType: 'json',
 		type: 'GET',
+		beforeSend: function(){
+			$('.loadingIcon').css('display', 'block');
+		},
 		success: function (data) {
 			loadDropdownVals(data);
+			$('.loadingIcon').removeAttr('style');
 		},
 		error: function (err) {
 			console.log(err);
@@ -279,7 +283,7 @@ $(document)
 			}
 		} 
 		
-        $('#ddlPublications').on('click', 'input[type=checkbox]', function () {
+        $(document).on('click', '#btnLoadFilters', function () {
 			loadAjaxData();  
         });
 		
