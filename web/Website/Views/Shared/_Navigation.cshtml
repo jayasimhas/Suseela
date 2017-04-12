@@ -34,11 +34,14 @@
 
                 </dl>  }
             else
-            {
+            {            
                 string activeClass = string.Empty;
-                if (!string.IsNullOrEmpty(navigation.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigation.Link.TargetId.ToString()))
+                if (!string.IsNullOrEmpty(navigation.Link?.TargetId.ToString()))
                 {
-                    activeClass = "activate";
+                    if (Model.CurrentItemId.Equals(navigation.Link.TargetId.ToString()))
+                    {
+                        activeClass = "activate";
+                    }
                 }
                 <ul class="main-menu__section">
                     <li class="main-menu__section-title main-menu__hoverable js-toggle-menu-section is-active @activeClass">
@@ -64,9 +67,12 @@
                                 @foreach (var navigationChild in navigation.Children)
                                 {
                                     string activeClassChild = string.Empty;
-                                    if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
+                                    if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()))
                                     {
-                                        activeClassChild = "activate";
+                                        if (Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
+                                        {
+                                            activeClassChild = "activate";
+                                        }
                                     }
                                     <li class="main-menu__hoverable @activeClassChild">
                                         <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link">@navigationChild.Text</a>
