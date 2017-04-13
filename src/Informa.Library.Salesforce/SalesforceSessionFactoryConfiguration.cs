@@ -12,10 +12,10 @@ namespace Informa.Library.Salesforce
             SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
-       public string Url => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Url?.Url;
-        public string Username => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username;
-        public string Password => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Password;
-        public string Token => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Token;
-        public int Timeout => int.Parse(SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Timeout);
+       public string Url => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Url?.Url ?? string.Empty;
+        public string Username => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Username ?? string.Empty;
+        public string Password => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Password ?? string.Empty;
+        public string Token => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Token ?? string.Empty;
+        public int Timeout => int.Parse(SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Session_Factory_Timeout ?? "0");
     }
 }
