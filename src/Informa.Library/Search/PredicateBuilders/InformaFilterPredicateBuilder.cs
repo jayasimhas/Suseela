@@ -112,6 +112,16 @@ namespace Informa.Library.Search.PredicateBuilders
                 }
                 predicate = predicate.And(codesPredicate);
             }
+            //if (_request.QueryParameters.ContainsKey("plannedpublishdate") && string.IsNullOrEmpty(_request.QueryParameters["plannedpublishdate"]) == false)
+            //{
+            //    var plannedPublishDates = _request.QueryParameters["plannedpublishdate"].Split(';');
+
+            //    var codesPredicate = PredicateBuilder.True<T>();
+
+            //    codesPredicate = codesPredicate.And(x => x.PlannedPublishDate >= Convert.ToDateTime(plannedPublishDates[0]) && x.PlannedPublishDate<= Convert.ToDateTime(plannedPublishDates[1]));
+
+            //    predicate = predicate.And(codesPredicate);
+            //}
             // If the inprogress flag is available then add that as as filter, this is used in VWB
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
             {
