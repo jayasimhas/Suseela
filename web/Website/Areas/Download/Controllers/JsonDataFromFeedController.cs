@@ -21,8 +21,15 @@ namespace Informa.Web.Areas.Download.Controllers
         {
             if (!string.IsNullOrEmpty(feed) && !string.IsNullOrEmpty(areaCode) && !string.IsNullOrEmpty(movementType))
             {
-                string feedUrl = string.Format(feed, areaCode, movementType);
-                return CompanyResultService.GetCompanyFeeds(feed).Result;
+                try
+                {
+                    string feedUrl = string.Format(feed, areaCode, movementType);
+                    return CompanyResultService.GetCompanyFeeds(feed).Result;
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {
@@ -33,10 +40,17 @@ namespace Informa.Web.Areas.Download.Controllers
         //GET: Account/JsonDataFromFeed  
         public string ReadJsonMarketFixture(string dateVal, string feedUrl)
         {
-            if (!string.IsNullOrEmpty(feedUrl) )
+            if (!string.IsNullOrEmpty(feedUrl))
             {
-                string fixturefeedUrl = string.Format(feedUrl,dateVal);
-                return CompanyResultService.GetCompanyFeeds(fixturefeedUrl).Result;
+                try
+                {
+                    string fixturefeedUrl = string.Format(feedUrl, dateVal);
+                    return CompanyResultService.GetCompanyFeeds(fixturefeedUrl).Result;
+                }
+                catch (Exception ex)
+                {
+                    return string.Empty;
+                }
             }
             else
             {

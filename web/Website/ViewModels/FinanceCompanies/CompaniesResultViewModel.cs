@@ -95,42 +95,50 @@
         /// <returns>Json string</returns>
         public string GetResultsData()
         {
-            string jsonString = "External feed url is empty";
-            string companyQueryId = Convert.ToString(HttpContext.Current.Request.QueryString["companyid"]);
-            if (RenderingParameters != null && RenderingParameters.TableType != null && (Sitecore.Context.Item.Fields["Company ID"] != null || !string.IsNullOrWhiteSpace(companyQueryId)) &&
-                (string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
-                string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.QuarterlyResults.ToString(), StringComparison.InvariantCultureIgnoreCase)))
+            try
             {
-                string feedUrl = string.Format(GlassModel.ExternalFeedUrl, !string.IsNullOrWhiteSpace(companyQueryId) ? companyQueryId : Sitecore.Context.Item.Fields["Company ID"].Value);
-                return companyResultService.GetCompanyFeeds(feedUrl).Result;
-            }
-            jsonString = companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result;
 
-            if (!string.IsNullOrWhiteSpace(jsonString))
-            {
-                var financeCompaniesFolder = Sitecore.Context.Item;
-                var companyLandingPage = financeCompaniesFolder.TemplateID.ToString() == Settings.GetSetting("Company.Landing.Page") ? financeCompaniesFolder : financeCompaniesFolder.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("Company.Landing.Page"));
-
-                List<ICompany_Detail_Page> companyDetailPages = new List<ICompany_Detail_Page>();
-
-                if (companyLandingPage != null && companyLandingPage.Children != null && companyLandingPage.Children.Any())
+                string jsonString = "External feed url is empty";
+                string companyQueryId = Convert.ToString(HttpContext.Current.Request.QueryString["companyid"]);
+                if (RenderingParameters != null && RenderingParameters.TableType != null && (Sitecore.Context.Item.Fields["Company ID"] != null || !string.IsNullOrWhiteSpace(companyQueryId)) &&
+                    (string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.FinancialResults.ToString(), StringComparison.InvariantCultureIgnoreCase) ||
+                    string.Equals(RenderingParameters.TableType.Value, Constants.CompaniesResultTableTypes.QuarterlyResults.ToString(), StringComparison.InvariantCultureIgnoreCase)))
                 {
-                    companyDetailPages.AddRange(companyLandingPage.Children.Select(item => sitecoreContext.GetItem<ICompany_Detail_Page>(item.ID.Guid)));
-                    var jsonData = JsonConvert.DeserializeObject<JToken>(jsonString);
+                    string feedUrl = string.Format(GlassModel.ExternalFeedUrl, !string.IsNullOrWhiteSpace(companyQueryId) ? companyQueryId : Sitecore.Context.Item.Fields["Company ID"].Value);
+                    return companyResultService.GetCompanyFeeds(feedUrl).Result;
+                }
+                jsonString = companyResultService.GetCompanyFeeds(GlassModel.ExternalFeedUrl).Result;
 
-                    if (jsonData != null && companyDetailPages != null && companyDetailPages.Count > 0 && companyDetailPages.Any())
+                if (!string.IsNullOrWhiteSpace(jsonString))
+                {
+                    var financeCompaniesFolder = Sitecore.Context.Item;
+                    var companyLandingPage = financeCompaniesFolder.TemplateID.ToString() == Settings.GetSetting("Company.Landing.Page") ? financeCompaniesFolder : financeCompaniesFolder.Axes.GetAncestors().FirstOrDefault(ancestor => ancestor.TemplateID.ToString() == Settings.GetSetting("Company.Landing.Page"));
+
+                    List<ICompany_Detail_Page> companyDetailPages = new List<ICompany_Detail_Page>();
+
+                    if (companyLandingPage != null && companyLandingPage.Children != null && companyLandingPage.Children.Any())
                     {
-                        var jData = jsonData.Children<JObject>();
+                        companyDetailPages.AddRange(companyLandingPage.Children.Select(item => sitecoreContext.GetItem<ICompany_Detail_Page>(item.ID.Guid)));
+                        var jsonData = JsonConvert.DeserializeObject<JToken>(jsonString);
 
-                        var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).Distinct().ToList();
-                        result.ForEach(item => item.Add("CompanyPageUrl", GetCompanyPageUrl(item, companyDetailPages)));
+                        if (jsonData != null && companyDetailPages != null && companyDetailPages.Count > 0 && companyDetailPages.Any())
+                        {
+                            var jData = jsonData.Children<JObject>();
 
-                        return JsonConvert.SerializeObject(result);
+                            var result = companyDetailPages.SelectMany(company => jData.Where(data => string.Equals(company.CompanyID, data["ID"].Value<string>()))).Distinct().ToList();
+                            result.ForEach(item => item.Add("CompanyPageUrl", GetCompanyPageUrl(item, companyDetailPages)));
+
+                            return JsonConvert.SerializeObject(result);
+                        }
                     }
                 }
-            }
 
-            return jsonString;
+                return jsonString;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         private JToken GetCompanyPageUrl(JObject item, List<ICompany_Detail_Page> companyDetailPages)

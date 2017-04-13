@@ -48,7 +48,7 @@ namespace Informa.Library.User.Newsletter
             {
                 return false;
             }
-            var success = AddUserOptIns.AddNewsletterUserOptIns(VerticalRootContext?.Item?.Vertical_Name ?? string.Empty,
+            var success = AddUserOptIns.AddNewsletterUserOptIns(VerticalRootContext?.Item?.Vertical_Preference_Locale ?? string.Empty,
                 SiteRootContext?.Item?.Publication_Code ?? string.Empty,
                 UserContext.User?.Username ?? string.Empty, UserContext?.User.AccessToken, optIns);
 

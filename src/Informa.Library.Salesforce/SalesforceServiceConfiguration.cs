@@ -5,6 +5,7 @@ namespace Informa.Library.Salesforce
 {
 	public class SalesforceServiceConfiguration : ISalesforceServiceConfiguration
 	{
+        private const string EbiUrlConfigKey = "SalesforceSessionFactoryConfiguration.EbiUrl";
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         public SalesforceServiceConfiguration(
             ISalesforceConfigurationContext salesforceConfigurationContext)
@@ -12,6 +13,6 @@ namespace Informa.Library.Salesforce
             SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
-        public string Url => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url;
+        public string Url => SalesforceConfigurationContext?.SalesForceConfiguration?.Salesforce_Service_Url?.Url ?? Settings.GetSetting(EbiUrlConfigKey);
 	}
 }

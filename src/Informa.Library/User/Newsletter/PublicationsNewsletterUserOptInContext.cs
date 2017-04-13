@@ -32,13 +32,21 @@ namespace Informa.Library.User.Newsletter
 
 				foreach (var siteType in siteTypes)
 				{
-					var optIns = FindSiteNewsletterUserOptIns.Find(siteType);
-					var optedIn = SiteNewsletterUserOptedIn.Check(optIns);
+                    var optIns = FindSiteNewsletterUserOptIns.Find(siteType);
+                    var optedIn = SiteNewsletterUserOptedIn.Check(optIns);
 
-					publicationOptIns.Add(new PublicationNewsletterUserOptIn
+                    var dailyOptIns = FindSiteNewsletterUserOptIns.FindDailyOptins(siteType);
+                    var dailyOptedIn = SiteNewsletterUserOptedIn.Check(dailyOptIns);
+
+                    var weeklyOptIns = FindSiteNewsletterUserOptIns.FindWeeklyOptins(siteType);                   
+                    var weeklyOptedIn = SiteNewsletterUserOptedIn.Check(weeklyOptIns);
+
+                    publicationOptIns.Add(new PublicationNewsletterUserOptIn
 					{
-						OptIn = optedIn,
-						Publication = siteType.Publication
+                        OptIn = optedIn,                  
+                        DailyOptIn = dailyOptedIn,
+                        WeeklyOptIn = weeklyOptedIn,
+                        Publication = siteType.Publication
 					});
 				}
 

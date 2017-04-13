@@ -65,7 +65,7 @@ namespace Informa.Library.Search.PredicateBuilders
 
                 foreach (var tax in taxs)
                 {
-                    codesPredicate = codesPredicate.And(x => x.Taxonomies.Contains(tax));
+                    codesPredicate = codesPredicate.Or(x => x.Taxonomies.Contains(tax));
                 }
 
                 predicate = predicate.And(codesPredicate);
@@ -78,7 +78,7 @@ namespace Informa.Library.Search.PredicateBuilders
 
                 foreach (var auth in auths)
                 {
-                    codesPredicate = codesPredicate.And(x => x.Authors.Contains(auth));
+                    codesPredicate = codesPredicate.Or(x => x.Authors.Contains(auth));
                 }
 
                 predicate = predicate.And(codesPredicate);
@@ -112,6 +112,16 @@ namespace Informa.Library.Search.PredicateBuilders
                 }
                 predicate = predicate.And(codesPredicate);
             }
+            //if (_request.QueryParameters.ContainsKey("plannedpublishdate") && string.IsNullOrEmpty(_request.QueryParameters["plannedpublishdate"]) == false)
+            //{
+            //    var plannedPublishDates = _request.QueryParameters["plannedpublishdate"].Split(';');
+
+            //    var codesPredicate = PredicateBuilder.True<T>();
+
+            //    codesPredicate = codesPredicate.And(x => x.PlannedPublishDate >= Convert.ToDateTime(plannedPublishDates[0]) && x.PlannedPublishDate<= Convert.ToDateTime(plannedPublishDates[1]));
+
+            //    predicate = predicate.And(codesPredicate);
+            //}
             // If the inprogress flag is available then add that as as filter, this is used in VWB
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
             {

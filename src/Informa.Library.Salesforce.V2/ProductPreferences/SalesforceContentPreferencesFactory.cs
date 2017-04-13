@@ -12,7 +12,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         private const string ContentPersonalizationParent = "ContentPersonalizationParent";
         private const string OrderFieldFormat = "{0},{1}";
         private const char OrderSeparator = ',';
-        public AddProductPreferenceRequest Create(string userName, string verticaleName,
+        public AddProductPreferenceRequest Create(string userName, string verticalPreferenceLocale,
             string publicationCode, string contentPreferences)
         {
             if (!string.IsNullOrWhiteSpace(contentPreferences))
@@ -30,12 +30,12 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 type = "Product_Preference__c",
                                 referenceId = Guid.NewGuid().ToString()
                             },
-                            Product_Vertical__c = verticaleName,
+                            Preference_Locale__c = verticalPreferenceLocale,
                             Type__c = ContentPersonalization,
                             Username__c = userName,
                             Value1__c = publicationCode,
                             Value2__c = ContentPersonalizationParent,
-                            Value3__c = DateTime.Now.ToString(),
+                            Value9__c = DateTime.Now.ToString("yyyy-MM-dd"),
                             Value4__c = userPreferences.IsChannelLevel.ToString(),
                             Value5__c = userPreferences.IsNewUser.ToString()
                         });
@@ -55,7 +55,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                          type = "Product_Preference__c",
                                          referenceId = Guid.NewGuid().ToString()
                                      },
-                                     Product_Vertical__c = verticaleName,
+                                     Preference_Locale__c = verticalPreferenceLocale,
                                      Type__c = ContentPersonalization,
                                      Username__c = userName,
                                      Value1__c = publicationCode,
@@ -80,7 +80,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                  type = "Product_Preference__c",
                                  referenceId = Guid.NewGuid().ToString()
                              },
-                             Product_Vertical__c = verticaleName,
+                             Preference_Locale__c = verticalPreferenceLocale,
                              Type__c = ContentPersonalization,
                              Username__c = userName,
                              Value1__c = publicationCode,
@@ -111,7 +111,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 
                 if (parentItem != null)
                 {
-                    userPreferences.LastUpdateOn = parentItem.Value3__c;
+                    userPreferences.LastUpdateOn = parentItem.Value9__c;
                     userPreferences.IsChannelLevel = Convert.ToBoolean(parentItem.Value4__c);
                     userPreferences.IsNewUser = Convert.ToBoolean(parentItem.Value5__c);
                 }
@@ -181,12 +181,6 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                 }
             }
             return userPreferences;
-        }
-
-
-        public AddProductPreferenceRequest Create(string Username, string accessToken, string verticalname, string documentId, string documentDescription, string documentName)
-        {
-            return null;
         }
     }
 }

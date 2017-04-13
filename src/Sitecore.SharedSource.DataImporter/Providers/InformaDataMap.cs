@@ -139,6 +139,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 }
                                 using (var client = new HttpClient())
                                 {
+
+                                    ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+
                                     var response = client.GetStringAsync(url).Result;
                                     if (!(response == "null" || response == ""))
                                     {
@@ -1101,35 +1104,59 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                     Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
                     string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                    XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
-                    url = string.Format("http://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
+                  //  XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
+                    url = string.Format("https://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
+               
+                using (var client = new HttpClient())
+                {
+                    
+                    ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
 
-                    using (var client = new HttpClient())
+
+                    //XMLDataLogger.WriteLog("HttpClient :", "ArticleCleanup");
+                    //var response;
+                    try
                     {
                         var response = client.GetStringAsync(url).Result;
+
+                       // XMLDataLogger.WriteLog("Response :" + response, "ArticleCleanup");
                         if (!(response == "null" || response == ""))
                         {
                             var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
                             relatedArticles = resultarticles._Id.ToString();
+                            XMLDataLogger.WriteLog("Result Article:" + relatedArticles, "ArticleCleanup");
                             using (new Sitecore.SecurityModel.SecurityDisabler())
-                            { 
+                            {
                                 Item item = MasterDB.GetItem(relatedArticles);
-
+                                XMLDataLogger.WriteLog("Sitecore Item:" + item, "ArticleCleanup");
                                 if (item != null)
                                 {
                                     XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
                                     XMLDataLogger.WriteLog("Article Path:" + item.Name, "ArticleCleanup");
                                     if (WebConfigurationManager.AppSettings["DeleteArticleWithSpecialChar"].Equals("true"))
-                                    {
+                                    {                                     
                                         item.Delete();
+                                        XMLDataLogger.WriteLog(relatedArticle, "ArticleNumberDeleted");
                                     }
                                 }
                             }
 
                         }
+                        else
+                        {
+
+                            XMLDataLogger.WriteLog(relatedArticle, "ArticleNotFoundOnCleanup");
+
+                        }
+
                     }
 
-            }
+                    catch (Exception ex)
+                    {
+                        XMLDataLogger.WriteLog("ex :" + ex.InnerException + ex.Source + ex.StackTrace + ex.Data, "ArticleCleanup");
+                    }
+                }
+                }
 
             return Enumerable.Empty<object>();
 
@@ -2079,22 +2106,25 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 // adding image an video tag  
                 if (nodeName.Equals("LEADIMAGE")|| nodeName.Equals("CAPTION")||nodeName.Equals("ALTTEXT"))
                 {
-                    if (!nodeName.Equals("LEADIMAGE"))
+                    if (!(nodeName.Equals("LEADIMAGE")) && xd.SelectSingleNode($"//{"LEADIMAGE"}") != null)
                     {
                         XmlNodeList leadImageList = xd.SelectSingleNode($"//{"LEADIMAGE"}").ChildNodes;
-                        foreach (XmlNode node in leadImageList)
+                        if (leadImageList != null)
                         {
-                            if (node.Name == nodeName && node.InnerText != null)
+                            foreach (XmlNode node in leadImageList)
                             {
-                                return node.InnerText;
-                            }
+                                if (node.Name == nodeName && node.InnerText != null)
+                                {
+                                    return node.InnerText;
+                                }
 
-                            if (node.Name == nodeName && node.InnerText != null)
-                            {
-                                return node.InnerText;
-                            }
+                                if (node.Name == nodeName && node.InnerText != null)
+                                {
+                                    return node.InnerText;
+                                }
 
-                           
+
+                            }
                         }
                         return "";
                     }

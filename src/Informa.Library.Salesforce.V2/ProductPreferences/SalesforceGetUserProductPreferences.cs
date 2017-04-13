@@ -16,13 +16,17 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         private readonly ISalesforceContentPreferencesFactory SalesforceContentPreferencesFactory;
         private readonly ISalesforceSaveDocumentFactory SalesforceSaveDocumentFactory;
         private readonly ISalesforceNewsletterFactory SalesforceContentNewsletterFactory;
+        protected readonly ISalesforceErrorLogger ErrorLogger;
+        protected readonly ISalesforceInfoLogger InfoLogger;
 
         public SalesforceGetUserProductPreferences(ISalesforceConfigurationContext salesforceConfigurationContext,
             ISalesforceGetUserProductPreferencesQueryFactory salesforceGetUserProductPreferencesQueryFactory,
             ISalesforceSavedSearchFactory salesforceSavedSearchRequestFactory,
             ISalesforceContentPreferencesFactory salesforceContentPreferencesFactory,
             ISalesforceSaveDocumentFactory salesforceSaveDocumentFactory,
-            ISalesforceNewsletterFactory salesforceContentNewsletterFactory)
+            ISalesforceNewsletterFactory salesforceContentNewsletterFactory,
+            ISalesforceErrorLogger errorLogger,
+            ISalesforceInfoLogger infoLogger)
         {
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SalesforceGetUserProductPreferencesQueryFactory = salesforceGetUserProductPreferencesQueryFactory;
@@ -30,53 +34,67 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             SalesforceContentPreferencesFactory = salesforceContentPreferencesFactory;
             SalesforceSaveDocumentFactory = salesforceSaveDocumentFactory;
             SalesforceContentNewsletterFactory = salesforceContentNewsletterFactory;
+            ErrorLogger = errorLogger;
+            InfoLogger = infoLogger;
         }
-        public T GetProductPreferences<T>(IAuthenticatedUser user, string verticle, string publicationCode, ProductPreferenceType type)
+        public T GetProductPreferences<T>(IAuthenticatedUser user, string verticalPreferenceLocale, string publicationCode, ProductPreferenceType type)
         {
             if (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.AccessToken)
-                && !string.IsNullOrWhiteSpace(publicationCode) && !string.IsNullOrWhiteSpace(verticle) &&
+                && !string.IsNullOrWhiteSpace(publicationCode) && !string.IsNullOrWhiteSpace(verticalPreferenceLocale) &&
                 type != ProductPreferenceType.None)
             {
-                var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
-                      user.Username, verticle, publicationCode, type);
-                if (!string.IsNullOrWhiteSpace(query))
+                try
                 {
-                    using (var client = new HttpClient())
+                    var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
+                          user.Username, verticalPreferenceLocale, publicationCode, type);
+                    if (!string.IsNullOrWhiteSpace(query))
                     {
-                        client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
-                        client.DefaultRequestHeaders.Accept.Clear();
-                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
-
-                        HttpResponseMessage response = client.GetAsync(SalesforceConfigurationContext?.GetUserProductPreferencesEndPoints(query)).Result;
-                        if (response.IsSuccessStatusCode)
+                        using (var client = new HttpClient())
                         {
-                            var responseString = response.Content.ReadAsStringAsync().Result;
-                            if (!string.IsNullOrWhiteSpace(responseString))
+                            client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
+
+                            client.DefaultRequestHeaders.Accept.Clear();
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
+
+                            var getUserProductPreferencesEndPoints = SalesforceConfigurationContext?.GetUserProductPreferencesEndPoints(query);
+                            InfoLogger.Log(getUserProductPreferencesEndPoints, this.GetType().Name);
+                            HttpResponseMessage response = client.GetAsync(getUserProductPreferencesEndPoints).Result;
+                            if (response.IsSuccessStatusCode)
                             {
-                                var productPreferences = JsonConvert.DeserializeObject<ProductPreferencesResult>(responseString);
-                                if (type == ProductPreferenceType.SavedSearches)
+                                var responseString = response.Content.ReadAsStringAsync().Result;
+                                InfoLogger.Log(responseString, this.GetType().Name);
+                                if (!string.IsNullOrWhiteSpace(responseString))
                                 {
-                                    return (T)SalesforceSavedSearchRequestFactory.Create(productPreferences);
-                                }
-                                else if (type == ProductPreferenceType.PersonalPreferences)
-                                {
-                                    return (T)SalesforceContentPreferencesFactory.Create(productPreferences);
-                                }
-                                if(type == ProductPreferenceType.SavedDocuments)
-                                {
-                                    return (T)SalesforceSaveDocumentFactory.Create(productPreferences);
-                                }
-                                if(type == ProductPreferenceType.EmailPreference)
-                                {
-                                    return (T)SalesforceContentNewsletterFactory.Create(productPreferences);
-                                }
-                                if (type == ProductPreferenceType.EmailSignUp)
-                                {
-                                    return (T)SalesforceContentNewsletterFactory.CreateOfferOptinGetRequest(productPreferences);
+                                    var productPreferences = JsonConvert.DeserializeObject<ProductPreferencesResult>(responseString);
+                                    if (type == ProductPreferenceType.SavedSearches)
+                                    {
+                                        return (T)SalesforceSavedSearchRequestFactory.Create(productPreferences);
+                                    }
+                                    else if (type == ProductPreferenceType.ContentPreferences)
+                                    {
+                                        return (T)SalesforceContentPreferencesFactory.Create(productPreferences);
+                                    }
+                                    if (type == ProductPreferenceType.SavedDocuments)
+                                    {
+                                        return (T)SalesforceSaveDocumentFactory.Create(productPreferences);
+                                    }
+                                    if (type == ProductPreferenceType.EmailPreference)
+                                    {
+                                        return (T)SalesforceContentNewsletterFactory.Create(productPreferences);
+                                    }
+                                    if (type == ProductPreferenceType.EmailSignUp)
+                                    {
+                                        return (T)SalesforceContentNewsletterFactory.CreateOfferOptinGetRequest(productPreferences);
+                                    }
                                 }
                             }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    ErrorLogger.Log("ID&E Salesforce - Call : Get Product Preferences", e);
+                    return default(T);
                 }
             }
             return default(T);

@@ -172,6 +172,7 @@
 					StartField = Parent.find('.range-field')[0].value,
 					EndField = Parent.find('.range-field')[1].value;
 
+
 				if($(window).width() < 668) {
 					Index = $(this).parents('.forms').index();
 					StartField = $('.merge-form-items .range-field.start').val();
@@ -258,6 +259,8 @@
 					FilteredArray = window.jsonMergeAcquistion;
 				}
 				self.CurrentArray = FilteredArray;
+				self.autoSuggest(self.CurrentArray);
+				$(this).focus();
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
@@ -347,10 +350,24 @@
 						}
 					}
 				}
-				
+				var AcquirerValue = $('tr.visible-lg input[deal="Acquirer"]').val();
+				$('tr.visible-lg input[deal="Acquirer"]').remove();
+				$($('tr.visible-lg th .field-wrap')[1]).html('<input type="text" name="" deal="Acquirer">');
 				$('tr.visible-lg input[deal="Acquirer"]').suggest(haystackAcquirer);
+
+				var TargetValue = $('tr.visible-lg input[deal="Target"]').val();
+				$('tr.visible-lg input[deal="Target"]').remove();
+				$($('tr.visible-lg th .field-wrap')[2]).html('<input type="text" name="" deal="Target">');
 				$('tr.visible-lg input[deal="Target"]').suggest(haystackTarget);
+
+				var TargetValue = $('tr.visible-lg input[deal="TargetSector"]').val();
+				$('tr.visible-lg input[deal="TargetSector"]').remove();
+				$($('tr.visible-lg th .field-wrap')[3]).html('<input type="text" name="" deal="TargetSector">');
 				$('tr.visible-lg input[deal="TargetSector"]').suggest(haystackTargetSector);
+
+				var TargetValue = $('tr.visible-lg input[deal="TargetLocation"]').val();
+				$('tr.visible-lg input[deal="TargetLocation"]').remove();
+				$($('tr.visible-lg th .field-wrap')[4]).html('<input type="text" name="" deal="TargetLocation">');
 				$('tr.visible-lg input[deal="TargetLocation"]').suggest(haystackTargetLocation);
 		},
 		scrollbarSticky: function() {},
@@ -376,9 +393,13 @@
 			MergeAcquistion.init(window.jsonMergeAcquistion, $('.merge-acquistion'));
 		} else {
 			var ErrorMessage = $('#hdnErrormessage').val();
-			if(window.jsonMergeAcquistion.length == 0) {
-                 var ErrorMessage = $('#hdnInfomessage').val();
-            }
+			if(window.jsonMergeAcquistion) {
+				if(window.jsonMergeAcquistion.length == 0) {
+	                 var ErrorMessage = $('#hdnInfomessage').val();
+	            }
+	        } else {
+	        	var ErrorMessage = $('#hdnErrormessage').val();
+	        }
 			$('.id-merges-acquisition').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
 											'<svg class="alert__icon">'+
                         						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+

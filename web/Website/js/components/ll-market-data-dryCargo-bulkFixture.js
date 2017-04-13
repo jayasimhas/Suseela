@@ -127,7 +127,7 @@
 	
 	$(document).ready(function() {
 		if($('#dryCargoBulkFixtures').length > 0) { 
-			if(typeof window.DryBulkFixturesDateOptions !== 'undefined'){
+			if(typeof window.DryBulkFixturesDateOptions !== 'undefined' && typeof window.DryBulkFixturesDateOptions !== 'string'){
 				dryCargoBulkFixtures.init(window.DryBulkFixturesDateOptions);
 			}
 			else{

@@ -12,29 +12,29 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 
 
 
-        public string Create(string userName, string verticle, string publicationCode, ProductPreferenceType type)
+        public string Create(string userName, string verticalPreferenceLocale, string publicationCode, ProductPreferenceType type)
         {
             var query = string.Empty;
           
             if (type == ProductPreferenceType.SavedSearches)
             {
-                query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + SearchCriteria + "' and Product_Vertical__c='" + verticle + "'";
+                query = "SELECT+Id, Username__c, Preference_Locale__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c, Value9__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + SearchCriteria + "' and Preference_Locale__c='" + verticalPreferenceLocale + "'";
             }
             else if (type == ProductPreferenceType.SavedDocuments)
             {
-                query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + Bookmark + "' and Product_Vertical__c='" + verticle + "'";
+                query = "SELECT+Id, Username__c, Preference_Locale__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c, Value9__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + Bookmark + "' and Preference_Locale__c='" + verticalPreferenceLocale + "'";
             }
-            else if (type == ProductPreferenceType.PersonalPreferences)
+            else if (type == ProductPreferenceType.ContentPreferences)
             {
-                query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + ContentPersonalization + "' and Value1__c='" + publicationCode + "'";
+                query = "SELECT+Id, Username__c, Preference_Locale__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c, Value9__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + ContentPersonalization + "' and Value1__c='" + publicationCode + "'";
             }
             else if(type == ProductPreferenceType.EmailPreference)
             {
-                query = query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + EmailPreference + "' and Product_Vertical__c='" + verticle + "'";
+                query = "SELECT+Id, Username__c, Preference_Locale__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c, Value9__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + EmailPreference + "' and Preference_Locale__c='" + verticalPreferenceLocale + "'";
             }
             else if (type == ProductPreferenceType.EmailSignUp)
             {
-                query = query = "SELECT+Id, Username__c, Product_Vertical__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + EmailSignUp + "' and Product_Vertical__c='" + verticle + "'";
+                query = "SELECT+Id, Username__c, Preference_Locale__c, Value1__c, Value2__c, Value3__c, Value4__c, Value5__c, Value6__c, Value7__c, Value8__c, Value9__c+from+Product_Preference__c+where+UserName__c='" + userName + "' and Type__c='" + EmailSignUp + "' and Preference_Locale__c='" + verticalPreferenceLocale + "'";
             }
 
             return query;

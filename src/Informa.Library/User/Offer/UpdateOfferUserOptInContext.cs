@@ -53,7 +53,7 @@ namespace Informa.Library.User.Offer
             {
                 if (!isUpdate)
                 {
-                    success = AddUserProductPreference.AddOffersOptIns(VerticalRootContext?.Item?.Vertical_Name ?? string.Empty,
+                    success = AddUserProductPreference.AddOffersOptIns(VerticalRootContext?.Item?.Vertical_Preference_Locale ?? string.Empty,
                 SiteRootContext?.Item?.Publication_Code ?? string.Empty,
                 UserContext.User?.Username ?? string.Empty, UserContext?.User.AccessToken, optIn);
                 }

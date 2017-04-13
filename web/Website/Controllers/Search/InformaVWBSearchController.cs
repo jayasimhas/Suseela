@@ -53,7 +53,7 @@ namespace Informa.Web.Controllers.Search
             _cacheProvider = cacheProvider;
         }
         // GET: InformaVWBSearch       
-        public VWBSearchQueryResults Get(string verticalroot, string pubCode)
+        public VWBSearchQueryResults Get(string verticalroot, string pubCode, string startDate, string endDate)
         {
             if (string.IsNullOrEmpty(pubCode))
             {
@@ -62,10 +62,20 @@ namespace Informa.Web.Controllers.Search
             var defaultCount = "1000";
             int PerPageCount = Convert.ToInt32(!string.IsNullOrEmpty(Settings.GetSetting("VwbDropdownCount")) ? Settings.GetSetting("VwbDropdownCount") : defaultCount);
             ApiSearchRequest request = new ApiSearchRequest(1, PerPageCount);
+            //ApiSearchRequest request = new ApiSearchRequest(_parser, _interfaceFactory);
             request.Page = 1;
-            request.PageId = ItemIdResolver.GetItemIdByKey("VwbSearchPage");
+            //request.PageId = ItemIdResolver.GetItemIdByKey("VwbSearchPage");
+            request.PageId = "a0163a51-2ff8-4a9c-8fba-6516546e5ae1";
             request.PerPage = PerPageCount;
-            request.QueryParameters.Add("PublicationCode", pubCode);
+            //request.QueryParameters.Add("VerticalRoot", verticalroot);
+
+            string stDate = !string.IsNullOrEmpty(startDate) ? Convert.ToDateTime(startDate).ToString("MM/dd/yyyy") : DateTime.MinValue.ToString("MM/dd/yyyy");
+            string enDate = !string.IsNullOrEmpty(endDate) ? Convert.ToDateTime(endDate).ToString("MM/dd/yyyy") : DateTime.MaxValue.ToString("MM/dd/yyyy");
+            var plannedPublishDate = stDate + ";" + enDate;
+            request.QueryParameters.Add("plannedpublishdate", plannedPublishDate);
+            request.QueryParameters.Add("PublicationCode", pubCode);            
+            request.SortBy = "plannedpublishdate";
+            request.SortOrder = "desc";
 
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
             q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);

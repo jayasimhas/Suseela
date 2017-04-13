@@ -2,9 +2,9 @@
 @using Informa.Web.ViewModels;
 @using Informa.Library.Navigation;
 
-@if(Model.MenuOpenFirstTime)
+@if (Model.MenuOpenFirstTime)
 {
-    <input type="hidden" class="menu-open-first-time-checked" value="@Model.MenuOpenFirstTime.ToString()" />    
+    <input type="hidden" class="menu-open-first-time-checked" value="@Model.MenuOpenFirstTime.ToString()" />
 }
 
 <div class="main-menu js-full-menu-toggle">
@@ -24,16 +24,16 @@
             Nav.Children = new List<Navigation>();
             //IPMP:283 subscriptions details
             var subscribedChildren = new List<INavigation>();
-            if (subscriptions != null && subscriptions.Count() > 0 && subscriptions.SelectMany(p => p.SubscribedChannels).ToList() != null)
+            if (subscriptions != null && subscriptions.Count() > 0)
             {
-                foreach (var item in subscriptions.SelectMany(p => p.SubscribedChannels))
+                foreach (var subscription in subscriptions)
                 {
-                    if (navigation.Children.Where(m => m.Code == item.ChannelId).FirstOrDefault() != null)
+                    if (navigation.Children.Where(m => Model.PublicationCode + "." + m.Code == subscription.ProductCode).FirstOrDefault() != null)
                     {
-                        subscribedChildren.Add(navigation.Children.Where(m => m.Code == item.ChannelId).FirstOrDefault());
+                        subscribedChildren.Add(navigation.Children.Where(m => Model.PublicationCode + "." + m.Code == subscription.ProductCode).FirstOrDefault());
                     }
                 }
-                Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.SelectMany(p => p.SubscribedChannels).Any(n => n.ChannelId == m.Code)));
+                Nav.Children = subscribedChildren.Concat(navigation.Children.Where(m => !subscriptions.Any(n => n.ProductCode == Model.PublicationCode + "." + m.Code)));
             }
             else
             {
@@ -68,11 +68,11 @@
             }
             else if (string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase) && Model.IsGlobalToggleEnabled)
             {
-               
+
                 <div class="main-menu__section">
                     <div class="titleMyView">@navigation.Text</div>
                     <ul>
-                        @{var myViewHelpText = Nav.Children.Any() ? string.Empty : @Model.MyViewHelpText; }                       
+                        @{var myViewHelpText = Nav.Children.Any() ? string.Empty : @Model.MyViewHelpText; }
                         @if (Model.IsAuthenticated)
                         {
                             <li class="edit-link"><a href="@Model.MyViewLinkURL" class="click-utag" data-info='{ "event_name" : "secondary_navigation", "ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text","ga_eventLabel":"Edit","navigation_category": "@navigation.Text", "click_through_destination": "Edit"}'>@Model.MyViewEditBtnText</a></li>
@@ -104,9 +104,9 @@
                     </ul>
 
                 </div>
-            }
-            else
-            {
+                            }
+                            else
+                            {
                                 if (!string.Equals(navigation.Code, "myview", StringComparison.OrdinalIgnoreCase))
                                 {
                                     string activeClass = string.Empty;
@@ -114,44 +114,44 @@
                                     {
                                         activeClass = "activate";
                                     }
-                                <ul class="main-menu__section">
+                                    <ul class="main-menu__section">
 
-                                    <li class="@mainSubjectSectionClassName @activeClass">
-                                        @if (Model.Preferencelst!=null?Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)).Any(): Nav.Children.Any())
-                                        {
-                                            <svg class="main-menu__arrow-icon  js-hoist-menu-click">
-                                                <use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
-                                            </svg>
-                                        }
-                                        @if (navigation.Link == null)
-                                        {
-                                            @navigation.Text
-                                        }
-                                        else
-                                        {
-                                             <a href="@navigation.Link.Url" target="@navigation.Link.Target" class="click-utag" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text", "navigation_category": "@navigation.Text","ga_eventLabel":"@navigation.Text", "click_through_destination": "@navigation.Text"}'>@navigation.Text</a>
-                                        }
-                                    </li>
-
-                                    @if (Nav.Children.Any())
-                                    {
-                                        <li class="main-menu__section-wrapper">
-                                            <ul>
-                                                @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)) : Nav.Children)
-                                                {
-                                                    string activeClassChild = string.Empty;
-                                                    if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
-                                                    {
-                                                        activeClassChild = "activate";
-                                                    }
-                                                    <li class="main-menu__hoverable @activeClassChild">
-                                                        <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link click-utag" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text", "navigation_category": "@navigation.Text","ga_eventLabel":"@navigationChild.Text", "click_through_destination": "@navigationChild.Text"}'>@navigationChild.Text</a>
-                                                    </li>
-                                                }
-                                            </ul>
+                                        <li class="@mainSubjectSectionClassName @activeClass">
+                                            @if (Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)).Any() : Nav.Children.Any())
+                                            {
+                                                <svg class="main-menu__arrow-icon  js-hoist-menu-click">
+                                                    <use xlink:href="/dist/img/svg-sprite.svg#down-arrow"></use>
+                                                </svg>
+                                            }
+                                            @if (navigation.Link == null)
+                                            {
+                                                @navigation.Text
+                                            }
+                                            else
+                                            {
+                                                <a href="@navigation.Link.Url" target="@navigation.Link.Target" class="click-utag" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text", "navigation_category": "@navigation.Text","ga_eventLabel":"@navigation.Text", "click_through_destination": "@navigation.Text"}'>@navigation.Text</a>
+                                            }
                                         </li>
-                                    }
-                                </ul>
+
+                                        @if (Nav.Children.Any())
+                                        {
+                                            <li class="main-menu__section-wrapper">
+                                                <ul>
+                                                    @foreach (var navigationChild in Model.Preferencelst != null ? Nav.Children.Where(p => !Model.Preferencelst.Children.Any(p2 => p2.Code == p.Code)) : Nav.Children)
+                                                    {
+                                                        string activeClassChild = string.Empty;
+                                                        if (!string.IsNullOrEmpty(navigationChild.Link?.TargetId.ToString()) && Model.CurrentItemId.Equals(navigationChild.Link.TargetId.ToString()))
+                                                        {
+                                                            activeClassChild = "activate";
+                                                        }
+                                                        <li class="main-menu__hoverable @activeClassChild">
+                                                            <a href="@navigationChild.Link.Url" target="@navigationChild.Link.Target" class="main-menu__section-link click-utag" data-info='{ "event_name" : "secondary_navigation","ga_eventCategory":"Secondary Navigation","ga_eventAction":"@navigation.Text", "navigation_category": "@navigation.Text","ga_eventLabel":"@navigationChild.Text", "click_through_destination": "@navigationChild.Text"}'>@navigationChild.Text</a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                            </li>
+                                        }
+                                    </ul>
                                         }
                                     }
                                 }

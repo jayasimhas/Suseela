@@ -2,10 +2,13 @@
 {
     using Glass.Mapper.Sc;
     using Informa.Library.Article.Search;
+    using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Informa.Web.ViewModels.Articles;
     using Library.Globalization;
+    using Library.Search.Utilities;
+    using Library.Services.Global;
     using Library.Site;
     using Library.User.UserPreference;
     using Library.Utilities.Extensions;
@@ -22,11 +25,13 @@
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IUserPreferenceContext UserPreferences;
         protected readonly ISiteRootContext SiterootContext;
+        protected readonly IGlobalSitecoreService GlobalService;
         public ArticleSearchController(IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory,
             ITextTranslator textTranslator,
             ISitecoreContext sitecoreContext,
             IUserPreferenceContext userPreferences,
-            ISiteRootContext siterootContext)
+            ISiteRootContext siterootContext,
+            IGlobalSitecoreService globalService)
         {
             ArticleSearch = articleSearch;
             ArticleListableFactory = articleListableFactory;
@@ -34,6 +39,7 @@
             SitecoreContext = sitecoreContext;
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
+            GlobalService = globalService;
         }
 
         /// <summary>
@@ -67,13 +73,25 @@
                     PageSize = articleRequest.PageSize,
                     TaxonomyIds = articleRequest.TaxonomyIds,
                     SeeAllText = TextTranslator.Translate("Article.LatestFrom.SeeAllLink"),
-                    SeeAllLink = "/search#?" + SiterootContext.Item.Publication_Name.ToLower() + "=",
+                    SeeAllLink = GetSeeAllLink(articleRequest.ChannelId),
                     CurrentlyViewingText = GetCurrentlyViewingText(articleRequest.TaxonomyIds, articleRequest.ChannelId)
                 };
                 return new { Articles = articles, LoadMore = loadMore };
             }
 
             return new { Articles = "No articles found" };
+        }
+
+        private string GetSeeAllLink(string channelId)
+        {
+            if (string.IsNullOrEmpty(channelId))
+                return "/search#?";
+            var channel = GlobalService.GetItem<IChannel_Page>(channelId);
+            if(channel != null && channel.Taxonomies!=null && channel.Taxonomies.Any())
+            {
+                return SearchTaxonomyUtil.GetSearchUrl(channel.Taxonomies.FirstOrDefault());
+            }
+            return "/search#?";
         }
 
         private string GetCurrentlyViewingText(IList<string> selectedTopicsCount, string ChannelId)

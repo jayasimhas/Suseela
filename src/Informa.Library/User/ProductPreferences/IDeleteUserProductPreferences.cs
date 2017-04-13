@@ -8,7 +8,7 @@ namespace Informa.Library.User.ProductPreferences
     {
         IContentResponse DeleteUserProductPreference(string accessToken, string itemId);
 
-        ISavedDocumentWriteResult DeleteSavedocument(string accessToken, string itemId);
+        ISavedDocumentWriteResult DeleteSavedDocument(string accessToken, string itemId);
 
         IContentResponse DeleteUserProductPreferences(string userName, string accessToken, string publicationCode, ProductPreferenceType type);
     }

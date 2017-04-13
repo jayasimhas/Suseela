@@ -92,7 +92,7 @@
 	
 	$(document).ready(function() {
 		if($('#howeRobinsonContainer').length > 0) { 
-			if(typeof window.jsonHoweRobinson !== 'undefined'){
+			if(typeof window.jsonHoweRobinson !== 'undefined' && typeof window.jsonHoweRobinson !== 'string'){
 				howeRobinson.init(window.jsonHoweRobinson, '.howeRobinsonTable');
 			}
 			else{

@@ -392,6 +392,7 @@
     <Compile Include="User\Newsletter\IAddNewsletterUserOptInsContext.cs" />
     <Compile Include="User\Newsletter\IOffersOptIn.cs" />
     <Compile Include="User\Newsletter\OffersOptIn.cs" />
+    <Compile Include="User\Newsletter\Publication.cs" />
     <Compile Include="User\ProductPreferences\IAddUserProductPreference.cs" />
     <Compile Include="User\ProductPreferences\IDeleteUserProductPreferences.cs" />
     <Compile Include="User\ProductPreferences\IGetUserProductPreferences.cs" />

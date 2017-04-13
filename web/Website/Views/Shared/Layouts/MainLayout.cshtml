@@ -41,6 +41,9 @@
     @Html.Sitecore().Placeholder("primary-header")
 
     <main>
+        <input type="hidden" id="hdnErrormessage" value="@Model.ErrorMessage" />
+        <input type="hidden" id="hdnInfomessage" value="@Model.InfoMessage" />
+
         @Html.Sitecore().Placeholder("inner-main")
 
         <div class="main__wrapper" data-request-verification-token="@Html.RequestVerificationToken()">
@@ -102,8 +105,7 @@
         <p>@Model.PrintPageHeaderMessage</p>
         <p>@Model.PrintedByText <b>@Model.UserName @(string.IsNullOrEmpty(Model.UserName) || string.IsNullOrEmpty(Model.CorporateName) ? string.Empty : ",") @Model.CorporateName</b></p>
     </div>
-    @* end pseudo-if *@
-
+    @* end pseudo-if *@    
     <script src="/dist/js/index.js"></script>
     @if (Model.IsSiteDebuggingAllowed) {
         @Html.Sitecore().Placeholder("site-debugger")
@@ -113,7 +115,5 @@
 {
     @Html.Raw(@Model.CustomTagsFooter)
 }
-<input type="hidden" id="hdnErrormessage" value="@Model.ErrorMessage" />
-<input type="hidden" id="hdnInfomessage" value="@Model.InfoMessage" />
 </body>
 </html>

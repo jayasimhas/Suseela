@@ -1,6 +1,6 @@
 function loadLayoutOneData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
-	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
+	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';
 
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><div class="fllatestSub"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div><div class="frEditview">' + editMyView + seeAllTopics + '</div></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore ? data.loadMore.loadMoreLinkUrl : '#';
@@ -63,7 +63,8 @@ function createLayoutInner1(data) {
 		sponsored_cont5 = data.articles[5].isSonsoredBy ? 'sponsored_cont' : '',
 		sponsored_cont6 = data.articles[6].isSonsoredBy ? 'sponsored_cont' : '',
 		sponsored_cont7 = data.articles[7].isSonsoredBy ? 'sponsored_cont' : '',
-		sponsored_cont8 = data.articles[8].isSonsoredBy ? 'sponsored_cont' : '';
+		sponsored_cont8 = data.articles[8].isSonsoredBy ? 'sponsored_cont' : '',
+		tabTexonomy = data.articles[0].listableImage ? 'tabTexonomy' : '';
 
 	var articleData = ''; 
 	articleData += getListViewData(0, data, linkableUrl0, bookmarkInfo0, fbookmarkIcon0, sbookmarkIcon0);
@@ -101,7 +102,7 @@ function createLayoutInner1(data) {
 	if (data.articles[0].listableTopics) {
 		for (var i = 0; i < data.articles[0].listableTopics.length; i++) {
 			var getLink8 = data.articles[0].listableTopics[i].linkableUrl ? data.articles[0].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getLink8 + '">' + data.articles[0].listableTopics[i].linkableText + '</a>';
+			articleData += '<a href="' + getLink8 + '" class="'+tabTexonomy+'">' + data.articles[0].listableTopics[i].linkableText + '</a>';
 		}
 	}
 	articleData += '</div>';
@@ -369,12 +370,12 @@ function getListViewData(idx, data, linkableUrl, bookmarkInfo, fbookmarkIcon, sb
 	sectionData += '</div>';
 	sectionData += '</section>';
 	
-	return sectionData;
+	return sectionData; 
 }
 
 function loadLayoutTwoData(data, idx) {
 	var editMyView = loadPreferanceId.EditMyViewButtonLableText ? '<a class="editView button--filled button--outline mobview" href="' + loadPreferanceId.MyViewSettingsPageLink + '">' + loadPreferanceId.EditMyViewButtonLableText + '</a>' : '';
-	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + loadPreferanceId["Sections"][idx]["ChannelName"] + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';		
+	var seeAllTopics = data.loadMore && data.loadMore.seeAllLink ? '<a class="seeAllChannels button--filled button--outline mobview" href="' + data.loadMore.seeAllLink + '">' + data.loadMore.seeAllText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</a>' : '';		
 						
 	var loadData = loadPreferanceId["Sections"][idx]["ChannelName"] ? '<div class="latestSubject clearfix" id="' + loadPreferanceId["Sections"][idx].ChannelId + '"><div class="articleloadInfo">'+data.loadMore.currentlyViewingText+'</div><div class="fllatestSub"><span class="sub">' + data.loadMore.latestFromText + ' ' + loadPreferanceId["Sections"][idx]["ChannelName"] + '</span></div><div class="frEditview">' + editMyView + seeAllTopics + '</div></div>' : '',
 	    loadmoreLink = data.loadMore && data.loadMore.displayLoadMore && data.loadMore.displayLoadMore.loadMoreLinkUrl ? data.loadMore.displayLoadMore.loadMoreLinkUrl : '#';
@@ -437,7 +438,8 @@ function createLayoutInner2(data) {
 		sponsored_cont5 = data.articles[5].isSonsoredBy ? 'sponsored_cont' : '',
 		sponsored_cont6 = data.articles[6].isSonsoredBy ? 'sponsored_cont' : '',
 		sponsored_cont7 = data.articles[7].isSonsoredBy ? 'sponsored_cont' : '', 
-		sponsored_cont8 = data.articles[8].isSonsoredBy ? 'sponsored_cont' : '';
+		sponsored_cont8 = data.articles[8].isSonsoredBy ? 'sponsored_cont' : '',
+		tabTexonomy = data.articles[0].listableImage ? 'tabTexonomy' : '';
 		
 	var articleData = '';
 	
@@ -479,7 +481,7 @@ function createLayoutInner2(data) {
 	if (data.articles[0].listableTopics) {
 		for (var i = 0; i < data.articles[0].listableTopics.length; i++) {
 			var getLink0 = data.articles[0].listableTopics[i].linkableUrl ? data.articles[0].listableTopics[i].linkableUrl : '#';
-			articleData += '<a href="' + getLink0 + '">' + data.articles[0].listableTopics[i].linkableText + '</a>';
+			articleData += '<a href="' + getLink0 + '" class="'+tabTexonomy+'">' + data.articles[0].listableTopics[i].linkableText + '</a>';
 		}
 	}
 	articleData += '</div>';
@@ -788,18 +790,30 @@ $(function () {
 							},
 							success: function success(data) {
 								if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+									var docWrite = document.write, googleAdStr = "";
+									document.write=function(str) {
+									  googleAdStr += str;
+									}
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
+										loadLayoutData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
-										window.findTooltips(); 
+										window.findTooltips();
+										
+										$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+										document.write = docWrite;
 									} else {
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
+										loadLayoutData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
-										window.findTooltips(); 
+										window.findTooltips();
+										
+										$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+										document.write = docWrite;
 									}
 								}
 							},
@@ -901,20 +915,32 @@ $(function () {
 				},
 				success: function success(data) {
 					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+						var docWrite = document.write, googleAdStr = "";
+						document.write=function(str) {
+						  googleAdStr += str;
+						}
 						if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 							getscrollData = loadLayoutOneData(data, loadsection);
+							getscrollData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
+							
+							$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+							document.write = docWrite;
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
+							getscrollData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
+							
+							$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+							document.write = docWrite;
 						}
 					}
 				},
@@ -963,14 +989,26 @@ $(function () {
 								},
 								success: function success(data) {
 									if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+										var docWrite = document.write, googleAdStr = "";
+										document.write=function(str) {
+										  googleAdStr += str;
+										}
 										if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
+											loadLayoutData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
-											window.findTooltips(); 
+											window.findTooltips();
+											 
+											$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+											document.write = docWrite;
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
+											loadLayoutData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips(); 
+											
+											$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+											document.write = docWrite;
 										}
 									}
 								},

@@ -57,7 +57,7 @@ namespace Informa.Library.User.Newsletter
                 }
                 var optIns = OptIns = UserContext.IsAuthenticated ? SalesforceConfigurationContext.IsNewSalesforceEnabled ?
                      GetUserProductPreferences.GetProductPreferences<IList<INewsletterUserOptIn>>(UserContext.User,
-                     VerticalRootContext?.Item?.Vertical_Name,
+                     VerticalRootContext?.Item?.Vertical_Preference_Locale,
                      SiteRootContext?.Item?.Publication_Code,
                      ProductPreferenceType.EmailPreference) : NewsletterOptIn.Find(UserContext.User?.Username) : Enumerable.Empty<INewsletterUserOptIn>();
 

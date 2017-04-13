@@ -147,7 +147,7 @@
 	
 	$(document).ready(function() {
 		if($('#casualty-listing-table').length > 0) {
-			if(typeof window.jsonCasualtyListing !== 'undefined'){
+			if(typeof window.jsonCasualtyListing !== 'undefined' && typeof window.jsonCasualtyListing !== 'string'){
 				CasualityListing.init(window.jsonCasualtyListing, $('#casualty-listing-table'));
 			}
 			else{

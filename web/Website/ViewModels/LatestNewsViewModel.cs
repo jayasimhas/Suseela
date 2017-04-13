@@ -172,7 +172,7 @@ namespace Informa.Web.ViewModels
             var title = GetTitleText(string.Join(", ", Topics.Take(take > 0 ? take : 1)));
             if (take > 0)
             {
-                title = title + " &amp;" + Topics.Last();
+                title = title + " &amp; " + Topics.Last();
             }
             return title;
         }
