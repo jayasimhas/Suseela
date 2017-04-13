@@ -33,12 +33,21 @@
                                 <a href="@company.CompanyGraphPageUrl&companyid=@company.CompanyId&graphid=@Graph.GraphID"><div id="@chartDivId"></div></a>
                             </div>
 
-                            <script>
-                                var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                                var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                                var chartData = data[0]["@Graph.GraphID"];
-                                PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
-                            </script>
+                            @if (!string.IsNullOrEmpty(Graph.FinanceResult))
+                            {
+                                <script>
+                                    var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
+                                    var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
+                                    var chartData = data[0]["@Graph.GraphID"];
+                                    PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                                </script>
+                            }
+                            else
+                            {
+                                <script>
+                                    PrintCompanyGraph("", "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                                </script>
+                            }
                         </div>
                     }
                 </li>
