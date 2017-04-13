@@ -22,6 +22,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
 using Informa.Library.Search.ComputedFields.Facets;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
+using System.Diagnostics;
 
 namespace Informa.Web.ViewModels
 {
@@ -53,8 +54,14 @@ namespace Informa.Web.ViewModels
             AuthorService = authorService;
             DcdReader = dcdReader;
 
+            Stopwatch sw = Stopwatch.StartNew();
+            StringExtensions.WriteSitecoreLogs("Reading rendering parameters at:", sw, "Latest News");
+
             Authors = new List<string>();
             Parameters = renderingParametersService.GetCurrentRenderingParameters<ILatest_News_Options>();
+
+            StringExtensions.WriteSitecoreLogs("Reading rendering parameters ends at:", sw, "Latest News");
+
             if (Parameters == null) return;
 
             DisplayTitle = Parameters.Display_Title;
@@ -63,15 +70,24 @@ namespace Informa.Web.ViewModels
             {
                 Text = TextTranslator.Translate("Article.LatestFrom.SeeAllLink")
             } : null;
+
+            StringExtensions.WriteSitecoreLogs("Reading publicationNames at:", sw, "Latest News");
+
             var publicationNames = Parameters.Publications.Any()
                 ? Parameters.Publications.Select(p => p.Publication_Name)
                 : new[] { rootContext.Item.Publication_Name };
+
+            StringExtensions.WriteSitecoreLogs("Reading publicationNames ends at:", sw, "Latest News");
+
+            StringExtensions.WriteSitecoreLogs("Reading Authers at:", sw, "Latest News");
 
             Authors = Parameters.Authors?.Select(p => RemoveSpecialCharactersFromGuid(p._Id.ToString())).ToArray();
             CompanyRecordNumbers = string.IsNullOrEmpty(Parameters.CompanyID)
                 ? (IList<string>)new List<string>()
                 : Parameters.CompanyID.Split(',');
-            
+
+            StringExtensions.WriteSitecoreLogs("Reading Authers ends at:", sw, "Latest News");
+
             if (IsAuthorPage)
             {
                 Author_Page();
@@ -196,6 +212,9 @@ namespace Informa.Web.ViewModels
         private IEnumerable<IListableViewModel> GetLatestNews(Guid datasourceId, IEnumerable<Guid> subjectIds, IEnumerable<string> publicationNames,
             IEnumerable<string> authorGuids, IEnumerable<string> companyRecordNumbers, int itemsToDisplay)
         {
+            Stopwatch sw = Stopwatch.StartNew();
+            StringExtensions.WriteSitecoreLogs("Reading GetLatestNews at:", sw, "Latest News");
+
             var manuallyCuratedContent = ItemManuallyCuratedContent.Get(datasourceId);
             var filter = ArticleSearch.CreateFilter();
 
@@ -214,6 +233,7 @@ namespace Informa.Web.ViewModels
             if (IsAuthorPage) // articles pages are wildcard and don't have a title
                 articles = articles.Select(a => a.Alter(b => b.PageTitle = CurrentAuthorName));
 
+            StringExtensions.WriteSitecoreLogs("Reading GetLatestNews ends at:", sw, "Latest News");
             return articles;
         }
 
