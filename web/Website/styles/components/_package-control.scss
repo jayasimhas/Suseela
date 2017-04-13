@@ -374,6 +374,11 @@
         li {
             display: inline;
 			border-right: 0;
+			img{
+				max-height: 20px;
+				position: relative;
+				top: 4px;
+			}
         }
     }
 	

@@ -11498,6 +11498,10 @@ div#feedbacklite.fbl_r {
     .sponsored_cont ul li {
       display: inline;
       border-right: 0; }
+      .sponsored_cont ul li img {
+        max-height: 20px;
+        position: relative;
+        top: 4px; }
 
 .headercolored_new {
   background: #c15b07;
