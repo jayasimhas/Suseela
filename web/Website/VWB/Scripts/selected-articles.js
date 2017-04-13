@@ -337,6 +337,13 @@ $(document)
 			$('#hdnSelectedMedTypes').val(MediaType_dvStr); 
 		});
 		
+		$('#txtArticleNumber').on('keydown', function(e){
+			if(e.keyCode == 13){
+				e.preventDefault();
+				$('#btnRunReport').trigger('click');
+			}
+		});
+		
 		if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
 			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
 		}
