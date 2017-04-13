@@ -283,6 +283,15 @@ But you can also use "patch:attribute" for clarity:
       <setting name="ExactTarget.ClientId" value="${ExactTarget.ClientId}" />
       <setting name="ExactTarget.SecretKey" value="${ExactTarget.SecretKey}" />
 
+      <!-- Salesforce Fallback Settings -->
+      <setting name="SalesforceSessionFactoryConfiguration.Url" value="${CRMManager.SalesforceUrl}" />
+      <setting name="SalesforceSessionFactoryConfiguration.Username" value="${CRMManager.SalesforceUserName}" />
+      <setting name="SalesforceSessionFactoryConfiguration.Password" value="${CRMManager.SalesforcePassword}" />
+      <setting name="SalesforceSessionFactoryConfiguration.Token" value="${CRMManager.SalesforceToken}" />
+      <setting name="SalesforceSessionFactoryConfiguration.Timeout" value="${CRMManager.SalesforceTimeout}" />
+      <setting name="SalesforceSessionFactoryConfiguration.EbiUrl" value="${CRMManager.EbiUrl}" />
+
+
       <!-- HIDDEN SETTING!  Suggestion from sitecore to speed up the back end content editor. -->
       <setting name="ContentEditor.RenderCollapsedSections" value="false"/>
 
