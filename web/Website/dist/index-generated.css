@@ -4569,7 +4569,11 @@ header .header-account-access {
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
-          font-weight: 400; } }
+          font-weight: 400; }
+          header .header-account-access .myView-placeholder .btn-my-view:hover {
+            background: inherit !important;
+            color: inherit !important;
+            border: inherit !important; } }
       @media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
@@ -4578,7 +4582,11 @@ header .header-account-access {
           width: 70px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
           font-style: normal;
-          font-weight: 400; } }
+          font-weight: 400; }
+          header .header-account-access .myView-placeholder .btn-my-view:hover {
+            background: inherit !important;
+            color: inherit !important;
+            border: inherit !important; } }
     @media (max-width: 1024px) {
       header .header-account-access .myView-placeholder {
         float: right;
