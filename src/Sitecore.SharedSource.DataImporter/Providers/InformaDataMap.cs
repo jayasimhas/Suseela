@@ -605,6 +605,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
 
                                 }
+
+                                if(publication == "Policy & Legislation")
+                                {
+                                    commoditySearchResults = GetListFromXmlusingPublication("Agrow", "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                }
                                 foreach (string agency in agencySearchResults)
                                 {
                                     if (publication == "Commodities")
@@ -1742,7 +1747,44 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                     }
+                    if (publication == "Policy & Legislation")
+                    {
+                        Taxonomy.Add("PolicyTopic", "");
+                        Taxonomy.Add("COMMODITY", "");
+                        Taxonomy.Add("COUNTRY", "");
+                        string PolicyTopic = string.Empty;
+                        string COMMODITY = string.Empty;
+                        string Country = string.Empty;
+                        foreach (XmlNode node in xn)
+                        {
+                            if (node.Attributes["unique-name"] != null)
+                            {
 
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "PolicyTopics", site))
+                                {
+
+                                    PolicyTopic += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["PolicyTopic"] = PolicyTopic;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodity", site))
+                                {
+
+                                    COMMODITY += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COMMODITY"] = COMMODITY;
+                                }
+                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                {
+
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["Country"] = Country;
+
+                                }    
+
+                            }
+
+                        }
+
+                    }
                     if (publication == "Commodities")
                     {
                         Taxonomy.Add("COMMODITY", "");
@@ -1758,36 +1800,27 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                 if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodity", site))
                                 {
-
                                     Commodity += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COMMODITY"] = Commodity;
-
                                 }
                                 else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commercial", site))
                                 {
-
                                     Commercial += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COMMERCIAL"] = Commercial;
-
-
                                 }
                                 else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodityfactor", site))
                                 {
                                     if ((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
                                     {
                                         CommodityFactor += "dairy_markets_analysis_trade_Import" + "," + "dairy_markets_analysis_trade_Export";
-                                        //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Import";
-                                        //countCommodityFactor++;
-                                        //Taxonomy["COMMODITYFACTOR" + countCommodityFactor] = "dairy_markets_analysis_trade_Export";
-                                        //countCommodityFactor++;
+                                        
                                     }
                                     if (!((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
                                     {
                                         CommodityFactor += node.Attributes["unique-name"].Value + ",";
                                         Taxonomy["COMMODITYFACTOR"] = CommodityFactor;
                                     }
-                                    //  countCommodityFactor++;
-
+                                    
                                 }
 
                             }
