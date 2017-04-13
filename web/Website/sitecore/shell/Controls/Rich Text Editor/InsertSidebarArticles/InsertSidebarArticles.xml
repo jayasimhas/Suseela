@@ -59,14 +59,15 @@ jQuery.ajax({
 					else{
 				  		 jQuery('#SearchCombo')
          .append($("<option></option>")
-                    .attr("value",val._Id)					
+                    .attr("value",val._Id)
+					.attr("style","white-space: initial")
                    .text(val._Name));	
 					}				   
 				  });	
 	$('#SearchCombo').change(function() {
-    var id=jQuery( "#SearchCombo option:selected" ).val();
+    var id=jQuery( "#SearchCombo option:selected" ).val();				
 				$('#Filename').val(id);
-				var result=$('#Filename').val();				
+				var result=$('#Filename').val();								
 		});										
 				},
 				error:function(a){				
