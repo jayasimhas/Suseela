@@ -126,7 +126,7 @@ function recreateIds(id){
 	}
 }
 
-function loadAjaxData(){
+function loadAjaxData(curEle){
 	 var ddlVerticals = $('#ddlVerticals').val(), ddlPublications = $('#ddlPublications_sl input[type=checkbox]:checked'), getSelectedVal = '';
 			
 	for (var i = 0; i < ddlPublications.length; i++) {
@@ -145,7 +145,9 @@ function loadAjaxData(){
 		dataType: 'json',
 		type: 'GET',
 		beforeSend: function(){
-			$('.loadingIcon').css('display', 'block');
+			if(curEle !== 'btnRunReport'){
+				$('.loadingIcon').css('display', 'block');
+			}
 		},
 		success: function (data) {
 			loadDropdownVals(data);
@@ -292,7 +294,7 @@ $(document)
 		
         $(document).on('click', '#btnLoadFilters', function () {
 			$('.loadTexonamyData').addClass('in');
-			loadAjaxData();  
+			loadAjaxData('btnLoadFilters');  
         });
 		
 		$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').on('click', 'input[type=checkbox]', function(){
@@ -340,7 +342,7 @@ $(document)
 		}
 		else{
 			//$('.loadTexonamyData').addClass('in');
-			//loadAjaxData();
+			loadAjaxData('btnRunReport');
 		}
     });
 

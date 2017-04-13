@@ -37,6 +37,7 @@ namespace Informa.Library.User.Newsletter
 
             if(SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
+                //Newly selected Newsletter
                 emailnewsletterTypes = newsletterTypes.Except(newsletterUserOptins.Select(s => s.NewsletterType)).ToList();
                 if (emailnewsletterTypes != null && emailnewsletterTypes.Count() > 0)
                 {

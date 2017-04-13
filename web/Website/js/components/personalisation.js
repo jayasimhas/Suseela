@@ -790,20 +790,30 @@ $(function () {
 							},
 							success: function success(data) {
 								if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+									var docWrite = document.write, googleAdStr = "";
+									document.write=function(str) {
+									  googleAdStr += str;
+									}
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
-										$('.spinnerIcon').addClass('hidespin');
-										$('.personalisationPan').append(loadLayoutData);
-										window.findTooltips(); 
-										OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
-									} else {
-										layout1 = true;
-										loadLayoutData = loadLayoutTwoData(data, idx);
+										loadLayoutData += '<div class="loadGoogleAds article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
-										OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
+										
+										$('.loadGoogleAds').html(googleAdStr);
+										document.write = docWrite;
+									} else {
+										layout1 = true;
+										loadLayoutData = loadLayoutTwoData(data, idx);
+										loadLayoutData += '<div class="loadGoogleAds article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+										$('.spinnerIcon').addClass('hidespin');
+										$('.personalisationPan').append(loadLayoutData);
+										window.findTooltips();
+										
+										$('.loadGoogleAds').html(googleAdStr);
+										document.write = docWrite;
 									}
 								}
 							},
@@ -905,22 +915,32 @@ $(function () {
 				},
 				success: function success(data) {
 					if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+						var docWrite = document.write, googleAdStr = "";
+						document.write=function(str) {
+						  googleAdStr += str;
+						}
 						if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 							getscrollData = loadLayoutOneData(data, loadsection);
+							getscrollData += '<div class="loadGoogleAds article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
-							OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
+							
+							$('.loadGoogleAds').html(googleAdStr);
+							document.write = docWrite;
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
+							getscrollData += '<div class="loadGoogleAds article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
-							OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
+							
+							$('.loadGoogleAds').html(googleAdStr);
+							document.write = docWrite;
 						}
 					}
 				},
@@ -969,16 +989,26 @@ $(function () {
 								},
 								success: function success(data) {
 									if (data.articles && typeof data.articles === "object" && data.articles.length >= 9) {
+										var docWrite = document.write, googleAdStr = "";
+										document.write=function(str) {
+										  googleAdStr += str;
+										}
 										if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
+											loadLayoutData += '<div class="loadGoogleAds article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
-											window.findTooltips(); 
-											OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
+											window.findTooltips();
+											 
+											$('.loadGoogleAds').html(googleAdStr);
+											document.write = docWrite;
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
+											loadLayoutData += '<div class="loadGoogleAds article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips(); 
-											OAS_AD('Middle_' + loadPreferanceId["Sections"][idx]["ChannelName"], 'home'); 
+											
+											$('.loadGoogleAds').html(googleAdStr);
+											document.write = docWrite;
 										}
 									}
 								},

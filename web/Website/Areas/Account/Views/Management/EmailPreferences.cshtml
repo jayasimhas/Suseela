@@ -96,13 +96,14 @@
                                     </td>
                                     <td class="sortable-table__col l-centered">
                                         <div class="labeled-checkbox">
-                                            <input name="Publications"
-                                                   id="@newsletterOptIn.value.Publication.Code"
+                                            <input type="hidden" name="NewsletterPublications[@newsletterOptIn.i].publication" value="@newsletterOptIn.value.Publication.Code" />
+                                            <input name="NewsletterPublications[@newsletterOptIn.i].OptIns"
+                                                   id="newsletterPublications"
                                                    class="js-account-email-checkbox"
-                                                   type="checkbox"
-                                                   data-checkbox-type="value"
-                                                   @(newsletterOptIn.value.OptIn ? "checked" : "")
-                                                   value="@newsletterOptIn.value.Publication.Code">
+                                                   type="checkbox" 
+                                                   @(newsletterOptIn.value.OptIn ? "checked='checked'" : string.Empty)
+                                                   data-checkbox-type="boolean"/>
+                                                  
                                             <label class="checkbox-label" for="@newsletterOptIn.value.Publication.Code">Yes</label>
                                         </div>
                                     </td>
