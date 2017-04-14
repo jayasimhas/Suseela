@@ -22,30 +22,22 @@
                 if (data.articles.length > 0) {
                     for (var i = 0; i < 3; i++) {
 						var addCls = (data.articles[i].isSonsoredBy) ? 'sponsored_cont' : '';
-
-							if(data.articles[i].listableImage == null) {
-                
+							var sponsoredByLogo = (data.articles[i].sponsoredByLogo) ? '<li><img src="'+data.articles[i].sponsoredByLogo+'"></li>' : '',
+								sponsoredByTitle = (data.articles[i].sponsoredByTitle) ? '<li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>' : '',
+								listablePublication = (data.articles[i].listablePublication) ? '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' : '',
+								listableImage = (data.articles[i].listableImage) ? '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' : '',
+								listableDate = (data.articles[i].listableDate) ? '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' : '',
+								listableTitle = (data.articles[i].listableTitle) ? '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"What to read next"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' : '',
+								articlemeta = (sponsoredByTitle == '' && sponsoredByLogo == '') ? '' : '<div class="article-metadata"><ul>'+ sponsoredByTitle + sponsoredByLogo +'</ul></div>';
+								;
+							if(data.articles[i].listableImage == null) { 
 								Template += '<div class="section-article '+addCls+'">' +
-          											'<div class="article-metadata">'+
-              											'<ul><li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>'+
-              											'<li><img src="'+data.articles[i].sponsoredByLogo+'"></li></ul>'+
-          											'</div>'+
-                                 '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' +
-                                '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"What to read next"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' +
-                                 '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' +
-                          '</div>';
+												articlemeta + listablePublication + listableTitle + listableDate +
+											'</div>';
                         } else {
-                            Template += '<div class="section-article '+addCls+'">' +
-                      										'<div class="article-metadata">'+
-                      										'<ul><li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>'+
-                      										'<li><img src="'+data.articles[i].sponsoredByLogo+'"></li></ul>'+
-                    										'</div>'+
-										
-                                         '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' +
-                                         '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' +
-                                        '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"What to read next","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"What to read next"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' +
-                                         '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' +
-                                  '</div>';
+								Template += '<div class="section-article '+addCls+'">' +
+												articlemeta + listableImage +  listablePublication +  listableTitle + listableDate +
+											'</div>';
                         }
                     }
                 }
@@ -60,29 +52,27 @@
                 var HeadingAnalytics = $('.suggested-article').find('h2').text();
                 if (data.articles.length > 0) {
                     for (var i = 0; i < 3; i++) {
-						var addCls = (data.articles[i].isSonsoredBy) ? 'sponsored_cont' : '';
+						var addCls = (data.articles[i].isSonsoredBy) ? 'sponsored_cont' : '',
+							sponsoredByLogo = (data.articles[i].sponsoredByLogo) ? '<li><img src="'+data.articles[i].sponsoredByLogo+'"></li>'  : '',
+							sponsoredByTitle = (data.articles[i].sponsoredByTitle) ? '<li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>' : '',
+							listablePublication = (data.articles[i].listablePublication) ? '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' : '',
+							listableImage = (data.articles[i].listableImage) ? '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' : '',
+							listableDate = (data.articles[i].listableDate) ? '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' : '',
+							listableTitle = (data.articles[i].listableTitle) ? '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"Suggested for you"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' : '',
+							articlemeta = (sponsoredByTitle == '' && sponsoredByLogo == '') ? '' : '<div class="article-metadata"><ul>'+ sponsoredByTitle + sponsoredByLogo+ '</ul></div>';
+							
                         if(data.articles[i].listableImage == null) {
+							if(sponsoredByTitle && sponsoredByLogo && listablePublication && listableTitle && listableDate){
                             Template += '<div class="contentRecomm-article '+addCls+'">' +
-										'<div class="article-metadata">'+
-											'<ul><li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>'+
-											'<li><img src="'+data.articles[i].sponsoredByLogo+'"></li></ul>'+
-											'</div>'+
-                                         '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' +
-                                         '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"Suggested for you"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' +
-                                         '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' +
-                                  '</div>';
+											articlemeta + listablePublication + listableTitle + listableDate +
+										'</div>';
+							}
                         } else {
                         Template += '<div class="contentRecomm-article '+addCls+'">' +
-										'<div class="article-metadata">'+
-											'<ul><li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>'+
-											'<li><img src="'+data.articles[i].sponsoredByLogo+'"></li></ul>'+
-											'</div>'+
-                                         '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' +
-                                         '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' +
-                                         '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"Suggested for you"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' +
-                                         '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' +
-                                  '</div>';
-                    }   }
+										articlemeta + listableImage + + listablePublication + listableTitle + listableDate +
+									'</div>';
+						}   
+					}
                 }
 
                 Template += '</div>';

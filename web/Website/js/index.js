@@ -1449,7 +1449,7 @@ $(document).ready(function(){
     });
 	
 	//IPMP-2486
-	if($('.myView-placeholder')){
+	if($('.myView-placeholder').length){
 		$('.header__wrapper').addClass('tabheader_wrapper');
 		$('.header__logo').addClass('tabheader_logo');
 		$('.header-publication-links').addClass('tabheader-publication');
