@@ -141,7 +141,7 @@ function loadAjaxData(curEle){
 	}
 	$.ajax({
 		url: 'api/InformaVWBSearch',
-		data: { 'pId': 'a0163a51-2ff8-4a9c-8fba-6516546e5ae1', 'verticalroot': ddlVerticals, 'pubCode': getSelectedVal, 'plannedpublishdate': txtStart + ';' + txtEnd },
+		data: { 'pId': 'a0163a51-2ff8-4a9c-8fba-6516546e5ae1', 'verticalroot': ddlVerticals, 'PublicationCode': getSelectedVal, 'plannedpublishdate': txtStart + ';' + txtEnd },
 		dataType: 'json',
 		type: 'GET',
 		beforeSend: function(){
