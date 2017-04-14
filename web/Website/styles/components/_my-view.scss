@@ -1,3 +1,7 @@
+@mixin link-myview-btn($c){
+	color: $c !important;
+}
+
 header{
 	.advertising--leaderboard.visible-mobile{
 		display: none;
@@ -55,6 +59,10 @@ header{
 					font-weight: 700;
 					font-size: 0.75em;
 					display: block;
+					@media only screen and (min-device-width: 480px) and (max-device-width: 767px) { 
+						background: inherit !important; 
+						border: inherit !important; 
+					}
 					@include breakpoint('wide'){
 						text-transform: uppercase;
 					}
@@ -62,8 +70,7 @@ header{
 						text-transform: uppercase;
 					}
 					@include breakpoint('medium-small') {
-						background: none; 
-						color: $color-my-view;
+						background: none;  
 						padding: 0;
 						width: auto;
 						font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -71,30 +78,26 @@ header{
 						font-weight: 400;
 					}
 					@include breakpoint('small') {
-						background: none; 
-						color: $color-my-view;
+						background: none;  
 						padding: 0;
 						width: 60px;
 						font-family: 'Roboto', Arial Narrow, sans-serif;
 						font-style: normal;
 						font-weight: 400;
 						&:hover{
-							background: inherit !important;
-							color: inherit !important;
+							background: inherit !important; 
 							border: inherit !important;
 						}
 					}
 					@media only screen and (min-device-width: 414px) and (max-device-width: 767px) { 
-						background: none; 
-						color: $color-my-view;
+						background: none;  
 						padding: 0;
 						width: 70px;
 						font-family: 'Roboto', Arial Narrow, sans-serif;
 						font-style: normal;
 						font-weight: 400;
 						&:hover{
-							background: inherit !important;
-							color: inherit !important;
+							background: inherit !important; 
 							border: inherit !important;
 						}
 					}
@@ -249,6 +252,37 @@ main{
 		.header-account-right-access{
 			&.tabheader-account{
 				margin-top: 25px;
+			}
+		}
+	}
+}
+
+.theme-lloydslist{
+	header .header-account-access .myView-placeholder .btn-my-view{
+		@media only screen and (max-width: 767px){ 
+			@include link-myview-btn(#1191D1);
+			&:hover{
+				@include link-myview-btn(#1191D1);
+			}
+		} 
+	}
+}
+.theme-insurance-day{
+	header .header-account-access .myView-placeholder .btn-my-view{
+		@media only screen and (max-width: 767px){  
+			@include link-myview-btn(#DE4361);
+			&:hover{
+				@include link-myview-btn(#DE4361);
+			}
+		}
+	}
+}
+.theme-commodities{
+	header .header-account-access .myView-placeholder .btn-my-view{
+		@media only screen and (max-width: 767px){ 
+			@include link-myview-btn(#9E310D);
+			&:hover{
+				@include link-myview-btn(#9E310D);
 			}
 		}
 	}
