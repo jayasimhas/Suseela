@@ -16,16 +16,15 @@
                 When the page is reloaded, JS will detect the stashed search and will
                 save the search behind the scenes.
                 * * *@
-            <form
-				method="post"
-                class="@(Model.IsAuthenticated
+            <form method="post"
+                  class="@(Model.IsAuthenticated
                 	? "form-save-search"
                     : "form-save-search-login")"
-                data-on-submit="@(Model.IsAuthenticated
+                  data-on-submit="@(Model.IsAuthenticated
                     ? "/api/SavedSearches"
                     : "/Account/api/LoginWebUserApi/Login/")"
-				data-is-search="@(Model.IsSearch ? "true" : "false")"
-                data-prevent-disabling="true">
+                  data-is-search="@(Model.IsSearch ? "true" : "false")"
+                  data-prevent-disabling="true">
 
 
                 @* * *
@@ -36,27 +35,36 @@
                 @if (!Model.IsAuthenticated)
                 {
                     <h3 class="pop-out__register-header">@Html.Raw(Model.SignInText)</h3>
-
-                    <div class="pop-out__show-hide--bordered-bottom js-login-container">
-
-                        <div class="pop-out__form-error js-form-error js-form-error-general">
-                            @Model.SignInViewModel.SignInInvalidText
+                    if (Model.IsNewSalesforceEnabled)
+                    {
+                        <div>
+                            @{ Html.RenderPartial("_SignInForm", Model.SignInViewModel); }
                         </div>
+                    }
+                    else
+                    {
+                        <div class="pop-out__show-hide--bordered-bottom js-login-container">
 
-                        <input name="username"
-                               class="pop-out__input header__hover-input"
-                               placeholder="@Model.SignInViewModel.SignInUsernamePlaceholderText"
-                               type="text">
-                        <input name="password"
-                               class="pop-out__input header__hover-input"
-                               placeholder="@Model.SignInViewModel.SignInPasswordPlaceholderText"
-                               type="password">
+                            <div class="pop-out__form-error js-form-error js-form-error-general">
+                                @Model.SignInViewModel.SignInInvalidText
+                            </div>
 
-                        <span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">@Model.SignInViewModel.SignInResetPasswordLinkText</span>
-                        <div class="pop-out__sign-in-remember-me">
-                            <input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInViewModel.SignInRememberMeText
+                            <input name="username"
+                                   class="pop-out__input header__hover-input"
+                                   placeholder="@Model.SignInViewModel.SignInUsernamePlaceholderText"
+                                   type="text">
+                            <input name="password"
+                                   class="pop-out__input header__hover-input"
+                                   placeholder="@Model.SignInViewModel.SignInPasswordPlaceholderText"
+                                   type="password">
+
+                            <span class="pop-out__form-actions pop-out__reset-password js-show-forgot-password">@Model.SignInViewModel.SignInResetPasswordLinkText</span>
+                            <div class="pop-out__sign-in-remember-me">
+                                <input name="persist" type="checkbox" data-checkbox-type="boolean"> @Model.SignInViewModel.SignInRememberMeText
+                            </div>
                         </div>
-                    </div>
+                    }
+
 
                 } @* end IsAuthenticated *@
 
@@ -66,81 +74,84 @@
                         @Html.Raw(Model.TitleLabelText)
                     </h4>
                 }
-                <div class="pop-out__save-search-container">
-                    @if (Model.IsSearch)
-                    {
-                        <p class="pop-out__error js-form-error js-form-error-EmptyTitle">
-                            @Html.Raw(Model.TitleFieldRequiredText)
-                        </p>
+                @if (!Model.IsNewSalesforceEnabled)
+                {
+                    <div class="pop-out__save-search-container">
+                        @if (Model.IsSearch)
+                        {
+                            <p class="pop-out__error js-form-error js-form-error-EmptyTitle">
+                                @Html.Raw(Model.TitleFieldRequiredText)
+                            </p>
 
-                        <input type="text"
-                               name="Title"
-                               class="pop-out__input pop-out__input--tight js-save-search-title"
-                               value="">
+                            <input type="text"
+                                   name="Title"
+                                   class="pop-out__input pop-out__input--tight js-save-search-title"
+                                   value="">
 
-                        <input type="hidden"
-                               name="Url"
-                               class="js-save-search-url"
-                               value="">
+                            <input type="hidden"
+                                   name="Url"
+                                   class="js-save-search-url"
+                                   value="">
 
-                        <p class="pop-out__details">
-                            @Html.Raw(Model.SearchDescriptionText)
-                        </p>
+                            <p class="pop-out__details">
+                                @Html.Raw(Model.SearchDescriptionText)
+                            </p>
 
-                        <div class="labeled-checkbox pop-out__save-search-email-alert">
-                            <input type="checkbox"
+                                    <div class="labeled-checkbox pop-out__save-search-email-alert">
+                                        <input type="checkbox"
+                                               id="AlertEnabled"
+                                               name="AlertEnabled"
+                                               data-checkbox-type="boolean"
+                                               checked="checked">
+                                        <label class="checkbox-label" for="AlertEnabled">
+                                            @Html.Raw(Model.EmailAlertLabelText)
+                                        </label>
+                                    </div>
+                        }
+                        else
+                        {
+                            <input type="hidden"
+                                   name="Title"
+                                   class="js-save-search-title" value="">
+
+                            <input type="hidden"
+                                   name="Url"
+                                   class="js-save-search-url"
+                                   value="">
+
+                            <input type="hidden"
                                    id="AlertEnabled"
                                    name="AlertEnabled"
-                                   data-checkbox-type="boolean"
-                                   checked="checked">
-                            <label class="checkbox-label" for="AlertEnabled">
-                                @Html.Raw(Model.EmailAlertLabelText)
-                            </label>
-                        </div>
-					}
-                    else
-                    {
-                        <input type="hidden"
-                               name="Title"
-                               class="js-save-search-title" value="">
+                                   value="true">
 
-                        <input type="hidden"
-                               name="Url"
-                               class="js-save-search-url"
-                               value="">
+                            <p class="pop-out__details">
 
-                        <input type="hidden"
-                               id="AlertEnabled"
-                               name="AlertEnabled"
-                               value="true">
+                                @* * *
+                                    Commenting this out because we'll need to dynamically insert the
+                                    topic title, and there's nothing in the original ticket requiring
+                                    that the description text is in the Dictionary.
 
-                        <p class="pop-out__details">
+                                    Html.Raw(Model.TopicDescriptionText)
 
-							@* * *
-							Commenting this out because we'll need to dynamically insert the
-							topic title, and there's nothing in the original ticket requiring
-							that the description text is in the Dictionary.
+                                    * * *@
 
-							Html.Raw(Model.TopicDescriptionText)
+                                Your alert for <span class="js-save-search-title"></span> will be saved to your account - "Saved Searches and Alerts".
+                            </p>
+                        }
 
-							* * *@
+                        <button type="submit"
+                                class="pop-out__sign-in-submit button--filled"
+                                ng-click="searchIsSaved = true">
 
-							Your alert for <span class="js-save-search-title"></span> will be saved to your account - "Saved Searches and Alerts".
-                        </p>
-					}
-
-                    <button
-						type="submit"
-						class="pop-out__sign-in-submit button--filled"
-						ng-click="searchIsSaved = true">
-
-                        @(Model.IsAuthenticated
+                            @(Model.IsAuthenticated
                               ? @Html.Raw(Model.ButtonLoggedInText)
                               : @Html.Raw(Model.ButtonLoggedOutText))
 
-                    </button>
+                        </button>
 
-                </div>
+                    </div>
+                }
+                
 
             </form>
 
@@ -178,6 +189,7 @@
                         </p>
                     </form>
 
-                </div>} @* end IsAuthenticated *@</div> @* .pop-out__sign-in *@
-    </div> @* .pop-out__internal *@
-</div> @* .pop-out *@
+                </div>} @* end IsAuthenticated *@
+            </div> @* .pop-out__sign-in *@
+        </div> @* .pop-out__internal *@
+    </div> @* .pop-out *@
