@@ -3163,7 +3163,133 @@
         </reg>
       </region>
     </AnimalPharm>
-    <PolicyandLeg></PolicyandLeg>
+    <PolicyandLeg>
+      <contenttype>
+        <cont name="agra_europe">News</cont>
+        <cont name="agra_europe_analysis">Analysis</cont>
+        <cont name="agra_europe_features">Analysis</cont>
+        <cont name="agra_europe_brussels_blog">Opinion</cont>
+        <cont name="agra_europe_multimedia">Analysis</cont>
+        <cont name="agra_europe_policy_and_legislation">News</cont>
+        <cont name="agra_europe_policy_and_legislation_eu">News</cont>
+        <cont name="agra_europe_policy_and_legislation_cap">News</cont>
+        <cont name="agra_europe_policy_and_legislation_bioenergy">News</cont>
+        <cont name="agra_europe_policy_and_legislation_biotechnology">News</cont>
+        <cont name="agra_europe_policy_and_legislation_environment">News</cont>
+        <cont name="agra_europe_policy_and_legislation_international_policy">News</cont>
+        <cont name="agra_europe_policy_and_legislation_trade_policy">News</cont>
+        <cont name="agra_europe_meat_livestock">News</cont>
+        <cont name="agra_europe_meat_livestock_beef">News</cont>
+        <cont name="agra_europe_meat_livestock_pigmeat">News</cont>
+        <cont name="agra_europe_meat_livestock_poultry">News</cont>
+        <cont name="agra_europe_meat_livestock_sheep_and_goats">News</cont>
+        <cont name="food_chemical_news">News</cont>
+        <cont name="food_chemical_news_editors_view">Opinion</cont>
+        <cont name="food_chemical_news_agriculture_animal_health_and_welfare">News</cont>
+        <cont name="food_chemical_news_agriculture_biotechnology">News</cont>
+        <cont name="food_chemical_news_agriculture_good_agricultural_practices">News</cont>
+        <cont name="food_chemical_news_agriculture_organic">News</cont>
+        <cont name="food_chemical_news_agriculture_pesticides">News</cont>
+        <cont name="food_chemical_news_food_safety">News</cont>
+        <cont name="food_chemical_news_food_safety_additives_processing_agents">News</cont>
+        <cont name="food_chemical_news_food_safety_allergens_contaminants">News</cont>
+        <cont name="food_chemical_news_food_safety_fsma">News</cont>
+        <cont name="food_chemical_news_food_safety_haccp_and_cgmps">News</cont>
+        <cont name="food_chemical_news_food_safety_imports_exports">News</cont>
+        <cont name="food_chemical_news_food_safety_outbreaks_and_recalls">News</cont>
+        <cont name="food_chemical_news_food_safety_packaging">News</cont>
+        <cont name="food_chemical_news_food_safety_research">News</cont>
+        <cont name="food_chemical_news_food_safety_traceability">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_compliance_enforcement">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_fda">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_labeling_and_advertising">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_legislation_">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_petitions">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_states">News</cont>
+        <cont name="food_chemical_news_legal_and_regulatory_usda">News</cont>
+        <cont name="food_chemical_news_world">News</cont>
+        <cont name="food_chemical_news_world_asia_pacific">News</cont>
+        <cont name="food_chemical_news_world_codex_international_bodies">News</cont>
+        <cont name="food_chemical_news_world_europe">News</cont>
+        <cont name="food_chemical_news_world_latin_america">News</cont>
+        <cont name="food_chemical_news_world_north_america">News</cont>
+        <cont name="food_chemical_news_world_trade_disputes">News</cont>
+      </contenttype>
+      <commodity>
+        <comm name="agra_europe_meat_livestock"><![CDATA[Meat & Livestock]]></comm>
+        <comm name="agra_europe_meat_livestock_beef"><![CDATA[Cattle & Beef]]></comm>
+        <comm name="agra_europe_meat_livestock_pigmeat"><![CDATA[Hogs & Pork]]></comm>
+        <comm name="agra_europe_meat_livestock_poultry">Poultry</comm>
+        <comm name="agra_europe_meat_livestock_sheep_and_goats"><![CDATA[Sheep & Goats]]></comm>
+      </commodity>
+      <PolicyTopics>
+        <PolicyTopic name="food_chemical_news">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_editors_view">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_agriculture_animal_health_and_welfare">Animal Health</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_agriculture_animal_health_and_welfare">Animal Welfare</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_agriculture_biotechnology">Biotechnology</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_agriculture_good_agricultural_practices"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_agriculture_organic">Organics</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_agriculture_pesticides"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_additives_processing_agents">Additives</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_allergens_contaminants">Allergens</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_fsma">FSMA</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_haccp_and_cgmps"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_imports_exports"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_outbreaks_and_recalls"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_packaging"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_research">Food Technology</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_food_safety_traceability"><![CDATA[Food Safety & Standards]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_legal_and_regulatory_compliance_enforcement"><![CDATA[Compliance & Enforcement]]></PolicyTopic>
+        <PolicyTopic name="food_chemical_news_legal_and_regulatory_labeling_and_advertising">Labelling</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_world_asia_pacific">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_world_codex_international_bodies">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_world_europe">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_world_latin_america">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_world_north_america">Policy Topic</PolicyTopic>
+        <PolicyTopic name="food_chemical_news_world_trade_disputes">Trade Disputes</PolicyTopic>
+        <PolicyTopic name="agra_europe">Policy Topic</PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation">Policy Topic</PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation_eu">Policy Topic</PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation_cap">CAP</PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation_bioenergy">Renewable Energy</PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation_biotechnology">Biotechnology</PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation_environment"><![CDATA[Environment & Conservation]]></PolicyTopic>
+        <PolicyTopic name="agra_europe_policy_and_legislation_international_policy">Policy Topic</PolicyTopic>
+      </PolicyTopics>
+      <region>
+        <reg name="food_chemical_news">United States</reg>
+        <reg name="food_chemical_news_editors_view">United States</reg>
+        <reg name="food_chemical_news_agriculture_animal_health_and_welfare">United States</reg>
+        <reg name="food_chemical_news_agriculture_biotechnology">United States</reg>
+        <reg name="food_chemical_news_agriculture_good_agricultural_practices">United States</reg>
+        <reg name="food_chemical_news_agriculture_organic">United States</reg>
+        <reg name="food_chemical_news_agriculture_pesticides">United States</reg>
+        <reg name="food_chemical_news_food_safety">United States</reg>
+        <reg name="food_chemical_news_food_safety_additives_processing_agents">United States</reg>
+        <reg name="food_chemical_news_food_safety_allergens_contaminants">United States</reg>
+        <reg name="food_chemical_news_food_safety_fsma">United States</reg>
+        <reg name="food_chemical_news_food_safety_haccp_and_cgmps">United States</reg>
+        <reg name="food_chemical_news_food_safety_imports_exports">United States</reg>
+        <reg name="food_chemical_news_food_safety_outbreaks_and_recalls">United States</reg>
+        <reg name="food_chemical_news_food_safety_packaging">United States</reg>
+        <reg name="food_chemical_news_food_safety_research">United States</reg>
+        <reg name="food_chemical_news_food_safety_traceability">United States</reg>
+        <reg name="food_chemical_news_legal_and_regulatory_compliance_enforcement">United States</reg>
+        <reg name="food_chemical_news_legal_and_regulatory_labeling_and_advertising">United States</reg>
+        <reg name="food_chemical_news_legal_and_regulatory_legislation_">United States</reg>
+        <reg name="food_chemical_news_legal_and_regulatory_petitions">United States</reg>
+        <reg name="food_chemical_news_world">International</reg>
+        <reg name="food_chemical_news_world_asia_pacific">Asia Pacific</reg>
+        <reg name="food_chemical_news_world_codex_international_bodies">International</reg>
+        <reg name="food_chemical_news_world_europe">Europe</reg>
+        <reg name="food_chemical_news_world_latin_america">South America</reg>
+        <reg name="food_chemical_news_world_north_america">North America</reg>
+        <reg name="food_chemical_news_world_trade_disputes">International</reg>
+      </region>
+    </PolicyandLeg>
   </Agri>
   <Maritime>
     <country>
@@ -4403,7 +4529,6 @@
         <reg name="countries-democraticrepubliccongo">Congo</reg>
         <reg name="countries-congo">Congo</reg>
       </country>
-      
       <market>
         <mark name="drybulk">Dry Bulk</mark>
         <mark name="tankers">Tankers and Gas</mark>

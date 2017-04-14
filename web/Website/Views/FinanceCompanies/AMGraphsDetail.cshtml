@@ -1,60 +1,9 @@
 ﻿@model Informa.Web.ViewModels.FinanceCompanies.CompanyGraphViewModel
+<script src="~/js/components/AMchartsGroup.js"></script>
 <script type="text/javascript" src="/dist/js/amcharts.js"></script>
 <script type="text/javascript" src="/dist/js/serial.js"></script>
-<script type="text/javascript">
-    function PrintCompanyGraph(chartData, divId, graphType, color) {
-            AmCharts.makeChart(divId,
-                            {
-                                "type": "serial",
-                                "categoryField": "year",
-                                "dataDateFormat": "YYYY",
-                                "handDrawScatter": 4,
-                                "theme": "default",
-                                "categoryAxis": {
-                                    "minPeriod": "YYYY",
-                                    "parseDates": true,
-                                    "gridPosition": "start",
-                                    "autoGridCount": true
-                                },
-                                "chartCursor": {
-                                    "enabled": true,
-                                    "animationDuration": 0,
-                                    "categoryBalloonDateFormat": "YYYY"
-                                },
-                                "trendLines": [],
-                                "graphs": [
-                                    {
-                                        "fillAlphas": 0.7,
-                                        "id": "AmGraph-1",
-                                        "lineAlpha": 0,
-                                        "title": "graph 1",
-                                        "valueField": "value",
-                                        "type": graphType,
-                                        "lineColor": "#" + color,
-                                        "fillColor": "#" + color,
-                                        "startDuration": 0,
-                                        "startRadius": "100%",
-                                        "balloonText": "[[category]]: [[value]]"
-                                    }
-                                ],
-                                "guides": [],
-                                "valueAxes": [
-                                    {
-                                        "id": "ValueAxis-1",
-                                        "title": ""
-                                    }
-                                ],
-                                "allLabels": [],
-                                "balloon": {},
-                                "dataProvider": chartData
-                            }
-                        );
-    }
-   
-</script>
-
-    <div class="compareChart">
-    <h4 class="showinMob">@Model.AvailableGraphsText</h4> 
+<div class="compareChart">
+    <h4 class="showinMob">@Model.AvailableGraphsText</h4>
     <div class="showAll">
         <a class="expandAll" href="javascript: void(0);">@Model.ExpandAll</a><a> / </a><a class="collapseAll" href="javascript: void(0);">@Model.CollapseAll</a>
     </div>
@@ -68,17 +17,26 @@
             </div>
             <div class="graph-container lightgray-body hide">
                 <div id="chartdiv_@Graph.GraphID" style="height:220px;"></div>
-                <script>
-                    var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                    var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                    var chartData = data[0]["@Graph.GraphID"];
-                    PrintCompanyGraph(chartData, "chartdiv_@Graph.GraphID", "@Graph.GraphType", "@Graph.GraphColor")
-                </script>
+                @if(!string.IsNullOrEmpty(Graph.FinanceResult))
+                {
+                    <script>
+                        var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
+                        var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
+                        var chartData = data[0]["@Graph.GraphID"];
+                        PrintCompanyGraph(chartData, "chartdiv_@Graph.GraphID", "@Graph.GraphType", "@Graph.GraphColor")
+                    </script>
+                }
+                else
+                {
+                    <script>
+                        PrintCompanyGraph("", "chartdiv_@Graph.GraphID", "@Graph.GraphType", "@Graph.GraphColor")
+                    </script>
+                }
             </div>
         </div>
-        
+
     }
-        </div>
+</div>
 
 
 

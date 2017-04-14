@@ -40,9 +40,9 @@ namespace Informa.Library.CustomSitecore.RTECustomization
     public class InsertSidebarArticles : DialogForm
     {
         #region Fields
-        
+
         protected Edit Filename;
-        protected Edit searchText;       
+        protected Edit searchText;
         protected Combobox VerticalCombo;
         protected string articleType;
         protected string itemID;
@@ -92,12 +92,12 @@ namespace Informa.Library.CustomSitecore.RTECustomization
         /// </summary>
         /// <param name="e"></param>
         protected override void OnLoad(System.EventArgs e)
-        {           
+        {
             Assert.ArgumentNotNull((object)e, "e");
             base.OnLoad(e);
             if (Context.ClientPage.IsEvent)
                 return;
-            this.Mode = WebUtil.GetQueryString("mo");           
+            this.Mode = WebUtil.GetQueryString("mo");
         }
 
 
@@ -112,27 +112,31 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             Assert.ArgumentNotNull(args, "args");
             articleType = WebUtil.GetQueryString("articletype");
             itemID = WebUtil.GetQueryString("itemid");
-          
+
             if (!string.IsNullOrEmpty(Filename.Value))
             {
-                //var selectedId = "{" + Filename.Value + "}";
-                var returnText = SetReturnText(itemID, articleType, Filename.Value);
-                if (articleType == "sidebar")
-                    SheerResponse.Eval("scClose(" + StringUtil.EscapeJavascriptString(returnText) + ")");
-                else if (articleType == "referenced")
+                if (Filename.Value == "No results found")
                 {
-                    SheerResponse.Eval("scCloseAndUpdateReferencedArticles(" + StringUtil.EscapeJavascriptString(returnText) + ")");                 
+                    SheerResponse.Alert("Please select a valid article");
+                }
+                else
+                {
+                    var returnText = SetReturnText(itemID, articleType, Filename.Value);
+                    if (articleType == "sidebar")
+                        SheerResponse.Eval("scClose(" + StringUtil.EscapeJavascriptString(returnText) + ")");
+                    else if (articleType == "referenced")
+                    {
+                        SheerResponse.Eval("scCloseAndUpdateReferencedArticles(" + StringUtil.EscapeJavascriptString(returnText) + ")");
+                    }
                 }
             }
             else
-                SheerResponse.Alert("Please select atleast one article");         
+                SheerResponse.Alert("Please select atleast one article");
         }
 
 
         public string SetReturnText(string currentItemId, string articleType, string selectedItemId)
         {
-            //UpdateReferencedArticles(currentItemId, selectedItemId);
-
             string placeholder = string.Empty;
             if (!string.IsNullOrEmpty(articleType))
             {

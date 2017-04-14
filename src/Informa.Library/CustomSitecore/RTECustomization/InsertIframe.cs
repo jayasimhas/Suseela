@@ -71,7 +71,8 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             if (!string.IsNullOrEmpty(desktopIframeCode))
             {               
                 var desktopNode = HtmlNode.CreateNode(desktopIframeCode);
-                if (IsSecure(desktopNode) && IsValidInput(desktopNode))
+                string source = desktopNode.GetAttributeValue("src", "");
+                if ((IsSecure(source) || IsRelativeUrl(source)) && IsValidInput(desktopNode))
                 {
                     string html = BuildHtml().ToString();
                     //encode it and send it back to the rich text editor
@@ -101,10 +102,9 @@ namespace Informa.Library.CustomSitecore.RTECustomization
         /// </summary>
         /// <param name="node"></param>
         /// <returns></returns>
-        private bool IsSecure(HtmlNode node)
-        {
-            string source = node.GetAttributeValue("src", "");
-            if (!string.IsNullOrEmpty(source) && source.Contains("https"))
+        private bool IsSecure(string url)
+        {           
+            if (!string.IsNullOrEmpty(url) && url.Contains("https"))
                 return true;
             else
                 return false;
@@ -116,6 +116,12 @@ namespace Informa.Library.CustomSitecore.RTECustomization
                 return false;
             else
                 return true;
+        }
+
+        private bool IsRelativeUrl(string url)
+        {
+            Uri result;
+            return Uri.TryCreate(url, UriKind.Relative, out result);
         }
 
         /// <summary>
@@ -176,7 +182,8 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             if (!string.IsNullOrEmpty(memIframeMobile.Value))
             {               
                 var mobileEmbedNode =HtmlNode.CreateNode(memIframeMobile.Value);
-                if (IsSecure(mobileEmbedNode) && IsValidInput(mobileEmbedNode))
+                string source = mobileEmbedNode.GetAttributeValue("src", "");
+                if (IsSecure(source) && IsValidInput(mobileEmbedNode))
                 {
                     var iframeMobileElement = MobileOrDesktopEmbed(iframeGroupId, true);
                     iframeMobileElement.SetAttributeValue("data-embed-link", "enabled");
