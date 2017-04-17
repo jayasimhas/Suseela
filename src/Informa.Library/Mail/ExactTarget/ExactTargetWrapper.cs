@@ -5,14 +5,18 @@ using FuelSDK;
 using Informa.Library.Utilities.References;
 using Informa.Library.Utilities.Settings;
 using Jabberwocky.Autofac.Attributes;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
+using Sitecore.Data.Items;
+using Sitecore.Configuration;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Informa.Library.Mail.ExactTarget
 {
     public interface IExactTargetWrapper
     {
-        ExactTargetResponse CreateEmail(ET_Email etEmail);
-        ExactTargetResponse UpdateEmail(ET_Email etEmail);
-        string EtFrontEndUrl { get; }
+        ExactTargetResponse CreateEmail(ET_Email etEmail, Item currentSiteRoot);
+        ExactTargetResponse UpdateEmail(ET_Email etEmail, Item currentSiteRoot);
+        //string EtFrontEndUrl { get; }
     }
 
     [AutowireService]
@@ -20,44 +24,66 @@ namespace Informa.Library.Mail.ExactTarget
     {
         private readonly IDependencies _dependencies;
 
-        private const string EtFrontEndUrlFormat = "https://mc{0}.exacttarget.com/cloud/#app/Email/C12/Default.aspx?entityID=0%23Content";
+        //private const string EtFrontEndUrlFormat = "https://mc{0}.exacttarget.com/cloud/#app/Email/C12/Default.aspx?entityID=0%23Content";
 
         [AutowireService(true)]
         public interface IDependencies
         {
             ISiteSettings SiteSettings { get; }
+
         }
 
         public ExactTargetWrapper(IDependencies dependencies)
         {
             _dependencies = dependencies;
-        }
+        }       
 
         private bool IsSandbox => _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetUseSandbox)
             .Equals("true", StringComparison.InvariantCultureIgnoreCase);
 
-        public string EtFrontEndUrl => string.Format(
-            EtFrontEndUrlFormat, (IsSandbox ? ".test" : string.Empty));
 
+        //public string EtFrontEndUrl => string.Format(
+        //    EtFrontEndUrlFormat, (IsSandbox ? ".test" : string.Empty));
 
-        private ET_Client CreateClient()
+        private ET_Client CreateClient(Item currentSiteRoot)
         {
-            var clientId = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetClientId);
-            var clientSecret = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetSecretKey);
-            var sandbox = IsSandbox ? "true" : "false";
-
-            return
-                new ET_Client(new NameValueCollection
+            try
+            {
+                var exactTargetConfigID = currentSiteRoot.Fields[ISite_ConfigConstants.Exact_Target_ConfigFieldName].Value;
+                if (!string.IsNullOrEmpty(exactTargetConfigID))
                 {
-                    {nameof(clientId), clientId}, 
+                    var ETConfigItem = currentSiteRoot.Database.GetItem(exactTargetConfigID);
+                    string clientId = string.Empty;
+                    string clientSecret = string.Empty;
+                    if (ETConfigItem != null)
+                    {
+                        clientId = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.ClientIdFieldName].Value;
+                        clientSecret = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.SecretKeyFieldName].Value;
+                    }
+                    var sandbox = IsSandbox ? "true" : "false";
+                    return
+                            new ET_Client(new NameValueCollection
+                            {
+                    {nameof(clientId), clientId},
                     {nameof(clientSecret), clientSecret},
                     {nameof(sandbox), sandbox}
-                });
+                            });
+                }
+            }
+            catch (Exception)
+            {
+                Sitecore.Diagnostics.Log.Error("Exact target field values empty", currentSiteRoot.ID);
+            }
+            return null;           
+
+            //var clientId = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetClientId);           
+            //var clientSecret = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetSecretKey);
+
         }
 
-        public ExactTargetResponse CreateEmail(ET_Email etEmail)
+        public ExactTargetResponse CreateEmail(ET_Email etEmail, Item currentSiteRoot)
         {
-            var client = CreateClient();
+            var client = CreateClient(currentSiteRoot);
             etEmail.AuthStub = client;
             var response = etEmail.Post();
             var result = response.Results.FirstOrDefault();
@@ -75,9 +101,9 @@ namespace Informa.Library.Mail.ExactTarget
             };
         }
 
-        public ExactTargetResponse UpdateEmail(ET_Email etEmail)
+        public ExactTargetResponse UpdateEmail(ET_Email etEmail, Item currentSiteRoot)
         {
-            var client = CreateClient();
+            var client = CreateClient(currentSiteRoot);
             etEmail.AuthStub = client;
             var response = etEmail.Patch();
 
@@ -93,6 +119,8 @@ namespace Informa.Library.Mail.ExactTarget
                 Message = response.Message
             };
         }
+
+
     }
 
     public class ExactTargetResponse

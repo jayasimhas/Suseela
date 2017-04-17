@@ -4,12 +4,14 @@ using Informa.Library.Utilities.Extensions;
 using Informa.Library.Wrappers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
 using Jabberwocky.Autofac.Attributes;
+using Sitecore.Data.Items;
+using Sitecore.Configuration;
 
 namespace Informa.Library.Mail.ExactTarget
 {
     public interface IExactTargetClient
     {
-        PushEmailResponse PushEmail(IExactTarget_Email emailItem);
+        PushEmailResponse PushEmail(IExactTarget_Email emailItem, Item currentSiteRoot);
     }
 
     [AutowireService]
@@ -39,7 +41,7 @@ namespace Informa.Library.Mail.ExactTarget
         private static bool IsNullOrEmptyEmailItem(IExactTarget_Email emailItem)
             => emailItem == null || emailItem._Id == Guid.Empty;
 
-        public PushEmailResponse PushEmail(IExactTarget_Email emailItem)
+        public PushEmailResponse PushEmail(IExactTarget_Email emailItem, Item currentSiteroot)
         {
             if (IsNullOrEmptyEmailItem(emailItem))
             { return Respond(false, "Email not pushed to ExactTarget. Email item was null."); }
@@ -59,9 +61,10 @@ namespace Informa.Library.Mail.ExactTarget
                 return Respond(false, $"Failed to populate email to send to ExactTarget.  Error: {ex.Message}");
             }
 
+
             var response = IsEmailNewToExactTarget(emailItem)
-                ? _dependencies.ExactTargetWrapper.CreateEmail(etEmail)
-                : _dependencies.ExactTargetWrapper.UpdateEmail(etEmail);
+                ? _dependencies.ExactTargetWrapper.CreateEmail(etEmail, currentSiteroot)
+                : _dependencies.ExactTargetWrapper.UpdateEmail(etEmail, currentSiteroot);
 
             if (response.Success && IsEmailNewToExactTarget(emailItem)) { UpdateSitecoreWithEmailId(emailItem, response); }
 
