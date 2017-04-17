@@ -125,9 +125,10 @@ namespace Informa.Library.Services.Sitemap
 
         public string GetNewsSitemapXML()
         {
+            Stopwatch sw = Stopwatch.StartNew();
+            XmlDocument doc = new XmlDocument();
             try
-            {
-                Stopwatch sw = Stopwatch.StartNew();
+            {                
                 var home = SitecoreContext.GetHomeItem<IHome_Page>();
                 string publisherName = TextTranslator.Translate("Article.PubName");
                 string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
@@ -135,7 +136,7 @@ namespace Informa.Library.Services.Sitemap
                 IEnumerable<IArticle> items = GetNewsPages(home._Path);
 
                 //start xml doc
-                XmlDocument doc = new XmlDocument();
+                
                 //xml declaration
                 XmlNode declarationNode = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
                 doc.AppendChild(declarationNode);
@@ -203,15 +204,13 @@ namespace Informa.Library.Services.Sitemap
                     </news:news>
                     </url>
                 </urlset>
-                */
-
-                return doc.OuterXml;
+                */                
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                StringExtensions.WriteSitecoreLogs("GetNewsSitemapXML Exception :" + ex.Message, sw, "SitemapService");
             }
+            return doc.OuterXml;
         }
 
         private XmlNode MakeNode(XmlDocument doc, string nodeName, string nodeValue = "")
@@ -262,7 +261,7 @@ namespace Informa.Library.Services.Sitemap
             try
             {
                 Stopwatch sw = Stopwatch.StartNew();
-                string duration = !string.IsNullOrEmpty(TextTranslator.Translate("Sitemap.Cache.Clear.Time")) ? TextTranslator.Translate("MainNavigation.Menu.Cache.Time") : "180";
+                string duration = !string.IsNullOrEmpty(TextTranslator.Translate("Sitemap.Cache.Clear.Time")) ? TextTranslator.Translate("Sitemap.Cache.Clear.Time") : "180";
                 int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
 
                 string cacheKey = "SitemapTotalItemCount";
@@ -284,7 +283,6 @@ namespace Informa.Library.Services.Sitemap
                             && !j.ExcludeFromGoogleSearch).Take(1);
 
                         var results = query.GetResults();
-
                         StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method read from sitecore at :", sw, "SitemapService");
                         HttpRuntime.Cache.Add(cacheKey, results.TotalSearchResults, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
                         return results.TotalSearchResults;
@@ -293,8 +291,7 @@ namespace Informa.Library.Services.Sitemap
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                  throw ex;
             }
         }
         //ISW-1202 Modified Code
@@ -304,7 +301,7 @@ namespace Informa.Library.Services.Sitemap
             {
                 Stopwatch sw = Stopwatch.StartNew();
                 int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
-                string duration = !string.IsNullOrEmpty(TextTranslator.Translate("Sitemap.Cache.Clear.Time")) ? TextTranslator.Translate("MainNavigation.Menu.Cache.Time") : "180";
+                string duration = !string.IsNullOrEmpty(TextTranslator.Translate("Sitemap.Cache.Clear.Time")) ? TextTranslator.Translate("Sitemap.Cache.Clear.Time") : "180";
                 string cacheKey = "Sitemap200ItemsPageNo"+pageNo;
 
                 if (HttpRuntime.Cache[cacheKey] != null)
@@ -397,7 +394,6 @@ namespace Informa.Library.Services.Sitemap
                     //int TotalArticles = GetAllPages(home._Path).Count();
                     //ISW-1202 Modified Code
                     int TotalArticles = GetAllPagesCount(home._Path);
-
                     int TotalCount = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(TotalArticles) / Convert.ToDecimal(pageSize)));
 
                     //start xml doc
@@ -433,6 +429,7 @@ namespace Informa.Library.Services.Sitemap
                         XmlNode sitemapNode = MakeNode(doc, "sitemap");
                         lastNode.AppendChild(sitemapNode);
                         sitemapNode.AppendChild(MakeNode(doc, "loc", url));
+                        StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML method document creation :" + doc.OuterXml, sw, "SitemapService");
                     }
 
                     xmlResult = doc.OuterXml;
@@ -440,16 +437,17 @@ namespace Informa.Library.Services.Sitemap
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    StringExtensions.WriteSitecoreLogs("Reached GetSitemapXML Exception :" + ex.Message , sw, "SitemapService");
+                    // throw ex;
                 }
                 #endregion
             }
             else
             {
                 #region Get Sitemap Page
+                Stopwatch sw = Stopwatch.StartNew();
                 try
-                {
-                    Stopwatch sw = Stopwatch.StartNew();
+                {                    
                     var home = SitecoreContext.GetHomeItem<IHome_Page>();
                     string domain = $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}";
                     //start xml doc
@@ -527,7 +525,7 @@ namespace Informa.Library.Services.Sitemap
                 }
                 catch (Exception ex)
                 {
-                    throw ex;
+                    StringExtensions.WriteSitecoreLogs("GetSitemapXML method else Condition Exception :" + ex.Message, sw, "SitemapService");
                 }
                 #endregion
             }
