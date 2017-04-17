@@ -16965,16 +16965,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IMarket_Data_Component_ParametersConstants.Table_Result_Feed_URL_FieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Table_Result_Feed_URL { get; set; }
-        /// <summary>
-        /// Additional Feed URL field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line-Text</para>		
-        /// <para>Field ID: 8DF5488F-2928-4988-8C1B-39E37FF66AEA</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMarket_Data_Component_ParametersConstants.Additional_Feed_URL_FieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Additional_Feed_URL { get; set; }
+        string Table_Result_Feed_URL { get; set; }      
         /// <summary>
         /// Data Provider field.
         /// <para></para>
@@ -17047,17 +17038,7 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         /// <para>Custom Data: </para>
         /// </summary>
         [SitecoreField(IMarket_Data_Component_ParametersConstants.Table_Result_Feed_URL_FieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Table_Result_Feed_URL { get; set; }
-        /// <summary>
-        /// Additional Feed URL field.
-        /// <para></para>
-        /// <para>Field Type: Single-Line-Text</para>		
-        /// <para>Field ID: 8DF5488F-2928-4988-8C1B-39E37FF66AEA</para>
-        /// <para>Custom Data: </para>
-        /// </summary>
-        [SitecoreField(IMarket_Data_Component_ParametersConstants.Additional_Feed_URL_FieldName, Setting = SitecoreFieldSettings.InferType)]
-        string Additional_Feed_URL { get; set; }
-        /// <summary>
+        string Table_Result_Feed_URL { get; set; }       
         /// Data Provider field.
         /// <para></para>
         /// <para>Field Type: Single-Line-Text</para>		
@@ -17100,13 +17081,11 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Componen
         public const string Dropdowns_Feed_URL_FieldName = "Dropdowns Feed URL";
 
         public static readonly ID Table_Result_Feed_URL_FieldId = new ID("AD308A63-2B08-4705-9CDC-AEA6B6CD2394");
-        public const string Table_Result_Feed_URL_FieldName = "Table Result Feed URL";
-
-        public static readonly ID Additional_Feed_URL_FieldId = new ID("8DF5488F-2928-4988-8C1B-39E37FF66AEA");
-        public const string Additional_Feed_URL_FieldName = "Additional Feed URL";
+        public const string Table_Result_Feed_URL_FieldName = "Table Result Feed URL";        
 
         public static readonly ID DataProvider_FieldId = new ID("008C67CB-077A-47F1-B7C4-B702F37EB29B");
         public const string DataProvider_FieldName = "Data Provider";
+
         public static readonly ID ProviderLogo_FieldId = new ID("6A373742-5E47-4E8E-83BA-7B0A7BCDA90E");
         public const string ProviderLogo_FieldName = "Provider Logo";
 
