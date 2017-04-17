@@ -198,7 +198,7 @@ function createLayoutInner1(data) {
 	}
 	else{
 		articleData += '<div class="article-metadata nosponsored_cont">';
-		articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[4].listableTitle + '</a></h1>' : '';
+		articleData += data.articles[4].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl4 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[4].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[4].listableTitle + '</a></h1>' : '';
 		articleData += '</div>';
 	}
 
@@ -211,7 +211,7 @@ function createLayoutInner1(data) {
 	}
 	else{
 		articleData += '<div class="article-metadata nosponsored_cont">';
-		articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl3 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[5].listableTitle + '</a></h1>' : '';
+		articleData += data.articles[5].listableTitle ? '<h1 class="article-preview_rheadline"><a href="' + linkableUrl5 + '" class="click-utag" data-info=\'{"event_name":"article_click_through","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"My View Page Articles","ga_eventAction":"' + analytics_data["publication"] + '","ga_eventLabel":"' + data.articles[5].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '"}\'>' + data.articles[5].listableTitle + '</a></h1>' : '';
 		articleData += '</div>';
 	}
 
