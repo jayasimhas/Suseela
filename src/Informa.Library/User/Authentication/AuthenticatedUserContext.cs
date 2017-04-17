@@ -99,7 +99,8 @@ namespace Informa.Library.User.Authentication
                 if (!string.IsNullOrEmpty(username))
                 {
                     string uToken = username.Contains("|") ? username.Split('|')[1] : string.Empty;
-                    IAuthenticatedUser user = new AuthenticatedUser() { Username = username, AccessToken = uToken };
+                    string uName = username.Contains("|") ? username.Split('|')[0] : username;
+                    IAuthenticatedUser user = new AuthenticatedUser() { Username = uName, AccessToken = uToken };
                     var sitecoreUsername = VirtualUsernameFactory.Create(user);
                     var sitecoreVirtualUser = AuthenticationManager.BuildVirtualUser(sitecoreUsername, true);
                     var userProfile = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
