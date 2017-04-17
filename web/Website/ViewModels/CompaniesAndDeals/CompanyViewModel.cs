@@ -37,16 +37,17 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             RedirectIfRecordId(RecordNumber);
 
             Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
-            if (Company == null) RedirectTo404();
-
-            Content = _dependencies.CachedXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
-            if (Content == null) RedirectTo404();
+            if (Company == null) { RedirectTo404(); }
+            else
+            {
+                Content = _dependencies.CachedXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
+                if (Content == null) RedirectTo404();
+            }
         }
 
         private void RedirectTo404()
         {
-            if(!_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
-            _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/companies/{RecordNumber}",true);
+            _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/companies/{RecordNumber}");
         }
 
         private void RedirectIfRecordId(string segment)
@@ -59,8 +60,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             var company = _dependencies.DcdReader.GetCompanyByRecordId(id);
             if ((company?.RecordNumber).HasContent())
             {
-                if(!_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
-                _dependencies.HttpContextProvider.Current.Response.Redirect($"/companies/{company.RecordNumber}",true);
+                _dependencies.HttpContextProvider.Current.Response.Redirect($"/companies/{company.RecordNumber}");
             }
         }
 
