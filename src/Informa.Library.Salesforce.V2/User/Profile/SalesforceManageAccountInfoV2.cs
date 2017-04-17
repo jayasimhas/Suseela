@@ -154,7 +154,7 @@ ISalesforceInfoLogger infoLogger,
                     var responseString = result.Content.ReadAsStringAsync().Result;
                     InfoLogger.Log(responseString, this.GetType().Name);
 
-                    if (!result.IsSuccessStatusCode || !string.IsNullOrWhiteSpace(responseString))
+                    if (!result.IsSuccessStatusCode || !string.IsNullOrWhiteSpace(responseString.Replace("\"\"", string.Empty)))
                     {
                         return WriteErrorResult(RequestFailedKey);
                     }
