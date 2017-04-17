@@ -138,18 +138,12 @@
     }
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation4)
     {
-        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        if (!string.IsNullOrEmpty(Model.jsonTableData))
         {
             <script type="text/javascript">
                 var currentFleetTableData=@Html.Raw(Model.jsonTableData);
             </script>
-        }
-        if (!string.IsNullOrEmpty(Model.jsonAdditionalTableData))
-        {
-            <script type="text/javascript">
-                var onOrderTableData=@Html.Raw(Model.jsonAdditionalTableData);
-            </script>
-        }
+        }       
         <div class="table-responsive" id="tanker-Pure-ChemPage">
             <h2>@Model.PageTitle</h2>
             <h3 class="lli-brand-head-wide-trans">@Model.TableTitle</h3>
@@ -163,11 +157,6 @@
             </div>
             <div class="ID-Responsive-Table" data-modal="modal-annualresults" id="tankerPureChemPage">
             </div>
-            @if (!string.IsNullOrEmpty(Model.jsonAdditionalTableData))
-            {
-                <div class="ID-Responsive-Table" data-modal="modal-annualresults" id="onOrderTable">
-                </div>
-            }
             <div class="additional-info">
                 @Html.Raw(Model.AdditionalInfo)
             </div>
@@ -221,7 +210,7 @@
     }
     else if (Model.RenderingParameters.TableType.Value == Constants.MarketDataTableTypes.Variation6)
     {
-        if (!string.IsNullOrEmpty(Model.jsonDropdownData))
+        if (!string.IsNullOrEmpty(Model.jsonTableData))
         {
             <script type="text/javascript">
                 var jsonCockettBunker=@Html.Raw(Model.jsonTableData);

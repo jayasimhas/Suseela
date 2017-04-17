@@ -74,7 +74,70 @@
                         @Html.Raw(Model.TitleLabelText)
                     </h4>
                 }
-                @if (!Model.IsNewSalesforceEnabled)
+                @if (Model.IsNewSalesforceEnabled)
+                {
+                    <div class="pop-out__save-search-container">
+                        @if (Model.IsSearch)
+                        {
+                            <p class="pop-out__error js-form-error js-form-error-EmptyTitle">
+                                @Html.Raw(Model.TitleFieldRequiredText)
+                            </p>
+
+                            <input type="text"
+                                   name="Title"
+                                   class="pop-out__input pop-out__input--tight js-save-search-title"
+                                   value="">
+
+                            <input type="hidden"
+                                   name="Url"
+                                   class="js-save-search-url"
+                                   value="">
+                        
+                                    <div class="labeled-checkbox pop-out__save-search-email-alert">
+                                        <input type="checkbox"
+                                               id="AlertEnabled"
+                                               name="AlertEnabled"
+                                               data-checkbox-type="boolean"
+                                               checked="checked">
+                                        <label class="checkbox-label" for="AlertEnabled">
+                                            @Html.Raw(Model.EmailAlertLabelText)
+                                        </label>
+                                    </div>
+                        }
+                        else
+                        {
+                            <input type="hidden"
+                                   name="Title"
+                                   class="js-save-search-title" value="">
+
+                            <input type="hidden"
+                                   name="Url"
+                                   class="js-save-search-url"
+                                   value="">
+
+                            <input type="hidden"
+                                   id="AlertEnabled"
+                                   name="AlertEnabled"
+                                   value="true">
+                           
+                        }
+                        @if (Model.IsAuthenticated)
+                        {
+                            <button type="submit"
+                                    class="pop-out__sign-in-submit button--filled"
+                                    ng-click="searchIsSaved = true">
+
+                                @(Model.IsAuthenticated
+                              ? @Html.Raw(Model.ButtonLoggedInText)
+                              : @Html.Raw(Model.ButtonLoggedOutText))
+
+                            </button>
+                        }
+                        
+
+                    </div>
+                }
+                else
                 {
                     <div class="pop-out__save-search-container">
                         @if (Model.IsSearch)
@@ -97,16 +160,16 @@
                                 @Html.Raw(Model.SearchDescriptionText)
                             </p>
 
-                                    <div class="labeled-checkbox pop-out__save-search-email-alert">
-                                        <input type="checkbox"
-                                               id="AlertEnabled"
-                                               name="AlertEnabled"
-                                               data-checkbox-type="boolean"
-                                               checked="checked">
-                                        <label class="checkbox-label" for="AlertEnabled">
-                                            @Html.Raw(Model.EmailAlertLabelText)
-                                        </label>
-                                    </div>
+                            <div class="labeled-checkbox pop-out__save-search-email-alert">
+                                <input type="checkbox"
+                                       id="AlertEnabled"
+                                       name="AlertEnabled"
+                                       data-checkbox-type="boolean"
+                                       checked="checked">
+                                <label class="checkbox-label" for="AlertEnabled">
+                                    @Html.Raw(Model.EmailAlertLabelText)
+                                </label>
+                            </div>
                         }
                         else
                         {
@@ -151,7 +214,7 @@
 
                     </div>
                 }
-                
+
 
             </form>
 

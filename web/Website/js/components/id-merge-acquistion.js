@@ -160,7 +160,7 @@
 			if($(window).width() < 668) {
 				InputValues = $('.merge-form-items input');
 			}
-			InputValues.on('keyup', function() {
+			InputValues.on('keyup', function(e) {
 				var textFieldValue = $(this).val(),
 					DealType = $(this).attr('deal'),
 					Index = $(this).parents('th').index(),
@@ -170,7 +170,8 @@
 					FilteredArray = [],
 					Obj = {},
 					StartField = Parent.find('.range-field')[0].value,
-					EndField = Parent.find('.range-field')[1].value;
+					EndField = Parent.find('.range-field')[1].value,
+					$this = $(this);
 
 
 				if($(window).width() < 668) {
@@ -259,11 +260,34 @@
 					FilteredArray = window.jsonMergeAcquistion;
 				}
 				self.CurrentArray = FilteredArray;
-				self.autoSuggest(self.CurrentArray);
-				$(this).focus();
+
+				if(textFieldValue.length > 0) {
+					setTimeout(function (argument) {
+						if($(window).width() > 667) {
+							self.autoSuggestCheck($this, $this.next().html().toLowerCase(), FilteredArray, DealType);
+						}
+					}, 100)
+				}
+				
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
+		},
+		autoSuggestCheck: function(div, divValue, data, DealType) {
+			var count = 0;
+			if(DealType != 'Month') {
+				for(var k in data) {
+					var Text = (data[k][DealType].includes('<a href=')) ? $(data[k][DealType]).text() : data[k][DealType];
+					if(Text.toLowerCase() == divValue) {
+						count++;
+					}
+				}
+				if(count == 0) {
+					$(div).next().html('');
+				} else {
+					$(div).next().html(divValue);
+				}
+			}
 		},
 		YearChange: function() {
 			$(document).on('change', '.idYearSelect', function() {
@@ -350,27 +374,29 @@
 						}
 					}
 				}
-				var AcquirerValue = $('tr.visible-lg input[deal="Acquirer"]').val();
-				$('tr.visible-lg input[deal="Acquirer"]').remove();
-				$($('tr.visible-lg th .field-wrap')[1]).html('<input type="text" name="" deal="Acquirer">');
 				$('tr.visible-lg input[deal="Acquirer"]').suggest(haystackAcquirer);
 
-				var TargetValue = $('tr.visible-lg input[deal="Target"]').val();
-				$('tr.visible-lg input[deal="Target"]').remove();
-				$($('tr.visible-lg th .field-wrap')[2]).html('<input type="text" name="" deal="Target">');
 				$('tr.visible-lg input[deal="Target"]').suggest(haystackTarget);
 
-				var TargetValue = $('tr.visible-lg input[deal="TargetSector"]').val();
-				$('tr.visible-lg input[deal="TargetSector"]').remove();
-				$($('tr.visible-lg th .field-wrap')[3]).html('<input type="text" name="" deal="TargetSector">');
 				$('tr.visible-lg input[deal="TargetSector"]').suggest(haystackTargetSector);
 
-				var TargetValue = $('tr.visible-lg input[deal="TargetLocation"]').val();
-				$('tr.visible-lg input[deal="TargetLocation"]').remove();
-				$($('tr.visible-lg th .field-wrap')[4]).html('<input type="text" name="" deal="TargetLocation">');
 				$('tr.visible-lg input[deal="TargetLocation"]').suggest(haystackTargetLocation);
 		},
-		scrollbarSticky: function() {},
+		keyPressEvent: function () {
+			$(document).on('keydown', '.merge-acquistion th input:focus', function(e) {
+				if(e.keyCode == 9) {
+					if($(e.target).hasClass('detail-text-field')) {
+						$('tr.visible-lg .range-field.start').focus();
+					} else if($(e.target).hasClass('start')) { 
+						$('tr.visible-lg .range-field.end').focus();
+					}else {
+						$(this).parents('th').next().find('input').focus();	
+					}
+					return false;
+				}
+
+			});
+		},
 		init: function(data, Parent) {
 			this.CurrentArray = data;
 			this.RenderDesktopVersion(data, Parent);
@@ -383,8 +409,9 @@
 			
 			if($(window).width() > 667) {
 				this.autoSuggest(data);
+				this.keyPressEvent();
 			}
-			this.scrollbarSticky();
+			
 		}
 	}
 
