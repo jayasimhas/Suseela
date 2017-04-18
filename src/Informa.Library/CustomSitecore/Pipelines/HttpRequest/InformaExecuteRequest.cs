@@ -12,14 +12,17 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
         public override void Process(HttpRequestArgs args)
         {
+            Sitecore.Diagnostics.Log.Info("Started InformaExecuteRequest", " InformaExecuteRequest ");
             _args = args;
             base.Process(args);
+            Sitecore.Diagnostics.Log.Info("End of InformaExecuteRequest", " InformaExecuteRequest ");
         }
 
         protected override void RedirectOnItemNotFound(string url)
         {
             try
             {
+
                 //string notFoundContent = WebUtil.ExecuteWebPage("/");
                 //if (string.IsNullOrWhiteSpace(notFoundContent))
                 //{

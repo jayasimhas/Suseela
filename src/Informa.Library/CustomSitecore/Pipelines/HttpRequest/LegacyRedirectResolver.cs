@@ -48,6 +48,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
         public void Process(HttpRequestArgs args)
         {
+            Sitecore.Diagnostics.Log.Info("Started LegacyRedirectResolver", " LegacyRedirectResolver ");
             Models.Informa.Models.sitecore.templates.User_Defined.Configuration.ISite_Root siteRoot = null;
             Logger.SitecoreDebug($"LegacyRedirectResolver started");
             Assert.ArgumentNotNull(args, "args");
@@ -130,6 +131,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
                 Logger.SitecoreError("Could not get site configuration to serve a 404 page for the request " + args.LocalPath, ex,
                     this);
             }
+            Sitecore.Diagnostics.Log.Info("Ended LegacyRedirectResolver", " LegacyRedirectResolver");
         }
 
         public IArticleSearchResults GetResultsByPath(string filePath)
