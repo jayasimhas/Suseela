@@ -7,6 +7,8 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Glass.Models;
 using NSubstitute;
 using NUnit.Framework;
+using Sitecore.Data.Items;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Tests.Library.Mail_Tests
 {
@@ -29,7 +31,7 @@ namespace Informa.Tests.Library.Mail_Tests
             // ARRANGE
 
             // ACT
-            _exactTargetClient.PushEmail(null);
+            _exactTargetClient.PushEmail(null, null);
 
             // ASSERT
             _dependencies.LogWrapper.Received(1).SitecoreWarn(Arg.Any<string>());
@@ -92,7 +94,7 @@ namespace Informa.Tests.Library.Mail_Tests
                 Message = "fun was had by all"
 
             };
-            _dependencies.ExactTargetWrapper.CreateEmail(Arg.Any<ET_Email>()).Returns(fakeCreateResponse);
+            _dependencies.ExactTargetWrapper.CreateEmail(Arg.Any<ET_Email>(), Arg.Any<Item>()).Returns(fakeCreateResponse);
         }
 
         [Test]
@@ -110,11 +112,11 @@ namespace Informa.Tests.Library.Mail_Tests
             _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
 
             // ACT
-            _exactTargetClient.PushEmail(fakeEmailItem);
+            _exactTargetClient.PushEmail(fakeEmailItem, null);
 
             // ASSERT
             _dependencies.ExactTargetWrapper.Received(1)
-                .CreateEmail(Arg.Is<ET_Email>(email => email.HTMLBody == "<div><h1>Moose</h1></div>"));
+                .CreateEmail(Arg.Is<ET_Email>(email => email.HTMLBody == "<div><h1>Moose</h1></div>"), null);
         }
 
         [Test]
@@ -122,6 +124,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
+            var siteroot = SiteRootHelper.GetSiteRoot(Arg.Any<Item>());
             fakeEmailItem.Exact_Target_External_Key = 77;
 
             var fakeUpdateResponse = new ExactTargetResponse
@@ -130,7 +133,7 @@ namespace Informa.Tests.Library.Mail_Tests
                 Success = true,
                 Message = "fun was had by all"
             };
-            _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
+            _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>(), Arg.Any<Item>()).Returns(fakeUpdateResponse);
             _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem)
                 .Returns("http://Mooseville.com/emails/MeetTheMoose");
             _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
@@ -139,11 +142,11 @@ namespace Informa.Tests.Library.Mail_Tests
                 .Returns("<div><h1>Moose Update!</h1></div>");
 
             // ACT
-            _exactTargetClient.PushEmail(fakeEmailItem);
+            _exactTargetClient.PushEmail(fakeEmailItem, siteroot);
 
             // ASSERT
             _dependencies.ExactTargetWrapper.Received(1)
-                .UpdateEmail(Arg.Is<ET_Email>(email => email.HTMLBody == "<div><h1>Moose Update!</h1></div>"));
+                .UpdateEmail(Arg.Is<ET_Email>(email => email.HTMLBody == "<div><h1>Moose Update!</h1></div>"), Arg.Any<Item>());
         }
 
         [Test]
@@ -151,6 +154,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
+            var siteroot = SiteRootHelper.GetSiteRoot(Arg.Any<Item>());
             fakeEmailItem.Exact_Target_External_Key = 0;
             Sub_CreateResult();
 
@@ -163,7 +167,7 @@ namespace Informa.Tests.Library.Mail_Tests
 
 
             // ACT
-            _exactTargetClient.PushEmail(fakeEmailItem);
+            _exactTargetClient.PushEmail(fakeEmailItem, siteroot);
 
             // ASSERT
             _dependencies.SitecoreSecurityWrapper.Received(1).WithSecurityDisabled(Arg.Any<Action>());
@@ -176,6 +180,7 @@ namespace Informa.Tests.Library.Mail_Tests
         {
             // ARRANGE
             var fakeEmailItem = Sub_EmailItem();
+            var siteroot = SiteRootHelper.GetSiteRoot(Arg.Any<Item>());
             fakeEmailItem.Exact_Target_External_Key = 77;
 
             var fakeUpdateResponse = new ExactTargetResponse
@@ -184,7 +189,7 @@ namespace Informa.Tests.Library.Mail_Tests
                 Success = false,
                 Message = "nobody had fun!"
             };
-            _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>()).Returns(fakeUpdateResponse);
+            _dependencies.ExactTargetWrapper.UpdateEmail(Arg.Any<ET_Email>(), Arg.Any<Item>()).Returns(fakeUpdateResponse);
 
             _dependencies.SitecoreUrlWrapper.GetItemUrl(fakeEmailItem).Returns("http://Mooseville.com/emails/MeetTheMoose");
             _dependencies.WebClientWrapper.DownloadString("http://Mooseville.com/emails/MeetTheMoose")
@@ -193,7 +198,7 @@ namespace Informa.Tests.Library.Mail_Tests
             _dependencies.Premailer.InlineCss(Arg.Any<string>()).Returns(x => x.Arg<string>());
 
             // ACT
-            _exactTargetClient.PushEmail(fakeEmailItem);
+            _exactTargetClient.PushEmail(fakeEmailItem, siteroot);
 
             // ASSERT
             _dependencies.LogWrapper.Received().SitecoreWarn(Arg.Is<string>(s => s.Contains("nobody had fun!")));

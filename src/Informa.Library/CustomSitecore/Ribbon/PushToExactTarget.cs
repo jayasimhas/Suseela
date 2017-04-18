@@ -1,10 +1,13 @@
 ﻿using Autofac;
 using Glass.Mapper.Sc;
 using Informa.Library.Mail.ExactTarget;
+using Informa.Library.Utilities.CMSHelpers;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Jabberwocky.Glass.Autofac.Util;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
+using System.Linq;
 
 namespace Informa.Library.CustomSitecore.Ribbon
 {
@@ -17,14 +20,23 @@ namespace Informa.Library.CustomSitecore.Ribbon
 
             using (var scope = AutofacConfig.ServiceLocator.BeginLifetimeScope())
             {
-                var response = scope.Resolve<IExactTargetClient>().PushEmail(emailItem);
+                var currentSiteRoot = SiteRootHelper.GetSiteRoot(item);
+                var response = scope.Resolve<IExactTargetClient>().PushEmail(emailItem, currentSiteRoot);
 
                 SheerResponse.Alert(response.Message);
 
                 if (response.Success)
                 {
-                    var targetUrl = scope.Resolve<IExactTargetWrapper>().EtFrontEndUrl;
-                    SheerResponse.Eval($"window.open('{targetUrl}');");
+                    var exactTargetConfig = currentSiteRoot.Fields[ISite_ConfigConstants.Exact_Target_ConfigFieldName].Value;
+                    var ETConfig = currentSiteRoot.Database.GetItem(exactTargetConfig);
+                    if (ETConfig != null)
+                    {
+                        Sitecore.Data.Fields.LinkField link = ETConfig.Fields
+                            [IExactTarget_ConfigurationConstants.Exact_Target_UrlFieldName];
+                        SheerResponse.Eval($"window.open('{link.Url}');");
+                    }
+                    else
+                        SheerResponse.Alert("Target Url is not valid");
                 }
             }
         }
