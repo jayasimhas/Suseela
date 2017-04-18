@@ -553,6 +553,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             string AnimalHealthNew = "";
                             string CropProtection = "";
                             string Commercial = "";
+                            string PolicyTopics = "";
 
                             if (site != "Maritime")
                             {
@@ -583,6 +584,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 List<string> animalhealthnewSearchResults = null;
                                 List<string> cropprotectionSearchResults = null;
                                 List<string> agrowcommercialSearchResults = null;
+                                List<string> policyTopicsearchResults = null;
 
 
 
@@ -604,14 +606,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     commoditySearchResults = GetListFromXmlusingPublication(publication, "commoditysearch", site).FindAll(s => specialcommoditysearch.ToLower().Contains(" " + s + " "));
                                     commoditynewSearchResults = GetListFromXmlusingPublication(publication, "commoditynewsearch", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                     commodityfactorSearchResults = GetListFromXmlusingPublication(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
-
-
-
                                 }
 
                                 if(publication == "Policy & Legislation")
                                 {
                                     commoditySearchResults = GetListFromXmlusingPublication("Agrow", "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
+                                    policyTopicsearchResults = GetListFromXmlusingPublication(publication, "policytopicsearch", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                 }
                                 foreach (string agency in agencySearchResults)
                                 {
@@ -657,7 +657,15 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                                     }
                                 }
+                                if (policyTopicsearchResults != null)
+                                {
+                                    foreach (string policyTopics in policyTopicsearchResults)
+                                    {
+                                        
+                                            PolicyTopics += policyTopics + ",";
 
+                                    }
+                                }
 
 
                                 if (cropprotectionSearchResults != null)
@@ -794,6 +802,22 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 ao.Add("COMMERCIAL", Commercial);
                             }
 
+                            if (ao.ContainsKey("PolicyTopic"))
+                            {
+                                if (PolicyTopics != "")
+                                {
+
+                                    PolicyTopics = ao["PolicyTopic"].ToString() + PolicyTopics;
+                                    ao.Remove("PolicyTopic");
+                                    ao.Add("PolicyTopic", PolicyTopics);
+
+                                }
+                            }
+                            else
+                            {
+
+                                ao.Add("PolicyTopic", PolicyTopics);
+                            }
 
 
                             if (Companies == "")
@@ -1779,9 +1803,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         Taxonomy.Add("PolicyTopic", "");
                         Taxonomy.Add("COMMODITY", "");
                         Taxonomy.Add("COUNTRY", "");
+                        Taxonomy.Add("Agency", "");
                         string PolicyTopic = string.Empty;
                         string COMMODITY = string.Empty;
                         string Country = string.Empty;
+                        string Agency = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -1793,19 +1819,26 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     PolicyTopic += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["PolicyTopic"] = PolicyTopic;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodity", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodity", site))
                                 {
 
                                     COMMODITY += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COMMODITY"] = COMMODITY;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
                                 {
 
                                     Country += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["Country"] = Country;
 
-                                }    
+                                }
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "Agency", site))
+                                {
+
+                                    Agency += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["Agency"] = Agency;
+
+                                }
 
                             }
 
@@ -1817,9 +1850,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         Taxonomy.Add("COMMODITY", "");
                         Taxonomy.Add("COMMODITYFACTOR", "");
                         Taxonomy.Add("COMMERCIAL", "");
+                        Taxonomy.Add("COUNTRY", "");
                         string Commodity = string.Empty;
                         string CommodityFactor = string.Empty;
                         string Commercial = string.Empty;
+                        string Country = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -1830,12 +1865,18 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     Commodity += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COMMODITY"] = Commodity;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commercial", site))
+
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "region", site))
+                                {
+                                    Country += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["COUNTRY"] = Country;
+                                }
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commercial", site))
                                 {
                                     Commercial += node.Attributes["unique-name"].Value + ",";
                                     Taxonomy["COMMERCIAL"] = Commercial;
                                 }
-                                else if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodityfactor", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "commodityfactor", site))
                                 {
                                     if ((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
                                     {
