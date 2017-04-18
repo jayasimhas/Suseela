@@ -97,7 +97,16 @@ Telerik.Web.UI.Editor.CommandList["ApplyStyles"] = function (commandName, editor
 				editor.pasteHtml("<div class="">"+html+"</div>");
 				 // args.set_cancel(true);
 			} */
-	
+	var Items = args._tool._items,
+		Heading = "";
+	for(var i = 0; i < Items.length; i++) {
+		if(Items[i][0] == val) {
+			Heading = Items[i][1];
+			break;
+		}
+	};
+	args._tool._element.childElements()[0].style.width = "165px";
+	args._tool._element.childElements()[0].innerText = Heading;
 };
 
 function scRTEManager(sender, returnValue) {
