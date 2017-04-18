@@ -25,7 +25,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
-//import './components/article-sidebar-component';
+import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
@@ -1454,5 +1454,5 @@ $(document).ready(function(){
 		$('.header__logo').addClass('tabheader_logo');
 		$('.header-publication-links').addClass('tabheader-publication');
 		$('.header-account-right-access').addClass('tabheader-account');
-	}
+	} 
 });
