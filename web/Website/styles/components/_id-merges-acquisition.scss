@@ -108,6 +108,7 @@
 	 }
 	.table.merge-acquistion {
 		border-top: none;
+		table-layout: fixed;
 		.suggest-more{
 			display: none !important;
 		}

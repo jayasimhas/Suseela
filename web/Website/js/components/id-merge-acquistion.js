@@ -109,10 +109,16 @@
 				console.log(SortingArray);
 				if(Category === 'month' || Category === 'number') {
 					if(Type === 'ascending') {
+						if(self.isSorted(SortingArray)) {
+							return;
+						}
 						SortingArray.sort(function(a, b){
 						  return a - b;
 						});
 					} else {
+						if(self.isSortedReverse(SortingArray)) {
+							return;
+						}
 						SortingArray.sort(function(a, b){
 						  return b - a;
 						});
@@ -130,7 +136,13 @@
 				for(var i in SortingArray) {
 					for(var j in CurrentItem) {
 						if(CurrentItem[j] != undefined) {
-							if(SortingArray[i] == CurrentItem[j][SortingType]) {
+							var tempItem = null;
+							if(CurrentItem[j][SortingType].includes('<a href')) {
+								tempItem = $(CurrentItem[j][SortingType]).text();
+							} else {
+								tempItem = CurrentItem[j][SortingType];
+							}
+							if(SortingArray[i] == tempItem) {
 								SortedElements.push(CurrentItem[j]);
 								CurrentItem = CurrentItem.filter(function(item, index) { 
 								    return CurrentItem[index] !== CurrentItem[j];
@@ -153,6 +165,24 @@
 				self.RenderDesktopVersion(self.CurrentArray, $('.merge-acquistion'));
 				self.RenderMobileVersion(self.CurrentArray, $('.merge-acquistion'));
 			});
+		},
+		isSorted: function(arr) {
+		    var len = arr.length - 1;
+		    for(var i = 0; i < len; ++i) {
+		        if(arr[i] > arr[i+1]) {
+		            return false;
+		        }
+		    }
+		    return true;
+		},
+		isSortedReverse: function(arr) {
+		    var len = arr.length - 1;
+		    for(var i = 0; i < len; ++i) {
+		        if(arr[i] < arr[i+1]) {
+		            return false;
+		        }
+		    }
+		    return true;
 		},
 		FilterEvent: function(data, Parent) {
 			var InputValues = Parent.find('th').find('input'),
