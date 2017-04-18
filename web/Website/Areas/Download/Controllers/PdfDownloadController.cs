@@ -311,14 +311,6 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
-                //var liNodes = ReqdDoc.DocumentNode.SelectNodes("//ul/li")?.ToList();
-                //if (liNodes != null)
-                //{
-                //    foreach (var liNode in liNodes)
-                //    {
-                //        liNode.SetAttributeValue("style", "height:12px; background: url('" + domain + "/~/media/Icons/PDF%20Icons/arrowpdf.gif') 0 0 no-repeat;");
-                //    }
-                //}
                 var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
                 if (articleNodes != null && articleNodes.Any())
                 {

@@ -1,1 +1,41 @@
-﻿
+﻿.article-exhibit__caption {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    width: 73%;
+}
+
+p {
+    color: #58595b;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+.article-interview__question {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #231f20;
+    padding-left: 40px;
+    padding-left: 2.5rem;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+li p{
+    background-image: url('https://commodities.dev.ide.informa.com/-/media/Icons/PDF%20Icons/arrowpdf.gif');
+    padding-left: 11em; 
+    color: #ff0000 !important;
+
+}
