@@ -4,6 +4,7 @@ using Informa.Library.Rss;
 using Newtonsoft.Json;
 using Sitecore.Configuration;
 using Sitecore.Diagnostics;
+using System.Net.Http;
 
 namespace Informa.Library.Search.Utilities
 {
@@ -12,22 +13,37 @@ namespace Informa.Library.Search.Utilities
         private static string WebClientAuthUsernameSetting = "WebClientAuth.Username";
         private static string WebClientAuthPasswordSetting = "WebClientAuth.Password";
         private static string WebClientAuthDomainSetting = "WebClientAuth.Domain";
+        private static HttpClient client = null;
+        private static readonly object padlock = new object();
+        public static HttpClient HttpClientInstance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (client == null)
+                    {
+                        if (AuthenticateWebClientApiCall())
+                        {
+                            var handler = new HttpClientHandler { Credentials = new NetworkCredential(Settings.GetSetting(WebClientAuthUsernameSetting), Settings.GetSetting(WebClientAuthPasswordSetting), Settings.GetSetting(WebClientAuthDomainSetting)) };
+                            client = new HttpClient(handler);
+                        }
+                        else
+                        {
+                            client = new HttpClient();
+                        }
+                    }
+                    return client;
+                }
+            }
+        }
 
         public static SearchResults GetSearchResultsFromApi(string url)
         {
-            try
+           try
             {
-                var client = new WebClient();
-
-                if (AuthenticateWebClientApiCall())
-                {
-                    client.Credentials = new NetworkCredential(Settings.GetSetting(WebClientAuthUsernameSetting), 
-                        Settings.GetSetting(WebClientAuthPasswordSetting), Settings.GetSetting(WebClientAuthDomainSetting));
-                }
-
-                var content = client.DownloadString(url);
-
-                return JsonConvert.DeserializeObject<SearchResults>(content);
+               ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
+               return JsonConvert.DeserializeObject<SearchResults>(HttpClientInstance.GetStringAsync(url).Result);
             }
             catch (Exception exc)
             {
@@ -43,5 +59,6 @@ namespace Informa.Library.Search.Utilities
                     !string.IsNullOrEmpty(Settings.GetSetting(WebClientAuthPasswordSetting)) &&
                     !string.IsNullOrEmpty(Settings.GetSetting(WebClientAuthDomainSetting)));
         }
-    }
+
+       }
 }
