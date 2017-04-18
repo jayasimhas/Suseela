@@ -7,9 +7,13 @@
 <div>
     <div class="agroBuyers">
         <h1>@Model.Title</h1>
-        <div class="sub-heading-text">
-            <span>@Model.SubTitle</span>
-        </div>
+        @if (!string.IsNullOrEmpty(@Model.SubTitle))
+        {
+            <div class="sub-heading-text">
+                <span>@Model.SubTitle</span>
+            </div>
+        }
+       
         @if (Model.RenderingParameters != null && Model.RenderingParameters.DisplayStyle != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.DisplayStyle.Value))
             {
                 if (Model.RenderingParameters.DisplayStyle.Value == Constants.AgrowResultDisplayTypes.ImageAndTitle)

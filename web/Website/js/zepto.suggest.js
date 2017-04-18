@@ -35,7 +35,7 @@
         'css' : {
           'position'        : 'absolute',
           'height'          : $this.height(),
-          'width'           : $this.width(),
+          'width'           : '100%',
           'margin'          : $this.cssShortForAllSides('margin'),
           'fontFamily'      : $this.css('fontFamily'),
           'fontSize'        : $this.css('fontSize'),

@@ -25,7 +25,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
-//import './components/article-sidebar-component';
+import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
 import './components/pagination';
@@ -1449,10 +1449,41 @@ $(document).ready(function(){
     });
 	
 	//IPMP-2486
-	if($('.myView-placeholder')){
+	if($('.myView-placeholder').length){
 		$('.header__wrapper').addClass('tabheader_wrapper');
 		$('.header__logo').addClass('tabheader_logo');
 		$('.header-publication-links').addClass('tabheader-publication');
 		$('.header-account-right-access').addClass('tabheader-account');
 	}
+	
+	//IPMP-2543
+	if($('.pop-out__myViewregister').length){
+		if (window.matchMedia("(min-width: 1025px)").matches) {
+			$('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
+		}
+		else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
+			$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
+			$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
+		}
+		else if (window.matchMedia("(max-width: 768px)").matches) {
+			$('.pop-out.is-active').css({'top': '-190px', 'left': '-300px'});
+			$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
+		}
+	}
+	$(window).resize(function(){
+		if($(window).width() > 1024){
+		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '0px'});
+		}
+		if($(window).width() > 1000 && $(window).width() <= 1024){
+			$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
+			$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
+		}
+		else if($(window).width() > 600 && $(window).width() <= 768){
+			$('.pop-out.js-pop-out__myViewregister').css({'top': '-190px', 'left': '-300px'});
+			$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
+		}
+		else{
+			$('.pop-out.js-pop-out__myViewregister').css({'top': '-370px', 'left': '0px'});
+		}
+	});
 });

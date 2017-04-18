@@ -351,7 +351,7 @@ namespace Informa.Library.Article.Search
                 query = query.OrderByDescending(i => i.ActualPublishDate);
                 var results = query.GetResults();
 
-                var articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid)).GroupBy(key => key.Actual_Publish_Date.Date).Select(group => group.OrderByDescending(x => x.Sort_Order)).SelectMany(item => item);
+                var articles = results.Hits.Select(h => GlobalService.GetItem<IArticle>(h.Document.ItemId.Guid)).GroupBy(key => key?.Actual_Publish_Date.Date).Select(group => group.OrderByDescending(x => x?.Sort_Order)).SelectMany(item => item);
                 return new PersonalizedArticleSearchResults
                 {
                     Articles = articles,

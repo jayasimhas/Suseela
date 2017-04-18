@@ -28,7 +28,7 @@
         var chartData1 = [];
         AmCharts.ready(function () {
             generateChartData();
-           
+
         });
 
         function CalculateDifference() {
@@ -45,7 +45,7 @@
             $('#latest-value').html(LatestItem + '<span class="' + status + '">(' + Difference + ')</span> <span>' + LatestDate + '</span>');
 
             if (chartData1.length > 0) {
-                
+
                 var LatestItem1 = chartData1[chartData1.length - 1].value,
                 SecondLastItem1 = chartData1[chartData1.length - 2].value,
                 Difference1 = LatestItem1 - SecondLastItem1;
@@ -64,7 +64,7 @@
 
         function generateChartData() {
             var feedata = '@AMGraph.FinanceResult';
-            if (feedata.length > 0) {
+            if ((feedata.indexOf(',') > 0) && (feedata.indexOf('|') > 0)) {
                 if (feedata.indexOf("-$-") > 0) {
                     var feedataSrcOne = feedata.split("-$-")[0];
                     var feedataSrcTwo = feedata.split("-$-")[1];

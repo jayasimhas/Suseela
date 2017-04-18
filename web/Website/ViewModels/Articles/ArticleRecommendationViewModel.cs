@@ -44,7 +44,7 @@ namespace Informa.Web.ViewModels.Articles
         }
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
-        
+
         public string WhatToReadNextText => TextTranslator.Translate("Article.WhatToReadNext");
         public string SuggestedForYouText => TextTranslator.Translate("Article.Suggestedforyou");
         public bool IsGlobalToggleEnabled => SiteRootContext.Item.Enable_MyView_Toggle;
@@ -69,7 +69,7 @@ namespace Informa.Web.ViewModels.Articles
                 var results = Searcher.Search(filter);
                 relatedArticles.AddRange(results.Articles);
             }
-            return relatedArticles.Where(r => r != null).Select(x => (IArticle)x).ToList().OrderByDescending(x=>x.Actual_Publish_Date).ToList();
+            return relatedArticles.Where(r => r != null).Select(x => (IArticle)x).ToList().OrderByDescending(x => x.Actual_Publish_Date).ToList();
             //return editorsPickList;
         }
         public string TaxonomyItems
@@ -113,7 +113,7 @@ namespace Informa.Web.ViewModels.Articles
         private string GetPreferedTaxonomyIds()
         {
             IList<Section> Sections = GetSections();
-            var taxnomyids = string.Join(",", Sections.Select(i => $"{i.TaxonomyIds.ElementAt(0)}"));
+            var taxnomyids = string.Join(",", Sections.Where(i => i.TaxonomyIds.Count > 0).Select(i => $"{i.TaxonomyIds.ElementAt(0)}"));
             return taxnomyids;
         }
 

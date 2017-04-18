@@ -9,7 +9,7 @@ $(document).ready(function () {
     articleSidebarAd = articleSidebarAdParent.find('.advertising');
     lastActionFlagsBar = $('.action-flags-bar:last-of-type');
     sidebarIsTaller = $('.article-right-rail').height() > $('.article-left-rail').height();
-    if($('.article-right-rail').length > 0) {
+	if($('.article-right-rail').length > 0) {
         rightRail = $('.article-right-rail').offset().left;
     }
 });
@@ -19,7 +19,7 @@ $(window).on('scroll', function () {
         stickyFloor = lastActionFlagsBar.offset().top - window.pageYOffset - articleSidebarAd.height();
         if (articleSidebarAdParent.offset().top - window.pageYOffset <= 16) {
             articleSidebarAdParent.addClass('advertising--sticky');
-            if($('.article-right-rail').length > 0) {
+			if($('.article-right-rail').length > 0) {
                 articleSidebarAdParent.find('.advertising').css('left', rightRail + 'px');
             }
         } else {

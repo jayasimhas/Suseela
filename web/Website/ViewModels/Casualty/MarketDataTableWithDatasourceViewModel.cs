@@ -6,14 +6,8 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
 
 namespace Informa.Web.ViewModels.Casualty
 {
@@ -58,18 +52,13 @@ namespace Informa.Web.ViewModels.Casualty
         /// <summary>
         /// Data Provider Logo
         /// </summary>
-        public Image ProviderLogo => GlassModel?.ProviderLogo;
-        /// <summary>
-        /// Additional Feed Url
-        /// </summary>
-        public string AdditionalFeedUrl => GlassModel?.Additional_Feed_URL;
+        public Image ProviderLogo => GlassModel?.ProviderLogo;       
         /// <summary>
         /// Additional info text
         /// </summary>
         public string AdditionalInfo => GlassModel?.Additional_Info;
         public string jsonDropdownData => GetjsonDropdownData();
-        public string jsonTableData => GetjsonTableData();
-        public string jsonAdditionalTableData => GetjsonAdditionalTableData();
+        public string jsonTableData => GetjsonTableData();       
         private string GetjsonDropdownData()
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
@@ -97,25 +86,6 @@ namespace Informa.Web.ViewModels.Casualty
                 {
                     var client = new WebClient();
                     return client.DownloadString(GlassModel.Table_Result_Feed_URL);
-                }
-                catch (Exception ex)
-                {
-                    return string.Empty;
-                }
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-        private string GetjsonAdditionalTableData()
-        {
-            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Additional_Feed_URL))
-            {
-                try
-                {
-                    var client = new WebClient();
-                    return client.DownloadString(GlassModel.Additional_Feed_URL);
                 }
                 catch (Exception ex)
                 {

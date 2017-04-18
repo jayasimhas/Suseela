@@ -1,8 +1,6 @@
 ﻿using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
 using Glass.Mapper.Sc;
-using Informa.Library.Article.Search;
 using Informa.Library.Rss;
-using Informa.Library.Search;
 using Informa.Library.Search.Formatting;
 using Informa.Library.Search.PredicateBuilders;
 using Informa.Library.Search.Results;
@@ -11,24 +9,18 @@ using Informa.Library.Site;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Factory;
-using Newtonsoft.Json;
 using Sitecore.Configuration;
 using Sitecore.Data;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
-using Velir.Search.Core.Models;
 using Velir.Search.Core.Page;
 using Velir.Search.Core.Queries;
 using Velir.Search.WebApi.Models;
-using httppost = System.Web.Http;
-using Sitecore.Data.Items;
-using Sitecore.Workflows;
-using Informa.Library.Utilities.CMSHelpers;
+using Informa.Library.Services.Global;
+using Velir.Search.Models;
+using System.Web.Http.ModelBinding;
+using Informa.Library.Search;
 
 namespace Informa.Web.Controllers.Search
 {
@@ -38,44 +30,32 @@ namespace Informa.Web.Controllers.Search
         private readonly IQueryFormatter _queryFormatter;
         private readonly IGlassInterfaceFactory _interfaceFactory;
         private readonly ICacheProvider _cacheProvider;
-
+        protected readonly IGlobalSitecoreService GlobalService;
 
         public InformaVWBSearchController(
             ISearchPageParser parser,
             IQueryFormatter queryFormatter,
         IGlassInterfaceFactory interfaceFactory,
-        ICacheProvider cacheProvider, ISitecoreContext sitecoreContext, ISiteRootContext siterootContext, ISearchIndexNameService indexNameService)
+        ICacheProvider cacheProvider, ISitecoreContext sitecoreContext, ISiteRootContext siterootContext, ISearchIndexNameService indexNameService, IGlobalSitecoreService globalService)
                         : base(siterootContext, sitecoreContext, indexNameService)
         {
             _parser = parser;
             _queryFormatter = queryFormatter;
             _interfaceFactory = interfaceFactory;
             _cacheProvider = cacheProvider;
+            GlobalService = globalService;
         }
         // GET: InformaVWBSearch       
-        public VWBSearchQueryResults Get(string verticalroot, string pubCode, string startDate, string endDate)
+       
+        public VWBSearchQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
         {
-            if (string.IsNullOrEmpty(pubCode))
+            if (request == null)
             {
                 return null;
             }
             var defaultCount = "1000";
             int PerPageCount = Convert.ToInt32(!string.IsNullOrEmpty(Settings.GetSetting("VwbDropdownCount")) ? Settings.GetSetting("VwbDropdownCount") : defaultCount);
-            ApiSearchRequest request = new ApiSearchRequest(1, PerPageCount);
-            //ApiSearchRequest request = new ApiSearchRequest(_parser, _interfaceFactory);
-            request.Page = 1;
-            //request.PageId = ItemIdResolver.GetItemIdByKey("VwbSearchPage");
-            request.PageId = "a0163a51-2ff8-4a9c-8fba-6516546e5ae1";
             request.PerPage = PerPageCount;
-            //request.QueryParameters.Add("VerticalRoot", verticalroot);
-
-            string stDate = !string.IsNullOrEmpty(startDate) ? Convert.ToDateTime(startDate).ToString("MM/dd/yyyy") : DateTime.MinValue.ToString("MM/dd/yyyy");
-            string enDate = !string.IsNullOrEmpty(endDate) ? Convert.ToDateTime(endDate).ToString("MM/dd/yyyy") : DateTime.MaxValue.ToString("MM/dd/yyyy");
-            var plannedPublishDate = stDate + ";" + enDate;
-            request.QueryParameters.Add("plannedpublishdate", plannedPublishDate);
-            request.QueryParameters.Add("PublicationCode", pubCode);            
-            request.SortBy = "plannedpublishdate";
-            request.SortOrder = "desc";
 
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
             q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);

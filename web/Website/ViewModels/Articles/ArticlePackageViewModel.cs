@@ -78,7 +78,7 @@ namespace Informa.Web.ViewModels.Articles
                     if (packageArticles != null && packageArticles.Any())
                     {
                         listablePackageArticles = packageArticles.Select(a => ArticleListableFactory.Create(a));
-                        if (listablePackageArticles.Count() > 4)
+                        if (listablePackageArticles.Count() > 4 && IsArticlePage)
                         {
                             return listablePackageArticles.Take(4);
                         }

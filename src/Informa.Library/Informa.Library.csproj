@@ -501,6 +501,7 @@
     <Compile Include="Utilities\CMSHelpers\ItemIdResolver.cs" />
     <Compile Include="Utilities\CMSHelpers\IVerticalRootContext.cs" />
     <Compile Include="User\Entitlement\IStrategicEntitlementContext.cs" />
+    <Compile Include="Utilities\CMSHelpers\SiteRootHelper.cs" />
     <Compile Include="Utilities\Parsers\CachedXmlParser.cs" />
     <Compile Include="Mail\ExactTarget\CampaignQueryBuilder.cs" />
     <Compile Include="Mail\ExactTarget\PremailerWrapper.cs" />

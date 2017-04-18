@@ -4569,6 +4569,10 @@ header .header-account-access {
       font-weight: 700;
       font-size: 0.75em;
       display: block; }
+      @media only screen and (min-device-width: 480px) and (max-device-width: 767px) {
+        header .header-account-access .myView-placeholder .btn-my-view {
+          background: inherit !important;
+          border: inherit !important; } }
       @media (min-width: 801px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           text-transform: uppercase; } }
@@ -4578,7 +4582,6 @@ header .header-account-access {
       @media (max-width: 640px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #9E310D;
           padding: 0;
           width: auto;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -4587,7 +4590,6 @@ header .header-account-access {
       @media (max-width: 480px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #9E310D;
           padding: 0;
           width: 60px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -4595,12 +4597,10 @@ header .header-account-access {
           font-weight: 400; }
           header .header-account-access .myView-placeholder .btn-my-view:hover {
             background: inherit !important;
-            color: inherit !important;
             border: inherit !important; } }
       @media only screen and (min-device-width: 414px) and (max-device-width: 767px) {
         header .header-account-access .myView-placeholder .btn-my-view {
           background: none;
-          color: #9E310D;
           padding: 0;
           width: 70px;
           font-family: 'Roboto', Arial Narrow, sans-serif;
@@ -4608,7 +4608,6 @@ header .header-account-access {
           font-weight: 400; }
           header .header-account-access .myView-placeholder .btn-my-view:hover {
             background: inherit !important;
-            color: inherit !important;
             border: inherit !important; } }
     @media (max-width: 1024px) {
       header .header-account-access .myView-placeholder {
@@ -4722,6 +4721,24 @@ main .action-flags-bar, main .banner--highlights {
     margin-right: 5px !important; }
   .header__wrapper .header-account-right-access.tabheader-account {
     margin-top: 25px; } }
+
+@media only screen and (max-width: 767px) {
+  .theme-lloydslist header .header-account-access .myView-placeholder .btn-my-view {
+    color: #1191D1 !important; }
+    .theme-lloydslist header .header-account-access .myView-placeholder .btn-my-view:hover {
+      color: #1191D1 !important; } }
+
+@media only screen and (max-width: 767px) {
+  .theme-insurance-day header .header-account-access .myView-placeholder .btn-my-view {
+    color: #DE4361 !important; }
+    .theme-insurance-day header .header-account-access .myView-placeholder .btn-my-view:hover {
+      color: #DE4361 !important; } }
+
+@media only screen and (max-width: 767px) {
+  .theme-commodities header .header-account-access .myView-placeholder .btn-my-view {
+    color: #9E310D !important; }
+    .theme-commodities header .header-account-access .myView-placeholder .btn-my-view:hover {
+      color: #9E310D !important; } }
 
 .messaging_webUsers {
   width: 100% !important;
@@ -6597,7 +6614,10 @@ main .action-flags-bar, main .banner--highlights {
       padding: 16px 0 0;
       padding: 1rem 0 0;
       margin: 0 14px;
-      margin: 0 0.9rem; } }
+      margin: 0 0.9rem; }
+    .personalisationhome .latest-news__articles .article-small-preview.mobview.sponsored_cont {
+      padding: 16px;
+      padding: 1rem; } }
 
 .personalisationhome .latest-news__articles .sm-articles {
   height: 470px;
@@ -6625,7 +6645,10 @@ main .action-flags-bar, main .banner--highlights {
         padding: 1rem 0 0;
         margin: 0 -20px !important;
         margin: 0 -1.25rem !important;
-        height: auto; } }
+        height: auto; }
+      .personalisationhome .latest-news__articles .sm-articles .sm-article.mobview.sponsored_cont {
+        padding: 16px;
+        padding: 1rem; } }
 
 .personalisationhome .editView {
   cursor: pointer;
@@ -6770,9 +6793,11 @@ main .action-flags-bar, main .banner--highlights {
   height: 43.75rem; }
   @media (max-width: 480px) {
     .personalisationhome .article-preview--small.preview2 {
-      padding: 0 15px;
-      background: #ececec;
-      margin-bottom: 0px; } }
+      margin-bottom: 0px;
+      height: auto; } }
+  .personalisationhome .article-preview--small.preview2 .article-preview__inner-wrapper {
+    height: 245px;
+    height: 15.3125rem; }
 
 .personalisationhome .mtop {
   margin-top: -240px !important;
@@ -6812,8 +6837,11 @@ main .action-flags-bar, main .banner--highlights {
     .personalisationhome .article-preview--small.mobview {
       padding: 16px 0 0;
       padding: 1rem 0 0;
-      margin: 0 14px;
-      margin: 0 0.9rem; }
+      margin: 0 16px;
+      margin: 0 1rem; }
+    .personalisationhome .article-preview--small.mobview.sponsored_cont {
+      padding: 16px;
+      padding: 1rem; }
   .personalisationhome .topic-featured-article.article-preview {
     padding: 16px;
     padding: 1rem; } }
@@ -6860,6 +6888,9 @@ main .action-flags-bar, main .banner--highlights {
   .personalisationhome .latest-news__articles .article-preview--small .article-preview__tags {
     left: 0;
     position: absolute; }
+  .personalisationhome .latest-news__articles .article-preview--small.sponsored_cont .article-preview__tags {
+    left: 16px;
+    left: 1rem; }
   .personalisationhome .mtop {
     margin-top: 0px !important; }
   .personalisationhome .googleAdd img {
