@@ -47,7 +47,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
         private void RedirectTo404()
         {
-            _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/companies/{RecordNumber}");
+            if (!_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
+                _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/companies/{RecordNumber}",true);
         }
 
         private void RedirectIfRecordId(string segment)
@@ -60,7 +61,8 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             var company = _dependencies.DcdReader.GetCompanyByRecordId(id);
             if ((company?.RecordNumber).HasContent())
             {
-                _dependencies.HttpContextProvider.Current.Response.Redirect($"/companies/{company.RecordNumber}");
+                if (!_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
+                _dependencies.HttpContextProvider.Current.Response.Redirect($"/companies/{company.RecordNumber}",true);
             }
         }
 
