@@ -87,7 +87,10 @@ namespace Informa.Library.Mail.ExactTarget
             etEmail.AuthStub = client;
             PostReturn response = null;
             try { response = etEmail.Post(); }
-            catch { response.Message = "Failed to create email. Invalid details"; }
+            catch
+            {
+                return new ExactTargetResponse { ExactTargetEmailId = etEmail.ID, Message = "Failed to create email. Invalid/empty exact target config" };
+            }
 
             var result = response.Results.FirstOrDefault();
 
@@ -110,7 +113,10 @@ namespace Informa.Library.Mail.ExactTarget
             etEmail.AuthStub = client;
             PatchReturn response = null;
             try { response = etEmail.Patch(); }
-            catch (Exception) { response.Message = "Failed to update email. Invalid details"; }
+            catch (Exception)
+            {
+                return new ExactTargetResponse { ExactTargetEmailId = etEmail.ID, Message = "Failed to update email. Invalid/Empty exact target config" };
+            }
 
             if (string.IsNullOrEmpty(response.Message))
             {
