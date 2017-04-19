@@ -69,7 +69,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             string desktopIframeCode = memIframeDesktop.Value;
             string mobileIframeCode = memIframeMobile.Value;
             if (!string.IsNullOrEmpty(desktopIframeCode))
-            {               
+            {
                 var desktopNode = HtmlNode.CreateNode(desktopIframeCode);
                 string source = desktopNode.GetAttributeValue("src", "");
                 if ((IsSecure(source) || IsRelativeUrl(source)) && IsValidInput(desktopNode))
@@ -103,7 +103,7 @@ namespace Informa.Library.CustomSitecore.RTECustomization
         /// <param name="node"></param>
         /// <returns></returns>
         private bool IsSecure(string url)
-        {           
+        {
             if (!string.IsNullOrEmpty(url) && url.Contains("https"))
                 return true;
             else
@@ -180,10 +180,10 @@ namespace Informa.Library.CustomSitecore.RTECustomization
             }
 
             if (!string.IsNullOrEmpty(memIframeMobile.Value))
-            {               
-                var mobileEmbedNode =HtmlNode.CreateNode(memIframeMobile.Value);
+            {
+                var mobileEmbedNode = HtmlNode.CreateNode(memIframeMobile.Value);
                 string source = mobileEmbedNode.GetAttributeValue("src", "");
-                if (IsSecure(source) && IsValidInput(mobileEmbedNode))
+                if ((IsSecure(source) || IsRelativeUrl(source)) && IsValidInput(mobileEmbedNode))
                 {
                     var iframeMobileElement = MobileOrDesktopEmbed(iframeGroupId, true);
                     iframeMobileElement.SetAttributeValue("data-embed-link", "enabled");
