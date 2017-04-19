@@ -24,15 +24,20 @@ namespace Informa.Web.ViewModels
         private ISitecoreContext _sitecoreContext;
         private ItemReferences _itemReferences;
         private IRssFeedGeneration _RssFeedGeneration;
+        private IRssFeedGeneration _PublicationFeedGeneration;
         private IRssItemGeneration _RssItemGeneration;
+        private IRssItemGeneration _PublicationItemGeneration;
         private IRssSitecoreItemRetrieval _RssSitecoreItemRetrieval;
+       
 
         public SearchRssViewModel()
         {
             _sitecoreContext = new SitecoreContext();
             _itemReferences = new ItemReferences();
             _RssFeedGeneration = new SearchFeedGenerator();
+            _PublicationFeedGeneration = new BaseInformaFeedGenerator();
             _RssItemGeneration = new SearchRssItemGenerator();
+            _PublicationItemGeneration = new PublicationRssItemGenerator();
             _RssSitecoreItemRetrieval = new RssSearchResultsItemRetrieval();
         }
 
@@ -47,7 +52,7 @@ namespace Informa.Web.ViewModels
 
             SyndicationFeed feed = null;
             Stopwatch sw = Stopwatch.StartNew();
-            var feedGenerator = _RssFeedGeneration;
+            var feedGenerator = rssFeedItem.Rss_Feed_Generation.Contains("SearchFeedGenerator") ? _RssFeedGeneration : _PublicationFeedGeneration;
             StringExtensions.WriteSitecoreLogs("Time taken to Create Feedgenerator", sw, "feedGenerator");
             if (feedGenerator == null)
             {
@@ -75,7 +80,7 @@ namespace Informa.Web.ViewModels
                 return string.Empty;
             }
 
-            var rssItemGenerator = _RssItemGeneration;
+            var rssItemGenerator = rssFeedItem.Rss_Item_Generation.Contains("SearchRssItemGenerator") ? _RssItemGeneration : _PublicationItemGeneration;
             if (rssItemGenerator == null)
             {
                 Log.Error("Could Not Create Item Generator With " + rssFeedItem.Rss_Item_Generation, this);
