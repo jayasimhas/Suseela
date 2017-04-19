@@ -193,7 +193,6 @@
         @include breakpoint('small') {
             display: block;
             float: left;
-            width: calc(100% - 46px);
         }
     }
     .sortable-table__col {
