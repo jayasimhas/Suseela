@@ -22,6 +22,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 								ITextTranslator textTranslator,
 								IDCDReader dcdReader,
 								IHttpContextProvider context,
+                                I___BasePage glassModel,
 								IAuthenticatedUserContext userContext)
 		{
 			TextTranslator = textTranslator;
@@ -30,13 +31,13 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 			UserContext = userContext;
             
 			var wildcardValue = UrlUtils.GetLastUrlSement(HttpContextProvider.Current);
-			if (GlassModel._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
+			if (glassModel._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
 			{
 				var Company = DCDReader.GetCompanyByRecordNumber(wildcardValue);
 				PageTitle = Company.Title;
                 CompanyId = Company.RecordNumber.ToString();
 			}
-			else if (GlassModel._TemplateId.Equals(IDeal_PageConstants.TemplateId.Guid))
+			else if (glassModel._TemplateId.Equals(IDeal_PageConstants.TemplateId.Guid))
 			{
 				var Deal = DCDReader.GetDealByRecordNumber(wildcardValue);
 				PageTitle = Deal.Title;
