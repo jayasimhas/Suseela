@@ -43,6 +43,7 @@ namespace Informa.Web.ViewModels.Articles
 
         public bool IsArticlePage => GlassModel is IArticle;
         public IEnumerable<IArticle_Package> SelectedPackages => GetSelectedPackages();
+        public string MoreInText => TextTranslator.Translate("Article.ArticlePackageMoreInText");
         public bool IsFullWidth => (PackageSettings != null) ? PackageSettings.IsFullWidth : false;
         Guid curItemID => GlassModel._Id;
         /// <summary>

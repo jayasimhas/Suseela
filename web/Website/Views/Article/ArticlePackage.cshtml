@@ -373,9 +373,11 @@
                                 var referredArticle = Model.GetPackageReferrersbyLoop();
                                 if (referredArticle != null && referredArticle.Any())
                                 {
+
                                     foreach (var package in referredArticle.Take(1))
                                     {
                                         <section class="package-control-articles__quarter">
+                                            <p class="moreText">@Model.MoreInText</p>
                                             <h1 class="article-preview__headline">
                                                 <span>@package.PackageTitle</span>
                                             </h1>

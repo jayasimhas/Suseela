@@ -17,6 +17,8 @@ using Sitecore.Social.Infrastructure.Utils;
 using Sitecore.Web;
 using Velir.Utilities.Extensions.System.Collections.Generic;
 using ArticleItem = Elsevier.Library.CustomItems.Publication.General.ArticleItem;
+using Informa.Library.Site;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Elsevier.Web.VWB.Report
 {
@@ -77,8 +79,17 @@ namespace Elsevier.Web.VWB.Report
 
         public string GetPreviewUrl(string itemId)
         {
-            return HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en";
+            return HttpContext.Current.Request.Url.Scheme + "://" + WebUtil.GetHostName() + "/?sc_itemid={" + itemId + "}&sc_mode=preview&sc_lang=en&sc_site=" + GetContextSiteName(itemId);
         }
+
+        private string GetContextSiteName(string itemId)
+        {
+            var articleItem = Sitecore.Context.Database.GetItem(itemId);
+            var siteName = articleItem.Axes.GetAncestors().Where(t => t.TemplateID == ISite_RootConstants.TemplateId)?.FirstOrDefault()?.Name;
+            return siteName;
+
+        }
+
         public string GetCmsItemUrl(string itemId)
         {
             string load = "/sitecore/shell/Applications/Content%20Manager/Default.aspx?fo=" + itemId + "&sc_lang=en";
@@ -160,7 +171,7 @@ namespace Elsevier.Web.VWB.Report
 
             TaxonomyString = (article.Taxonomies != null)
                 ? string.Join(",", article.Taxonomies.Select(t => t.Item_Name))
-                : string.Empty;          
+                : string.Empty;
             ContentType = "";
 
             if (article.Content_Type != null)
