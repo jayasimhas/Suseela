@@ -4,6 +4,8 @@ namespace Informa.Library.Salesforce.V2.User.Profile
 {
     public class SalesforceUserInfo
     {
+        [XmlElement(ElementName = "user_id")]
+        public string UserID { get; set; }
         [XmlElement(ElementName = "preferred_username")]
         public string UserName { get; set; }
         [XmlElement(ElementName = "name")]

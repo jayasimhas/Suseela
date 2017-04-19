@@ -12,5 +12,10 @@
         public string Code { get; set; }
         public string AccessEndDate { get; set; }
         public bool Active { get; set; }
+
+        public string ServiceId { get; set; }
+
+        public string ParentServiceId { get; set; }
+
     }
 }

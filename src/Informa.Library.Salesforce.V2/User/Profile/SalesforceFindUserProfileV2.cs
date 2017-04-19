@@ -50,10 +50,13 @@ namespace Informa.Library.Salesforce.V2.User.Profile
 
                 return new SalesforceUserProfile
                 {
+                    UserId = userInfoResponse?.UserID ?? string.Empty,
                     UserName = userInfoResponse?.UserName ?? string.Empty,
                     FirstName = userInfoResponse?.FirstName ?? string.Empty,
                     LastName = userInfoResponse?.LastName ?? string.Empty,
                     Email = userInfoResponse?.Email,
+                    ContactId = userInfoResponse?.CustomAttributes?.ContactId ?? string.Empty,
+                    ContactAccountId = userInfoResponse?.CustomAttributes?.ContactAccountId ?? string.Empty,
                     MiddleInitial = userInfoResponse?.CustomAttributes?.MiddleName ?? string.Empty,
                     Salutation = userInfoResponse?.CustomAttributes?.Salutation ?? string.Empty,
                     ShipCountry = userInfoResponse?.CustomAttributes?.MailingCountry ?? string.Empty,
