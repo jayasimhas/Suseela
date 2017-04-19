@@ -15185,8 +15185,7 @@ main {
   @media (max-width: 480px) {
     .form-email-preferences .email-preference-mobile {
       display: block;
-      float: left;
-      width: calc(100% - 46px); } }
+      float: left; } }
 
 .form-email-preferences .sortable-table__col {
   text-align: center; }
