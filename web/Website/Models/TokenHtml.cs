@@ -126,11 +126,13 @@ namespace Informa.Web.Models
             HtmlString replace = new HtmlString("");
             Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.ITableau_Dashboard tableauItem = _.GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components.ITableau_Dashboard>(TableauId);
             //Informa.Web.ViewModels.DataTools.TableauDashboardViewModel tableauDashboardItem = (Informa.Web.ViewModels.DataTools.TableauDashboardViewModel)tableauItem;
-
-            tableauItem.ArticleTableauTicket = TableauTicket;
-            tableauItem.ArticleTableauJSAPIUrl = JSAPIUrl;
-            tableauItem.ArticleTableauHostUrl = HostUrl;
-            tableauItem.ArticleTableuLandingPageLinkLable = LandingPageLinkLable;
+            if (tableauItem != null)
+            {
+                tableauItem.ArticleTableauTicket = TableauTicket;
+                tableauItem.ArticleTableauJSAPIUrl = JSAPIUrl;
+                tableauItem.ArticleTableauHostUrl = HostUrl;
+                tableauItem.ArticleTableuLandingPageLinkLable = LandingPageLinkLable;
+            }
             //replace = HtmlHelper.Partial(partialName, tableauItem, new ViewDataDictionary { { "Index", i } });
             var rep = MvcHelpers.GetRazorViewAsString(tableauItem, partialName, new TempDataDictionary { { "Index", i } });
             return rep;
@@ -165,7 +167,12 @@ namespace Informa.Web.Models
             {
                 var article = results.Articles.FirstOrDefault();
                 if (article != null)
-                    replace = HtmlHelper.Partial(partialName, _.ArticleListableFactory.Create(article));
+                {
+                    var modelArticle = _.ArticleListableFactory.Create(article);
+                    var replaced = MvcHelpers.GetRazorViewAsString(modelArticle, partialName);
+                    return replaced;
+                    //replace = HtmlHelper.Partial(partialName, _.ArticleListableFactory.Create(article));
+                }
             }
 
             return replace.ToHtmlString();
