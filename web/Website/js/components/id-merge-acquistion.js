@@ -451,8 +451,13 @@
 		} else {
 			var ErrorMessage = $('#hdnErrormessage').val();
 			if(window.jsonMergeAcquistion) {
+				var isQueryString = checkQueryString();
 				if(window.jsonMergeAcquistion.length == 0) {
+					if(isQueryString) {
 	                 var ErrorMessage = $('#hdnInfomessage').val();
+					} else {
+						return;
+					}
 	            }
 	        } else {
 	        	var ErrorMessage = $('#hdnErrormessage').val();
@@ -473,4 +478,13 @@ if (!String.prototype.includes) {
          'use strict';
          return String.prototype.indexOf.apply(this, arguments) !== -1;
      };
+ }
+
+ function checkQueryString() {
+ 	var url = window.location.href;
+	if(url.indexOf('?year=') != -1)
+	    return true;
+	else if(url.indexOf('&year=') != -1)
+	    return true;
+	return false
  }
