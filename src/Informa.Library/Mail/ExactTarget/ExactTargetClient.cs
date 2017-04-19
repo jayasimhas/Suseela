@@ -122,9 +122,7 @@ namespace Informa.Library.Mail.ExactTarget
 
         public string GetEmailHtml(IExactTarget_Email emailItem)
         {
-            var url = _dependencies.SitecoreUrlWrapper.GetItemUrl(emailItem);
-            // testing - to be removed.
-            Sitecore.Diagnostics.Log.Info("Exact target article url", url);
+            var url = _dependencies.SitecoreUrlWrapper.GetItemUrl(emailItem);           
             _dependencies.LogWrapper.SitecoreInfo($"Populating ET Model. url : { url }");
             var htmlResponse = _dependencies.WebClientWrapper.DownloadString(url);
             _dependencies.LogWrapper.SitecoreInfo($"Populating ET Model. htmlResponse : { htmlResponse }");

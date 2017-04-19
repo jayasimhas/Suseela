@@ -77,7 +77,7 @@ namespace Informa.Library.User.Entitlement
 
         private bool isValidEntitlement(IEntitlement entitlement, IEntitledProduct entitledProduct)
         {
-            if (entitlement == null || string.IsNullOrWhiteSpace(entitlement.AccessEndDate))
+            if (entitlement == null || string.IsNullOrWhiteSpace(entitlement.AccessEndDate) || !entitlement.IsActive)
             {
                 return false;
             }

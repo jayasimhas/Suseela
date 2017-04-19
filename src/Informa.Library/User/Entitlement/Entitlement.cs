@@ -22,5 +22,9 @@ namespace Informa.Library.User.Entitlement
         public string Description { get; set; }
         public string AccessEndDate { get; set; }
         public bool IsActive { get; set; }
+
+        public string ServiceId { get; set; }
+
+        public string ParentServiceId { get; set; }
     }
 }

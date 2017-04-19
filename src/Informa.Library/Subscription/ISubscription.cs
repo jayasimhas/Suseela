@@ -14,5 +14,9 @@ namespace Informa.Library.Subscription
         string ProductType { get; set; }
         List<ChannelSubscription> SubscribedChannels { get; set; }
         bool IsTopicSubscription { get; set; }
+
+        string ServiceId { get; set; }
+
+        string ParentServiceId { get; set; }
     }
 }

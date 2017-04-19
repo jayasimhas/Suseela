@@ -9445,8 +9445,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10777,7 +10777,8 @@ div#feedbacklite.fbl_r {
       height: 500px;
       position: relative; } }
   .id-merges-acquisition .table.merge-acquistion {
-    border-top: none; }
+    border-top: none;
+    table-layout: fixed; }
     .id-merges-acquisition .table.merge-acquistion .suggest-more {
       display: none !important; }
     @media (max-width: 480px) {
@@ -13808,7 +13809,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
@@ -15184,8 +15185,7 @@ main {
   @media (max-width: 480px) {
     .form-email-preferences .email-preference-mobile {
       display: block;
-      float: left;
-      width: calc(100% - 46px); } }
+      float: left; } }
 
 .form-email-preferences .sortable-table__col {
   text-align: center; }

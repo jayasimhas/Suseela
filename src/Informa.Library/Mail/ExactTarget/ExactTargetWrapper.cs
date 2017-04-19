@@ -36,7 +36,7 @@ namespace Informa.Library.Mail.ExactTarget
         public ExactTargetWrapper(IDependencies dependencies)
         {
             _dependencies = dependencies;
-        }       
+        }
 
         private bool IsSandbox => _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetUseSandbox)
             .Equals("true", StringComparison.InvariantCultureIgnoreCase);
@@ -74,7 +74,7 @@ namespace Informa.Library.Mail.ExactTarget
             {
                 Sitecore.Diagnostics.Log.Error("Exact target field values empty", currentSiteRoot.ID);
             }
-            return null;           
+            return null;
 
             //var clientId = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetClientId);           
             //var clientSecret = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetSecretKey);
@@ -85,7 +85,13 @@ namespace Informa.Library.Mail.ExactTarget
         {
             var client = CreateClient(currentSiteRoot);
             etEmail.AuthStub = client;
-            var response = etEmail.Post();
+            PostReturn response = null;
+            try { response = etEmail.Post(); }
+            catch
+            {
+                return new ExactTargetResponse { ExactTargetEmailId = etEmail.ID, Message = "Failed to create email. Invalid/empty exact target config" };
+            }
+
             var result = response.Results.FirstOrDefault();
 
             if (string.IsNullOrEmpty(response.Message))
@@ -105,13 +111,17 @@ namespace Informa.Library.Mail.ExactTarget
         {
             var client = CreateClient(currentSiteRoot);
             etEmail.AuthStub = client;
-            var response = etEmail.Patch();
+            PatchReturn response = null;
+            try { response = etEmail.Patch(); }
+            catch (Exception)
+            {
+                return new ExactTargetResponse { ExactTargetEmailId = etEmail.ID, Message = "Failed to update email. Invalid/Empty exact target config" };
+            }
 
             if (string.IsNullOrEmpty(response.Message))
             {
                 response.Message = response.Status ? "Email Updated" : "Failed to update email.";
             }
-
             return new ExactTargetResponse
             {
                 ExactTargetEmailId = etEmail.ID,
@@ -119,8 +129,6 @@ namespace Informa.Library.Mail.ExactTarget
                 Message = response.Message
             };
         }
-
-
     }
 
     public class ExactTargetResponse

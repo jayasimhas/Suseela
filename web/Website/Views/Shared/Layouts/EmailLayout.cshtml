@@ -581,16 +581,20 @@
 														<tr><td height="15"></td></tr>
 														<tr>
                                                              <td class="standardpadding">
-                                                            <table>
-                                                                <!--Main body starts -->
-                                                                @Html.Sitecore().Placeholder("email-main")
+                                                                 <table>
+                                                                     <tr>
+                                                                         <td>
+                                                                             <!--Main body starts -->
+                                                                             @Html.Sitecore().Placeholder("email-main")
 
-                                                                @if (Model.AddPersonalizedContent)
-                                                                {
-                                                                    @personalizeContentToken
+                                                                             @if (Model.AddPersonalizedContent)
+                                                                             {
+                                                                                 @personalizeContentToken
 
-                                                                }
-                                                            </table> 
+                                                                             }
+                                                                         </td>
+                                                                     </tr>
+                                                                 </table> 
                                                            </td>
                                                         </tr>
                                                       
