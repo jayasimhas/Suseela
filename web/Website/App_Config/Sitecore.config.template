@@ -2657,7 +2657,7 @@
             a tree node. Setting this to false may increase performance.
             Default value: true.
       -->
-    <setting name="ContentEditor.CheckHasChildrenOnTreeNodes" value="true" />
+    <setting name="ContentEditor.CheckHasChildrenOnTreeNodes" value="false" />
     <!--  CONTENT EDITOR SHOW FIELD SHARING LABELS
             Determines whether or not the Content Editor displays field sharing labels ([shared] and [unversioned]) to users 
             that are not Sitecore administrators.
@@ -2777,7 +2777,7 @@
             the SqlServerDataProvider, the OracleDataProvider or the SqlUtil classes.
             Default value: 00:05:00 (5 minutes)
       -->
-    <setting name="DefaultSQLTimeout" value="00:05:00" />
+    <setting name="DefaultSQLTimeout" value="00:30:00" />
     <!--  Sort order is used for displaying items in the
             Sitecore client and for API functions that returns sorted
             sets.
@@ -3391,7 +3391,7 @@
             This setting is ignored if the Media.DisableFileMedia setting is true.
             Default: false
       -->
-    <setting name="Media.UploadAsFiles" value="false" />
+    <setting name="Media.UploadAsFiles" value="true" />
     <!--  MEDIA - UPLOAD AS VERSIONABLE AS DEFAULT
             This setting controls if uploaded media is versionable by default or not.
       -->
