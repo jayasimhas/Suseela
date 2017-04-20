@@ -109,7 +109,7 @@ namespace Informa.Web.Controllers.Search
                     {
                         if (!vwb.Authors.ContainsKey(author._Id.ToString()))
                         {
-                            vwb.Authors.Add(author._Id.ToString(), author.First_Name + author.Last_Name);
+                            vwb.Authors.Add(author._Id.ToString(), author.Last_Name.Trim() +", "+ author.First_Name.Trim());
                         }
                     }
                 }
@@ -117,21 +117,21 @@ namespace Informa.Web.Controllers.Search
                 {
                     if (!vwb.ContentTypes.ContainsKey(article.Content_Type._Id.ToString()))
                     {
-                        vwb.ContentTypes.Add(article.Content_Type._Id.ToString(), !string.IsNullOrEmpty(article.Content_Type.Item_Name) ? article.Content_Type.Item_Name : article.Content_Type._Name);
+                        vwb.ContentTypes.Add(article.Content_Type._Id.ToString(), !string.IsNullOrEmpty(article.Content_Type.Item_Name) ? article.Content_Type.Item_Name.Trim() : article.Content_Type._Name.Trim());
                     }
                 }
                 if (article != null && article.Media_Type != null)
                 {
                     if (!vwb.MediaTypes.ContainsKey(article.Media_Type._Id.ToString()))
                     {
-                        vwb.MediaTypes.Add(article.Media_Type._Id.ToString(), !string.IsNullOrEmpty(article.Media_Type.Item_Name) ? article.Media_Type.Item_Name : article.Media_Type._Name);
+                        vwb.MediaTypes.Add(article.Media_Type._Id.ToString(), !string.IsNullOrEmpty(article.Media_Type.Item_Name) ? article.Media_Type.Item_Name.Trim() : article.Media_Type._Name.Trim());
                     }
                 }
                 if (article != null && article.Media_Type != null)
                 {
                     if (!vwb.MediaTypes.ContainsKey(article.Media_Type._Id.ToString()))
                     {
-                        vwb.MediaTypes.Add(article.Media_Type._Id.ToString(), !string.IsNullOrEmpty(article.Media_Type.Item_Name) ? article.Media_Type.Item_Name : article.Media_Type._Name);
+                        vwb.MediaTypes.Add(article.Media_Type._Id.ToString(), !string.IsNullOrEmpty(article.Media_Type.Item_Name) ? article.Media_Type.Item_Name.Trim() : article.Media_Type._Name.Trim());
                     }
                 }
             }

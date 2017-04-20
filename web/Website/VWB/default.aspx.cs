@@ -71,7 +71,7 @@ namespace Elsevier.Web.VWB
 
             UpdateFields();
             BuildOptionalColumnDropdown();
-            if (ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Verticals")
+            if (ddlVerticals.SelectedItem != null && ddlVerticals.SelectedItem.Text != "" && ddlVerticals.SelectedItem.Text != "Select Vertical")
             {
                 BuildExistingIssuesList();
             }
@@ -183,7 +183,7 @@ namespace Elsevier.Web.VWB
                     ddlVerticals.DataValueField = "SiteId";
                     ddlVerticals.DataTextField = "Sitename";
                     ddlVerticals.DataBind();
-                    ddlVerticals.Items.Insert(0, "Select Verticals");
+                    ddlVerticals.Items.Insert(0, "Select Vertical");
                 }
             }
             //var selectedVertical = Request.QueryString["vertical"];        
@@ -291,7 +291,7 @@ namespace Elsevier.Web.VWB
             }
             else
             {
-                if (ddlVerticals.SelectedItem == null || ddlVerticals.SelectedItem.Text == "Select Verticals")
+                if (ddlVerticals.SelectedItem == null || ddlVerticals.SelectedItem.Text == "Select Vertical")
                 {
                     lblMsg.Text = "You must select a vertical";
                     lblMsg.ForeColor = System.Drawing.Color.Red;
@@ -383,7 +383,7 @@ namespace Elsevier.Web.VWB
             q.MediaTypeCodes = !string.IsNullOrEmpty(hdnSelectedMedTypes?.Value) ? hdnSelectedMedTypes?.Value.TrimEnd(',') : hdnSelectedMedTypes.Value;
 
             q.NumResultsValue = GetMaxNumResults();
-            if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA" && ddlVerticals.SelectedValue != "Select Verticals")
+            if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA" && ddlVerticals.SelectedValue != "Select Vertical")
                 q.VerticalRoot = ddlVerticals.SelectedValue;
             RedirectTo(q);
         }
@@ -499,7 +499,7 @@ namespace Elsevier.Web.VWB
             ExistingIssueSelector.Items.Add(new ListItem("Select an existing issue...", "DEFAULT"));
 
             string selectedVertical = !string.IsNullOrEmpty(ddlVerticals.SelectedItem.Text) ? ddlVerticals.SelectedItem.Text : _vwbQuery.VerticalRoot;
-            if (selectedVertical == "" || selectedVertical == "Select Verticals")
+            if (selectedVertical == "" || selectedVertical == "Select Vertical")
             {
                 //lblMsg.Text = "You must select a vertical";
                 // lblMsg.ForeColor = System.Drawing.Color.Red;

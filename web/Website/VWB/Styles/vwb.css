@@ -70,7 +70,7 @@ table.box td {
 
 div.top
 {
-	width: 900px;
+	width: 1000px;
 }
 
 div.top p strong, strong.uncentered {
@@ -82,7 +82,7 @@ div.top {
 	float: left;
 }
 .mediatypes{
-	margin: 20px 0; clear: both; float: none; width: 100%;
+	margin: 10px 0; float: left; width: 900px;
 }
 .mediatypes .dd_chk_select{
 	width: 24%;
@@ -229,6 +229,9 @@ select.left
 {
 	margin-left:30px;
 }
+span.left{
+	margin-right: 5px;
+}
 
 .block
 {
@@ -365,23 +368,22 @@ tr.doubletop > td
 .inputWrapper {
     padding-top: 2px;
     padding-left: 5px;
-    width: 215px;
 }
 .inputWrapper input[type=text]{
-	margin-bottom: 5px;
+	margin: 0 0 5px 0;
 	width: 75px;
 }
 .loadFilters {
-	float: inherit;
-    clear: both;
-    margin-left: 246px;
+	float: left;
+	width: 90px;
+	margin: 7px 10px 0 0;
 }
 #dateRangeWrapper {
     clear: both;
+	margin-top: 5px;
 }
 
 .dateRangeLabel {
-    width: 40px;
     padding-top: 2px;
 }
 
@@ -574,3 +576,4 @@ table.basic input {
 .loadTexonamyData{display: none; background-color: #000; opacity: 0.2; filter: alpha(opacity=20); height: 100%; width: 100%; position: fixed; z-index: 9;}
 .loadTexonamyData.in{display: block;}
 .loadingIcon{display: none; position: absolute; top: 50%; left: 50%; margin-left: -80px; margin-top: -80px; width: 32px; z-index: 99;}
+.clearfix:after{clear: both; display: block; content: '';}
