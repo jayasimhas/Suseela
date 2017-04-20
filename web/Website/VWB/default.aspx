@@ -23,17 +23,17 @@
         <asp:HiddenField runat="server" ID="IssueArticleIdsInput"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="hdnSelectedVertical"></asp:HiddenField>
         <asp:HiddenField runat="server" ID="hdnSelectedPubs"></asp:HiddenField>
-         <asp:HiddenField runat="server" ID="hdnSelectedTaxs"></asp:HiddenField>
-         <asp:HiddenField runat="server" ID="hdnSelectedAuths"></asp:HiddenField>
-         <asp:HiddenField runat="server" ID="hdnSelectedContTypes"></asp:HiddenField>
-         <asp:HiddenField runat="server" ID="hdnSelectedMedTypes"></asp:HiddenField>
+        <asp:HiddenField runat="server" ID="hdnSelectedTaxs"></asp:HiddenField>
+        <asp:HiddenField runat="server" ID="hdnSelectedAuths"></asp:HiddenField>
+        <asp:HiddenField runat="server" ID="hdnSelectedContTypes"></asp:HiddenField>
+        <asp:HiddenField runat="server" ID="hdnSelectedMedTypes"></asp:HiddenField>
         <!-- pipe bar separated guids -->
         <asp:Button runat="server" ID="NewIssueSubmitButton" OnClick="NewIssueSubmitButton_OnClick" CssClass="hidden-button" />
 
         <div class="wrapper">
             <asp:Image ID="imgLogo" CssClass="banner" AlternateText="Informa Business Information - Virtual Whiteboard" runat="server" />
             <div class="top">
-                <asp:DropDownList ID="ddlVerticals" CssClass="ddlverticalsselect" runat="server" Width="200px" OnSelectedIndexChanged="ddlVerticals_SelectedIndexChanged" AutoPostBack="true" ViewStateMode="Enabled">                    
+                <asp:DropDownList ID="ddlVerticals" CssClass="ddlverticalsselect" runat="server" Width="200px" OnSelectedIndexChanged="ddlVerticals_SelectedIndexChanged" AutoPostBack="true" ViewStateMode="Enabled">
                 </asp:DropDownList>
 
                 <asp:DropDownCheckBoxes ID="ddlPublications" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
@@ -41,37 +41,38 @@
                     <Texts SelectBoxCaption="Select Publication(s)" />
                 </asp:DropDownCheckBoxes>
 
-                <asp:Label ID="lblAricleNumber" runat="server" Text="Enter Article Number"></asp:Label>
-                <asp:TextBox ID="txtArticleNumber" runat="server"></asp:TextBox>
-                <asp:Label ID="lblArticleNumberError" runat="server"></asp:Label>
+                <span style="margin-left: 30px;"><asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" /></span>
                 <div id="dateRangeWrapper">
-                    <div class="left radioButtonWrapper">
-                        <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
+                    <div class="clearfix">
+                        <div class="left radioButtonWrapper">
+                            <asp:RadioButton ID="rbNoDate" runat="server" Text="Default" GroupName="choice" class="enabledate" />
+                        </div>
+                        <div class="left radioButtonWrapper">
+                            <asp:RadioButton ID="rbDateRange" runat="server" Text="Date Range" GroupName="choice" class="enabledate" />
+                        </div>
+                        <div class="left inputWrapper">
+                            <span class="left dateRangeLabel">From</span>
+                            <span class="left">
+                                <asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox></span>
+                            <span class="left">
+                                <asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox></span>
+
+                            <span class="left dateRangeLabel">To</span>
+                            <span class="left">
+                                <asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox></span>
+                            <span class="left">
+                                <asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox></span>
+                            <br />
+                        </div>
                     </div>
-                    <div class="left radioButtonWrapper">
-                        <asp:RadioButton ID="rbDateRange" runat="server" Text="Date Range" GroupName="choice" class="enabledate" />
-                    </div>
-                    <div class="left inputWrapper">
-                        <div class="left dateRangeLabel">From</div>
-                        <asp:TextBox ID="txtStart" runat="server" class="date" Enabled="false"></asp:TextBox>
-                        
-                        <asp:TextBox ID="txtStartTime" runat="server" class="time" Enabled="false"></asp:TextBox>
-                        <br />
-                        <div class="left dateRangeLabel">To</div>
-                        <asp:TextBox ID="txtEnd" runat="server" class="date" Enabled="false"></asp:TextBox>
-                        
-                        <asp:TextBox ID="txtEndTime" runat="server" class="time" Enabled="false"></asp:TextBox>
-                        <br />
-                        <asp:CheckBox runat="server" ID="chkShowInProgressArticles" Text="Show in-progress articles only" />
-                    </div>
+                    <asp:Image ID="loadIcon" class="loadingIcon" runat="server" ImageUrl="/VWB/images/vwb/spinner_gray_160.gif" />
                     <div class="loadFilters">
-                        <input type="button" id="btnLoadFilters" value="Populate Filters" />                
+                        <input type="button" id="btnLoadFilters" value="Load Filters" />
                     </div>
-                    <asp:Image ID="loadIcon" class="loadingIcon" runat="server" ImageUrl="/VWB/images/vwb/spinner_gray_160.gif"/>
                     <div class="mediatypes">
                         <asp:DropDownCheckBoxes ID="ddlTaxonomies" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
-                        <Style SelectBoxWidth="260" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
-                        <Texts SelectBoxCaption="Select Taxonomy(s)" />
+                            <Style SelectBoxWidth="260" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
+                            <Texts SelectBoxCaption="Select Taxonomy Tag(s)" />
                         </asp:DropDownCheckBoxes>
 
                         <asp:DropDownCheckBoxes ID="ddlAuthors" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
@@ -81,16 +82,19 @@
 
                         <asp:DropDownCheckBoxes ID="ddlContentType" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
                             <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
-                            <Texts SelectBoxCaption="Select ContentType(s)" />
+                            <Texts SelectBoxCaption="Select Content Type(s)" />
                         </asp:DropDownCheckBoxes>
 
                         <asp:DropDownCheckBoxes ID="ddlMediaType" runat="server" Width="200px" UseSelectAllNode="false" AddJQueryReference="false">
                             <Style SelectBoxWidth="195" DropDownBoxBoxWidth="160" DropDownBoxBoxHeight="250" />
-                            <Texts SelectBoxCaption="Select MediaType(s)" />
-                        </asp:DropDownCheckBoxes>
-
+                            <Texts SelectBoxCaption="Select Media Type(s)" />
+                        </asp:DropDownCheckBoxes> 
                     </div>
-
+                    <div class="articlenumber">
+                        <asp:Label ID="lblAricleNumber" runat="server" Text="Article Number"></asp:Label>
+                        <asp:TextBox ID="txtArticleNumber" runat="server"></asp:TextBox>
+                        <asp:Label ID="lblArticleNumberError" runat="server"></asp:Label>
+                    </div>
                     <div class="appbuttons">
                         <asp:Label runat="server" ID="lblMsg"></asp:Label>
                         <br />

@@ -43,11 +43,17 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 				}
 				selectedtag.remove();
 			} 
+			else if(selectedtag.tagName=="LI")
+			{
+				selectedtag.remove();
+				Elem = '<p>' + selectedtext + '</p>';
+			}
 			else{
+				selectedtag.remove();
 				Elem = '<p>' + selectedtext + '</p>';
 			}
 			
-			if(data.tagName!="BODY")
+			/* if(data.tagName!="BODY")
 			{
 				var data1=data.parentNode;
 				if(data1.tagName!="BODY")
@@ -55,7 +61,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 					data1.remove();
 				}
 				data.remove();
-			}
+			} */
 		   //var contentElement = document.createElement('p');
 		   //contentElement.innerHTML=selectedtext;
 		   //editor.pasteHtml(contentElement.outerHTML);
@@ -102,6 +108,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		var entirehtml=editor.get_html(true);
 		var parsedHtml=jQuery.parseHTML(entirehtml);		
 			contentElement.innerHTML=selectedtext;
+			contentElement.setAttribute('class','testing');
 			
 		if(entirehtml.indexOf('<div class="quick-facts">') == -1) {
 		 var qfdiv=document.createElement("div");
@@ -173,6 +180,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 	 editor.pasteHtml(contentElement.outerHTML);	
 	  }
  }	 
+ 
 }
 
 function ApplyStyleWithoutClass(value)
@@ -191,15 +199,20 @@ function ApplyStyleWithoutClass(value)
 }
 function AppendToQuickFacts(parsedHtml, contentElement, selectedtag, entirehtml, selectedtext) {
 	var temp="";
-	var Str ="";			
+	var Str ="";
+	var OldValue = "";
+	var ParsedNewElement = "";
 	for(var i = 0; i < parsedHtml.length; i++) {
-		if(parsedHtml[i].className == 'quick-facts') {		
-			var old = parsedHtml[i].outerHTML;
+		if(parsedHtml[i].className == 'quick-facts') {	
+			var old=parsedHtml[i].outerHTML;			
 			parsedHtml[i].append(contentElement);
-			selectedtag.outerHTML.replace(selectedtext, '');
-			temp = entirehtml.replace(selectedtext, '');
-			Str = temp.replace(old, parsedHtml[i].outerHTML);
 			
+			ParsedNewElement = parsedHtml[i].outerHTML.replace(selectedtag.outerHTML, '');
+			//var newhtml = parsedHtml[i].outerHTML.replace(selectedtag.outerHTML, '');
+			//selectedtag.outerHTML.replace(selectedtext, '');
+			temp = entirehtml.replace(selectedtag.outerHTML, '');
+			OldValue = old.replace(selectedtag.outerHTML, '');
+			Str = temp.replace(OldValue,ParsedNewElement);			
 		}
 	}
 	return Str;

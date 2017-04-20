@@ -108,8 +108,8 @@ namespace Informa.Library.CustomSitecore.RTECustomization
                     ((CheckboxField)tableau.Fields["Allow Custom Views"]).Checked = AllowCustomViews;
                     ((CheckboxField)tableau.Fields["Display Toolbars"]).Checked = DisplayToolbars;
                     tableau["Filter"] = Filter;
-                    tableau["Width"] = Height;
-                    tableau["Height"] = Width;
+                    tableau["Width"] = Width;
+                    tableau["Height"] = Height;
                     tableau.Editing.EndEdit();
 
                     string tableauToken = getTokenForTableau(tableau.ID.ToString(), currentArticleItem[DashboardName + "-sourceid"]);

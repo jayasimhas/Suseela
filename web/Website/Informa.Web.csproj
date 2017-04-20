@@ -1357,8 +1357,6 @@
     <Compile Include="ViewModels\CallToActionViewModel.cs" />
     <Compile Include="ViewModels\SitemapViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
-    <Compile Include="ViewModels\SponsoredContent\ISponsoredContent.cs" />
-    <Compile Include="ViewModels\SponsoredContent\SponsoredContent.cs" />
     <Compile Include="ViewModels\SubnavigationViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleFeaturedImage.cs" />
     <Compile Include="ViewModels\Articles\ArticleListItemModel.cs" />
@@ -2334,7 +2332,6 @@
     <Content Include="Views\Casualty\MarketFixtureDummy.json" />
     <Content Include="Views\Casualty\marketFixDummyData.json" />
     <Content Include="Views\Article\ArticlePackage.cshtml" />
-    <Content Include="Views\Shared\Components\SponsoredContent.cshtml" />
     <Content Include="Views\Article\ArticlePrologueATA.cshtml" />
     <None Include="Web.config.template">
       <SubType>Designer</SubType>

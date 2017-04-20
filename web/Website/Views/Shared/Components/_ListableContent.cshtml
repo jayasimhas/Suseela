@@ -11,7 +11,14 @@
             <li>
                 @if (Model.SponsoredContent.Sponsor_Logo != null)
                 {
-                    <a href="@Model.SponsoredContent.Sponsor_Link"><img src=@Model.SponsoredContent.Sponsor_Logo.Src /></a>
+                    if (!string.IsNullOrEmpty(Model.SponsoredContent.Sponsor_Link))
+                    {
+                        <a href="@Model.SponsoredContent.Sponsor_Link"><img src=@Model.SponsoredContent.Sponsor_Logo.Src /></a>
+                    }
+                    else
+                    {
+                        <img src=@Model.SponsoredContent.Sponsor_Logo.Src />
+                    }
                 }
             </li>
         </ul>
