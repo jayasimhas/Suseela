@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
-using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Informa.Library.Authors;
 using Informa.Library.ContentCuration;
@@ -22,7 +21,6 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.ViewModels.Articles;
 using Informa.Library.Search.ComputedFields.Facets;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
-using Informa.Web.ViewModels.SponsoredContent;
 
 namespace Informa.Web.ViewModels
 {
