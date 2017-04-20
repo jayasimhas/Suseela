@@ -27,8 +27,8 @@ namespace Informa.Library.Search.ComputedFields.Facets
                     if (indexItem?.Taxonomies != null)
                     {
                         var companiesTaxonomy = indexItem.Taxonomies.Where(x => SearchTaxonomyUtil.IsCompaniesTaxonomy(x._Path, rootItem.Name));
-                        var companiestest = companiesTaxonomy.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
-                        return companiesTaxonomy.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
+                        var companysearchtaxonomy = companiesTaxonomy.Where(x => !string.IsNullOrEmpty(x.Item_Name)).Select(x => x.Item_Name.Trim()).ToList();
+                        return companysearchtaxonomy;
                     }
                 }
                 else if (string.IsNullOrEmpty(indexItem.Referenced_Companies))
