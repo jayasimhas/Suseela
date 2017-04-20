@@ -2,6 +2,7 @@
 {
 	public interface IUserProfile
 	{
+        string UserId { get; }
         string UserName { get; }
         string FirstName { get; }
 		string LastName { get; }
@@ -31,5 +32,7 @@
         string JobIndustry { get; set; }
         string JobTitle { get; set; }
         string Mobile { get; set; }
+        string ContactId { get; }
+        string ContactAccountId { get; }
     }
 }

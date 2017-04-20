@@ -50,11 +50,7 @@ function loadDropdownVals(data) {
             }
             taxonomiesDrop += '</div>';
             $('#ddlTaxonomies_dv').html(taxonomiesDrop);
-			if(createTexonamyArr.length){
-				for(var i=0; i<createTexonamyArr.length; i++){
-					$('#' + createTexonamyArr[i]).attr('checked', true);
-				}
-			}
+			localStorage.setItem('texonamyObj', JSON.stringify($('#ddlTaxonomies_dv').html()));
         }
         else if (key == 'authors') {
             var authorsDrop = '<div id="checks">';
@@ -66,11 +62,7 @@ function loadDropdownVals(data) {
             }
             authorsDrop += '</div>';
             $('#ddlAuthors_dv').html(authorsDrop);
-			if(createauthCodesArr.length){
-				for(var i=0; i<createauthCodesArr.length; i++){
-					$('#' + createauthCodesArr[i]).attr('checked', true);
-				}
-			}
+			localStorage.setItem('authCodesObj', JSON.stringify($('#ddlAuthors_dv').html())); 
         }
         else if (key == 'contentTypes') {
             var contentTypesDrop = '<div id="checks">';
@@ -82,11 +74,7 @@ function loadDropdownVals(data) {
             }
             contentTypesDrop += '</div>';
             $('#ddlContentType_dv').html(contentTypesDrop);
-			if(createcontTypeArr.length){
-				for(var i=0; i<createcontTypeArr.length; i++){
-					$('#' + createcontTypeArr[i]).attr('checked', true);
-				}
-			}
+			localStorage.setItem('contentTypeObj', JSON.stringify($('#ddlContentType_dv').html()));
         }
         else if (key == 'mediaTypes') {
             var mediaTypesDrop = '<div id="checks">';
@@ -97,12 +85,8 @@ function loadDropdownVals(data) {
                 mediaTypesDrop += '</div>';
             }
             mediaTypesDrop += '</div>';
-            $('#ddlMediaType_dv').html(mediaTypesDrop);
-			if(createmedTypeArr.length){
-				for(var i=0; i<createmedTypeArr.length; i++){
-					$('#' + createmedTypeArr[i]).attr('checked', true);
-				}
-			}
+            $('#ddlMediaType_dv').html(mediaTypesDrop); 
+			localStorage.setItem('mediaTypeObj', JSON.stringify($('#ddlMediaType_dv').html()));
         }
     };
 }
@@ -266,34 +250,75 @@ $(document)
             }
         });
 		
+		$('#ddlTaxonomies_sl').on('click', function(){
+			if(createTexonamyArr.length){
+				for(var i=0; i<createTexonamyArr.length; i++){
+					$('#' + createTexonamyArr[i]).prop('checked', 'checked');
+				}
+			} 
+		});
+		
+		$('#ddlTaxonomies_sl').on('click', function(){
+			if(createauthCodesArr.length){
+				for(var i=0; i<createauthCodesArr.length; i++){
+					$('#' + createauthCodesArr[i]).attr('checked', true);
+				} 
+			}
+		});
+		
+		$('#ddlContentType_sl').on('click', function(){
+			if(createcontTypeArr.length){
+				for(var i=0; i<createcontTypeArr.length; i++){
+					$('#' + createcontTypeArr[i]).attr('checked', true);
+				} 
+			}
+		});
+		
+		$('#ddlMediaType_sl').on('click', function(){
+			if(createmedTypeArr.length){
+				for(var i=0; i<createmedTypeArr.length; i++){
+					$('#' + createmedTypeArr[i]).attr('checked', true);
+				} 
+			} 
+		});
+		
 		var href = window.location.href;
 		if(href.indexOf('taxCodes') !== -1){
 			var taxCodes = href.split('taxCodes=')[1].split('&')[0], texTexonamyArr = taxCodes.split(',');
+			$('#ddlTaxonomies_dv').html(JSON.parse(localStorage.getItem('texonamyObj')));
 			for(var i=0; i<texTexonamyArr.length; i++){
 				createTexonamyArr.push(recreateIds(texTexonamyArr[i]));
-			}
+			} 
 		}
 		if(href.indexOf('authCodes') !== -1){
 			var authCodes = href.split('authCodes=')[1].split('&')[0], authArr = authCodes.split(',');
+			$('#ddlAuthors_dv').html(JSON.parse(localStorage.getItem('authCodesObj')));
 			for(var i=0; i<authArr.length; i++){
 				createauthCodesArr.push(recreateIds(authArr[i]));
-			}
+			} 
 		}
 		if(href.indexOf('contTypeCodes') !== -1){
 			var contTypeCodes = href.split('contTypeCodes=')[1].split('&')[0], contTypeArr = contTypeCodes.split(',');
+			$('#ddlContentType_dv').html(JSON.parse(localStorage.getItem('contentTypeObj'))); 
 			for(var i=0; i<contTypeArr.length; i++){
 				createcontTypeArr.push(recreateIds(contTypeArr[i]));
-			}
+			} 
 		}
 		if(href.indexOf('medTypeCodes') !== -1){
 			var medTypeCodes = href.split('medTypeCodes=')[1].split('&')[0], medTypeArr = medTypeCodes.split(',');
+			$('#ddlMediaType_dv').html(JSON.parse(localStorage.getItem('mediaTypeObj'))); 
 			for(var i=0; i<medTypeArr.length; i++){
 				createmedTypeArr.push(recreateIds(medTypeArr[i]));
 			}
-		} 
+		}
 		
         $(document).on('click', '#btnLoadFilters', function () {
 			$('.loadTexonamyData').addClass('in');
+			localStorage.clear();
+			createTexonamyArr.length = 0;
+			createauthCodesArr.length = 0;
+			createcontTypeArr.length = 0;
+			createmedTypeArr.length = 0;
 			loadAjaxData('btnLoadFilters');  
         });
 		
@@ -348,8 +373,18 @@ $(document)
 			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
 		}
 		else{
-			//$('.loadTexonamyData').addClass('in');
-			loadAjaxData('btnRunReport');
+			if(localStorage.getItem('texonamyObj') !== null){
+				$('#ddlTaxonomies_dv').html(JSON.parse(localStorage.getItem('texonamyObj')));
+			}
+			if(localStorage.getItem('authCodesObj') !== null){
+				$('#ddlAuthors_dv').html(JSON.parse(localStorage.getItem('authCodesObj')));
+			}
+			if(localStorage.getItem('contentTypeObj') !== null){
+				$('#ddlContentType_dv').html(JSON.parse(localStorage.getItem('contentTypeObj')));
+			}
+			if(localStorage.getItem('mediaTypeObj') !== null){
+				$('#ddlMediaType_dv').html(JSON.parse(localStorage.getItem('mediaTypeObj'))); 
+			}
 		}
     });
 

@@ -68,6 +68,7 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                             InfoLogger.Log(responseString, this.GetType().Name);
                             var values = HttpUtility.ParseQueryString(responseString);
                             accessToken = values["access_token"];
+                            InfoLogger.Log("Access Token" + accessToken, this.GetType().Name);
                         }
                     }
                     if (string.IsNullOrWhiteSpace(accessToken))
@@ -90,6 +91,10 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                             Username = profile.UserName,
                             Email = profile.Email,
                             Name = string.Format("{0} {1}", profile.FirstName, profile.LastName),
+                            ContactId = profile.ContactId,
+                            AccountId = !string.IsNullOrWhiteSpace(profile.ContactAccountId)
+                            ? new List<string> { profile.ContactAccountId } : null,
+                            UserId = profile.UserId,
                             AccessToken = accessToken
                         }
                     };

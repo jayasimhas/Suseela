@@ -30,5 +30,10 @@ namespace Informa.Library.Salesforce.V2.User.Profile
         public string MiddleName { get; set; }
         [XmlElement(ElementName = "title")]
         public string Salutation { get; set; }
+        [XmlElement(ElementName = "contact_id")]
+        public string ContactId { get; set; }
+        [XmlElement(ElementName = "contact_account_id")]
+        public string ContactAccountId { get; set; }
+
     }
 }

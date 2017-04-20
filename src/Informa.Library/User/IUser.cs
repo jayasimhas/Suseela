@@ -4,6 +4,7 @@
 	{
 		string Username { get; }
 
+        string UserId { get; }
         string AccessToken { get; }
     }
 }

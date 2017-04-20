@@ -17,7 +17,9 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
                 ProductName = entitlement.ProductName,
                 Description = entitlement.Description,
                 Name = entitlement.Name,
-                IsActive = entitlement.Active
+                IsActive = entitlement.Active,
+                ServiceId = entitlement.ServiceId,
+                ParentServiceId = entitlement.ParentServiceId
             };
         }
     }

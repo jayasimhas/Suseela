@@ -81,8 +81,10 @@ namespace Informa.Library.Subscription.User
                 ProductCode = model.ProductCode,
                 ProductGuid = model.ProductId,
                 ProductType = model.ProductType,
-                ExpirationDate = Convert.ToDateTime(model.SalesEndDate),
-                Publication = model.Name
+                ExpirationDate = model.IsActive ? Convert.ToDateTime(model.SalesEndDate) : DateTime.MinValue,
+                Publication = model.Name,
+                ServiceId = model.ServiceId,
+                ParentServiceId = model.ParentServiceId
             };
         }
     }

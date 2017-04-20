@@ -56,11 +56,13 @@ namespace Informa.Web.App_Start
 			if (SolrContentSearchManager.EnableHttpCache)
 			{
 				RegistrationExtensions.RegisterType<HttpRuntimeCache>(this.builder).As<ISolrCache>();
-				foreach (SolrServerElement solrServerElement in (ConfigurationElementCollection)this.Cores)
+                int timeoutValue;
+                int.TryParse(Settings.GetSetting("SolrConnectionTimeout", "200000"), out timeoutValue);
+                foreach (SolrServerElement solrServerElement in (ConfigurationElementCollection)this.Cores)
 					((IRegistrationBuilder<object, ConcreteReflectionActivatorData, SingleRegistrationStyle>)RegistrationExtensions.WithParameters<object, ConcreteReflectionActivatorData, SingleRegistrationStyle>(RegistrationExtensions.RegisterType(this.builder, typeof(SolrConnection)).Named(solrServerElement.Id + (object)typeof(SolrConnection), typeof(ISolrConnection)), (IEnumerable<Parameter>)new NamedParameter[1]
 		  {
 			new NamedParameter("serverURL", (object) solrServerElement.Url)
-		  })).OnActivated((Action<IActivatedEventArgs<object>>)(args => ((SolrConnection)args.Instance).Cache = ResolutionExtensions.Resolve<ISolrCache>(args.Context)));
+		  })).OnActivated((Action<IActivatedEventArgs<object>>)(args => ((SolrConnection)args.Instance).Cache = ResolutionExtensions.Resolve<ISolrCache>(args.Context))).WithProperty("Timeout", timeoutValue);
 			}
 			this.container = this.builder.Build(ContainerBuildOptions.None);
 			ServiceLocator.SetLocatorProvider((ServiceLocatorProvider)(() => (IServiceLocator)new AutofacServiceLocator((IComponentContext)this.container)));

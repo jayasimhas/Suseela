@@ -2,15 +2,15 @@ namespace Informa.Library.User.Entitlement
 {
     public interface IEntitlement
     {
-		string ProductCode { get; }
-		string ArchiveCode { get; }
-		int ArchiveLimitedDays { get; }
-		bool ArchiveLimited { get; }
-		string DocumentId { get; }
-		string ProductId { get; }
-		string ProductType { get; }
-		string OpportunityId { get; }
-		string OpportunityLineItemId { get; }
+        string ProductCode { get; }
+        string ArchiveCode { get; }
+        int ArchiveLimitedDays { get; }
+        bool ArchiveLimited { get; }
+        string DocumentId { get; }
+        string ProductId { get; }
+        string ProductType { get; }
+        string OpportunityId { get; }
+        string OpportunityLineItemId { get; }
         string Type { get; set; }
         string StartDate { get; set; }
         string SalesEndDate { get; set; }
@@ -19,5 +19,7 @@ namespace Informa.Library.User.Entitlement
         string Description { get; set; }
         string AccessEndDate { get; set; }
         bool IsActive { get; set; }
+        string ServiceId { get; set; }
+        string ParentServiceId { get; set; }
     }
 }

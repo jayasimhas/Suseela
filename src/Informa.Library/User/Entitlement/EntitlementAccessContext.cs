@@ -84,6 +84,7 @@ namespace Informa.Library.User.Entitlement
         {
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled &&
                 (string.IsNullOrWhiteSpace(entitlement.AccessEndDate) ||
+                !entitlement.IsActive ||
                 Convert.ToDateTime(entitlement.AccessEndDate) < DateTime.Now))
                 return false;
 
