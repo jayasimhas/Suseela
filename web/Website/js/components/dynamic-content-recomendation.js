@@ -69,7 +69,7 @@
 							}
                         } else {
                         Template += '<div class="contentRecomm-article '+addCls+'">' +
-										articlemeta + listableImage + + listablePublication + listableTitle + listableDate +
+										articlemeta + listableImage + listablePublication + listableTitle + listableDate +
 									'</div>';
 						}   
 					}
