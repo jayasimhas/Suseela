@@ -67,7 +67,7 @@ namespace Elsevier.Web.VWB.Report
             //{
             //	return;
             //}
-            if (_query.VerticalRoot == null || _query.VerticalRoot == "Select Verticals") return;
+            if (_query.VerticalRoot == null || _query.VerticalRoot == "Select Vertical") return;
             _results = RunSearch(_query).ToList();
             if (AlertTryingToGetNextIssueWhenNoneExists(report))
             {

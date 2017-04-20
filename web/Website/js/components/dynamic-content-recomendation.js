@@ -22,7 +22,7 @@
                 if (data.articles.length > 0) {
                     for (var i = 0; i < 3; i++) {
 						var addCls = (data.articles[i].isSonsoredBy) ? 'sponsored_cont' : '';
-							var sponsoredByLogo = (data.articles[i].sponsoredByLogo) ? '<li><img src="'+data.articles[i].sponsoredByLogo+'"></li>' : '',
+							var sponsoredByLogo = (data.articles[i].sponsoredLink && data.articles[i].sponsoredByLogo) ? '<li><a href="'+data.articles[i].sponsoredLink+'"><img src="'+data.articles[i].sponsoredByLogo+'"></a></li>' : ((data.articles[i].sponsoredLink == null || data.articles[i].sponsoredLink == undefined) && data.articles[i].sponsoredByLogo) ? '<img src="'+data.articles[i].sponsoredByLogo+'">' : '',
 								sponsoredByTitle = (data.articles[i].sponsoredByTitle) ? '<li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>' : '',
 								listablePublication = (data.articles[i].listablePublication) ? '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' : '',
 								listableImage = (data.articles[i].listableImage) ? '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' : '',
@@ -53,7 +53,7 @@
                 if (data.articles.length > 0) {
                     for (var i = 0; i < 3; i++) {
 						var addCls = (data.articles[i].isSonsoredBy) ? 'sponsored_cont' : '',
-							sponsoredByLogo = (data.articles[i].sponsoredByLogo) ? '<li><img src="'+data.articles[i].sponsoredByLogo+'"></li>'  : '',
+							sponsoredByLogo = (data.articles[i].sponsoredLink && data.articles[i].sponsoredByLogo) ? '<li><a href="'+data.articles[i].sponsoredLink+'"><img src="'+data.articles[i].sponsoredByLogo+'"></a></li>' : ((data.articles[i].sponsoredLink == null || data.articles[i].sponsoredLink == undefined) && data.articles[i].sponsoredByLogo) ? '<img src="'+data.articles[i].sponsoredByLogo+'">' : '',
 							sponsoredByTitle = (data.articles[i].sponsoredByTitle) ? '<li><time class="article-metadata__date sponsored_title">'+data.articles[i].sponsoredByTitle+'</time></li>' : '',
 							listablePublication = (data.articles[i].listablePublication) ? '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' : '',
 							listableImage = (data.articles[i].listableImage) ? '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' : '',

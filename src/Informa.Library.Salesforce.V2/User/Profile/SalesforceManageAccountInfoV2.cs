@@ -145,11 +145,13 @@ ISalesforceInfoLogger infoLogger,
                 {
                     client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
-                    var content = new StringContent(JsonConvert.SerializeObject(request).ToString(), Encoding.UTF8, "application/json");
+                    var requestJson = JsonConvert.SerializeObject(request).ToString();
+                    var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
 
 
                     var updateUserDetailsEndPoints = SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username);
                     InfoLogger.Log(updateUserDetailsEndPoints, this.GetType().Name);
+                    InfoLogger.Log(requestJson, this.GetType().Name);
                     var result = client.PostAsync(updateUserDetailsEndPoints, content).Result;
                     var responseString = result.Content.ReadAsStringAsync().Result;
                     InfoLogger.Log(responseString, this.GetType().Name);

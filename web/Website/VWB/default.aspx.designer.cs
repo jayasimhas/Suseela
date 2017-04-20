@@ -139,31 +139,13 @@ namespace Elsevier.Web.VWB {
         protected global::Saplin.Controls.DropDownCheckBoxes ddlPublications;
         
         /// <summary>
-        /// lblAricleNumber control.
+        /// chkShowInProgressArticles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAricleNumber;
-        
-        /// <summary>
-        /// txtArticleNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtArticleNumber;
-        
-        /// <summary>
-        /// lblArticleNumberError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblArticleNumberError;
+        protected global::System.Web.UI.WebControls.CheckBox chkShowInProgressArticles;
         
         /// <summary>
         /// rbNoDate control.
@@ -220,15 +202,6 @@ namespace Elsevier.Web.VWB {
         protected global::System.Web.UI.WebControls.TextBox txtEndTime;
         
         /// <summary>
-        /// chkShowInProgressArticles control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkShowInProgressArticles;
-        
-        /// <summary>
         /// loadIcon control.
         /// </summary>
         /// <remarks>
@@ -272,6 +245,33 @@ namespace Elsevier.Web.VWB {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Saplin.Controls.DropDownCheckBoxes ddlMediaType;
+        
+        /// <summary>
+        /// lblAricleNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAricleNumber;
+        
+        /// <summary>
+        /// txtArticleNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtArticleNumber;
+        
+        /// <summary>
+        /// lblArticleNumberError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblArticleNumberError;
         
         /// <summary>
         /// lblMsg control.

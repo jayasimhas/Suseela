@@ -85,9 +85,16 @@ namespace Elsevier.Web.VWB.Report
         private string GetContextSiteName(string itemId)
         {
             var articleItem = Sitecore.Context.Database.GetItem(itemId);
-            var siteName = articleItem.Axes.GetAncestors().Where(t => t.TemplateID == ISite_RootConstants.TemplateId)?.FirstOrDefault()?.Name;
-            return siteName;
+            var siteInfoList = Sitecore.Configuration.Factory.GetSiteInfoList();
 
+            foreach (SiteInfo siteInfo in siteInfoList)
+            {
+                if (articleItem.Paths.FullPath.StartsWith(siteInfo.RootPath, StringComparison.OrdinalIgnoreCase) && (siteInfo.RootPath.IndexOf("Agri",StringComparison.OrdinalIgnoreCase)>0|| siteInfo.RootPath.IndexOf("Maritime", StringComparison.OrdinalIgnoreCase) > 0 || siteInfo.RootPath.IndexOf("Pharma", StringComparison.OrdinalIgnoreCase) > 0))
+                {
+                    return siteInfo.Name;
+                }
+            }
+            return string.Empty;
         }
 
         public string GetCmsItemUrl(string itemId)
