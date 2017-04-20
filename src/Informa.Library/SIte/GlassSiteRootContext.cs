@@ -20,9 +20,7 @@ namespace Informa.Library.Site
 			CacheProvider = cacheProvider;
 		}
 
-	    private ISite_Root _item;
-		public ISite_Root Item => _item ?? 
-            (_item = SitecoreContext?.GetRootItem<ISite_Root>());
+		public ISite_Root Item => SitecoreContext?.GetRootItem<ISite_Root>();
 
 		private string CreateCacheKey(string suffix)
 		{
