@@ -290,11 +290,8 @@ p.quick-facts__source{
 } */
 
 .article-exhibit{
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  clear: both;
-  color: #979797;
+	
+  clear: both;  
   margin-bottom: 32px;
   margin-bottom: 2rem;
   display: -webkit-box;
@@ -312,6 +309,10 @@ p.quick-facts__source{
         -ms-flex: 1 0 auto;
             flex: 1 0 auto;
     width: 100%; 
+	color: #979797;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
  }
 /* p.article-exhibit__header{
 	font-family:  Arial;
