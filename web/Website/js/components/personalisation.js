@@ -936,25 +936,25 @@ $(function () {
 						}
 						if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 							getscrollData = loadLayoutOneData(data, loadsection);
-							getscrollData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+							getscrollData += '<div id="ad_'+loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
 							
-							$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+							$('#ad_'+loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('')).html(googleAdStr);
 							document.write = docWrite;
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
-							getscrollData += '<div id="ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+							getscrollData += '<div id="ad_'+loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('')+'" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
 							
-							$('#ad_'+loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+							$('#ad_'+loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('')).html(googleAdStr);
 							document.write = docWrite;
 						}
 					}
