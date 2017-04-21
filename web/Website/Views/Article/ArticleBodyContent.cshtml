@@ -184,7 +184,7 @@
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
     <div class="root">
-        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "../Article/_ArticleSidebar"))
+        @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))
     </div>
 </div>
 @if (Model.sponsoredContent != null)
