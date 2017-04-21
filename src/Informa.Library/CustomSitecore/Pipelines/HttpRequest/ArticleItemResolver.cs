@@ -27,6 +27,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
         public void Process(HttpRequestArgs args)
         {
+            Sitecore.Diagnostics.Log.Info("Started ArticleItemResolver", " ArticleItemResolver ");
             Assert.ArgumentNotNull((object)args, "args");
             if (Context.Item != null || Context.Database == null || args.Url.ItemPath.Length == 0)
                 return;
@@ -51,7 +52,10 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
             string urlTitle = ArticleSearch.GetCleansedArticleTitle(a); // a._Name.ToLower().Replace(" ", "-");
             if (!urlTitle.Equals(match.ArticleTitle, System.StringComparison.InvariantCultureIgnoreCase))
-                HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a));
+                if (!HttpContext.Current.Response.IsRequestBeingRedirected)
+                {
+                    HttpContext.Current.Response.RedirectPermanent(ArticleSearch.GetArticleCustomPath(a), true);
+                }
 
             Item i = SitecoreContext.GetItem<Item>(a._Id);
             if (i == null)
@@ -60,6 +64,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
             Context.Item = i;
             args.Url.ItemPath = i.Paths.FullPath;
             Context.Request.ItemPath = i.Paths.FullPath;
+            Sitecore.Diagnostics.Log.Info("Ended ArticleItemResolver", " ArticleItemResolver");
         }
 
         public struct ArticleMatch

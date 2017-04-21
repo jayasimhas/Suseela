@@ -8,7 +8,8 @@ using Jabberwocky.Autofac.Attributes;
 
 namespace Informa.Web.ViewModels.Authors
 {
-    public interface IAuthorShareViewModel {
+    public interface IAuthorShareViewModel
+    {
         string PageTitle { get; set; }
         string PageUrl { get; }
         string ShareText { get; }
@@ -16,7 +17,7 @@ namespace Informa.Web.ViewModels.Authors
 
     [AutowireService]
     public class AuthorShareViewModel : GlassViewModel<IStaff_Item>, IAuthorShareViewModel
-	{
+    {
         protected readonly IAuthorIndexClient AuthorIndexClient;
         protected readonly IHttpContextProvider HttpContext;
         protected readonly ITextTranslator TextTranslator;
@@ -25,26 +26,30 @@ namespace Informa.Web.ViewModels.Authors
             IAuthorIndexClient authorIndexClient,
             IHttpContextProvider httpContext,
             ITextTranslator textTranslator)
-		{
+        {
             AuthorIndexClient = authorIndexClient;
             HttpContext = httpContext;
             TextTranslator = textTranslator;
 
             PageTitle = string.Empty;
             var Author = AuthorIndexClient.GetAuthorByUrlName(HttpContext.Current.Request.Url.Segments.Last());
-            if (Author == null) { HandleNullAuthor(); }
+            if (Author == null)
+            { HandleNullAuthor(); }
+            else
+            {
+                PageTitle = $"{Author.First_Name} {Author.Last_Name}";
+            }
 
-            PageTitle = $"{Author.First_Name} {Author.Last_Name}";
         }
 
         public string PageTitle { get; set; }
         public string PageUrl => $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Host}{HttpContext.Current.Request.Url.PathAndQuery}";
 
         private void HandleNullAuthor()
-		{
-			var curUrl = HttpContext.Current.Request.RawUrl;
-			HttpContext.Current.Response.Redirect($"/404?url={curUrl}", true);
-		}
+        {
+            var curUrl = HttpContext.Current.Request.RawUrl;
+            HttpContext.Current.Response.Redirect($"/404?url={curUrl}", true);
+        }
 
         public string ShareText => TextTranslator.Translate("Author.Share");
     }

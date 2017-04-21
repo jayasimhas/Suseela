@@ -13,8 +13,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.RenderRenderings
 		protected override bool Render(Renderer renderer, TextWriter writer, RenderRenderingArgs args)
 		{
 			bool success;
-
-			try
+            Sitecore.Diagnostics.Log.Info("Started ExecuteRenderer", " ExecuteRenderer ");
+            try
 			{
 				using (MiniProfiler.Current.Step($"Rendering:{args.Rendering.RenderingItem.DisplayName}"))
 				{
@@ -32,8 +32,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.RenderRenderings
 
 				Log.Error(e.Message, e, typeof(ExecuteRenderer));
 			}
-
-			return success;
+            Sitecore.Diagnostics.Log.Info("Ended ExecuteRenderer", " ExecuteRenderer");
+            return success;
 		}
 	}
 }
