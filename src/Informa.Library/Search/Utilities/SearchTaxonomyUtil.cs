@@ -287,9 +287,20 @@ namespace Informa.Library.Search.Utilities
             return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.CommodityFactors").ToLower());
         }
 
-        public static bool IsCompaniesTaxonomy(string itemPath)
+        public static bool IsCompaniesTaxonomy(string itemPath,string rootname)
         {
-            return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Companies").ToLower());
+            if (rootname.Equals("Maritime"))
+            {
+                return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Companies.Maritime").ToLower());
+            }
+            else if (rootname.Equals("Agri"))
+            {
+                return itemPath.ToLower().StartsWith(Settings.GetSetting("Taxonomy.Companies.Agri").ToLower());
+            }
+            else
+            {
+               return false;
+            }
         }
 
         public static bool IsAgencyRegulatorTaxonomy(string itemPath)

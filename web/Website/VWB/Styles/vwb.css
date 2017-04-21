@@ -70,7 +70,7 @@ table.box td {
 
 div.top
 {
-	width: 1000px;
+	width: 900px;
 }
 
 div.top p strong, strong.uncentered {
@@ -82,7 +82,7 @@ div.top {
 	float: left;
 }
 .mediatypes{
-	margin: 10px 0; float: left; width: 900px;
+	margin: 10px 0; float: left; width: 800px;
 }
 .mediatypes .dd_chk_select{
 	width: 24%;
@@ -577,3 +577,5 @@ table.basic input {
 .loadTexonamyData.in{display: block;}
 .loadingIcon{display: none; position: absolute; top: 50%; left: 50%; margin-left: -80px; margin-top: -80px; width: 32px; z-index: 99;}
 .clearfix:after{clear: both; display: block; content: '';}
+#ddlTaxonomies_sl{width: 235px !important;}
+#ddlAuthors_sl, #ddlContentType_sl, #ddlMediaType_sl{width: 160px !important;}
