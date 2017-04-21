@@ -12,8 +12,10 @@ namespace Informa.Library.CustomSitecore.Pipelines
 	{
 		public virtual void Process(PipelineArgs args)
 		{
-			this.SetControllerFactory(args);
-		}
+            Sitecore.Diagnostics.Log.Info("Started InitializeControllerFactory", " InitializeControllerFactory ");
+            this.SetControllerFactory(args);
+            Sitecore.Diagnostics.Log.Info("Ended InitializeControllerFactory", " InitializeControllerFactory");
+        }
 
 		protected virtual void SetControllerFactory(PipelineArgs args)
 		{

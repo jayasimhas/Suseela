@@ -49,7 +49,10 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
         private void RedirectTo404()
         {
-            _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/deals/{RecordNumber}");
+            if (!_dependencies.HttpContextProvider.Current.Response.IsRequestBeingRedirected)
+            {
+                _dependencies.HttpContextProvider.Current.Response.Redirect($"/404?url=/deals/{RecordNumber}", true);
+            }
         }
 
         public string RecordNumber { get; set; }

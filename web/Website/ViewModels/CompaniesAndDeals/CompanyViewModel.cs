@@ -37,10 +37,12 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             RedirectIfRecordId(RecordNumber);
 
             Company = _dependencies.DcdReader.GetCompanyByRecordNumber(RecordNumber);
-            if (Company == null) RedirectTo404();
-
-            Content = _dependencies.CachedXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
-            if (Content == null) RedirectTo404();
+            if (Company == null) { RedirectTo404(); }
+            else
+            {
+                Content = _dependencies.CachedXmlParser.ParseContent<CompanyContent>(Company.Content, RecordNumber);
+                if (Content == null) RedirectTo404();
+            }
         }
 
         private void RedirectTo404()
@@ -50,7 +52,7 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
 
         private void RedirectIfRecordId(string segment)
         {
-            if(!segment.StartsWith("_id")) { return; }  //Not a record id, yay!
+            if (!segment.StartsWith("_id")) { return; }  //Not a record id, yay!
 
             int id;
             if (!int.TryParse(segment.Substring(3), out id)) return;
@@ -91,13 +93,13 @@ namespace Informa.Web.ViewModels.CompaniesAndDeals
             }
         }
 
-        public TreeNode<string,string>[] Industries
+        public TreeNode<string, string>[] Industries
             => _dependencies.DcdContentAnalyzer.GetCodingSetTrees(
                     Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("indstry"))?.Codings, "&gt;")
             ?? new TreeNode<string, string>[0];
         public Coding[] TherapyAreas => Content.CodingSets?.FirstOrDefault(x => x.Type.Equals("theracat"))?.Codings;
         public string[] LocationPath => Content.CompanyInfo.LocationPath.Split('/');
-        public TreeNode<string,string>[] SubsidiariesTree
+        public TreeNode<string, string>[] SubsidiariesTree
             => _dependencies.DcdContentAnalyzer.GetCompanySubsidiaryTree(Content.ParentsAndDivisions)
             ?? new TreeNode<string, string>[0];
 
