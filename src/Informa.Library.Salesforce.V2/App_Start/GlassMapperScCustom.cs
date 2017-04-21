@@ -5,7 +5,7 @@ using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
-namespace Informa.Web.App_Start
+namespace Informa.Library.Salesforce.V2.App_Start
 {
     public static  class GlassMapperScCustom
     {

@@ -5,7 +5,7 @@ using Glass.Mapper.Maps;
 using Glass.Mapper.Sc.IoC;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
-namespace Informa.Web.App_Start
+namespace Sitecore.SharedSource.DataImporter.App_Start
 {
     public static  class GlassMapperScCustom
     {
