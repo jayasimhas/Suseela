@@ -47,7 +47,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                 var item = Sitecore.Context.ContentDatabase.GetItem(saveItem.ID, saveItem.Language, saveItem.Version); //get the actual item being saved
                 if (item == null)
                     continue;
-                if (string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(item.TemplateID.ToString(), IArticleConstants.TemplateId.ToString(), StringComparison.OrdinalIgnoreCase) && !item.Name.Equals("__Standard Values"))
                 {
                     try
                     {
