@@ -1,8 +1,11 @@
 #region GlassMapperScCustom generated code
 using Glass.Mapper.Configuration;
+using Glass.Mapper.Configuration.Attributes;
 using Glass.Mapper.IoC;
 using Glass.Mapper.Maps;
+using Glass.Mapper.Sc.Configuration.Fluent;
 using Glass.Mapper.Sc.IoC;
+using Informa.Models.GlassModels;
 using IDependencyResolver = Glass.Mapper.Sc.IoC.IDependencyResolver;
 
 namespace Informa.Web.App_Start
@@ -17,16 +20,17 @@ namespace Informa.Web.App_Start
 			return dependencyResolver;
 		}
 
-		public static IConfigurationLoader[] GlassLoaders(){			
-			
-			/* USE THIS AREA TO ADD FLUENT CONFIGURATION LOADERS
+		public static IConfigurationLoader[] GlassLoaders(){
+
+            /* USE THIS AREA TO ADD FLUENT CONFIGURATION LOADERS
              * 
              * If you are using Attribute Configuration or automapping/on-demand mapping you don't need to do anything!
              * 
              */
+            var config = new IConfigurationLoader[] { new AttributeConfigurationLoader("Informa.Models", "Jabberwocky.Glass", "Velir.Search.Models"), new SitecoreFluentConfigurationLoader() };
 
-			return new IConfigurationLoader[]{};
-		}
+            return config;
+        }
 		public static void PostLoad(){
 			//Remove the comments to activate CodeFist
 			/* CODE FIRST START
@@ -47,8 +51,9 @@ namespace Informa.Web.App_Start
 		}
 		public static void AddMaps(IConfigFactory<IGlassMap> mapsConfigFactory)
         {
-			// Add maps here
+            // Add maps here
             // mapsConfigFactory.Add(() => new SeoMap());
+            mapsConfigFactory.Add(() => new TaxonomyMap());
         }
     }
 }
