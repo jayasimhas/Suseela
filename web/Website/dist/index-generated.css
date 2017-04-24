@@ -9448,8 +9448,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -10752,6 +10752,8 @@ div#feedbacklite.fbl_r {
   .id-merges-acquisition .small_table .table-responsive .pad-10 {
     padding: 16px;
     padding: 1rem; }
+  .id-merges-acquisition .small_table .table-responsive .R16 {
+    font-size: 15px; }
   .id-merges-acquisition .dealsOmitted {
     width: 100%;
     padding: 16px 0 18px 0;
@@ -10765,7 +10767,7 @@ div#feedbacklite.fbl_r {
     .id-merges-acquisition hr.m-0 {
       margin: 0 !important; }
   .id-merges-acquisition input.range-field {
-    width: 40px !important; }
+    width: 38px !important; }
     @media only screen and (min-width: 767px) and (max-width: 1024px) {
       .id-merges-acquisition input.range-field {
         width: 35px !important; } }
@@ -11056,7 +11058,8 @@ div#feedbacklite.fbl_r {
           color: #58595b; }
     .id-merges-acquisition .merges-form.open .merge-heading .merge-acordian svg {
       -webkit-transform: rotate(180deg);
-              transform: rotate(180deg); }
+              transform: rotate(180deg);
+      -moz-transform: rotate(180deg); }
     .id-merges-acquisition .merges-form.open .merge-form-items {
       display: block; }
     .id-merges-acquisition .merges-form .merge-heading {
@@ -11076,21 +11079,37 @@ div#feedbacklite.fbl_r {
         .id-merges-acquisition .merges-form .merge-heading .merge-acordian svg {
           width: 30px;
           height: 25px;
-          fill: #ffffff;
+          fill: #ffffff !important;
           margin: 7px 0 0 7px; }
+          .id-merges-acquisition .merges-form .merge-heading .merge-acordian svg:active {
+            fill: #ffffff !important; }
+          .id-merges-acquisition .merges-form .merge-heading .merge-acordian svg:hover {
+            fill: #ffffff !important; }
   .id-merges-acquisition .sorting-buttons {
     width: 15px;
-    float: left; }
-    .id-merges-acquisition .sorting-buttons a[type="ascending"] svg, .id-merges-acquisition .sorting-buttons [type="ascending"].pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons [type="ascending"].sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons [type="ascending"].mobile-table-exit svg {
-      -webkit-transform: rotate(180deg);
-              transform: rotate(180deg);
-      margin-top: 3px; }
-    .id-merges-acquisition .sorting-buttons a[type="descending"] svg, .id-merges-acquisition .sorting-buttons [type="descending"].pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons [type="descending"].sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons [type="descending"].mobile-table-exit svg {
-      margin-bottom: 3px; }
-    .id-merges-acquisition .sorting-buttons a svg, .id-merges-acquisition .sorting-buttons .pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons .mobile-table-exit svg {
-      height: 15px;
-      fill: #ffffff;
-      margin-top: -7px; }
+    float: left;
+    padding-top: 2px;
+    height: 24px;
+    position: relative; }
+    .id-merges-acquisition .sorting-buttons a, .id-merges-acquisition .sorting-buttons .pop-out__reset-password, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler, .id-merges-acquisition .sorting-buttons .mobile-table-exit {
+      display: block;
+      position: absolute;
+      left: 0; }
+      .id-merges-acquisition .sorting-buttons a[type="ascending"], .id-merges-acquisition .sorting-buttons [type="ascending"].pop-out__reset-password, .id-merges-acquisition .sorting-buttons [type="ascending"].sortable-table__list-toggler, .id-merges-acquisition .sorting-buttons [type="ascending"].mobile-table-exit {
+        -webkit-transform: rotate(180deg);
+                transform: rotate(180deg);
+        margin-top: 3px;
+        -moz-transform: rotate(180deg);
+        top: -3px; }
+      .id-merges-acquisition .sorting-buttons a[type="descending"], .id-merges-acquisition .sorting-buttons [type="descending"].pop-out__reset-password, .id-merges-acquisition .sorting-buttons [type="descending"].sortable-table__list-toggler, .id-merges-acquisition .sorting-buttons [type="descending"].mobile-table-exit {
+        margin-bottom: 3px;
+        bottom: -3px; }
+      .id-merges-acquisition .sorting-buttons a svg, .id-merges-acquisition .sorting-buttons .pop-out__reset-password svg, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler svg, .id-merges-acquisition .sorting-buttons .mobile-table-exit svg {
+        height: 15px;
+        fill: #ffffff !important;
+        margin-top: -7px; }
+        .id-merges-acquisition .sorting-buttons a svg:active, .id-merges-acquisition .sorting-buttons .pop-out__reset-password svg:active, .id-merges-acquisition .sorting-buttons .sortable-table__list-toggler svg:active, .id-merges-acquisition .sorting-buttons .mobile-table-exit svg:active {
+          fill: #ffffff !important; }
   .id-merges-acquisition .scrollbar-container {
     position: absolute;
     right: -16px;
@@ -11134,7 +11153,9 @@ div#feedbacklite.fbl_r {
     .rolling-stream.white-bg .scrollbar-container {
       background-color: #ffffff !important; }
   .rolling-stream h3, .rolling-stream .article-call-to-action__title {
-    position: relative; }
+    position: relative;
+    padding-bottom: 25px;
+    padding-bottom: 1.5625rem; }
     .rolling-stream h3:after, .rolling-stream .article-call-to-action__title:after {
       content: '';
       position: absolute;
@@ -13818,7 +13839,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
