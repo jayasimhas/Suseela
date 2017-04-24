@@ -356,3 +356,11 @@ target/
  
 config/env/support-QACD.properties
 config/env/support-QACM.properties
+/src/Informa.Library/Caching
+/src/Informa.Library/App_Start
+/src/Informa.Library/App_Config/Include
+/src/Informa.Models/App_Config/Include
+/src/Sitecore.SharedSource.DataImporter/App_Config/Include
+/src/Sitecore.SharedSource.DataImporter/App_Start
+/test/Informa.Tests/App_Config/Include
+/test/Informa.Tests/App_Start
