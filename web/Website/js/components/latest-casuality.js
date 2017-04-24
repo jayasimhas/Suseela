@@ -16,6 +16,11 @@
 	}
 
 	if($('.lloyd-related-links').length > 0) {
-		LatestCasuality.init(window.jsonLatestCasualties, $('.lloyd-related-links'));
+		if(typeof window.jsonLatestCasualties !== 'undefined' && typeof window.jsonLatestCasualties !== 'string'){
+			LatestCasuality.init(window.jsonLatestCasualties, $('.lloyd-related-links'));
+		}
+		else{
+			$('.lloyd-related-links').append('<div class="alert-error" style="display: block;"><svg class="alert__icon"><use xmlns:xlink=http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use></svg><p class="page-account-contact__error">'+$('#hdnErrormessage').val()+'</p></div>');
+		}
 	}
 })();
