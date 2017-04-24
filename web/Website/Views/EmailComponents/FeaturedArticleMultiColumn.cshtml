@@ -4,7 +4,10 @@
 @using Informa.Web.ViewModels.Emails
 @using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects
 
-<table>
+@if(IsInEditingMode)
+   {
+   @: <table>
+    }
     @if (Model != null && Model.RenderingParameters != null && Model.RenderingParameters.Display_Option != null && !string.IsNullOrWhiteSpace(Model.RenderingParameters.Display_Option.Value))
     {
 
@@ -281,7 +284,7 @@
                                     <tr>
                                         <td align="center" valign="top" width="285" style="width:285px;">
                                             <![endif]-->
-                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:#@GetBackgroundColor(Model);">
                                     <tbody>
                                         <tr>
                                             <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -446,7 +449,7 @@
                                 </td>
                                 <td align="center" valign="top" width="285" style="width:285px;">
                                     <![endif]-->
-                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper threecolum fr" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color:#@GetBackgroundColor(Model);">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper threecolum fr" style="border-top: 1px solid #cccccc; border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color:#@GetBackgroundColor(Model);">
                                     <tr>
                                         <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -817,7 +820,11 @@
                             </tr>
                                                                                                                                         }
                                                                                                                                     }
-</table>
+@if (IsInEditingMode)
+{
+    @:</table>
+    }
+
 @functions
 {
     public string GetBackgroundColor(FeaturedArticleMultiColumnViewModel model)
@@ -849,5 +856,5 @@
     {
         return $"{HttpContext.Current.Request.Url.Scheme}://{HttpContext.Current.Request.Url.Authority}{HttpContext.Current.Request.ApplicationPath.TrimEnd('/')}{SearchTaxonomyUtil.GetSearchUrl(taxonomyItem)}";
     }
-   
+
 }
