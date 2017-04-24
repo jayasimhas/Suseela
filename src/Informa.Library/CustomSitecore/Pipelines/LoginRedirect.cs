@@ -8,7 +8,8 @@ namespace Informa.Library.CustomSitecore.Pipelines
 	{
 		public override void Process(LoggedInArgs args)
 		{
-			if (Sitecore.Context.GetSiteName() != "login")
+            Sitecore.Diagnostics.Log.Info("Started LoginRedirect", " LoginRedirect ");
+            if (Sitecore.Context.GetSiteName() != "login")
 			{
 				return;
 			}
@@ -20,6 +21,7 @@ namespace Informa.Library.CustomSitecore.Pipelines
 			{
 				WebUtil.Redirect(url);
 			}
-		}
+            Sitecore.Diagnostics.Log.Info("Ended LoginRedirect", " LoginRedirect");
+        }
 	}
 }

@@ -23,7 +23,8 @@ namespace Informa.Web.CustomMvc.Pipelines
 
 		private static void RegisterArea(AreaRegistration areaRegistration)
 		{
-			var context = new AreaRegistrationContext(areaRegistration.AreaName, RouteTable.Routes);
+            Sitecore.Diagnostics.Log.Info("Started RegisterArea", " RegisterArea ");
+            var context = new AreaRegistrationContext(areaRegistration.AreaName, RouteTable.Routes);
 
 			string @namespace = areaRegistration.GetType().Namespace;
 			if (@namespace != null)
@@ -32,7 +33,8 @@ namespace Informa.Web.CustomMvc.Pipelines
 			}
 
 			areaRegistration.RegisterArea(context);
-		}
+            Sitecore.Diagnostics.Log.Info("Ended RegisterArea", " RegisterArea");
+        }
 	}
 }
            

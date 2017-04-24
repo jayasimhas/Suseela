@@ -57,7 +57,7 @@ namespace Informa.Library.Navigation
                 {
                     return Enumerable.Empty<INavigation>();
                 }
-                var looseNavigation = new List<Navigation>();                
+                var looseNavigation = new List<Navigation>();
                 var navigationLinkItems = GetChildLinkItems(navigationRootItem);
                 foreach (var navigationLinkItem in navigationLinkItems)
                 {
@@ -90,7 +90,7 @@ namespace Informa.Library.Navigation
             catch (Exception ex)
             {
                 Sitecore.Diagnostics.Log.Error("Navigation Error", ex, "ItemNavigationTreeFactory");
-                return navigation;                
+                return navigation;
             }
         }
 
