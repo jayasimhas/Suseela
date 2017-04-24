@@ -9447,8 +9447,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
-  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
+  padding: 8px 10px/2 8px 10px/2 3px 3px;
+  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -11260,6 +11260,8 @@ div#feedbacklite.fbl_r {
       .package-control-articles__fullContent .article-metadata ul li:nth-child(2) {
         max-width: 85px;
         text-overflow: ellipsis; }
+      .package-control-articles__fullContent .article-metadata ul li:nth-child(3) {
+        border-right: none; }
       .package-control-articles__fullContent .article-metadata ul li:last-child {
         right: 0;
         float: right;
@@ -11370,6 +11372,8 @@ div#feedbacklite.fbl_r {
   padding: 1.25rem;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  .package-control-articles__half .article-metadata li:nth-child(3) {
+    border-right: none; }
   .package-control-articles__half .header-line-control {
     width: 100%;
     position: relative;
@@ -13811,7 +13815,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;

@@ -27,6 +27,9 @@
 					max-width: 85px;
 					text-overflow: ellipsis;
 				}
+				&:nth-child(3) {
+					border-right: none;
+				}
 				&:last-child{
 					right: 0;
 					float: right;
@@ -154,6 +157,9 @@
 		}
 }
 .package-control-articles__half {
+	.article-metadata li:nth-child(3) {
+		border-right: none;
+	}
 		.header-line-control {
 			width: 100%;
 			position: relative;
