@@ -554,12 +554,13 @@
 				@include editView(8.75rem);
 				
 				&.mobview{
-					margin: 1.5rem 1rem 0rem;
+					margin: 1.5rem 1rem 0.2rem;
 				}
 			}
 			.seeAllChannels{
 				@include editView(auto);
 				&.mobview{
+					display: none;
 					margin: 1.5rem 1.25rem .5rem 1rem;
 				}
 			}

@@ -6928,8 +6928,8 @@ main .action-flags-bar, main .banner--highlights {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .editView.mobview {
-        margin: 24px 16px 0px;
-        margin: 1.5rem 1rem 0rem; }
+        margin: 24px 16px 3px;
+        margin: 1.5rem 1rem 0.2rem; }
     .personalisationhome .latestSubject .seeAllChannels {
       cursor: pointer;
       text-transform: uppercase;
@@ -6942,6 +6942,7 @@ main .action-flags-bar, main .banner--highlights {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
+        display: none;
         margin: 24px 20px 8px 16px;
         margin: 1.5rem 1.25rem .5rem 1rem; } }
 
@@ -9447,8 +9448,8 @@ div#feedbacklite.fbl_r {
   position: absolute;
   top: 2px;
   right: 0;
-  padding: 8px 10px/2 8px 10px/2 3px 3px;
-  padding: 0.5rem 0.625rem/2 0.5rem 0.625rem/2 3px 3px;
+  padding: 8px 10px/"2" 8px 10px/"2" 3px 3px;
+  padding: 0.5rem 0.625rem/"2" 0.5rem 0.625rem/"2" 3px 3px;
   cursor: pointer;
   box-sizing: content-box;
   fill: #bbbcbe; }
@@ -13817,7 +13818,7 @@ input[type="radio"]:checked + .facets__label:after {
           fill: #231f20; }
       .search-bar__tips.open .search-bar__tips-panel h3, .search-bar__tips.open .search-bar__tips-panel .article-call-to-action__title {
         padding-bottom: 20px; }
-      .search-bar__tips.open .search-bar__tips-panel *:not(h3):not(.article-call-to-action__title) {
+      .search-bar__tips.open .search-bar__tips-panel *:not(h3) {
         font-family: "PT Serif", Georgia, serif;
         font-size: 15px;
         font-weight: 400;
