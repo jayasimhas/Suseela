@@ -70,6 +70,7 @@ namespace Informa.Web.Controllers
 				return;
 
 			string newPath = ArticleSearch.GetArticleCustomPath(a);
+            if(!HttpContext.Current.Response.IsRequestBeingRedirected)
 			HttpContext.Current.Response.RedirectPermanent(newPath,true);
 		}
 

@@ -32,9 +32,13 @@ namespace Informa.Web.ViewModels.Authors
 
             PageTitle = string.Empty;
             var Author = AuthorIndexClient.GetAuthorByUrlName(HttpContext.Current.Request.Url.Segments.Last());
-            if (Author == null) { HandleNullAuthor(); }
-
-            PageTitle = $"{Author.First_Name} {Author.Last_Name}";
+            if (Author == null)
+            { HandleNullAuthor(); }
+            else
+            {
+                PageTitle = $"{Author.First_Name} {Author.Last_Name}";
+            }
+            
         }
 
         public string PageTitle { get; set; }
@@ -43,7 +47,8 @@ namespace Informa.Web.ViewModels.Authors
         private void HandleNullAuthor()
 		{
 			var curUrl = HttpContext.Current.Request.RawUrl;
-			HttpContext.Current.Response.Redirect($"/404?url={curUrl}", true);
+            if (!HttpContext.Current.Response.IsRequestBeingRedirected)
+            HttpContext.Current.Response.Redirect($"/404?url={curUrl}", true);
 		}
 
         public string ShareText => TextTranslator.Translate("Author.Share");
