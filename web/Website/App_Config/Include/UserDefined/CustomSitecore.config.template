@@ -250,7 +250,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Mail.MailServerEnableSsl" value="${Mail.MailServerEnableSsl}" />
 
       <setting name="MailServer">
-        <patch:attribute name="value">inrelaymail.sapient.com</patch:attribute>
+        <patch:attribute name="value">${Mail.MailServer}</patch:attribute>
       </setting>
 
       <setting name="MailServerUserName">
@@ -262,7 +262,7 @@ But you can also use "patch:attribute" for clarity:
       </setting>
 
       <setting name="MailServerPort">
-        <patch:attribute name="value">25</patch:attribute>
+        <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
       </setting>
       
       <!-- Master ID and Password Settings -->
@@ -349,7 +349,8 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.Commodity" value="/sitecore/content/agri/vertical globals/taxonomy/commodity"></setting>
       <setting name="Taxonomy.CommodityFactors" value="/sitecore/content/agri/vertical globals/taxonomy/commodity factors"></setting>
       <setting name="Taxonomy.AgencyRegulator" value="/sitecore/content/agri/vertical globals/taxonomy/agency regulator"></setting>
-      <setting name="Taxonomy.Companies" value="/sitecore/content/agri/vertical globals/taxonomy/companies"></setting>
+      <setting name="Taxonomy.Companies.Agri" value="/sitecore/content/agri/vertical globals/taxonomy/companies"></setting>
+      <setting name="Taxonomy.Companies.Maritime" value="/sitecore/content/Maritime/vertical globals/taxonomy/companies"></setting>
       <setting name="Taxonomy.CropProtection" value="/sitecore/content/Agri/Vertical Globals/Taxonomy/Crop Protection"></setting>
       <setting name="Taxonomy.AnimalHealth" value="/sitecore/content/Agri/Vertical Globals/Taxonomy/Animal Health"></setting>
       <setting name="Taxonomy.Markets" value="/sitecore/content/Maritime/Vertical Globals/Taxonomy/Markets"></setting>

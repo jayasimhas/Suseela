@@ -276,13 +276,31 @@ namespace Informa.Web.ViewModels
         {
             var UserEntitlements = UserEntitlementsContext.Entitlements;
             UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
-            var ids = string.Join("|", UserEntitlements.Select(i => $"'{i.OpportunityId}'"));
+            var ids = string.Empty;
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            {
+                ids = string.Join("|", UserEntitlements.Select(i => $"'{i.ParentServiceId}'"));
+            }
+            else
+            {
+                ids = string.Join("|", UserEntitlements.Select(i => $"'{i.OpportunityId}'"));
+            }
             return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
         }
 
 	    private string GetOpportunityLineItemIds()
 	    {
-			var ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
+            var ids = string.Empty;
+            if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            {
+                string profileItemID = UserProfileContext?.Profile?.UserId;
+                ids = profileItemID;
+            }
+            else
+            {
+                ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
+            }
+               
 			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
 		}
         //ISW 338 Serving ads based on section taxonomy
