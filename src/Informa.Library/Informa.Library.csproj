@@ -322,8 +322,6 @@
     <Compile Include="Actions\IActionsProcessor`2.cs" />
     <Compile Include="Actions\IAction`1.cs" />
     <Compile Include="Advertisement\AdUrlBuilder.cs" />
-    <Compile Include="App_Start\GlassMapperSc.cs" />
-    <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Article\Companies\IRelatedCompaniesService.cs" />
     <Compile Include="Article\Companies\IRelatedDealsService.cs" />
     <Compile Include="Article\Companies\RelatedCompaniesService.cs" />

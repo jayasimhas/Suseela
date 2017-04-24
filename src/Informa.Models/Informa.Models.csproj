@@ -139,10 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.config" />
-    <None Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
-    <None Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <None Include="DCD\DCDContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DCDContext.designer.cs</LastGenOutput>
