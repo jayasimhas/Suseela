@@ -61,13 +61,13 @@
       <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=4.3.4.197, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Glass.Mapper.Sc.Core.4.3.4.197\lib\net45\Glass.Mapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc, Version=4.1.0.64, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Glass.Mapper.Sc, Version=4.3.4.197, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\packages\Glass.Mapper.Sc.4.1.0.64\lib\81\Glass.Mapper.Sc.dll</HintPath>
+      <HintPath>..\..\packages\Glass.Mapper.Sc.Core.4.3.4.197\lib\81\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
     <Reference Include="Jabberwocky.Core, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Jabberwocky.Core.1.0.2.0\lib\net45\Jabberwocky.Core.dll</HintPath>
@@ -139,12 +139,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
+    <None Include="App_Config\Include\Glass.Mapper.Sc.config" />
+    <None Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
+    <None Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <None Include="DCD\DCDContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DCDContext.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
