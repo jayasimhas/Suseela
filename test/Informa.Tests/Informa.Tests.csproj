@@ -119,8 +119,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\GlassMapperSc.cs" />
-    <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="DataImporter\InformaPostProcess_Tests.cs" />
     <Compile Include="Library\Advertisement_Tests\AdUrlBuilder_Tests.cs" />
     <Compile Include="Library\Authors_Tests\AuthorService_Tests.cs" />
