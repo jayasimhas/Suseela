@@ -212,14 +212,20 @@ namespace Elsevier.Web.VWB.Report
                         url += "&inprogress=1";
                     }
 
+                    //startDate = (query.StartDate != null)
+                    //                        ? query.StartDate.Value
+                    //                        : DateTime.MinValue;
+
+                    //endDate = (query.EndDate != null)
+                    //        ? query.EndDate.Value
+                    //        : DateTime.MaxValue;
                     startDate = (query.StartDate != null)
-                                            ? query.StartDate.Value
-                                            : DateTime.MinValue;
+                                       ? query.StartDate.Value
+                                       : DateTime.Now.AddDays(-1).Date;//From the begining of the day  before
 
                     endDate = (query.EndDate != null)
-                            ? query.EndDate.Value
-                            : DateTime.MaxValue;
-
+                           ? query.EndDate.Value
+                           : DateTime.Now.Date.AddDays(31).AddSeconds(-1);//till the end of 30 days ahead 
 
                     url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
                     url += ";" + endDate.ToString("MM/dd/yyyy");
