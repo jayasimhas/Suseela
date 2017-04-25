@@ -20,6 +20,6 @@
         string NoticeText { get; }
         string AuthorName { get; }
         string AuthorId { get; }
-        string CaptchaSiteKey { get; }
+        
 	}
 }

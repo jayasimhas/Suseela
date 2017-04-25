@@ -41,6 +41,15 @@ namespace Informa.Library.CustomSitecore.Events
                                     newarticleItem[IArticleConstants.Planned_Publish_DateFieldName] = Sitecore.DateUtil.ToIsoDate(DateTime.Now);
                                     var articleNum = _articleSearch.GetNextArticleNumber(new Guid(publication?.ID.ToString()));
                                     newarticleItem["Article Number"] = GetNextArticleNumber(articleNum, new Guid(publication?.ID.ToString()), _articleSearch.GetPublicationPrefix(publication?.ID.ToString()));
+                                    if (string.Equals(newarticleItem.Fields[IArticleConstants.TitleFieldName].Value, "$name"))
+                                    {
+                                        newarticleItem[IArticleConstants.TitleFieldName] = newarticleItem.Name;
+                                    }
+
+                                    if (string.Equals(newarticleItem.Fields[IArticleConstants.Navigation_TitleFieldName].Value, "$name"))
+                                    {
+                                        newarticleItem[IArticleConstants.Navigation_TitleFieldName] = newarticleItem.Name;
+                                    }
                                     newarticleItem.Editing.EndEdit();
                                 }
                             }

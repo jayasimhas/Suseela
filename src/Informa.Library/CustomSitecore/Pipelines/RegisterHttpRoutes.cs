@@ -13,9 +13,9 @@ namespace Informa.Library.CustomSitecore.Pipelines
 	{
 		protected override void Run(PipelineArgs pipelineArgs)
 		{
-			// Register Web API routes & formatters
-
-			var configuration = GlobalConfiguration.Configuration;
+            // Register Web API routes & formatters
+            Sitecore.Diagnostics.Log.Info("Started RegisterHttpRoutes", " RegisterHttpRoutes ");
+            var configuration = GlobalConfiguration.Configuration;
 			var routes = configuration.Routes;
 
 			routes.MapHttpRoute("defaultApi", "api/{controller}/{id}",
@@ -59,6 +59,7 @@ namespace Informa.Library.CustomSitecore.Pipelines
 			configuration.MessageHandlers.Add(new CompressionHandler());
 
 			configuration.EnsureInitialized();
-		}
+            Sitecore.Diagnostics.Log.Info("Ended RegisterHttpRoutes", " RegisterHttpRoutes");
+        }
 	}
 }

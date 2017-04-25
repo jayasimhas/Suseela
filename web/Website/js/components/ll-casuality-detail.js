@@ -19,7 +19,7 @@
 							var StrMsg = "",
 								Messages = Data[key];
 							for(var i in Messages) {
-								StrMsg += "<p><strong>" +Messages[i].date+ "</strong>" +Messages[i].message+ "</p>";
+								StrMsg += "<p><strong>" +(Messages[i].Date || Messages[i].date)+ "</strong>" +(Messages[i].Message || Messages[i].message)+ "</p>";
 							}
 							Body.append('<tr>'+
 									  '<td class="R16">'+key+'</td>'+

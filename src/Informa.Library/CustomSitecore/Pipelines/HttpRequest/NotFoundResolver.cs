@@ -25,9 +25,9 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 
 		public void Process(HttpRequestArgs args)
 		{
-			Assert.ArgumentNotNull(args, "args");
-
-			if (Context.Item == null)
+            Assert.ArgumentNotNull(args, "args");
+            Sitecore.Diagnostics.Log.Info("Started NotFoundResolver", " NotFoundResolver ");
+            if (Context.Item == null)
 			{
 				var excludeSites = new[]
 				{
@@ -68,7 +68,8 @@ namespace Informa.Library.CustomSitecore.Pipelines.HttpRequest
 				{
 					Context.Item = notFoundItem;
 				}
-			}
+                Sitecore.Diagnostics.Log.Info("Ended NotFoundResolver", " NotFoundResolver");
+            }
 		}
 	}
 }

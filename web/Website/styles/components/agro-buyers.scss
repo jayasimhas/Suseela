@@ -56,8 +56,10 @@
 						}
 						img{
 							width: 100%;
+							margin-bottom: 8px;
 							@include breakpoint('small'){
 								width: 100%;
+								margin-bottom: 4px;
 							}
 						}
 					}
