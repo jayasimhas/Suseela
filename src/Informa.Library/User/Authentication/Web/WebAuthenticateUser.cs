@@ -109,11 +109,13 @@ namespace Informa.Library.User.Authentication.Web
                 var loginResult = LoginWebUser.Login(authenticatedUser, false);
                 success = loginResult.Success;
                 AuthenticatedUser = authenticatedUser;
+
+                VerticalLogin.curVertical = vertical;
+                VerticalLogin.CreateLoginCookie(authenticatedUser.Username, authenticatedUser.AccessToken);
+                if (ConfigurationManager.AppSettings["EnableSeamlessLogin"] == "true")
+                    VerticalLogin.CreateSeamlessCookie();
             }
-            VerticalLogin.curVertical = vertical;
-            VerticalLogin.CreateLoginCookie(authenticatedUser.Username, authenticatedUser.AccessToken);
-            if (ConfigurationManager.AppSettings["EnableSeamlessLogin"] == "true")
-                VerticalLogin.CreateSeamlessCookie();
+            
 
             return new WebAuthenticateUserResult
             {
