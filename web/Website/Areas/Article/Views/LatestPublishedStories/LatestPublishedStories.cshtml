@@ -20,11 +20,15 @@
                         <h5>
                             <a class="click-utag" href="@listable.LinkableUrl">@listable.ListableTitle</a>
                             @if (Model.IsDisplayDate)
-                    {
-                        var dateDiff = DateTime.Now - listable.ListableDate;
-                        if (dateDiff.TotalMinutes < 60)
-                        {
-                            var datelbl = dateDiff.Minutes + " min ago";
+                            {
+                                var dateDiff = DateTime.Now - listable.ListableDate;
+                                if (dateDiff.TotalSeconds < 60)
+                                {
+
+                                }
+                                else if (dateDiff.TotalMinutes < 60)
+                                {
+                                    var datelbl = dateDiff.Minutes + " min ago";
                                     <span class="article-related-content__date">@datelbl</span>
                                 }
                                 else if (dateDiff.TotalHours < 24)

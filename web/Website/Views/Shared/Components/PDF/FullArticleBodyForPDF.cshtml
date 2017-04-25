@@ -226,6 +226,24 @@
         @*</div>*@
         @* End Executive Summary  *@
     }
+    @if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
+    {
+        @*//This will show context for subscribe, login, register
+            <div class="article-call-to-action">
+                @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
+            </div>*@
+    if (Model != null)
+    {
+        @* * * SIGNED IN - NOT ENTITLED * * *@
+        <div class="article-call-to-action--subscribe">
+            <span class="article-call-to-action__title">
+                @Model.CallToActionViewModel.SubscribeTitle
+            </span>
+            <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
+        </div>
+        }
+    }
+
     @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
     {
         @* * *  ARTICLE - FEATURED IMAGE
@@ -265,7 +283,7 @@
             </table>
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
-    }   
+    }
     <table cellpadding="0" cellspacing="0" border="0" width="100%">
         <tr><td height="10"></td></tr>
         <tr>

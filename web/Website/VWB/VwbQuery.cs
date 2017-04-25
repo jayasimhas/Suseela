@@ -10,6 +10,7 @@ namespace Elsevier.Web.VWB
     public class VwbQuery
     {
         public string ArticleNumber;
+        public bool DateRangeEnabled;
         public string PublicationCodes;
         public string TaxonomyCodes;
         public string AuthorCodes;
@@ -149,6 +150,14 @@ namespace Elsevier.Web.VWB
             {
                 VerticalRoot = request["vertical"];
             }
+            if (request["dateEnabled"] != null)
+            {
+                DateRangeEnabled = Convert.ToBoolean(request["dateEnabled"]);
+            }
+            else
+            {
+                DateRangeEnabled = false;
+            }
         }
 
         /// <summary>
@@ -245,6 +254,10 @@ namespace Elsevier.Web.VWB
             {
                 query += "medTypeCodes=" + MediaTypeCodes + "&";
             }
+            if (DateRangeEnabled)
+            {
+                query += "dateEnabled=" + true + "&";
+            }
             query += "sc_mode=normal";
             return query;
         }
@@ -299,6 +312,7 @@ namespace Elsevier.Web.VWB
             clone.AuthorCodes = AuthorCodes;
             clone.ContentTypeCodes = ContentTypeCodes;
             clone.MediaTypeCodes = MediaTypeCodes;
+            clone.DateRangeEnabled = DateRangeEnabled;
             return clone;
         }
     }

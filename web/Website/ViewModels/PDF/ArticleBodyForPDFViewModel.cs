@@ -55,8 +55,8 @@ namespace Informa.Web.ViewModels.PDF
             Searcher = searcher;
             GlobalService = globalService;
             RelatedArticles = GetRelatedArticles(model);
-            //_lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
-            _lazyBody = new Lazy<string>(() => ArticleService.GetArticleBody(model));
+            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
+            //_lazyBody = new Lazy<string>(() => ArticleService.GetArticleBody(model));
         }
 
         /// <summary>

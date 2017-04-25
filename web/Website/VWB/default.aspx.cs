@@ -309,7 +309,7 @@ namespace Elsevier.Web.VWB
                     lblMsg.Text = "You must specify a date range when selecting more than one publication";
                     lblMsg.ForeColor = System.Drawing.Color.Red;
                     return;
-                }
+                }                
                 RunQuery(true);
             }
         }
@@ -358,7 +358,7 @@ namespace Elsevier.Web.VWB
             q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
             q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
             q.InProgressValue = chkShowInProgressArticles.Checked;
-
+            q.DateRangeEnabled = rbDateRange.Checked;
             q.ShouldRun = execute;
 
             //Selected Publications
