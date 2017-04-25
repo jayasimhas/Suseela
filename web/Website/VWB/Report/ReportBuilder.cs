@@ -67,7 +67,11 @@ namespace Elsevier.Web.VWB.Report
             //{
             //	return;
             //}
-            if (_query.VerticalRoot == null || _query.VerticalRoot == "Select Vertical") return;
+            if (_query.DateRangeEnabled && AlertInvalidDateRange(report))
+            {
+                return;
+            }
+            //if (_query.VerticalRoot == null || _query.VerticalRoot == "Select Vertical") return;
             _results = RunSearch(_query).ToList();
             if (AlertTryingToGetNextIssueWhenNoneExists(report))
             {
@@ -120,13 +124,13 @@ namespace Elsevier.Web.VWB.Report
                     return true;
                 }
             }
-            var appConfig = new ApplicationConfig();
-            int maxRange = appConfig.VwbMaximumDateRange;
-            if (startDate != null && endDate != null && Math.Abs(endDate.Value.Subtract(startDate.Value).Days) > maxRange)
-            {
-                report.Rows.Add(CreateAlert(String.Format("Range of start and end date too large! Limit is {0} days.", maxRange)));
-                return true;
-            }
+            //var appConfig = new ApplicationConfig();
+            //int maxRange = appConfig.VwbMaximumDateRange;
+            //if (startDate != null && endDate != null && Math.Abs(endDate.Value.Subtract(startDate.Value).Days) > maxRange)
+            //{
+            //    report.Rows.Add(CreateAlert(String.Format("Range of start and end date too large! Limit is {0} days.", maxRange)));
+            //    return true;
+            //}
             return false;
         }
 
@@ -208,14 +212,20 @@ namespace Elsevier.Web.VWB.Report
                         url += "&inprogress=1";
                     }
 
+                    //startDate = (query.StartDate != null)
+                    //                        ? query.StartDate.Value
+                    //                        : DateTime.MinValue;
+
+                    //endDate = (query.EndDate != null)
+                    //        ? query.EndDate.Value
+                    //        : DateTime.MaxValue;
                     startDate = (query.StartDate != null)
-                                            ? query.StartDate.Value
-                                            : DateTime.MinValue;
+                                       ? query.StartDate.Value
+                                       : DateTime.Now.AddDays(-1).Date;//From the begining of the day  before
 
                     endDate = (query.EndDate != null)
-                            ? query.EndDate.Value
-                            : DateTime.MaxValue;
-
+                           ? query.EndDate.Value
+                           : DateTime.Now.Date.AddDays(31).AddSeconds(-1);//till the end of 30 days ahead 
 
                     url += "&plannedpublishdate=" + startDate.ToString("MM/dd/yyyy");
                     url += ";" + endDate.ToString("MM/dd/yyyy");
@@ -434,54 +444,10 @@ namespace Elsevier.Web.VWB.Report
             {
                 Text = col.GetHeader()
             };
-            //if (col.ToString() == _workflowStates.ToString() || col.ToString() == _authors.ToString() || col.ToString() == _contentType.ToString() || col.ToString() == _mediaType.ToString() || col.ToString() == _taxonomy.ToString())
-            //{
-            //    tableCell.Controls.Add(new Label
-            //    {
-            //        Text = col.GetHeader()
-            //    });
-            //    DropDownCheckBoxes ddlValues = new DropDownCheckBoxes();
-            //    ddlValues.UseSelectAllNode = true;
-            //    ddlValues.AddJQueryReference = false;
-            //    ddlValues.Style.SelectBoxWidth = 195;
-            //    ddlValues.Style.DropDownBoxBoxWidth = 160;
-            //    ddlValues.Style.DropDownBoxBoxHeight = 250;
-            //    //DropDownList ddlValues = new DropDownList();
-            //    if (col.ToString() == _workflowStates.ToString())
-            //    {
-            //        ddlValues.ID = "selWorkflow";
-            //    }
-
-            //    if (col.ToString() == _authors.ToString())
-            //    {
-            //        ddlValues.ID = "selAuthor";
-            //    }
-            //    if (col.ToString() == _contentType.ToString())
-            //    {
-            //        ddlValues.ID = "selContType";
-            //    }
-            //    if (col.ToString() == _mediaType.ToString())
-            //    {
-            //        ddlValues.ID = "selMediaType";
-            //    }
-            //    if (col.ToString() == _taxonomy.ToString())
-            //    {
-            //        ddlValues.ID = "selTaxonomy";
-            //    }
-            //    ddlValues.DataSource = col.GetDropDownValues(_results);
-            //    ddlValues.DataValueField = "Key";
-            //    ddlValues.DataTextField = "Value";
-            //    ddlValues.DataBind();
-            //    ddlValues.AutoPostBack = false;
-            //    tableCell.Controls.Add(ddlValues);
-            //}
-            //else
-            //{
             tableCell.Controls.Add(new Label
             {
                 Text = col.GetHeader()
             });
-            //}
 
             if (col != _articleCheckboxes && col != _articleNumberColumn && col != _titleColumn)
             {

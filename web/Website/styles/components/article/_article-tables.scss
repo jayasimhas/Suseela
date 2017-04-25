@@ -14,6 +14,11 @@
         text-align: left;
     }
 
+    td.highlight {
+        background-color: transparent;
+        color: #414042;
+        font-weight: 600;
+    } 
     // Table sub-header
     td.cell p.highlight {
         background-color: transparent;

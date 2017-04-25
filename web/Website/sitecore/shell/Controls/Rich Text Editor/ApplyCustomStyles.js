@@ -91,7 +91,7 @@ function StoryTitle(editor,value,selectedtext,selectedtag)
 		
 		contentElement.setAttribute('class',block[0]);
 		contentElement.innerHTML=selectedtext;
-		if(entirehtml.indexOf('<div class="quick-facts">') == -1) {
+		if(value="quick-facts__header" || entirehtml.indexOf('<div class="quick-facts">') == -1) {
 		
 		 var qfdiv=document.createElement("div");
 		 qfdiv.setAttribute('class','quick-facts');

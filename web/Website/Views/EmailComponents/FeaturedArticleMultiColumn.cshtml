@@ -51,7 +51,7 @@
                                                                     {
                                                             <span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
                                                             <span>&nbsp;&nbsp;</span>
-                                                            <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                            <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                             <span>&nbsp;&nbsp;</span>
                                                                     }
                                                                     if (article.Content_Type != null)
@@ -64,7 +64,7 @@
                                                                     {
                                                             <span><img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" /></span>
                                                             <span>&nbsp;&nbsp;</span>
-                                                            <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                            <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                             <span>&nbsp;&nbsp;</span>
                                                                     }
                                                             }
@@ -82,20 +82,20 @@
                                                                 @if (count == 0)
                                                                             {
                                                                                 count++;
-                                                                            <span>&nbsp;&nbsp;</span><span class="vertical-separator" style="color:#dddddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
+                                                                            <span>&nbsp;&nbsp;</span><span style="color:#dddddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
                                                                             }
                                                             </span>
 
-                                                            <span align="center" class="visible-desk">
+                                                            @*<span align="center" class="visible-desk">
                                                                 <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important">@taxonomyItem.Item_Name</a>
                                                                 @if (count == 0)
                                                                             {
                                                                                 count++;
                                                                             <span>&nbsp;&nbsp;</span>
-                                                                            <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                            <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                             <span>&nbsp;&nbsp;</span>
                                                                             }
-                                                            </span>
+                                                            </span>*@
                                                                     }
                                                                 }
                                                                 else
@@ -114,9 +114,9 @@
                                                                 @if (Model != null && Model.Articles != null && Model.Articles.Any())
                                                     {
                                                     <tr>
-                                                        <tdaily-alert-bodyd valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; line-height: 150%; text-align: left;">
+                                                        <td valign="top" class="mcnTextContent" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; line-height: 150%; text-align: left;">
                                                             <a style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important;font-size: 20px;font-weight: bold;line-height: 28px;padding: 0;margin: 0" href="@article._Url"><span class="caps-header" style="font-size: 20px;font-weight: bold;text-align: left;margin-bottom: 8px;font-family: Helvetica Neue, Helvetica; vertical-align: top; margin: 0px; padding: 0px; text-transform: none;">@Editable(article, m=>m.Title)</span></a>
-                                                        </tdaily-alert-bodyd>
+                                                        </td>
                                                     </tr>
                                                     }
                                                                 <tr>
@@ -336,7 +336,7 @@
 
                                                                                                                             <span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
                                                                                                                             <span>&nbsp;&nbsp;</span>
-                                                                                                                            <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                            <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                                                                             <span>&nbsp;&nbsp;</span>
                                                                                                                             }
                                                                                                                         @if (Model.Articles[0].Content_Type != null)
@@ -378,7 +378,7 @@
                                                                                                                                         count++;
 
                                                                                                                         <span>&nbsp;&nbsp;</span>
-                                                                                                                        <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                        <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                                                                         <span>&nbsp;&nbsp;</span>
                                                                                                                                     }
                                                                                                                                 }
@@ -586,7 +586,7 @@
                                                                                                                                     {
 
 
-                                                                                                                                    <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                                    <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                                                                                     <span>&nbsp;&nbsp;</span>
                                                                                                                                     <span class="article-category" valign="middle" style="font-weight: bold;text-transform: uppercase;vertical-align: middle"> @article.Content_Type.Item_Name</span>
                                                                                                                                     }
@@ -594,7 +594,7 @@
                                                                                                                                     {
 
 
-                                                                                                                                    <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                                    <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                                                                                     <span>&nbsp;&nbsp;</span>
                                                                                                                                     <span class="article-content-type">
                                                                                                                                         <img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" />
@@ -726,7 +726,7 @@
 
 
                                                                                                                                 <span>&nbsp;&nbsp;</span>
-                                                                                                                                <span class="vertical-separator" style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
+                                                                                                                                <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                                                                                                 <span>&nbsp;&nbsp;</span>
                                                                                                                                             }
 
