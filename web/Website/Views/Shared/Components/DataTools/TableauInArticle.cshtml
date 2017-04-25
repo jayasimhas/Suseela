@@ -5,7 +5,7 @@
 @if (Model != null)
 {
     <div class="article-data-tool-placeholder" id="tableau-@TempData["Index"].ToString()">
-        <input type="hidden" id="hdnDataToolId" name="hdnDataToolId" class="hdnDataToolId" value="tableau-@TempData["Index"].ToString()" />   
+        <input type="hidden" id="hdnDataToolId" name="hdnDataToolId" class="hdnDataToolId" value="tableau-@TempData["Index"].ToString()" />
         <div class="data-tool-placeholder">
             <h3 class="data-tool-heading">@Model.Page_Title</h3>
             <script type="text/javascript" src="@Model.ArticleTableauJSAPIUrl"></script>
@@ -13,9 +13,9 @@
                 <object class="tableauViz" width='@Model.Width' height='@Model.Height'>
                     <param name="host_url" value="@Model.ArticleTableauHostUrl" />
                     <param name="name" value="@Model.Dashboard_Name" />
-                    <param name="tabs" value="@(Model.Display_Tabs.Equals(false)?"no":"yes")" />
-                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false)?"no":Model.Authentication_Required.Equals(true)?"top":"yes")" />
-                    <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false)?"no":"yes")" />
+                    <param name="tabs" value="@(Model.Display_Tabs.Equals(false) ? "no" : "yes")" />
+                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false) ? "no" : Model.Authentication_Required.Equals(true) ? "top" : "yes")" />
+                    <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false) ? "no" : "yes")" />
                     <param name='filter' value='@Model.Filter' />
                     <param name='ticket' value='@Model.ArticleTableauTicket' />
                 </object>
@@ -23,15 +23,18 @@
             <div class="data-tool-graph tableau_component__mobile">
                 <object class="tableauViz" width='@Model.Width' height='@Model.Height'>
                     <param name="host_url" value="@Model.ArticleTableauHostUrl" />
-                    <param name="name" value="@Model.Dashboard_Name" />
-                    <param name="tabs" value="@(Model.Display_Tabs.Equals(false)?"no":"yes")" />
-                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false)?"no":Model.Authentication_Required.Equals(true)?"top":"yes")" />
-                    <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false)?"no":"yes")" />
+                    <param name="name" value="@Model.Mobile_Dashboard_Name" />
+                    <param name="tabs" value="@(Model.Display_Tabs.Equals(false) ? "no" : "yes")" />
+                    <param name="toolbar" value="@(Model.Display_Toolbars.Equals(false) ? "no" : Model.Authentication_Required.Equals(true) ? "top" : "yes")" />
+                    <param name='customViews' value="@(Model.Allow_Custom_Views.Equals(false) ? "no" : "yes")" />
                     <param name='filter' value='@Model.Filter' />
                     <param name='ticket' value='@Model.ArticleTableauTicket' />
                 </object>
-            </div>
-
+            </div>          
         </div>
+        @if (Model.Mobile_Dashboard_Name != string.Empty)
+        {
+            <input type="hidden" id="IsMobileDashboardAvailable" value="True" name="IsMobileDashboardAvailable" />
+        }
     </div>
 }
