@@ -15,6 +15,7 @@ using System;
 using Informa.Library.Services.Global;
 using Informa.Library.Utilities.Extensions;
 using System.Diagnostics;
+using Informa.Library.Search.SearchIndex;
 
 namespace Informa.Library.Services.Sitemap
 {
@@ -32,6 +33,7 @@ namespace Informa.Library.Services.Sitemap
         protected readonly IArticleSearch ArticleSearcher;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ISearchIndexNameService IndexNameService;
 
         protected readonly string Xmlns = "http://www.sitemaps.org/schemas/sitemap/0.9";
         protected readonly string DateFormat = "yyyy-MM-ddTHH:mm:ss%K";
@@ -41,13 +43,15 @@ namespace Informa.Library.Services.Sitemap
             ISitecoreContext context,
             IArticleSearch searcher,
             ITextTranslator translator,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            ISearchIndexNameService indexNameService)
         {
             SearchContextFactory = searchContextFactory;
             SitecoreContext = context;
             ArticleSearcher = searcher;
             TextTranslator = translator;
             GlobalService = globalService;
+            IndexNameService = indexNameService;
         }
 
 
@@ -273,8 +277,7 @@ namespace Informa.Library.Services.Sitemap
                 }
                 else
                 {
-
-                    using (var context = SearchContextFactory.Create())
+                    using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
                     {
                         var query = context.GetQueryable<GeneralContentResult>()
                             .Filter(j
@@ -284,7 +287,7 @@ namespace Informa.Library.Services.Sitemap
 
                         var results = query.GetResults();
                         StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method read from sitecore at :", sw, "SitemapService");
-                        HttpRuntime.Cache.Add(cacheKey, results.TotalSearchResults, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
+                       HttpRuntime.Cache.Add(cacheKey, results.TotalSearchResults, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
                         return results.TotalSearchResults;
                     }
                 }
