@@ -6942,9 +6942,7 @@ main .action-flags-bar, main .banner--highlights {
       background: #f7941e;
       color: #ffffff; }
       .personalisationhome .latestSubject .seeAllChannels.mobview {
-        display: none;
-        margin: 24px 20px 8px 16px;
-        margin: 1.5rem 1.25rem .5rem 1rem; } }
+        display: none; } }
 
 .personalisationhome .article-preview__inner-wrapper.showarticle {
   height: 100px;
