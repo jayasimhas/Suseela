@@ -8,6 +8,7 @@
     using Jabberwocky.Glass.Autofac.Mvc.Models;
     using Library.Site;
     using Web.ViewModels;
+    
 
     public class MyViewSettingsViewModel : GlassViewModel<IMy_View_Settings_Page>
     {
@@ -16,6 +17,7 @@
         public readonly IChannelsViewModel ChannelsViewModel;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly ISiteRootContext SiteRootContext;
+
 
         public MyViewSettingsViewModel(
                 ITextTranslator translator,

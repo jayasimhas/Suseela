@@ -39,26 +39,26 @@
     <input type="hidden" name="followingButtonText" id="followingButtonText" value="@Model.TopicFollowingButtonText" />
     <div id="allPublicationsPan">
         @foreach (Channel channel in sortedChannels)
-            {
-                channelOrder = Model.IsNewUser ? ++channelOrder : channel.ChannelOrder;
-                IsFollowingAllTopics = !channel.Topics.Where(ch => !ch.IsFollowing).Any();
-                NotFollowingAnyTopic = !channel.Topics.Where(ch => ch.IsFollowing).Any();
-                IsFollowingAnyTopics = channel.Topics.Where(ch => ch.IsFollowing).Any();
-                subscribeButtonClass = channel.IsSubscribed ? "" : "subscribe";
-                followAllButtonClass = IsFollowingAllTopics ? "hideBtn" : NotFollowingAnyTopic ? "fr" : "";
-                unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
-                tboadyClass = isFirst ? "" : "tbodyhidden";
-                collapsedClss = isFirst ? "expanded" : "";
-                borderClass = isFirst && (collapsedClss == "expanded" && IsFollowingAnyTopics) && (flag != 1) ? "active" : "";
-                pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
-                publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
-                publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
-                publicationStatusText = IsFollowingAnyTopics ? Model.ChannelFollowingButtonText : Model.ChannelFollowButtonText;
-                mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
-                pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
-                publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
-                expanCollap = isFirst ? "expanded" : "collapsed";
-                hidePara = expanCollap == "expanded" ? "":"hideRow"; 
+        {
+            channelOrder = Model.IsNewUser ? ++channelOrder : channel.ChannelOrder;
+            IsFollowingAllTopics = !channel.Topics.Where(ch => !ch.IsFollowing).Any();
+            NotFollowingAnyTopic = !channel.Topics.Where(ch => ch.IsFollowing).Any();
+            IsFollowingAnyTopics = channel.Topics.Where(ch => ch.IsFollowing).Any();
+            subscribeButtonClass = channel.IsSubscribed ? "" : "subscribe";
+            followAllButtonClass = IsFollowingAllTopics ? "hideBtn" : NotFollowingAnyTopic ? "fr" : "";
+            unfollowAllButtonClass = NotFollowingAnyTopic ? "hideBtn" : "";
+            tboadyClass = isFirst ? "" : "tbodyhidden";
+            collapsedClss = isFirst ? "expanded" : "";
+            borderClass = isFirst && (collapsedClss == "expanded" && IsFollowingAnyTopics) && (flag != 1) ? "active" : "";
+            pickAndChooseSectionClass = isFirst ? "" : "tbodyhidden";
+            publicationFollowButtonClass = IsFollowingAnyTopics ? "hideBtn" : "";
+            publicationFollowingButtonClass = (IsFollowingAnyTopics && !isFirst) || (IsFollowingAnyTopics && isFirst) ? "" : "hideBtn";
+            publicationStatusText = IsFollowingAnyTopics ? Model.ChannelFollowingButtonText : Model.ChannelFollowButtonText;
+            mobileChannelSactionsStatus = isFirst ? "hideRow" : "";
+            pickAndChooseSectionClassMobile = isFirst ? "" : "hideRow";
+            publicationHiddenClass = IsFollowingAnyTopics ? "followinglbl" : "followlbl";
+            expanCollap = isFirst ? "expanded" : "collapsed";
+            hidePara = expanCollap == "expanded" ? "" : "hideRow";
 
             isFirst = false;
             bgFollowing = IsFollowingAnyTopics ? "followingbg" : NotFollowingAnyTopic ? "followbg" : "";
@@ -72,34 +72,37 @@
                             <tr>
                                 <th class="wd-55 firstrow">
                                     <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
+                                    @if (Model.ShowSubscriptionStatus)
+                                    {
+                                        if (!channel.IsSubscribed)
+                                        {
+                                            <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                                <a href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                                @Model.SubscribedButtonText
+                                            </div>
+                                        }
+                                    }
 
-                                    @if (!channel.IsSubscribed)
-                                    {
-                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                            <a  href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                            @Model.SubscribedButtonText
-                                        </div>
-                                    }
                                 </th>
                                 <th class="wd-25 firstrow"></th>
                                 <th class="wd-15 firstrow">
                                     @if (!Model.isFromRegistration)
                                     {
-                                    <div class="rowlines">
-                                        <div class="vline"></div>
-                                        <div class="pull-left">
-                                            <span class="mv"></span>
+                                        <div class="rowlines">
+                                            <div class="vline"></div>
+                                            <div class="pull-left">
+                                                <span class="mv"></span>
                                             </div>
                                         </div>
                                     }
                                 </th>
                             </tr>
-                            @if (!Model.isFromRegistration && !channel.IsSubscribed)
+                            @if (!Model.isFromRegistration && !channel.IsSubscribed && Model.ShowSubscriptionStatus)
                             {
                                 <tr class="accordionStatus pickTxt @hidePara">
                                     <th colspan="3">
@@ -108,7 +111,7 @@
                                 </tr>
                             }
                             <tr>
-                                @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText) && Model.ShowSubscriptionStatus)
                                 {
                                     <th class="pub-subscription-subtitle" colspan="3">
                                         @Html.Raw(Model.SubscribedMessageText)
@@ -149,8 +152,8 @@
                                     <div>
                                         @if (!Model.isFromRegistration)
                                         {
-                                        <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info='{"event_name":"channel_follow","page_name":"My View Settings","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowButtonText</span>
-                                        <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info='{"event_name":"topic_unfollow","page_name":"My View Settings","ga_eventCategory":"Channel Following","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowingButtonText</span>
+                                            <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info='{"event_name":"channel_follow","page_name":"My View Settings","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowButtonText</span>
+                                            <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info='{"event_name":"topic_unfollow","page_name":"My View Settings","ga_eventCategory":"Channel Following","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowingButtonText</span>
                                         }
                                         else
                                         {
@@ -174,8 +177,8 @@
                                     <div class="smfollowingBtn">
                                         @if (!Model.isFromRegistration)
                                         {
-                                        <span class="click-utag followAllBtn  @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
-                                        <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                            <span class="click-utag followAllBtn  @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                            <span class="click-utag unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
                                         }
                                         else
                                         {
@@ -191,34 +194,38 @@
 
                         </thead>
                         <thead class="hidden-xs @bgFollowing">
-                            <tr class="@expanCollap"> 
+                            <tr class="@expanCollap">
                                 <th class="wd-55 firstrow">
                                     <h2 data-publication="@channel.ChannelCode" data-item-id="@channel.ChannelId" data-item-status="@channel.IsFollowing.ToString().ToLower()">@channel.ChannelName</h2>
-                                    @if (!channel.IsSubscribed)
+
+                                    @if (Model.ShowSubscriptionStatus)
                                     {
-                                    <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                        <a class="subscr" href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
-                                    </div>
-                                    }
-                                    else
-                                    {
-                                    <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
-                                        @Model.SubscribedButtonText
-                                    </div>
+                                        if (!channel.IsSubscribed)
+                                        {
+                                            <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                                <a class="subscr" href="@Model.SubscribeUrl">@Model.SubscribeButtonText</a>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="subscribed @subscribeButtonClass" data-subscribe-status="@channel.IsSubscribed">
+                                                @Model.SubscribedButtonText
+                                            </div>
+                                        }
                                     }
                                 </th>
                                 <th class="wd-25 firstrow">
                                     <div>
-                                @if (!Model.isFromRegistration)
-                                {
-                                        <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info='{"event_name":"channel_follow","page_name":"My View Settings","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowButtonText</span>
-                                        <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info='{"event_name":"channel_following","page_name":"My View Settings","ga_eventCategory":"Channel Following","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowingButtonText</span>
-                                }
-                                else
-                                {
-                                    <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info='{"event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowButtonText</span>
-                                    <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info='{"event_name":"channel_unfollow","page_name":"Registration","ga_eventCategory":"Channel Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowingButtonText</span>
-                                }
+                                        @if (!Model.isFromRegistration)
+                                        {
+                                            <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info='{"event_name":"channel_follow","page_name":"My View Settings","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowButtonText</span>
+                                            <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info='{"event_name":"channel_following","page_name":"My View Settings","ga_eventCategory":"Channel Following","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowingButtonText</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="click-utag followlbl mtp @publicationFollowButtonClass" data-info='{"event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowButtonText</span>
+                                            <span class="click-utag followinglbl mtp @publicationFollowingButtonClass" data-info='{"event_name":"channel_unfollow","page_name":"Registration","ga_eventCategory":"Channel Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname","follow_channel":"@channel.ChannelName"}'>@Model.ChannelFollowingButtonText</span>
+                                        }
                                         <input type="hidden" class="lableStatus" value="@publicationHiddenClass" />
                                     </div>
                                 </th>
@@ -233,7 +240,7 @@
                                             else
                                             {
                                                 <span data-expand="Expand" data-close="Close" class="expandTxt">Expand</span>
-                                            }                                            
+                                            }
                                             <span class="desktopMode accImg @collapsedClss" href="javascript: void(0);">
                                                 @if (collapsedClss == "expanded")
                                                 {
@@ -274,20 +281,20 @@
                                     }
                                 </th>
                             </tr>
-                            @if (!Model.isFromRegistration && !channel.IsSubscribed)
+                            @if (!Model.isFromRegistration && !channel.IsSubscribed && Model.ShowSubscriptionStatus)
                             {
-                            <tr class="accCont @pickAndChooseSectionClass">
-                                <th colspan="3">
-                                    <p>@Model.SubscribeMessageText</p>
-                                </th>
-                            </tr>
+                                <tr class="accCont @pickAndChooseSectionClass">
+                                    <th colspan="3">
+                                        <p>@Model.SubscribeMessageText</p>
+                                    </th>
+                                </tr>
                             }
                             <tr>
-                                @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText))
+                                @if (Model.isFromRegistration && channel.IsSubscribed && !string.IsNullOrEmpty(Model.SubscribedMessageText) && Model.ShowSubscriptionStatus)
                                 {
-                                <th class="pub-subscription-subtitle" colspan="3">
-                                    @Html.Raw(Model.SubscribedMessageText)
-                                </th>
+                                    <th class="pub-subscription-subtitle" colspan="3">
+                                        @Html.Raw(Model.SubscribedMessageText)
+                                    </th>
 
                                 }
                             </tr>
@@ -300,16 +307,16 @@
                                 <th class="wd-55 pbot"><p>@Model.PickAndChooseLableText</p></th>
                                 <th class="wd-25 pbot" colspan="2" align="left">
                                     <div>
-                                    @if (!Model.isFromRegistration)
-                                    {
-                                        <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
-                                        <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
-                                        <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
-                                    }
+                                        @if (!Model.isFromRegistration)
+                                        {
+                                            <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"channel_follow_all","page_name":"My View Settings","ga_eventCategory":"Channel Follow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                            <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"channel_unfollow_all","page_name":"My View Settings","ga_eventCategory":"Channel Unfollow All","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_channel":"@channel.ChannelName","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="click-utag followAllBtn button--outline @followAllButtonClass" data-info='{"event_name":"publication_follow","page_name":"Registration","ga_eventCategory":"Publication Follow","ga_eventAction":"Follow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.FollowAllButtonText</span>
+                                            <span class="click-utag  unfollowAllBtn @unfollowAllButtonClass" data-info='{"event_name":"publication_unfollow","page_name":"Registration","ga_eventCategory":"Publication Unfollow","ga_eventAction":"Unfollow","ga_eventLabel":"@Model.publicationname","follow_publication":"@Model.publicationname"}'>@Model.UnfollowAllButtonText</span>
+                                        }
                                     </div>
                                 </th>
                                 <!--<th class="wd-15"></th>-->
@@ -329,50 +336,50 @@
                                     topicLableText = topic.IsFollowing ? Model.TopicFollowingButtonText : Model.TopicFollowButtonText;
                                     //string dataInfo = topic.IsFollowing ? "data-info='{"event_name": "topic unfollow", \"page_name\": \"My view settings\",\"ga_eventCategory\":\"Topic Unfollow\",\"ga_eventAction\":\"" + @Model.publicationname + "\",\"ga_eventLabel\" : \"" + @topic.TopicName + "\", \"follow_topic\" : \"" + @topic.TopicName + "\",  \"follow_publication\":\"" + @Model.publicationname + "\"}'" : "data-info='{\"event_name\": \"topic follow\", \"page_name\": \"My view settings\",\"ga_eventCategory\":\"Topic follow\",\"ga_eventAction\":\"" + @Model.publicationname + "\",\"ga_eventLabel\" : \"" + @topic.TopicName + "\", \"follow_topic\" : \"" + @topic.TopicName + "\",  \"follow_publication\":\"" + @Model.publicationname + "\"}";
 
-                            <tr class="@topicTRClass" data-row="@topicOrder">
+                                    <tr class="@topicTRClass" data-row="@topicOrder">
 
-                                <td class="wd-55">
-                                    @topic.TopicName
-                                    <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
-                                </td>
-                                <td class="wd-25">
-                                    <span class="@topicSpanClass">@topicLableText</span>
-                                    @*@if (!Model.isFromRegistration)
-                                    {
-                                        
-                                        if (topic.IsFollowing)
-                                        {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic_unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel":"@topic.TopicName","follow_publication":"@Model.publicationname, "follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic_follow","page_name":"My view settings","ga_eventCategory":"Topic Follow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
-                                        }
-                                    }
-                                    else
-                                    {
-                                        if (topic.IsFollowing)
-                                        {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name": "channel_unfollow", "page_name": "Registration","ga_eventCategory":"Channel Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname,"follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="@topicSpanClass click-utag" data-info='{"event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_channel":"@topic.TopicName"}'>@topicLableText</span>
-                                        }
-                                    }*@
-                                </td>
-                                <td class="wd-15">
-                                    <div class="rowlines">
-                                        <div class="move">@Model.MoveLableText</div>
-                                        <div class="pull-left">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                        <td class="wd-55">
+                                            @topic.TopicName
+                                            <input type="hidden" data-row-topic="@topic.TopicCode" data-row-item-id="@topic.TopicId" />
+                                        </td>
+                                        <td class="wd-25">
+                                            <span class="@topicSpanClass">@topicLableText</span>
+                                            @*@if (!Model.isFromRegistration)
+                                                {
+
+                                                    if (topic.IsFollowing)
+                                                    {
+                                                        <span class="@topicSpanClass click-utag" data-info='{"event_name": "topic_unfollow", "page_name": "My view settings","ga_eventCategory":"Topic Unfollow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel":"@topic.TopicName","follow_publication":"@Model.publicationname, "follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="@topicSpanClass click-utag" data-info='{"event_name":"topic_follow","page_name":"My view settings","ga_eventCategory":"Topic Follow","ga_eventAction":"@Model.publicationname : @channel.ChannelName","ga_eventLabel" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_topic" :"@topic.TopicName","follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    if (topic.IsFollowing)
+                                                    {
+                                                        <span class="@topicSpanClass click-utag" data-info='{"event_name": "channel_unfollow", "page_name": "Registration","ga_eventCategory":"Channel Unfollow","ga_eventAction":"@Model.publicationname","ga_eventLabel":"@channel.ChannelName","follow_publication":"@Model.publicationname,"follow_channel":"@channel.ChannelName"}'>@topicLableText</span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="@topicSpanClass click-utag" data-info='{"event_name":"channel_follow","page_name":"Registration","ga_eventCategory":"Channel Follow","ga_eventAction":"@Model.publicationname","ga_eventLabel" :"@topic.TopicName", "follow_publication":"@Model.publicationname","follow_channel":"@topic.TopicName"}'>@topicLableText</span>
+                                                    }
+                                                }*@
+                                        </td>
+                                        <td class="wd-15">
+                                            <div class="rowlines">
+                                                <div class="move">@Model.MoveLableText</div>
+                                                <div class="pull-left">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 }
                             }
                         </tbody>

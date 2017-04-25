@@ -25,5 +25,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
         bool isFromRegistration { get; set; }
         bool enableSavePreferencesCheck { get; set; }
         string publicationname { get; }
+
+        bool ShowSubscriptionStatus { get; }
     }
 }
