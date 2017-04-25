@@ -48,7 +48,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly ITextTranslator TextTranslator;
         protected readonly SideNavigationMenuViewModel UserSubcriptions;
         protected readonly IAuthenticatedUserEntitlementsContext AuthenticatedUserEntitlementsContext;
-        IItemReferences ItemReferences;
+        protected readonly IItemReferences ItemReferences;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IChannelsViewModel ChannelsViewModel;
 

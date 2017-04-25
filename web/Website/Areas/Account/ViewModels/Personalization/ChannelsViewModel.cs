@@ -13,6 +13,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Library.Utilities.References;
 
     [AutowireService]
     public class ChannelsViewModel : IChannelsViewModel
@@ -23,19 +24,22 @@
         protected readonly IUserPreferenceContext UserPreferences;
         private readonly IEnumerable<ISubscription> _subcriptions;
         protected readonly ISiteRootContext SiterootContext;
+        protected readonly IItemReferences ItemReferences;
 
         public ChannelsViewModel(
         ITextTranslator translator,
         ISiteRootContext siterootContext,
         IGlobalSitecoreService globalService,
         IUserPreferenceContext userPreferences,
-        IUserSubscriptionsContext userSubscriptionsContext)
+        IUserSubscriptionsContext userSubscriptionsContext,
+                IItemReferences itemReferences)
         {
             TextTranslator = translator;
             SiterootContext = siterootContext;
             GlobalService = globalService;
             UserPreferences = userPreferences;
             _subcriptions = userSubscriptionsContext.Subscriptions;
+            ItemReferences = itemReferences;
         }
 
         public string ChannelFollowingButtonText => TextTranslator.Translate("MyViewSettings.ChannelFollowingButtonText");
@@ -177,6 +181,9 @@
         /// The channels.
         /// </value>
         public IList<Channel> Channels => GetChannels();
+
+
+        public bool ShowSubscriptionStatus => SiterootContext.Item.Entitlement_Type._Id.Equals(ItemReferences.ChannelLevelEntitlementType);
 
         /// <summary>
         /// Gets a value indicating whether this instance is new user.

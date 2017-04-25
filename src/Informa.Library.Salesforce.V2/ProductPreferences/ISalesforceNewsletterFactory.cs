@@ -8,7 +8,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
     public interface ISalesforceNewsletterFactory
     {
-        AddProductPreferenceRequest Create(string username, string verticalName, string publicationCode, IEnumerable<INewsletterUserOptIn> optIns);
+        AddProductPreferenceRequest Create(string username, string verticalName, IEnumerable<INewsletterUserOptIn> optIns);
         IList<INewsletterUserOptIn> Create(ProductPreferencesResult entity);
         UpdateProductPreferenceRequest CreateUpdateRequest(INewsletterUserOptIn entity);
 

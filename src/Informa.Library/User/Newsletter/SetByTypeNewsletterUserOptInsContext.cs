@@ -27,34 +27,38 @@ namespace Informa.Library.User.Newsletter
             SalesforceConfigurationContext = salesforceConfigurationContext;
         }
 
-        public bool Set(IEnumerable<string> newsletterTypes)
+        public bool Set(List<KeyValuePair<string, string>> newsletterTypes)
         {
-            var emailnewsletterTypes = new List<string>();
-            var OptIns = new List<INewsletterUserOptIn>();
-
-            var newsletterUserOptins = NewsletterUserOptInsContext.OptIns.ToList();                
-            newsletterUserOptins.ForEach(noi => noi.OptIn = newsletterTypes.Contains(noi.NewsletterType));
-
-            if(SalesforceConfigurationContext.IsNewSalesforceEnabled)
+            if (newsletterTypes != null && newsletterTypes.Any())
             {
-                //Newly selected Newsletter
-                emailnewsletterTypes = newsletterTypes.Except(newsletterUserOptins.Select(s => s.NewsletterType)).ToList();
-                if (emailnewsletterTypes != null && emailnewsletterTypes.Count() > 0)
+                var emailnewsletterTypes = new List<string>();
+                var OptIns = new List<INewsletterUserOptIn>();
+
+                var newsletterUserOptins = NewsletterUserOptInsContext.OptIns.ToList();
+                newsletterUserOptins.ForEach(noi => noi.OptIn = newsletterTypes.Select(x => x.Value).Contains(noi.NewsletterType));
+
+                if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
                 {
-                    foreach (var newsletteritem in emailnewsletterTypes)
+                    //Newly selected Newsletter
+                    emailnewsletterTypes = newsletterTypes.Select(x => x.Value).Except(newsletterUserOptins.Select(s => s.NewsletterType)).ToList();
+                    if (emailnewsletterTypes != null && emailnewsletterTypes.Count() > 0)
                     {
-                        OptIns.Add(new NewsletterUserOptIn
+                        foreach (var newsletteritem in emailnewsletterTypes)
                         {
-                            NewsletterType = newsletteritem,
-                            OptIn = true
-                        });
+                            OptIns.Add(new NewsletterUserOptIn
+                            {
+                                NewsletterType = newsletteritem,
+                                PublicationCode = newsletterTypes.Where(x => x.Value.Equals(newsletteritem)).First().Key,
+                                OptIn = true
+                            });
+                        }
+                        Add(OptIns);
                     }
-                    Add(OptIns);
                 }
+
+                return UpdateNewsletterOptInsContext.Update(newsletterUserOptins);
             }
-           
-            return UpdateNewsletterOptInsContext.Update(newsletterUserOptins);
-            
+            return false;
         }
 
 
