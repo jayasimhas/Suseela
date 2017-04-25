@@ -232,7 +232,7 @@ namespace Informa.Library.Services.Sitemap
                 Stopwatch sw = Stopwatch.StartNew();
                 int pageNo = Convert.ToInt32(HttpContext.Current.Request.QueryString["page"]);
 
-                using (var context = SearchContextFactory.Create())
+                using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
                 {
                     var query = context.GetQueryable<GeneralContentResult>()
                         .Filter(j
@@ -314,7 +314,7 @@ namespace Informa.Library.Services.Sitemap
                 }
                 else
                 {
-                    using (var context = SearchContextFactory.Create())
+                    using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
                     {
                         var query = context.GetQueryable<GeneralContentResult>()
                             .Filter(j
