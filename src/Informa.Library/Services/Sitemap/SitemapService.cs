@@ -287,7 +287,7 @@ namespace Informa.Library.Services.Sitemap
 
                         var results = query.GetResults();
                         StringExtensions.WriteSitecoreLogs("Reached GetAllPagesCount method read from sitecore at :", sw, "SitemapService");
-                       HttpRuntime.Cache.Add(cacheKey, results.TotalSearchResults, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
+                        HttpRuntime.Cache.Add(cacheKey, results.TotalSearchResults, null, DateTime.Now.AddMinutes(int.Parse(duration)), System.Web.Caching.Cache.NoSlidingExpiration, System.Web.Caching.CacheItemPriority.Default, null);
                         return results.TotalSearchResults;
                     }
                 }
@@ -349,7 +349,7 @@ namespace Informa.Library.Services.Sitemap
             try
             {
                 Stopwatch sw = Stopwatch.StartNew();
-                using (var context = SearchContextFactory.Create())
+                using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
                 {
                     var query = context.GetQueryable<ArticleSearchResultItem>()
                         .Filter(i => i.TemplateId == IArticleConstants.TemplateId)
