@@ -4,6 +4,7 @@ using Jabberwocky.Autofac.Attributes;
 using System.Collections.Generic;
 using System.Linq;
 using Informa.Library.User.Newsletter;
+using System.Collections.Specialized;
 
 namespace Informa.Library.User.Newsletter
 {
@@ -27,25 +28,17 @@ namespace Informa.Library.User.Newsletter
 
         public bool Set(IEnumerable<string> publications)
         {
-            var newsletterTypes = new List<string>();
+            var newsletterTypes = new List<KeyValuePair<string, string>>();
             var OptIns = new List<INewsletterUserOptIn>();
 
             foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => publications.Any(p => string.Equals(p, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
             {
-                AddType(siteTypes.Breaking, ref newsletterTypes);
-                AddType(siteTypes.Daily, ref newsletterTypes);
-                AddType(siteTypes.Weekly, ref newsletterTypes);
+                AddType(siteTypes.Breaking, siteTypes.Publication.Code, ref newsletterTypes, ref OptIns);
+                AddType(siteTypes.Daily, siteTypes.Publication.Code, ref newsletterTypes, ref OptIns);
+                AddType(siteTypes.Weekly, siteTypes.Publication.Code, ref newsletterTypes, ref OptIns);
             }
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
-                foreach (var newsletteritem in newsletterTypes)
-                {
-                    OptIns.Add(new NewsletterUserOptIn
-                    {
-                        NewsletterType = newsletteritem,
-                        OptIn = true
-                    });
-                }
                 return SetNewsletterOptIns.Add(OptIns);
             }
             else
@@ -58,31 +51,31 @@ namespace Informa.Library.User.Newsletter
 
         public bool SetUpdate(IEnumerable<Publications> Publication)
         {
-            var newsletterTypes = new List<string>();
+            var newsletterTypes = new List<KeyValuePair<string, string>>();
 
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
                 foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => Publication.Any(p => p.DailyPublications &&
                 string.Equals(p.publication, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
                 {
-                    AddType(siteTypes.Breaking, ref newsletterTypes);
-                    AddType(siteTypes.Daily, ref newsletterTypes);
+                    AddType(siteTypes.Breaking, siteTypes.Publication.Code, ref newsletterTypes);
+                    AddType(siteTypes.Daily, siteTypes.Publication.Code, ref newsletterTypes);
                 }
 
                 foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => Publication.Any(p => p.WeeklyPublications &&
                 string.Equals(p.publication, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
                 {
-                    AddType(siteTypes.Weekly, ref newsletterTypes);
+                    AddType(siteTypes.Weekly, siteTypes.Publication.Code, ref newsletterTypes);
                 }
             }
             else
             {
-                foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => Publication.Any(p =>p.OptIns && 
+                foreach (var siteTypes in SitesNewsletterTypes.SiteTypes.Where(st => Publication.Any(p => p.OptIns &&
                 string.Equals(p.publication, st.Publication.Code, System.StringComparison.InvariantCultureIgnoreCase))))
                 {
-                    AddType(siteTypes.Breaking, ref newsletterTypes);
-                    AddType(siteTypes.Daily, ref newsletterTypes);
-                    AddType(siteTypes.Weekly, ref newsletterTypes);
+                    AddType(siteTypes.Breaking, siteTypes.Publication.Code, ref newsletterTypes);
+                    AddType(siteTypes.Daily, siteTypes.Publication.Code, ref newsletterTypes);
+                    AddType(siteTypes.Weekly, siteTypes.Publication.Code, ref newsletterTypes);
                 }
             }
 
@@ -90,11 +83,27 @@ namespace Informa.Library.User.Newsletter
 
         }
 
-        public void AddType(string newsletterType, ref List<string> newsletterTypes)
+        public void AddType(string newsletterType, string publicationCode, ref List<KeyValuePair<string, string>> newsletterTypes)
+        {
+            if (!string.IsNullOrEmpty(newsletterType) && !string.IsNullOrEmpty(publicationCode))
+            {
+                newsletterTypes.Add(new KeyValuePair<string, string>(publicationCode, newsletterType));
+            }
+        }
+
+        public void AddType(string newsletterType, string publicationCode,
+            ref List<KeyValuePair<string, string>> newsletterTypes, ref List<INewsletterUserOptIn> OptIns)
         {
             if (!string.IsNullOrEmpty(newsletterType))
             {
-                newsletterTypes.Add(newsletterType);
+                newsletterTypes.Add(new KeyValuePair<string, string>(publicationCode, newsletterType));
+                if (SalesforceConfigurationContext.IsNewSalesforceEnabled && !string.IsNullOrEmpty(publicationCode))
+                    OptIns.Add(new NewsletterUserOptIn
+                    {
+                        NewsletterType = newsletterType,
+                        PublicationCode = publicationCode,
+                        OptIn = true
+                    });
             }
         }
     }

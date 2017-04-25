@@ -216,13 +216,13 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             };
         }
 
-        public bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string publicationCode, string username, string accessToken, IEnumerable<INewsletterUserOptIn> optIns)
+        public bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string username, string accessToken, IEnumerable<INewsletterUserOptIn> optIns)
         {
-            if ((!new[] { verticalPreferenceLocale, publicationCode, username }.Any(string.IsNullOrEmpty)) && optIns != null)
+            if ((!new[] { verticalPreferenceLocale, username }.Any(string.IsNullOrEmpty)) && optIns != null)
             {
                 try
                 {
-                    var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, optIns);
+                    var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, optIns);
                     if (request != null)
                     {
                         using (var client = new HttpClient())

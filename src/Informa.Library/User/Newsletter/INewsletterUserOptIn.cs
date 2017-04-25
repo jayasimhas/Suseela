@@ -5,5 +5,7 @@
         bool OptIn { get; set; }
         string NewsletterType { get; }
         string SalesforceId { get; }
+
+        string PublicationCode { get; }
     }
 }

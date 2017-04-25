@@ -13,7 +13,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
     {
         private const string EmailPreference = "Email Preference";
         private const string EmailSignUp = "Email Signup";
-        public AddProductPreferenceRequest Create(string username, string verticalPreferenceLocale, string publicationCode, IEnumerable<INewsletterUserOptIn> optIns)
+        public AddProductPreferenceRequest Create(string username, string verticalPreferenceLocale, IEnumerable<INewsletterUserOptIn> optIns)
         {
             if (optIns != null)
             {
@@ -33,7 +33,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                        Preference_Locale__c = verticalPreferenceLocale,
                        Type__c = EmailPreference,
                        Username__c = username,
-                       Value1__c = publicationCode,
+                       Value1__c = item.PublicationCode,
                        Value2__c = item.OptIn.ToString(),
                        Value3__c = item.NewsletterType,
                        Value9__c = DateTime.Now.ToString("yyyy-MM-dd")
@@ -62,6 +62,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                     {
                         OptIn = Convert.ToBoolean(record.Value2__c),
                         NewsletterType = record.Value3__c,
+                        PublicationCode = record.Value1__c,
                         SalesforceId = record.Id
                     });
                 }

@@ -14,7 +14,7 @@ namespace Informa.Library.User.ProductPreferences
 
         ISavedDocumentWriteResult AddSavedDocument(string verticalPreferenceLocale, string publicationCode,string userName, string documentName, string documentDescription, string documentId, string accessToken);
 
-        bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string publicationCode, string username,string accessToken, IEnumerable<INewsletterUserOptIn> optIns);
+        bool AddNewsletterUserOptIns(string verticalPreferenceLocale, string username,string accessToken, IEnumerable<INewsletterUserOptIn> optIns);
 
         bool AddOffersOptIns(string verticalPreferenceLocale, string publicationCode, string username, string accessToken, bool optIn);
     }
