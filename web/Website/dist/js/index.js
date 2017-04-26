@@ -7343,8 +7343,10 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 			$(document).on('change', '#jumpTo', function () {
 				var Value = $(this).find('.selectivity-single-selected-item').attr('data-item-id');
 				var Top = $('#casualty-listing-table tr[data-jump="' + Value + '"]').offset().top;
-
-				window.scrollTo(0, Top);
+				if ($(window).width() < 667) {
+					var Top = $($('#casualty-listing-table tr[data-jump="' + Value + '"]')[1]).offset().top - 40;
+				}
+				$('html, body').scrollTop(Top);
 			});
 		},
 		init: function init(data, Parent) {
