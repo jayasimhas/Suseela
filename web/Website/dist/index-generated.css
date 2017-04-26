@@ -4297,6 +4297,11 @@ body.lightboxed {
     top: 0;
     width: 6px; }
 
+/*Fix for IPMP-2608 */
+@media screen and (min-width: 768px) {
+  .main-menu-list {
+    display: none; } }
+
 .manually-curated-content {
   position: relative;
   width: 100%;

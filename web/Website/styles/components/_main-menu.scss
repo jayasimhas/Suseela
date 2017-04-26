@@ -172,3 +172,8 @@ $main-menu-handle-width: 70px;
 		width: 6px;
 	}
 }
+
+/*Fix for IPMP-2608 */
+@media screen and (min-width: 768px){ 
+	.main-menu-list{display: none;}
+}
