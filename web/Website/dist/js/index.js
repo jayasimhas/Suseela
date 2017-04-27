@@ -9076,8 +9076,8 @@ function createJSONData(alltables, UserPreferences, url) {
             publicationName = $(alltables[i]).find('h2').attr('data-publication'),
 
         //subscribeStatus = $(alltables[i]).find('.subscribed').html(),
-        channelId = $(alltables[i]).find('h2').attr('data-item-id'),
-            channelStatus = $(alltables[i]).find('h2').attr('data-item-status'),
+			channelId = $(alltables[i]).find('h2').attr('data-item-id'),
+            channelStatus = $(alltables[i]).find('h2').attr('data-item-status');
             //channellblStatus = getlableStatus == 'followinglbl' ? $('#followingButtonText').val() : $('#followButtonText').val();
         var alltdata = [];
         for (var j = 0; j < currenttabtrs.length; j++) {
