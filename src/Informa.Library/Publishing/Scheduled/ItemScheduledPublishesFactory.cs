@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Sitecore.Data.Fields;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
 namespace Informa.Library.Publishing.Scheduled
 {
@@ -26,17 +27,34 @@ namespace Informa.Library.Publishing.Scheduled
             var version = item.Version.Number.ToString();
 
             var plannedPublishDateField = (DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldId];
-
+            var wfState = item.State.GetWorkflowState();
             if (plannedPublishDateField != null)
             {
+                if ((plannedPublishDateField.DateTime == DateTime.MinValue || plannedPublishDateField.DateTime == DateTime.MaxValue) && item.TemplateID == ITableau_DashboardConstants.TemplateId)
+                {
+                    var parentArticleItem = item.Axes.SelectSingleItem("ancestor-or-self::*[@@templateid = '" + IArticleConstants.TemplateId + "']");
+                    plannedPublishDateField = parentArticleItem.Fields[IArticleConstants.Planned_Publish_DateFieldId];
+                    wfState = parentArticleItem.State.GetWorkflowState();
+                }
+
                 AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, plannedPublishDateField.DateTime, ScheduledPublishType.Planned);
 
-                var wfState = item.State.GetWorkflowState();
+                
                 //To prevent publishing of articles according to their PublishDate or ValidFrom before their Planned Publish Date
                 if (plannedPublishDateField.DateTime <= ScheduledPublishingDateTime.Now && wfState != null && wfState.FinalState)
                 {
                     AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, item.Publishing.PublishDate, ScheduledPublishType.From);
                     AddScheduledPublish(scheduledPublishes, itemId, language, version, item.Publishing.ValidFrom, ScheduledPublishType.From);
+
+                    var subItems = item.Axes.GetDescendants();
+                    if (subItems.Length > 0)
+                    {
+                        foreach (var subItem in subItems)
+                        {
+                            AddScheduledPublish(scheduledPublishes, subItem.ID.Guid, string.Empty, string.Empty, plannedPublishDateField.DateTime, ScheduledPublishType.Planned);
+
+                        }
+                    }
                 }
             }
 

@@ -4297,6 +4297,11 @@ body.lightboxed {
     top: 0;
     width: 6px; }
 
+/*Fix for IPMP-2608 */
+@media screen and (min-width: 768px) {
+  .main-menu-list {
+    display: none; } }
+
 .manually-curated-content {
   position: relative;
   width: 100%;
@@ -11447,16 +11452,22 @@ div#feedbacklite.fbl_r {
 
 .package-control-articles__quarter {
   background: #f1f2f2;
-  padding: 28px 32px;
-  padding: 1.75rem 2rem;
+  padding: 20px 32px;
+  padding: 1.25rem 2rem;
   float: right;
   margin: 32px 0 32px 32px;
   margin: 2rem 0 2rem 2rem;
   width: 50.4%; }
+  .package-control-articles__quarter h1.article-preview__headline {
+    margin-bottom: 10px;
+    margin-bottom: 0.625rem; }
+    .package-control-articles__quarter h1.article-preview__headline:hover {
+      color: #231f20; }
   .package-control-articles__quarter .moreText {
     text-align: left;
     padding-bottom: 0;
-    margin-bottom: 0; }
+    margin-bottom: 5px;
+    margin-bottom: 0.3125rem; }
   .package-control-articles__quarter h2, .package-control-articles__quarter .article-topics__header {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
@@ -13298,8 +13309,7 @@ section: Article Components
       .article-topics__li ul li:last-child {
         padding-bottom: 0; }
   .article-topics ul ul {
-    margin-top: 12px;
-    margin-top: 0.75rem;
+    margin-top: -5px;
     margin-left: 18px; }
   .article-topics__section-desc {
     margin-bottom: 20px;

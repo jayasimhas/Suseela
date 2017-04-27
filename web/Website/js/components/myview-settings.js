@@ -14,7 +14,7 @@ function createJSONData(alltables, UserPreferences, url) {
 			pubPanPosition = $(alltables[i]).closest('.publicationPan').attr('data-row'),
 			tableId = $(alltables[i]).attr('id'),
 			publicationName = $(alltables[i]).find('h2').attr('data-publication'),
-			subscribeStatus = $(alltables[i]).find('.subscribed').html(),
+			//subscribeStatus = $(alltables[i]).find('.subscribed').html(),
 			channelId = $(alltables[i]).find('h2').attr('data-item-id'),
 		channelStatus = $(alltables[i]).find('h2').attr('data-item-status'),
 		channellblStatus = (getlableStatus == 'followinglbl') ? $('#followingButtonText').val() : $('#followButtonText').val();
@@ -26,7 +26,7 @@ function createJSONData(alltables, UserPreferences, url) {
 				datarowNo = $(currenttabtrs[j]).attr('data-row');
 
             var followStatus = (secondtd == $('#followingButtonText').val()) ? true : false;
-            var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
+            //var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 
             alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
         }

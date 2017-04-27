@@ -4,6 +4,7 @@
 
 @if (Model != null)
 {
+    Boolean isMobile = !string.IsNullOrEmpty(Model.Mobile_Dashboard_Name);
     <div class="article-data-tool-placeholder" id="tableau-@TempData["Index"].ToString()">
         <input type="hidden" id="hdnDataToolId" name="hdnDataToolId" class="hdnDataToolId" value="tableau-@TempData["Index"].ToString()" />
         <div class="data-tool-placeholder">
@@ -32,9 +33,6 @@
                 </object>
             </div>          
         </div>
-        @if (Model.Mobile_Dashboard_Name != string.Empty)
-        {
-            <input type="hidden" id="IsMobileDashboardAvailable" value="True" name="IsMobileDashboardAvailable" />
-        }
+            <input type="hidden" id="IsMobileDashboardAvailable" value=@isMobile.ToString() name="IsMobileDashboardAvailable" />        
     </div>
 }

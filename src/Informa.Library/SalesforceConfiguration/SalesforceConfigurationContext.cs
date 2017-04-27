@@ -3,6 +3,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuratio
 using Jabberwocky.Autofac.Attributes;
 using Jabberwocky.Core.Caching;
 using Sitecore.Configuration;
+using System.Web;
 
 namespace Informa.Library.SalesforceConfiguration
 
@@ -68,9 +69,8 @@ namespace Informa.Library.SalesforceConfiguration
             string loginUrl = (SalesForceConfiguration?.Salesforce_Service_Url != null
                 && !string.IsNullOrEmpty(SalesForceConfiguration?.Salesforce_Service_Url.Url) ?
                 SalesForceConfiguration?.Salesforce_Service_Url.Url : string.Empty);
-
-            url = string.Format(_authorizationRequestEndPoints, loginUrl,
-                  productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, state);
+           url = string.Format(_authorizationRequestEndPoints, loginUrl,
+                  productCode, SalesForceConfiguration?.Salesforce_Session_Factory_Username, callbackUrl, HttpContext.Current.Server.UrlEncode(state));
             return url;
         }
 

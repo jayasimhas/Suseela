@@ -31,7 +31,7 @@ namespace Informa.Web.Areas.UserRequest
         // GET: ProcessUserRequest
         public ActionResult Index(string code, string state)
         {
-            string vertcal = GetParam(state, "vid");
+            string vertcal = GetParam(System.Web.HttpContext.Current.Server.UrlDecode(state), "vid");
             var result = AuthenticateWebUser.Authenticate(code, GetCallbackUrl("/User/ProcessUserRequest"),vertcal);
             if (!result.Success && result.State.Equals(AuthenticateUserResultState.Failure))
                 return Redirect(state + "?ErrorStatus=" +"true");

@@ -279,7 +279,7 @@ namespace Informa.Web.ViewModels
             var ids = string.Empty;
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
-                ids = string.Join("|", UserEntitlements.Select(i => $"'{i.ParentServiceId}'"));
+                ids = string.Join("|", UserEntitlements.Select(i => $"{i.ParentServiceId}"));
             }
             else
             {
