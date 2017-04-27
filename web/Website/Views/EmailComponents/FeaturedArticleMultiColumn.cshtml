@@ -33,7 +33,7 @@
                                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                             <tbody class="mcnTextBlockOuter">
                                                 <tr>
-                                                    <td valign="top" class="daily-alert__fullrow" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                    <td valign="top" class="@GetFullRowarticleClass(Model)" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                                         <!--[if mso]>
                                                         <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
                                                             <tr>
@@ -43,47 +43,49 @@
                                                             <![endif]-->
                                                         <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
                                                             <tbody>
+                                                                @if (Model.GlassModel != null && (!Model.GlassModel.DisableMetaTags || !Model.GlassModel.DisableTagLine))
+                                                                {
                                                                 <tr>
                                                                     <td style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-bottom: 10px; width: 100%" class="article-metadata">
                                                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableTagLine)
-                                                            {
-                                                                    if (article.Actual_Publish_Date != null)
-                                                                    {
+                                                                        {
+                                                                            if (article.Actual_Publish_Date != null)
+                                                                            {
                                                             <span class="article-date" style="color: #888888;font-size: 13px;vertical-align: middle">@article.Actual_Publish_Date.ToString("dd MMM yyyy")</span>
                                                             <span>&nbsp;&nbsp;</span>
                                                             <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                             <span>&nbsp;&nbsp;</span>
-                                                                    }
-                                                                    if (article.Content_Type != null)
-                                                                    {
+                                                                            }
+                                                                            if (article.Content_Type != null)
+                                                                            {
                                                             <span class="article-category" style="font-weight: bold;text-transform: uppercase;vertical-align: middle">@article.Content_Type.Item_Name</span>
                                                             <span>&nbsp;&nbsp;</span>
-                                                                    }
-                                                                    if (article.Media_Type != null &&
-                article.Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
-                                                                    {
+                                                                            }
+                                                                            if (article.Media_Type != null &&
+                        article.Media_Type.Media_Type_Icon != null && !string.IsNullOrWhiteSpace(article.Media_Type.Media_Type_Icon.Src))
+                                                                            {
                                                             <span><img class="" src="@article.Media_Type.Media_Type_Icon.Src" width="25" /></span>
                                                             <span>&nbsp;&nbsp;</span>
                                                             <span style="display: inline-block;color: #dddddd;font-size: 16px">|</span>
                                                             <span>&nbsp;&nbsp;</span>
-                                                                    }
-                                                            }
+                                                                            }
+                                                                        }
                                                                         @if (Model.GlassModel != null && !Model.GlassModel.DisableMetaTags)
-                                                        {
-                                                            if (article.Taxonomies != null && article.Taxonomies.Any())
-                                                            {
-                                                                int count = 0;
-                                                                if (article.Taxonomies.ToList().Count >= 2)
-                                                                {
-                                                                    foreach (var taxonomyItem in article.Taxonomies.Take(2))
-                                                                    {
+                                                                        {
+                                                                            if (article.Taxonomies != null && article.Taxonomies.Any())
+                                                                            {
+                                                                                int count = 0;
+                                                                                if (article.Taxonomies.ToList().Count >= 2)
+                                                                                {
+                                                                                    foreach (var taxonomyItem in article.Taxonomies.Take(2))
+                                                                                    {
                                                             <span align="center" class="visible-desk">
                                                                 <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; color: #@Model.GetBrandingFontColor() !important; text-decoration: none !important;">@taxonomyItem.Item_Name</a>
                                                                 @if (count == 0)
-                                                                            {
-                                                                                count++;
+                                                                {
+                                                                    count++;
                                                                             <span>&nbsp;&nbsp;</span><span style="color:#dddddd; font-size:16px;">|</span><span>&nbsp;&nbsp;</span>
-                                                                            }
+                                                                }
                                                             </span>
 
                                                             @*<span align="center" class="visible-desk">
@@ -96,21 +98,22 @@
                                                                             <span>&nbsp;&nbsp;</span>
                                                                             }
                                                             </span>*@
-                                                                    }
-                                                                }
-                                                                else
-                                                                {
-                                                                    foreach (var taxonomyItem in article.Taxonomies)
-                                                                    {
+                                                                                    }
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    foreach (var taxonomyItem in article.Taxonomies)
+                                                                                    {
                                                             <span align="center" class="visible-desk">
                                                                 <a href="@GetTaxonomyUrl(taxonomyItem)" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@Model.GetBrandingFontColor() !important;text-decoration: none !important">@taxonomyItem.Item_Name</a>
                                                             </span>
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
                                                                     </td>
                                                                 </tr>
+                                                                }
                                                                 @if (Model != null && Model.Articles != null && Model.Articles.Any())
                                                     {
                                                     <tr>
@@ -261,7 +264,7 @@
                             }
                             index++;
                         }
-                        <tr><td height="15"></td></tr>
+                        @*<tr><td height="15"></td></tr>*@
                         }
 
                         if (Model.Articles != null && Model.Articles.Any() &&
@@ -835,6 +838,14 @@
             return "f9e5e6";
         else
             return "ffffff";
+    }
+
+    public string GetFullRowarticleClass(FeaturedArticleMultiColumnViewModel model)
+    {
+        if (model.GlassModel.ShowGreyBackground || model.GlassModel.ShowPinkBackground)
+            return "daily-alert__cell";
+        else
+            return "daily-alert__fullrow";
     }
 
     public string GetStartTag()
