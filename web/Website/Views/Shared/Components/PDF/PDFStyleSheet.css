@@ -1,11 +1,110 @@
-﻿.article-exhibit__caption {
-    display: block;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    -webkit-box-flex: 1;
-    flex: 1 0 auto;
-    width: 73%;
+﻿h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 12px;
 }
+
+h2 {
+    font-weight: bold;
+    padding-top: 12px;
+}
+
+h3 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.article-interview__question {
+    font-size: 18px;
+    font-weight: 500;
+    color: #231f20;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.article-interview__answer {
+    border-left: 1px solid #e9bf91;
+    font-size: 14px;
+    padding-top: 8px;
+}
+
+    .article-interview__answer p {
+        padding-top: 8px;
+    }
+
+.quick-facts__header {
+    font-size: 18px;
+    font-weight: 500;
+    color: #231f20;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.nomargin {
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.enlarge img {
+    width: 300px;
+}
+
+.article-pullquote p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #231f20;
+    line-height: 20px;
+}
+
+td.header.colored {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #333333;
+    border: 0;
+    color: #ffffff;
+    padding: 0px 12px;
+    text-align: left;
+}
+
+    td.header.colored p {
+        padding: 0px;
+        margin: 0px;
+        color: #ffffff;
+    }
+
+table td.cell p.highlight {
+    background-color: transparent;
+    color: #414042;
+    padding: 0px;
+    margin: 0px;
+}
+
+table th, table tr {
+    border-bottom: 1px solid #e2e4e4;
+}
+
+table td.cell.colored {
+    background-color: #f1f2f2;
+}
+
+#tableFromArticle {
+    border: 1px solid #e2e4e4;
+    border-bottom: none;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+    #tableFromArticle tr {
+        padding: 0px;
+        margin: 0px;
+    }
+
+        #tableFromArticle tr td {
+            border-bottom: 1px solid #e2e4e4;
+            padding: 0px;
+            margin: 0px;
+        }
 
 p {
     color: #58595b;
@@ -16,26 +115,60 @@ p {
     padding-bottom: 10px;
 }
 
-h1 {
-    font-size: 34px;
+.article-paragraph {
+    padding-bottom: 6px;
 }
 
-.article-interview__question {
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: #231f20;
-    padding-left: 40px;
-    padding-left: 2.5rem;
-}
-ul {
-    margin: 0px;
+table td p {
     padding: 0px;
 }
-li p{
-    background-image: url('https://commodities.dev.ide.informa.com/-/media/Icons/PDF%20Icons/arrowpdf.gif');
-    padding-left: 11em; 
-    color: #ff0000 !important;
 
+ul li {
+    color: #58595b;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 10px;
+    list-style: disc;
+    list-style-image: url('https://commodities.dev.ide.informa.com/-/media/Icons/PDF%20Icons/arrowpdf.gif');
 }
+
+ol li {
+    color: #58595b;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 10px;
+}
+
+.pdf-subTitle p {
+    color: #58595b;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 10px;
+}
+
+.article-exhibit__title {
+    padding-bottom: 10px;
+    color: #000000;
+    padding-top: 10px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.article-exhibit__caption, .article-exhibit__source {
+    padding-top: 10px;
+}
+
+
+
+/*ul {
+    margin: 0px;
+    padding: 0px;
+}*/
+
+/*li p {
+    background-image: url('https://commodities.dev.ide.informa.com/-/media/Icons/PDF%20Icons/arrowpdf.gif');
+    padding-left: 11em;
+    color: #ff0000 !important;
+}*/
