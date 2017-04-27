@@ -1,5 +1,5 @@
 ﻿h1 {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: bold;
     padding-bottom: 12px;
 }
@@ -32,14 +32,13 @@ h3 {
         padding-top: 8px;
     }
 
-.quick-facts__header {
+.quick-facts__header{
     font-size: 18px;
     font-weight: 500;
     color: #231f20;
     padding-bottom: 10px;
     padding-top: 10px;
 }
-
 .nomargin {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -149,26 +148,45 @@ ol li {
 }
 
 .article-exhibit__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #231f20;
     padding-bottom: 10px;
-    color: #000000;
     padding-top: 10px;
-    font-size: 16px;
-    line-height: 20px;
 }
-
+.article-preview__headline {
+    font-size: 18px;
+    font-weight: bold;    
+}
+.article-related-content {
+    font-size: 18px;
+    font-weight: bold; 
+}
 .article-exhibit__caption, .article-exhibit__source {
     padding-top: 10px;
 }
-
-
-
-/*ul {
-    margin: 0px;
-    padding: 0px;
-}*/
-
-/*li p {
-    background-image: url('https://commodities.dev.ide.informa.com/-/media/Icons/PDF%20Icons/arrowpdf.gif');
-    padding-left: 11em;
-    color: #ff0000 !important;
-}*/
+.article-sidebar{ 
+    font-size: 14px;
+}
+.article-sidebar h3{
+    color: #000000; 
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.article-sidebar__byline {
+    font-size: 14px;
+}
+.article-exhibit--pull-left {
+    
+}
+h3.pdf-classified-title {    
+    font-weight: bold;
+    font-size: 16px;
+    text-align:center;
+}
+.sub-heading-text h3{
+    font-weight: bold;
+    font-size: 16px;
+}

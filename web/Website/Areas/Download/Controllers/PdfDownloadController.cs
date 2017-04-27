@@ -366,26 +366,26 @@ namespace Informa.Web.Areas.Account.Controllers
                     }
                 }
 
-                var multimediaParentNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='iframe-component']")?.ToList();
-                if (multimediaParentNodes != null && multimediaParentNodes.Any())
-                {
-                    foreach (var multimediaParentNode in multimediaParentNodes)
-                    {
+                //var multimediaParentNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='iframe-component']")?.ToList();
+                //if (multimediaParentNodes != null && multimediaParentNodes.Any())
+                //{
+                //    foreach (var multimediaParentNode in multimediaParentNodes)
+                //    {
 
-                        //var multimediaNodes = multimediaParentNode.SelectNodes(".//div[@class='iframe-component__desktop']")?.ToList();
-                        //if (multimediaNodes != null && multimediaNodes.Any())
-                        //{
-                        //foreach (var multimediaNode in multimediaNodes)
-                        //{
-                        var multimediaUrl = multimediaParentNode.SelectSingleNode(".//iframe/@src");
-                        var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + multimediaUrl.Attributes["src"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
-                        HtmlNode newNode = HtmlNode.CreateNode("div");
-                        newNode.InnerHtml = newNodeHtml;
-                        multimediaParentNode.ParentNode.ReplaceChild(newNode, multimediaParentNode);
-                        //}
-                        //}
-                    }
-                }
+                //        //var multimediaNodes = multimediaParentNode.SelectNodes(".//div[@class='iframe-component__desktop']")?.ToList();
+                //        //if (multimediaNodes != null && multimediaNodes.Any())
+                //        //{
+                //        //foreach (var multimediaNode in multimediaNodes)
+                //        //{
+                //        var multimediaUrl = multimediaParentNode.SelectSingleNode(".//iframe/@src");
+                //        var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + multimediaUrl.Attributes["src"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                //        HtmlNode newNode = HtmlNode.CreateNode("div");
+                //        newNode.InnerHtml = newNodeHtml;
+                //        multimediaParentNode.ParentNode.ReplaceChild(newNode, multimediaParentNode);
+                //        //}
+                //        //}
+                //    }
+                //}
 
                 var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-executive-summary-body']")?.ToList();
                 if (executiveSummaryNodes != null && executiveSummaryNodes.Any())

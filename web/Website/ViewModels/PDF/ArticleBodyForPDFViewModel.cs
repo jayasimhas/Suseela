@@ -17,6 +17,11 @@ using Informa.Library.Article.Search;
 using Informa.Library.Services.Global;
 using Sitecore.Mvc.Presentation;
 using System.Text.RegularExpressions;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
+using Sitecore.Data.Items;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Folders;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using log4net;
 
 namespace Informa.Web.ViewModels.PDF
 {
@@ -31,7 +36,7 @@ namespace Informa.Web.ViewModels.PDF
         protected readonly IArticleSearch Searcher;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly IGlobalSitecoreService GlobalService;
-
+        private readonly ILog _logger;
         public ArticleBodyForPDFViewModel(IArticle model,
                         IIsEntitledProducItemContext entitledProductContext,
                         ITextTranslator textTranslator,
@@ -43,7 +48,8 @@ namespace Informa.Web.ViewModels.PDF
                         IArticleTagsViewModel articleTagsViewModel,
                         IArticleListItemModelFactory articleListableFactory,
                         IArticleSearch searcher,
-                        IGlobalSitecoreService globalService)
+                        IGlobalSitecoreService globalService,
+                        ILog logger)
                         : base(entitledProductContext, authenticatedUserContext, sitecoreUserContext)
         {
             TextTranslator = textTranslator;
@@ -55,10 +61,11 @@ namespace Informa.Web.ViewModels.PDF
             Searcher = searcher;
             GlobalService = globalService;
             RelatedArticles = GetRelatedArticles(model);
-            //_lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
-            _lazyBody = new Lazy<string>(() => ArticleService.GetArticleBody(model));
+            _logger = logger;
+            _lazyBody = new Lazy<string>(() => IsFree || (IsFreeWithRegistration && AuthenticatedUserContext.IsAuthenticated) || IsEntitled(model) ? ArticleService.GetArticleBody(model) : "");
+            //_lazyBody = new Lazy<string>(() => ArticleService.GetArticleBody(model));
         }
-
+        Guid curItemID => GlassModel._Id;
         /// <summary>
         /// Article Title
         /// </summary>
@@ -112,6 +119,8 @@ namespace Informa.Web.ViewModels.PDF
             body = body.EndsWith("</div>") ? body.Replace("</div>", "<p>") : body;
             return body;
         }
+        public string MoreInText => TextTranslator.Translate("Article.ArticlePackageMoreInText");
+        public bool IsArticlePage => GlassModel is IArticle;
         public string ContentType => GlassModel.Content_Type?.Item_Name;
         public MediaTypeIconData MediaTypeIconData => ArticleService.GetMediaTypeIconData(GlassModel);
         public IFeaturedImage Image => new ArticleFeaturedImage(GlassModel);
@@ -147,5 +156,58 @@ namespace Informa.Web.ViewModels.PDF
         /// </summary>
         public string ArticleLandingPageUrl => Sitecore.Links.LinkManager.GetItemUrl(RenderingContext.Current.Rendering.Item);
         public IArticle ArticleItem => GlassModel;
+
+
+        public IEnumerable<IArticle_Package> GetPackageReferrersbyLoop()
+        {
+            try
+            {
+                Item curItem = GlobalService.GetItem<Item>(curItemID);
+                if (curItem == null) return null;
+                //IEnumerable<IArticle_Package> articlePackage;
+                //Get the packages root item
+                var verticalGlobal = GlobalService.GetVerticalRootAncestor(GlassModel._Id)?._ChildrenWithInferType.OfType<IEnvironment_Global_Root>().FirstOrDefault();
+                var packageFolder = verticalGlobal._ChildrenWithInferType.OfType<IPackage_Folder>().FirstOrDefault();
+                if (packageFolder == null) return null;
+                var articlePackages = packageFolder._ChildrenWithInferType.OfType<IArticle_Package>()?.Where(p => p.IsInActive.Equals(false));
+                var referedPackage = articlePackages.Where(p => p.Package_Articles.Any(i => i._Id.Equals(curItemID)));
+                return referedPackage;
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("Error Finding the package reference", ex);
+                return null;
+            }
+        }
+        public IEnumerable<IListableViewModel> GetPackageArticles(IArticle_Package Package)
+        {
+            try
+            {
+                IEnumerable<IListableViewModel> listablePackageArticles;
+                if (Package != null && Package.Package_Articles.Any())
+                {
+                    var packageArticles = Package.Package_Articles.OfType<IArticle>()?.Where(p => p != null);
+                    if (IsArticlePage && packageArticles != null && packageArticles.Any())
+                    {
+                        packageArticles = packageArticles.Where(i => !i._Id.ToString().Equals(curItemID.ToString(), StringComparison.InvariantCultureIgnoreCase));
+                    }
+                    if (packageArticles != null && packageArticles.Any())
+                    {
+                        listablePackageArticles = packageArticles.Select(a => ArticleListableFactory.Create(a));
+                        if (listablePackageArticles.Count() > 4 && IsArticlePage)
+                        {
+                            return listablePackageArticles.Take(4);
+                        }
+                        return listablePackageArticles;
+                    }
+                }
+                return Enumerable.Empty<IListableViewModel>();
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("Error Finding the package articles", ex);
+                return Enumerable.Empty<IListableViewModel>();
+            }
+        }
     }
 }
