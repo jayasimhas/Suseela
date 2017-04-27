@@ -226,9 +226,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 string pdfCreatedDate = !string.IsNullOrEmpty(PdfCreatedDate) ? Convert.ToDateTime(PdfCreatedDate).ToString("dd MMMM yyyy") : DateTime.Now.ToString("dd MMMM yyyy");
                 var replacements = new Dictionary<string, string>
                 {
-                    ["<p"] = "<p style=\"color:#58595b; font-size:13px; line-height:20px; padding: 0px; margin: 0px; padding-bottom: 10px;\"",
-                    ["<li>"] = "<li style=\"color:#58595b; font-size:13px; line-height:20px;\">",
-                    ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail ?? "Admin",
                     ["#HeaderDate#"] = PdfIssueNumber + "  " + pdfCreatedDate,
                     ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
@@ -266,6 +263,27 @@ namespace Informa.Web.Areas.Account.Controllers
                     globalElement.CommonFooter = CommonFooterNode.InnerText;
                     CommonFooterNode.ParentNode.RemoveChild(CommonFooterNode);
                 }
+                //var SectionPullLeftNodes = ReqdDoc.DocumentNode.SelectNodes("//section[@class='article-exhibit article-exhibit--pull-left']")?.ToList();
+                //if (SectionPullLeftNodes != null && SectionPullLeftNodes.Any())
+                //{
+                //    foreach (var SectionNode in SectionPullLeftNodes)
+                //    {
+                //        var newNodeHtml = "<div class=\"article-exhibit article-exhibit--pull-left\">";                        
+                //        SectionNode.ParentNode.InnerHtml = newNodeHtml;
+                //        SectionNode.ParentNode.ReplaceChild(
+
+                //    }
+                //}
+                //var SectionPullRightNodes = ReqdDoc.DocumentNode.SelectNodes("//section[@class='article-exhibit article-exhibit--pull-right']")?.ToList();
+                //if (SectionPullRightNodes != null && SectionPullRightNodes.Any())
+                //{
+                //    foreach (var SectionNode in SectionPullRightNodes)
+                //    {
+
+                //        var newNodeHtml = "<div class=\"article-exhibit article-exhibit--pull-right\">";
+                //        SectionNode.ParentNode.InnerHtml = newNodeHtml;
+                //    }
+                //}
                 var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
                 var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
@@ -347,6 +365,28 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
+
+                var multimediaParentNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='iframe-component']")?.ToList();
+                if (multimediaParentNodes != null && multimediaParentNodes.Any())
+                {
+                    foreach (var multimediaParentNode in multimediaParentNodes)
+                    {
+
+                        //var multimediaNodes = multimediaParentNode.SelectNodes(".//div[@class='iframe-component__desktop']")?.ToList();
+                        //if (multimediaNodes != null && multimediaNodes.Any())
+                        //{
+                        //foreach (var multimediaNode in multimediaNodes)
+                        //{
+                        var multimediaUrl = multimediaParentNode.SelectSingleNode(".//iframe/@src");
+                        var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + multimediaUrl.Attributes["src"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                        HtmlNode newNode = HtmlNode.CreateNode("div");
+                        newNode.InnerHtml = newNodeHtml;
+                        multimediaParentNode.ParentNode.ReplaceChild(newNode, multimediaParentNode);
+                        //}
+                        //}
+                    }
+                }
+
                 var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-executive-summary-body']")?.ToList();
                 if (executiveSummaryNodes != null && executiveSummaryNodes.Any())
                 {
@@ -412,19 +452,19 @@ namespace Informa.Web.Areas.Account.Controllers
                 ReqdDoc.OptionFixNestedTags = true;
 
 
-                using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
-                {
-                    //Parse the HTML
-                    XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
-                }
-                //var cssText = System.IO.File.ReadAllText(Server.MapPath(@"/Views/Shared/Components/PDF/PDFStyleSheet.css"));
-                //using (var cssMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(cssText)))
+                //using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
                 //{
-                //    using (var htmlMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(ReqdDoc.DocumentNode.InnerHtml)))
-                //    {
-                //        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, htmlMemoryStream, cssMemoryStream);
-                //    }
+                //    //Parse the HTML
+                //    XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
                 //}
+                var cssText = System.IO.File.ReadAllText(Server.MapPath(@"/Views/Shared/Components/PDF/PDFStyleSheet.css"));
+                using (var cssMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(cssText)))
+                {
+                    using (var htmlMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(ReqdDoc.DocumentNode.InnerHtml)))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, htmlMemoryStream, cssMemoryStream);
+                    }
+                }
             }
         }
 

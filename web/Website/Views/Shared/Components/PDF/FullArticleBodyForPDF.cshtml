@@ -13,7 +13,7 @@
                 @if (!string.IsNullOrEmpty(Model.ContentType))
             {
                     <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 15)
+                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 18)
                         {
                             var trimmedContentType = new string(Model.ContentType.Take(15).ToArray()) + " ...";
                             <span class="article-content-type">@trimmedContentType</span>
@@ -22,7 +22,6 @@
                         {
                             <span class="article-content-type">@Model.ContentType</span>
                         }
-
                     </td>
                 }
 
@@ -226,23 +225,18 @@
         @*</div>*@
         @* End Executive Summary  *@
     }
-    @if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
-    {
-        @*//This will show context for subscribe, login, register
-            <div class="article-call-to-action">
-                @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
-            </div>*@
-    if (Model != null)
-    {
-        @* * * SIGNED IN - NOT ENTITLED * * *@
-        <div class="article-call-to-action--subscribe">
-            <span class="article-call-to-action__title">
-                @Model.CallToActionViewModel.SubscribeTitle
-            </span>
-            <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
-        </div>
-        }
-    }
+    @*@if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
+        {
+            if (Model != null)
+            {
+                <div class="article-call-to-action--subscribe">
+                    <span class="article-call-to-action__title">
+                        @Model.CallToActionViewModel.SubscribeTitle
+                    </span>
+                    <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
+                </div>
+            }
+        }*@
 
     @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
     {
@@ -284,12 +278,13 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr><td height="10"></td></tr>
-        <tr>
-            <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
-        </tr>
-    </table>
+    @*<table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr><td height="10"></td></tr>
+            <tr>
+                <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
+            </tr>
+        </table>*@
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {
