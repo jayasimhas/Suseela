@@ -227,25 +227,29 @@ $(document).ready(function() {
                         }
                     }
                 } else {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            tally: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if(defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                tally: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 if (chartDataType.length === 0) {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            tally: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if(defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                tally: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -291,14 +295,16 @@ $(document).ready(function() {
                         chartDataType.push(obj);
                     }
                 } else {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            count: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if(defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                count: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -345,14 +351,16 @@ $(document).ready(function() {
                         chartDataType.push(obj);
                     }
                 } else {
-                    for (i = 0; i < defaultTypes.length; i++) {
-                        var abbrTypeNameAsArray = abbreviate(defaultTypes[i]);
-                        var obj = {
-                            type: abbrTypeNameAsArray,
-                            count: 0,
-                            title: defaultTypes[i]
-                        };
-                        chartDataType.push(obj);
+                    if(defaultTypes != undefined) {
+                        for (i = 0; i < defaultTypes.length; i++) {
+                            var abbrTypeNameAsArray = abbreviate(defaultTypes[i]);
+                            var obj = {
+                                type: abbrTypeNameAsArray,
+                                count: 0,
+                                title: defaultTypes[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;

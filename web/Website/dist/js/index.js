@@ -4202,25 +4202,29 @@ $(document).ready(function () {
                         }
                     }
                 } else {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            tally: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                tally: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 if (chartDataType.length === 0) {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            tally: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                tally: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -4266,14 +4270,16 @@ $(document).ready(function () {
                         chartDataType.push(obj);
                     }
                 } else {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            count: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                count: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -4320,14 +4326,16 @@ $(document).ready(function () {
                         chartDataType.push(obj);
                     }
                 } else {
-                    for (i = 0; i < defaultTypes.length; i++) {
-                        var abbrTypeNameAsArray = abbreviate(defaultTypes[i]);
-                        var obj = {
-                            type: abbrTypeNameAsArray,
-                            count: 0,
-                            title: defaultTypes[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultTypes != undefined) {
+                        for (i = 0; i < defaultTypes.length; i++) {
+                            var abbrTypeNameAsArray = abbreviate(defaultTypes[i]);
+                            var obj = {
+                                type: abbrTypeNameAsArray,
+                                count: 0,
+                                title: defaultTypes[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -6641,7 +6649,6 @@ $(function () {
 			this.RenderMobileVersion(data, Parent);
 			this.SortingEvent(data, Parent);
 			this.FilterEvent(data, Parent);
-			this.YearChange();
 			this.MobileEvent();
 			this.showLargestEvent();
 
@@ -6685,6 +6692,13 @@ function checkQueryString() {
 	if (url.indexOf('?year=') != -1) return true;else if (url.indexOf('&year=') != -1) return true;
 	return false;
 }
+$(document).on('change', '.idYearSelect', function () {
+	var Href = $(this).attr('data-href'),
+	    value = $(this).find('.selectivity-single-selected-item').attr('data-item-id'),
+	    newUrl = window.location.href.split('?')[0].concat("?year=" + value);
+
+	window.location = newUrl;
+});
 
 },{}],14:[function(require,module,exports){
 'use strict';
@@ -9076,9 +9090,9 @@ function createJSONData(alltables, UserPreferences, url) {
             publicationName = $(alltables[i]).find('h2').attr('data-publication'),
 
         //subscribeStatus = $(alltables[i]).find('.subscribed').html(),
-			channelId = $(alltables[i]).find('h2').attr('data-item-id'),
+        channelId = $(alltables[i]).find('h2').attr('data-item-id'),
             channelStatus = $(alltables[i]).find('h2').attr('data-item-status');
-            //channellblStatus = getlableStatus == 'followinglbl' ? $('#followingButtonText').val() : $('#followButtonText').val();
+        //channellblStatus = (getlableStatus == 'followinglbl') ? $('#followingButtonText').val() : $('#followButtonText').val();
         var alltdata = [];
         for (var j = 0; j < currenttabtrs.length; j++) {
             var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),

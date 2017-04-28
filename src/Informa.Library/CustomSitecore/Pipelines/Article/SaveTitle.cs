@@ -85,8 +85,34 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                         //item name and title sync
                         item.Fields.ReadAll();
                         var field = item.Fields[IArticleConstants.TitleFieldId];
+
+                        #region temporary fix for $name issue mostly happening when workflow is being changed.
+                        var navigationTitle = item.Fields[IArticleConstants.Navigation_TitleFieldId];
+                        if (navigationTitle != null && !string.IsNullOrEmpty(navigationTitle.Value))
+                        {
+                            if (string.Equals(navigationTitle.Value, "$name", StringComparison.OrdinalIgnoreCase))
+                            {
+                                using (new SecurityDisabler())
+                                {
+                                    item.Editing.BeginEdit();
+                                    navigationTitle.Value = item.Name;
+                                }
+                            }
+                        }
+                        #endregion temporary fix for $name issue mostly happening when workflow is being changed.
+
                         if (field != null && !string.IsNullOrEmpty(field.Value))
                         {
+                            //temporary fix for $name issue mostly happening when workflow is being changed.
+                            if (string.Equals(field.Value, "$name", StringComparison.OrdinalIgnoreCase))
+                            {
+                                using (new SecurityDisabler())
+                                {
+                                    item.Editing.BeginEdit();
+                                    field.Value = item.Name;
+                                }
+                            }
+
                             if (!string.Equals(item.Name, field.Value, StringComparison.OrdinalIgnoreCase))
                             {
                                 using (new SecurityDisabler())
@@ -98,7 +124,7 @@ namespace Informa.Library.CustomSitecore.Pipelines.Article
                         }
 
                         //update planned publish date on save as part of article publish scheduler changes.
-                        var plannedPubDate = ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime;                        
+                        var plannedPubDate = ((DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldName]).DateTime;
                         if (plannedPubDate == default(DateTime) || plannedPubDate == null || (plannedPubDate <= DateTime.UtcNow && plannedPubDate.TimeOfDay.TotalHours <= DateTime.UtcNow.TimeOfDay.TotalHours && plannedPubDate.TimeOfDay.TotalMinutes <= DateTime.UtcNow.TimeOfDay.TotalMinutes))
                         {
                             using (new SecurityDisabler())
