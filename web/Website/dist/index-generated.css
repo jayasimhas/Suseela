@@ -11452,8 +11452,8 @@ div#feedbacklite.fbl_r {
 
 .package-control-articles__quarter {
   background: #f1f2f2;
-  padding: 20px 32px;
-  padding: 1.25rem 2rem;
+  padding: 16px 32px;
+  padding: 1rem 2rem;
   float: right;
   margin: 32px 0 32px 32px;
   margin: 2rem 0 2rem 2rem;
@@ -11466,8 +11466,7 @@ div#feedbacklite.fbl_r {
   .package-control-articles__quarter .moreText {
     text-align: left;
     padding-bottom: 0;
-    margin-bottom: 5px;
-    margin-bottom: 0.3125rem; }
+    margin-bottom: 5px; }
   .package-control-articles__quarter h2, .package-control-articles__quarter .article-topics__header {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
@@ -12134,6 +12133,8 @@ Contains information about an article's author or authors.
       .article-body-content h3, .article-body-content .article-call-to-action__title {
         font-size: 24px;
         font-size: 1.5rem; } }
+  .article-body-content .article-paragraph, .article-body-content .article-executive-summary p, .article-executive-summary .article-body-content p {
+    line-height: initial; }
 
 .article-bookmark {
   display: none; }
