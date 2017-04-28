@@ -1,4 +1,6 @@
 @inherits CustomGlassView<Informa.Web.ViewModels.Emails.NewsletterGreetingViewModel>
+    @if (Model != null && Model.GlassModel != null && Model.GlassModel.Title != null)
+    {
 <table>
     <tr>
         <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
@@ -79,3 +81,4 @@
     </tr>
     <tr><td height="15"></td></tr>
 </table>
+    }
