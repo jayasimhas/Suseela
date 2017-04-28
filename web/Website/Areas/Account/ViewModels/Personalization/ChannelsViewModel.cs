@@ -327,7 +327,7 @@
                                     topic.IsSubscribed = _subcriptions != null && _subcriptions.Any(subcription => subcription
                                                    .ProductCode.Equals(GetProductCode(topic.TopicCode), StringComparison.OrdinalIgnoreCase) &&
                                                     subcription.ExpirationDate > DateTime.Now);
-                                    topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
+                                    //topic.IsFollowing = IsNewUser ? IsNewUser : topic.TopicOrder > 0;
                                     channel.Topics.Add(topic);
                                 }
                             }
