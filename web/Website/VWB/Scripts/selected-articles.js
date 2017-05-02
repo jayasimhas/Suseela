@@ -369,6 +369,12 @@ $(document)
 			}
 		});
 		
+		$('#btnLoadFilters').prop('disabled', true);
+		$('#ddlPublications_dv input[type=checkbox]').click(function(){
+			var checkedbox = $('#ddlPublications_dv input[type=checkbox]:checked');
+			(checkedbox.length) ? $('#btnLoadFilters').prop('disabled', false) : $('#btnLoadFilters').prop('disabled', true);
+		});
+		
 		if(!$('#ddlPublications_dv input[type=checkbox]:checked').length){
 			$('#ddlTaxonomies_dv, #ddlAuthors_dv, #ddlContentType_dv, #ddlMediaType_dv').html('');
 		}
