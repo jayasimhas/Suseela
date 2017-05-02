@@ -6676,7 +6676,7 @@ $(function () {
 			} else {
 				var ErrorMessage = $('#hdnErrormessage').val();
 			}
-			$('.id-merges-acquisition').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">' + '<svg class="alert__icon">' + '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>' + '</svg>' + '<p class="page-account-contact__error">' + ErrorMessage + '</p>' + '</div>');
+			$('.id-merges-acquisition .graphs-container').prepend('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">' + '<svg class="alert__icon">' + '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>' + '</svg>' + '<p class="page-account-contact__error">' + ErrorMessage + '</p>' + '</div>');
 		}
 	}
 })();
