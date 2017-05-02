@@ -106,6 +106,10 @@ namespace Elsevier.Web.VWB
             {
                 InProgressValue = false;
             }
+            if(request["articleNo"] != null)
+            {
+                ArticleNumber = request["articleNo"];
+            }
             if (request["pubCodes"] != null)
             {
                 PublicationCodes = request["pubCodes"];
@@ -229,6 +233,10 @@ namespace Elsevier.Web.VWB
             if (ShouldRun)
             {
                 query += RunParam + "=1&";
+            }
+            if (string.IsNullOrEmpty(ArticleNumber) == false)
+            {
+                query += "articleNo=" + ArticleNumber + "&";
             }
             if (string.IsNullOrEmpty(PublicationCodes) == false)
             {

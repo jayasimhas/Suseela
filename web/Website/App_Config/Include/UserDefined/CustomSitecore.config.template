@@ -339,7 +339,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="DCD.PMBIDealsURL" value="${DCD.PMBIDealsURL}" />
       
       <setting name="NLM.ExportPath" value="${NLM.ExportPath}" />
-      <setting name="VwbDropdownCount" value="1000"></setting>
+      <setting name="VwbDropdownCount" value="100"></setting>
       <setting name="Taxonomy.SubjectPath" value="/sitecore/content/pharma/vertical globals/taxonomy/subjects"></setting>
       <setting name="Taxonomy.RegionPath" value="/sitecore/content/environment globals/taxonomy/regions"></setting>
       <setting name="Taxonomy.AreaPath" value="/sitecore/content/pharma/vertical globals/taxonomy/therapy areas"></setting>
