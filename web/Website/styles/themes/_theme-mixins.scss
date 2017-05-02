@@ -10,7 +10,7 @@
     .article-key-document__icon {
         @include on-event(true) {
             color: $color;
-            @include svg-fill($color);
+            //@include svg-fill($color); IPMP-2360
         }
     }
 
