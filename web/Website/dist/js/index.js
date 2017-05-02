@@ -14242,8 +14242,8 @@ $(document).ready(function () {
                 mainMenuListItems.each(function () {
                     $('.main-menu-list').append($(this));
                 });
-                if ($('div.main-menu__section').length > 0) {
-                    var mainMenuList = $('div.main-menu__section, div.main-menu-list');
+                if ($('.main-menu__section').length > 0) {
+                    var mainMenuList = $('.main-menu__section, .main-menu-list');
                     mainMenuList.remove();
                     $('.main-menu').append("<div class='main-menu-section-list'></div>");
                     mainMenuList.each(function () {
@@ -14769,7 +14769,6 @@ $(document).ready(function () {
 	}
 
 	if ($(window).width() >= 1024) {
-		debugger;
 		if ($('input.menu-open-first-time-checked').val() == 'True') {
 			if (readCookie("menunavigationcookie") !== cookieValue && window.location.pathname === '/') {
 				OpenNavigationMenu();
