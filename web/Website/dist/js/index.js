@@ -14534,35 +14534,31 @@ $(document).ready(function () {
     }
 
     //IPMP-2543
-    // if($('.pop-out__myViewregister').length){
-    // 	if (window.matchMedia("(min-width: 1025px)").matches) {
-    // 		$('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
-    // 	}
-    // 	else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-    // 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-    // 	}
-    // 	else if (window.matchMedia("(max-width: 768px)").matches) {
-    // 		$('.pop-out.is-active').css({'top': '-190px', 'left': '-300px'});
-    // 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-    // 	}
-    // }
-    // $(window).resize(function(){
-    // 	if($(window).width() > 1024){
-    // 	$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '0px'});
-    // 	}
-    // 	if($(window).width() > 1000 && $(window).width() <= 1024){
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-    // 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-    // 	}
-    // 	else if($(window).width() > 600 && $(window).width() <= 768){
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-190px', 'left': '-300px'});
-    // 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-    // 	}
-    // 	else{
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-370px', 'left': '0px'});
-    // 	}
-    // });
+    if ($('.pop-out__myViewregister').length) {
+        if (window.matchMedia("(min-width: 1025px)").matches) {
+            $('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
+        } else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
+            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-140px', 'left': '-270px' });
+            $('.pop-out__tab').css({ 'top': '-86px', 'left': '533px' });
+        } else if (window.matchMedia("(max-width: 768px)").matches) {
+            $('.pop-out.is-active').css({ 'top': '-190px', 'left': '-300px' });
+            $('.pop-out__tab').css({ 'right': '-300px', 'top': '-70px' });
+        }
+    }
+    $(window).resize(function () {
+        if ($(window).width() > 1024) {
+            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-140px', 'left': '0px' });
+        }
+        if ($(window).width() > 1000 && $(window).width() <= 1024) {
+            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-140px', 'left': '-270px' });
+            $('.pop-out__tab').css({ 'top': '-86px', 'left': '533px' });
+        } else if ($(window).width() > 600 && $(window).width() <= 768) {
+            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-190px', 'left': '-300px' });
+            $('.pop-out__tab').css({ 'right': '-300px', 'top': '-70px' });
+        } else {
+            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-370px', 'left': '0px' });
+        }
+    });
 });
 
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/id-comparechart":10,"./components/id-comparefinancialresults":11,"./components/id-financial-responsive-table":12,"./components/id-merge-acquistion":13,"./components/id-quarterly-responsive-table":14,"./components/id-responsive-table":15,"./components/latest-casuality":16,"./components/ll-casuality-detail":17,"./components/ll-casuality-listing":18,"./components/ll-cockett-bunker":19,"./components/ll-fisDryBulk":20,"./components/ll-howeRobinson":21,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":22,"./components/ll-marketdata-drycargo-ssyal":25,"./components/ll-ship-coal-export":26,"./components/ll-ship-container-ship":27,"./components/ll-ship-roro":28,"./components/ll-shipContainerShipFixtures":29,"./components/ll-tanker-fixtures":30,"./components/ll-tanker-pure-chem-page":31,"./components/myview-settings":32,"./components/pagination":33,"./components/personalisation":34,"./components/save-search-component":35,"./components/scrollbar":36,"./components/table_charts":37,"./components/video-mini":38,"./controllers/analytics-controller":39,"./controllers/bookmark-controller":40,"./controllers/form-controller":41,"./controllers/lightbox-modal-controller":42,"./controllers/pop-out-controller":43,"./controllers/register-controller":44,"./controllers/reset-password-controller":45,"./controllers/sortable-table-controller":46,"./controllers/tooltip-controller":47,"./jscookie":49,"./modal":50,"./newsletter-signup":51,"./search-page":52,"./selectivity-full":53,"./svg4everybody":54,"./toggle-icons":55,"./zepto.dragswap":56,"./zepto.min":57,"./zepto.suggest":58}],49:[function(require,module,exports){
