@@ -9633,7 +9633,7 @@ div#feedbacklite.fbl_r {
   margin-bottom: 24px;
   margin-bottom: 1.5rem;
   width: 100%;
-  height: 290px; }
+  height: 320px; }
   .topic-featured-article.article-preview {
     padding: 24px;
     padding: 1.5rem; }
@@ -11595,9 +11595,9 @@ div#feedbacklite.fbl_r {
       display: inline;
       border-right: 0; }
       .sponsored_cont ul li img {
-        max-height: 20px;
+        max-height: 40px;
         position: relative;
-        top: 4px; }
+        top: 0; }
 
 .headercolored_new {
   background: #c15b07;
