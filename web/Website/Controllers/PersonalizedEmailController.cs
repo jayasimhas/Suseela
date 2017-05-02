@@ -20,13 +20,24 @@ namespace Informa.Web.Controllers
         [HttpPost]
         public HttpResponseMessage Post()
         {
-            string data = Request.Content.ReadAsStringAsync().Result;
             var response = new HttpResponseMessage();
-            var emailContent = _emailUtil.CreatePersonalizedEmailBody(data);
-            response.StatusCode = string.IsNullOrWhiteSpace(data) ? HttpStatusCode.BadRequest :
-               string.IsNullOrWhiteSpace(emailContent) ? HttpStatusCode.InternalServerError : HttpStatusCode.OK;
-            response.Content = new StringContent(emailContent, Encoding.UTF8, "text/html");
-            return response;
+            try
+            {
+                string data = Request.Content.ReadAsStringAsync().Result;
+                if (string.IsNullOrWhiteSpace(data))
+                {
+                    response.StatusCode = HttpStatusCode.BadRequest;
+                    return response;
+                }
+                var emailContent = _emailUtil.CreatePersonalizedEmailBody(data);
+                response.Content = new StringContent(emailContent, Encoding.UTF8, "text/html");
+                return response;
+            }
+            catch
+            {
+                response.StatusCode = HttpStatusCode.InternalServerError;
+                return response;
+            }
         }
 
     }
