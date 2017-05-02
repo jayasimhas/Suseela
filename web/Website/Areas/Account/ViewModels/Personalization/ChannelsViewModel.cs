@@ -247,14 +247,15 @@
 
             var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
                 _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-
+            var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
+            var channelPage = channelsPageItem?._ChildrenWithInferType.OfType<IChannel_Page>()?.FirstOrDefault();
             if (homeItem != null)
             {
                 Channel channel = null;
                 channel = new Channel();
                 channel.ChannelId = homeItem._Id.ToString();
                 channel.ChannelName = homeItem._Parent._Name;
-                channel.ChannelCode = SiterootContext.Item.Publication_Code;
+                channel.ChannelCode = channelPage != null ? channelPage.Channel_Code : SiterootContext.Item.Publication_Code;
                 channel.ChannelLink = homeItem._Url;
                 channel.ChannelOrder = 1;
                 channel.IsSubscribed = _subcriptions != null && _subcriptions.Any(subcription => subcription
