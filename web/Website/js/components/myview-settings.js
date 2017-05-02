@@ -51,7 +51,7 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 if (setFlag == 'register' && redirectUrl == 'href') {
                     window.location.href = $('.registrationBtn').attr('href');
                 }
-                else if (setFlag == 'register' && redirectUrl == 'name') {
+                else if ((setFlag == 'register' || setFlag == null) && redirectUrl == 'name') {
                     window.location.href = $('.registrationBtn').attr('name');
                 }
 				if ($('.modal-overlay').hasClass('in')) {
@@ -558,6 +558,16 @@ $(function () {
         UserPreferences.PreferredChannels = [];
 
         e.preventDefault();
+		if(isChannelLevel == "false"){
+			if($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false"){
+				createJSONData(table, UserPreferences, 'name');
+				return false;
+			}
+			else if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
+                $('.alert-error.register-not-selected').show();
+                return false;
+            }
+		}
         if ($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false") {
             setDataRow(allpublications);
             sendRegisterData(alltrs, UserPreferences, 'name');
