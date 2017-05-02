@@ -24,8 +24,6 @@ namespace Informa.Library.Mail.ExactTarget
     {
         private readonly IDependencies _dependencies;
 
-        //private const string EtFrontEndUrlFormat = "https://mc{0}.exacttarget.com/cloud/#app/Email/C12/Default.aspx?entityID=0%23Content";
-
         [AutowireService(true)]
         public interface IDependencies
         {
@@ -38,13 +36,6 @@ namespace Informa.Library.Mail.ExactTarget
             _dependencies = dependencies;
         }
 
-        private bool IsSandbox => _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetUseSandbox)
-            .Equals("true", StringComparison.InvariantCultureIgnoreCase);
-
-
-        //public string EtFrontEndUrl => string.Format(
-        //    EtFrontEndUrlFormat, (IsSandbox ? ".test" : string.Empty));
-
         private ET_Client CreateClient(Item currentSiteRoot)
         {
             try
@@ -55,12 +46,14 @@ namespace Informa.Library.Mail.ExactTarget
                     var ETConfigItem = currentSiteRoot.Database.GetItem(exactTargetConfigID);
                     string clientId = string.Empty;
                     string clientSecret = string.Empty;
+                    string sandbox = string.Empty;
                     if (ETConfigItem != null)
                     {
-                        clientId = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.ClientIdFieldName].Value;
-                        clientSecret = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.SecretKeyFieldName].Value;
+                        clientId = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.Client_IdFieldName].Value;
+                        clientSecret = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.Secret_KeyFieldName].Value;
+                        sandbox = ETConfigItem.Fields[IExactTarget_ConfigurationConstants.Is_SandboxFieldName].Value.ToLower();
                     }
-                    var sandbox = IsSandbox ? "true" : "false";
+                   
                     return
                             new ET_Client(new NameValueCollection
                             {
@@ -70,14 +63,11 @@ namespace Informa.Library.Mail.ExactTarget
                             });
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 Sitecore.Diagnostics.Log.Error("Exact target field values empty", currentSiteRoot.ID);
             }
             return null;
-
-            //var clientId = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetClientId);           
-            //var clientSecret = _dependencies.SiteSettings.GetSetting(Constants.SettingKeys.ExactTargetSecretKey);
 
         }
 
