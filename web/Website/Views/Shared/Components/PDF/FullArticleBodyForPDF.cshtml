@@ -44,15 +44,15 @@
                     else
                     {
                         <td style="float: left; font-size: 15px; line-height: 20px; padding:0 10px 0 10px; font-weight: 700;">
-                           @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 18)
-                           {
-                               var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
-                           }
-                           else
-                           {
-                            <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
-                           }
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 18)
+                            {
+                                var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                            }
+                            else
+                            {
+                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                            }
                         </td>
                     }
 
@@ -223,17 +223,17 @@
         @* End Executive Summary  *@
     }
     @if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
+    {
+        if (Model != null)
         {
-            if (Model != null)
-            {
-                <div class="article-call-to-action--subscribe">
-                    <span class="article-call-to-action__title">
-                        @Model.CallToActionViewModel.SubscribeTitle
-                    </span>
-                    <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
-                </div>
-            }
+            <div class="article-call-to-action--subscribe">
+                <span class="article-call-to-action__title">
+                    @Model.CallToActionViewModel.SubscribeTitle
+                </span>
+                <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
+            </div>
         }
+    }
 
     @if (Model.Image != null && !string.IsNullOrEmpty(Model.Image.ImageUrl))
     {
@@ -318,7 +318,7 @@
                                 var packageArticles = Model.GetPackageArticles(package);
                                 foreach (var article in packageArticles)
                                 {
-                                    <h3 class="article-preview__headline"> 
+                                    <h3 class="article-preview__headline">
                                         <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" height="12" />&nbsp;
                                         <a style="font-size: 15px; line-height: 20px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
                                     </h3>
