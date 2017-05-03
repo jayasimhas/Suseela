@@ -35,7 +35,7 @@ namespace Informa.Library.Search.ComputedFields.Facets
                 {
                     return new List<string>();
                 }
-                else if (rootItem.Name.Contains("Pharma"))
+                else if (rootItem != null && rootItem.Name.Contains("Pharma"))
                 {
                     return SearchCompanyUtil.GetCompanyNames(indexItem.Referenced_Companies);
                 }

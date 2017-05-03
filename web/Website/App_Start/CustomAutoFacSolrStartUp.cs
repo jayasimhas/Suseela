@@ -46,7 +46,10 @@ namespace Informa.Web.App_Start
 
 		public void Initialize()
 		{
-			if (!SolrContentSearchManager.IsEnabled)
+            int timeoutValue;
+            int.TryParse(Settings.GetSetting("SolrConnectionTimeout", "200000"), out timeoutValue);
+
+            if (!SolrContentSearchManager.IsEnabled)
 				throw new InvalidOperationException("Solr configuration is not enabled. Please check your settings and include files.");
 			foreach (string coreId in SolrContentSearchManager.Cores)
 				this.AddCore(coreId, typeof(Dictionary<string, object>), string.Format("{0}/{1}", (object)SolrContentSearchManager.ServiceAddress, (object)coreId));
@@ -56,8 +59,7 @@ namespace Informa.Web.App_Start
 			if (SolrContentSearchManager.EnableHttpCache)
 			{
 				RegistrationExtensions.RegisterType<HttpRuntimeCache>(this.builder).As<ISolrCache>();
-                int timeoutValue;
-                int.TryParse(Settings.GetSetting("SolrConnectionTimeout", "200000"), out timeoutValue);
+                
                 foreach (SolrServerElement solrServerElement in (ConfigurationElementCollection)this.Cores)
 					((IRegistrationBuilder<object, ConcreteReflectionActivatorData, SingleRegistrationStyle>)RegistrationExtensions.WithParameters<object, ConcreteReflectionActivatorData, SingleRegistrationStyle>(RegistrationExtensions.RegisterType(this.builder, typeof(SolrConnection)).Named(solrServerElement.Id + (object)typeof(SolrConnection), typeof(ISolrConnection)), (IEnumerable<Parameter>)new NamedParameter[1]
 		  {
