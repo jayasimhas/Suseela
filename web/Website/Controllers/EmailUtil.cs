@@ -35,9 +35,6 @@ namespace Informa.Web.Controllers
         protected readonly ILogWrapper Logger;
         protected readonly ISitePublicationWorkflow _siteWorkflow;
         public readonly PersonalizedEmailViewModel PersonalizedEmailViewModel;
-        protected readonly IWebLoginUser LoginUser;
-        protected readonly IWebLogoutUser LogoutWebUser;
-        protected readonly INewUserFactory UserFactory;
         //protected readonly ISiteRootContext _siteRootContext;
 
         public EmailUtil(
@@ -48,10 +45,7 @@ namespace Informa.Web.Controllers
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
             ILogWrapper logger,
             ISitePublicationWorkflow siteWorkflow,
-            PersonalizedEmailViewModel personalizedEmailViewModel,
-            IWebLoginUser loginUser,
-            IWebLogoutUser logoutWebUser,
-            INewUserFactory userFactory)
+            PersonalizedEmailViewModel personalizedEmailViewModel)
         {
             EmailSender = emailSender;
             _articleUtil = articleUtil;
@@ -60,10 +54,6 @@ namespace Informa.Web.Controllers
             Logger = logger;
             _siteWorkflow = siteWorkflow;
             PersonalizedEmailViewModel = personalizedEmailViewModel;
-            LoginUser = loginUser;
-            LogoutWebUser = logoutWebUser;
-            UserFactory = userFactory;
-            // _siteRootContext = siteRootContext;
         }
 
         private string GetStaffEmail(Guid g)
@@ -386,24 +376,15 @@ namespace Informa.Web.Controllers
         /// <summary>
         /// Creates the personalized email body.
         /// </summary>
-        /// <param name="userName">Name of the user.</param>
-        /// <returns>Personalized email body</returns>
-        public string CreatePersonalizedEmailBody(string userName)
+        /// <param name="requestXML">The request XML.</param>
+        /// <returns></returns>
+        public string CreatePersonalizedEmailBody(string requestXML)
         {
             var emailContent = string.Empty;
-
-            if (!string.IsNullOrWhiteSpace(userName))
+            if (!string.IsNullOrWhiteSpace(requestXML))
             {
-                var user = UserFactory.Create();
-                user.Username = userName;
-                var loginUserResponse = LoginUser.Login(user, false);
-
-                if (loginUserResponse.Success)
-                {
-                    emailContent = MvcHelpers.GetRazorViewAsString(PersonalizedEmailViewModel, "~/Views/EmailComponents/PersonalizedEmailContent.cshtml");
-                    LogoutWebUser.Logout();
-                }
-
+                PersonalizedEmailViewModel.RequestXML = requestXML;
+                emailContent = MvcHelpers.GetRazorViewAsString(PersonalizedEmailViewModel, "~/Views/EmailComponents/PersonalizedEmailContent.cshtml");
             }
             return emailContent;
         }

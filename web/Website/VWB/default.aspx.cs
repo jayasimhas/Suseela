@@ -266,6 +266,8 @@ namespace Elsevier.Web.VWB
         {
             _reportBuilder = new ReportBuilder(this, _vwbQuery);
             tblResults.EnableViewState = false;
+            if (!string.IsNullOrEmpty(HttpContext.Current.Request["articleNo"]))
+                txtArticleNumber.Text = HttpContext.Current.Request["articleNo"];
             _reportBuilder.BuildTable(tblResults);
         }
 
@@ -276,10 +278,7 @@ namespace Elsevier.Web.VWB
                 List<string> PubPrefixes = GetPublicationsPrefixes();
                 if (_vwbQuery.ShouldRun && PubPrefixes.Any(n => txtArticleNumber.Text.StartsWith(n)))
                 {
-                    string VerticalRoot = GetVerticalRootByPubPrefix(new string(txtArticleNumber.Text.Take(2).ToArray()));
-                    _vwbQuery.ArticleNumber = txtArticleNumber.Text;
-                    _vwbQuery.VerticalRoot = VerticalRoot;
-                    BuildReport();
+                    RunQuery(true);
                     lblArticleNumberError.Text = string.Empty;
                 }
                 else
@@ -291,6 +290,7 @@ namespace Elsevier.Web.VWB
             }
             else
             {
+                txtArticleNumber.Text = "";
                 if (ddlVerticals.SelectedItem == null || ddlVerticals.SelectedItem.Text == "Select Vertical")
                 {
                     lblMsg.Text = "You must select a vertical";
@@ -309,7 +309,7 @@ namespace Elsevier.Web.VWB
                     lblMsg.Text = "You must specify a date range when selecting more than one publication";
                     lblMsg.ForeColor = System.Drawing.Color.Red;
                     return;
-                }                
+                }
                 RunQuery(true);
             }
         }
@@ -355,37 +355,47 @@ namespace Elsevier.Web.VWB
         private void RunQuery(bool execute)
         {
             var q = _vwbQuery.Clone();
-            q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
-            q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
-            q.InProgressValue = chkShowInProgressArticles.Checked;
-            q.DateRangeEnabled = rbDateRange.Checked;
-            q.ShouldRun = execute;
+            if (!string.IsNullOrEmpty(txtArticleNumber.Text))
+            {
+                q.VerticalRoot = "{" + GetVerticalRootByPubPrefix(new string(txtArticleNumber.Text.Take(2).ToArray()))?.ToUpper() + "}";
+                q.ArticleNumber = txtArticleNumber.Text;
+                RedirectTo(q);
+            }
+            else
+            {
+                q.ArticleNumber = "";
+                q.StartDate = (rbDateRange.Checked) ? GetDateValue(txtStart.Text, txtStartTime.Text) : null;
+                q.EndDate = (rbDateRange.Checked) ? GetDateValue(txtEnd.Text, txtEndTime.Text) : null;
+                q.InProgressValue = chkShowInProgressArticles.Checked;
+                q.DateRangeEnabled = rbDateRange.Checked;
+                q.ShouldRun = execute;
 
-            //Selected Publications
-            List<ListItem> selectedPubs = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-            q.PublicationCodes = string.Join(",", selectedPubs.Select(s => s.Value));
-            hdnSelectedPubs.Value = string.Join(",", selectedPubs.Select(s => s.Value));
+                //Selected Publications
+                List<ListItem> selectedPubs = ddlPublications.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+                q.PublicationCodes = string.Join(",", selectedPubs.Select(s => s.Value));
+                hdnSelectedPubs.Value = string.Join(",", selectedPubs.Select(s => s.Value));
 
-            //Selected Taxonomies
-            List<ListItem> selectedTaxs = ddlTaxonomies.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-            q.TaxonomyCodes = !string.IsNullOrEmpty(hdnSelectedTaxs?.Value) ? hdnSelectedTaxs?.Value.Replace("-", "").TrimEnd(',') : hdnSelectedTaxs?.Value;
+                //Selected Taxonomies
+                List<ListItem> selectedTaxs = ddlTaxonomies.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+                q.TaxonomyCodes = !string.IsNullOrEmpty(hdnSelectedTaxs?.Value) ? hdnSelectedTaxs?.Value.Replace("-", "").TrimEnd(',') : hdnSelectedTaxs?.Value;
 
-            //Selected Authors
-            List<ListItem> selectedAuths = ddlAuthors.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-            q.AuthorCodes = !string.IsNullOrEmpty(hdnSelectedAuths?.Value) ? hdnSelectedAuths?.Value.Replace("-", "").TrimEnd(',') : hdnSelectedAuths?.Value;
+                //Selected Authors
+                List<ListItem> selectedAuths = ddlAuthors.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+                q.AuthorCodes = !string.IsNullOrEmpty(hdnSelectedAuths?.Value) ? hdnSelectedAuths?.Value.Replace("-", "").TrimEnd(',') : hdnSelectedAuths?.Value;
 
-            //Selected Content Types
-            List<ListItem> selectedContTypes = ddlContentType.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-            q.ContentTypeCodes = !string.IsNullOrEmpty(hdnSelectedContTypes?.Value) ? hdnSelectedContTypes?.Value.TrimEnd(',') : hdnSelectedContTypes.Value;
+                //Selected Content Types
+                List<ListItem> selectedContTypes = ddlContentType.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+                q.ContentTypeCodes = !string.IsNullOrEmpty(hdnSelectedContTypes?.Value) ? hdnSelectedContTypes?.Value.TrimEnd(',') : hdnSelectedContTypes.Value;
 
-            //Selected Media Types
-            List<ListItem> selectedMedTypes = ddlMediaType.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
-            q.MediaTypeCodes = !string.IsNullOrEmpty(hdnSelectedMedTypes?.Value) ? hdnSelectedMedTypes?.Value.TrimEnd(',') : hdnSelectedMedTypes.Value;
+                //Selected Media Types
+                List<ListItem> selectedMedTypes = ddlMediaType.Items.Cast<ListItem>().Where(li => li.Selected).ToList();
+                q.MediaTypeCodes = !string.IsNullOrEmpty(hdnSelectedMedTypes?.Value) ? hdnSelectedMedTypes?.Value.TrimEnd(',') : hdnSelectedMedTypes.Value;
 
-            q.NumResultsValue = GetMaxNumResults();
-            if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA" && ddlVerticals.SelectedValue != "Select Vertical")
-                q.VerticalRoot = ddlVerticals.SelectedValue;
-            RedirectTo(q);
+                q.NumResultsValue = GetMaxNumResults();
+                if (ddlVerticals.SelectedValue != null && ddlVerticals.SelectedValue != "NA" && ddlVerticals.SelectedValue != "Select Vertical")
+                    q.VerticalRoot = ddlVerticals.SelectedValue;
+                RedirectTo(q);
+            }
         }
 
         protected DateTime? GetDateValue(string date, string time)

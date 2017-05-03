@@ -13,7 +13,7 @@
                 @if (!string.IsNullOrEmpty(Model.ContentType))
             {
                     <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 15)
+                        @if (!string.IsNullOrEmpty(Model.ContentType) && Model.ContentType.Length > 18)
                         {
                             var trimmedContentType = new string(Model.ContentType.Take(15).ToArray()) + " ...";
                             <span class="article-content-type">@trimmedContentType</span>
@@ -22,7 +22,6 @@
                         {
                             <span class="article-content-type">@Model.ContentType</span>
                         }
-
                     </td>
                 }
 
@@ -31,7 +30,7 @@
                     if (tag.LinkableText != Model.ArticleTagsViewModel.Tags.Last().LinkableText)
                     {
                         <td style="float: left; font-size: 15px; line-height: 20px;  border-right:1px solid #5a5758; padding:0 10px 0 10px; font-weight: 700;">
-                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 18)
                             {
                                 var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
                                 <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
@@ -40,14 +39,12 @@
                             {
                                 <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                             }
-
                         </td>
                     }
                     else
                     {
-
                         <td style="float: left; font-size: 15px; line-height: 20px; padding:0 10px 0 10px; font-weight: 700;">
-                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 15)
+                            @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 18)
                             {
                                 var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
                                 <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
@@ -56,7 +53,6 @@
                             {
                                 <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                             }
-
                         </td>
                     }
 
@@ -228,19 +224,14 @@
     }
     @if (!Model.IsEntitled(Model.ArticleItem) && Model.CallToActionViewModel != null)
     {
-        @*//This will show context for subscribe, login, register
-            <div class="article-call-to-action">
-                @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
-            </div>*@
-    if (Model != null)
-    {
-        @* * * SIGNED IN - NOT ENTITLED * * *@
-        <div class="article-call-to-action--subscribe">
-            <span class="article-call-to-action__title">
-                @Model.CallToActionViewModel.SubscribeTitle
-            </span>
-            <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
-        </div>
+        if (Model != null)
+        {
+            <div class="article-call-to-action--subscribe">
+                <span class="article-call-to-action__title">
+                    @Model.CallToActionViewModel.SubscribeTitle
+                </span>
+                <a href="@Model.CallToActionViewModel.SubscribeLinkUrl">@Model.CallToActionViewModel.SubscribeLinkText</a>
+            </div>
         }
     }
 
@@ -284,12 +275,13 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-        <tr><td height="10"></td></tr>
-        <tr>
-            <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
-        </tr>
-    </table>
+    @*<table cellpadding="0" cellspacing="0" border="0" width="100%">
+            <tr><td height="10"></td></tr>
+            <tr>
+                <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
+            </tr>
+        </table>*@
+    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {
@@ -308,8 +300,39 @@
         </table>
     </div>
 }
-<table>
-    <tr><td>&nbsp;</td></tr>
-    <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
-    <tr><td>&nbsp;</td></tr>
-</table>
+    @*Article Package*@
+    @{ var referredArticle = Model.GetPackageReferrersbyLoop();
+        if (referredArticle != null && referredArticle.Any())
+        {
+
+            foreach (var package in referredArticle.Take(1))
+            {
+                <section class="package-control-articles__quarter">
+                    @*<p class="moreText">@Model.MoreInText</p>*@
+                    <div class="article-preview__headline">
+                        <span>@package.PackageTitle</span>
+                    </div>
+                    <aside class="article-sidebar">
+                        <div class="package-heading-wrapper">
+                            @{
+                                var packageArticles = Model.GetPackageArticles(package);
+                                foreach (var article in packageArticles)
+                                {
+                                    <h3 class="article-preview__headline">
+                                        <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" height="12" />&nbsp;
+                                        <a style="font-size: 15px; line-height: 20px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                    </h3>
+                                }
+                            }
+                        </div>
+                    </aside>
+                </section>
+                                    }
+                                }
+    }
+
+    <table>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
+        <tr><td>&nbsp;</td></tr>
+    </table>

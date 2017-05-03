@@ -9,6 +9,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templat
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Sitecore.Data;
+using System.Linq;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -20,8 +21,9 @@ namespace Informa.Web.Areas.Account.Controllers
 		protected readonly ISaveDocumentContext SaveDocumentContext;
 		protected readonly IRemoveDocumentContext RemoveDocumentContext;
 		protected readonly IArticleService ArticleService;
+        protected readonly ISavedDocumentsContext SavedDocumentsContext;
 
-		protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
+        protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
 
         public SavedDocumentApiController(
             ISitecoreContext sitecoreContext,
@@ -29,7 +31,9 @@ namespace Informa.Web.Areas.Account.Controllers
 			ISitePublicationNameContext newsletterTypeContext,
 			ISaveDocumentContext saveDocumentContext,
 			IRemoveDocumentContext removeDocumentContext,
-			IArticleService articleService)
+			IArticleService articleService,
+            ISavedDocumentsContext savedDocumentsContext
+            )
         {
             SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
@@ -37,6 +41,21 @@ namespace Informa.Web.Areas.Account.Controllers
 			SaveDocumentContext = saveDocumentContext;
 			RemoveDocumentContext = removeDocumentContext;
 	        ArticleService = articleService;
+            SavedDocumentsContext = savedDocumentsContext;
+        }
+
+        [HttpGet]
+        public IHttpActionResult IsSaved(SavedDocumentRemoveRequest request)
+        {
+            // var rawDocuementId = documentId.ToString("D").ToUpper();
+            var rawDocuementId = request.DocumentID;
+
+            bool result = SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(rawDocuementId));
+            return Ok(new
+            {
+                success = result,
+                message = result
+            });
         }
 
         [HttpPost]

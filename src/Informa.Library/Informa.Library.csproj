@@ -386,6 +386,9 @@
     <Compile Include="Search\ComputedFields\Facets\SectorsField.cs" />
     <Compile Include="Search\ComputedFields\Facets\TopicField.cs" />
     <Compile Include="Search\Results\VWBSearchQueryResults.cs" />
+    <Compile Include="Search\Utilities\WebClientCookies.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="User\Authentication\IverticalLogin.cs" />
     <Compile Include="User\Authentication\VerticalLogin.cs" />
     <Compile Include="User\Newsletter\AddNewsletterUserOptInsContext.cs" />

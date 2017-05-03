@@ -4202,25 +4202,29 @@ $(document).ready(function () {
                         }
                     }
                 } else {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            tally: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                tally: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 if (chartDataType.length === 0) {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            tally: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                tally: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -4266,14 +4270,16 @@ $(document).ready(function () {
                         chartDataType.push(obj);
                     }
                 } else {
-                    for (i = 0; i < defaultRegions.length; i++) {
-                        var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
-                        var obj = {
-                            region: abbrRegionNameAsArray,
-                            count: 0,
-                            title: defaultRegions[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultRegions != undefined) {
+                        for (i = 0; i < defaultRegions.length; i++) {
+                            var abbrRegionNameAsArray = abbreviate(defaultRegions[i]);
+                            var obj = {
+                                region: abbrRegionNameAsArray,
+                                count: 0,
+                                title: defaultRegions[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -4320,14 +4326,16 @@ $(document).ready(function () {
                         chartDataType.push(obj);
                     }
                 } else {
-                    for (i = 0; i < defaultTypes.length; i++) {
-                        var abbrTypeNameAsArray = abbreviate(defaultTypes[i]);
-                        var obj = {
-                            type: abbrTypeNameAsArray,
-                            count: 0,
-                            title: defaultTypes[i]
-                        };
-                        chartDataType.push(obj);
+                    if (defaultTypes != undefined) {
+                        for (i = 0; i < defaultTypes.length; i++) {
+                            var abbrTypeNameAsArray = abbreviate(defaultTypes[i]);
+                            var obj = {
+                                type: abbrTypeNameAsArray,
+                                count: 0,
+                                title: defaultTypes[i]
+                            };
+                            chartDataType.push(obj);
+                        }
                     }
                 }
                 return chartDataType;
@@ -6641,7 +6649,6 @@ $(function () {
 			this.RenderMobileVersion(data, Parent);
 			this.SortingEvent(data, Parent);
 			this.FilterEvent(data, Parent);
-			this.YearChange();
 			this.MobileEvent();
 			this.showLargestEvent();
 
@@ -6669,7 +6676,7 @@ $(function () {
 			} else {
 				var ErrorMessage = $('#hdnErrormessage').val();
 			}
-			$('.id-merges-acquisition').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">' + '<svg class="alert__icon">' + '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>' + '</svg>' + '<p class="page-account-contact__error">' + ErrorMessage + '</p>' + '</div>');
+			$('.id-merges-acquisition .graphs-container').prepend('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">' + '<svg class="alert__icon">' + '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>' + '</svg>' + '<p class="page-account-contact__error">' + ErrorMessage + '</p>' + '</div>');
 		}
 	}
 })();
@@ -6685,6 +6692,13 @@ function checkQueryString() {
 	if (url.indexOf('?year=') != -1) return true;else if (url.indexOf('&year=') != -1) return true;
 	return false;
 }
+$(document).on('change', '.idYearSelect', function () {
+	var Href = $(this).attr('data-href'),
+	    value = $(this).find('.selectivity-single-selected-item').attr('data-item-id'),
+	    newUrl = window.location.href.split('?')[0].concat("?year=" + value);
+
+	window.location = newUrl;
+});
 
 },{}],14:[function(require,module,exports){
 'use strict';
@@ -9077,8 +9091,8 @@ function createJSONData(alltables, UserPreferences, url) {
 
         //subscribeStatus = $(alltables[i]).find('.subscribed').html(),
         channelId = $(alltables[i]).find('h2').attr('data-item-id'),
-            channelStatus = $(alltables[i]).find('h2').attr('data-item-status'),
-            channellblStatus = getlableStatus == 'followinglbl' ? $('#followingButtonText').val() : $('#followButtonText').val();
+            channelStatus = $(alltables[i]).find('h2').attr('data-item-status');
+        //channellblStatus = (getlableStatus == 'followinglbl') ? $('#followingButtonText').val() : $('#followButtonText').val();
         var alltdata = [];
         for (var j = 0; j < currenttabtrs.length; j++) {
             var eachrowAttr = $(currenttabtrs[j]).find('input[type=hidden]').attr('data-row-topic'),
@@ -9091,7 +9105,7 @@ function createJSONData(alltables, UserPreferences, url) {
 
             alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
         }
-        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, 'ChannelLblStatus': channellblStatus, Topics: alltdata });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
     }
     sendHttpRequest(UserPreferences, null, url);
 }
@@ -9109,9 +9123,9 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 if ($('.alert-success').length > 0) {
                     $(window).scrollTop($('.informa-ribbon').offset().top + $('.informa-ribbon').height());
                 }
-                if (setFlag == 'register' && redirectUrl == 'href') {
+                if ((setFlag == 'register' || setFlag == null) && redirectUrl == 'href') {
                     window.location.href = $('.registrationBtn').attr('href');
-                } else if (setFlag == 'register' && redirectUrl == 'name') {
+                } else if ((setFlag == 'register' || setFlag == null) && redirectUrl == 'name') {
                     window.location.href = $('.registrationBtn').attr('name');
                 }
                 if ($('.modal-overlay').hasClass('in')) {
@@ -9683,6 +9697,18 @@ $(function () {
         UserPreferences.PreferredChannels = [];
 
         e.preventDefault();
+        if (isChannelLevel == "false") {
+            if ($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
+                $('.alert-error.register-not-selected').show();
+                return false;
+            } else if ($('#validatePriority').val() == "true") {
+                createJSONData(table, UserPreferences, 'name');
+                return false;
+            } else if ($('#validatePriority').val() == "false") {
+                createJSONData(table, UserPreferences, 'href');
+                return false;
+            }
+        }
         if ($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false") {
             setDataRow(allpublications);
             sendRegisterData(alltrs, UserPreferences, 'name');
@@ -14219,8 +14245,8 @@ $(document).ready(function () {
                 mainMenuListItems.each(function () {
                     $('.main-menu-list').append($(this));
                 });
-                if ($('div.main-menu__section').length > 0) {
-                    var mainMenuList = $('div.main-menu__section, div.main-menu-list');
+                if ($('.main-menu__section').length > 0) {
+                    var mainMenuList = $('.main-menu__section, .main-menu-list');
                     mainMenuList.remove();
                     $('.main-menu').append("<div class='main-menu-section-list'></div>");
                     mainMenuList.each(function () {
@@ -14511,31 +14537,35 @@ $(document).ready(function () {
     }
 
     //IPMP-2543
-    if ($('.pop-out__myViewregister').length) {
-        if (window.matchMedia("(min-width: 1025px)").matches) {
-            $('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
-        } else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
-            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-140px', 'left': '-270px' });
-            $('.pop-out__tab').css({ 'top': '-86px', 'left': '533px' });
-        } else if (window.matchMedia("(max-width: 768px)").matches) {
-            $('.pop-out.is-active').css({ 'top': '-190px', 'left': '-300px' });
-            $('.pop-out__tab').css({ 'right': '-300px', 'top': '-70px' });
-        }
-    }
-    $(window).resize(function () {
-        if ($(window).width() > 1024) {
-            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-140px', 'left': '0px' });
-        }
-        if ($(window).width() > 1000 && $(window).width() <= 1024) {
-            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-140px', 'left': '-270px' });
-            $('.pop-out__tab').css({ 'top': '-86px', 'left': '533px' });
-        } else if ($(window).width() > 600 && $(window).width() <= 768) {
-            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-190px', 'left': '-300px' });
-            $('.pop-out__tab').css({ 'right': '-300px', 'top': '-70px' });
-        } else {
-            $('.pop-out.js-pop-out__myViewregister').css({ 'top': '-370px', 'left': '0px' });
-        }
-    });
+    // if($('.pop-out__myViewregister').length){
+    // 	if (window.matchMedia("(min-width: 1025px)").matches) {
+    // 		$('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
+    // 	}
+    // 	else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
+    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
+    // 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
+    // 	}
+    // 	else if (window.matchMedia("(max-width: 768px)").matches) {
+    // 		$('.pop-out.is-active').css({'top': '-190px', 'left': '-300px'});
+    // 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
+    // 	}
+    // }
+    // $(window).resize(function(){
+    // 	if($(window).width() > 1024){
+    // 	$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '0px'});
+    // 	}
+    // 	if($(window).width() > 1000 && $(window).width() <= 1024){
+    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
+    // 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
+    // 	}
+    // 	else if($(window).width() > 600 && $(window).width() <= 768){
+    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-190px', 'left': '-300px'});
+    // 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
+    // 	}
+    // 	else{
+    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-370px', 'left': '0px'});
+    // 	}
+    // });
 });
 
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/id-comparechart":10,"./components/id-comparefinancialresults":11,"./components/id-financial-responsive-table":12,"./components/id-merge-acquistion":13,"./components/id-quarterly-responsive-table":14,"./components/id-responsive-table":15,"./components/latest-casuality":16,"./components/ll-casuality-detail":17,"./components/ll-casuality-listing":18,"./components/ll-cockett-bunker":19,"./components/ll-fisDryBulk":20,"./components/ll-howeRobinson":21,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":22,"./components/ll-marketdata-drycargo-ssyal":25,"./components/ll-ship-coal-export":26,"./components/ll-ship-container-ship":27,"./components/ll-ship-roro":28,"./components/ll-shipContainerShipFixtures":29,"./components/ll-tanker-fixtures":30,"./components/ll-tanker-pure-chem-page":31,"./components/myview-settings":32,"./components/pagination":33,"./components/personalisation":34,"./components/save-search-component":35,"./components/scrollbar":36,"./components/table_charts":37,"./components/video-mini":38,"./controllers/analytics-controller":39,"./controllers/bookmark-controller":40,"./controllers/form-controller":41,"./controllers/lightbox-modal-controller":42,"./controllers/pop-out-controller":43,"./controllers/register-controller":44,"./controllers/reset-password-controller":45,"./controllers/sortable-table-controller":46,"./controllers/tooltip-controller":47,"./jscookie":49,"./modal":50,"./newsletter-signup":51,"./search-page":52,"./selectivity-full":53,"./svg4everybody":54,"./toggle-icons":55,"./zepto.dragswap":56,"./zepto.min":57,"./zepto.suggest":58}],49:[function(require,module,exports){

@@ -46,16 +46,35 @@ namespace Informa.Web.Controllers.Search
             GlobalService = globalService;
         }
         // GET: InformaVWBSearch       
-       
+
         public VWBSearchQueryResults Get([ModelBinder(typeof(ApiSearchRequestModelBinder))]ApiSearchRequest request)
         {
             if (request == null)
             {
                 return null;
             }
-            var defaultCount = "1000";
+            var defaultCount = "100";
             int PerPageCount = Convert.ToInt32(!string.IsNullOrEmpty(Settings.GetSetting("VwbDropdownCount")) ? Settings.GetSetting("VwbDropdownCount") : defaultCount);
             request.PerPage = PerPageCount;
+
+            string defstartDate = DateTime.Now.AddDays(-1).Date.ToString("MM/dd/yyyy");
+            string defendDate = DateTime.Now.Date.AddDays(31).AddSeconds(-1).ToString("MM/dd/yyyy");
+            string dateFormat = string.Empty;
+
+            var dates = request.QueryParameters["plannedpublishdate"].Split(';');
+            if (string.IsNullOrEmpty(dates[0]) && !string.IsNullOrEmpty(dates[1]))
+            {
+                dateFormat = defstartDate + ";" + dates[1];
+            }
+            if (!string.IsNullOrEmpty(dates[0]) && string.IsNullOrEmpty(dates[1]))
+            {
+                dateFormat = dates[0] + ";" + defendDate;
+            }
+            if (string.IsNullOrEmpty(dates[0]) && string.IsNullOrEmpty(dates[1]))
+            {
+                dateFormat = defstartDate + ";" + defendDate;
+            }
+            request.QueryParameters["plannedpublishdate"] = dateFormat;
 
             var q = new SearchQuery<InformaSearchResultItem>(request, _parser);
             q.FilterPredicateBuilder = new InformaPredicateBuilder<InformaSearchResultItem>(_parser, request);
@@ -109,7 +128,7 @@ namespace Informa.Web.Controllers.Search
                     {
                         if (!vwb.Authors.ContainsKey(author._Id.ToString()))
                         {
-                            vwb.Authors.Add(author._Id.ToString(), author.Last_Name.Trim() +", "+ author.First_Name.Trim());
+                            vwb.Authors.Add(author._Id.ToString(), author.Last_Name.Trim() + ", " + author.First_Name.Trim());
                         }
                     }
                 }

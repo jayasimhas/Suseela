@@ -12,10 +12,13 @@ using Informa.Web.Models;
 using Informa.Library.User.Entitlement;
 using Informa.Library.Article.Search;
 using Informa.Models.FactoryInterface;
+using System;
+
 namespace Informa.Web.ViewModels.Articles
 {
     public class ArticleRecommendationViewModel : GlassViewModel<IArticle>
     {
+        private string channelCodeFormat = "{0}.{1}";
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly ITextTranslator TextTranslator;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
@@ -24,6 +27,7 @@ namespace Informa.Web.ViewModels.Articles
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
         protected readonly IArticleSearch Searcher;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
+
         public ArticleRecommendationViewModel(ISiteRootContext siteRootContext,
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
@@ -219,10 +223,13 @@ namespace Informa.Web.ViewModels.Articles
                     Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
                     foreach (Topic topic in topics)
                     {
-                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                        taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                        if (!string.IsNullOrWhiteSpace(taxonomyId))
-                            sec.TaxonomyIds.Add(taxonomyId);
+                        if (topic.IsFollowing)
+                        {
+                            topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
+                            taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                            if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                sec.TaxonomyIds.Add(taxonomyId);
+                        }
                     }
                 }
                 else if (isNewUser)
@@ -273,11 +280,81 @@ namespace Informa.Web.ViewModels.Articles
         private string GetOpportunityIds()
         {
             //return "'1d9df21a-6d1c-4313-8bae-de880fdc9c3b','9ca4bfee-8798-4d39-a2e8-5bef5f3debab','8115e430-0419-4b6b-b6e6-5ccea59705fb','59163f1f-d047-46d2-9f51-baa597dc0bb9'";
-            var UserEntitlements = UserEntitlementsContext.Entitlements;
-            UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
-            var ids = string.Join(",", UserEntitlements.Select(i => $"{i.OpportunityId}"));
-            return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+            //var UserEntitlements = UserEntitlementsContext.Entitlements;
+            //UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
+            //var ids = string.Join(",", UserEntitlements.Select(i => $"{i.OpportunityId}"));   
+
+            Section Section = CreateSectionsForEntitlements();
+            if (Section != null && Section.TaxonomyIds != null && Section.TaxonomyIds.Any())
+            {
+                return string.Join(",", Section.TaxonomyIds.Select(i => i));
+            }
+            return string.Empty;
         }
 
+        private Section CreateSectionsForEntitlements()
+        {
+            var UserEntitlements = UserEntitlementsContext.Entitlements;
+            Section sec = new Section();
+            sec.TaxonomyIds = new List<string>();
+            var homeItem = GlobalService.GetItem<IHome_Page>(SiteRootContext.Item._Id.ToString()).
+                _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+
+            if (homeItem != null)
+            {
+                var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
+
+                if (channelsPageItem != null)
+                {
+                    var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
+                    if (channelPages != null && channelPages.Any())
+                    {
+                        
+                        foreach (IChannel_Page channelPage in channelPages)
+                        {
+                           
+                            bool IsChannelSubscribed = UserEntitlements != null && UserEntitlements.Any(subcription => subcription
+                                                   .ProductCode.Equals(GetProductCode(channelPage.Channel_Code), StringComparison.OrdinalIgnoreCase)
+                                                   && DateTime.Parse(subcription.AccessEndDate) > DateTime.Now
+                                                   );
+                            if (IsChannelSubscribed)
+                            {
+                                var taxonomyId = channelPage.Taxonomies != null && channelPage.Taxonomies.Any() ? channelPage?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                                if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                    sec.TaxonomyIds.Add(taxonomyId);
+                                GetTopicsEntitlements(sec, channelPage);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return sec;
+        }
+
+        private void GetTopicsEntitlements(Section section, IChannel_Page channelPage)
+        {
+            var pageAssetsItem = channelPage._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
+            if (pageAssetsItem != null)
+            {
+                var topics = pageAssetsItem._ChildrenWithInferType.
+                    OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
+                if (topics != null && topics.Any())
+                {
+                    foreach (Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic
+                        topicItem in topics)
+                    {
+                        var taxonomyId = topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                        if (!string.IsNullOrWhiteSpace(taxonomyId))
+                            section.TaxonomyIds.Add(taxonomyId);
+                    }
+                }
+            }
+        }
+
+        public string GetProductCode(string subCode)
+        {
+            return string.Format(channelCodeFormat, SiteRootContext?.Item.Publication_Code, subCode);
+        }
     }
 }

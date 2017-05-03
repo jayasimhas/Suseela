@@ -112,7 +112,16 @@ namespace Informa.Library.Search.PredicateBuilders
                 }
                 predicate = predicate.And(codesPredicate);
             }
-            
+            if (_request.QueryParameters.ContainsKey("articleNumber") && string.IsNullOrEmpty(_request.QueryParameters["articleNumber"]) == false)
+            {
+                var articleNumber = _request.QueryParameters["articleNumber"];
+
+                var articleNoPredicate = PredicateBuilder.True<T>();
+
+                articleNoPredicate = articleNoPredicate.And(x => x.articleNumber == articleNumber);
+                predicate = predicate.And(articleNoPredicate);
+            }
+
             // If the inprogress flag is available then add that as as filter, this is used in VWB
             if (_request.QueryParameters.ContainsKey(Constants.QueryString.InProgressKey))
             {
