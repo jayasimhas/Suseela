@@ -5,15 +5,19 @@
 
         <div class="contentRecommendations">
             @*Editor Picks*@
-            <div class="article-related-content">              
+            <div class="article-related-content">
 
                 @*What to read next*@
                 @if (!Model.HideWhatToReadNext)
                 {
                     <input type="hidden" id="hdnTaxonomyIds" value="@Html.Raw(Model.TaxonomyItems)" />
-                    <div class="ContentRecomm-ReadNext">
-                        <h2>@Model.WhatToReadNextText</h2>
-                    </div>
+                    if (!string.IsNullOrEmpty(Model.TaxonomyItems))
+                    {
+                        <div class="ContentRecomm-ReadNext">
+                            <h2>@Model.WhatToReadNextText</h2>
+                        </div>
+                    }
+
                 }
 
                 @*Suggested For you*@
@@ -29,9 +33,12 @@
                         {
                             <input type="hidden" id="hdnPreferanceIds" value="@Html.Raw(Model.EntitlementIDs)" />
                         }
-                        <div class="suggested-article">
-                            <h2>@Model.SuggestedForYouText</h2>
-                        </div>
+                        if (!string.IsNullOrEmpty(Model.PreferedTaxonomies) || !string.IsNullOrEmpty(Model.EntitlementIDs))
+                        {
+                            <div class="suggested-article">
+                                <h2>@Model.SuggestedForYouText</h2>
+                            </div>
+                        }
                     }
                 }
             </div>
