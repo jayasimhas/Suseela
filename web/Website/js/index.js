@@ -25,6 +25,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
+import './components/bookmark-catche';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';

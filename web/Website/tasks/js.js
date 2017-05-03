@@ -9,7 +9,8 @@ var gulp           = require("gulp"),
     shim           = require("browserify-shim"),
     through2       = require("through2"),
     babelify       = require("babelify"),
-    minify         = require('gulp-minify');
+    minify         = require('gulp-minify'),
+    replaceName    = require('gulp-replace-name');
 
 
 // dev/default settings
@@ -92,7 +93,23 @@ gulp.task("js", function(){
         .pipe(browserifyIt)
         .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(gulpif((js.uglify), uglify(js.uglify)))
-        .pipe(minify(js.minify))
+        .pipe(minify(({
+            ignoreFiles: ['*.min.js']
+        })))
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(js.dest));
 });
+gulp.src([
+    './dist/js/*.min.js',
+    './dist/js/*-min.js',
+    './dist/js/amcharts.js',
+    './dist/js/amstock.js',
+    './dist/js/table-childssorter.js',
+    './dist/js/serial.js',
+    './dist/js/vendor.js',
+    './dist/js/jquery-3.1.1.js',
+    './dist/js/jquery.tablesorter.js'
+])
+.pipe(replaceName(/\-min.js/g, '.js'))
+.pipe(gulp.dest('./dist/minified/js'));
+
