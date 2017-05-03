@@ -8,7 +8,8 @@ var gulp           = require("gulp"),
     browserify     = require("browserify"),
     shim           = require("browserify-shim"),
     through2       = require("through2"),
-    babelify       = require("babelify");
+    babelify       = require("babelify"),
+    minify         = require('gulp-minify');
 
 
 // dev/default settings
@@ -91,6 +92,7 @@ gulp.task("js", function(){
         .pipe(browserifyIt)
         .pipe(sourcemaps.init({ loadMaps: true })) // loads map from browserify file
         .pipe(gulpif((js.uglify), uglify(js.uglify)))
+        .pipe(minify(js.minify))
         .pipe(sourcemaps.write("./"))
         .pipe(gulp.dest(js.dest));
 });

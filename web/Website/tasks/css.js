@@ -8,7 +8,8 @@ var gulp          = require("gulp"),
     header        = require("gulp-header"),
     concat        = require("gulp-concat"),
     postcss       = require('gulp-postcss'),
-    sourcemaps    = require("gulp-sourcemaps");
+    sourcemaps    = require("gulp-sourcemaps"),
+    minifyCSS     = require('gulp-minify-css');
 
 // css settings
 utils.setTaskConfig("css", {
@@ -55,6 +56,7 @@ gulp.task("css", function() {
         .pipe(autoprefixer(css.autoprefixer))
         .pipe(pixrem("16px",{atrules: true, html: true}))
         .pipe(concat(css.filename, {newLine: ""}))
+        .pipe(minifyCSS(css.filename))
         .pipe(rename({
             suffix: "-generated"
         }));

@@ -48,7 +48,7 @@ function sendHttpRequest(UserPreferences, setFlag, redirectUrl) {
                 if ($('.alert-success').length > 0) {
                     $(window).scrollTop($('.informa-ribbon').offset().top + $('.informa-ribbon').height());
                 }
-                if (setFlag == 'register' && redirectUrl == 'href') {
+                if ((setFlag == 'register' || setFlag == null) && redirectUrl == 'href') {
                     window.location.href = $('.registrationBtn').attr('href');
                 }
                 else if ((setFlag == 'register' || setFlag == null) && redirectUrl == 'name') {
@@ -559,14 +559,18 @@ $(function () {
 
         e.preventDefault();
 		if(isChannelLevel == "false"){
-			if($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false"){
-				createJSONData(table, UserPreferences, 'name');
-				return false;
-			}
-			else if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
+			if($('#enableSavePreferencesCheck').val() === "true" && table.find('.followingrow').length == 0) {
                 $('.alert-error.register-not-selected').show();
                 return false;
             }
+			else if($('#validatePriority').val() == "true"){
+				createJSONData(table, UserPreferences, 'name');
+				return false;
+			}
+			else if($('#validatePriority').val() == "false"){
+				createJSONData(table, UserPreferences, 'href');
+				return false;
+			} 
 		}
         if ($('#validatePriority').val() == "true" && $('#enableSavePreferencesCheck').val() === "false") {
             setDataRow(allpublications);
