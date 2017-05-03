@@ -82,7 +82,7 @@ div.top {
 	float: left;
 }
 .mediatypes{
-	margin: 10px 0; float: left; width: 800px;
+	margin: 10px 0; float: left; width: 790px;
 }
 .mediatypes .dd_chk_select{
 	width: 24%;
@@ -263,6 +263,7 @@ div.appbuttons
 #btnRunReport,
 #btnReset,
 #btnLogout,
+#btnLoadFilters,
 #tblResults > tbody > tr > td input,
 .orange-button,
 .ui-widget button
@@ -272,21 +273,23 @@ div.appbuttons
 	line-height: 1rem;
 	margin: auto;
 	max-width: 100%;
-    -moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
-    background-color: #D06D1A;
-    background: -moz-linear-gradient(0% 10% 270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
+	-moz-text-shadow: 0 -0.1em 0.2em #D06D1A, 0 0.1em 0.2em #FFFFFF;
+	background-color: #D06D1A;
+	background: -moz-linear-gradient(0% 10% 270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
 	background: -webkit-linear-gradient(270deg, #F4BC50, #DF7B29) repeat scroll 0 0 #DF7B29;
-    border: 0;
-    color: #FFFFFF;
-    display: inline-block;
-    font: 500 0.75rem/0.9375rem Helvetica Neue, Helvetica, arial, sans-serif;
-    letter-spacing: 0.03em;
-    padding: 3px 7px !important;
-    text-decoration: none;
-    text-transform: uppercase;
+	border: 0;
+	color: #FFFFFF;
+	display: inline-block;
+	font: 500 0.75rem/0.9375rem Helvetica Neue, Helvetica, arial, sans-serif;
+	letter-spacing: 0.03em;
+	padding: 3px 7px !important;
+	text-decoration: none;
+	text-transform: uppercase;
 	white-space: normal;
 }
-
+input[disabled]#btnLoadFilters{ 
+	background: -webkit-linear-gradient(270deg, #CCCCCC, #CCCCCC) repeat scroll 0 0 #DF7B29
+}
 .orange-button:disabled {
 	background: #ccc;
 }
@@ -375,8 +378,8 @@ tr.doubletop > td
 }
 .loadFilters {
 	float: left;
-	width: 90px;
-	margin: 7px 10px 0 0;
+	width: 110px;
+	margin: 7px 0px 0 0;
 }
 #dateRangeWrapper {
     clear: both;
