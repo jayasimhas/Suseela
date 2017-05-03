@@ -106,7 +106,9 @@ gulp.src([
     './dist/js/amstock.js',
     './dist/js/table-childssorter.js',
     './dist/js/serial.js',
-    './dist/js/vendor.js'
+    './dist/js/vendor.js',
+    './dist/js/jquery-3.1.1.js',
+    './dist/js/jquery.tablesorter.js'
 ])
 .pipe(replaceName(/\-min.js/g, '.js'))
 .pipe(gulp.dest('./dist/minified/js'));
