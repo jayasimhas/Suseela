@@ -5577,6 +5577,8 @@ $(document).ready(function () {
                         Template += '<div class="section-article ' + addCls + '">' + articlemeta + listableImage + listablePublication + listableTitle + listableDate + '</div>';
                     }
                 }
+            } else {
+                $('.ContentRecomm-ReadNext').hide();
             }
 
             Template += '</div>';
@@ -5605,6 +5607,8 @@ $(document).ready(function () {
                         Template += '<div class="contentRecomm-article ' + addCls + '">' + articlemeta + listableImage + listablePublication + listableTitle + listableDate + '</div>';
                     }
                 }
+            } else {
+                $('.suggested-article').hide();
             }
 
             Template += '</div>';
