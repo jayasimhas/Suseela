@@ -453,7 +453,7 @@
                     if (preferredTopic != null)
                     {
                         topic.TopicOrder = preferredTopic.TopicOrder;
-                        topic.IsFollowing = IsNewUser ? channel.IsFollowing : preferredTopic.IsFollowing;
+                        topic.IsFollowing = IsNewUser && isChannelBasedRegistration? channel.IsFollowing : preferredTopic.IsFollowing;
                     }
                 }
                 if (channel.IsFollowing && UserPreferences.Preferences.IsNewUser)
