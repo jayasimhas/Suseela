@@ -1940,6 +1940,7 @@
     <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
     <Content Include="sitecore\login\default.aspx" />
     <Content Include="sitecore\login\login.js" />
+    <Content Include="sitecore\shell\Applications\Content Manager\Galleries\InformaWorkflowEdit\InformaGalleryWorkflowEdit.xml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
     <Content Include="sitecore\shell\client\Applications\View NLM\scripts\ViewNlm.js" />
