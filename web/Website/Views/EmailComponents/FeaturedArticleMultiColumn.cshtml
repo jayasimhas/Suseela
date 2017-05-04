@@ -21,15 +21,15 @@
 
         <!--100% Width full tile with grey background-->
                     <tr>
-                        <td align="center" valign="top" id="templateBody" style="background:#@GetBackgroundColor(Model) none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
+                        <td align="center" valign="top" id="templateBody" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 1px solid #cccccc;border-bottom: 0;padding-top: 0;padding-bottom: 0;">
                             <!--[if gte mso 9]>
                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
                                 <tr>
                                     <td align="center" valign="top" width="600" style="width:600px;">
                                         <![endif]-->
-                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer redbgPan" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;color:#777777;">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer @GetBackgroundredBg(Model)" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;color:#777777;">
                                 <tr>
-                                    <td valign="top" class="bodyContainer" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                    <td valign="top" class="bodyContainer" style="background:#@GetBackgroundColor(Model) none no-repeat center/cover;mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
                                             <tbody class="mcnTextBlockOuter">
                                                 <tr>
@@ -124,7 +124,7 @@
                                                     }
                                                                 <tr>
                                                                     <td>
-                                                                        @if (article.Featured_Image_16_9 != null)
+                                                                        @if (article.Featured_Image_16_9 != null && !string.IsNullOrEmpty(article.Featured_Image_16_9.Src))
     {
         if (IsInEditingMode)
         {
@@ -287,7 +287,7 @@
                                     <tr>
                                         <td align="center" valign="top" width="285" style="width:285px;">
                                             <![endif]-->
-                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top:15px;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
+                                <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-top:1px solid #cccccc;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top:15px;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
                                     <tbody>
                                         <tr>
                                             <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -310,7 +310,7 @@
                                                         {
                                                             index++;
                                                     <tr>
-                                                        <td style="height: 160px; border-bottom: 1px solid #cccccc;@GetPaddingForSecondRow(index)" valign="top">
+                                                        <td style="height: 158px; border-bottom: 1px solid #cccccc;@GetPaddingForSecondRow(index)" valign="top">
                                                             <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                 <tbody>
                                                                     <tr>
@@ -839,6 +839,13 @@
         else
             return "ffffff";
     }
+    public string GetBackgroundredBg(FeaturedArticleMultiColumnViewModel model)
+    {
+        if (model.GlassModel.ShowGreyBackground || model.GlassModel.ShowPinkBackground)
+            return "redbgPan";
+       else
+            return "";
+    }
 
     public string GetFullRowarticleClass(FeaturedArticleMultiColumnViewModel model)
     {
@@ -860,7 +867,7 @@
 
     public string GetPaddingForSecondRow(int index)
     {
-        return index == 2 ? "padding-top: 13px;" : string.Empty;
+        return (index == 1 || index == 2) ? "padding-top: 7px;" : string.Empty;
     }
 
     public string GetTaxonomyUrl(ITaxonomy_Item taxonomyItem)

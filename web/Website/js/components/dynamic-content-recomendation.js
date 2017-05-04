@@ -40,6 +40,8 @@
 											'</div>';
                         }
                     }
+                } else {
+                    $('.ContentRecomm-ReadNext').hide();
                 }
 
                 Template += '</div>';
@@ -73,6 +75,8 @@
 									'</div>';
 						}   
 					}
+                } else {
+                    $('.suggested-article').hide();
                 }
 
                 Template += '</div>';

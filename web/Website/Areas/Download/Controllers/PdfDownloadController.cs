@@ -197,6 +197,7 @@ namespace Informa.Web.Areas.Account.Controllers
             string fullPageHtml = string.Empty;
             string html = string.Empty;
             HtmlDocument doc = new HtmlDocument();
+            var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
             if (!string.IsNullOrEmpty(pdfPageUrl))
             {
@@ -207,9 +208,19 @@ namespace Informa.Web.Areas.Account.Controllers
                 HttpWebRequest webRequest = WebRequest.Create(pdfPageUrl) as HttpWebRequest;
                 ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => { return true; };
                 webRequest.Method = "POST";
-                System.Net.WebClient client = new WebClient();
+                CookieContainer cookieJar = new CookieContainer();
+                if (System.Web.HttpContext.Current.Request.Cookies["SSO_LoggedInUser"] != null)
+                {
+                    cookieJar.Add(new Cookie(System.Web.HttpContext.Current.Request.Cookies["SSO_LoggedInUser"].Name, System.Web.HttpContext.Current.Request.Cookies["SSO_LoggedInUser"].Value) { Domain = System.Configuration.ConfigurationManager.AppSettings["SSOSubdomain"] });
+                }
+                if (System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"] != null)
+                {
+                    cookieJar.Add(new Cookie(System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Name, System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Value){ Domain = System.Configuration.ConfigurationManager.AppSettings["SSOSubdomain"] });
+                }
+
+                CookieAwareWebClients client = new CookieAwareWebClients(cookieJar);
                 client.UseDefaultCredentials = true;
-                client.Headers.Add("User-Agent: Other");
+
                 byte[] data = client.DownloadData(pdfPageUrl);
                 fullPageHtml = Encoding.UTF8.GetString(data);
                 doc.LoadHtml(fullPageHtml);
@@ -284,7 +295,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 //        SectionNode.ParentNode.InnerHtml = newNodeHtml;
                 //    }
                 //}
-                var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
                 var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
                 if (images != null && images.Any())

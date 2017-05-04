@@ -1199,6 +1199,7 @@
     <Compile Include="Models\ISection.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PageLinksFactory.cs" />
+    <Compile Include="Models\PersonalizedEmailRequest.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="ItemWithoutLayout.aspx.cs">
