@@ -94,7 +94,7 @@ namespace Informa.Web.ViewModels.DataTools
                     }
                 }
                 entitlemetCodes = entitlemetCodes?.TrimStart(charsToTrim).TrimEnd(charsToTrim);
-                return !string.IsNullOrEmpty(GlassModel.Filter) ? GlassModel.Filter + "&" + "Entitlement_Code=" + entitlemetCodes : "Entitlement_Code=" + entitlemetCodes;
+                return !string.IsNullOrEmpty(GlassModel.Filter) ? GlassModel.Filter + "&" + EntitlementKey + "=" + entitlemetCodes : EntitlementKey + "=" + entitlemetCodes;
 
             }
             return string.Empty;
@@ -148,6 +148,7 @@ namespace Informa.Web.ViewModels.DataTools
         public LinkField JSAPILinkField => GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString()).Fields[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
 
         public string JSAPIUrl => JSAPILinkField.Url;
+        public string EntitlementKey => GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.EntitlementParameterKeyFieldId];
 
         public string TableauTicket => TableauUtil.GenerateSecureTicket(GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId],
             GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);

@@ -1,20 +1,20 @@
 ﻿using Informa.Library.Article.Search;
 using Informa.Library.Globalization;
+using Informa.Library.Search.Utilities;
 using Informa.Library.Services.Global;
 using Informa.Library.Site;
 using Informa.Library.User.UserPreference;
+using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Models;
+using Informa.Web.ViewModels.Articles;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using Informa.Library.Utilities.Extensions;
-using Informa.Web.ViewModels.Articles;
-using Informa.Library.Search.Utilities;
-using System.Xml.Serialization;
-using System.IO;
-using Newtonsoft.Json;
-using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
+using Log = Sitecore.Diagnostics.Log;
+using System.Diagnostics;
 
 namespace Informa.Web.ViewModels.Emails
 {
@@ -45,11 +45,6 @@ namespace Informa.Web.ViewModels.Emails
         }
 
         /// <summary>
-        /// The request XML
-        /// </summary>
-        private string _requestXML;
-
-        /// <summary>
         /// The personalized email request
         /// </summary>
         private PersonalizedEmailRequest _personalizedEmailRequest;
@@ -58,29 +53,21 @@ namespace Informa.Web.ViewModels.Emails
 
         private DateTime? _searchEndDate;
 
-
         /// <summary>
         /// Gets or sets the personalized email request.
         /// </summary>
         /// <value>
         /// The personalized email request.
         /// </value>
-
-        /// <summary>
-        /// Gets or sets the request XML.
-        /// </summary>
-        /// <value>
-        /// The request XML.
-        /// </value>
-        public string RequestXML
+        public PersonalizedEmailRequest PersonalizedEmailRequest
         {
             get
             {
-                return _requestXML;
+                return _personalizedEmailRequest;
             }
             set
             {
-                _requestXML = value;
+                _personalizedEmailRequest = value;
             }
         }
         /// <summary>
@@ -100,13 +87,7 @@ namespace Informa.Web.ViewModels.Emails
             var sections = new List<ISection>();
             try
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(PersonalizedEmailRequest));
-                using (StringReader stringReader = new StringReader(_requestXML))
-                {
-                    _personalizedEmailRequest = (PersonalizedEmailRequest)xmlSerializer.Deserialize(stringReader);
-                    SetArticleSearchDateRange();
-                }
-
+                SetArticleSearchDateRange();
                 IList<Channel> channels = new List<Channel>();
 
                 if (_personalizedEmailRequest != null && !string.IsNullOrWhiteSpace(_personalizedEmailRequest.Value6__c))
@@ -117,26 +98,33 @@ namespace Informa.Web.ViewModels.Emails
                        && userPreferences.PreferredChannels.Any())
                     {
                         channels = userPreferences.PreferredChannels.OrderBy(channel => channel.ChannelOrder).ToList();
+                        Stopwatch sw = Stopwatch.StartNew();
                         foreach (Channel channel in channels)
                         {
                             CreateSections(channel, sections, userPreferences.IsChannelLevel, userPreferences.IsNewUser);
                         }
+                        StringExtensions.WriteSitecoreLogs("Time taken to Create Sections for Personalized Email Body", sw, "CreateSections");
                     }
 
                 }
                 else
                 {
+                    Stopwatch sw = Stopwatch.StartNew();
                     channels = GetAllChannels();
+                    StringExtensions.WriteSitecoreLogs("Time taken to Get All Channels", sw, "GetAllChannels");
+                    sw = Stopwatch.StartNew();
                     foreach (Channel channel in channels)
                     {
                         CreateSections(channel, sections, true, false);
                     }
+                    StringExtensions.WriteSitecoreLogs("Time taken to Create Sections of all channels", sw, "GetAllChannels");
                 }
-                
+
                 return sections;
             }
-            catch
+            catch(Exception e)
             {
+                Log.Error("Could Not Generate Personalized Email Sections", e, this);
                 return sections;
             }
 

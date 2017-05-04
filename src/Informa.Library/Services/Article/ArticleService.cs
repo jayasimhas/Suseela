@@ -165,6 +165,17 @@ namespace Informa.Library.Services.Article
             return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(article.Body));
         }
 
+        /// <summary>
+        /// For personalized pdf
+        /// </summary>
+        /// <param name="_body"></param>
+        /// <returns></returns>
+        public string GetArticleBody(string _body, Guid _ArticleId)
+        {
+            string cacheKey = CreateCacheKey($"Body-{_ArticleId}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildTokenizedArticleText(_body));
+        }
+
         private string BuildTokenizedArticleText(string text)
         {
             return DCDTokenMatchers.ProcessDCDTokens(text);
