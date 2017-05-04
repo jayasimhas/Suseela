@@ -2,14 +2,15 @@
 using Informa.Library.Logging;
 using Informa.Library.Mail;
 using Informa.Library.Publication;
-using Informa.Library.User.Authentication.Web;
-using Informa.Library.User.Registration;
+using Informa.Library.Site;
 using Informa.Library.Utilities.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Helpers;
+using Informa.Web.Models;
 using Informa.Web.ViewModels.Emails;
+using Jabberwocky.Core.Caching;
 using PluginModels;
 using Sitecore;
 using Sitecore.Data.Fields;
@@ -19,10 +20,13 @@ using Sitecore.Workflows;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Xml.Serialization;
 using Constants = Informa.Library.Utilities.References.Constants;
+using Log = Sitecore.Diagnostics.Log;
 
 namespace Informa.Web.Controllers
 {
@@ -35,7 +39,8 @@ namespace Informa.Web.Controllers
         protected readonly ILogWrapper Logger;
         protected readonly ISitePublicationWorkflow _siteWorkflow;
         public readonly PersonalizedEmailViewModel PersonalizedEmailViewModel;
-        //protected readonly ISiteRootContext _siteRootContext;
+        protected readonly ISiteRootContext SiteRootContext;
+        public readonly ICacheProvider CacheProvider;
 
         public EmailUtil(
             ArticleUtil articleUtil,
@@ -45,7 +50,9 @@ namespace Informa.Web.Controllers
             IHtmlEmailTemplateFactory htmlEmailTemplateFactory,
             ILogWrapper logger,
             ISitePublicationWorkflow siteWorkflow,
-            PersonalizedEmailViewModel personalizedEmailViewModel)
+            PersonalizedEmailViewModel personalizedEmailViewModel,
+            ISiteRootContext siteRootContext,
+            ICacheProvider cacheProvider)
         {
             EmailSender = emailSender;
             _articleUtil = articleUtil;
@@ -54,6 +61,8 @@ namespace Informa.Web.Controllers
             Logger = logger;
             _siteWorkflow = siteWorkflow;
             PersonalizedEmailViewModel = personalizedEmailViewModel;
+            SiteRootContext = siteRootContext;
+            CacheProvider = cacheProvider;
         }
 
         private string GetStaffEmail(Guid g)
@@ -381,12 +390,40 @@ namespace Informa.Web.Controllers
         public string CreatePersonalizedEmailBody(string requestXML)
         {
             var emailContent = string.Empty;
-            if (!string.IsNullOrWhiteSpace(requestXML))
+            try
             {
-                PersonalizedEmailViewModel.RequestXML = requestXML;
-                emailContent = MvcHelpers.GetRazorViewAsString(PersonalizedEmailViewModel, "~/Views/EmailComponents/PersonalizedEmailContent.cshtml");
+                if (!string.IsNullOrWhiteSpace(requestXML))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(PersonalizedEmailRequest));
+                    using (StringReader stringReader = new StringReader(requestXML))
+                    {
+                        PersonalizedEmailViewModel.PersonalizedEmailRequest = (PersonalizedEmailRequest)xmlSerializer.Deserialize(stringReader);
+                    }
+                    if (PersonalizedEmailViewModel.PersonalizedEmailRequest != null)
+                    {
+                        if (!string.IsNullOrWhiteSpace(PersonalizedEmailViewModel.PersonalizedEmailRequest.Value6__c))
+                        {
+                            return BuildEmailContent(requestXML);
+                        }
+                        else
+                        {
+                            string cacheKey = $"PersonalizedEmailContentWithNoPreference-{SiteRootContext?.Item?.Publication_Code}";
+                            return CacheProvider.GetFromCache(cacheKey, () => BuildEmailContent(requestXML));
+                        }
+                    }
+                }
+                return emailContent;
             }
-            return emailContent;
+            catch (Exception e)
+            {
+                Log.Error("Could Not Generate Personalized Email body", e, this);
+                return emailContent;
+            }
+        }
+
+        private string BuildEmailContent(string requestXML)
+        {
+            return MvcHelpers.GetRazorViewAsString(PersonalizedEmailViewModel, "~/Views/EmailComponents/PersonalizedEmailContent.cshtml");
         }
     }
 }
