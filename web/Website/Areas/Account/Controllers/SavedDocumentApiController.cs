@@ -23,6 +23,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IRemoveDocumentContext RemoveDocumentContext;
         protected readonly IArticleService ArticleService;
         protected readonly ISavedDocumentsContext SavedDocumentsContext;
+        private readonly IIsSavedDocumentContext _savedDocContext;
 
         protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
 
@@ -33,7 +34,8 @@ namespace Informa.Web.Areas.Account.Controllers
             ISaveDocumentContext saveDocumentContext,
             IRemoveDocumentContext removeDocumentContext,
             IArticleService articleService,
-            ISavedDocumentsContext savedDocumentsContext
+            ISavedDocumentsContext savedDocumentsContext,
+            IIsSavedDocumentContext SavedDocContext
             )
         {
             SitecoreContext = sitecoreContext;
@@ -43,6 +45,7 @@ namespace Informa.Web.Areas.Account.Controllers
             RemoveDocumentContext = removeDocumentContext;
             ArticleService = articleService;
             SavedDocumentsContext = savedDocumentsContext;
+            _savedDocContext = SavedDocContext;
         }
 
         [HttpGet]
@@ -53,7 +56,8 @@ namespace Informa.Web.Areas.Account.Controllers
             if (string.IsNullOrEmpty(DocumentID))
                 return null;
 
-            bool result = SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(DocumentID));
+            //bool result = SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(DocumentID));
+            bool result = _savedDocContext.IsSaved(System.Guid.Parse(DocumentID));
             return Ok(new
             {
                 success = result,
