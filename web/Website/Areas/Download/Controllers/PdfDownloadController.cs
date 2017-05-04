@@ -30,6 +30,7 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.References;
 using Informa.Library.SalesforceConfiguration;
 using Informa.Web.Areas.Account.ViewModels.Personalization;
+using Informa.Library.Services.Article;
 
 #endregion
 
@@ -51,6 +52,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IItemReferences ItemReferences;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IChannelsViewModel ChannelsViewModel;
+        protected readonly IArticleService _ArticleService;
 
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
@@ -63,7 +65,8 @@ namespace Informa.Web.Areas.Account.Controllers
                                         IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext,
                                         IItemReferences itemReferences,
                                         ISalesforceConfigurationContext salesforceConfigurationContext,
-                                        IChannelsViewModel channelsViewModel)
+                                        IChannelsViewModel channelsViewModel, 
+                                        IArticleService _articleService)
         {
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
@@ -77,6 +80,7 @@ namespace Informa.Web.Areas.Account.Controllers
             ItemReferences = itemReferences;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             ChannelsViewModel = channelsViewModel;
+            _ArticleService = _articleService;
         }
 
         /// <summary>
@@ -144,6 +148,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 {
                     pdfArticle.Add(new PersonalizedPdfViewModel
                     {
+                        _ArticleId = selectArticle._Id,
                         Body = selectArticle.Body,
                         PublishDate = selectArticle.Actual_Publish_Date,
                         Summary = selectArticle.Summary,
@@ -170,6 +175,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
             foreach (var slctArticle in pdfArticle)
             {
+                slctArticle.Body = _ArticleService.GetArticleBody(slctArticle.Body, slctArticle._ArticleId);
                 slctArticle.Body = slctArticle.Body.Contains("<table") ? slctArticle.Body.Replace("<table", "<table id=\"tableFromArticle\"") : slctArticle.Body;
                 slctArticle.Body = slctArticle.Body.StartsWith("<div") ? slctArticle.Body.Replace("<div", "<p") : slctArticle.Body;
                 slctArticle.Body = slctArticle.Body.EndsWith("</div>") ? slctArticle.Body.Replace("</div>", "<p>") : slctArticle.Body;

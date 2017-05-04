@@ -8,7 +8,7 @@ var BookmarkCatche = {
 			
 			$.ajax({
                 url: '/Account/api/SavedDocumentApi/IsSaved/',
-                type: 'POST',
+                type: 'GET',
                 data: {
                     DocumentID: documentId
                 },

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 using Informa.Models.FactoryInterface;
 using Informa.Models.Informa.Models.sitecore.templates.System.Media.Unversioned;
@@ -22,5 +23,6 @@ namespace Informa.Library.Services.Article
         string GetCmsUrl(IArticle article);
         IEnumerable<Informa.Library.Article.Search.ILinkable> GetPersonalizedLinkableTaxonomies(IArticle article);
         ISponsored_Content GetSponsoredContent(IArticle article);
+        string GetArticleBody(string _body, Guid _ArticleId);
     }
 }
