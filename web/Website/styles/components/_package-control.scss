@@ -303,13 +303,13 @@
 		height: 100%;
 	}
 	&.first{
-		height: 220px;
+		min-height: 220px;
 		@include breakpoint('small'){
 			height: auto;
 		}
 	}
 	&.second{
-		height: 165.56px;
+		min-height: 165.56px;
 		@include breakpoint('small'){
 			height: auto;
 		}
