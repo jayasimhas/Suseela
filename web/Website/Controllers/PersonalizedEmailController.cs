@@ -1,8 +1,11 @@
-﻿using System.Net.Http;
-using System.Web.Http;
-using System.Net;
+﻿using System.Net;
+using System.Net.Http;
 using System.Text;
-
+using System.Web.Http;
+using Log = Sitecore.Diagnostics.Log;
+using Informa.Library.Utilities.Extensions;
+using System;
+using System.Diagnostics;
 
 namespace Informa.Web.Controllers
 {
@@ -29,13 +32,16 @@ namespace Informa.Web.Controllers
                     response.StatusCode = HttpStatusCode.BadRequest;
                     return response;
                 }
+                Stopwatch sw = Stopwatch.StartNew();
                 var emailContent = _emailUtil.CreatePersonalizedEmailBody(data);
+                StringExtensions.WriteSitecoreLogs("Time taken to Generate Personalized Email Body", sw, "CreatePersonalizedEmailBody");
                 response.Content = new StringContent(emailContent, Encoding.UTF8, "text/html");
                 return response;
             }
-            catch
+            catch (Exception e)
             {
                 response.StatusCode = HttpStatusCode.InternalServerError;
+                Log.Error("Could Not Generate Personalized Email Content", e, this);
                 return response;
             }
         }
