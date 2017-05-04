@@ -19,7 +19,7 @@ h3 {
     font-weight: 500;
     color: #231f20;
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 10px; 
 }
 
 .article-interview__answer {
@@ -32,13 +32,14 @@ h3 {
         padding-top: 8px;
     }
 
-.quick-facts__header{
+.quick-facts__header {
     font-size: 18px;
     font-weight: 500;
     color: #231f20;
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
 .nomargin {
     padding-top: 3px;
     padding-bottom: 3px;
@@ -154,39 +155,52 @@ ol li {
     padding-bottom: 10px;
     padding-top: 10px;
 }
+
 .article-preview__headline {
     font-size: 18px;
-    font-weight: bold;    
+    font-weight: bold;
 }
+
 .article-related-content {
     font-size: 18px;
-    font-weight: bold; 
+    font-weight: bold;
 }
+
 .article-exhibit__caption, .article-exhibit__source {
     padding-top: 10px;
 }
-.article-sidebar{ 
+
+.article-sidebar {
     font-size: 14px;
 }
-.article-sidebar h3{
-    color: #000000; 
-    font-weight: bold;
-    font-size: 16px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+
+    .article-sidebar h3 {
+        color: #000000;
+        font-weight: bold;
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
 .article-sidebar__byline {
     font-size: 14px;
 }
+
 .article-exhibit--pull-left {
-    
 }
-h3.pdf-classified-title {    
+
+h3.pdf-classified-title {
     font-weight: bold;
     font-size: 16px;
-    text-align:center;
+    text-align: center;
 }
-.sub-heading-text h3{
+
+.sub-heading-text h3 {
     font-weight: bold;
     font-size: 16px;
+}
+
+.article-inline-image img {
+    height: 350px;
+    width: 490px;
 }

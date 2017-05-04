@@ -30,5 +30,6 @@ namespace Informa.Web.ViewModels.PDF
         }
         public IEnumerable<IListable> RelatedArticles { get; set;}
         public string ExecutiveSummary { get; set; }
+        public Guid _ArticleId { get; set; }
     }
 }

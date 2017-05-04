@@ -30,6 +30,7 @@ using Autofac;
 using System.Compat.Web;
 using Informa.Library.Services.Captcha;
 using Informa.Library.SalesforceConfiguration;
+using Informa.Library.Utilities.CMSHelpers;
 
 namespace Informa.Web.ViewModels
 {
@@ -55,7 +56,7 @@ namespace Informa.Web.ViewModels
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly IRecaptchaService RecaptchaSettings;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
-
+        public readonly IVerticalRootContext VerticalRootContext;
         public AnalyticsViewModel(
             IItemReferences itemReferences,
             IIsEntitledProducItemContext isEntitledProductItemContext,
@@ -71,10 +72,11 @@ namespace Informa.Web.ViewModels
             ISiteRootContext siteRootContext,
             IHttpContextProvider httpContextProvider,
             IDCDReader dcdReader,
-            ITaxonomyService taxonomyService, 
-            IGlobalSitecoreService globalService, 
+            ITaxonomyService taxonomyService,
+            IGlobalSitecoreService globalService,
             IRecaptchaService recaptchaSettings,
-            ISalesforceConfigurationContext salesforceConfigurationContext)
+            ISalesforceConfigurationContext salesforceConfigurationContext,
+            IVerticalRootContext verticalRootContext)
         {
             ItemReferences = itemReferences;
             IsEntitledProductItemContext = isEntitledProductItemContext;
@@ -99,6 +101,7 @@ namespace Informa.Web.ViewModels
             TaxonomyService = taxonomyService;
             GlobalService = globalService;
             RecaptchaSettings = recaptchaSettings;
+            VerticalRootContext = verticalRootContext;
         }
 
 
@@ -106,7 +109,7 @@ namespace Informa.Web.ViewModels
 
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
-        public string PageTitleAnalytics => GlassModel?.Title ?? (Sitecore.Context.Item.Fields["Title"] != null? Sitecore.Context.Item.Fields["Title"].Value : string.Empty);
+        public string PageTitleAnalytics => GlassModel?.Title ?? (Sitecore.Context.Item.Fields["Title"] != null ? Sitecore.Context.Item.Fields["Title"].Value : string.Empty);
         public string PageType => Sitecore.Context.Item.TemplateName;
         public string AdDomain => SiteRootContext.Item.Ad_Domain;
         public string ArticlePublishDate => (Article != null && Article.Actual_Publish_Date > DateTime.MinValue)
@@ -159,13 +162,20 @@ namespace Informa.Web.ViewModels
         {
             get
             {
-                var accountInfo = WebAuthenticateUser.AuthenticatedUser?.AccountId;
+                if (VerticalRootContext != null && VerticalRootContext.Item != null)
+                {
+                    if (!VerticalRootContext.Item.Vertical_Name.Equals("Agri", StringComparison.OrdinalIgnoreCase) || !VerticalRootContext.Item.Vertical_Name.Equals("Maritime", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var accountInfo = WebAuthenticateUser.AuthenticatedUser?.AccountId;
 
-                if (accountInfo == null || !accountInfo.Any())
-                    return string.Empty;
+                        if (accountInfo == null || !accountInfo.Any())
+                            return string.Empty;
 
-                string allAccountIds = string.Join(",", accountInfo.Select(a => $"'{a}'"));
-                return $"[{allAccountIds}]";
+                        string allAccountIds = string.Join(",", accountInfo.Select(a => $"'{a}'"));
+                        return $"[{allAccountIds}]";
+                    }
+                }
+                return string.Empty;
             }
         }
         public string UserEntitlements { get; }
@@ -179,7 +189,7 @@ namespace Informa.Web.ViewModels
         public string PageTitleOverride => GlassModel?.Meta_Title_Override ?? string.Empty;
         public string MetaKeyWords => GlassModel?.Meta_Keywords ?? string.Empty;
         //ISW 338 Serving ads based on section taxonomy
-        public string TaxonomyName=> GetTaxonomyDetails();
+        public string TaxonomyName => GetTaxonomyDetails();
         public string ArticleEntitlements
         {
             get
@@ -258,11 +268,11 @@ namespace Informa.Web.ViewModels
             return "Corporate";
         }
 
-	    private string GetUserEntitlements()
-	    {            
+        private string GetUserEntitlements()
+        {
             string allEntitlements = string.Join(",", UserEntitlementsContext.Entitlements.Select(a => $"'{a.ProductCode}'"));
-			return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
-		}
+            return !string.IsNullOrEmpty(allEntitlements) ? $"[{allEntitlements}]" : string.Empty;
+        }
 
 
         private string GetSubscribedProducts()
@@ -288,8 +298,8 @@ namespace Informa.Web.ViewModels
             return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
         }
 
-	    private string GetOpportunityLineItemIds()
-	    {
+        private string GetOpportunityLineItemIds()
+        {
             var ids = string.Empty;
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
@@ -300,13 +310,13 @@ namespace Informa.Web.ViewModels
             {
                 ids = string.Join("|", UserEntitlementsContext.Entitlements.Where(w => w.ProductCode.ToLower() == SiteRootContext.Item.Publication_Code.ToLower()).Select(i => $"'{i.OpportunityLineItemId}'"));
             }
-               
-			return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
-		}
+
+            return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+        }
         //ISW 338 Serving ads based on section taxonomy
         private string GetTaxonomyDetails()
         {
-            string taxonaomyParentName=string.Empty;
+            string taxonaomyParentName = string.Empty;
             if (Article != null)
             {
                 if (Article.Taxonomies != null)
@@ -318,21 +328,21 @@ namespace Informa.Web.ViewModels
                         {
                             if (string.IsNullOrEmpty(taxonaomyParentName))
                             {
-                               // taxonaomyParentName += TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ",string.Empty) + ":" + item.Item_Name.ToLower();
+                                // taxonaomyParentName += TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ",string.Empty) + ":" + item.Item_Name.ToLower();
                                 taxonaomyParentName += (TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower().Trim()).Replace("\r\n", "").Replace("\r", "").Replace("\n", "");
                                 taxonomyItemCount++;
                             }
                             else
                             {
-                                taxonaomyParentName += "|" + (TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower().Trim()).Replace("\r\n","").Replace("\r","").Replace("\n","");
+                                taxonaomyParentName += "|" + (TaxonomyService.GetTaxonomyParentFromItem(item).ToLower().Replace(" ", string.Empty) + ":" + item.Item_Name.ToLower().Trim()).Replace("\r\n", "").Replace("\r", "").Replace("\n", "");
                                 taxonomyItemCount++;
                             }
-                           
+
                         }
                     }
                 }
             }
-            return  taxonaomyParentName;
+            return taxonaomyParentName;
         }
     }
 }
