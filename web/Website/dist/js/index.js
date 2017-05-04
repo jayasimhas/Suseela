@@ -5560,7 +5560,7 @@ $(document).ready(function () {
         RecomendedTemplate: function RecomendedTemplate(data) {
             var Template = '';
             var HeadingAnalytics = $('.ContentRecomm-ReadNext').find('h2').text();
-            if (data.articles.length > 0) {
+            if (Array.isArray(data.articles) && data.articles.length > 0) {
                 for (var i = 0; i < 3; i++) {
                     var addCls = data.articles[i].isSonsoredBy ? 'sponsored_cont' : '';
                     var sponsoredByLogo = data.articles[i].sponsoredLink && data.articles[i].sponsoredByLogo ? '<li><a href="' + data.articles[i].sponsoredLink + '"><img src="' + data.articles[i].sponsoredByLogo + '"></a></li>' : (data.articles[i].sponsoredLink == null || data.articles[i].sponsoredLink == undefined) && data.articles[i].sponsoredByLogo ? '<img src="' + data.articles[i].sponsoredByLogo + '">' : '',
@@ -5588,7 +5588,7 @@ $(document).ready(function () {
         SuggestedTemplate: function SuggestedTemplate(data) {
             var Template = '';
             var HeadingAnalytics = $('.suggested-article').find('h2').text();
-            if (data.articles.length > 0) {
+            if (Array.isArray(data.articles) && data.articles.length > 0) {
                 for (var i = 0; i < 3; i++) {
                     var addCls = data.articles[i].isSonsoredBy ? 'sponsored_cont' : '',
                         sponsoredByLogo = data.articles[i].sponsoredLink && data.articles[i].sponsoredByLogo ? '<li><a href="' + data.articles[i].sponsoredLink + '"><img src="' + data.articles[i].sponsoredByLogo + '"></a></li>' : (data.articles[i].sponsoredLink == null || data.articles[i].sponsoredLink == undefined) && data.articles[i].sponsoredByLogo ? '<img src="' + data.articles[i].sponsoredByLogo + '">' : '',
