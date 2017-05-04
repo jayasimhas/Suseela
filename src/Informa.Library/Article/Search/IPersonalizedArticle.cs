@@ -11,6 +11,7 @@ namespace Informa.Library.Article.Search
         string ListableImage { get; }
         string ListableSummary { get; }
         string ListableTitle { get; }
+        string LinkType { get; }
         string ListablePublication { get; }
         IEnumerable<ILinkable> ListableTopics { get; }
         string ListableType { get; }

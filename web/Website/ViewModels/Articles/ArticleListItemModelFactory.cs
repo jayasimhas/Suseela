@@ -100,6 +100,7 @@ namespace Informa.Web.ViewModels.Articles
         /// <returns></returns>
         public IPersonalizedArticle CreatePersonalizedArticle(IArticle article)
         {
+            var domain = HttpContext.Current.Request.Url.Scheme + "://" + HttpContext.Current.Request.Url.Host;
             if (article == null)
                 return null;
 
@@ -112,6 +113,7 @@ namespace Informa.Web.ViewModels.Articles
             model.ListableImage = image;
             model.ListableSummary = ArticleService.GetArticleSummary(article);
             model.ListableTitle = HttpUtility.HtmlDecode(article.Title);
+            model.LinkType = article._AbsoluteUrl.StartsWith(domain) ? "Internal" : "External";
             model.ListablePublication = ArticleService.GetArticlePublicationName(article);
             model.ListableTopics = ArticleService.GetPersonalizedLinkableTaxonomies(article);
             var sponsoreContent = ArticleService.GetSponsoredContent(article);
