@@ -9,7 +9,7 @@
     <Gallery>
       <CodeBeside Type="Informa.Library.CustomSitecore.Ribbon.InformaGalleryWorkflowEditForm,Informa.Library"/>
 
-      <Menu ID="Options" Style="width:100%;" Border="none"/>
+      <Menu ID="Options" Style="width:100%;" Border="none"/> 
 
     </Gallery>
   </Gallery.InformaWorkflowEdit>
