@@ -293,6 +293,11 @@
 		.article-call-to-action{
 			clear: both;
 		}
+		&:after{
+			clear: both;
+			content: '';
+			display: block;
+		}
 	}
 }
 .package-img-wrapper{
