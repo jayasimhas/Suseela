@@ -1160,7 +1160,7 @@ $(document).ready(function(){
                     $('.main-menu-list').append($(this));
                 });
                 if($('.main-menu__section').length > 0){
-                    var mainMenuList = $('.main-menu__section, .main-menu-list');
+                    var mainMenuList = $('div.main-menu__section, .main-menu-list');
                     mainMenuList.remove();
                     $('.main-menu').append("<div class='main-menu-section-list'></div>");
                     mainMenuList.each(function () {
