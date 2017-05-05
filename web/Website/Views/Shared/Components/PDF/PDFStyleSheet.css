@@ -147,7 +147,10 @@ ol li {
     margin: 0px;
     padding-bottom: 10px;
 }
-
+.article-exhibit__header{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
 .article-exhibit__title {
     font-size: 18px;
     font-weight: 500;
@@ -187,6 +190,7 @@ ol li {
 }
 
 .article-exhibit--pull-left {
+    
 }
 
 h3.pdf-classified-title {
@@ -199,8 +203,10 @@ h3.pdf-classified-title {
     font-weight: bold;
     font-size: 16px;
 }
-
-.article-inline-image img {
-    height: 350px;
-    width: 490px;
+ 
+.article-call-to-action--subscribe
+{
+    padding-bottom:10px;
+    padding-top:10px;
+    font-weight:bold;
 }

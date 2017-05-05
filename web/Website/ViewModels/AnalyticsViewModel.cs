@@ -145,6 +145,16 @@ namespace Informa.Web.ViewModels
         public string ArticleRegions => GetArticleTaxonomy(ItemReferences.RegionsTaxonomyFolder);
         public string ArticleSubject => GetArticleTaxonomy(ItemReferences.PharmaSubjectsTaxonomyFolder);
         public string ArticleTherapy => GetArticleTaxonomy(ItemReferences.PharmaTherapyAreasTaxonomyFolder);
+        public string Commodities => GetArticleTaxonomy(ItemReferences.AgriCommodityTaxonomyFolder);
+        public string CropProtection => GetArticleTaxonomy(ItemReferences.AgriCropProtectionaxonomyFolder);
+        public string AgriCompanies => GetArticleTaxonomy(ItemReferences.AgriCompaniesTaxonomyFolder);
+        public string AgencyRegulators => GetArticleTaxonomy(ItemReferences.AgriAgencyRegulatorTaxonomyFolder);
+        public string Commercial => GetArticleTaxonomy(ItemReferences.AgriCommercialTaxonomyFolder);
+        public string Markets => GetArticleTaxonomy(ItemReferences.MaritimeMarketsTaxonomyFolder);
+        public string Sectors => GetArticleTaxonomy(ItemReferences.MaritimeSectorsTaxonomyFolder);
+        public string MaritimeCompanies => GetArticleTaxonomy(ItemReferences.MaritimeCompaniesTaxonomyFolder);
+        public string Topics => GetArticleTaxonomy(ItemReferences.MaritimeTopicTaxonomyFolder);
+        public string Regulars => GetArticleTaxonomy(ItemReferences.MaritimeRegularsTaxonomyFolder);
         public string SiteEnvrionment => SiteSettings.GetSetting("Env.Value", string.Empty);
         public bool IsUserLoggedIn => AuthenticatedUserContext.IsAuthenticated;
         public string UserName => AuthenticatedUserContext.User?.Name ?? string.Empty;

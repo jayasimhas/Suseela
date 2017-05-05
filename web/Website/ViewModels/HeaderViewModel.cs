@@ -27,7 +27,7 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteRootContext SiteRootContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
-
+        public readonly ICallToActionViewModel CallToActionViewModel;
         public HeaderViewModel(
             IAuthenticatedUserContext authenticatedUserContext,
             IUserCompanyNameContext companyNameContext,
@@ -36,7 +36,8 @@ namespace Informa.Web.ViewModels
             IUserProfileContext profileContext,
             IGlobalSitecoreService globalService,
             ISalesforceConfigurationContext salesforceConfigurationContext,
-            ISignInViewModel signInViewModel)
+            ISignInViewModel signInViewModel,
+            ICallToActionViewModel callToActionViewModel)
         {
             AuthenticatedUserContext = authenticatedUserContext;
             CompanyNameContext = companyNameContext;
@@ -46,6 +47,7 @@ namespace Informa.Web.ViewModels
             SiteRootContext = siteRootContext;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             SignInViewModel = signInViewModel;
+            CallToActionViewModel = callToActionViewModel;
         }
 
         public string LogoImageUrl => SiteRootContext.Item?.Site_Logo?.Src ?? string.Empty;
@@ -152,7 +154,6 @@ namespace Informa.Web.ViewModels
 
     }
 }
-       
-              
 
- 
+
+
