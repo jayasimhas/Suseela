@@ -25,6 +25,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
+import './components/bookmark-catche';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
@@ -1159,7 +1160,7 @@ $(document).ready(function(){
                     $('.main-menu-list').append($(this));
                 });
                 if($('.main-menu__section').length > 0){
-                    var mainMenuList = $('.main-menu__section, .main-menu-list');
+                    var mainMenuList = $('div.main-menu__section, .main-menu-list');
                     mainMenuList.remove();
                     $('.main-menu').append("<div class='main-menu-section-list'></div>");
                     mainMenuList.each(function () {

@@ -14738,6 +14738,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link JS_API_Url { get; set; }
+        /// <summary>
+        /// Entitlement Parameter Key field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1275B5AA-978F-410B-ABD5-BC5C338D3FBC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.EntitlementParameterKeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Entitlement_Parameter_Key { get; set; }
     }
 
 
@@ -14779,6 +14788,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link JS_API_Url { get; set; }
+        /// <summary>
+        /// Entitlement Parameter Key field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1275B5AA-978F-410B-ABD5-BC5C338D3FBC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.EntitlementParameterKeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Entitlement_Parameter_Key { get; set; }
+
     }
 
     public static partial class ITableau_ConfigurationConstants
@@ -14797,6 +14816,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID JS_API_UrlFieldId = new ID("{FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540}");
         public const string JS_API_UrlFieldName = "JS API Url";
+
+        public static readonly ID EntitlementParameterKeyFieldId = new ID("1275B5AA-978F-410B-ABD5-BC5C338D3FBC");
+        public const string EntitlementParameterKeyFieldName = "Entitlement Parameter Key";
 
     }
 

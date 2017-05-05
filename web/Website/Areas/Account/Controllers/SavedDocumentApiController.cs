@@ -10,6 +10,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Web.Areas.Account.Models.User.Management;
 using Sitecore.Data;
 using System.Linq;
+using System.Web;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -17,46 +18,53 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly ITextTranslator TextTranslator;
-		protected readonly ISitePublicationNameContext NewsletterTypeContext;
-		protected readonly ISaveDocumentContext SaveDocumentContext;
-		protected readonly IRemoveDocumentContext RemoveDocumentContext;
-		protected readonly IArticleService ArticleService;
+        protected readonly ISitePublicationNameContext NewsletterTypeContext;
+        protected readonly ISaveDocumentContext SaveDocumentContext;
+        protected readonly IRemoveDocumentContext RemoveDocumentContext;
+        protected readonly IArticleService ArticleService;
         protected readonly ISavedDocumentsContext SavedDocumentsContext;
+        private readonly IIsSavedDocumentContext _savedDocContext;
 
         protected string BadIDKey => TextTranslator.Translate("SavedDocument.BadID");
 
         public SavedDocumentApiController(
             ISitecoreContext sitecoreContext,
             ITextTranslator textTranslator,
-			ISitePublicationNameContext newsletterTypeContext,
-			ISaveDocumentContext saveDocumentContext,
-			IRemoveDocumentContext removeDocumentContext,
-			IArticleService articleService,
-            ISavedDocumentsContext savedDocumentsContext
+            ISitePublicationNameContext newsletterTypeContext,
+            ISaveDocumentContext saveDocumentContext,
+            IRemoveDocumentContext removeDocumentContext,
+            IArticleService articleService,
+            ISavedDocumentsContext savedDocumentsContext,
+            IIsSavedDocumentContext SavedDocContext
             )
         {
             SitecoreContext = sitecoreContext;
             TextTranslator = textTranslator;
-			NewsletterTypeContext = newsletterTypeContext;
-			SaveDocumentContext = saveDocumentContext;
-			RemoveDocumentContext = removeDocumentContext;
-	        ArticleService = articleService;
+            NewsletterTypeContext = newsletterTypeContext;
+            SaveDocumentContext = saveDocumentContext;
+            RemoveDocumentContext = removeDocumentContext;
+            ArticleService = articleService;
             SavedDocumentsContext = savedDocumentsContext;
+            _savedDocContext = SavedDocContext;
         }
 
         [HttpGet]
-        public IHttpActionResult IsSaved(SavedDocumentRemoveRequest request)
+        public IHttpActionResult IsSaved(string DocumentID)
         {
             // var rawDocuementId = documentId.ToString("D").ToUpper();
-            var rawDocuementId = request.DocumentID;
 
-            bool result = SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(rawDocuementId));
+            if (string.IsNullOrEmpty(DocumentID))
+                return null;
+
+            //bool result = SavedDocumentsContext.SavedDocuments.Any(sd => sd.DocumentId.ToUpper().Equals(DocumentID));
+            bool result = _savedDocContext.IsSaved(System.Guid.Parse(DocumentID));
             return Ok(new
             {
                 success = result,
                 message = result
             });
         }
+
 
         [HttpPost]
         [ArgumentsRequired]
@@ -87,8 +95,8 @@ namespace Informa.Web.Areas.Account.Controllers
             }
 
             var page = SitecoreContext.GetItem<I___BasePage>(itemID.Guid);
-	        var article = SitecoreContext.GetItem<IArticle>(itemID.Guid);
-	        var publicationName = ArticleService.GetArticlePublicationName(article);
+            var article = SitecoreContext.GetItem<IArticle>(itemID.Guid);
+            var publicationName = ArticleService.GetArticlePublicationName(article);
             var result = SaveDocumentContext.Save(page.Title, publicationName, request.DocumentID);
 
             return Ok(new

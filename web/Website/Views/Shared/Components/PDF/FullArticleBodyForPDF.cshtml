@@ -239,11 +239,11 @@
     {
         @* * *  ARTICLE - FEATURED IMAGE
             IIPP-117 *@
-        <div class="article-inline-image" style="float: left; padding-right: 10px; width:500px;">
+        <div class="article-inline-image" style="float: left; padding-right: 10px; width: 500px;">
             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr><td height="10"></td></tr>
                 <tr>
-                    <td colspan="2"><img src="@Model.Image.GetScaledImage(790)" alt="@Model.Image.ImageAltText"></td>
+                    <td colspan="2"><img src="@Model.Image.GetScaledImage(450)" alt="@Model.Image.ImageAltText"></td>
                 </tr>
                 @if (!string.IsNullOrEmpty(Model.Image.ImageCaption) || !string.IsNullOrEmpty(Model.Image.ImageSource))
                 {
@@ -275,13 +275,13 @@
         </div>
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
-    @*<table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
             <tr><td height="10"></td></tr>
             <tr>
                 <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
             </tr>
-        </table>*@
-    @Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))
+        </table>
+    @*@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))*@
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {

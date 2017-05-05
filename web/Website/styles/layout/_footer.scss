@@ -41,6 +41,9 @@ footer li {
 	padding: 38px 24px;
 
 	@extend .clearfix;
+	@media only screen and (min-width: 1024px) and (max-width: 1360px) {
+		margin-left: 70px;
+	}
 }
 
 .footer__section {

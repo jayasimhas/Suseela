@@ -10,7 +10,7 @@
                 <div class="saveoption mtop-10 hidden-xs">
                     @if (Model.EnableSavePreferencesCheck)
                     {
-                        <a class="registrationBtn button--filled button--outline validationChk" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</a>
+                        <a class="registrationBtn button--filled button--outline validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
                     }
                     else
                     {
@@ -45,7 +45,7 @@
             <div class="complete-settings">
                 @if (Model.EnableSavePreferencesCheck)
                 {
-                    <a class="registrationBtn button--filled button--outline validationChk" href="@Model.MyViewPageUrl">@Model.CompleteYourRegistrationText</a>
+                    <a class="registrationBtn button--filled button--outline validationChk" name="@Model.MyViewPageUrl" href="/">@Model.CompleteYourRegistrationText</a>
                 }
                 else
                 {
