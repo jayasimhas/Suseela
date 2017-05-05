@@ -5596,7 +5596,7 @@ $(document).ready(function () {
                         listablePublication = data.articles[i].listablePublication ? '<span class="article-related-content__category"> ' + data.articles[i].listablePublication + ' </span>' : '',
                         listableImage = data.articles[i].listableImage ? '<img class="article-related-content__img" src="' + data.articles[i].listableImage + '">' : '',
                         listableDate = data.articles[i].listableDate ? '<time class="article-related-content__date">' + data.articles[i].listableDate + '</time>' : '',
-                        listableTitle = data.articles[i].listableTitle ? '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"Suggested for you","link_type":"' + data.articles[i].linkType + '""}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' : '',
+                        listableTitle = data.articles[i].listableTitle ? '<h5><a class="click-utag" data-info=\'{"event_name":"article_click_through,recommendation_content","page_name":"' + analytics_data["page_name"] + '","click_through_destination":"' + data.articles[0].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","ga_eventCategory":"Suggested for you","ga_eventAction":"' + HeadingAnalytics + '","ga_eventLabel":"' + data.articles[i].listableTitle.replace(/'/g, "").replace(/"/g, '') + '","publication_click":"' + analytics_data["publication"] + '","recommendation_category":"Suggested for you","link_type":"' + data.articles[i].linkType + '"}\' href="' + data.articles[i].linkableUrl + '">' + data.articles[i].listableTitle + '</a></h5>' : '',
                         articlemeta = sponsoredByTitle == '' && sponsoredByLogo == '' ? '' : '<div class="article-metadata"><ul>' + sponsoredByTitle + sponsoredByLogo + '</ul></div>';
 
                     if (data.articles[i].listableImage == null) {
@@ -14292,7 +14292,7 @@ $(document).ready(function () {
                     $('.main-menu-list').append($(this));
                 });
                 if ($('.main-menu__section').length > 0) {
-                    var mainMenuList = $('.main-menu__section, .main-menu-list');
+                    var mainMenuList = $('div.main-menu__section, .main-menu-list');
                     mainMenuList.remove();
                     $('.main-menu').append("<div class='main-menu-section-list'></div>");
                     mainMenuList.each(function () {
