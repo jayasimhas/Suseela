@@ -18,7 +18,14 @@ if (IsInEditingMode)
                     @if (!Model.GlassModel.Hide_Image && Model.GlassModel.Article != null && Model.GlassModel.Article.Featured_Image_16_9 != null)
                     {
                         <td class="one-third layout-padded-right" valign="top">
+                            @if (IsInEditingMode)
+                            {
                             @RenderImage(Model.GlassModel, m => m.Article.Featured_Image_16_9, new { Width = 160 }, isEditable: true)
+                            }
+                            else
+                            {
+                                <img src="@Model.GlassModel.Article.Featured_Image_16_9.Src" alt="@Model.GlassModel.Article.Featured_Image_16_9.Alt" width="160">
+                            }
                         </td>
                     }
 
