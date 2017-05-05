@@ -65,7 +65,7 @@ namespace Informa.Web.Areas.Account.Controllers
                                         IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext,
                                         IItemReferences itemReferences,
                                         ISalesforceConfigurationContext salesforceConfigurationContext,
-                                        IChannelsViewModel channelsViewModel, 
+                                        IChannelsViewModel channelsViewModel,
                                         IArticleService _articleService)
         {
             UserPreferences = userPreferences;
@@ -221,7 +221,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 }
                 if (System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"] != null)
                 {
-                    cookieJar.Add(new Cookie(System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Name, System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Value){ Domain = System.Configuration.ConfigurationManager.AppSettings["SSOSubdomain"] });
+                    cookieJar.Add(new Cookie(System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Name, System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Value) { Domain = System.Configuration.ConfigurationManager.AppSettings["SSOSubdomain"] });
                 }
 
                 CookieAwareWebClients client = new CookieAwareWebClients(cookieJar);
@@ -260,7 +260,6 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         tableNode.SetAttributeValue("width", "100%");
                         tableNode.SetAttributeValue("style", "color:#58595b;");
-                        //tableNode.SetAttributeValue("style", "border: 1px solid #e2e4e4;");
                     }
                 }
                 var CommonHeaderHtml = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-header']");
@@ -280,27 +279,19 @@ namespace Informa.Web.Areas.Account.Controllers
                     globalElement.CommonFooter = CommonFooterNode.InnerText;
                     CommonFooterNode.ParentNode.RemoveChild(CommonFooterNode);
                 }
-                //var SectionPullLeftNodes = ReqdDoc.DocumentNode.SelectNodes("//section[@class='article-exhibit article-exhibit--pull-left']")?.ToList();
-                //if (SectionPullLeftNodes != null && SectionPullLeftNodes.Any())
-                //{
-                //    foreach (var SectionNode in SectionPullLeftNodes)
-                //    {
-                //        var newNodeHtml = "<div class=\"article-exhibit article-exhibit--pull-left\">";                        
-                //        SectionNode.ParentNode.InnerHtml = newNodeHtml;
-                //        SectionNode.ParentNode.ReplaceChild(
 
-                //    }
-                //}
-                //var SectionPullRightNodes = ReqdDoc.DocumentNode.SelectNodes("//section[@class='article-exhibit article-exhibit--pull-right']")?.ToList();
-                //if (SectionPullRightNodes != null && SectionPullRightNodes.Any())
-                //{
-                //    foreach (var SectionNode in SectionPullRightNodes)
-                //    {
-
-                //        var newNodeHtml = "<div class=\"article-exhibit article-exhibit--pull-right\">";
-                //        SectionNode.ParentNode.InnerHtml = newNodeHtml;
-                //    }
-                //}
+                var SidebarNodes = ReqdDoc.DocumentNode.SelectNodes("//aside[@class='article-sidebar']")?.ToList();
+                if (SidebarNodes != null && SidebarNodes.Any())
+                {
+                    foreach (var SidebarNode in SidebarNodes)
+                    {
+                        var newNodeHtml = "<table><tr><td>&nbsp;</td></tr><tr><td><img src=\"" + domain + "/~/media/Icons/PDF%20Icons/borderline.gif\" alt=\"border-line\" style=\"height: 1px; overflow: hidden;\" /></td></tr><tr><td>&nbsp;</td></tr></table>";
+                        HtmlNode newNode = HtmlNode.CreateNode("div");
+                        newNode.InnerHtml = newNodeHtml;
+                        SidebarNode.ParentNode.InsertBefore(newNode, SidebarNode);
+                        SidebarNode.ParentNode.InsertAfter(newNode, SidebarNode);
+                    }
+                }
 
                 var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
                 if (images != null && images.Any())
@@ -341,10 +332,20 @@ namespace Informa.Web.Areas.Account.Controllers
 
                         if (!link.Attributes.Contains(@"style"))
                         {
-                            link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
+                            link.SetAttributeValue("style", "text-decoration:none");
                         }
                     }
                 }
+                var anchorLinks = ReqdDoc.DocumentNode.SelectNodes("//a/@onclick")?.ToList();
+
+                if (anchorLinks != null && anchorLinks.Any())
+                {
+                    foreach (var link in anchorLinks)
+                    {
+                        link.Remove();
+                    }
+                }
+
                 var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
                 if (articleNodes != null && articleNodes.Any())
                 {
@@ -360,7 +361,7 @@ namespace Informa.Web.Areas.Account.Controllers
                             foreach (var amchartNode in amchartNodes)
                             {
                                 var id = articleNode.SelectSingleNode(".//input[@class='hdnDataToolId']");
-                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
@@ -373,7 +374,7 @@ namespace Informa.Web.Areas.Account.Controllers
                             foreach (var tableauNode in tableauNodes)
                             {
                                 var id = articleNode.SelectSingleNode(".//input[@class='hdnDataToolId']");
-                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
@@ -382,26 +383,17 @@ namespace Informa.Web.Areas.Account.Controllers
                     }
                 }
 
-                //var multimediaParentNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='iframe-component']")?.ToList();
-                //if (multimediaParentNodes != null && multimediaParentNodes.Any())
-                //{
-                //    foreach (var multimediaParentNode in multimediaParentNodes)
-                //    {
-
-                //        //var multimediaNodes = multimediaParentNode.SelectNodes(".//div[@class='iframe-component__desktop']")?.ToList();
-                //        //if (multimediaNodes != null && multimediaNodes.Any())
-                //        //{
-                //        //foreach (var multimediaNode in multimediaNodes)
-                //        //{
-                //        var multimediaUrl = multimediaParentNode.SelectSingleNode(".//iframe/@src");
-                //        var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + multimediaUrl.Attributes["src"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
-                //        HtmlNode newNode = HtmlNode.CreateNode("div");
-                //        newNode.InnerHtml = newNodeHtml;
-                //        multimediaParentNode.ParentNode.ReplaceChild(newNode, multimediaParentNode);
-                //        //}
-                //        //}
-                //    }
-                //}
+                var multimediaParentNodes = ReqdDoc.DocumentNode.SelectNodes("//iframe")?.ToList();
+                if (multimediaParentNodes != null && multimediaParentNodes.Any())
+                {
+                    foreach (var multimediaParentNode in multimediaParentNodes)
+                    {
+                        var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + multimediaParentNode.Attributes["src"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                        HtmlNode newNode = HtmlNode.CreateNode("div");
+                        newNode.InnerHtml = newNodeHtml;
+                        multimediaParentNode.ParentNode.ReplaceChild(newNode, multimediaParentNode);
+                    }
+                }
 
                 var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-executive-summary-body']")?.ToList();
                 if (executiveSummaryNodes != null && executiveSummaryNodes.Any())
@@ -466,7 +458,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 ReqdDoc.OptionOutputAsXml = true;
                 ReqdDoc.OptionCheckSyntax = true;
                 ReqdDoc.OptionFixNestedTags = true;
-
 
                 //using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
                 //{

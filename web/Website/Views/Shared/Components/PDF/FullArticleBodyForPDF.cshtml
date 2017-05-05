@@ -33,11 +33,11 @@
                             @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 18)
                             {
                                 var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
-                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                                <a style="text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
                             }
                             else
                             {
-                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                                <a style="text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                             }
                         </td>
                     }
@@ -47,11 +47,11 @@
                             @if (!string.IsNullOrEmpty(tag.LinkableText) && tag.LinkableText.Length > 18)
                             {
                                 var trimmedTagText = new string(tag.LinkableText.Take(15).ToArray()) + " ...";
-                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
+                                <a style="text-decoration:none;" href="@tag.LinkableUrl">@trimmedTagText</a>
                             }
                             else
                             {
-                                <a style="color:#be1e2d; text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
+                                <a style="text-decoration:none;" href="@tag.LinkableUrl">@tag.LinkableText</a>
                             }
                         </td>
                     }
@@ -59,7 +59,7 @@
                 }
             </tr>
         </table>
-        <h1 style="margin: 10px 0; padding: 0px;"><a class="article-title" style="color:#be1e2d; text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
+        <h1 style="margin: 10px 0; padding: 0px;"><a class="article-title" style="text-decoration:none;" href="@Model.ArticleLandingPageUrl">@Html.Raw(Model.Title)</a></h1>
         <h3>@Html.Raw(Model.Sub_Title)</h3>
     </div>
 
@@ -96,7 +96,7 @@
                                         <td style="padding:0 10px 0 0;">
                                             @if (!string.IsNullOrEmpty(author.Twitter))
                                             {
-                                                <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                                <a style="text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                                             }
                                         </td>
                                         @if (!string.IsNullOrEmpty(author.Twitter) && !string.IsNullOrEmpty(author.Email_Address))
@@ -109,7 +109,7 @@
 
                                             @if (!string.IsNullOrEmpty(author.Email_Address))
                                             {
-                                                <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                                <a style="text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
                                             }
                                         </td>
                                     </tr>
@@ -164,7 +164,7 @@
                                     <td style="padding:0 10px 0 0;">
                                         @if (!string.IsNullOrEmpty(author.Twitter))
                                         {
-                                            <a style="color:#be1e2d; text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
+                                            <a style="text-decoration:none;" href="http://www.twitter.com/@author.Twitter" target="_blank" class="click-utag" data-info='{"event_name" : "author-twitter"}'>&#64;@author.Twitter</a>
                                         }
                                     </td>
                                     @if (!string.IsNullOrEmpty(author.Twitter) && !string.IsNullOrEmpty(author.Email_Address))
@@ -177,7 +177,7 @@
 
                                         @if (!string.IsNullOrEmpty(author.Email_Address))
                                         {
-                                            <a style="color:#be1e2d; text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
+                                            <a style="text-decoration:none;" href="mailto:@author.Email_Address" class="click-utag" data-info='{"event_name" : "mail-to-author"}'>@author.Email_Address</a>
                                         }
                                     </td>
                                 </tr>
@@ -276,11 +276,11 @@
         @* * *  END ARTICLE - FEATURED IMAGE *@
     }
     <table cellpadding="0" cellspacing="0" border="0" width="100%">
-            <tr><td height="10"></td></tr>
-            <tr>
-                <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
-            </tr>
-        </table>
+        <tr><td height="10"></td></tr>
+        <tr>
+            <td>@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))</td>
+        </tr>
+    </table>
     @*@Html.Raw(Html.TokenTransform().RenderTokenBody(x => x.Body, "~/Views/Article/_ArticleSidebar.cshtml"))*@
 </div>
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
@@ -312,23 +312,23 @@
                     <div class="article-preview__headline">
                         <span>@package.PackageTitle</span>
                     </div>
-                    <aside class="article-sidebar">
-                        <div class="package-heading-wrapper">
-                            @{
-                                var packageArticles = Model.GetPackageArticles(package);
-                                foreach (var article in packageArticles)
-                                {
-                                    <h3 class="article-preview__headline">
-                                        <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" height="12" />&nbsp;
-                                        <a style="font-size: 15px; line-height: 20px; color:#be1e2d; font-weight: 700; text-decoration:none; margin-top:5px;" href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
-                                    </h3>
+
+                    <div class="package-heading-wrapper">
+                        @{
+                            var packageArticles = Model.GetPackageArticles(package);
+                            foreach (var article in packageArticles)
+                            {
+                                <h3 class="article-preview__headline">
+                                    <img src="/~/media/Icons/PDF%20Icons/arrowpdf.gif" alt="arrow" height="12" />&nbsp;
+                                    <a style="font-size: 15px; line-height: 20px; font-weight: 700; text-decoration:none; margin-top:5px;" href="@article.LinkableUrl" class="click-utag">@article.ListableTitle</a>
+                                </h3>
+                            }
+                        }
+                    </div>
+
+                </section>
                                 }
                             }
-                        </div>
-                    </aside>
-                </section>
-                                    }
-                                }
     }
 
     <table>
@@ -336,3 +336,4 @@
         <tr><td><img src="/~/media/Icons/PDF%20Icons/borderline.gif" alt="border-line" style="height: 1px; overflow: hidden;" /> </td></tr>
         <tr><td>&nbsp;</td></tr>
     </table>
+

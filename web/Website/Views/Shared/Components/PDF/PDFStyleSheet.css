@@ -19,7 +19,7 @@ h3 {
     font-weight: 500;
     color: #231f20;
     padding-bottom: 10px;
-    padding-top: 10px; 
+    padding-top: 10px;
 }
 
 .article-interview__answer {
@@ -128,8 +128,6 @@ ul li {
     font-size: 14px;
     line-height: 20px;
     padding-left: 10px;
-    list-style: disc;
-    list-style-image: url('https://commodities.dev.ide.informa.com/-/media/Icons/PDF%20Icons/arrowpdf.gif');
 }
 
 ol li {
@@ -147,16 +145,13 @@ ol li {
     margin: 0px;
     padding-bottom: 10px;
 }
-.article-exhibit__header{
-    padding-bottom: 10px;
-    padding-top: 10px;
-}
 .article-exhibit__title {
     font-size: 18px;
     font-weight: 500;
     color: #231f20;
     padding-bottom: 10px;
     padding-top: 10px;
+    font-style:normal;
 }
 
 .article-preview__headline {
@@ -171,10 +166,15 @@ ol li {
 
 .article-exhibit__caption, .article-exhibit__source {
     padding-top: 10px;
+    font-style:normal;
 }
 
 .article-sidebar {
     font-size: 14px;
+    font-style: italic;
+}
+.package-heading-wrapper{
+    font-style:normal;
 }
 
     .article-sidebar h3 {
@@ -183,14 +183,19 @@ ol li {
         font-size: 16px;
         padding-top: 10px;
         padding-bottom: 10px;
+        
     }
-
+.article-exhibit__header {
+    /*padding-bottom: 10px;*/
+    padding-top: 10px;
+    font-style:normal;
+}
 .article-sidebar__byline {
     font-size: 14px;
 }
 
 .article-exhibit--pull-left {
-    
+    font-style:italic;
 }
 
 h3.pdf-classified-title {
@@ -203,10 +208,12 @@ h3.pdf-classified-title {
     font-weight: bold;
     font-size: 16px;
 }
- 
-.article-call-to-action--subscribe
-{
-    padding-bottom:10px;
-    padding-top:10px;
-    font-weight:bold;
+
+.article-call-to-action--subscribe {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+a {
+    color: #0000FF;
 }
