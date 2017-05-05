@@ -1097,19 +1097,42 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         {
                             MediaItem imageItem = childItem;
                             string folderPath = imageItem.FilePath;
-                            XMLDataLogger.WriteLog("Media Item File path:" + folderPath, "ImageReAttachingLog");
-                            MemoryStream stream2 = new MemoryStream();
-                            stream2 = findMediaFromFolder(folderPath);
-                            string fileName = string.Empty;
-
-                            if (stream2 != null)
-                            {
-                                using (new Sitecore.SecurityModel.SecurityDisabler())
+                            if (!string.IsNullOrEmpty(folderPath))
                                 {
-                                    imageItem.InnerItem.Editing.BeginEdit();
-                                    imageItem.InnerItem.Fields["Blob"].SetBlobStream(stream2);
-                                    imageItem.InnerItem.Editing.EndEdit();
-                                    XMLDataLogger.WriteLog("Media Item Updated in Sitecore with path:"+ imageItem.MediaPath, "ImageReAttachingLog");
+
+                                XMLDataLogger.WriteLog("Media Item File path:" + folderPath, "ImageReAttachingLog");
+                                MemoryStream stream2 = new MemoryStream();
+                                stream2 = findMediaFromFolder(folderPath);
+                                string fileName = string.Empty;
+
+                                if (stream2 != null)
+                                {
+
+                                    var mediaCreator = new MediaCreator();
+                                    var mediaItemFullPath = "/sitecore/media library" + folderPath;
+                                    var mediaCreatorOptions = new MediaCreatorOptions
+                                    {
+                                        Database = MasterDB,
+                                        Language = Sitecore.Context.Language,
+                                        Versioned = false,
+                                        Destination = mediaItemFullPath,
+                                        FileBased = false,
+                                        IncludeExtensionInItemName = false,
+                                        //AlternateText = mediaItem.Name
+                                    };
+                                    var item = mediaCreator.AttachStreamToMediaItem(stream2, mediaItemFullPath, imageItem.Name, mediaCreatorOptions);
+
+                                    if (item != null)
+                                    {
+                                        XMLDataLogger.WriteLog("Media Item Updated in Sitecore with path:" + imageItem.MediaPath, "ImageReAttachingLog");
+                                    }
+                                    //using (new Sitecore.SecurityModel.SecurityDisabler())
+                                    //{
+                                    //    imageItem.InnerItem.Editing.BeginEdit();
+                                    //    imageItem.InnerItem.Fields["Blob"].SetBlobStream(stream2);
+                                    //    imageItem.InnerItem.Editing.EndEdit();
+                                    //    XMLDataLogger.WriteLog("Media Item Updated in Sitecore with path:" + imageItem.MediaPath, "ImageReAttachingLog");
+                                    //}
                                 }
                             }
                         }
