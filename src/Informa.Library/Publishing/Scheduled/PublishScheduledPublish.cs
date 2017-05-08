@@ -44,10 +44,9 @@ namespace Informa.Library.Publishing.Scheduled
                             Status = PublishStatus.Failed
                         };
                     }
-                    Sitecore.Diagnostics.Log.Warn("item got from scheduledPublish  ", item.ID.ToString());
 
                     var plannedPublishDateField = (DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldId];
-                    if ((plannedPublishDateField.DateTime == DateTime.MinValue || plannedPublishDateField.DateTime == DateTime.MaxValue) && item.TemplateID == ITableau_DashboardConstants.TemplateId)
+                    if ((plannedPublishDateField.DateTime == DateTime.MinValue || plannedPublishDateField.DateTime == DateTime.MaxValue) && (item.TemplateID == ITableau_DashboardConstants.TemplateId || item.TemplateID.ToString() == "{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}"))
                     {
                         var parentArticleItem = item.Axes.SelectSingleItem("ancestor-or-self::*[@@templateid = '" + IArticleConstants.TemplateId + "']");
                         isFinal = Sitecore.Context.Database.WorkflowProvider?.GetWorkflow(parentArticleItem)?.GetState(parentArticleItem)?.FinalState;
@@ -58,7 +57,13 @@ namespace Informa.Library.Publishing.Scheduled
                             Sitecore.Context.Database.WorkflowProvider?.GetWorkflow(item)?.GetState(item)?.FinalState;
                     }
 
-
+                    if (isFinal == null)
+                    {
+                        return new PublishingStatus
+                        {
+                            Status = PublishStatus.Skipped
+                        };
+                    }
                     if (isFinal.HasValue && !isFinal.Value)
                     {
                         return new PublishingStatus
@@ -71,7 +76,7 @@ namespace Informa.Library.Publishing.Scheduled
                         ? item.Languages
                         : new Language[] { item.Language };
                     var publishingTargetDatabases = PublishingTargetsContext.Databases.ToArray();
-                    var handle = PublishManager.PublishItem(item, publishingTargetDatabases, languages, false, false, true);
+                    var handle = PublishManager.PublishItem(item, publishingTargetDatabases, languages, true, false, true);
 
                     if (handle == null)
                     {

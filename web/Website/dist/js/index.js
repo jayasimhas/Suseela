@@ -13821,24 +13821,24 @@ $(document).ready(function () {
             var loginRegisterMethod = "global_registration";
             if ($(form).hasClass("user-calltoaction")) loginRegisterMethod = "login_register_component";
 
-            var askTheAnalystController = new _controllersFormController2['default']({
-                observe: '.form-ask-the-analyst',
-                successCallback: function successCallback(form) {
-                    $('.js-ask-the-analyst-form-wrapper').hide();
-                    $('.js-ask-the-analyst-recip-success').html($('.js-ask-the-analyst-recip-addr').val());
-                    $('.js-ask-the-analyst-success').show();
-
-                    // Reset the Ask The Analyst pop-out to its default state when closed
-                    $('.js-dismiss-ask-the-analyst').one('click', function () {
-                        $('.js-ask-the-analyst-form-wrapper').show();
-                        $('.js-ask-the-analyst-success').hide();
-                    });
-                }
-            });
-
             (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, { event_name: "registration", login_register_method: loginRegisterMethod }));
 
             window.location.href = nextStepUrl;
+        }
+    });
+
+    var askTheAnalystController = new _controllersFormController2['default']({
+        observe: '.form-ask-the-analyst',
+        successCallback: function successCallback(form) {
+            $('.js-ask-the-analyst-form-wrapper').hide();
+            $('.js-ask-the-analyst-recip-success').html($('.js-ask-the-analyst-recip-addr').val());
+            $('.js-ask-the-analyst-success').show();
+
+            // Reset the Ask The Analyst pop-out to its default state when closed
+            $('.js-dismiss-ask-the-analyst').one('click', function () {
+                $('.js-ask-the-analyst-form-wrapper').show();
+                $('.js-ask-the-analyst-success').hide();
+            });
         }
     });
 

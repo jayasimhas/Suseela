@@ -670,6 +670,12 @@ $(document).ready(function(){
             if($(form).hasClass("user-calltoaction"))
                 loginRegisterMethod = "login_register_component";
 
+            analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
+
+            window.location.href = nextStepUrl;
+        }
+    });
+
     var askTheAnalystController = new FormController({
         observe: '.form-ask-the-analyst',
         successCallback: function(form) {
@@ -682,13 +688,6 @@ $(document).ready(function(){
                 $('.js-ask-the-analyst-form-wrapper').show();
                 $('.js-ask-the-analyst-success').hide();
             });
-        }
-    });
-
-
-            analyticsEvent( $.extend(analytics_data, { event_name: "registration", login_register_method : loginRegisterMethod }) );
-
-            window.location.href = nextStepUrl;
         }
     });
 

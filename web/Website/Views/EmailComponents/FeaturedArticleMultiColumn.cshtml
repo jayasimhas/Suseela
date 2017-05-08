@@ -288,7 +288,7 @@
                                                                                                 <tr>
                                                                                                     <td align="center" valign="top" width="285" style="width:285px;">
                                                                                                         <![endif]-->
-                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-top:1px solid #cccccc;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top:15px;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
+                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="300" class="columnWrapper" style="border-top:1px solid #cccccc;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -453,7 +453,7 @@
                                                                                             </td>
                                                                                             <td align="center" valign="top" width="285" style="width:285px;">
                                                                                                 <![endif]-->
-                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper threecolum fr" style="border-top: 1px solid #cccccc; border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top:15px;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
+                                                                                            <table align="left" border="0" cellpadding="0" cellspacing="0" width="285" class="columnWrapper threecolum fr" style="border-top: 1px solid #cccccc; border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
                                                                                                 <tr>
                                                                                                     <td valign="top" class="columnContainer" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                                                         <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -524,19 +524,19 @@
                                                                                     {
                                                                                         int index = 0;
                                                                                         <tr>
-                                                                                            <td align="center" style="padding:15px 0 0;">
+                                                                                            <td align="center">
                                                                                                 <table width="100%">
                                                                                                     <tr>
-                                                                                                        <td align="center" style="border-top: 1px solid #cccccc; width:94%;"></td>
+                                                                                                        <td align="center" style="border-top: 1px solid #cccccc; width:100%;"></td>
                                                                                                     </tr>
                                                                                                 </table>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td align="center" valign="top" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding-top: 15px;">
-                                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;background-color:#@GetBackgroundColor(Model);">
+                                                                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;margin-bottom:15px;background-color:#@GetBackgroundColor(Model);">
                                                                                                     <tr>
-                                                                                                        <td valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                                                                        <td valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;@TwocolumnArticlePadding(Model)">
                                                                                                             <!--[if gte mso 9]>
                                                                                                             <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
                                                                                                                 <tr>
@@ -846,6 +846,13 @@
     {
         if (model.GlassModel.ShowGreyBackground || model.GlassModel.ShowPinkBackground)
             return "redbgPan";
+        else
+            return "";
+    }
+    public string TwocolumnArticlePadding(FeaturedArticleMultiColumnViewModel model)
+    {
+        if (model.GlassModel.ShowGreyBackground || model.GlassModel.ShowPinkBackground)
+            return "padding-top:15px;padding-bottom:15px;";
         else
             return "";
     }
