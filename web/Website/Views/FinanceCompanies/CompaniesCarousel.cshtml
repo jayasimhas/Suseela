@@ -37,9 +37,13 @@
                             {
                                 <script>
                                     var data = JSON.parse(JSON.stringify(@Html.Raw(Graph.FinanceResult)));
-                                    var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
-                                    var chartData = data[0]["@Graph.GraphID"];
-                                    PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                                    if (data.length > 0) {
+                                        var chartData = JSON.stringify(data[0]["@Graph.GraphID"]);
+                                        var chartData = data[0]["@Graph.GraphID"];
+                                        PrintCompanyGraph(chartData, "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                                    } else {
+                                        PrintCompanyGraph([], "@chartDivId", "@Graph.GraphType", "@Graph.GraphColor")
+                                    }
                                 </script>
                             }
                             else
