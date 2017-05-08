@@ -719,77 +719,7 @@
                                                             <![endif]-->
                                                                                                         </td>
                                                                                                     </tr>*@
-                                                        <!-- Adv. ends -->
-                                                        <!-- Footer starts -->
-                                                        <tr>
-                                                            <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-bottom: 0; text-align: center;">
-                                                                <!--[if gte mso 9]>
-                                                                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
-                                                                <tr>
-                                                                <td align="center" valign="top" width="600" style="width:600px;">
-                                                                <![endif]-->
-                                                                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 600px !important;">
-                                                                    <tr>
-                                                                        <td valign="top" class="bodyContainer grayBg" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
-
-                                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
-                                                                                <tbody class="mcnTextBlockOuter">
-                                                                                    <tr>
-                                                                                        <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
-                                                                                            <!--[if mso]>
-                                                                                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-                                                                                            <tr>
-                                                                                            <![endif]-->
-                                                                                            <!--[if mso]>
-                                                                                            <td valign="top" width="600" style="width:600px;">
-                                                                                            <![endif]-->
-                                                                                            <table align="center" border="0" class="footerTxt" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-                                                                                                <tbody>
-                                                                                                    <tr>
-
-                                                                                                        <td align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top: 10px">
-                                                                                                            <span style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
-                                                                                                                @Html.Raw(Model.SiteRoot.Email_Footer)
-                                                                                                            </span>
-                                                                                                            @if (Model.FooterNavigation != null)
-                                                                                                            {
-                                                                                                                <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
-                                                                                                                    @foreach (var nav in Model.FooterNavigation)
-                                                                                                                    {
-                                                                                                                        <a href="@nav.LinkUrl" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@GetBrandingFontColor();text-decoration: none">@nav.Text</a>
-                                                                                                                        if (!nav.IsLast)
-                                                                                                                        {
-                                                                                                                            <span class="vertical-separator">|</span>
-                                                                                                                        }
-                                                                                                                    }
-                                                                                                                </p>
-                                                                                                            }
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                            <!--[if mso]>
-                                                                                            </td>
-                                                                                            <![endif]-->
-                                                                                            <!--[if mso]>
-                                                                                            </tr>
-                                                                                            </table>
-                                                                                            <![endif]-->
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                                <!--[if gte mso 9]>
-                                                                </td>
-                                                                </tr>
-                                                                </table>
-                                                                <![endif]-->
-                                                            </td>
-                                                        </tr>
-                                                        <!-- Footer ends -->
+                                                        <!-- Adv. ends --> 
                                                     </table>
                                                     <!--[if gte mso 9]>
                                                     </td>
@@ -798,7 +728,7 @@
                                                     <![endif]-->
                                                 </td>
                                             </tr>
-
+                                           
                                         </table>
                                         <!--[if gte mso 9]>
                                         </td>
@@ -807,11 +737,81 @@
                                         <![endif]-->
                                     </td>
                                 </tr>
-
+                                
                             </table>
                             <!-- // End Template -->
                         </td>
                     </tr>
+                    <!-- Footer starts -->
+                    <tr>
+                        <td align="center" valign="top" id="templateBody" style="background:#FFFFFF none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-bottom: 0; text-align: center;">
+                            <!--[if gte mso 9]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="650" style="width:650px;">
+            <tr>
+            <td align="center" valign="top" width="650" style="width:650px;">
+            <![endif]-->
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="daily-alert" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; max-width: 652px !important;border:1px solid #CCCCCC;border-top:none;">
+                                <tr>
+                                    <td valign="top" class="bodyContainer grayBg" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                            <tbody class="mcnTextBlockOuter">
+                                                <tr>
+                                                    <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                                                        <!--[if mso]>
+                                        <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+                                        <tr>
+                                        <![endif]-->
+                                                        <!--[if mso]>
+                                        <td valign="top" width="650" style="width:650px;">
+                                        <![endif]-->
+                                                        <table align="center" border="0" class="footerTxt" cellpadding="0" cellspacing="0" style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                                                            <tbody>
+                                                                <tr>
+
+                                                                    <td align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;">
+                                                                        <span style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
+                                                                            @Html.Raw(Model.SiteRoot.Email_Footer)
+                                                                        </span>
+                                                                        @if (Model.FooterNavigation != null)
+                                                                        {
+                                                                            <p style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Helvetica Neue, Helvetica, Arial, Roboto, sans-serif;font-size: 12px;line-height: 150%;margin-top: 0;padding-top: 0;color: #888888;text-align: center;font-weight: normal">
+                                                                                @foreach (var nav in Model.FooterNavigation)
+                                                                                {
+                                                                                    <a href="@nav.LinkUrl" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #@GetBrandingFontColor();text-decoration: none">@nav.Text</a>
+                                                                                    if (!nav.IsLast)
+                                                                                    {
+                                                                                        <span class="vertical-separator">|</span>
+                                                                                    }
+                                                                                }
+                                                                            </p>
+                                                                        }
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <!--[if mso]>
+                                        </td>
+                                        <![endif]-->
+                                                        <!--[if mso]>
+                                        </tr>
+                                        </table>
+                                        <![endif]-->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--[if gte mso 9]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+                        </td>
+                    </tr>
+                    <!-- Footer ends -->
                 </table>
             </center>
         </body>
