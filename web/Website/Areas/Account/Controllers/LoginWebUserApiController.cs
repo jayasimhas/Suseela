@@ -76,7 +76,11 @@ namespace Informa.Web.Areas.Account.Controllers
             //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
             //LoggedinKeyCookie.Domain = domain;
             //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
-            VerticalLogin.CreateLoginCookie(username, null);
+            if (result.Success)
+            {
+                VerticalLogin.CreateLoginCookie(username, null);
+            }
+            
 
 
             return Ok(new
