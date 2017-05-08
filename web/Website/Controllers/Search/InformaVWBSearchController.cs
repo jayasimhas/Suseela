@@ -21,6 +21,7 @@ using Informa.Library.Services.Global;
 using Velir.Search.Models;
 using System.Web.Http.ModelBinding;
 using Informa.Library.Search;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
 
 namespace Informa.Web.Controllers.Search
 {
@@ -107,7 +108,7 @@ namespace Informa.Web.Controllers.Search
                 {
                     foreach (var tax in article.Taxonomies)
                     {
-                        if (!vwb.Taxonomies.ContainsKey(tax._Id.ToString()))
+                        if (tax is ITaxonomy_Item && !vwb.Taxonomies.ContainsKey(tax._Id.ToString()))
                         {
                             if (tax._Path.Contains("Environment Globals"))
                                 vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path.Replace("/sitecore/content/Environment Globals/Taxonomy/", ""));

@@ -552,7 +552,7 @@ namespace Elsevier.Web.VWB
         /// <param name="e"></param>
         protected void ddlVerticals_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddlVerticals.SelectedItem.Value == "NA")
+            if (ddlVerticals.SelectedItem.Value == "NA" || ddlVerticals.SelectedItem.Value == "Select Vertical")
             {
                 ddlPublications.Items.Clear();
                 hdnSelectedPubs.Value = string.Empty;
