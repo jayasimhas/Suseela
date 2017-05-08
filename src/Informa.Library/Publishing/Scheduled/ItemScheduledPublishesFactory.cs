@@ -25,16 +25,16 @@ namespace Informa.Library.Publishing.Scheduled
             var itemId = item.ID.Guid;
             var language = item.Language.Name;
             var version = item.Version.Number.ToString();
-          
+
             var plannedPublishDateField = (DateField)item.Fields[IArticleConstants.Planned_Publish_DateFieldId];
             var wfState = item.State.GetWorkflowState();
             if (plannedPublishDateField != null)
             {
                 if ((plannedPublishDateField.DateTime == DateTime.MinValue || plannedPublishDateField.DateTime == DateTime.MaxValue) && item.TemplateID == ITableau_DashboardConstants.TemplateId)
                 {
-                    var parentArticleItem = item.Axes.SelectSingleItem("ancestor-or-self::*[@@templateid = '" + IArticleConstants.TemplateId + "']");
-                    plannedPublishDateField = parentArticleItem.Fields[IArticleConstants.Planned_Publish_DateFieldId];
-                    wfState = parentArticleItem.State.GetWorkflowState();
+                    //var parentArticleItem = item.Axes.SelectSingleItem("ancestor-or-self::*[@@templateid = '" + IArticleConstants.TemplateId + "']");
+                    plannedPublishDateField.Value = Sitecore.DateUtil.ToIsoDate(DateTime.Now);
+                    //wfState = parentArticleItem.State.GetWorkflowState();
                 }
 
                 AddScheduledPublish(scheduledPublishes, itemId, string.Empty, string.Empty, plannedPublishDateField.DateTime, ScheduledPublishType.Planned);
