@@ -10761,22 +10761,22 @@ $(function () {
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
-										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('') + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
 
-										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
 										document.write = docWrite;
 									} else {
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
-										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('') + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
 
-										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
 										document.write = docWrite;
 									}
 								}
@@ -10886,25 +10886,25 @@ $(function () {
 						};
 						if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 							getscrollData = loadLayoutOneData(data, loadsection);
-							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('') + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
-
-							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+							console.log('ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]);
+							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]).html(googleAdStr);
 							document.write = docWrite;
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
-							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('') + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
-
-							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+							console.log('ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]);
+							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]).html(googleAdStr);
 							document.write = docWrite;
 						}
 					}
@@ -10961,19 +10961,19 @@ $(function () {
 										};
 										if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
-											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('') + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
 
-											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
 											document.write = docWrite;
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
-											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('') + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
 
-											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ').join('')).html(googleAdStr);
+											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
 											document.write = docWrite;
 										}
 									}
