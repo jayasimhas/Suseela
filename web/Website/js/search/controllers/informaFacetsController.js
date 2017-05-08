@@ -298,6 +298,34 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 
 		vm.update(facetGroupId);
 
+        if (facetIds.length > 0) {
+            _.each(vm.facetGroups, function (group) {
+                if (group.id == "iegvu") {
+                    subfacets = group.facets;
+                }
+            });
+
+            _.each(facetIds, function (id) {
+                var myId = id.replace("and", "&");
+                _.each(subfacets, function (subfac) {
+                    if (subfac.id.toLowerCase() == myId.toLowerCase()) {
+                        subfac.selected = true;
+                    }
+                })
+            });
+        } else {
+            _.each(vm.facetGroups, function (group) {
+                if (group.id == "iegvu") {
+                    subfacets = group.facets;
+                }
+            });
+
+            _.each(subfacets, function (subfac) {
+                subfac.selected = false;
+            });
+        }
+        vm.update("iegvu");
+
     };
 
 

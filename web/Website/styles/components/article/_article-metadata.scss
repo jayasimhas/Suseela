@@ -16,10 +16,10 @@
         margin-left: 0;
         padding-right: 0.625rem;
 		position: relative;
-		&:nth-child(2){
-			max-width: 75px;
-			text-overflow: ellipsis;
-		}
+		// &:nth-child(2){
+		// 	max-width: 75px;
+		// 	text-overflow: ellipsis;
+		// }
         @include breakpoint('small') {
             max-width: 150px;
         }
@@ -47,4 +47,8 @@
         width: 24px;
         vertical-align: middle;
     }
+}
+.eachstoryMpan .article-metadata li:nth-child(2) {
+    max-width: 75px;
+    text-overflow: ellipsis;
 }
