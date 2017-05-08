@@ -66,17 +66,10 @@ namespace Informa.Web.Areas.Account.Controllers
                     redirectUrl = UserResetPasswordUrlFactory.Create(userResetPassword);
                 }
             }
-            ////Current vertical cookiename
-            //string cookieName = curVertical + "_LoggedInUser";
-            ////Current Vertical subdomain
-            //string domain = ConfigurationManager.AppSettings[curVertical];
-
-            //HttpCookie LoggedinKeyCookie = new HttpCookie(curVertical+"_LoggedInUser");
-            //LoggedinKeyCookie.Value = username;
-            //LoggedinKeyCookie.Expires = System.DateTime.Now.AddDays(1);
-            //LoggedinKeyCookie.Domain = domain;
-            //HttpContext.Current.Response.Cookies.Add(LoggedinKeyCookie);
-            VerticalLogin.CreateLoginCookie(username, null);
+            if (result.Success)
+            {
+                VerticalLogin.CreateLoginCookie(username, null);
+            }
 
 
             return Ok(new
