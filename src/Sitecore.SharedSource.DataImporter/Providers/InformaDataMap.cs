@@ -666,8 +666,8 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
                                     foreach (string policyTopics in policyTopicsearchResults)
                                     {
-                                        
-                                            PolicyTopics += policyTopics + ",";
+
+                                        PolicyTopics += policyTopics + ",";
 
                                     }
                                 }
@@ -1082,13 +1082,171 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 mediatype = "";
                 return false;
             }
+        }
+
+        public override IEnumerable<object> RemoveArticles(IDataMap map)
+        {
+            try
+            {
+                Database MasterDB = Sitecore.Configuration.Factory.GetDatabase("master");
+                //string pathfromConfig = WebConfigurationManager.AppSettings["ImagesInFileSystemSitecore"].ToString();
+
+                #region first approch
+                //Item[] MeiaToModify = MasterDB.SelectItems(this.Query);
+                //XMLDataLogger.WriteLog("Query from Job:" + this.Query, "ImageReAttachingLog");
+                //if (MeiaToModify != null && MeiaToModify.Any())
+                //{
+                //    foreach (var childItem in MeiaToModify)
+                //    {
+                //        if (childItem.Paths.IsMediaItem && !childItem.TemplateName.Equals("Media folder") && !childItem.TemplateName.Equals("Node"))
+                //        {
+                //            MediaItem imageItem = childItem;
+                //            string folderPath = imageItem.FilePath;
+                //            if (!string.IsNullOrEmpty(folderPath))
+                //                {
+
+                //                XMLDataLogger.WriteLog("Media Item File path:" + folderPath, "ImageReAttachingLog");
+                //                MemoryStream stream2 = new MemoryStream();
+                //                stream2 = findMediaFromFolder(folderPath);
+                //                string fileName = string.Empty;
+
+                //                if (stream2 != null)
+                //                {
+
+                //                    var mediaCreator = new MediaCreator();
+                //                    var mediaItemFullPath = "/sitecore/media library" + folderPath;
+                //                    var mediaCreatorOptions = new MediaCreatorOptions
+                //                    {
+                //                        Database = MasterDB,
+                //                        Language = Sitecore.Context.Language,
+                //                        Versioned = false,
+                //                        Destination = mediaItemFullPath,
+                //                        FileBased = false,
+                //                        IncludeExtensionInItemName = false,
+                //                        //AlternateText = mediaItem.Name
+                //                    };
+                //                    var item = mediaCreator.AttachStreamToMediaItem(stream2, mediaItemFullPath, imageItem.Name, mediaCreatorOptions);
+
+                //                    if (item != null)
+                //                    {
+                //                        XMLDataLogger.WriteLog("Media Item Updated in Sitecore with path:" + imageItem.MediaPath, "ImageReAttachingLog");
+                //                    }
+                //                    //using (new Sitecore.SecurityModel.SecurityDisabler())
+                //                    //{
+                //                    //    imageItem.InnerItem.Editing.BeginEdit();
+                //                    //    imageItem.InnerItem.Fields["Blob"].SetBlobStream(stream2);
+                //                    //    imageItem.InnerItem.Editing.EndEdit();
+                //                    //    XMLDataLogger.WriteLog("Media Item Updated in Sitecore with path:" + imageItem.MediaPath, "ImageReAttachingLog");
+                //                    //}
+                //                }
+                //            }
+                //        }
+                //    }
+                //}
+
+                #endregion
+
+                #region second approch
+
+                string MediaPath = WebConfigurationManager.AppSettings["ImageFleSystemPath"].ToString();
+
+                List<string> mediaGuids= DirSearch(MediaPath);
+
+                foreach (string mediaitem in mediaGuids)
+                {
+                    XMLDataLogger.WriteLog("Media Item ID in File:" + mediaitem, "ImageReAttachingLog");
+                    MediaItem imageItem =MasterDB.GetItem(Sitecore.Data.ID.Parse(mediaitem));
+                    if (imageItem != null)
+                    {
+                        using (new Sitecore.SecurityModel.SecurityDisabler())
+                        {
+                            XMLDataLogger.WriteLog("Media Item ID in Sitecore:" + imageItem.ID, "ImageReAttachingLog");
+                            imageItem.InnerItem.Editing.BeginEdit();
+                            // imageItem.InnerItem.Fields["Blob"].SetBlobStream(stream2);
+                            imageItem.InnerItem.Fields["File Path"].Value = imageItem.FilePath.Replace("/Replicated", string.Empty);
+                            imageItem.InnerItem.Editing.EndEdit();
+                            XMLDataLogger.WriteLog("Media Item Updated in Sitecore with path:" + imageItem.MediaPath, "ImageReAttachingLog");
+                        }
+                    }
+                    else
+                    {
+                        XMLDataLogger.WriteLog("Media Item ID not exist in Sitecore:" + mediaitem, "ImageReAttachingLog");
+                    }
+                }
+
+                #endregion
+
+                return Enumerable.Empty<object>();
+
+            }
+
+            catch (WebException ex)
+            {
+                XMLDataLogger.WriteLog("Image create error in  media library:" + ex.Message, "ImageLog");
+                return null;
+            }
+        }
+
+        private List<String> DirSearch(string sDir)
+        {
+            List<String> files = new List<String>();
+            List<string> SitecoreGuids = new List<string>();
+            try
+            {
+                foreach (string f in Directory.GetFiles(sDir))
+                {
+                    files.Add(f);
+                }
+                foreach (string d in Directory.GetDirectories(sDir))
+                {
+                    files.AddRange(DirSearch(d));
+                }
+
+                foreach (string filename in files)
+                {
+                    MatchCollection guids = Regex.Matches(filename, @"(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1}"); //Match all substrings in findGuid
+                    for (int i = 0; i < guids.Count; i++)
+                    {
+                        SitecoreGuids.Add(guids[i].Value);
+                    }
+                }
 
 
+            }
+            catch (Exception ex)
+            {
+                XMLDataLogger.WriteLog("Exception occured while finding images:" + ex.Message, "ImageReAttachingLog");
+            }
+            return SitecoreGuids.Distinct().ToList();
 
         }
 
 
-        public override IEnumerable<object> RemoveArticles(IDataMap map)
+        private MemoryStream findMediaFromFolder(string path)
+        {
+            MemoryStream ms = new MemoryStream();
+
+            path = path.Replace('/', '\\');
+
+            string MediaPath = WebConfigurationManager.AppSettings["ImageFleSystemPath"].ToString();
+
+            MediaPath = MediaPath + path;
+
+            XMLDataLogger.WriteLog("MediaPath in File System :" + MediaPath, "ImageReAttachingLog");
+
+            if (File.Exists(MediaPath))
+            {
+                using (FileStream fs = File.OpenRead(MediaPath))
+                {
+                    fs.CopyTo(ms);
+                }
+            }
+            XMLDataLogger.WriteLog("Media Stream Created from File", "ImageReAttachingLog");
+            return ms;
+        }
+
+
+        public IEnumerable<object> RemoveArticles(IDataMap map, string test)
         {
             Database MasterDB = Sitecore.Configuration.Factory.GetDatabase("master");
 
@@ -1131,14 +1289,14 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
                 relatedArticle = ID.InnerText;
 
-                    Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
-                    string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                  //  XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
-                    url = string.Format("https://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
-               
+                Publication = WebConfigurationManager.AppSettings["ArticlePrefix"].ToString();
+                string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
+                //  XMLDataLogger.WriteLog("Host Name:" + hostName, "ArticleCleanup");
+                url = string.Format("https://{0}/api/SearchArticlesbasedonEscenic?articleNumber={1}&EscenicId={2}", hostName, Publication, relatedArticle);
+
                 using (var client = new HttpClient())
                 {
-                    
+
                     ServicePointManager.ServerCertificateValidationCallback += (sender, cert, chain, sslPolicyErrors) => true;
 
 
@@ -1148,7 +1306,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                     {
                         var response = client.GetStringAsync(url).Result;
 
-                       // XMLDataLogger.WriteLog("Response :" + response, "ArticleCleanup");
+                        // XMLDataLogger.WriteLog("Response :" + response, "ArticleCleanup");
                         if (!(response == "null" || response == ""))
                         {
                             var resultarticles = JsonConvert.DeserializeObject<ArticleItem>(response);
@@ -1163,7 +1321,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     XMLDataLogger.WriteLog("Article Path:" + item.Paths.ContentPath, "ArticleCleanup");
                                     XMLDataLogger.WriteLog("Article Path:" + item.Name, "ArticleCleanup");
                                     if (WebConfigurationManager.AppSettings["DeleteArticleWithSpecialChar"].Equals("true"))
-                                    {                                     
+                                    {
                                         item.Delete();
                                         XMLDataLogger.WriteLog(relatedArticle, "ArticleNumberDeleted");
                                     }
@@ -1185,11 +1343,9 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         XMLDataLogger.WriteLog("ex :" + ex.InnerException + ex.Source + ex.StackTrace + ex.Data, "ArticleCleanup");
                     }
                 }
-                }
+            }
 
             return Enumerable.Empty<object>();
-
-
         }
 
         public override IEnumerable<object> ImportImages(IDataMap map)
@@ -1888,7 +2044,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     if ((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade")
                                     {
                                         CommodityFactor += "dairy_markets_analysis_trade_Import" + "," + "dairy_markets_analysis_trade_Export";
-                                        
+
                                     }
                                     if (!((node.Attributes["unique-name"].Value) == "dairy_markets_analysis_trade"))
                                     {
@@ -2159,7 +2315,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                 }
 
                 // adding image an video tag  
-                if (nodeName.Equals("LEADIMAGE")|| nodeName.Equals("CAPTION")||nodeName.Equals("ALTTEXT"))
+                if (nodeName.Equals("LEADIMAGE") || nodeName.Equals("CAPTION") || nodeName.Equals("ALTTEXT"))
                 {
                     if (!(nodeName.Equals("LEADIMAGE")) && xd.SelectSingleNode($"//{"LEADIMAGE"}") != null)
                     {
@@ -2447,7 +2603,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
         }
 
         #endregion Override Methods
-
         #region Methods
 
         protected List<string> SplitString(string str, string splitter)
@@ -2823,8 +2978,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
 
             d.Add("public_ledger_commodities_nuts_other_nuts", "Dried Fruit & Nuts");
 
-
-
             return d;
         }
 
@@ -2880,8 +3033,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             return d;
 
         }
-
-
 
         public List<string> GetRegion()
         {
@@ -3702,27 +3853,6 @@ namespace Sitecore.SharedSource.DataImporter.Providers
             "WTO" };
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         #endregion Methods
     }
 

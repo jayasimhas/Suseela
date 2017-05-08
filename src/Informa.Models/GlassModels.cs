@@ -14738,6 +14738,15 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link JS_API_Url { get; set; }
+        /// <summary>
+        /// Entitlement Parameter Key field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1275B5AA-978F-410B-ABD5-BC5C338D3FBC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.EntitlementParameterKeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Entitlement_Parameter_Key { get; set; }
     }
 
 
@@ -14779,6 +14788,16 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// </summary>
         [SitecoreField(ITableau_ConfigurationConstants.JS_API_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
         Link JS_API_Url { get; set; }
+        /// <summary>
+        /// Entitlement Parameter Key field.
+        /// <para></para>
+        /// <para>Field Type: Single-Line Text</para>		
+        /// <para>Field ID: 1275B5AA-978F-410B-ABD5-BC5C338D3FBC</para>
+        /// <para>Custom Data: </para>
+        /// </summary>
+        [SitecoreField(ITableau_ConfigurationConstants.EntitlementParameterKeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Entitlement_Parameter_Key { get; set; }
+
     }
 
     public static partial class ITableau_ConfigurationConstants
@@ -14797,6 +14816,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
 
         public static readonly ID JS_API_UrlFieldId = new ID("{FCFEDA02-FAF9-4B6D-AE86-6D0D1BF13540}");
         public const string JS_API_UrlFieldName = "JS API Url";
+
+        public static readonly ID EntitlementParameterKeyFieldId = new ID("1275B5AA-978F-410B-ABD5-BC5C338D3FBC");
+        public const string EntitlementParameterKeyFieldName = "Entitlement Parameter Key";
 
     }
 
@@ -19905,9 +19927,9 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
     }
 
     /// <summary>
-    /// ISalesforce_Configuration_Raw Interface
+    /// IExactTarget_Configuration Interface
     /// <para></para>
-    /// <para>Path: /sitecore/templates/User Defined/Configuration/Salesforce Configuration</para>	
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/ExactTarget Configuration</para>	
     /// <para>ID: 9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876</para>	
     /// </summary>
     [SitecoreType]
@@ -19919,8 +19941,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The exact target API URL.
         /// </value>
-        [SitecoreField(IExactTarget_ConfigurationConstants.Exact_Target_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
-        Link Exact_Target_Url { get; set; }
+        [SitecoreField(IExactTarget_ConfigurationConstants.Exact_Target_Front_End_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Exact_Target_Front_End_Url { get; set; }
 
         /// <summary>
         /// Gets or sets the client ID
@@ -19928,8 +19950,8 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The client ID
         /// </value>
-        [SitecoreField(IExactTarget_ConfigurationConstants.ClientIdFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string ClientId { get; set; }
+        [SitecoreField(IExactTarget_ConfigurationConstants.Client_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Client_Id { get; set; }
 
         /// <summary>
         /// Gets or sets the Secret Key
@@ -19937,8 +19959,62 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         /// <value>
         /// The Secret Key
         /// </value>
-        [SitecoreField(IExactTarget_ConfigurationConstants.SecretKeyFieldName, Setting = SitecoreFieldSettings.InferType)]
-        string SecretKey { get; set; }
+        [SitecoreField(IExactTarget_ConfigurationConstants.Secret_KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Secret_Key { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is sandbox.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is sandbox; otherwise, <c>false</c>.
+        /// </value>
+        [SitecoreField(IExactTarget_ConfigurationConstants.Is_SandboxFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Sandbox { get; set; }
+    }
+
+    /// <summary>
+    /// IExactTarget_Configuration_Raw Interface
+    /// <para></para>
+    /// <para>Path: /sitecore/templates/User Defined/Configuration/ExactTarget Configuration</para>	
+    /// <para>ID: 9BE7BBA5-6CE7-40D9-AA0F-3CFD1A5C2876</para>	
+    /// </summary>
+    public partial interface IExactTarget_Configuration_Raw : IGlassBase
+    {
+        /// <summary>
+        /// Gets or sets the exact target API URL.
+        /// </summary>
+        /// <value>
+        /// The exact target API URL.
+        /// </value>
+        [SitecoreField(IExactTarget_ConfigurationConstants.Exact_Target_Front_End_UrlFieldName, Setting = SitecoreFieldSettings.InferType)]
+        Link Exact_Target_Front_End_Url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the client ID
+        /// </summary>
+        /// <value>
+        /// The client ID
+        /// </value>
+        [SitecoreField(IExactTarget_ConfigurationConstants.Client_IdFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Client_Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Secret Key
+        /// </summary>
+        /// <value>
+        /// The Secret Key
+        /// </value>
+        [SitecoreField(IExactTarget_ConfigurationConstants.Secret_KeyFieldName, Setting = SitecoreFieldSettings.InferType)]
+        string Secret_Key { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is sandbox.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is sandbox; otherwise, <c>false</c>.
+        /// </value>
+        [SitecoreField(IExactTarget_ConfigurationConstants.Is_SandboxFieldName, Setting = SitecoreFieldSettings.InferType)]
+        bool Is_Sandbox { get; set; }
     }
 
     public static partial class ISalesforce_ConfigurationConstants
@@ -19983,14 +20059,17 @@ namespace Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configur
         public const string TemplateName = "ExactTarget Configuration";
 
 
-        public static readonly ID Exact_Target_UrlFieldId = new ID("ED37B9C9-9BB7-43D1-85FD-47A99D88753B");
-        public const string Exact_Target_UrlFieldName = "Exact Target Url";
+        public static readonly ID Exact_Target_Front_End_UrlFieldId = new ID("ED37B9C9-9BB7-43D1-85FD-47A99D88753B");
+        public const string Exact_Target_Front_End_UrlFieldName = "Exact Target Front End Url";
 
-        public static readonly ID ClientIdFieldId = new ID("AA3E0CD7-1243-40D3-BEF5-D7D9C75494F7");
-        public const string ClientIdFieldName = "ClientId";
+        public static readonly ID Client_IdFieldId = new ID("AA3E0CD7-1243-40D3-BEF5-D7D9C75494F7");
+        public const string Client_IdFieldName = "Client Id";
 
-        public static readonly ID SecretKeyFieldId = new ID("6359F27D-3310-4FBF-BDAA-9D13AA8F9516");
-        public const string SecretKeyFieldName = "SecretKey";
+        public static readonly ID Secret_KeyFieldId = new ID("6359F27D-3310-4FBF-BDAA-9D13AA8F9516");
+        public const string Secret_KeyFieldName = "Secret Key";
+
+        public static readonly ID Is_SandboxFieldId = new ID("0F44C2F2-8DC1-4FE7-8B8B-74F6B9F4241A");
+        public const string Is_SandboxFieldName = "Is Sandbox";
 
     }
 

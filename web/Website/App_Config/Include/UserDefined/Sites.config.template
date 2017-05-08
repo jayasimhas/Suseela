@@ -127,6 +127,7 @@
         <patch:attribute name="targetHostName">${project.domain}</patch:attribute>
         <patch:attribute name="hostName">${project.domain}</patch:attribute>
         <patch:attribute name="htmlCacheSize">${Cache.HtmlCache.Website}</patch:attribute>
+        <patch:attribute name="database">master</patch:attribute>
       </site>
     </sites>
   </sitecore>

@@ -5,6 +5,7 @@ using Sitecore.Data.Fields;
 using System.Linq;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 
+
 namespace Informa.Library.Publishing.Scheduled
 {
     [AutowireService(LifetimeScope.Default)]
@@ -61,7 +62,7 @@ namespace Informa.Library.Publishing.Scheduled
                     esp.PublishOn == nsp.PublishOn
                 )
             );
-
+          
             UpsertScheduledPublishes.Upsert(scheduledPublishes);
         }
 
@@ -69,7 +70,7 @@ namespace Informa.Library.Publishing.Scheduled
         {
             if (item == null || item.Fields[ScheduledPublishingEnabledFieldName] == null)
             {
-                if (item.Paths.Path.Contains("/Home/Articles") && item.TemplateID == ITableau_DashboardConstants.TemplateId)
+                if (item.Paths.Path.Contains("/Home/Articles") && (item.TemplateID == ITableau_DashboardConstants.TemplateId) || item.TemplateID.ToString() == "{EBEB3CE7-6437-4F3F-8140-F5C9A552471F}")
                     return false;
             }
             return item == null || item.Fields[ScheduledPublishingEnabledFieldName] == null || !((CheckboxField)item.Fields[ScheduledPublishingEnabledFieldName]).Checked;

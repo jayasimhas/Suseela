@@ -433,7 +433,6 @@
 			this.RenderMobileVersion(data, Parent);
 			this.SortingEvent(data, Parent);
 			this.FilterEvent(data, Parent);
-			this.YearChange();
 			this.MobileEvent();
 			this.showLargestEvent();
 			
@@ -462,7 +461,7 @@
 	        } else {
 	        	var ErrorMessage = $('#hdnErrormessage').val();
 	        }
-			$('.id-merges-acquisition').html('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
+			$('.id-merges-acquisition .graphs-container').prepend('<div class="alert-error js-form-error js-form-error-PasswordRequirements" style="display: block;">'+
 											'<svg class="alert__icon">'+
                         						'<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/dist/img/svg-sprite.svg#alert"></use>'+
                     						'</svg>'+
@@ -488,3 +487,12 @@ if (!String.prototype.includes) {
 	    return true;
 	return false
  }
+ $(document).on('change', '.idYearSelect', function() {
+	var Href = $(this).attr('data-href'),
+		value= $(this).find('.selectivity-single-selected-item').attr('data-item-id'),
+		newUrl = window.location.href.split('?')[0].concat("?year="+value);
+
+
+	window.location =newUrl;			
+
+});

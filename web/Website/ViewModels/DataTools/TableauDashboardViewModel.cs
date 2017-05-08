@@ -79,31 +79,25 @@ namespace Informa.Web.ViewModels.DataTools
 
         private string GetTableauFilters()
         {
-            var entitlements = SalesforceConfigurationContext.IsNewSalesforceEnabled ? 
-                AuthenticatedUserEntitlementsContext.Entitlements : 
+            var entitlements = SalesforceConfigurationContext.IsNewSalesforceEnabled ?
+                AuthenticatedUserEntitlementsContext.Entitlements :
                 EntitlementsContexts.SelectMany(ec => ec.Entitlements);
             if (GlassModel.Enable_Entitlement_Check && entitlements != null && entitlements.Any())
             {
-                if (GlassModel != null && !string.IsNullOrEmpty(GlassModel?.Filter))
+                string entitlemetCodes = string.Empty;
+                char[] charsToTrim = { ',' };
+                foreach (var entitlement in entitlements)
                 {
-                    GlassModel.Filter = GlassModel.Filter + "&" + "Parameters.EntitlementCode=";
-                    foreach (var entitlement in entitlements)
+                    if (!string.IsNullOrEmpty(entitlement.ProductCode))
                     {
-                        GlassModel.Filter = GlassModel.Filter + entitlement.ProductCode;
+                        entitlemetCodes = entitlemetCodes + "," + entitlement.ProductCode;
                     }
-                    return GlassModel.Filter;
                 }
-                else
-                {
-                    GlassModel.Filter = "Parameters.EntitlementCode=";
-                    foreach (var entitlement in entitlements)
-                    {
-                        GlassModel.Filter = GlassModel.Filter + entitlement.ProductCode;
-                    }
-                    return GlassModel.Filter;
-                }
+                entitlemetCodes = entitlemetCodes?.TrimStart(charsToTrim).TrimEnd(charsToTrim);
+                return !string.IsNullOrEmpty(GlassModel.Filter) ? GlassModel.Filter + "&" + EntitlementKey + "=" + entitlemetCodes : EntitlementKey + "=" + entitlemetCodes;
+
             }
-            return GlassModel?.Filter;
+            return string.Empty;
         }
 
         public string DashboardWidth => GlassModel?.Width;
@@ -154,6 +148,7 @@ namespace Informa.Web.ViewModels.DataTools
         public LinkField JSAPILinkField => GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString()).Fields[ITableau_ConfigurationConstants.JS_API_UrlFieldId];
 
         public string JSAPIUrl => JSAPILinkField.Url;
+        public string EntitlementKey => GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.EntitlementParameterKeyFieldId];
 
         public string TableauTicket => TableauUtil.GenerateSecureTicket(GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.Server_NameFieldId],
             GlobalService.GetTableauItemByPath(ITableau_ConfigurationConstants.TemplateId.ToString())[ITableau_ConfigurationConstants.User_NameFieldId]);

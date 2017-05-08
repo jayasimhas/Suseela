@@ -1199,6 +1199,7 @@
     <Compile Include="Models\ISection.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PageLinksFactory.cs" />
+    <Compile Include="Models\PersonalizedEmailRequest.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="ItemWithoutLayout.aspx.cs">
@@ -1940,6 +1941,7 @@
     <Content Include="PrintStudio\Services\InDesignConnectorService.asmx" />
     <Content Include="sitecore\login\default.aspx" />
     <Content Include="sitecore\login\login.js" />
+    <Content Include="sitecore\shell\Applications\Content Manager\Galleries\InformaWorkflowEdit\InformaGalleryWorkflowEdit.xml" />
     <Content Include="sitecore\shell\client\Applications\View NLM\components\ViewNlmComponent.js" />
     <Content Include="sitecore\shell\client\Applications\View NLM\css\ViewNlm.css" />
     <Content Include="sitecore\shell\client\Applications\View NLM\scripts\ViewNlm.js" />
@@ -1947,6 +1949,7 @@
     <Content Include="sitecore\shell\client\Applications\Nlm Export\css\ExportNlm.css" />
     <Content Include="sitecore\shell\client\Applications\Nlm Export\scripts\ExportNlm.js" />
     <Content Include="sitecore\shell\client\Sitecore\ExperienceEditor\ExperienceEditor.js" />
+    <Content Include="sitecore\shell\client\Sitecore\ExperienceEditor\RibbonPageCode.js" />
     <Content Include="sitecore\shell\Controls\Rich Text Editor\ApplyCustomStyles.js" />
     <Content Include="sitecore\shell\Controls\Rich Text Editor\InsertIframe\InsertIframe.js" />
     <Content Include="sitecore\shell\Controls\Rich Text Editor\InsertIframe\InsertIframe.xml" />
@@ -2123,6 +2126,8 @@
     <Content Include="App_Config\Include\z.Glass.Mapper.Sc.ViewRender.config.exclude" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.Start.config" />
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
+    <Content Include="App_Config\Include\ScalabilitySettings.config" />
+    <Content Include="App_Config\Include\ScalabilitySettings.TEMPLATE" />
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />

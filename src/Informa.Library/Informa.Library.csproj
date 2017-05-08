@@ -365,6 +365,8 @@
     <Compile Include="CustomSitecore\Pipelines\Article\SaveTitle.cs" />
     <Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
     <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
+    <Compile Include="CustomSitecore\Ribbon\InformaCheckOut.cs" />
+    <Compile Include="CustomSitecore\Ribbon\InformaGalleryWorkflowEditForm.cs" />
     <Compile Include="CustomSitecore\RTECustomization\InsertIframe.cs" />
     <Compile Include="CustomSitecore\RTECustomization\InsertSidebarArticles.cs" />
     <Compile Include="CustomSitecore\RTECustomization\InsertTableau.cs" />
@@ -386,6 +388,9 @@
     <Compile Include="Search\ComputedFields\Facets\SectorsField.cs" />
     <Compile Include="Search\ComputedFields\Facets\TopicField.cs" />
     <Compile Include="Search\Results\VWBSearchQueryResults.cs" />
+    <Compile Include="Search\Utilities\WebClientCookies.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="User\Authentication\IverticalLogin.cs" />
     <Compile Include="User\Authentication\VerticalLogin.cs" />
     <Compile Include="User\Newsletter\AddNewsletterUserOptInsContext.cs" />

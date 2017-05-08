@@ -32,7 +32,7 @@ namespace Informa.Library.CustomSitecore.Ribbon
                     if (ETConfig != null)
                     {
                         Sitecore.Data.Fields.LinkField link = ETConfig.Fields
-                            [IExactTarget_ConfigurationConstants.Exact_Target_UrlFieldName];
+                            [IExactTarget_ConfigurationConstants.Exact_Target_Front_End_UrlFieldName];
                         SheerResponse.Eval($"window.open('{link.Url}');");
                     }
                     else

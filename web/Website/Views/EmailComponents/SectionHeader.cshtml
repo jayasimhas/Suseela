@@ -1,9 +1,21 @@
 ﻿@inherits CustomGlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Emails.Components.ISection_Header>
 
-<table class="section-header" border="0" cellpadding="0" cellspacing="0" width="100%">
-	<tr>
-		<td>
-		    @Editable(m => m.Section_Header_Title)
-		</td>
- 	</tr>
-</table>
+@if (IsInEditingMode)
+{
+    @: <table>
+    }
+<tr>
+    <td style="border-top:1px solid #cccccc;height:15px;"></td>
+</tr>
+<tr>
+    <td style="border-left:5px solid #bf1e2d;padding-top:6px;padding-bottom:2px;padding-left:10px;font-size: 18px;font-weight: bold;margin-top:10px;">
+        @Editable(m => m.Section_Header_Title)
+    </td>
+</tr>
+<tr>
+    <td style="height:15px;"></td>
+</tr>
+@if (IsInEditingMode)
+{
+    @:</table>
+    }

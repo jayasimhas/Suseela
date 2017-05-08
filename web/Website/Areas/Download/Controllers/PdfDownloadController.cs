@@ -30,6 +30,7 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.Utilities.References;
 using Informa.Library.SalesforceConfiguration;
 using Informa.Web.Areas.Account.ViewModels.Personalization;
+using Informa.Library.Services.Article;
 
 #endregion
 
@@ -51,6 +52,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly IItemReferences ItemReferences;
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IChannelsViewModel ChannelsViewModel;
+        protected readonly IArticleService _ArticleService;
 
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
@@ -63,7 +65,8 @@ namespace Informa.Web.Areas.Account.Controllers
                                         IAuthenticatedUserEntitlementsContext authenticatedUserEntitlementsContext,
                                         IItemReferences itemReferences,
                                         ISalesforceConfigurationContext salesforceConfigurationContext,
-                                        IChannelsViewModel channelsViewModel)
+                                        IChannelsViewModel channelsViewModel,
+                                        IArticleService _articleService)
         {
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
@@ -77,6 +80,7 @@ namespace Informa.Web.Areas.Account.Controllers
             ItemReferences = itemReferences;
             SalesforceConfigurationContext = salesforceConfigurationContext;
             ChannelsViewModel = channelsViewModel;
+            _ArticleService = _articleService;
         }
 
         /// <summary>
@@ -144,6 +148,7 @@ namespace Informa.Web.Areas.Account.Controllers
                 {
                     pdfArticle.Add(new PersonalizedPdfViewModel
                     {
+                        _ArticleId = selectArticle._Id,
                         Body = selectArticle.Body,
                         PublishDate = selectArticle.Actual_Publish_Date,
                         Summary = selectArticle.Summary,
@@ -170,6 +175,7 @@ namespace Informa.Web.Areas.Account.Controllers
 
             foreach (var slctArticle in pdfArticle)
             {
+                slctArticle.Body = _ArticleService.GetArticleBody(slctArticle.Body, slctArticle._ArticleId);
                 slctArticle.Body = slctArticle.Body.Contains("<table") ? slctArticle.Body.Replace("<table", "<table id=\"tableFromArticle\"") : slctArticle.Body;
                 slctArticle.Body = slctArticle.Body.StartsWith("<div") ? slctArticle.Body.Replace("<div", "<p") : slctArticle.Body;
                 slctArticle.Body = slctArticle.Body.EndsWith("</div>") ? slctArticle.Body.Replace("</div>", "<p>") : slctArticle.Body;
@@ -197,6 +203,7 @@ namespace Informa.Web.Areas.Account.Controllers
             string fullPageHtml = string.Empty;
             string html = string.Empty;
             HtmlDocument doc = new HtmlDocument();
+            var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
 
             if (!string.IsNullOrEmpty(pdfPageUrl))
             {
@@ -207,9 +214,19 @@ namespace Informa.Web.Areas.Account.Controllers
                 HttpWebRequest webRequest = WebRequest.Create(pdfPageUrl) as HttpWebRequest;
                 ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) => { return true; };
                 webRequest.Method = "POST";
-                System.Net.WebClient client = new WebClient();
+                CookieContainer cookieJar = new CookieContainer();
+                if (System.Web.HttpContext.Current.Request.Cookies["SSO_LoggedInUser"] != null)
+                {
+                    cookieJar.Add(new Cookie(System.Web.HttpContext.Current.Request.Cookies["SSO_LoggedInUser"].Name, System.Web.HttpContext.Current.Request.Cookies["SSO_LoggedInUser"].Value) { Domain = System.Configuration.ConfigurationManager.AppSettings["SSOSubdomain"] });
+                }
+                if (System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"] != null)
+                {
+                    cookieJar.Add(new Cookie(System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Name, System.Web.HttpContext.Current.Request.Cookies[".ASPXAUTH"].Value) { Domain = System.Configuration.ConfigurationManager.AppSettings["SSOSubdomain"] });
+                }
+
+                CookieAwareWebClients client = new CookieAwareWebClients(cookieJar);
                 client.UseDefaultCredentials = true;
-                client.Headers.Add("User-Agent: Other");
+
                 byte[] data = client.DownloadData(pdfPageUrl);
                 fullPageHtml = Encoding.UTF8.GetString(data);
                 doc.LoadHtml(fullPageHtml);
@@ -226,9 +243,6 @@ namespace Informa.Web.Areas.Account.Controllers
                 string pdfCreatedDate = !string.IsNullOrEmpty(PdfCreatedDate) ? Convert.ToDateTime(PdfCreatedDate).ToString("dd MMMM yyyy") : DateTime.Now.ToString("dd MMMM yyyy");
                 var replacements = new Dictionary<string, string>
                 {
-                    ["<p"] = "<p style=\"color:#58595b; font-size:13px; line-height:20px; padding: 0px; margin: 0px; padding-bottom: 10px;\"",
-                    ["<li>"] = "<li style=\"color:#58595b; font-size:13px; line-height:20px;\">",
-                    ["</p>"] = "</p>",
                     ["#UserName#"] = userEmail ?? "Admin",
                     ["#HeaderDate#"] = PdfIssueNumber + "  " + pdfCreatedDate,
                     ["#FooterDate#"] = DateTime.Now.ToString("dd MMM yyyy")
@@ -246,7 +260,6 @@ namespace Informa.Web.Areas.Account.Controllers
                     {
                         tableNode.SetAttributeValue("width", "100%");
                         tableNode.SetAttributeValue("style", "color:#58595b;");
-                        //tableNode.SetAttributeValue("style", "border: 1px solid #e2e4e4;");
                     }
                 }
                 var CommonHeaderHtml = ReqdDoc.DocumentNode.SelectSingleNode("//div[@class='pdf-header']");
@@ -266,7 +279,19 @@ namespace Informa.Web.Areas.Account.Controllers
                     globalElement.CommonFooter = CommonFooterNode.InnerText;
                     CommonFooterNode.ParentNode.RemoveChild(CommonFooterNode);
                 }
-                var domain = HttpContext.Request.Url.Scheme + "://" + HttpContext.Request.Url.Host;
+
+                var SidebarNodes = ReqdDoc.DocumentNode.SelectNodes("//aside[@class='article-sidebar']")?.ToList();
+                if (SidebarNodes != null && SidebarNodes.Any())
+                {
+                    foreach (var SidebarNode in SidebarNodes)
+                    {
+                        var newNodeHtml = "<table><tr><td>&nbsp;</td></tr><tr><td><img src=\"" + domain + "/~/media/Icons/PDF%20Icons/borderline.gif\" alt=\"border-line\" style=\"height: 1px; overflow: hidden;\" /></td></tr><tr><td>&nbsp;</td></tr></table>";
+                        HtmlNode newNode = HtmlNode.CreateNode("div");
+                        newNode.InnerHtml = newNodeHtml;
+                        SidebarNode.ParentNode.InsertBefore(newNode, SidebarNode);
+                        SidebarNode.ParentNode.InsertAfter(newNode, SidebarNode);
+                    }
+                }
 
                 var images = ReqdDoc.DocumentNode.SelectNodes("//img/@src")?.ToList();
                 if (images != null && images.Any())
@@ -307,10 +332,20 @@ namespace Informa.Web.Areas.Account.Controllers
 
                         if (!link.Attributes.Contains(@"style"))
                         {
-                            link.SetAttributeValue("style", "color:#be1e2d; text-decoration:none");
+                            link.SetAttributeValue("style", "text-decoration:none");
                         }
                     }
                 }
+                var anchorLinks = ReqdDoc.DocumentNode.SelectNodes("//a/@onclick")?.ToList();
+
+                if (anchorLinks != null && anchorLinks.Any())
+                {
+                    foreach (var link in anchorLinks)
+                    {
+                        link.Remove();
+                    }
+                }
+
                 var articleNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-body-content']")?.ToList();
                 if (articleNodes != null && articleNodes.Any())
                 {
@@ -326,7 +361,7 @@ namespace Informa.Web.Areas.Account.Controllers
                             foreach (var amchartNode in amchartNodes)
                             {
                                 var id = articleNode.SelectSingleNode(".//input[@class='hdnDataToolId']");
-                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
@@ -339,7 +374,7 @@ namespace Informa.Web.Areas.Account.Controllers
                             foreach (var tableauNode in tableauNodes)
                             {
                                 var id = articleNode.SelectSingleNode(".//input[@class='hdnDataToolId']");
-                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"color:#be1e2d; text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
@@ -347,6 +382,19 @@ namespace Informa.Web.Areas.Account.Controllers
                         }
                     }
                 }
+
+                var multimediaParentNodes = ReqdDoc.DocumentNode.SelectNodes("//iframe")?.ToList();
+                if (multimediaParentNodes != null && multimediaParentNodes.Any())
+                {
+                    foreach (var multimediaParentNode in multimediaParentNodes)
+                    {
+                        var newNodeHtml = "<b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + multimediaParentNode.Attributes["src"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                        HtmlNode newNode = HtmlNode.CreateNode("div");
+                        newNode.InnerHtml = newNodeHtml;
+                        multimediaParentNode.ParentNode.ReplaceChild(newNode, multimediaParentNode);
+                    }
+                }
+
                 var executiveSummaryNodes = ReqdDoc.DocumentNode.SelectNodes("//div[@class='article-executive-summary-body']")?.ToList();
                 if (executiveSummaryNodes != null && executiveSummaryNodes.Any())
                 {
@@ -411,20 +459,19 @@ namespace Informa.Web.Areas.Account.Controllers
                 ReqdDoc.OptionCheckSyntax = true;
                 ReqdDoc.OptionFixNestedTags = true;
 
-
-                using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
-                {
-                    //Parse the HTML
-                    XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
-                }
-                //var cssText = System.IO.File.ReadAllText(Server.MapPath(@"/Views/Shared/Components/PDF/PDFStyleSheet.css"));
-                //using (var cssMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(cssText)))
+                //using (var srHtml = new StringReader(ReqdDoc.DocumentNode.InnerHtml))
                 //{
-                //    using (var htmlMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(ReqdDoc.DocumentNode.InnerHtml)))
-                //    {
-                //        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, htmlMemoryStream, cssMemoryStream);
-                //    }
+                //    //Parse the HTML
+                //    XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, srHtml);
                 //}
+                var cssText = System.IO.File.ReadAllText(Server.MapPath(@"/Views/Shared/Components/PDF/PDFStyleSheet.css"));
+                using (var cssMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(cssText)))
+                {
+                    using (var htmlMemoryStream = new MemoryStream(Encoding.UTF8.GetBytes(ReqdDoc.DocumentNode.InnerHtml)))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, document, htmlMemoryStream, cssMemoryStream);
+                    }
+                }
             }
         }
 

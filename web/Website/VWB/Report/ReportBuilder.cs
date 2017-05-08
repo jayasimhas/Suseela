@@ -194,7 +194,7 @@ namespace Elsevier.Web.VWB.Report
                 {
                     string searchPageId = new ItemReferences().VwbSearchPage.ToString().ToLower().Replace("{", "").Replace("}", "");
                     string hostName = Factory.GetSiteInfo("website")?.HostName ?? WebUtil.GetHostName();
-                    url = string.Format("{0}://{1}/api/informasearch?pId={2}&q={3}", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId, query.ArticleNumber);
+                    url = string.Format("{0}://{1}/api/informasearch?pId={2}&articleNumber={3}", HttpContext.Current.Request.Url.Scheme, hostName, searchPageId, query.ArticleNumber);
                     url += "&verticalroot=" + query.VerticalRoot;
                 }
 

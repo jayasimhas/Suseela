@@ -12,6 +12,7 @@
   <add key ="Imagemap_path" value ="{15A65947-ECBC-4E84-A9C0-C2AC35E492D9}"/>
   <add key ="Imagemap_path_Maritime" value ="{8ACB6094-7BB4-40D1-83C3-A5F43AB924A0}"/> 
   <add key ="LegacyImageDownloadPath" value=""/>
+  <add key ="ImageFleSystemPath" value="D:\inetpub\TS3Master\web\Website"/>
   <!-- FS OR URL -->
   <add key ="LoadImageForImportFrom" value="URL"/>
   <add key="commoditiesColHeaders" value="ArticleId,Article Headline,Article Number,Body Image (Y/N),Featured Image (Y/N),Tableau (Y/N),Media Type,Content Type,Authors,COMMODITY,COUNTRY,COMPANIES,AGENCY,COMMODITYFACTOR,COMMERCIAL" />
@@ -36,6 +37,6 @@
   <add key="SSOTimeout" value="${Vertical.SSOTimeout}"/>
   <add key="SSOSubdomain" value="${Vertical.SSOSubdomain}"/>
   <add key="EnableVerticalLogin" value="${VerticalLoginSwitch}"/>
-  <add key="EnableSeamlessLogin" value="true"/>
+  <add key="EnableSeamlessLogin" value="${SeamlessLoginSwitch}"/>
   <add key="DisableSSLCertificateValidation" value="${CM.DisableSSLCertificateValidation}"/>
 </appSettings>

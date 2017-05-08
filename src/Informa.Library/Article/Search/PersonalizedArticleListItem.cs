@@ -18,6 +18,7 @@
         public string ListablePublication { get; set; }
         public string ListableSummary { get; set; }
         public string ListableTitle { get; set; }
+        public string LinkType { get; set; }
         public IEnumerable<ILinkable> ListableTopics { get; set; }
         public string ListableType { get; set; }
         public string SalesforceId { get; set; }

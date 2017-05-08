@@ -87,7 +87,7 @@
             if (string.IsNullOrEmpty(channelId))
                 return "/search#?";
             var channel = GlobalService.GetItem<IChannel_Page>(channelId);
-            if(channel != null && channel.Taxonomies!=null && channel.Taxonomies.Any())
+            if (channel != null && channel.Taxonomies != null && channel.Taxonomies.Any())
             {
                 return SearchTaxonomyUtil.GetSearchUrl(channel.Taxonomies.FirstOrDefault());
             }
@@ -97,12 +97,14 @@
         private string GetCurrentlyViewingText(IList<string> selectedTopicsCount, string ChannelId)
         {
             var currentlyViewingText = TextTranslator.Translate("Currently.Viewing.Out.of.Available");
-            if (!string.IsNullOrEmpty(currentlyViewingText))
+            var preferredTopicsText = GetPreferredTopics(ChannelId);
+            var allTopicsText = GetAllTopics(ChannelId);
+            if (!string.IsNullOrEmpty(currentlyViewingText) && !string.IsNullOrEmpty(preferredTopicsText) && !string.IsNullOrEmpty(allTopicsText))
             {
                 var replacements = new Dictionary<string, string>
                 {
-                    ["#selectedtopics#"] = GetPreferredTopics(ChannelId) ?? "",
-                    ["#totaltopics#"] = GetAllTopics(ChannelId) ?? ""
+                    ["#selectedtopics#"] = preferredTopicsText,
+                    ["#totaltopics#"] = allTopicsText
                 };
                 return currentlyViewingText.ReplacePatternCaseInsensitive(replacements);
             }
@@ -124,7 +126,7 @@
                 }
                 else
                 {
-                    return channel?.Topics.Where(n => n.IsFollowing)?.Count().ToString();
+                    return channel?.Topics?.Where(n => n.IsFollowing)?.Count().ToString();
                 }
             }
             return string.Empty;

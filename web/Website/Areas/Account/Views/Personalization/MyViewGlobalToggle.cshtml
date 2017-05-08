@@ -19,7 +19,7 @@
     if (!Model.IsAuthenticated && Model.CallToActionViewModel != null)
     {
         Model.CallToActionViewModel.SignInViewModel.IsSignInFromMyView = true;
-        <div class="pop-out js-pop-out__myViewregister js-myViewregister-user-container">
+        @*<div class="pop-out js-pop-out__myViewregister js-myViewregister-user-container">
             <div class="pop-out__tab"></div>
             <div class="pop-out__internal">
                 <div class="pop-out__myViewregister">
@@ -32,6 +32,6 @@
                     @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
                 </div>
             </div>
-        </div>
+        </div>*@
     }
 }

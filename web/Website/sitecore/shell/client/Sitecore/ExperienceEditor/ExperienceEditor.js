@@ -507,7 +507,10 @@
         url: "/-/speak/request/v1/expeditor/" + requestType,
         data: {
           __RequestVerificationToken: token,
-          data: decodeURIComponent(decodeURIComponent(JSON.stringify(commandContext)))
+		  // Fix for the issue N 84051
+		  //data: decodeURIComponent(decodeURIComponent(JSON.stringify(commandContext)))
+		  data: decodeURIComponent(JSON.stringify(commandContext))
+		  // Fix for the issue N 84051
         },
         success: handler,
         type: "POST",
