@@ -2303,10 +2303,11 @@
 				<comm name="public_ledger_commodities_nuts_pistachios">Pistachios</comm>
 				<comm name="public_ledger_commodities_nuts_walnuts">Walnuts</comm>
 				<comm name="public_ledger_commodities_nuts_other_nuts"><![CDATA[Dried Fruit & Nuts]]></comm>
-        <comm name="agra_europe_crops"><![CDATA[Oils & Oilseeds]]></comm>
+        <comm name="agra_europe_crops"><![CDATA[Oils & Oilseeds,Grains & Feed]]></comm>
         <comm name="agra_europe_crops_grains"><![CDATA[Grain & Feed]]></comm>
         <comm name="agra_europe_crops_oilseeds"><![CDATA[Oils & Oilseeds]]></comm>
         <comm name="agra_europe_crops_sugar">Sugar</comm>
+        <comm name="agra_europe_meat_livestock"><![CDATA[Grain & Feed]]></comm>
         <comm name="Beef_and_Cattle"><![CDATA[Cattle & Beef]]></comm>
         <comm name="Company"><![CDATA[Meat & Livestock]]></comm>
         <comm name="Feed"><![CDATA[Grains & Feed]]></comm>
@@ -3713,6 +3714,11 @@
         <cont name="agra_europe_policy_and_legislation_environment">News</cont>
         <cont name="agra_europe_policy_and_legislation_international_policy">News</cont>
         <cont name="agra_europe_policy_and_legislation_trade_policy">News</cont>
+         <cont name="agra_europe_crops">News</cont>
+        <cont name="agra_europe_crops_grains">News</cont>
+        <cont name="agra_europe_crops_oilseeds">News</cont>
+        <cont name="agra_europe_crops_sugar">News</cont>
+        <cont name="agra_europe_meat_livestock">News</cont>
         <cont name="food_chemical_news">News</cont>
         <cont name="food_chemical_news_editors_view">Opinion</cont>
         <cont name="food_chemical_news_agriculture_animal_health_and_welfare">News</cont>
@@ -5306,6 +5312,9 @@
 <reg name="agra_europe_policy_and_legislation_international_policy">EU</reg>
 <reg name="agra_europe_policy_and_legislation_trade_policy">EU</reg>
 <reg name="agra_europe_cap_monitor">EU</reg>
+<reg name="agra_europe_features">EU</reg>
+<reg name="agra_europe_brussels_blog">EU</reg>
+<reg name="agra_europe_multimedia">EU</reg>
 <reg name="Farm_Policy">United States</reg>
 <reg name="Farm_Policy_Farm_Bill__New">United States</reg>
 <reg name="Farm_Policy_Farm_Bill__New_Farm__Bills_Past">United States</reg>
