@@ -55,6 +55,7 @@ namespace Informa.Library.Utilities.References
         public Guid AgriCommodityTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder") : Guid.Empty.ToString());
         public Guid AgriCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder") : Guid.Empty.ToString());
         public Guid AgriCropProtectionaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriCommoditesFactorsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommodityFactorsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommodityFactorsTaxonomyFolder") : Guid.Empty.ToString());
         public Guid AgriIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder") : Guid.Empty.ToString());
 
         // Maritime Taxonomy Folders

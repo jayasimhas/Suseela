@@ -149,6 +149,8 @@ namespace Informa.Web.ViewModels
         public string CropProtection => GetArticleTaxonomy(ItemReferences.AgriCropProtectionaxonomyFolder);
         public string AgriCompanies => GetArticleTaxonomy(ItemReferences.AgriCompaniesTaxonomyFolder);
         public string AgencyRegulators => GetArticleTaxonomy(ItemReferences.AgriAgencyRegulatorTaxonomyFolder);
+        public string AnimalHealth => GetArticleTaxonomy(ItemReferences.AgriAnimalHealthTaxonomyFolder);
+        public string CommoditiesFactor => GetArticleTaxonomy(ItemReferences.AgriCommoditesFactorsTaxonomyFolder);
         public string Commercial => GetArticleTaxonomy(ItemReferences.AgriCommercialTaxonomyFolder);
         public string Markets => GetArticleTaxonomy(ItemReferences.MaritimeMarketsTaxonomyFolder);
         public string Sectors => GetArticleTaxonomy(ItemReferences.MaritimeSectorsTaxonomyFolder);

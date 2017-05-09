@@ -275,7 +275,8 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
 	// facetIds: ['In Vivo', 'Rose Sheet']
     vm.facetChangeMultiple = function(facetGroupId, facetIds) {
 
-		var facets;
+		var facets,
+            subfacets = [];
 
 		_.each(vm.facetGroups, function(group) {
 			if(group.id === facetGroupId) {
@@ -297,6 +298,39 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
         });
 
 		vm.update(facetGroupId);
+
+        if (facetIds.length > 0) {
+            
+
+            _.each(facetIds, function (id) {
+                var splitName = id.split("-");
+                var parentId = splitName[0];
+                var myId = splitName[1].replace("and", "&");
+                _.each(vm.facetGroups, function (group) {
+                    if (group.id == parentId) {
+                        subfacets = group.facets;
+                    }
+                });
+                
+                _.each(subfacets, function (subfac) {
+                    if (subfac.id.toLowerCase() == myId.toLowerCase()) {
+                        subfac.selected = true;
+                    }
+                })
+                vm.update(parentId);
+            });
+        } else {
+            _.each(vm.facetGroups, function (group) {
+                if (group.id == "iegvu") {
+                    subfacets = group.facets;
+                }
+            });
+
+            _.each(subfacets, function (subfac) {
+                subfac.selected = false;
+            });
+        }
+        
 
     };
 

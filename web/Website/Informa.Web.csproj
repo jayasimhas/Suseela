@@ -1807,6 +1807,7 @@
     <Content Include="App_Config\Web\system.webServer.staticContent.config.template" />
     <Content Include="App_Config\XamlSharp.config" />
     <Content Include="Artifacts\PerformanceCounters\Sitecore.CES.DeviceDetection.Counters.xml" />
+    <Content Include="bin\Sitecore.Support.84051.dll" />
     <Content Include="Default.aspx" />
     <Content Include="default.css" />
     <Content Include="default.js" />
@@ -1959,6 +1960,7 @@
     </Content>
     <Content Include="sitecore\shell\Controls\Rich Text Editor\RTECustomization.js" />
     <Content Include="sitecore\shell\Override\Application\Dialogs\Publish\Publish.xml" />
+    <Content Include="sitecore\shell\Themes\Standard\Default\Default.css" />
     <Content Include="tasks\bower.js" />
     <Content Include="tasks\browserSync.js" />
     <Content Include="tasks\copy.js" />
