@@ -280,7 +280,7 @@ namespace Informa.Web.Areas.Account.Controllers
                     CommonFooterNode.ParentNode.RemoveChild(CommonFooterNode);
                 }
 
-                var SidebarNodes = ReqdDoc.DocumentNode.SelectNodes("//aside[@class='article-sidebar']")?.ToList();
+                var SidebarNodes = ReqdDoc.DocumentNode.SelectNodes("//aside[@class='article-sidebar'] | //blockquote[@class='article-pullquote'] | //h3[@class='quick-facts__header'] | //div[@class='article-interview__questionr']")?.ToList();
                 if (SidebarNodes != null && SidebarNodes.Any())
                 {
                     foreach (var SidebarNode in SidebarNodes)
