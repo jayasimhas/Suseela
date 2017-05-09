@@ -108,7 +108,7 @@ namespace Informa.Web.Controllers.Search
                 {
                     foreach (var tax in article.Taxonomies)
                     {
-                        if (tax is ITaxonomy_Item && !vwb.Taxonomies.ContainsKey(tax._Id.ToString()))
+                        if (tax._TemplateId.ToString().Equals(ITaxonomy_ItemConstants.TemplateIdString, StringComparison.OrdinalIgnoreCase) && !vwb.Taxonomies.ContainsKey(tax._Id.ToString()))
                         {
                             if (tax._Path.Contains("Environment Globals"))
                                 vwb.Taxonomies.Add(tax._Id.ToString(), tax._Path.Replace("/sitecore/content/Environment Globals/Taxonomy/", ""));
