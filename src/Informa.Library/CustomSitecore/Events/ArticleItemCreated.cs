@@ -75,6 +75,7 @@ namespace Informa.Library.CustomSitecore.Events
                 using (new EditContext(item))
                 {
                     item[FieldIDs.DefaultWorkflow] = workflowID.ToString();
+                    item[FieldIDs.Workflow] = workflowID.ToString();
                     item[FieldIDs.State] = workflowStateId.ToString();
                 }
             }
