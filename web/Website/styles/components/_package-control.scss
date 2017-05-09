@@ -336,7 +336,12 @@
 }
 
 .sponsored_cont {
-   
+	&.topic-featured-article{
+		.article-metadata{
+			margin-bottom: 0.5rem;
+			margin-top: 0rem;
+		}
+	}
 	background: transparentize(#f7941e, 0.9);
 		.topic-featured-article__inner-wrapper:after, &.article-preview--small:after 
 		{
@@ -349,10 +354,10 @@
     }
     &.article-executive-summary {
         padding: 1rem;
-        .sponsored_title {
-            font-style: italic;
+        .sponsored_title { 
             margin-right: 0.5rem;
             text-transform: capitalize;
+			font-size: 1.125rem;
         }
     }
 	&.article-preview {
@@ -393,9 +398,7 @@
             display: inline;
 			border-right: 0;
 			img{
-				max-height: 40px;
-				position: relative;
-				top: 0;
+				max-height: 30px;
 			}
         }
     }
