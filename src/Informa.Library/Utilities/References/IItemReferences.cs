@@ -42,6 +42,7 @@ namespace Informa.Library.Utilities.References
         Guid AgriCommodityTaxonomyFolder { get; }
         Guid AgriCompaniesTaxonomyFolder { get; }
         Guid AgriCropProtectionaxonomyFolder { get; }
+        Guid AgriCommoditesFactorsTaxonomyFolder { get; }
         Guid AgriIndustriesTaxonomyFolder { get; }
 
         // Maritime Taxonomy Folders
