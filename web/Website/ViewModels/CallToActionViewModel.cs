@@ -10,6 +10,7 @@ using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Library.SalesforceConfiguration;
 using System.Web;
 using Informa.Library.Services.Global;
+using System;
 
 namespace Informa.Web.ViewModels
 {
@@ -55,7 +56,7 @@ namespace Informa.Web.ViewModels
         public Link PurchaseLink => SiteRootContext?.Item?.Purchase_Link;
         public bool IsAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public bool IsNewSalesforceEnabled => SalesforceConfigurationContext.IsNewSalesforceEnabled;
-        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
+        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName + "&processId=" +  Guid.NewGuid().ToString() : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName + "&processId=" +  Guid.NewGuid().ToString());
         public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);
         private string GetCallbackUrl(string url)
         {

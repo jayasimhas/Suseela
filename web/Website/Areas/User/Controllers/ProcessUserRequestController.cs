@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using Informa.Library.User.Authentication;
 using System;
 using System.Web;
+using Informa.Library.Utilities.Extensions;
+using System.Diagnostics;
 
 namespace Informa.Web.Areas.UserRequest
 {
@@ -31,16 +33,21 @@ namespace Informa.Web.Areas.UserRequest
         // GET: ProcessUserRequest
         public ActionResult Index(string code, string state)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             string vertcal = GetParam(System.Web.HttpContext.Current.Server.UrlDecode(state), "vid");
+            string processId = GetParam(System.Web.HttpContext.Current.Server.UrlDecode(state), "processId");
+            StringExtensions.WriteSitecoreLogs(string.Format("Login-Request Receieved At {0} - Process Id {1}", DateTime.Now.ToString(), processId), "ProcessUserRequest");
             var result = AuthenticateWebUser.Authenticate(code, GetCallbackUrl("/User/ProcessUserRequest"),vertcal);
+            StringExtensions.WriteSitecoreLogs("Time taken to Process User request", sw, "ProcessUserRequestController");
             if (!result.Success && result.State.Equals(AuthenticateUserResultState.Failure))
                 return Redirect(state + "?ErrorStatus=" +"true");
             else
                 return Redirect(state);
         }
 
-        public ActionResult Register()
+        public ActionResult Register(string processId)
         {
+            StringExtensions.WriteSitecoreLogs(string.Format("Registration-Receieved At {0} - Process Id {1}", DateTime.Now.ToString(), processId), "ProcessUserRequest");
             string authorizationRequestUrl = SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), GetCallbackUrl(_siteRootItem?.Enrolment_Link != null && !string.IsNullOrEmpty(_siteRootItem?.Enrolment_Link.Url) ? _siteRootItem?.Enrolment_Link.Url+"?"+ _siteRootItem?.Enrolment_Link.Query : string.Empty));
             return Redirect(authorizationRequestUrl);
         }
@@ -49,6 +56,18 @@ namespace Informa.Web.Areas.UserRequest
         {
             LogoutWebUser.Logout();
             return Redirect(GetCallbackUrl("/"));
+        }
+
+        public bool LoginLogger(string processId)
+        {
+            StringExtensions.WriteSitecoreLogs(string.Format("Login-Request Sent At {0} - Process Id {1}", DateTime.Now.ToString(), processId ), "ProcessUserRequest");
+            return true;
+        }
+
+        public bool RegistrationLogger(string processId)
+        {
+            StringExtensions.WriteSitecoreLogs(string.Format("Registration-Request Sent At {0} - Process Id {1}", DateTime.Now.ToString(), processId), "ProcessUserRequest");
+            return true;
         }
 
         private string GetCallbackUrl(string url)
@@ -60,7 +79,7 @@ namespace Informa.Web.Areas.UserRequest
         {
             var uri = new Uri(url);
             var query = HttpUtility.ParseQueryString(uri.Query);
-            var val = query.Get("vid");
+            var val = query.Get(param);
             return val;
         }
     }
