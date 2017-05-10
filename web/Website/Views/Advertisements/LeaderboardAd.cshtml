@@ -1,6 +1,9 @@
 ﻿@inherits CustomGlassView<AdViewModel>
 @{ Model.Init(); }
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (IsInEditingMode && Model.IsEditable)
 {
 	<div>
@@ -17,4 +20,7 @@
             OAS_AD('@Model.LeaderboardSlotId', '@Model.LeaderboardAdZone');
         </script>
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Leaderboard.cshtml Timer", sw, "Leaderboard");
 }

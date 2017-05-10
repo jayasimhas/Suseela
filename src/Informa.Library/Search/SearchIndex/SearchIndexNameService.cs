@@ -32,17 +32,19 @@
         /// <returns></returns>
         public string GetIndexName()
         {
-            if (SiteRootContext?.Item?.Search_Index_Name != null)
+            if (SiteRootContext != null)
             {
-                //return string.Format(SiteRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
-                return SiteRootContext.Item.Search_Index_Name;
+                if (SiteRootContext?.Item?.Search_Index_Name != null)
+                {
+                    //return string.Format(SiteRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
+                    return SiteRootContext.Item.Search_Index_Name;
+                }
+                else if (VerticalRootContext?.Item?.Search_Index_Name != null)
+                {
+                    //return string.Format(VerticalRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
+                    return VerticalRootContext.Item.Search_Index_Name;
+                }
             }
-            else if (VerticalRootContext?.Item?.Search_Index_Name != null)
-            {
-                //return string.Format(VerticalRootContext.Item.Search_Index_Name, SitecoreContext.Database.Name);
-                return VerticalRootContext.Item.Search_Index_Name;
-            }
-
             //return string.Format("sitecore_{0}_index", SitecoreContext.Database.Name);
             return "sitecore_{0}_index";
         }

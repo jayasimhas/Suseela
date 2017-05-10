@@ -264,11 +264,6 @@ But you can also use "patch:attribute" for clarity:
       <setting name="MailServerPort">
         <patch:attribute name="value">${Mail.MailServerPort}</patch:attribute>
       </setting>
-      
-      <!-- Master ID and Password Settings -->
-      <setting name="MasterId" value="${MasterId}"/>
-      <setting name="MasterPassword" value="${MasterPassword}" />
-
       <!-- SuperAdmin ID and Password Settings -->
       <setting name="SuperAdminId" value="pmbi_admin@informa.com"/>
       <setting name="SuperAdminPassword" value="Informa@2017" />

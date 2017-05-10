@@ -31,7 +31,5 @@ var BookmarkCatche = {
 }
 
 $(document).ready(function () {
-  if(window.location.pathname == "/") {
   	BookmarkCatche.init();
-  }
 })

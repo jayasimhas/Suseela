@@ -1,4 +1,8 @@
 ﻿@inherits CustomGlassView<IIndividualRenewalMessageViewModel>
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.Display)
 {
     <div class="banner banner--maintenance" data-banner-id="@Model.Id">
@@ -18,4 +22,7 @@
             </span>
         </div>
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("IndividualRenewalMessage.cshtml Timer", sw, "IndividualRenewalMessage");
 }

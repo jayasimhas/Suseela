@@ -124,27 +124,28 @@
     if (Model.sponsoredContent != null)
     {
         <div class="article-executive-summary sponsored_cont">
-
             <h4>@Model.ExecutiveSummary</h4>
-            <ul>
-                <li>
-                    <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Title</time>
-                </li>
-                <li>
-                    @if (Model.sponsoredContent.Sponsor_Logo != null)
+            <div class="article-metadata">
+                <ul>
+                    <li>
+                        <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Title</time>
+                    </li>
+                    <li>
+                        @if (Model.sponsoredContent.Sponsor_Logo != null)
                     {
                         if (!string.IsNullOrEmpty(Model.sponsoredContent.Sponsor_Link))
                         {
-                            <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
+                                <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
+                            }
+                            else
+                            {
+                                <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
+                            }
                         }
-                        else
-                        {
-                            <img src=@Model.sponsoredContent.Sponsor_Logo.Src />
-                        }
-                    }
-                </li>
-            </ul>
-            @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
+                    </li>
+                </ul>
+                @Html.Raw(Html.TokenTransform().RenderCompanyLink(x => x.Summary))
+            </div>
         </div>
     }
     else
@@ -190,17 +191,19 @@
 @if (Model.sponsoredContent != null)
 {
     <div class="article-executive-summary-bottom sponsored_cont">
-        <ul>
-            <li>
-                <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Meta_Tag_line</time>
-            </li>
-            <li>
-                @if (Model.sponsoredContent.Sponsor_Logo != null)
+        <div class="article-metadata">
+            <ul>
+                <li>
+                    <time class="article-metadata__date sponsored_title">@Model.sponsoredContent.Meta_Tag_line</time>
+                </li>
+                <li>
+                    @if (Model.sponsoredContent.Sponsor_Logo != null)
                 {
-                    <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
-                }
-            </li>
-        </ul>
+                        <a href="@Model.sponsoredContent.Sponsor_Link"><img src=@Model.sponsoredContent.Sponsor_Logo.Src /></a>
+                    }
+                </li>
+            </ul>
+        </div>
     </div>
 }
 

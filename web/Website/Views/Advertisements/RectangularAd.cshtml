@@ -1,6 +1,9 @@
 ﻿@inherits CustomGlassView<AdViewModel>
 @{ Model.Init(); }
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (IsInEditingMode && Model.IsEditable)
 {
 	<div>
@@ -19,4 +22,7 @@
             </script>
         </div>
     </section>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("RectangularAd.cshtml Timer", sw, "RectangularAd");
 }

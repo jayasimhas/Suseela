@@ -1,6 +1,10 @@
 ﻿@model MainLayoutViewModel
 
 @using StackExchange.Profiling
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -117,3 +121,6 @@
 }
 </body>
 </html>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Total PageLoad("+HttpContext.Current.Request.Url.AbsoluteUri +") Time", sw, "MainLayout");
+}
