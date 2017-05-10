@@ -64,11 +64,7 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Method call to Get PDFs
         /// </summary>
-        public IList<Pdf> Pdfs => GetPdfs();
-        /// <summary>
-        /// Method call to Get Personalized PDFs
-        /// </summary>
-        public IList<Pdf> PersonalizedPdfs => GetPersonalizedPdfs();
+        public IList<Pdf> Pdfs => GetPdfs();        
         /// <summary>
         /// User email Id
         /// </summary>
@@ -90,7 +86,7 @@ namespace Informa.Web.ViewModels.PDF
         {
             var pdfs = new List<Pdf>();
 
-            var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString()); 
+            var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString());
 
             if (currentItem != null)
             {
@@ -100,20 +96,20 @@ namespace Informa.Web.ViewModels.PDF
                 {
                     //Static PDFs
                     var staticPdfs = PdfsRootItem._ChildrenWithInferType.OfType<IStatic_PDF_Page>();
-                    if(staticPdfs!=null && staticPdfs.Any())
+                    if (staticPdfs != null && staticPdfs.Any())
                     {
                         foreach (var staticPdf in staticPdfs)
                         {
                             string linkType = staticPdf.PDF_Url?.Type.ToString();
-                            string link=string.Empty;
+                            string link = string.Empty;
 
-                            if (staticPdf.PDF_Url != null&& string.Equals(linkType, "External", StringComparison.OrdinalIgnoreCase))
+                            if (staticPdf.PDF_Url != null && string.Equals(linkType, "External", StringComparison.OrdinalIgnoreCase))
                             {
                                 link = staticPdf.PDF_Url?.Url;
                             }
                             else if (staticPdf.PDF_Url != null && string.Equals(linkType, "Internal", StringComparison.OrdinalIgnoreCase))
                             {
-                               link = Sitecore.Resources.Media.MediaManager.GetMediaUrl(GlobalService.GetItem<Item>(new Guid(staticPdf.PDF_Url?.TargetId.ToString())));
+                                link = Sitecore.Resources.Media.MediaManager.GetMediaUrl(GlobalService.GetItem<Item>(new Guid(staticPdf.PDF_Url?.TargetId.ToString())));
                             }
 
                             pdfs.Add(new Pdf
@@ -143,37 +139,15 @@ namespace Informa.Web.ViewModels.PDF
                             });
                         }
                     }
-                    return pdfs.OrderByDescending(n=>n.IssueDate).ToList();
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Method to get all personalized PDFs
-        /// </summary>
-        /// <returns>Personalized PDFs</returns>
-        public IList<Pdf> GetPersonalizedPdfs()
-        {
-            var pdfs = new List<Pdf>();
-
-            var currentItem = GlobalService.GetItem<IGeneral_Content_Page>(Sitecore.Context.Item.ID.ToString());
-
-            var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
-               _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-
-            bool enablePersonlize = SiterootContext.Item.Enable_MyView_Toggle;
-
-            if (currentItem != null && enablePersonlize)
-            {
-                //var PdfsRootItem = homeItem._ChildrenWithInferType.OfType<IPdfs_Root>().FirstOrDefault();
-                var PdfsRootItem = currentItem._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
-
-                if (PdfsRootItem != null)
-                {
-                    //Personalized PDFs 
+                    //Personalized Pdfs
                     var personalizedPdfs = PdfsRootItem._ChildrenWithInferType.OfType<IPersonalized_PDF_Page>();
-                    if (personalizedPdfs != null && personalizedPdfs.Any())
+
+                    var homeItem = GlobalService.GetItem<IHome_Page>(SiterootContext.Item._Id.ToString()).
+              _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
+
+                    bool enablePersonlize = SiterootContext.Item.Enable_MyView_Toggle;
+
+                    if (enablePersonlize && personalizedPdfs != null && personalizedPdfs.Any())
                     {
                         foreach (var personalizePdfs in personalizedPdfs)
                         {
@@ -190,7 +164,7 @@ namespace Informa.Web.ViewModels.PDF
                             });
                         }
                     }
-                    return pdfs;
+                    return pdfs.OrderByDescending(n => n.IssueDate).ToList();
                 }
             }
             return null;
