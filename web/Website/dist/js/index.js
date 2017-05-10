@@ -5499,6 +5499,44 @@ $(window).on('scroll', function () {
 },{}],9:[function(require,module,exports){
 'use strict';
 
+var BookmarkCatche = {
+    init: function init() {
+        var Items = $('.article-preview__bookmarker');
+
+        $.each(Items, function (index, item) {
+            var $this = $(this);
+            var documentId = $(this).attr('data-bookmark-id');
+
+            $.ajax({
+                url: '/Account/api/SavedDocumentApi/IsSaved/',
+                type: 'GET',
+                data: {
+                    DocumentID: documentId
+                },
+                context: this,
+                success: function success(response) {
+                    if (response.success) {
+                        $this.attr('data-is-bookmarked', true);
+                        $this.find('.article-bookmark').removeClass('is-visible');
+                        $this.find('.article-bookmark__bookmarked').addClass('is-visible');
+                        $this.find('.js-bookmark-label').html('Bookmarked');
+                    }
+                },
+                error: function error(response) {
+                    return false;
+                }
+            });
+        });
+    }
+};
+
+$(document).ready(function () {
+    BookmarkCatche.init();
+});
+
+},{}],10:[function(require,module,exports){
+'use strict';
+
 (function () {
     var RecomendedContent = {
         AjaxData: function AjaxData(url, type, data, SuccessCallback) {
@@ -5589,7 +5627,7 @@ $(window).on('scroll', function () {
     RecomendedContent.init();
 })();
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 $(function () {
@@ -5660,7 +5698,7 @@ $(function () {
 	});
 });
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -6012,7 +6050,7 @@ $(function () {
 	}
 })();
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -6234,7 +6272,7 @@ $(function () {
 	}
 })();
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";
 
 (function (argument) {
@@ -6704,7 +6742,7 @@ $(document).on('change', '.idYearSelect', function () {
 	window.location = newUrl;
 });
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -6788,7 +6826,7 @@ $(document).on('change', '.idYearSelect', function () {
 	}
 })();
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7163,7 +7201,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	$('.R16, .RB16').removeClass('activate-hover');
 });
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 'use strict';
 
 (function (argument) {
@@ -7192,7 +7230,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7242,7 +7280,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7392,7 +7430,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -7465,7 +7503,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7623,7 +7661,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7733,7 +7771,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7878,7 +7916,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -7992,7 +8030,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -8204,7 +8242,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -8372,7 +8410,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],26:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -8434,7 +8472,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -8586,7 +8624,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 "use strict";
 
 (function () {
@@ -8641,7 +8679,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -8730,7 +8768,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -8871,7 +8909,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	});
 })();
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -9073,7 +9111,7 @@ $(document).on('mouseleave', '.ID-Responsive-Table .R16, .ID-Responsive-Table .R
 	}
 })();
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 'use strict';
 
 var _controllersAnalyticsController = require('../controllers/analytics-controller');
@@ -9107,9 +9145,9 @@ function createJSONData(alltables, UserPreferences, url) {
             var followStatus = secondtd == $('#followingButtonText').val() ? true : false;
             //var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 
-            alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
+            alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
         }
-        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, Topics: alltdata });
     }
     sendHttpRequest(UserPreferences, null, url);
 }
@@ -9188,7 +9226,7 @@ function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
             channelOrder = $(alltrs[i]).attr('data-row'),
             followStatus = secondtd == $('#followingButtonText').val() ? true : false;
 
-        UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
     }
     sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
@@ -9792,7 +9830,7 @@ $(function () {
     });
 });
 
-},{"../controllers/analytics-controller":39}],33:[function(require,module,exports){
+},{"../controllers/analytics-controller":40}],34:[function(require,module,exports){
 'use strict';
 
 window.paginationdefaults = {
@@ -9921,7 +9959,7 @@ $(function () {
 	});
 });
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 'use strict';
 
 function loadLayoutOneData(data, idx) {
@@ -10985,7 +11023,7 @@ $(function () {
 	}
 });
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 /* global analyticsEvent, analytics_data, angular */
 'use strict';
 
@@ -11223,7 +11261,7 @@ $(document).ready(function () {
 	});
 });
 
-},{"../controllers/analytics-controller":39,"../controllers/form-controller":41,"../jscookie":49}],36:[function(require,module,exports){
+},{"../controllers/analytics-controller":40,"../controllers/form-controller":42,"../jscookie":50}],37:[function(require,module,exports){
 'use strict';
 
 if ($('.scrollbar') && $('.scrollbar').length) {
@@ -11279,7 +11317,7 @@ if ($('#scrollbar-horizantal').length > 0) {
 	});
 }
 
-},{}],37:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 'use strict';
 
 function PrintCompanyGraph(chartData, divId, graphType) {
@@ -11373,7 +11411,7 @@ $(function () {
 	}, 3000);
 });
 
-},{}],38:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 'use strict';
 
 var INFORMA = window.INFORMA || {};
@@ -11442,7 +11480,7 @@ INFORMA.videoMini = (function (window, $, namespace) {
 })(undefined, Zepto, 'INFORMA');
 Zepto(INFORMA.videoMini.init());
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 // * * *
 //  ANALYTICS CONTROLLER
 //  For ease-of-use, better DRY, better prevention of JS errors when ads are blocked
@@ -11461,7 +11499,7 @@ function analyticsEvent(dataObj) {
 
 exports.analyticsEvent = analyticsEvent;
 
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 /* globals analytics_data */
 'use strict';
 
@@ -11577,7 +11615,7 @@ function bookmarkController() {
 exports['default'] = bookmarkController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":39}],41:[function(require,module,exports){
+},{"./analytics-controller":40}],42:[function(require,module,exports){
 /*
 
 opts.observe — Form element(s) to observe
@@ -11821,7 +11859,7 @@ function ValidateContactInforForm() {
 exports['default'] = formController;
 module.exports = exports['default'];
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 /* global angular */
 'use strict';
 
@@ -11889,7 +11927,7 @@ function lightboxModalController() {
 exports['default'] = lightboxModalController;
 module.exports = exports['default'];
 
-},{}],43:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -12183,7 +12221,7 @@ function popOutController(triggerElm) {
 exports['default'] = popOutController;
 module.exports = exports['default'];
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -12308,7 +12346,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":39}],45:[function(require,module,exports){
+},{"./analytics-controller":40}],46:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -12526,7 +12564,7 @@ function loginController(requestVerificationToken) {
 exports['default'] = loginController;
 module.exports = exports['default'];
 
-},{"./analytics-controller":39}],46:[function(require,module,exports){
+},{"./analytics-controller":40}],47:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -12843,7 +12881,7 @@ function sortableTableController() {
 exports['default'] = sortableTableController;
 module.exports = exports['default'];
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 /* global tooltipController */
 
 "use strict";
@@ -13034,7 +13072,7 @@ function createPopup(initialState) {
 
 module.exports = exports["default"];
 
-},{"../calculatePopupOffsets.js":2}],48:[function(require,module,exports){
+},{"../calculatePopupOffsets.js":2}],49:[function(require,module,exports){
 /* global angular, analytics_data */
 
 // THIRD-PARTY / VENDOR
@@ -13178,6 +13216,8 @@ require('./components/ll-shipContainerShipFixtures');
 require('./components/ll-fisDryBulk');
 
 require('./components/ll-howeRobinson');
+
+require('./components/bookmark-catche');
 
 // OTHER CODE
 
@@ -14572,7 +14612,7 @@ $(document).ready(function () {
     // });
 });
 
-},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/dynamic-content-recomendation":9,"./components/id-comparechart":10,"./components/id-comparefinancialresults":11,"./components/id-financial-responsive-table":12,"./components/id-merge-acquistion":13,"./components/id-quarterly-responsive-table":14,"./components/id-responsive-table":15,"./components/latest-casuality":16,"./components/ll-casuality-detail":17,"./components/ll-casuality-listing":18,"./components/ll-cockett-bunker":19,"./components/ll-fisDryBulk":20,"./components/ll-howeRobinson":21,"./components/ll-market-data":24,"./components/ll-market-data-dryCargo":23,"./components/ll-market-data-dryCargo-bulkFixture":22,"./components/ll-marketdata-drycargo-ssyal":25,"./components/ll-ship-coal-export":26,"./components/ll-ship-container-ship":27,"./components/ll-ship-roro":28,"./components/ll-shipContainerShipFixtures":29,"./components/ll-tanker-fixtures":30,"./components/ll-tanker-pure-chem-page":31,"./components/myview-settings":32,"./components/pagination":33,"./components/personalisation":34,"./components/save-search-component":35,"./components/scrollbar":36,"./components/table_charts":37,"./components/video-mini":38,"./controllers/analytics-controller":39,"./controllers/bookmark-controller":40,"./controllers/form-controller":41,"./controllers/lightbox-modal-controller":42,"./controllers/pop-out-controller":43,"./controllers/register-controller":44,"./controllers/reset-password-controller":45,"./controllers/sortable-table-controller":46,"./controllers/tooltip-controller":47,"./jscookie":49,"./modal":50,"./newsletter-signup":51,"./search-page":52,"./selectivity-full":53,"./svg4everybody":54,"./toggle-icons":55,"./zepto.dragswap":56,"./zepto.min":57,"./zepto.suggest":58}],49:[function(require,module,exports){
+},{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/bookmark-catche":9,"./components/dynamic-content-recomendation":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-cockett-bunker":20,"./components/ll-fisDryBulk":21,"./components/ll-howeRobinson":22,"./components/ll-market-data":25,"./components/ll-market-data-dryCargo":24,"./components/ll-market-data-dryCargo-bulkFixture":23,"./components/ll-marketdata-drycargo-ssyal":26,"./components/ll-ship-coal-export":27,"./components/ll-ship-container-ship":28,"./components/ll-ship-roro":29,"./components/ll-shipContainerShipFixtures":30,"./components/ll-tanker-fixtures":31,"./components/ll-tanker-pure-chem-page":32,"./components/myview-settings":33,"./components/pagination":34,"./components/personalisation":35,"./components/save-search-component":36,"./components/scrollbar":37,"./components/table_charts":38,"./components/video-mini":39,"./controllers/analytics-controller":40,"./controllers/bookmark-controller":41,"./controllers/form-controller":42,"./controllers/lightbox-modal-controller":43,"./controllers/pop-out-controller":44,"./controllers/register-controller":45,"./controllers/reset-password-controller":46,"./controllers/sortable-table-controller":47,"./controllers/tooltip-controller":48,"./jscookie":50,"./modal":51,"./newsletter-signup":52,"./search-page":53,"./selectivity-full":54,"./svg4everybody":55,"./toggle-icons":56,"./zepto.dragswap":57,"./zepto.min":58,"./zepto.suggest":59}],50:[function(require,module,exports){
 /*!
  * JavaScript Cookie v2.1.0
  * https://github.com/js-cookie/js-cookie
@@ -14789,7 +14829,7 @@ $(document).ready(function () {
 	}
 });
 
-},{}],50:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 /* ========================================================================
  * Bootstrap: modal.js v3.3.7
  * http://getbootstrap.com/javascript/#modals
@@ -15097,7 +15137,7 @@ $(document).ready(function () {
   });
 })($);
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 /* global analytics_data */
 
 'use strict';
@@ -15199,7 +15239,7 @@ function newsletterSignupController() {
 exports['default'] = newsletterSignupController;
 module.exports = exports['default'];
 
-},{"./controllers/analytics-controller":39}],52:[function(require,module,exports){
+},{"./controllers/analytics-controller":40}],53:[function(require,module,exports){
 'use strict';
 
 var SearchScript = (function () {
@@ -15211,7 +15251,7 @@ var SearchScript = (function () {
 	});
 })();
 
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 (function (global){
 /**
  * @license
@@ -16237,7 +16277,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 "use strict";
 
 !(function (root, factory) {
@@ -16342,7 +16382,7 @@ this.options.positionDropdown = function($el,$selectEl){var position=$selectEl.p
     return svg4everybody;
 });
 
-},{}],55:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -16359,7 +16399,7 @@ var toggleIcons = function toggleIcons(container) {
 
 exports.toggleIcons = toggleIcons;
 
-},{}],56:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 /*!
  * Zepto HTML5 Drag and Drop Sortable
  * Author: James Doyle(@james2doyle) http://ohdoylerules.com
@@ -16611,7 +16651,7 @@ var _controllersAnalyticsController = require('./controllers/analytics-controlle
     };
 })(Zepto);
 
-},{"./controllers/analytics-controller":39}],57:[function(require,module,exports){
+},{"./controllers/analytics-controller":40}],58:[function(require,module,exports){
 /* Zepto v1.1.6 - zepto event ajax form ie - zeptojs.com/license */
 "use strict";
 
@@ -17350,7 +17390,7 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}],58:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 /*!
  * Suggest jQuery plugin
  *
@@ -17575,6 +17615,6 @@ var Zepto = (function () {
   };
 })(Zepto);
 
-},{}]},{},[48])
+},{}]},{},[49])
 
 //# sourceMappingURL=index.js.map
