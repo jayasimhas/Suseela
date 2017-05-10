@@ -30,15 +30,14 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <TargetFrameworkProfile />
-    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <IsWebBootstrapper>True</IsWebBootstrapper>
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <PublishUrl>publish\</PublishUrl>
-
     <InstallUrl>http://products/</InstallUrl>
     <TargetCulture>en</TargetCulture>
     <ApplicationVersion>16.09.21.1048</ApplicationVersion>
     <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
-	<UpdateEnabled>true</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
     <ProductName>InsightPlatformPlugin</ProductName>
@@ -596,8 +595,8 @@
     </None>
     <None Include="app.config.template" />
     <None Include="ClassDiagram1.cd" />
-	<None Include="InformaSitecoreWord_2_TemporaryKey.pfx" />
-	<None Include="InformaSitecoreWord_3_TemporaryKey.pfx" />
+    <None Include="InformaSitecoreWord_2_TemporaryKey.pfx" />
+    <None Include="InformaSitecoreWord_3_TemporaryKey.pfx" />
     <None Include="InformaSitecoreWord_TemporaryKey.pfx" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -622,7 +621,6 @@
     </Compile>
     <AppDesigner Include="Properties\" />
     <None Include="WordPluginTempKey.snk" />
-    <None Include="WorldPluginDevCertificate.pfx" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -737,14 +735,15 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-	<ManifestCertificateThumbprint>BC3296A2B92276F90360B705843FDFDF43AB2D8D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BC3296A2B92276F90360B705843FDFDF43AB2D8D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>WorldPluginDevCertificate.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>WorldPluginDevCertificate.pfx</AssemblyOriginatorKeyFile>
-</PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->

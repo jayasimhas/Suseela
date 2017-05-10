@@ -9145,9 +9145,9 @@ function createJSONData(alltables, UserPreferences, url) {
             var followStatus = secondtd == $('#followingButtonText').val() ? true : false;
             //var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 
-            alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
+            alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
         }
-        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, Topics: alltdata });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
     }
     sendHttpRequest(UserPreferences, null, url);
 }
@@ -9226,7 +9226,7 @@ function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
             channelOrder = $(alltrs[i]).attr('data-row'),
             followStatus = secondtd == $('#followingButtonText').val() ? true : false;
 
-        UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
     }
     sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
@@ -10759,22 +10759,22 @@ $(function () {
 									if (layout1) {
 										layout1 = false;
 										loadLayoutData = loadLayoutOneData(data, idx);
-										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
 
-										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
+										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0]).html(googleAdStr);
 										document.write = docWrite;
 									} else {
 										layout1 = true;
 										loadLayoutData = loadLayoutTwoData(data, idx);
-										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+										loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 										$('.spinnerIcon').addClass('hidespin');
 										$('.personalisationPan').append(loadLayoutData);
 										window.findTooltips();
 
-										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
+										$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0]).html(googleAdStr);
 										document.write = docWrite;
 									}
 								}
@@ -10884,25 +10884,25 @@ $(function () {
 						};
 						if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 							getscrollData = loadLayoutOneData(data, loadsection);
-							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].replace(/'/, '').split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
-							console.log('ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]);
-							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]).html(googleAdStr);
+							console.log('ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].replace(/'/, '').split(' ')[0]);
+							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].replace(/'/, '').split(' ')[0]).html(googleAdStr);
 							document.write = docWrite;
 						} else {
 							getscrollData = loadLayoutTwoData(data, loadsection);
-							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+							getscrollData += '<div id="ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].replace(/'/, '').split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 							$('.spinnerIcon').addClass('hidespin');
 							$('.personalisationPan').append(getscrollData);
 							setImgHeightListview();
 							window.findTooltips();
 							window.indexBookmarks();
-							console.log('ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]);
-							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].split(' ')[0]).html(googleAdStr);
+							console.log('ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].replace(/'/, '').split(' ')[0]);
+							$('#ad_' + loadPreferanceId["Sections"][getArticleIdx - 1]["ChannelName"].replace(/'/, '').split(' ')[0]).html(googleAdStr);
 							document.write = docWrite;
 						}
 					}
@@ -10959,19 +10959,19 @@ $(function () {
 										};
 										if ($('.eachstoryMpan', '.personalisationPan').length % 2 == 0) {
 											loadLayoutData = loadLayoutOneData(data, idx);
-											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
 
-											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
+											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0]).html(googleAdStr);
 											document.write = docWrite;
 										} else {
 											loadLayoutData = loadLayoutTwoData(data, idx);
-											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
+											loadLayoutData += '<div id="ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0] + '" class="article-preview__ad advertising--leaderboard"><script>OAS_AD("Top", "home")</script></div>';
 											$('.personalisationPan').append(loadLayoutData);
 											window.findTooltips();
 
-											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].split(' ')[0]).html(googleAdStr);
+											$('#ad_' + loadPreferanceId["Sections"][idx]["ChannelName"].replace(/'/, '').split(' ')[0]).html(googleAdStr);
 											document.write = docWrite;
 										}
 									}
@@ -13151,6 +13151,8 @@ var _controllersTooltipController2 = _interopRequireDefault(_controllersTooltipC
 
 // COMPONENTS
 
+require('./components/bookmark-catche');
+
 require('./components/article-sidebar-component');
 
 require('./components/save-search-component');
@@ -13216,8 +13218,6 @@ require('./components/ll-shipContainerShipFixtures');
 require('./components/ll-fisDryBulk');
 
 require('./components/ll-howeRobinson');
-
-require('./components/bookmark-catche');
 
 // OTHER CODE
 
@@ -13920,17 +13920,22 @@ $(document).ready(function () {
                 event_data.event_name = 'email_preferences_update';
 
                 $('.js-account-email-checkbox').each(function (index, item) {
+                    var name = $($(this).parents('tr').find('td')[0]).text().trim();
+                    var type = this.name.indexOf('Daily') > 0 ? "Daily" : "Weekly";
+
+                    var combination = name + " " + type;
+
                     if (this.checked) {
-                        optingIn = optingIn ? optingIn + '|' + this.value : this.value;
+                        optingIn = optingIn ? optingIn + '|' + combination : combination;
                     } else {
-                        optingOut = optingOut ? optingOut + '|' + this.value : this.value;
+                        optingOut = optingOut ? optingOut + '|' + combination : combination;
                     }
                 });
 
                 event_data.email_preferences_optin = optingIn;
                 event_data.email_preferences_optout = optingOut;
             }
-
+            debugger;
             (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, event_data));
         }
     });
@@ -13999,7 +14004,6 @@ $(document).ready(function () {
         };
 
         var showMenu = function showMenu() {
-            $('.main-menu-list').css('display', 'block');
             $('.main-menu').addClass('is-active');
             $('.menu-toggler').addClass('is-active');
             $('.header__wrapper .menu-toggler').addClass('is-sticky');
@@ -14008,7 +14012,6 @@ $(document).ready(function () {
         };
 
         var hideMenu = function hideMenu() {
-            $('.main-menu-list').css('display', 'none');
             $('.main-menu').removeClass('is-active');
             $('.menu-toggler').removeClass('is-active');
             $('body').removeClass('is-frozen');
@@ -14017,6 +14020,7 @@ $(document).ready(function () {
             }
             removeFixedMenu();
             $('.main-menu').removeClass('shift-main-content');
+            $('.js-pop-out__myViewregister').removeClass('is-active');
             $('body').removeClass('shift-content');
         };
 
@@ -14580,36 +14584,28 @@ $(document).ready(function () {
         $('.header-account-right-access').addClass('tabheader-account');
     }
 
-    //IPMP-2543
-    // if($('.pop-out__myViewregister').length){
-    // 	if (window.matchMedia("(min-width: 1025px)").matches) {
-    // 		$('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
-    // 	}
-    // 	else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-    // 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-    // 	}
-    // 	else if (window.matchMedia("(max-width: 768px)").matches) {
-    // 		$('.pop-out.is-active').css({'top': '-190px', 'left': '-300px'});
-    // 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-    // 	}
-    // }
-    // $(window).resize(function(){
-    // 	if($(window).width() > 1024){
-    // 	$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '0px'});
-    // 	}
-    // 	if($(window).width() > 1000 && $(window).width() <= 1024){
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-    // 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-    // 	}
-    // 	else if($(window).width() > 600 && $(window).width() <= 768){
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-190px', 'left': '-300px'});
-    // 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-    // 	}
-    // 	else{
-    // 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-370px', 'left': '0px'});
-    // 	}
-    // });
+    // login details
+    $('.header-account-access__label a, .article-call-to-action--sign-in-up .js-login-container a').click(function (e) {
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var indexOfProcessId = href.indexOf("processId");
+        var getId = href.substring(indexOfProcessId + 12);
+
+        $.ajax({
+            url: '/User/ProcessUserRequest/LoginLogger',
+            type: 'GET',
+            context: this,
+            data: {
+                processId: getId
+            },
+            success: function success() {},
+            error: function error(response) {
+                return false;
+            }
+        });
+
+        window.location.href = href;
+    });
 });
 
 },{"./DragDropTouch":1,"./carousel/owl.carousel":3,"./carousel/zepto.data":4,"./components/AMCharts-merges-acquisition":5,"./components/accordionStockChart":6,"./components/amGraphParam":7,"./components/article-sidebar-component":8,"./components/bookmark-catche":9,"./components/dynamic-content-recomendation":10,"./components/id-comparechart":11,"./components/id-comparefinancialresults":12,"./components/id-financial-responsive-table":13,"./components/id-merge-acquistion":14,"./components/id-quarterly-responsive-table":15,"./components/id-responsive-table":16,"./components/latest-casuality":17,"./components/ll-casuality-detail":18,"./components/ll-casuality-listing":19,"./components/ll-cockett-bunker":20,"./components/ll-fisDryBulk":21,"./components/ll-howeRobinson":22,"./components/ll-market-data":25,"./components/ll-market-data-dryCargo":24,"./components/ll-market-data-dryCargo-bulkFixture":23,"./components/ll-marketdata-drycargo-ssyal":26,"./components/ll-ship-coal-export":27,"./components/ll-ship-container-ship":28,"./components/ll-ship-roro":29,"./components/ll-shipContainerShipFixtures":30,"./components/ll-tanker-fixtures":31,"./components/ll-tanker-pure-chem-page":32,"./components/myview-settings":33,"./components/pagination":34,"./components/personalisation":35,"./components/save-search-component":36,"./components/scrollbar":37,"./components/table_charts":38,"./components/video-mini":39,"./controllers/analytics-controller":40,"./controllers/bookmark-controller":41,"./controllers/form-controller":42,"./controllers/lightbox-modal-controller":43,"./controllers/pop-out-controller":44,"./controllers/register-controller":45,"./controllers/reset-password-controller":46,"./controllers/sortable-table-controller":47,"./controllers/tooltip-controller":48,"./jscookie":50,"./modal":51,"./newsletter-signup":52,"./search-page":53,"./selectivity-full":54,"./svg4everybody":55,"./toggle-icons":56,"./zepto.dragswap":57,"./zepto.min":58,"./zepto.suggest":59}],50:[function(require,module,exports){

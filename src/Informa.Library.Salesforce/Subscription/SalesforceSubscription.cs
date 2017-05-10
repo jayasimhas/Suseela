@@ -18,5 +18,6 @@ namespace Informa.Library.Salesforce.Subscription
         public string ServiceId { get; set; }
 
         public string ParentServiceId { get; set; }
+        public string PublicationSubs { get; set; }
     }
 }
