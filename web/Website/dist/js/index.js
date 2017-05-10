@@ -14004,7 +14004,6 @@ $(document).ready(function () {
         };
 
         var showMenu = function showMenu() {
-            $('.main-menu-list').css('display', 'block');
             $('.main-menu').addClass('is-active');
             $('.menu-toggler').addClass('is-active');
             $('.header__wrapper .menu-toggler').addClass('is-sticky');
@@ -14013,7 +14012,6 @@ $(document).ready(function () {
         };
 
         var hideMenu = function hideMenu() {
-            $('.main-menu-list').css('display', 'none');
             $('.main-menu').removeClass('is-active');
             $('.menu-toggler').removeClass('is-active');
             $('body').removeClass('is-frozen');
