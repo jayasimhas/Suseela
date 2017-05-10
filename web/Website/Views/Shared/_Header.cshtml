@@ -1,4 +1,8 @@
 @inherits CustomGlassView<HeaderViewModel>
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <header>
 
     <div class="banner banner--cookie-policy" data-banner-id="cookie-policy-0001" data-dismiss-all-subdomains="true">
@@ -216,3 +220,6 @@
         </div>
                         }
 </header>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Header.cshtml", sw, "Header");
+}

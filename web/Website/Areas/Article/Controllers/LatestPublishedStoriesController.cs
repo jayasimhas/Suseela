@@ -11,6 +11,7 @@ using Jabberwocky.Glass.Autofac.Mvc.Services;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -55,6 +56,7 @@ namespace Informa.Web.Areas.Article.Controllers
         [HttpGet]
         public ActionResult GetLatestNews()
         {
+            Stopwatch sw = Stopwatch.StartNew();
             LatestPublishedStory latest = new LatestPublishedStory();
             var filter = ArticleSearch.CreateFilter();
             filter.Page = 1;
@@ -81,6 +83,7 @@ namespace Informa.Web.Areas.Article.Controllers
             latest.IsDisableBackground = IsDisableBackground;
             latest.LoadMoreText = TextTranslator.Translate("Load.More.Text");            
             latest.ComponentTitle = ComponentTitle;
+            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("LatestPublishedStories.cshtml", sw, "Leaderboard");
             return View("~/Areas/Article/Views/LatestPublishedStories/LatestPublishedStories.cshtml", latest);
         }
 

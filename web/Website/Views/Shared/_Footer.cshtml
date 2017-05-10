@@ -1,5 +1,8 @@
 ﻿@inherits CustomGlassView<FooterViewModel>
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="footer__wrapper">
     
     <ul class="footer__section footer__section--corporate">
@@ -92,6 +95,9 @@
     }
 
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Footer.cshtml Timer", sw, "Footer");
+}
 
 @helper RenderLinks(IEnumerable<Informa.Library.Navigation.INavigation> pageLinks)
 {

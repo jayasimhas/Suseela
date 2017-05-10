@@ -1,7 +1,10 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @using Informa.Web.ViewModels
 @model AnalyticsViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <script type="text/javascript">
     /* * *
 	ANALYTICS DATA
@@ -184,3 +187,7 @@
         }
     };
 </script>
+
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Analytics.cshtml Timer", sw, "Analytics");
+}
