@@ -12,6 +12,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
@@ -49,7 +50,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         }
         public IContentResponse AddUserSavedSearch(string accessToken, ISavedSearchEntity entity)
         {
-
+            Stopwatch swMain = Stopwatch.StartNew();
             if (entity != null ||
               !new[] { entity.Username, entity.Name, entity.SearchString, entity.UnsubscribeToken, entity.PublicationCode }
               .Any(string.IsNullOrEmpty))
@@ -69,13 +70,15 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var requestJosn = JsonConvert.SerializeObject(request).ToString();
                             InfoLogger.Log(requestJosn, this.GetType().Name);
                             var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
-
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddUserSavedSearch-Time", sw, "SalesforceAPICall");
                             if (result.IsSuccessStatusCode)
                             {
                                 var responseString = result.Content.ReadAsStringAsync().Result;
                                 InfoLogger.Log(responseString, this.GetType().Name);
                                 var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddUserSavedSearch-Time", sw, "SalesforceOuterCall");
                                 if (!response.hasErrors)
                                 {
                                     return new ContentResponse
@@ -114,6 +117,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var request = SalesforceContentPreferencesFactory.Create(userName, verticalPreferenceLocale, publicationCode, contentPreferences);
                     if (request != null)
                     {
@@ -131,12 +135,15 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 var requestJosn = JsonConvert.SerializeObject(request).ToString();
                                 InfoLogger.Log(requestJosn, this.GetType().Name);
                                 var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                                Stopwatch sw = Stopwatch.StartNew();
                                 var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddUserContentPreferences-Time", sw, "SalesforceAPICall");
                                 if (result.IsSuccessStatusCode)
                                 {
                                     var responseString = result.Content.ReadAsStringAsync().Result;
                                     var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
                                     InfoLogger.Log(responseString, this.GetType().Name);
+                                    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddUserContentPreferences-Time", swMain, "SalesforceOuterCall");
                                     if (!response.hasErrors)
                                     {
                                         return true;
@@ -158,6 +165,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 
         public ISavedDocumentWriteResult AddSavedDocument(string verticalPreferenceLocale, string publicationCode, string Username, string documentName, string documentDescription, string documentId, string accessToken)
         {
+            Stopwatch swMain = Stopwatch.StartNew();
             if (!new[] { Username, documentId, documentDescription, documentName }.Any(string.IsNullOrEmpty))
             {
                 try
@@ -176,11 +184,15 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var requestJosn = JsonConvert.SerializeObject(request).ToString();
                             InfoLogger.Log(requestJosn, this.GetType().Name);
                             var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddSavedDocument-Time", sw, "SalesforceAPICall");
                             if (result.IsSuccessStatusCode)
                             {
                                 var responseString = result.Content.ReadAsStringAsync().Result;
                                 var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddSavedDocument-Time", sw, "SalesforceOuterCall");
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddSavedDocument-Time", swMain, "SalesforceOuterCall");
                                 InfoLogger.Log(responseString, this.GetType().Name);
                                 if (!response.hasErrors)
                                 {
@@ -222,6 +234,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, optIns);
                     if (request != null)
                     {
@@ -235,11 +248,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var requestJosn = JsonConvert.SerializeObject(request).ToString();
                             InfoLogger.Log(requestJosn, this.GetType().Name);
                             var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddNewsletterUserOptIns-Time", sw, "SalesforceAPICall");
                             if (result.IsSuccessStatusCode)
                             {
                                 var responseString = result.Content.ReadAsStringAsync().Result;
                                 var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddNewsletterUserOptIns-Time", swMain, "SalesforceOuterCall");
                                 InfoLogger.Log(responseString, this.GetType().Name);
                                 if (!response.hasErrors)
                                 {
@@ -267,6 +283,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var request = SalesforceContentNewsletterFactory.Create(username, verticalPreferenceLocale, publicationCode, !optIn);
                     if (request != null)
                     {
@@ -280,11 +297,14 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var requestJosn = JsonConvert.SerializeObject(request).ToString();
                             InfoLogger.Log(requestJosn, this.GetType().Name);
                             var content = new StringContent(requestJosn, Encoding.UTF8, "application/json");
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = client.PostAsync(addUserProductPreferencesEndPoints, content).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddOffersOptIns-Time", sw, "SalesforceAPICall");
                             if (result.IsSuccessStatusCode)
                             {
                                 var responseString = result.Content.ReadAsStringAsync().Result;
                                 var response = JsonConvert.DeserializeObject<AddProductPreferenceResponse>(responseString);
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-AddOffersOptIns-Time", swMain, "SalesforceOuterCall");
                                 InfoLogger.Log(responseString, this.GetType().Name);
                                 if (!response.hasErrors)
                                 {

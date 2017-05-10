@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Linq;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.User.Entitlement
 {
@@ -37,6 +38,7 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     using (var client = new HttpClient())
                     {
                         client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
@@ -44,11 +46,14 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.AccessToken);
 
                         var getUserEntitlementsEndPoints = SalesforceConfigurationContext?.GetUserEntitlementsEndPoints(user.Username);
+                        Stopwatch sw = Stopwatch.StartNew();
                         HttpResponseMessage response = client.GetAsync(getUserEntitlementsEndPoints).Result;
                         InfoLogger.Log(getUserEntitlementsEndPoints, this.GetType().Name);
                         if (response.IsSuccessStatusCode)
                         {
                             var responseString = response.Content.ReadAsStringAsync().Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-GetEntitlements-Time", sw, "SalesforceAPICall");
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-GetEntitlements-Time", swMain, "SalesforceOuterCall");
                             if (!string.IsNullOrWhiteSpace(responseString))
                             {
                                 InfoLogger.Log(responseString, this.GetType().Name);
@@ -56,6 +61,7 @@ namespace Informa.Library.Salesforce.V2.User.Entitlement
                                 return userEntitlements?.Select(entitlement => EntitlementFactoryV2.Create(entitlement) as IEntitlement).ToList();
                             }
                         }
+                        
                     }
                 }
                 catch (Exception e)

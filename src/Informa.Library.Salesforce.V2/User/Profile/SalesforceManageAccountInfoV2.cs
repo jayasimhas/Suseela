@@ -8,6 +8,7 @@ using System.Net.Http;
 using Informa.Library.SalesforceConfiguration;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.User.Profile
 {
@@ -71,6 +72,7 @@ ISalesforceInfoLogger infoLogger,
 
             try
             {
+                Stopwatch swMain = Stopwatch.StartNew();
                 UpdateUserDeatilsRequest request = new UpdateUserDeatilsRequest();
                 request.Preferences = new List<SalesforceField>();
 
@@ -152,10 +154,12 @@ ISalesforceInfoLogger infoLogger,
                     var updateUserDetailsEndPoints = SalesforceConfigurationContext?.GetUpdateUserDetailsEndPoints(user.Username);
                     InfoLogger.Log(updateUserDetailsEndPoints, this.GetType().Name);
                     InfoLogger.Log(requestJson, this.GetType().Name);
+                    Stopwatch sw = Stopwatch.StartNew();
                     var result = client.PostAsync(updateUserDetailsEndPoints, content).Result;
                     var responseString = result.Content.ReadAsStringAsync().Result;
                     InfoLogger.Log(responseString, this.GetType().Name);
-
+                    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateContactInfo-Time", sw, "SalesforceAPICall");
+                    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateContactInfo-Time", swMain, "SalesforceOuterCall");
                     if (!result.IsSuccessStatusCode || !string.IsNullOrWhiteSpace(responseString.Replace("\"\"", string.Empty)))
                     {
                         return WriteErrorResult(RequestFailedKey);

@@ -6,6 +6,7 @@ using Informa.Library.User.ProductPreferences;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
@@ -29,10 +30,11 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         }
         public IContentResponse DeleteUserProductPreference(string accessToken, string itemId)
         {
-            if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(itemId))
+           if (!string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(itemId))
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     using (var client = new HttpClient())
                     {
                         client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
@@ -40,7 +42,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         var deleteUserProductPreferenceEndPoints = SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId);
                         InfoLogger.Log(deleteUserProductPreferenceEndPoints, this.GetType().Name);
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        Stopwatch sw = Stopwatch.StartNew();
                         var result = client.DeleteAsync(deleteUserProductPreferenceEndPoints).Result;
+                        Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-DeleteUserProductPreference-Time", sw, "SalesforceAPICall");
+                        Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-DeleteUserProductPreference-Time", swMain, "SalesforceOuterCall");
                         InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
                         if (result.IsSuccessStatusCode)
                         {
@@ -74,6 +79,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     using (var client = new HttpClient())
                     {
                         client.BaseAddress = new Uri(SalesforceConfigurationContext.SalesForceConfiguration?.Salesforce_Custom_Api_Url?.Url);
@@ -81,7 +87,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         var deleteUserProductPreferenceEndPoints = SalesforceConfigurationContext?.DeleteUserProductPreferenceEndPoints(itemId);
                         InfoLogger.Log(deleteUserProductPreferenceEndPoints, this.GetType().Name);
                         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                        Stopwatch sw = Stopwatch.StartNew();
                         var result = client.DeleteAsync(deleteUserProductPreferenceEndPoints).Result;
+                        Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-DeleteSavedDocument-Time", sw, "SalesforceAPICall");
+                        Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-DeleteSavedDocument-Time", swMain, "SalesforceOuterCall");
                         InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
                         if (result.IsSuccessStatusCode)
                         {
@@ -116,6 +125,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var query = SalesforceDeleteUserProductPreferencesQueryFactory.Create(
                             userName, publicationCode, type);
                     if (!string.IsNullOrWhiteSpace(query))
@@ -127,7 +137,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var deleteUserProductPreferencesEndPoints = SalesforceConfigurationContext?.DeleteUserProductPreferencesEndPoints(query);
                             InfoLogger.Log(deleteUserProductPreferencesEndPoints, this.GetType().Name);
                             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = client.DeleteAsync(deleteUserProductPreferencesEndPoints).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-deleteUserProductPreferencesEndPoints-Time", sw, "SalesforceAPICall");
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-deleteUserProductPreferencesEndPoints-Time", swMain, "SalesforceOuterCall");
                             InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
                             if (result.IsSuccessStatusCode)
                             {
