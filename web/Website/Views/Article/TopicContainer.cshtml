@@ -1,6 +1,9 @@
 ﻿@using Informa.Library.Utilities.References
 @inherits CustomGlassView<TopicContainerViewModel>
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <a id="@Model.Id.ToString("N")"
    class="sub-topic-links__invisible-topic-header-anchor js-topic-anchor"
    data-topic-link-text="@Model.NavigationText"></a>
@@ -29,3 +32,6 @@
 
     @Html.Sitecore().DynamicPlaceholder("two-column-curated")
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("TopicContainer.cshtml Timer", sw, "TopicContainer");
+}

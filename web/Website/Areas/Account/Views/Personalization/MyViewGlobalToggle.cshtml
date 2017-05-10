@@ -1,5 +1,8 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.MyViewToggleViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model != null && Model.IsGlobalToggleEnabled)
 {
     if (Model.IsAuthenticated)
@@ -34,4 +37,7 @@
             </div>
         </div>*@
     }
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("MyviewToggle.cshtml Timer", sw, "MyviewToggle");
 }

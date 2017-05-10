@@ -1,5 +1,8 @@
 ﻿@inherits CustomGlassView<Informa.Web.ViewModels.PopOuts.SaveSearchPopOutViewModel>
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="pop-out js-pop-out__save-search">
     <div class="pop-out__tab"></div>
     <div class="pop-out__internal">
@@ -256,3 +259,6 @@
             </div> @* .pop-out__sign-in *@
         </div> @* .pop-out__internal *@
     </div> @* .pop-out *@
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Savesearch.cshtml Timer", sw, "Savesearch");
+}

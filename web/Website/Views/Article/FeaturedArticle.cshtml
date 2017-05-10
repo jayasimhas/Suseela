@@ -1,5 +1,9 @@
 ﻿@using Informa.Library.Utilities.References
+@using System.Diagnostics;
 @model FeaturedArticleViewModel
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @{
     var sponsoredclass = Model.sponsoredContent != null ? "sponsored_cont" : string.Empty;
 }
@@ -111,3 +115,6 @@
         </div>
     }
 </section>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("FeaturedArticle.cshml Timer", sw, "FeaturedArticle");
+}

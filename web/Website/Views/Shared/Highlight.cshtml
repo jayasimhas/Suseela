@@ -1,7 +1,14 @@
 ﻿@inherits CustomGlassView<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Highlights.IHighlights>
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="banner banner--highlights">
 	@if (Model != null)
 	{
 		@Editable(Model, gm => gm.Highlight)
 	}
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("highlight.cshtml Timer", sw, "highlight");
+}

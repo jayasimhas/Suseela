@@ -1,4 +1,8 @@
 ﻿@model ICompanyRegisterMessageViewModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.Display)
 {
     if (Request.Cookies["LoggedoutActionFlag"] == null)
@@ -22,4 +26,7 @@
             </div>
         </div>
     }
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Register.cshtml Timer", sw, "Register");
 }

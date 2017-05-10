@@ -1,5 +1,8 @@
 @model Informa.Library.ViewModels.Account.ISignInViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.IsNewSalesforceEnabled)
 {
     <div class="js-login-container">
@@ -76,3 +79,6 @@ else
     </form>
 
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("SignIn.cshtml Timer", sw, "SignIn");
+}

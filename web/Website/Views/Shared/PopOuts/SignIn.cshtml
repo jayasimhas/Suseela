@@ -1,5 +1,9 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.ISignInPopOutViewModel
     @*Sign in popup used all around the site except the top-right header sign in*@
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="pop-out js-pop-out__sign-in">
 	<div class="pop-out__tab"></div>
 	<div class="pop-out__internal">
@@ -36,4 +40,7 @@
         </div>
     </div>
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("SignIn.cshtml Timer", sw, "SignIn");
+}
 

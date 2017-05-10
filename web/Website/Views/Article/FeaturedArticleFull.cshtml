@@ -1,4 +1,8 @@
 ﻿@model FeaturedArticleViewModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @{
     var sponsoredclass = Model.sponsoredContent != null ? "sponsored_cont" : string.Empty;
 }
@@ -28,3 +32,6 @@
     }
     @{ Html.RenderPartial("Components/_ArticleListContent", Model); }
 </section>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("FeaturedArticleFull.cshml Timer", sw, "FeaturedArticleFull");
+}

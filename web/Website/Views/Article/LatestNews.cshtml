@@ -1,5 +1,8 @@
 ﻿@inherits GlassView<LatestNewsViewModel>
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.News != null && Model.News.Any() && Model.DisplayTitle && !string.IsNullOrEmpty(Model.TitleText))
 {    
     <h4 class="latest-news__header">
@@ -19,4 +22,7 @@
     <a href="@Model.SeeAllLink.Url"
        class="full-diminished-button click-utag"
        data-info='{"event_name": "see_all", "@Model.EventSource": "@Model.EventSourceValue"}'>@Model.SeeAllLink.Text</a>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("LatestNews.cshtml", sw, "LatestNews");
 }

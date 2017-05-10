@@ -1,6 +1,9 @@
 ﻿@using Glass.Mapper.Sc.Mvc
 @model Informa.Web.ViewModels.Articles.ArticlePackageViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @{
     if (Sitecore.Context.PageMode.IsExperienceEditorEditing)
     { <div>Select Package properties settings</div> }
@@ -400,4 +403,7 @@
                                                         }
 
 
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticlePackage.cshtml", sw, "ArticlePackage");
 }

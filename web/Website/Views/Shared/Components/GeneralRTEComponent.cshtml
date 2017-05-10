@@ -1,6 +1,12 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Models.Informa.Models.sitecore.templates.User_Defined.General_Content.IContent_Text
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="GeneralRTEComponent">
     @Html.Glass().Editable(x => x.Text)
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("GeneralRTEComponent.cshtml Timer", sw, "GeneralRTEComponent");
+}
