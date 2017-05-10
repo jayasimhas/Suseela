@@ -353,6 +353,11 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 string taxonomyTitleHtml = WebConfigurationManager.AppSettings["LegacyPublications_foodnews"];
                                 ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
                             }
+
+                            else
+                            {
+                                ao.Add("PUBLICATIONNAME", "");
+                            }
                             // ao.Add("PUBLICATIONNAME", taxonomyTitleHtml);
 
                         }
@@ -608,7 +613,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                     commodityfactorSearchResults = GetListFromXmlusingPublication(publication, "commodityfactor", site).FindAll(s => AgencyCompanyTextSearch.ToLower().Contains(" " + s + " "));
                                 }
 
-                                if (publication == "Policy & Legislation")
+                                if(publication == "PolicyandLegislation")
                                 {
                                     commoditySearchResults = GetListFromXmlusingPublication("Agrow", "commodity", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
                                     policyTopicsearchResults = GetListFromXmlusingPublication(publication, "policytopicsearch", site).FindAll(s => RegionTextSearch.ToLower().Contains(" " + s + " "));
@@ -1954,7 +1959,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         }
 
                     }
-                    if (publication == "Policy & Legislation")
+                    if (publication == "PolicyandLegislation")
                     {
                         Taxonomy.Add("PolicyTopic", "");
                         Taxonomy.Add("COMMODITY", "");
@@ -1969,7 +1974,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                             if (node.Attributes["unique-name"] != null)
                             {
 
-                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "PolicyTopics", site))
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "policytopic", site))
                                 {
 
                                     PolicyTopic += node.Attributes["unique-name"].Value + ",";
@@ -1985,7 +1990,7 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                 {
 
                                     Country += node.Attributes["unique-name"].Value + ",";
-                                    Taxonomy["Country"] = Country;
+                                    Taxonomy["COUNTRY"] = Country;
 
                                 }
                                 if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "Agency", site))
@@ -2007,10 +2012,12 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                         Taxonomy.Add("COMMODITYFACTOR", "");
                         Taxonomy.Add("COMMERCIAL", "");
                         Taxonomy.Add("COUNTRY", "");
+                        Taxonomy.Add("Agency", "");
                         string Commodity = string.Empty;
                         string CommodityFactor = string.Empty;
                         string Commercial = string.Empty;
                         string Country = string.Empty;
+                        string Agency = string.Empty;
                         foreach (XmlNode node in xn)
                         {
                             if (node.Attributes["unique-name"] != null)
@@ -2044,6 +2051,13 @@ namespace Sitecore.SharedSource.DataImporter.Providers
                                         CommodityFactor += node.Attributes["unique-name"].Value + ",";
                                         Taxonomy["COMMODITYFACTOR"] = CommodityFactor;
                                     }
+                                    
+                                }
+                                if (CheckifExistsusingXML(node.Attributes["unique-name"].Value, publication, "Agency", site))
+                                {
+
+                                    Agency += node.Attributes["unique-name"].Value + ",";
+                                    Taxonomy["Agency"] = Agency;
 
                                 }
 

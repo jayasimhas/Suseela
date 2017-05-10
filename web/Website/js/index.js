@@ -25,7 +25,6 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
-import './components/bookmark-catche';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
@@ -59,6 +58,7 @@ import './components/ll-ship-container-ship';
 import './components/ll-shipContainerShipFixtures';
 import './components/ll-fisDryBulk';
 import './components/ll-howeRobinson'; 
+import './components/bookmark-catche';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page';
