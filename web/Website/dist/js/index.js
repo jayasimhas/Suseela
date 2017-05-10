@@ -13920,17 +13920,22 @@ $(document).ready(function () {
                 event_data.event_name = 'email_preferences_update';
 
                 $('.js-account-email-checkbox').each(function (index, item) {
+                    var name = $($(this).parents('tr').find('td')[0]).text().trim();
+                    var type = this.name.indexOf('Daily') > 0 ? "Daily" : "Weekly";
+
+                    var combination = name + " " + type;
+
                     if (this.checked) {
-                        optingIn = optingIn ? optingIn + '|' + this.value : this.value;
+                        optingIn = optingIn ? optingIn + '|' + combination : combination;
                     } else {
-                        optingOut = optingOut ? optingOut + '|' + this.value : this.value;
+                        optingOut = optingOut ? optingOut + '|' + combination : combination;
                     }
                 });
 
                 event_data.email_preferences_optin = optingIn;
                 event_data.email_preferences_optout = optingOut;
             }
-
+            debugger;
             (0, _controllersAnalyticsController.analyticsEvent)($.extend(analytics_data, event_data));
         }
     });
