@@ -92,7 +92,7 @@ namespace Informa.Web.ViewModels
         public string CorporateName => SalesforceConfigurationContext.IsNewSalesforceEnabled ? string.Empty : CompanyNameContext.Name;
         public bool UseNewSalesForce => SalesforceConfigurationContext.IsNewSalesforceEnabled;
 
-        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
+        public string AuthorizationRequestUrl => SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName + "&processId=" +  Guid.NewGuid().ToString() : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName + "&processId=" +  Guid.NewGuid().ToString());
 
         public string RegistrationUrl => SalesforceConfigurationContext?.GetRegistrationEndPoints(GetCallbackUrl("/User/ProcessUserRequest/Register"), SiteRootContext?.Item?.Publication_Code);
 

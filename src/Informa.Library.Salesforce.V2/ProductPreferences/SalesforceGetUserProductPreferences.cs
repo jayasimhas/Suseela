@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
@@ -45,6 +46,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var query = SalesforceGetUserProductPreferencesQueryFactory.Create(
                           user.Username, verticalPreferenceLocale, publicationCode, type);
                     if (!string.IsNullOrWhiteSpace(query))
@@ -58,7 +60,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
 
                             var getUserProductPreferencesEndPoints = SalesforceConfigurationContext?.GetUserProductPreferencesEndPoints(query);
                             InfoLogger.Log(getUserProductPreferencesEndPoints, this.GetType().Name);
+                            Stopwatch sw = Stopwatch.StartNew();
                             HttpResponseMessage response = client.GetAsync(getUserProductPreferencesEndPoints).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-GetProductPreferences-Time", sw, "SalesforceAPICall");
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-GetProductPreferences-Time", swMain, "SalesforceOuterCall");
                             if (response.IsSuccessStatusCode)
                             {
                                 var responseString = response.Content.ReadAsStringAsync().Result;
@@ -87,6 +92,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                         return (T)SalesforceContentNewsletterFactory.CreateOfferOptinGetRequest(productPreferences);
                                     }
                                 }
+
                             }
                         }
                     }
