@@ -13151,6 +13151,8 @@ var _controllersTooltipController2 = _interopRequireDefault(_controllersTooltipC
 
 // COMPONENTS
 
+require('./components/bookmark-catche');
+
 require('./components/article-sidebar-component');
 
 require('./components/save-search-component');
@@ -13216,8 +13218,6 @@ require('./components/ll-shipContainerShipFixtures');
 require('./components/ll-fisDryBulk');
 
 require('./components/ll-howeRobinson');
-
-require('./components/bookmark-catche');
 
 // OTHER CODE
 
@@ -14017,6 +14017,7 @@ $(document).ready(function () {
             }
             removeFixedMenu();
             $('.main-menu').removeClass('shift-main-content');
+            $('.js-pop-out__myViewregister').removeClass('is-active');
             $('body').removeClass('shift-content');
         };
 
