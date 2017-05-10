@@ -25,6 +25,7 @@ import { analyticsEvent } from './controllers/analytics-controller';
 import tooltipController from './controllers/tooltip-controller';
 
 // COMPONENTS
+import './components/bookmark-catche';
 import './components/article-sidebar-component';
 import './components/save-search-component';
 import './components/myview-settings';
@@ -58,7 +59,6 @@ import './components/ll-ship-container-ship';
 import './components/ll-shipContainerShipFixtures';
 import './components/ll-fisDryBulk';
 import './components/ll-howeRobinson'; 
-import './components/bookmark-catche';
 // OTHER CODE
 import NewsletterSignupController  from './newsletter-signup';
 import SearchScript from './search-page';
@@ -776,10 +776,15 @@ $(document).ready(function(){
                 event_data.event_name = 'email_preferences_update';
 
                 $('.js-account-email-checkbox').each(function(index, item) {
+                    var name = $($(this).parents('tr').find('td')[0]).text().trim();
+                    var type = (this.name.indexOf('Daily') > 0 ) ? "Daily": "Weekly";
+
+                    var combination = name + " " + type;
+                    
                     if(this.checked) {
-                        optingIn = optingIn ? optingIn + '|' + this.value : this.value;
+                        optingIn = optingIn ? optingIn + '|' + combination : combination;
                     } else {
-                        optingOut = optingOut ? optingOut + '|' + this.value : this.value;
+                        optingOut = optingOut ? optingOut + '|' + combination : combination;
                     }
                 });
 
@@ -787,7 +792,7 @@ $(document).ready(function(){
                 event_data.email_preferences_optout = optingOut;
 
             }
-
+            debugger;
             analyticsEvent( $.extend(analytics_data, event_data) );
 
         }
@@ -877,6 +882,7 @@ $(document).ready(function(){
             }
             removeFixedMenu();
             $('.main-menu').removeClass('shift-main-content');
+            $('.js-pop-out__myViewregister').removeClass('is-active');
             $('body').removeClass('shift-content');
         };
 
@@ -1458,34 +1464,27 @@ $(document).ready(function(){
 		$('.header-account-right-access').addClass('tabheader-account');
 	}
 	
-	//IPMP-2543
-	// if($('.pop-out__myViewregister').length){
-	// 	if (window.matchMedia("(min-width: 1025px)").matches) {
-	// 		$('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
-	// 	}
-	// 	else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-	// 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-	// 	}
-	// 	else if (window.matchMedia("(max-width: 768px)").matches) {
-	// 		$('.pop-out.is-active').css({'top': '-190px', 'left': '-300px'});
-	// 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-	// 	}
-	// }
-	// $(window).resize(function(){
-	// 	if($(window).width() > 1024){
-	// 	$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '0px'});
-	// 	}
-	// 	if($(window).width() > 1000 && $(window).width() <= 1024){
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-	// 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-	// 	}
-	// 	else if($(window).width() > 600 && $(window).width() <= 768){
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-190px', 'left': '-300px'});
-	// 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-	// 	}
-	// 	else{
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-370px', 'left': '0px'});
-	// 	}
-	// });
+	// login details
+	$('.header-account-access__label a, .article-call-to-action--sign-in-up .js-login-container a').click(function(e) { 
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var indexOfProcessId = href.indexOf("processId");
+        var getId = href.substring(indexOfProcessId + 12);
+        
+        $.ajax({
+            url: '/User/ProcessUserRequest/LoginLogger',
+            type: 'GET',
+            context: this,
+            data: {
+                processId: getId
+            },
+            success: function () {
+            },
+            error: function(response) {
+                return false;
+            }
+        });
+
+        window.location.href = href;
+    });
 });

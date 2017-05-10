@@ -84,7 +84,10 @@ namespace Informa.Library.Subscription.User
                 ExpirationDate = model.IsActive ? Convert.ToDateTime(model.SalesEndDate) : DateTime.MinValue,
                 Publication = model.Name,
                 ServiceId = model.ServiceId,
-                ParentServiceId = model.ParentServiceId
+                ParentServiceId = model.ParentServiceId,
+                PublicationSubs = (model.ProductName.Contains(':') ? model.ProductName.
+                                    Substring(0, model.ProductName.LastIndexOf(':')).Replace(" ", "").Replace("'", "").ToLower() 
+                                    : model.ProductName.Replace(" ", "").Replace("'", "").ToLower()) + "-" + model.Name
             };
         }
     }
