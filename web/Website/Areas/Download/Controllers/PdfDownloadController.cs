@@ -361,7 +361,7 @@ namespace Informa.Web.Areas.Account.Controllers
                             foreach (var amchartNode in amchartNodes)
                             {
                                 var id = articleNode.SelectSingleNode(".//input[@class='hdnDataToolId']");
-                                var newNodeHtml = "<b><br /><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<br /><b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 amchartNode.ParentNode.ReplaceChild(newNode, amchartNode);
@@ -374,7 +374,7 @@ namespace Informa.Web.Areas.Account.Controllers
                             foreach (var tableauNode in tableauNodes)
                             {
                                 var id = articleNode.SelectSingleNode(".//input[@class='hdnDataToolId']");
-                                var newNodeHtml = "<b><br /><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
+                                var newNodeHtml = "<br /><b><p style=\"margin: 0 0 16px 0; color:#58595b; font-size:13px; line-height:20px;\">" + DataToolLinkDesc + "</p></b><br /><br />" + "<a style=\"text-decoration:none; font-size:18px; line-height:20px;\" href=\"" + articleURL + "#" + id.Attributes["value"].Value + "\" target=\"_blank\">" + DataToolLinkText + "</a>";
                                 HtmlNode newNode = HtmlNode.CreateNode("div");
                                 newNode.InnerHtml = newNodeHtml;
                                 tableauNode.ParentNode.ReplaceChild(newNode, tableauNode);
