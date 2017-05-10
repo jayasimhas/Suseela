@@ -44,10 +44,13 @@
                                                                 if (IsInEditingMode)
                                                                 {
 
-                                                                    @RenderImage(Model.GlassModel, m => Model.GlassModel.Image, new { Width = 200 }, isEditable: true)
+                                                                    @RenderImage(Model.GlassModel, m => Model.GlassModel.Image, new {@class= "one-third layout-padded-right" }, isEditable: true)
 
                                                                 }
-                                                                <img src="@(Model.GlassModel.Image?.Src)" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
+                                                                else
+                                                                {
+                                                                    <img src="@(Model.GlassModel.Image?.Src)" width="200" height="110" style="float: left; padding-right: 15px; padding-bottom: 10px;" class="newsLetImg mcnImage" />
+                                                                }
                                                             }
                                                             <div>
                                                                 <p class="daily-alert-body" style="-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;font-family: Roboto, Georgia, serif;font-size: 14px;line-height: 26px;margin-top: 0;padding-top: 0;color: #777777;margin-bottom: 0;text-align: left">
