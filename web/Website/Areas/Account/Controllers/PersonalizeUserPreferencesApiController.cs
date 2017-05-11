@@ -1,7 +1,9 @@
 ﻿using Informa.Library.Globalization;
+using Informa.Library.User.Authentication;
 using Informa.Library.User.UserPreference;
 using Informa.Web.Areas.Account.Models.User.Personalization;
 using Informa.Web.ViewModels.MyView;
+using Jabberwocky.Core.Caching;
 using System.Web.Http;
 
 namespace Informa.Web.Areas.Account.Controllers
@@ -10,13 +12,15 @@ namespace Informa.Web.Areas.Account.Controllers
     {
         protected readonly IUserPreferenceContext UserPreferenceContext;
         protected readonly ITextTranslator TextTranslator;
+        protected readonly ICacheProvider CacheProvider;
 
         public PersonalizeUserPreferencesApiController(
             IUserPreferenceContext userPreferenceContext,
-            ITextTranslator textTranslator)
+            ITextTranslator textTranslator, IAuthenticatedUserContext userContext, ICacheProvider cacheProvider)
         {
             UserPreferenceContext = userPreferenceContext;
             TextTranslator = textTranslator;
+            CacheProvider = cacheProvider;
         }
 
         /// <summary>
@@ -36,6 +40,11 @@ namespace Informa.Web.Areas.Account.Controllers
                 });
             }
             var response = UserPreferenceContext.Set(request.UserPreferences);
+
+            if(response)
+            {
+                CacheProvider.EmptyCache();
+            }
 
             return Ok(new
             {

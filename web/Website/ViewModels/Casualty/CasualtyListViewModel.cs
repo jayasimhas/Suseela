@@ -137,8 +137,10 @@ namespace Informa.Web.ViewModels.Casualty
             {
                 try
                 {
-                    var client = new WebClient();
-                    return client.DownloadString(feedUrlConfigurationItem.External_Feed_URL);
+                    using (var client = new WebClient())
+                    {
+                        return client.DownloadString(feedUrlConfigurationItem.External_Feed_URL);
+                    }
                 }
                 catch (Exception ex)
                 {

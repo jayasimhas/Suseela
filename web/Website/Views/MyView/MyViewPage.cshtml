@@ -1,5 +1,8 @@
 ﻿@model Informa.Web.ViewModels.MyView.MyViewPageViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.IsAuthenticated && Model.IsFollowingAnyItem)
 {
     <script type="text/javascript">
@@ -42,3 +45,6 @@ else
         @{ Html.RenderPartial("../Article/UserCallToAction", Model.CallToActionViewModel); }
     </div>
             }
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("MyviewPage.cshtml Timer", sw, "Footer");
+}

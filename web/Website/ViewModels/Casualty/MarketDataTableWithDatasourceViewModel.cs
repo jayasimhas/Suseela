@@ -4,6 +4,7 @@ using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.View_Templates;
+using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 using System;
@@ -15,14 +16,16 @@ namespace Informa.Web.ViewModels.Casualty
     {
         private readonly IAuthenticatedUserContext AuthenticatedUserContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly ICacheProvider CacheProvider;
 
         public MarketDataTableWithDatasourceViewModel(IAuthenticatedUserContext authenticatedUserContext,
             IGlobalSitecoreService globalService,
-            IRenderingContextService renderingParametersService)
+            IRenderingContextService renderingParametersService, ICacheProvider cacheProvider)
         {
             AuthenticatedUserContext = authenticatedUserContext;
             GlobalService = globalService;
             RenderingParameters = renderingParametersService.GetCurrentRenderingParameters<IMarket_Data_Table_Types>();
+            CacheProvider = cacheProvider;
         }
         public IMarket_Data_Table_Types RenderingParameters { get; set; }
         /// <summary>
@@ -58,15 +61,29 @@ namespace Informa.Web.ViewModels.Casualty
         /// </summary>
         public string AdditionalInfo => GlassModel?.Additional_Info;
         public string jsonDropdownData => GetjsonDropdownData();
-        public string jsonTableData => GetjsonTableData();       
+        public string jsonTableData => GetjsonTableData();
         private string GetjsonDropdownData()
+        {
+            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
+            {
+                string cachekey = $"MarketdataTableDatasource_{GlassModel.Dropdowns_Feed_URL}";
+                return CacheProvider.GetFromCache(cachekey, new TimeSpan(12, 0, 0), () => GetjsonDropdownDatafeed());
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+        private string GetjsonDropdownDatafeed()
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Dropdowns_Feed_URL))
             {
                 try
                 {
-                    var client = new WebClient();
-                    return client.DownloadString(GlassModel.Dropdowns_Feed_URL);
+                    using (var client = new WebClient())
+                    {
+                        return client.DownloadString(GlassModel.Dropdowns_Feed_URL);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -82,10 +99,24 @@ namespace Informa.Web.ViewModels.Casualty
         {
             if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Table_Result_Feed_URL))
             {
+                string cachekey = $"MarketdataTableDatasource_{GlassModel.Table_Result_Feed_URL}";
+                return CacheProvider.GetFromCache(cachekey, new TimeSpan(12, 0, 0), () => GetjsonTableDataFeed());
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+        private string GetjsonTableDataFeed()
+        {
+            if (GlassModel != null && !string.IsNullOrEmpty(GlassModel.Table_Result_Feed_URL))
+            {
                 try
                 {
-                    var client = new WebClient();
-                    return client.DownloadString(GlassModel.Table_Result_Feed_URL);
+                    using (var client = new WebClient())
+                    {
+                        return client.DownloadString(GlassModel.Table_Result_Feed_URL);
+                    }
                 }
                 catch (Exception ex)
                 {
