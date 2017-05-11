@@ -8,6 +8,7 @@ using Informa.Library.Salesforce.User.Authentication;
 using Informa.Library.SalesforceConfiguration;
 using Informa.Library.Salesforce.V2.User.Entitlement;
 using Informa.Library.Salesforce.V2.User.Profile;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.User.Authentication
 {
@@ -41,6 +42,7 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
         {
             try
             {
+                Stopwatch swMain = Stopwatch.StartNew();
                 using (var client = new HttpClient())
                 {
                     string accessToken = string.Empty;
@@ -55,6 +57,7 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                         { "client_secret", client_secret },
                         { "redirect_uri", redirect_uri }
                     };
+                    Stopwatch sw = Stopwatch.StartNew();
                     HttpResponseMessage response = client.PostAsync(CreateRequestUri(client.BaseAddress.AbsolutePath,
                         SalesforceConfigurationContext?.GetUserAccessTokenEndPoints()),
                         new FormUrlEncodedContent(pairs)).Result;
@@ -71,6 +74,8 @@ namespace Informa.Library.Salesforce.V2.User.Authentication
                             InfoLogger.Log("Access Token" + accessToken, this.GetType().Name);
                         }
                     }
+                    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-Authenticate-Time", sw, "SalesforceAPICall");
+                    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-Authenticate-Time", swMain, "SalesforceOuterCall");
                     if (string.IsNullOrWhiteSpace(accessToken))
                     {
                         return ErrorResult;

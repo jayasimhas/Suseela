@@ -9,6 +9,7 @@ using System.Web;
 using Informa.Library.Salesforce.User.Authentication;
 using Informa.Library.User;
 using System.Configuration;
+using System.Diagnostics;
 
 namespace Informa.Web.Areas.Account.Controllers
 {
@@ -38,6 +39,7 @@ namespace Informa.Web.Areas.Account.Controllers
         [HttpPost]
         public IHttpActionResult Login(AuthenticateRequest request)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             var username = request?.Username;
             var password = request?.Password;
 
@@ -70,7 +72,7 @@ namespace Informa.Web.Areas.Account.Controllers
             {
                 VerticalLogin.CreateLoginCookie(username, null);
             }
-
+            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("AccountLogin Timer", sw, "AccountLogin");
 
             return Ok(new
             {

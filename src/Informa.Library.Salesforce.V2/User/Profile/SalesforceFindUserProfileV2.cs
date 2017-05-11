@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Collections.Generic;
 using System;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.User.Profile
 {
@@ -41,13 +42,16 @@ namespace Informa.Library.Salesforce.V2.User.Profile
 
             try
             {
+                Stopwatch sw = Stopwatch.StartNew();
+                Stopwatch swMain = Stopwatch.StartNew();
                 var userInfoEndPoints = SalesforceConfigurationContext?.GetUserInfoEndPoints();
                 InfoLogger.Log(userInfoEndPoints, this.GetType().Name);
                 var userInfoResponse = HttpClientHelper.GetDataResponse<SalesforceUserInfo>(new Uri(userInfoEndPoints)
                     , new AuthenticationHeaderValue("Authorization", "Bearer " + accessToken),
                     new Dictionary<string, string>());
                 InfoLogger.Log(JsonConvert.SerializeObject(userInfoResponse), this.GetType().Name);
-
+                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-Profile-Find-Time", sw, "SalesforceAPICall");
+                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-Profile-Find-Time", swMain, "SalesforceOuterCall");
                 return new SalesforceUserProfile
                 {
                     UserId = userInfoResponse?.UserID ?? string.Empty,
@@ -71,6 +75,7 @@ namespace Informa.Library.Salesforce.V2.User.Profile
                     JobIndustry = userInfoResponse?.CustomAttributes?.JobIndustry ?? string.Empty,
                     JobTitle = userInfoResponse?.CustomAttributes?.JobTitle ?? string.Empty
                 };
+                
             }
             catch (Exception e)
             {

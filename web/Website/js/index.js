@@ -864,7 +864,6 @@ $(document).ready(function(){
         };
 
         var showMenu = function() {
-			$('.main-menu-list').css('display', 'block');
             $('.main-menu').addClass('is-active');
             $('.menu-toggler').addClass('is-active');
             $('.header__wrapper .menu-toggler').addClass('is-sticky');
@@ -873,7 +872,6 @@ $(document).ready(function(){
         };
 
         var hideMenu = function() {
-			$('.main-menu-list').css('display', 'none');
             $('.main-menu').removeClass('is-active');
             $('.menu-toggler').removeClass('is-active');
             $('body').removeClass('is-frozen');
@@ -1464,34 +1462,27 @@ $(document).ready(function(){
 		$('.header-account-right-access').addClass('tabheader-account');
 	}
 	
-	//IPMP-2543
-	// if($('.pop-out__myViewregister').length){
-	// 	if (window.matchMedia("(min-width: 1025px)").matches) {
-	// 		$('.pop-out.js-pop-out__myViewregister').css('top', '-140px');
-	// 	}
-	// 	else if (window.matchMedia("(min-width: 769px) and (max-width: 1024px)").matches) {
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-	// 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-	// 	}
-	// 	else if (window.matchMedia("(max-width: 768px)").matches) {
-	// 		$('.pop-out.is-active').css({'top': '-190px', 'left': '-300px'});
-	// 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-	// 	}
-	// }
-	// $(window).resize(function(){
-	// 	if($(window).width() > 1024){
-	// 	$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '0px'});
-	// 	}
-	// 	if($(window).width() > 1000 && $(window).width() <= 1024){
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-140px', 'left': '-270px'});
-	// 		$('.pop-out__tab').css({'top': '-86px', 'left': '533px'});
-	// 	}
-	// 	else if($(window).width() > 600 && $(window).width() <= 768){
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-190px', 'left': '-300px'});
-	// 		$('.pop-out__tab').css({'right': '-300px', 'top': '-70px'});
-	// 	}
-	// 	else{
-	// 		$('.pop-out.js-pop-out__myViewregister').css({'top': '-370px', 'left': '0px'});
-	// 	}
-	// });
+	// login details
+	$('.header-account-access__label a, .article-call-to-action--sign-in-up .js-login-container a').click(function(e) { 
+        e.preventDefault();
+        var href = $(this).attr('href');
+        var indexOfProcessId = href.indexOf("processId");
+        var getId = href.substring(indexOfProcessId + 12);
+        
+        $.ajax({
+            url: '/User/ProcessUserRequest/LoginLogger',
+            type: 'GET',
+            context: this,
+            data: {
+                processId: getId
+            },
+            success: function () {
+            },
+            error: function(response) {
+                return false;
+            }
+        });
+
+        window.location.href = href;
+    });
 });

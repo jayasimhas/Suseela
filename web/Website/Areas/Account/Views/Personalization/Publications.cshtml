@@ -1,6 +1,9 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.IChannelsViewModel
 @using Informa.Library.User.UserPreference;
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.Channels != null && Model.Channels.Any())
 {
     var Channels = Model.Channels.OrderBy(x => x.ChannelOrder == 0).ThenBy(x => x.ChannelOrder).ToList();
@@ -389,4 +392,7 @@
         }
 
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Publication.cshtml Timer", sw, "Publication.cshtml");
 }
