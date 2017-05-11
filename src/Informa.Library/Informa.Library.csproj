@@ -366,6 +366,7 @@
     <Compile Include="CustomSitecore\Pipelines\DataSourceMutiSitePathResolver.cs" />
     <Compile Include="CustomSitecore\Dialogs\CustomPublishForm.cs" />
     <Compile Include="CustomSitecore\Ribbon\InformaCheckOut.cs" />
+    <Compile Include="CustomSitecore\Ribbon\InformaEdit.cs" />
     <Compile Include="CustomSitecore\Ribbon\InformaGalleryWorkflowEditForm.cs" />
     <Compile Include="CustomSitecore\RTECustomization\InsertIframe.cs" />
     <Compile Include="CustomSitecore\RTECustomization\InsertSidebarArticles.cs" />

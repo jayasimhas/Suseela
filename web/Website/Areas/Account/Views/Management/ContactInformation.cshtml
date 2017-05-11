@@ -1,4 +1,8 @@
 ﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.Areas.Account.ViewModels.Management.ContactInformationViewModel>
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @{ 
     string salesforceAPI = string.Empty;
 }
@@ -742,6 +746,9 @@ else
         </p>
     </div>
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ContactInformation.cshtml Timer", sw, "MyAccount");
+}
 
 <style type="text/css">
     .field-error {

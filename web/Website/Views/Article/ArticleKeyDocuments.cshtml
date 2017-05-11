@@ -2,6 +2,11 @@
 
 @* * *  ARTICLE - KEY DOCUMENTS
         IIPP-158 *@
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
+
 @if (Model.KeyDocuments.Any() && Model.IsEntitled(Model.ArticleItem))
 {
     <div class="article-key-documents">
@@ -21,5 +26,8 @@
             }
         </ul>
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticleKeyDocuments.cshtml", sw, "ArticleKeyDocuments");
 }
 @* * *  END ARTICLE - KEY DOCUMENTS *@

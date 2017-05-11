@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-  <cacheSize>${Cache.Prefetch.Web}</cacheSize>
+  <childLimit>400</childLimit>
+  <cacheSize>800MB</cacheSize>
 
   <template desc="alias">{54BCFFB7-8F46-4948-AE74-DA5B6B5AFA86}</template>
 
@@ -9,4 +10,80 @@
 
   <item desc="home">{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}</item>
   <children desc="main items">{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}</children>
+
+  <item desc="GlobalDictionary">{97286D9D-452D-48E6-AD4E-682D52869459}</item>
+  <children desc="GlobalDictionaryitems">{97286D9D-452D-48E6-AD4E-682D52869459}</children>
+
+  <item desc="IEGVUTopic">{1E83DB23-B983-4D40-B6E7-E93AF83E296B}</item>
+  <children desc="IEGVUTopic items">{1E83DB23-B983-4D40-B6E7-E93AF83E296B}</children>
+
+  <item desc="IEGVUChannels">{8A065C56-4AF9-4C91-A18E-414C56FA069A}</item>
+  <children desc="IEGVUChannels items">{8A065C56-4AF9-4C91-A18E-414C56FA069A}</children>
+
+  <item desc="AgrowChannels">{0C4ED807-9F2C-493F-8C21-C52B20DC4159}</item>
+  <children desc="AgrowChannels items">{0C4ED807-9F2C-493F-8C21-C52B20DC4159}</children>
+  
+  <item desc="IDChannels">{E60450C0-0E6A-4EA5-B462-88CEDDAC54DF}</item>
+  <children desc="IDChannels items">{E60450C0-0E6A-4EA5-B462-88CEDDAC54DF}</children>
+
+  <item desc="AgrowTopicCommercial">{73C6E235-437C-47FF-AF04-0B8E8DDEEE75}</item>
+  <children desc="AgrowTopicCommercial items">{73C6E235-437C-47FF-AF04-0B8E8DDEEE75}</children>
+
+  <item desc="AgrowTopicMarkets">{434AAF6A-A167-4853-A7CA-5440F115408A}</item>
+  <children desc="AgrowTopicMarkets items">{434AAF6A-A167-4853-A7CA-5440F115408A}</children>
+
+  <item desc="AgrowTopicProducts">{EBA8A39E-6AB9-4694-BEC8-EB8D91D31E4A}</item>
+  <children desc="AgrowTopicProducts items">{EBA8A39E-6AB9-4694-BEC8-EB8D91D31E4A}</children>
+
+  <item desc="AgrowTopicAgrowData">{5ECFA036-7CB8-4B4D-8066-3A2C7DEE60DB}</item>
+  <children desc="AgrowTopicAgrowData items">{5ECFA036-7CB8-4B4D-8066-3A2C7DEE60DB}</children>
+
+  <item desc="APTopicData">{DB7537F8-C46D-4D10-89E7-5F018B93786F}</item>
+  <children desc="APTopicData items">{DB7537F8-C46D-4D10-89E7-5F018B93786F}</children>
+
+  <item desc="APProductsTopic">{431E0A19-DFAB-465A-A696-0F17C0027476}</item>
+  <children desc="APProductsTopic items">{431E0A19-DFAB-465A-A696-0F17C0027476}</children>
+
+  <item desc="APPolicyandRegulationTopic">{F5E06754-EABB-4881-875B-BA2D2D6A0418}</item>
+  <children desc="APPolicyandRegulationTopic items">{F5E06754-EABB-4881-875B-BA2D2D6A0418}</children>
+
+  <item desc="APPolicyandRegulationTopic">{F5E06754-EABB-4881-875B-BA2D2D6A0418}</item>
+  <children desc="APPolicyandRegulationTopic items">{F5E06754-EABB-4881-875B-BA2D2D6A0418}</children>
+
+  <item desc="IDMarketTopic">{A028FD64-1457-4865-96C5-6949445D9C33}</item>
+  <children desc="APPolicyandRegulation items">{F5E06754-EABB-4881-875B-BA2D2D6A0418}</children>
+
+  <item desc="IDCompanies and FinancialTopic">{AA4F0AA6-A308-4207-B664-09F92B4510B4}</item>
+  <children desc="IDCompanies and FinancialTopic items">{AA4F0AA6-A308-4207-B664-09F92B4510B4}</children>
+
+  <item desc="IDRegularsTopic">{2A8E4A9E-DEEC-4F0B-9ADC-4169204FC9BB}</item>
+  <children desc="IDRegularsTopic items">{2A8E4A9E-DEEC-4F0B-9ADC-4169204FC9BB}</children>
+
+  <item desc="IDInterviewsTopic">{4E629A36-3BC0-46A0-8524-04FD2D6FD5FC}</item>
+  <children desc="IDInterviewsTopic items">{4E629A36-3BC0-46A0-8524-04FD2D6FD5FC}</children>
+
+  <item desc="IDRegionsTopic">{02D1773B-2349-468A-AF8A-ECC1FFD41561}</item>
+  <children desc="IDRegionsTopic items">{02D1773B-2349-468A-AF8A-ECC1FFD41561}</children>
+
+  <item desc="IDHotTopic">{F8AFE714-6FD4-4995-8D44-E78418945160}</item>
+  <children desc="IDHotTopic items">{F8AFE714-6FD4-4995-8D44-E78418945160}</children>
+  
+  <item desc="LLChannels">{173AB895-BE8D-445C-9452-75BEE62C83AB}</item>
+  <children desc="LLChannels items">{173AB895-BE8D-445C-9452-75BEE62C83AB}</children>
+
+  <item desc="LLSectorsTopic">{3E3F514C-CBE6-4DA0-8186-B57191425F7F}</item>
+  <children desc="LLSectorsTopic items"> {3E3F514C-CBE6-4DA0-8186-B57191425F7F}</children>
+
+  <item desc="LLMarket InsightTopic">{8B5FDDBD-5EF2-4C8C-9B65-2B8A6D0BE351}</item>
+  <children desc="LLMarket InsightTopic items">{8B5FDDBD-5EF2-4C8C-9B65-2B8A6D0BE351}</children>
+
+  <item desc="LLTopicsTopic">{8287CF65-8D20-45CA-8104-A45A4AEEA6CC}</item>
+  <children desc="LLTopicsitems">{8287CF65-8D20-45CA-8104-A45A4AEEA6CC}</children>
+
+  <item desc="LLRegions">{0E661208-4CC7-4833-864A-F6F541069123}</item>
+  <children desc="LLRegionsItems">{0E661208-4CC7-4833-864A-F6F541069123}</children>
+
+  <item desc="LLMarkets">{C4BF802B-3FA7-4D10-B216-7C3340BBBC38}</item>
+  <children desc="LLMarketsItems">{C4BF802B-3FA7-4D10-B216-7C3340BBBC38}</children>
+
 </configuration>

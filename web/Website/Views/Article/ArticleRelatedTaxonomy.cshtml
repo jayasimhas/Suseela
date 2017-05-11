@@ -1,6 +1,9 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
 @model Informa.Web.ViewModels.HierarchyLinksViewModel
-
+@using System.Diagnostics
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.Children.Any())
 {
 	<div class="article-topics">
@@ -33,4 +36,7 @@
 			}
 		</ul>
 	</div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticleRelatedTaxonomy.cshtml", sw, "ArticleRelatedTaxonomy");
 }

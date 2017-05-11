@@ -1,5 +1,8 @@
 ﻿@inherits GlassView<Informa.Web.ViewModels.CompaniesAndDeals.RelatedDealsModel>
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @if (Model.RelatedDeals != null && Model.RelatedDeals.Any())
 {
     <div class="article-topics">
@@ -16,4 +19,7 @@
             }
         </ul>
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticleRelatedDeals.cshtml", sw, "ArticleRelatedDeals");
 }

@@ -184,6 +184,12 @@ namespace Informa.Library.Services.Article
 
         public string GetLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false, string legacyArticleNumber = null, string escenicID = null)
         {
+            string cacheKey = CreateCacheKey($"ArticleLegacyPublicationText-{article._Id}");
+            return CacheProvider.GetFromCache(cacheKey, () => BuildLegacyPublicationText(article, isLegacyBrandSelected, legacyArticleNumber, escenicID));           
+        }
+
+        private string BuildLegacyPublicationText(IArticle article, bool isLegacyBrandSelected = false, string legacyArticleNumber = null, string escenicID = null)
+        {
             // JIRA IPMP-56
 
             string legacyText = null;
@@ -219,7 +225,6 @@ namespace Informa.Library.Services.Article
                 }
 
             }
-
             #region PharamaUsed
             //var legacyText = TextTranslator.Translate("Article.LegacyPublications");
             //var legacyPublicationsText = GetLegacyPublicationNames(article).JoinWithFinal(", ", "&");

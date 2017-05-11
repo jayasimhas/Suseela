@@ -7,6 +7,7 @@ using Informa.Library.User.Authentication;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.Company;
 using Informa.Web.ViewModels.FinanceCompanies;
+using Jabberwocky.Core.Caching;
 using Jabberwocky.Glass.Autofac.Mvc.Models;
 using Jabberwocky.Glass.Autofac.Mvc.Services;
 using Jabberwocky.Glass.Models;
@@ -27,10 +28,11 @@ namespace Informa.Web.ViewModels.Casualty
         protected readonly ISitecoreContext SitecoreContext;
         protected readonly IGlobalSitecoreService GlobalService;
         private readonly ILog _logger;
+        protected readonly ICacheProvider CacheProvider;
         public IExternal_Feed_Url_Configuration feedUrlConfiguration { get; set; }
         protected IGlassBase Datasource;
         public AdobeChartViewModel(IGlobalSitecoreService globalService, ICompaniesResultService companyResultService,
-         IAuthenticatedUserContext authenticatedUserContext, ISitecoreContext sitecoreContext, IRenderingContextService renderingParametersService, IGlassBase datasource, ILog logger)
+         IAuthenticatedUserContext authenticatedUserContext, ISitecoreContext sitecoreContext, IRenderingContextService renderingParametersService, IGlassBase datasource, ILog logger, ICacheProvider cacheProvider)
         {
             GlobalService = globalService;
             CompanyResultService = companyResultService;
@@ -39,6 +41,7 @@ namespace Informa.Web.ViewModels.Casualty
             feedUrlConfiguration = renderingParametersService.GetCurrentRenderingParameters<IExternal_Feed_Url_Configuration>();
             Datasource = datasource;
             _logger = logger;
+            CacheProvider = cacheProvider;
         }
         public bool IsUserAuthenticated => AuthenticatedUserContext.IsAuthenticated;
         public AMGraph GraphDetail => GetGraph();
@@ -54,17 +57,20 @@ namespace Informa.Web.ViewModels.Casualty
         private AMGraph GetGraph()
         {
             ICompany_Graph graph = GetDataSourceItem();
+            
             if (graph == null)
             {
                 return null;
             }
+            string cacheKey = $"ChartFeeds_{Datasource._Id}";
+
             var graphObj = new AMGraph
             {
                 GraphColor = FetchColorCode(graph),
                 GraphTitle = graph.GraphTitle,
                 GraphType = !string.IsNullOrEmpty(graph.GraphType) ? graph.GraphType : "line",
                 GraphID = graph.GraphID,
-                FinanceResult = FetchFinanceResults(graph)
+                FinanceResult = CacheProvider.GetFromCache(cacheKey, new TimeSpan(12,0,0), ()=> FetchFinanceResults(graph))
             };
             return graphObj;
         }

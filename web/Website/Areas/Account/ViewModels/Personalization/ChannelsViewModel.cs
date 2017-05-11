@@ -14,6 +14,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using Library.Utilities.References;
+    using Library.User.Authentication;
+    using Jabberwocky.Core.Caching;
 
     [AutowireService]
     public class ChannelsViewModel : IChannelsViewModel
@@ -25,6 +27,8 @@
         private readonly IEnumerable<ISubscription> _subcriptions;
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IItemReferences ItemReferences;
+        protected readonly IAuthenticatedUserContext UserContext;
+        protected readonly ICacheProvider CacheProvider;
 
         public ChannelsViewModel(
         ITextTranslator translator,
@@ -32,7 +36,7 @@
         IGlobalSitecoreService globalService,
         IUserPreferenceContext userPreferences,
         IUserSubscriptionsContext userSubscriptionsContext,
-                IItemReferences itemReferences)
+                IItemReferences itemReferences, IAuthenticatedUserContext userContext, ICacheProvider cacheProvider)
         {
             TextTranslator = translator;
             SiterootContext = siterootContext;
@@ -40,8 +44,10 @@
             UserPreferences = userPreferences;
             _subcriptions = userSubscriptionsContext.Subscriptions;
             ItemReferences = itemReferences;
+            UserContext = userContext;
+            CacheProvider = cacheProvider;
         }
-
+        
         public string ChannelFollowingButtonText => TextTranslator.Translate("MyViewSettings.ChannelFollowingButtonText");
 
         public string ChannelFollowButtonText => TextTranslator.Translate("MyViewSettings.ChannelFollowButtonText");
@@ -216,7 +222,7 @@
         {
             return string.Format(channelCodeFormat, SiterootContext?.Item.Publication_Code, subCode);
         }
-
+        private static object _syncRoot = new object();
 
         /// <summary>
         /// Gets the channels.
@@ -230,11 +236,22 @@
             enableSavePreferencesCheck = string.IsNullOrEmpty(CurrentItem["EnableSavePreferencesCheck"]) ? false : true;
             if (isFromRegistration)
             {
-                return GetPublicationDetailsForRegistration();
+                string cacheKey = $"MyViewSettings_GetChannels_Reg_{ UserContext.User.Email}_{SiterootContext.Item.Publication_Code}";
+                lock (_syncRoot)
+                {
+                   
+                    return CacheProvider.GetFromCache(cacheKey, () => GetPublicationDetailsForRegistration());
+                }
+                
             }
             else
             {
-                return GetAllChannels();
+                string cacheKey = $"MyViewSettings_GetChannels_{ UserContext.User.Email}_{SiterootContext.Item.Publication_Code}";
+                lock (_syncRoot)
+                {
+                    return CacheProvider.GetFromCache(cacheKey,() => GetAllChannels());
+                }
+               
             }
         }
         /// <summary>

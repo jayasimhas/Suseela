@@ -1,4 +1,9 @@
 ﻿@inherits Jabberwocky.Glass.Autofac.Mvc.Views.CustomGlassView<Informa.Web.Areas.Account.ViewModels.Management.SavedSearchesViewModel>
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
+
 
 @if (Model.IsAuthenticated)
 {
@@ -267,4 +272,7 @@ else
     <div class="page-account__sign-in-solo">
         @Html.Partial("_SignInForm", Model.SignInViewModel)
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("SavedSearches.cshtml", sw, "SavedSearches");
 }

@@ -1,5 +1,10 @@
 @model AdViewModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @{ Model.Init(); }
+
 
 @if (Model.IsValidFilmstripAd) {
     <section class="article-preview article-preview--small">
@@ -10,4 +15,7 @@
             </script>
         </div>
     </section>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("FilmstripAd.cshtml", sw, "FilmstripAd");
 }

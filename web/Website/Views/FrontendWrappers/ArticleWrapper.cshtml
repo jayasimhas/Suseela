@@ -1,14 +1,17 @@
 ﻿@using Glass.Mapper.Sc.Web.Mvc
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="article-left-rail">
     @Html.Sitecore().Placeholder("article-left-content")
 </div>
-
 
 <div class="article-right-rail">
     @Html.Sitecore().Placeholder("article-med-ad")
     @Html.Sitecore().Placeholder("article-right-content")
     @Html.Sitecore().Placeholder("article-film-ad")
 </div>
-                   
-@*@{ Html.RenderPartial("../Article/ArticlePrologue");}*@
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticleWrapper.cshtml", sw, "ArticleWrapper");
+}                   
