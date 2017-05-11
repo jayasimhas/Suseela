@@ -9145,9 +9145,9 @@ function createJSONData(alltables, UserPreferences, url) {
             var followStatus = secondtd == $('#followingButtonText').val() ? true : false;
             //var subscripStatus = (subscribeStatus.toUpperCase()) == 'SUBSCRIBED' ? true : false;
 
-            alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus, 'TopicId': topicId });
+            alltdata.push({ 'TopicCode': eachrowAttr, 'TopicOrder': datarowNo, 'IsFollowing': followStatus });
         }
-        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, "ChannelId": channelId, Topics: alltdata });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": publicationName, "ChannelOrder": pubPanPosition, "IsFollowing": channelStatus, Topics: alltdata });
     }
     sendHttpRequest(UserPreferences, null, url);
 }
@@ -9226,7 +9226,7 @@ function sendRegisterData(alltrs, UserPreferences, redirectUrl) {
             channelOrder = $(alltrs[i]).attr('data-row'),
             followStatus = secondtd == $('#followingButtonText').val() ? true : false;
 
-        UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "ChannelId": channelId, "Topics": [] });
+        UserPreferences.PreferredChannels.push({ "ChannelCode": eachrowAttr, "ChannelOrder": channelOrder, "IsFollowing": followStatus, "Topics": [] });
     }
     sendHttpRequest(UserPreferences, 'register', redirectUrl);
 }
