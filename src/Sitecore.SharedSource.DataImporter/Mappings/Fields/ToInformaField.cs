@@ -2368,48 +2368,104 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                     continue;
                 }
-
-                string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
-
-                if (!tName.Any())
+                if (transformValue.Contains(","))
                 {
-                    tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
-                    if (!tDName.Any())
+                    var specialcharactervalues = transformValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+
+                    foreach (var specialval in specialcharactervalues)
                     {
-                        map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                        continue;
-                    }
-                    else
-                    {
-                        t = tDName;
+                        string transformedValue = specialval;
+                        string cleanName = StringUtility.GetValidItemName(transformedValue, map.ItemNameMaxLength);
+                        tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformedValue.ToLower()));
+
+                        if (!tName.Any())
+                        {
+                            tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformedValue.ToLower()));
+                            if (!tDName.Any())
+                            {
+                                map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                                continue;
+                            }
+                            else
+                            {
+                                t = tDName;
+                            }
+                        }
+
+                        else
+                        {
+                            t = tName;
+                        }
+
+                        //if you find one then store the id
+                        //if (!t.Any())
+                        //{
+                        //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                        //    continue;
+                        //}
+
+                        Field f = newItem.Fields[NewItemField];
+                        if (f == null)
+                            continue;
+
+                        if (NewItemField == "Taxonomy")
+                        {
+                            TaxonomyList.Add(t.First().ID.ToString());
+                        }
+
+                        if (!(regionLog.Contains(t.First().Name)))
+                            regionLog += t.First().Name + ",";
                     }
                 }
 
                 else
                 {
-                    t = tName;
+                    string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
+                    tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+
+                    if (!tName.Any())
+                    {
+                        tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                        if (!tDName.Any())
+                        {
+                            map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                            continue;
+                        }
+                        else
+                        {
+                            t = tDName;
+                        }
+                    }
+
+                    else
+                    {
+                        t = tName;
+                    }
+
+                    //if you find one then store the id
+                    //if (!t.Any())
+                    //{
+                    //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                    //    continue;
+                    //}
+
+                    Field f = newItem.Fields[NewItemField];
+                    if (f == null)
+                        continue;
+
+                    if (NewItemField == "Taxonomy")
+                    {
+                        TaxonomyList.Add(t.First().ID.ToString());
+                    }
+
+                    if (!(regionLog.Contains(t.First().Name)))
+                        regionLog += t.First().Name + ",";
                 }
 
-                //if you find one then store the id
-                //if (!t.Any())
-                //{
-                //    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                //    continue;
-                //}
-
-                Field f = newItem.Fields[NewItemField];
-                if (f == null)
-                    continue;
-
-                if (NewItemField == "Taxonomy")
-                {
-                    TaxonomyList.Add(t.First().ID.ToString());
-                }
-
-                if (!(regionLog.Contains(t.First().Name)))
-                    regionLog += t.First().Name + ",";
             }
+
+
+
             DataLogger.Add(siteandpublication[2], regionLog);
         }
 
@@ -3907,12 +3963,13 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
             foreach (var val in values)
             {
+                string transValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
                 //string upperValue = val.ToUpper();
                 // string upperValue = val.ToUpper();
 
-                if (val == "cbot review" || val == "ice canada review" || val == "ice us review" || val == "weekly review" || val == "settlements")
+                if (val == "cbot review" || val == "ice canada review" || val == "ice us review" || val == "weekly review" || val == "settlements" || transValue.Contains(","))
                 {
-                    string transValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
+                   
 
                     var specialcharactervalues = transValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
 
@@ -3975,26 +4032,26 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
 
                 else
                 {
-                    string transformValue = GetusingXML(val, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
+                   
 
-                    if (string.IsNullOrEmpty(transformValue))
+                    if (string.IsNullOrEmpty(transValue))
                     {
                         map.Logger.Log(newItem.Paths.FullPath, "Region not converted", ProcessStatus.FieldError, NewItemField, val);
                         continue;
                     }
-                    if (transformValue.Contains("&") || transformValue.Contains("/") || transformValue.Contains("'"))
+                    if (transValue.Contains("&") || transValue.Contains("/") || transValue.Contains("'"))
                     {
-                        transformValue = transformValue.Replace("&", "and");
-                        transformValue = transformValue.Replace("/", "or");
-                        transformValue = transformValue.Replace("'", "");
+                        transValue = transValue.Replace("&", "and");
+                        transValue = transValue.Replace("/", "or");
+                        transValue = transValue.Replace("'", "");
 
                     }
-                    string cleanName = StringUtility.GetValidItemName(transformValue, map.ItemNameMaxLength);
-                    tName = sourceItems.Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+                    string cleanName = StringUtility.GetValidItemName(transValue, map.ItemNameMaxLength);
+                    tName = sourceItems.Where(c => c.Name.ToLower().Equals(transValue.ToLower()));
 
                     if (!tName.Any())
                     {
-                        tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                        tDName = sourceItems.Where(c => c.DisplayName.ToLower().Equals(transValue.ToLower()));
                         if (!tDName.Any())
                         {
                             map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
