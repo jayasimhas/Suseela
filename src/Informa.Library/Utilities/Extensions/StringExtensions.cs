@@ -12,6 +12,11 @@ namespace Informa.Library.Utilities.Extensions
             sw.Stop();
             Sitecore.Diagnostics.Log.Info(Message + sw.Elapsed.TotalMilliseconds, LoggerName);
         }
+        public static void WriteSitecoreLogs(string Message, string LoggerName)
+        {
+            Sitecore.Diagnostics.Log.Info(Message, LoggerName);
+        }
+
         public static string StripHtml(this string source)
 		{
 			return Regex.Replace(source, "<[^>]*>", "", RegexOptions.Compiled).Replace("  ", " ");

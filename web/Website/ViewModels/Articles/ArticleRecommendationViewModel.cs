@@ -13,6 +13,8 @@ using Informa.Library.User.Entitlement;
 using Informa.Library.Article.Search;
 using Informa.Models.FactoryInterface;
 using System;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
+using Informa.Library.Utilities.References;
 
 namespace Informa.Web.ViewModels.Articles
 {
@@ -27,7 +29,7 @@ namespace Informa.Web.ViewModels.Articles
         protected readonly IUserEntitlementsContext UserEntitlementsContext;
         protected readonly IArticleSearch Searcher;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
-
+        protected readonly IItemReferences ItemReferences;
         public ArticleRecommendationViewModel(ISiteRootContext siteRootContext,
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
@@ -35,7 +37,8 @@ namespace Informa.Web.ViewModels.Articles
             IGlobalSitecoreService globalService,
             IUserEntitlementsContext userEntitlementsContext,
             IArticleSearch searcher,
-            IArticleListItemModelFactory articleListableFactory)
+            IArticleListItemModelFactory articleListableFactory,
+            IItemReferences itemReferences)
         {
             SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
@@ -45,6 +48,7 @@ namespace Informa.Web.ViewModels.Articles
             UserEntitlementsContext = userEntitlementsContext;
             Searcher = searcher;
             ArticleListableFactory = articleListableFactory;
+            ItemReferences = itemReferences;
         }
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
@@ -297,38 +301,61 @@ namespace Informa.Web.ViewModels.Articles
             var UserEntitlements = UserEntitlementsContext.Entitlements;
             Section sec = new Section();
             sec.TaxonomyIds = new List<string>();
-            var homeItem = GlobalService.GetItem<IHome_Page>(SiteRootContext.Item._Id.ToString()).
-                _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-
-            if (homeItem != null)
+            var homeItem = GlobalService.GetItem<ISite_Root>(SiteRootContext.Item._Id.ToString());
+            if (homeItem != null && homeItem.Entitlement_Type._Id.Equals(ItemReferences.ItemLevelEntitlementType) || homeItem.Entitlement_Type._Id.Equals(ItemReferences.SiteLevelEntitlementType))
             {
-                var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
-
-                if (channelsPageItem != null)
+                if (!string.IsNullOrEmpty(homeItem.Publication_Code) && UserEntitlements != null && UserEntitlements.Any(x => x.ProductCode.Equals(homeItem.Publication_Code, StringComparison.OrdinalIgnoreCase)))
                 {
-                    var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                    if (channelPages != null && channelPages.Any())
+                    var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault()?._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
+
+                    if (channelsPageItem != null)
                     {
-                        
-                        foreach (IChannel_Page channelPage in channelPages)
+                        var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
+                        if (channelPages != null && channelPages.Any())
                         {
-                           
-                            bool IsChannelSubscribed = UserEntitlements != null && UserEntitlements.Any(subcription => subcription
-                                                   .ProductCode.Equals(GetProductCode(channelPage.Channel_Code), StringComparison.OrdinalIgnoreCase)
-                                                   && DateTime.Parse(subcription.AccessEndDate) > DateTime.Now
-                                                   );
-                            if (IsChannelSubscribed)
+
+                            foreach (IChannel_Page channelPage in channelPages)
                             {
-                                var taxonomyId = channelPage.Taxonomies != null && channelPage.Taxonomies.Any() ? channelPage?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                                if (!string.IsNullOrWhiteSpace(taxonomyId))
-                                    sec.TaxonomyIds.Add(taxonomyId);
-                                GetTopicsEntitlements(sec, channelPage);
+                                    var taxonomyId = channelPage.Taxonomies != null && channelPage.Taxonomies.Any() ? channelPage?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                        sec.TaxonomyIds.Add(taxonomyId);
+                                    GetTopicsEntitlements(sec, channelPage);
                             }
                         }
                     }
                 }
             }
+            else
+            {
+                if (homeItem != null)
+                {
+                    var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
 
+                    if (channelsPageItem != null)
+                    {
+                        var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
+                        if (channelPages != null && channelPages.Any())
+                        {
+
+                            foreach (IChannel_Page channelPage in channelPages)
+                            {
+
+                                bool IsChannelSubscribed = UserEntitlements != null && UserEntitlements.Any(subcription => subcription
+                                                       .ProductCode.Equals(GetProductCode(channelPage.Channel_Code), StringComparison.OrdinalIgnoreCase)
+                                                       && DateTime.Parse(subcription.AccessEndDate) > DateTime.Now
+                                                       );
+                                if (IsChannelSubscribed)
+                                {
+                                    var taxonomyId = channelPage.Taxonomies != null && channelPage.Taxonomies.Any() ? channelPage?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                                    if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                        sec.TaxonomyIds.Add(taxonomyId);
+                                    GetTopicsEntitlements(sec, channelPage);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             return sec;
         }
 

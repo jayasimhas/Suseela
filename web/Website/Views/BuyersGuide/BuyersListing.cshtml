@@ -1,4 +1,8 @@
 ﻿@model Informa.Web.ViewModels.BuyersGuide.BuyersListingViewModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @using Informa.Library.Utilities.References
 @{
     var linkType = string.Empty;
@@ -130,3 +134,6 @@
         <div class="contact_terms"><p>@Html.Raw(Model.Body)</p></div>
     </div>
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("BuyersListing.cshtml Timer", sw, "BuyersListing.cshtml");
+}

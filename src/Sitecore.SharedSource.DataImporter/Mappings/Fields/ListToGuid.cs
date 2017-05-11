@@ -115,46 +115,94 @@ namespace Sitecore.SharedSource.DataImporter.Mappings.Fields
                     string upperValue = val.ToString();
                     string transformValue = GetusingXML(upperValue, siteandpublication[1], siteandpublication[2].ToLower(), siteandpublication[0]);
 
-
-                    //loop through children and look for anything that matches by name
-                   // string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
-                    tName = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
-
-                    if (!tName.Any())
+                    if (transformValue.Contains(","))
                     {
-                        tDName = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
-                        if (!tDName.Any())
+                        var specialcharactervalues = transformValue.Split(GetFieldValueDelimiter()?[0] ?? ',');
+                        //loop through children and look for anything that matches by name
+                        // string cleanName = StringUtility.GetValidItemName(upperValue, map.ItemNameMaxLength);
+                        foreach (var specialval in specialcharactervalues)
                         {
-                            map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
-                            continue;
-                        }
-                        else
-                        {
-                            t = tDName;
+                            string transformedValue = specialval;
+                            string cleanName = StringUtility.GetValidItemName(transformedValue, map.ItemNameMaxLength);
+                            tName = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(transformedValue.ToLower()));
+
+                            if (!tName.Any())
+                            {
+                                tDName = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(transformedValue.ToLower()));
+                                if (!tDName.Any())
+                                {
+                                    map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                                    continue;
+                                }
+                                else
+                                {
+                                    t = tDName;
+                                }
+                            }
+
+                            else
+                            {
+                                t = tName;
+                            }
+
+                            // IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
+
+                            //if you find one then store the id
+                            //if (!t.Any())
+                            //    return;
+
+                            Field f = newItem.Fields[NewItemField];
+                            if (f == null)
+                                continue;
+
+                            if (NewItemField == "Taxonomy")
+                            {
+                                TaxonomyList.Add(t.First().ID.ToString());
+                            }
+                            if (!(Log.Contains(t.First().Name)))
+                                Log += t.First().Name + ",";
                         }
                     }
-
                     else
                     {
-                        t = tName;
+                        tName = i.Axes.GetDescendants().Where(c => c.Name.ToLower().Equals(transformValue.ToLower()));
+
+                        if (!tName.Any())
+                        {
+                            tDName = i.Axes.GetDescendants().Where(c => c.DisplayName.ToLower().Equals(transformValue.ToLower()));
+                            if (!tDName.Any())
+                            {
+                                map.Logger.Log(newItem.Paths.FullPath, "Region(s) not found in list", ProcessStatus.FieldError, NewItemField, val);
+                                continue;
+                            }
+                            else
+                            {
+                                t = tDName;
+                            }
+                        }
+
+                        else
+                        {
+                            t = tName;
+                        }
+
+                        // IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
+
+                        //if you find one then store the id
+                        //if (!t.Any())
+                        //    return;
+
+                        Field f = newItem.Fields[NewItemField];
+                        if (f == null)
+                            continue;
+
+                        if (NewItemField == "Taxonomy")
+                        {
+                            TaxonomyList.Add(t.First().ID.ToString());
+                        }
+                        if (!(Log.Contains(t.First().Name)))
+                            Log += t.First().Name + ",";
                     }
-
-                   // IEnumerable<Item> t = i.Axes.GetDescendants().Where(c => c.Name.Equals(cleanName));
-
-                    //if you find one then store the id
-                    //if (!t.Any())
-                    //    return;
-
-                    Field f = newItem.Fields[NewItemField];
-                    if (f == null)
-                        continue;
-
-                    if (NewItemField == "Taxonomy")
-                    {
-                        TaxonomyList.Add(t.First().ID.ToString());
-                    }
-                    if(!(Log.Contains(t.First().Name)))
-                    Log += t.First().Name + ",";
                 }
                 DataLogger.Add(siteandpublication[2], Log);
             }

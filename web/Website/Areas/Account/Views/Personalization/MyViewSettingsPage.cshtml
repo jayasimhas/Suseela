@@ -1,5 +1,8 @@
 ﻿@model Informa.Web.Areas.Account.ViewModels.Personalization.MyViewSettingsViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 @*For registration flow*@
 @if (Model.IsFromRegistration && Model.IsAuthenticated)
 {
@@ -145,3 +148,6 @@
 <input type="hidden" name="followText" id="followText" value="FOLLOW" />
 <input type="hidden" name="unfollowText" id="unfollowText" value="UNFOLLOW" />
 <input type="hidden" name="followingButtonText" id="followingButtonText" value="FOLLOWING" />
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("MyviewSettings.cshtml Timer", sw, "MyviewSettings");
+}

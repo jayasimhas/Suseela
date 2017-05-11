@@ -106,7 +106,7 @@ namespace Informa.Library.Search.Utilities
                     else if (string.Equals(rootItem.Name, Settings.GetSetting("Vertical.Maritime"), StringComparison.OrdinalIgnoreCase))
                     {
 
-                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.CompaniesTaxonomyFolder"), parentPath))
+                        if (IsValidTaxonomy(Settings.GetSetting("Taxonomy.MaritimeCompaniesTaxonomyFolder"), parentPath))
                         {
                             key = MaritimeCompanies;
                         }

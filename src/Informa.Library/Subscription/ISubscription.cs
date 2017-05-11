@@ -18,5 +18,6 @@ namespace Informa.Library.Subscription
         string ServiceId { get; set; }
 
         string ParentServiceId { get; set; }
+        string PublicationSubs { get; set; }
     }
 }

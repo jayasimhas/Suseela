@@ -35,56 +35,57 @@ namespace Informa.Library.Utilities.References
         #region Taxonomy Folders
 
         //Global Taxonomy Folder
-        public Guid RegionsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid ContentTypesFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ContentTypesFolder")) ? ItemIdResolver.GetItemIdByKey("ContentTypesFolder") : Guid.Empty.ToString());
-        public Guid MediaTypeIconsFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("MediaTypeIconsFolder")) ? ItemIdResolver.GetItemIdByKey("MediaTypeIconsFolder") : Guid.Empty.ToString());
+        string taxonomyFolderName = string.Empty;
+        public Guid RegionsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("RegionsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid ContentTypesFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("ContentTypesFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MediaTypeIconsFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("MediaTypeIconsFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         // Pharma Taxonomy Folders
         public Guid Folder => new Guid("{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}"); //This Guid not found in CMS
-        public Guid PharmaTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder") : Guid.Empty.ToString());
-        public Guid PharmaSubjectsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid PharmaTherapyAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid PharmaDeviceAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid PharmaIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IndustryTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("IndustryTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid PharmaTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid PharmaSubjectsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("SubjectsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid PharmaTherapyAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("TherapyAreasTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid PharmaDeviceAreasTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("DeviceAreasTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid PharmaIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("IndustryTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         // Agri Taxonomy Folders
-        public Guid AgriTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder") : Guid.Empty.ToString());
-        public Guid AgriAgencyRegulatorTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AgencyRegulatorTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("AgencyRegulatorTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriAnimalHealthTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AnimalHealthTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("AnimalHealthTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriCommercialTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommercialTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommercialTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriCommodityTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriCropProtectionaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriCommoditesFactorsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CommodityFactorsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CommodityFactorsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid AgriIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid AgriTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriAgencyRegulatorTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AgencyRegulatorTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriAnimalHealthTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AnimalHealthTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriCommercialTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("CommercialTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriCommodityTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("CommodityTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriCropProtectionaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("CropProtectionaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriCommoditesFactorsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("CommodityFactorsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AgriIndustriesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("IndustriesTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         // Maritime Taxonomy Folders
-        public Guid MaritimeTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder") : Guid.Empty.ToString());
-        public Guid MaritimeCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("CompaniesTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid MaritimeHotTopicsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("HotTopicsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("HotTopicsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid MaritimeMarketsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("MarketsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("MarketsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid MaritimeRegularsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("RegularsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("RegularsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid MaritimeSectorsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("SectorsTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("SectorsTaxonomyFolder") : Guid.Empty.ToString());
-        public Guid MaritimeTopicTaxonomyFolder => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TopicTaxonomyFolder")) ? ItemIdResolver.GetItemIdByKey("TopicTaxonomyFolder") : Guid.Empty.ToString());
+        public Guid MaritimeTaxonomyRootFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("TaxonomyRootFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MaritimeCompaniesTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("MaritimeCompaniesTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MaritimeHotTopicsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("HotTopicsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MaritimeMarketsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("MarketsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MaritimeRegularsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("RegularsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MaritimeSectorsTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("SectorsTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid MaritimeTopicTaxonomyFolder => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("TopicTaxonomyFolder")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         #endregion
 
 
-        public Guid SearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripSearchPage")) ? ItemIdResolver.GetItemIdByKey("ScripSearchPage") : Guid.Empty.ToString());
-        public Guid VwbSearchPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("VwbSearchPage")) ? ItemIdResolver.GetItemIdByKey("VwbSearchPage") : Guid.Empty.ToString());
+        public Guid SearchPage => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("ScripSearchPage")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid VwbSearchPage => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("VwbSearchPage")) ? taxonomyFolderName : Guid.Empty.ToString());
 
 
-        public Guid IssuesRootCurrent => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssuesRootCurrent")) ? ItemIdResolver.GetItemIdByKey("IssuesRootCurrent") : Guid.Empty.ToString());
-        public Guid IssuesRootArchive => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssuesRootArchive")) ? ItemIdResolver.GetItemIdByKey("IssuesRootArchive") : Guid.Empty.ToString());
-        public Guid IssueTemplate => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssueTemplate")) ? ItemIdResolver.GetItemIdByKey("IssueTemplate") : Guid.Empty.ToString());
-        public Guid IssueArchivedTemplate => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate")) ? ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate") : Guid.Empty.ToString());
+        public Guid IssuesRootCurrent => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("IssuesRootCurrent")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid IssuesRootArchive => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("IssuesRootArchive")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid IssueTemplate => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("IssueTemplate")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid IssueArchivedTemplate => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("IssueArchivedTemplate")) ? taxonomyFolderName : Guid.Empty.ToString());
 
 
 
-        public Guid SubscriptionPage => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage")) ? ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage") : Guid.Empty.ToString());
+        public Guid SubscriptionPage => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("ScripSubscriptionPage")) ? taxonomyFolderName : Guid.Empty.ToString());
 
 
-        public Guid EmailPreferences => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("ScripEmailPreferences")) ? ItemIdResolver.GetItemIdByKey("ScripEmailPreferences") : Guid.Empty.ToString());
+        public Guid EmailPreferences => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("ScripEmailPreferences")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         public Guid PasswordRecoveryEmail => new Guid("{0645BE3C-B851-427D-B91D-FC566FB813FA}");
 
@@ -99,22 +100,22 @@ namespace Informa.Library.Utilities.References
 
         #region Account Contact Info Drop Downs
 
-        public Guid AccountCountries => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountCountries")) ? ItemIdResolver.GetItemIdByKey("AccountCountries") : Guid.Empty.ToString());
-        public Guid AccountJobFunctions => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountJobFunctions")) ? ItemIdResolver.GetItemIdByKey("AccountJobFunctions") : Guid.Empty.ToString());
-        public Guid AccountJobIndustries => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountJobIndustries")) ? ItemIdResolver.GetItemIdByKey("AccountJobIndustries") : Guid.Empty.ToString());
-        public Guid AccountNameSuffixes => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountNameSuffixes")) ? ItemIdResolver.GetItemIdByKey("AccountNameSuffixes") : Guid.Empty.ToString());
-        public Guid AccountPhoneTypes => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountPhoneTypes")) ? ItemIdResolver.GetItemIdByKey("AccountPhoneTypes") : Guid.Empty.ToString());
-        public Guid AccountSalutations => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("AccountSalutations")) ? ItemIdResolver.GetItemIdByKey("AccountSalutations") : Guid.Empty.ToString());
-        public Guid SiteLevelEntitlementType => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Site")) ? ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Site") : Guid.Empty.ToString());
-        public Guid ChannelLevelEntitlementType => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Channel")) ? ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Channel") : Guid.Empty.ToString());
-        public Guid ItemLevelEntitlementType => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Item")) ? ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Item") : Guid.Empty.ToString());
+        public Guid AccountCountries => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AccountCountries")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AccountJobFunctions => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AccountJobFunctions")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AccountJobIndustries => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AccountJobIndustries")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AccountNameSuffixes => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AccountNameSuffixes")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AccountPhoneTypes => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AccountPhoneTypes")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid AccountSalutations => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("AccountSalutations")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid SiteLevelEntitlementType => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Site")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid ChannelLevelEntitlementType => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Channel")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid ItemLevelEntitlementType => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("EntitlementLevel.Content.Item")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         #endregion Account Contact Info Drop Downs
 
         #region Templates
 
-        public Guid FolderTemplate => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("FolderTemplate")) ? ItemIdResolver.GetItemIdByKey("FolderTemplate") : Guid.Empty.ToString());
-        public Guid TaxonomyRoot => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("TaxonomyRoot")) ? ItemIdResolver.GetItemIdByKey("TaxonomyRoot") : Guid.Empty.ToString()); //Need confirmation as it points to taxonomy root
+        public Guid FolderTemplate => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("FolderTemplate")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid TaxonomyRoot => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("TaxonomyRoot")) ? taxonomyFolderName : Guid.Empty.ToString()); //Need confirmation as it points to taxonomy root
 
 
 
@@ -122,8 +123,8 @@ namespace Informa.Library.Utilities.References
 
         #region Restriction Access
 
-        public Guid FreeWithEntitlement => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("FreeWithEntitlement")) ? ItemIdResolver.GetItemIdByKey("FreeWithEntitlement") : Guid.Empty.ToString());
-        public Guid FreeWithRegistration => new Guid(!string.IsNullOrEmpty(ItemIdResolver.GetItemIdByKey("FreeWithRegistration")) ? ItemIdResolver.GetItemIdByKey("FreeWithRegistration") : Guid.Empty.ToString());
+        public Guid FreeWithEntitlement => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("FreeWithEntitlement")) ? taxonomyFolderName : Guid.Empty.ToString());
+        public Guid FreeWithRegistration => new Guid(!string.IsNullOrEmpty(taxonomyFolderName = ItemIdResolver.GetItemIdByKey("FreeWithRegistration")) ? taxonomyFolderName : Guid.Empty.ToString());
 
         #endregion Restriction Access
     }

@@ -26,7 +26,7 @@ namespace Informa.Web.ViewModels
 			_subcriptions = new Lazy<IEnumerable<string>>(() =>
 			{
 				return userContext.IsAuthenticated
-					? subscriptionsContext.Subscriptions?.Select(s => s.Publication) ?? Enumerable.Empty<string>()
+					? subscriptionsContext.Subscriptions?.Select(s => s.PublicationSubs) ?? Enumerable.Empty<string>()
 					: Enumerable.Empty<string>();
 			});
 		}
@@ -49,5 +49,6 @@ namespace Informa.Web.ViewModels
 		public string SearchShowAllPublicationsText => TextTranslator.Translate("Search.ShowAllPublications");
         public string ResultsPerPage => TextTranslator.Translate("Search.ResultsPerPage");
 		public IEnumerable<string> Subcriptions => _subcriptions.Value;
-	}
+        
+    }
 }
