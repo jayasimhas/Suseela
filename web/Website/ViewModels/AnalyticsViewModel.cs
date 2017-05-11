@@ -31,6 +31,7 @@ using System.Compat.Web;
 using Informa.Library.Services.Captcha;
 using Informa.Library.SalesforceConfiguration;
 using Informa.Library.Utilities.CMSHelpers;
+using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Configuration;
 
 namespace Informa.Web.ViewModels
 {
@@ -97,9 +98,9 @@ namespace Informa.Web.ViewModels
             UserEntitlements = GetUserEntitlements();
             SubscribedProducts = GetSubscribedProducts();
             OpportunityLineItemIds = GetOpportunityLineItemIds();
-            OpportunityIds = GetOpportunityIds();
-            TaxonomyService = taxonomyService;
             GlobalService = globalService;
+            OpportunityIds = GetOpportunityIds();
+            TaxonomyService = taxonomyService;           
             RecaptchaSettings = recaptchaSettings;
             VerticalRootContext = verticalRootContext;
         }
@@ -297,7 +298,15 @@ namespace Informa.Web.ViewModels
         private string GetOpportunityIds()
         {
             var UserEntitlements = UserEntitlementsContext.Entitlements;
-            UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
+            var homeItem = GlobalService?.GetItem<ISite_Root>(SiteRootContext.Item._Id.ToString());
+            if (homeItem != null && homeItem.Entitlement_Type._Id.Equals(ItemReferences.ItemLevelEntitlementType) || homeItem.Entitlement_Type._Id.Equals(ItemReferences.SiteLevelEntitlementType))
+            {
+                UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower() == PublicationCode.ToLower());
+            }
+            else
+            {
+                UserEntitlements = UserEntitlements.Where(i => i.ProductCode.ToLower().Contains(PublicationCode.ToLower()));
+            }
             var ids = string.Empty;
             if (SalesforceConfigurationContext.IsNewSalesforceEnabled)
             {
@@ -308,6 +317,7 @@ namespace Informa.Web.ViewModels
                 ids = string.Join("|", UserEntitlements.Select(i => $"'{i.OpportunityId}'"));
             }
             return string.IsNullOrWhiteSpace(ids) ? string.Empty : ids;
+
         }
 
         private string GetOpportunityLineItemIds()

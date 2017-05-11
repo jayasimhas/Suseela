@@ -331,6 +331,7 @@ namespace Informa.Library.Article.Search
         /// <returns>Personalized articles</returns>
         public IPersonalizedArticleSearchResults PersonalizedSearch(IArticleSearchFilter filter, DateTime? PubStartDate, DateTime? PubEndDate)
         {
+            string pubName = SiteRootContext.Item.Publication_Name;
             using (var context = SearchContextFactory.Create(IndexNameService.GetIndexName()))
             {
                 var query = context.GetQueryable<ArticleSearchResultItem>()
@@ -338,9 +339,9 @@ namespace Informa.Library.Article.Search
                         .FilterPersonalizedTaxonomies(filter)
                         .ApplyDefaultFilters();
 
-                if (PubStartDate != null && PubEndDate != null)
+                if (PubStartDate != null && PubEndDate != null && !string.IsNullOrEmpty(pubName))
                 {
-                    query = query.Where(i => i.ActualPublishDate >= PubStartDate && i.ActualPublishDate <= PubEndDate);
+                    query = query.Where(i => i.ActualPublishDate >= PubStartDate && i.ActualPublishDate <= PubEndDate && string.Equals(i.PublicationTitle, pubName));
                 }
 
                 if (filter.PageSize > 0)

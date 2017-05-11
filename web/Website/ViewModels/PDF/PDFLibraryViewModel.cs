@@ -17,6 +17,7 @@ using System.Linq;
 using System.Web;
 using Informa.Web.ViewModels.MyView;
 using Informa.Web.Models;
+using Jabberwocky.Core.Caching;
 
 namespace Informa.Web.ViewModels.PDF
 {
@@ -27,14 +28,16 @@ namespace Informa.Web.ViewModels.PDF
         protected readonly ISiteRootContext SiterootContext;
         protected readonly ITextTranslator TextTranslator;
         private readonly IAuthenticatedUserContext _authenticatedUserContext;
+        protected readonly ICacheProvider CacheProvider;
 
         public PDFLibraryViewModel(IGlobalSitecoreService globalService, ISiteRootContext siterootContext, ITextTranslator textTranslator,
-            IAuthenticatedUserContext authenticatedUserContext)
+            IAuthenticatedUserContext authenticatedUserContext, ICacheProvider cacheProvider)
         {
             GlobalService = globalService;
             SiterootContext = siterootContext;
             TextTranslator = textTranslator;
             _authenticatedUserContext = authenticatedUserContext;
+            CacheProvider = cacheProvider;
         }
         /// <summary>
         /// PDF title
@@ -64,7 +67,12 @@ namespace Informa.Web.ViewModels.PDF
         /// <summary>
         /// Method call to Get PDFs
         /// </summary>
-        public IList<Pdf> Pdfs => GetPdfs();        
+        public IList<Pdf> Pdfs => GetPdfs();
+        public IList<Pdf> GetPdfsFromCache()
+        {
+            string cachekey = $"PDFLibrary_{Sitecore.Context.Item.ID.ToString()}";
+            return CacheProvider.GetFromCache(cachekey,() => GetPdfs());
+        }
         /// <summary>
         /// User email Id
         /// </summary>
