@@ -19,6 +19,7 @@ using Jabberwocky.Autofac.Extras.MiniProfiler;
 using Jabberwocky.Core.Caching;
 using Velir.Search.Autofac.Modules;
 using Informa.Web.ViewModels.Emails;
+using Informa.Web.Models;
 
 namespace Informa.Web.App_Start
 {
@@ -51,6 +52,7 @@ namespace Informa.Web.App_Start
 			builder.RegisterType<ArticleUtil>().AsSelf();
 			builder.RegisterType<SitecoreSaverUtil>().AsSelf();
 			builder.RegisterType<EmailUtil>().AsSelf();
+            builder.RegisterType<PreferencesUtil>().AsSelf();
             //IPMP-906
             builder.RegisterType<PersonalizedEmailViewModel>().AsSelf();
 

@@ -30,6 +30,8 @@ namespace Informa.Web.ViewModels.Articles
         protected readonly IArticleSearch Searcher;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
         protected readonly IItemReferences ItemReferences;
+        protected readonly PreferencesUtil PreferencesUtil;
+
         public ArticleRecommendationViewModel(ISiteRootContext siteRootContext,
             ITextTranslator textTranslator,
             IAuthenticatedUserContext authenticatedUserContext,
@@ -38,7 +40,8 @@ namespace Informa.Web.ViewModels.Articles
             IUserEntitlementsContext userEntitlementsContext,
             IArticleSearch searcher,
             IArticleListItemModelFactory articleListableFactory,
-            IItemReferences itemReferences)
+            IItemReferences itemReferences,
+            PreferencesUtil preferencesUtil)
         {
             SiteRootContext = siteRootContext;
             TextTranslator = textTranslator;
@@ -49,6 +52,7 @@ namespace Informa.Web.ViewModels.Articles
             Searcher = searcher;
             ArticleListableFactory = articleListableFactory;
             ItemReferences = itemReferences;
+            PreferencesUtil = preferencesUtil;
         }
         public string PublicationName => SiteRootContext.Item.Publication_Name;
         public string PublicationCode => SiteRootContext.Item.Publication_Code;
@@ -206,7 +210,7 @@ namespace Informa.Web.ViewModels.Articles
         /// <param name="topics">The topics.</param>
         private void CreateSectionsFromChannels(Channel channel, List<Section> sections, bool isNewUser, ref IList<Topic> topics)
         {
-            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
+            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId ?? PreferencesUtil.GetPreferenceId(channel.ChannelCode));
             if (channelPageItem != null)
             {
                 Section sec = new Section();
@@ -229,10 +233,13 @@ namespace Informa.Web.ViewModels.Articles
                     {
                         if (topic.IsFollowing)
                         {
-                            topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                            taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                            if (!string.IsNullOrWhiteSpace(taxonomyId))
-                                sec.TaxonomyIds.Add(taxonomyId);
+                            topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
+                            if (topicItem != null)
+                            {
+                                taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                                if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                    sec.TaxonomyIds.Add(taxonomyId);
+                            }
                         }
                     }
                 }
@@ -266,7 +273,7 @@ namespace Informa.Web.ViewModels.Articles
             string taxonomyId = string.Empty;
             foreach (Topic topic in topics)
             {
-                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
+                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
                 if (topicItem != null)
                 {
                     Section sec = new Section();

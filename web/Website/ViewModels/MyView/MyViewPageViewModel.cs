@@ -21,6 +21,7 @@ namespace Informa.Web.ViewModels.MyView
         protected readonly ITextTranslator TextTranslator;
         public readonly ICallToActionViewModel CallToActionViewModel;
         protected readonly IAuthenticatedUserContext AuthenticatedUserContext;
+        protected readonly PreferencesUtil PreferencesUtil;
 
         public MyViewPageViewModel(
                         ISiteRootContext siteRootContext,
@@ -28,7 +29,8 @@ namespace Informa.Web.ViewModels.MyView
             IGlobalSitecoreService globalService,
             ITextTranslator textTranslator,
             ICallToActionViewModel callToActionViewModel,
-            IAuthenticatedUserContext authenticatedUserContext)
+            IAuthenticatedUserContext authenticatedUserContext,
+            PreferencesUtil preferencesUtil)
         {
             SiteRootContext = siteRootContext;
             UserPreferences = userPreferences;
@@ -36,6 +38,7 @@ namespace Informa.Web.ViewModels.MyView
             TextTranslator = textTranslator;
             CallToActionViewModel = callToActionViewModel;
             AuthenticatedUserContext = authenticatedUserContext;
+            PreferencesUtil = preferencesUtil;
         }
 
         /// <summary>
@@ -210,7 +213,7 @@ namespace Informa.Web.ViewModels.MyView
         /// <param name="topics">The topics.</param>
         private void CreateSectionsFromChannels(Channel channel, List<Section> sections, bool isNewUser, ref IList<Topic> topics)
         {
-            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
+            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId ?? PreferencesUtil.GetPreferenceId(channel.ChannelCode));
             if (channelPageItem != null)
             {
                 Section sec = new Section();
@@ -232,10 +235,13 @@ namespace Informa.Web.ViewModels.MyView
                     Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
                     foreach (Topic topic in topics)
                     {
-                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                        taxonomyId = topicItem != null &&topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                        if (!string.IsNullOrWhiteSpace(taxonomyId))
-                            sec.TaxonomyIds.Add(taxonomyId);
+                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
+                        if (topicItem != null)
+                        {
+                            taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                            if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                sec.TaxonomyIds.Add(taxonomyId);
+                        }
                     }
                 }
                 else if (isNewUser)
@@ -268,7 +274,7 @@ namespace Informa.Web.ViewModels.MyView
             string taxonomyId = string.Empty;
             foreach (Topic topic in topics)
             {
-                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
+                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
                 if (topicItem != null)
                 {
                     Section sec = new Section();

@@ -29,19 +29,22 @@ namespace Informa.Web.ViewModels.Emails
         protected readonly ITextTranslator TextTranslator;
         protected readonly IArticleSearch ArticleSearch;
         protected readonly IArticleListItemModelFactory ArticleListableFactory;
+        protected readonly PreferencesUtil PreferencesUtil;
 
         public PersonalizedEmailViewModel(
                         ISiteRootContext siteRootContext,
             IGlobalSitecoreService globalService,
             ITextTranslator textTranslator,
             IArticleSearch articleSearch,
-            IArticleListItemModelFactory articleListableFactory)
+            IArticleListItemModelFactory articleListableFactory,
+            PreferencesUtil preferencesUtil)
         {
             SiteRootContext = siteRootContext;
             GlobalService = globalService;
             TextTranslator = textTranslator;
             ArticleSearch = articleSearch;
             ArticleListableFactory = articleListableFactory;
+            PreferencesUtil = preferencesUtil;
         }
 
         /// <summary>
@@ -110,7 +113,7 @@ namespace Informa.Web.ViewModels.Emails
                 else
                 {
                     Stopwatch sw = Stopwatch.StartNew();
-                    channels = GetAllChannels();
+                    channels = PreferencesUtil.GetAllChannels(false);
                     StringExtensions.WriteSitecoreLogs("Time taken to Get All Channels", sw, "GetAllChannels");
                     sw = Stopwatch.StartNew();
                     foreach (Channel channel in channels)
@@ -122,7 +125,7 @@ namespace Informa.Web.ViewModels.Emails
 
                 return sections;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Log.Error("Could Not Generate Personalized Email Sections", e, this);
                 return sections;
@@ -167,7 +170,7 @@ namespace Informa.Web.ViewModels.Emails
         /// <param name="topics">The topics.</param>
         private void CreateSectionsFromChannels(Channel channel, List<ISection> sections, bool isNewUser, ref IList<Topic> topics)
         {
-            var channelPageItem = GlobalService.GetItem<IChannel_Page>(channel.ChannelId);
+            var channelPageItem = GlobalService.GetItem<IChannel_Page>(channel.ChannelId ?? PreferencesUtil.GetPreferenceId(channel.ChannelCode));
             if (channelPageItem != null)
             {
                 Section sec = new Section();
@@ -188,10 +191,13 @@ namespace Informa.Web.ViewModels.Emails
                     Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
                     foreach (Topic topic in topics)
                     {
-                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                        taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                        if (!string.IsNullOrWhiteSpace(taxonomyId))
-                            sec.TaxonomyIds.Add(taxonomyId);
+                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
+                        if (topicItem != null)
+                        {
+                            taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                            if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                sec.TaxonomyIds.Add(taxonomyId);
+                        }
                     }
                 }
                 else if (isNewUser)
@@ -253,7 +259,7 @@ namespace Informa.Web.ViewModels.Emails
             string taxonomyId = string.Empty;
             foreach (Topic topic in topics)
             {
-                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
+                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
                 if (topicItem != null)
                 {
                     Section sec = new Section();
@@ -300,67 +306,6 @@ namespace Informa.Web.ViewModels.Emails
             if (_searchStartDate != null && _searchStartDate > DateTime.MinValue)
             {
                 _searchEndDate = DateTime.Now;
-            }
-        }
-
-        private IList<Channel> GetAllChannels()
-        {
-            var channels = new List<Channel>();
-
-            var homeItem = GlobalService.GetItem<IHome_Page>(SiteRootContext.Item._Id.ToString()).
-                _ChildrenWithInferType.OfType<IHome_Page>().FirstOrDefault();
-
-            if (homeItem != null)
-            {
-                var channelsPageItem = homeItem._ChildrenWithInferType.OfType<IChannels_Page>().FirstOrDefault();
-
-                if (channelsPageItem != null)
-                {
-                    var channelPages = channelsPageItem._ChildrenWithInferType.OfType<IChannel_Page>();
-                    if (channelPages != null && channelPages.Any())
-                    {
-                        Channel channel = null;
-                        foreach (IChannel_Page channelPage in channelPages)
-                        {
-                            channel = new Channel();
-                            channel.ChannelId = channelPage._Id.ToString();
-                            channel.ChannelName = string.IsNullOrWhiteSpace(channelPage.Display_Text) ? channelPage.Title : channelPage.Display_Text;
-                            channel.ChannelCode = string.IsNullOrWhiteSpace(channelPage.Channel_Code) ? channelPage.Title : channelPage.Channel_Code;
-                            channel.ChannelLink = channelPage.LinkableUrl;
-                            channel.IsFollowing = true;
-                            GetTopics(channel, channelPage);
-                            channels.Add(channel);
-                        }
-                    }
-                }
-            }
-
-            return channels;
-        }
-
-        private void GetTopics(Channel channel, IChannel_Page channelPage)
-        {
-            channel.Topics = new List<Topic>();
-
-            var pageAssetsItem = channelPage._ChildrenWithInferType.OfType<IPage_Assets>().FirstOrDefault();
-            if (pageAssetsItem != null)
-            {
-                var topics = pageAssetsItem._ChildrenWithInferType.
-                    OfType<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>();
-                if (topics != null && topics.Any())
-                {
-                    Topic topic = null;
-                    foreach (Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic
-                        topicItem in topics)
-                    {
-                        topic = new Topic();
-                        topic.TopicId = topicItem._Id.ToString();
-                        topic.TopicName = string.IsNullOrWhiteSpace(topicItem.Navigation_Text) ? topicItem.Title : topicItem.Navigation_Text;
-                        topic.TopicCode = topicItem.Navigation_Code;
-                        topic.IsFollowing = true;
-                        channel.Topics.Add(topic);
-                    }
-                }
             }
         }
     }

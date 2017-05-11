@@ -15,6 +15,7 @@ using Informa.Library.Salesforce.Subscription;
 using Informa.Library.Services.Global;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
+using Informa.Web.Models;
 
 namespace Informa.Web.ViewModels
 {
@@ -29,6 +30,7 @@ namespace Informa.Web.ViewModels
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IGlobalSitecoreService GlobalService;
         protected readonly ISiteRootContext SiteRootContext;
+        protected readonly PreferencesUtil PreferencesUtil;
 
         public SideNavigationMenuViewModel(
             ISiteRootContext siteRootContext,
@@ -39,7 +41,8 @@ namespace Informa.Web.ViewModels
             IUserSubscriptionsContext userSubscriptionsContext,
             ICallToActionViewModel callToActionViewModel,
             ISiteRootContext siterootContext,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            PreferencesUtil preferencesUtil)
         {
             SiteRootContext = siteRootContext;
             SiteMainNavigationContext = siteMainNavigationContext;
@@ -50,6 +53,7 @@ namespace Informa.Web.ViewModels
             CallToActionViewModel = callToActionViewModel;
             SiterootContext = siterootContext;
             GlobalService = globalService;
+            PreferencesUtil = preferencesUtil;
         }
         #region Side Navigation Menu Items  
         public IEnumerable<INavigation> Navigation => SiteMainNavigationContext.Navigation;
@@ -123,7 +127,7 @@ namespace Informa.Web.ViewModels
                                             var channel = channelPages.Where(p => p.Channel_Code == preference.ChannelCode).FirstOrDefault();
                                             if (channel != null && !string.IsNullOrEmpty(channel.Display_Text))
                                             {
-                                                preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channel.Display_Text, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(preference.ChannelId) } });
+                                                preferredChannels.Add(new Navigation { Code = preference.ChannelCode, Text = channel.Display_Text, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(preference.ChannelId ?? PreferencesUtil.GetPreferenceId(preference.ChannelCode)) } });
                                             }
                                         }
                                     }
@@ -152,7 +156,7 @@ namespace Informa.Web.ViewModels
                                                         var topicObj = topics.Where(p => p.Navigation_Code == topic.TopicCode).FirstOrDefault();
                                                         if (topicObj != null && !string.IsNullOrEmpty(topicObj.Title))
                                                         {
-                                                            preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicObj.Title, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId) } });
+                                                            preferredChannels.Add(new Navigation { Code = topic.TopicCode, Text = topicObj.Title, Link = new Link { Url = SiterootContext.Item?.MyView_Page?._Url, TargetId = new Guid(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode)) } });
                                                         }
                                                     }
                                                 }

@@ -2,7 +2,6 @@
 {
     using Glass.Mapper.Sc;
     using Informa.Library.Article.Search;
-    using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Base_Templates;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects;
     using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages;
     using Informa.Web.ViewModels.Articles;
@@ -12,11 +11,12 @@
     using Library.Site;
     using Library.User.UserPreference;
     using Library.Utilities.Extensions;
+    using Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Http;
-    using System.Web.Http.Results;
+
     public class ArticleSearchController : ApiController
     {
         protected readonly IArticleSearch ArticleSearch;
@@ -26,12 +26,15 @@
         protected readonly IUserPreferenceContext UserPreferences;
         protected readonly ISiteRootContext SiterootContext;
         protected readonly IGlobalSitecoreService GlobalService;
+        protected readonly PreferencesUtil PreferencesUtil;
+
         public ArticleSearchController(IArticleSearch articleSearch, IArticleListItemModelFactory articleListableFactory,
             ITextTranslator textTranslator,
             ISitecoreContext sitecoreContext,
             IUserPreferenceContext userPreferences,
             ISiteRootContext siterootContext,
-            IGlobalSitecoreService globalService)
+            IGlobalSitecoreService globalService,
+            PreferencesUtil preferencesUtil)
         {
             ArticleSearch = articleSearch;
             ArticleListableFactory = articleListableFactory;
@@ -40,6 +43,7 @@
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
             GlobalService = globalService;
+            PreferencesUtil = preferencesUtil;
         }
 
         /// <summary>
@@ -119,7 +123,7 @@
             if (!string.IsNullOrEmpty(channelId) && UserPreferences != null && UserPreferences.Preferences != null &&
                              UserPreferences.Preferences.PreferredChannels != null && UserPreferences.Preferences.PreferredChannels.Count() > 0)
             {
-                var channel = UserPreferences.Preferences.PreferredChannels.Where(c => c.ChannelId == channelId).FirstOrDefault();
+                var channel = UserPreferences.Preferences.PreferredChannels.Where(c => (c.ChannelId ?? PreferencesUtil.GetPreferenceId(c.ChannelCode)) == channelId).FirstOrDefault();
                 if (channel != null && channel.IsFollowing && UserPreferences.Preferences.IsNewUser)
                 {
                     return GetAllTopics(channelId);

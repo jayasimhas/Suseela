@@ -1200,6 +1200,7 @@
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PageLinksFactory.cs" />
     <Compile Include="Models\PersonalizedEmailRequest.cs" />
+    <Compile Include="Models\PreferencesUtil.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\TokenHtml.cs" />
     <Compile Include="ItemWithoutLayout.aspx.cs">
@@ -2130,6 +2131,9 @@
     <Content Include="App_Config\Include\Glass.Mapper.Sc.CodeFirst.config.exclude" />
     <Content Include="App_Config\Include\ScalabilitySettings.config" />
     <Content Include="App_Config\Include\ScalabilitySettings.TEMPLATE" />
+    <Content Include="App_Config\Include\Informa.Products.Personalization.ItemIds.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App_Config\Include\zzzMustBeLast\Import.config.disabled" />
     <Content Include="Areas\Account\Views\Management\ArticlePurchases.cshtml" />
     <Content Include="Areas\Account\Views\Management\PageTitle.cshtml" />

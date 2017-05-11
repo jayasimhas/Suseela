@@ -15,7 +15,6 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
         string SubscribeButtonText { get; }
         string SubscribedButtonText { get; }
         string MoveLableText { get; }
-        bool IsNewUser { get; }
         string PickAndChooseLableText { get; }
         string PickAndChooseLableMobileText { get; }
         string SubscribeMessageText { get; }
@@ -25,7 +24,7 @@ namespace Informa.Web.Areas.Account.ViewModels.Personalization
         bool isFromRegistration { get; set; }
         bool enableSavePreferencesCheck { get; set; }
         string publicationname { get; }
-
+        bool IsNewUser { get; }
         bool ShowSubscriptionStatus { get; }
     }
 }

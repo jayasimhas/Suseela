@@ -2,7 +2,10 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Text;
 
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
@@ -14,7 +17,6 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
         {
             if (!string.IsNullOrWhiteSpace(contentPreferences))
             {
-
                 AddProductPreferenceRequest request = new AddProductPreferenceRequest();
                 request.records = new List<ProductPreferenceRequestRecord>();
                 request.records.Add(
@@ -29,7 +31,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                         Type__c = ContentPersonalization,
                         Username__c = userName,
                         Value1__c = publicationCode,
-                        Value6__c = contentPreferences,
+                        Value6__c = CompressString(contentPreferences),
                         Value9__c = DateTime.Now.ToString("yyyy-MM-dd"),
                     });
                 return request;
@@ -43,13 +45,46 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             if (entity != null && entity.records != null && entity.records.Any())
             {
                 var record = entity.records.FirstOrDefault();
-                userPreferences = JsonConvert.DeserializeObject<UserPreferences>(record.Value6__c.Replace("[CDATA[", "").Replace("]]", ""));
-                if (userPreferences != null)
+                var prefrenceString = DeCompressString(record.Value6__c);
+                if (!string.IsNullOrWhiteSpace(prefrenceString))
                 {
-                    userPreferences.LastUpdateOn = record.Value9__c;
+                    userPreferences = JsonConvert.DeserializeObject<UserPreferences>(prefrenceString.Replace("[CDATA[", "").Replace("]]", ""));
+                    if (userPreferences != null)
+                    {
+                        userPreferences.LastUpdateOn = record.Value9__c;
+                    }
                 }
             }
             return userPreferences;
+        }
+
+        private string CompressString(string data)
+        {
+            string result;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (GZipStream gzip = new GZipStream(ms, CompressionMode.Compress))
+                using (var writer = new BinaryWriter(gzip, Encoding.UTF8))
+                {
+                    writer.Write(data);
+                }
+                ms.Flush();
+                result = Convert.ToBase64String(ms.ToArray());
+            }
+            return result;
+        }
+
+        private string DeCompressString(string data)
+        {
+            string result;
+            byte[] itemData = Convert.FromBase64String(data);
+            using (MemoryStream src = new MemoryStream(itemData))
+            using (GZipStream gzs = new GZipStream(src, CompressionMode.Decompress))
+            using (var reader = new BinaryReader(gzs, Encoding.UTF8))
+            {
+                result = reader.ReadString();
+            }
+            return result;
         }
     }
 }

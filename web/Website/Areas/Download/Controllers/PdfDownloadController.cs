@@ -31,6 +31,7 @@ using Informa.Library.Utilities.References;
 using Informa.Library.SalesforceConfiguration;
 using Informa.Web.Areas.Account.ViewModels.Personalization;
 using Informa.Library.Services.Article;
+using Informa.Web.Models;
 
 #endregion
 
@@ -53,6 +54,7 @@ namespace Informa.Web.Areas.Account.Controllers
         protected readonly ISalesforceConfigurationContext SalesforceConfigurationContext;
         protected readonly IChannelsViewModel ChannelsViewModel;
         protected readonly IArticleService _ArticleService;
+        protected readonly PreferencesUtil PreferencesUtil;
 
         public PdfDownloadController(IUserPreferenceContext userPreferences,
                                         ISiteRootContext siterootContext,
@@ -66,7 +68,8 @@ namespace Informa.Web.Areas.Account.Controllers
                                         IItemReferences itemReferences,
                                         ISalesforceConfigurationContext salesforceConfigurationContext,
                                         IChannelsViewModel channelsViewModel,
-                                        IArticleService _articleService)
+                                        IArticleService _articleService,
+                                        PreferencesUtil preferencesUtil)
         {
             UserPreferences = userPreferences;
             SiterootContext = siterootContext;
@@ -81,6 +84,7 @@ namespace Informa.Web.Areas.Account.Controllers
             SalesforceConfigurationContext = salesforceConfigurationContext;
             ChannelsViewModel = channelsViewModel;
             _ArticleService = _articleService;
+            PreferencesUtil = preferencesUtil;
         }
 
         /// <summary>
@@ -635,7 +639,7 @@ namespace Informa.Web.Areas.Account.Controllers
         /// <param name="topics">The topics.</param>
         private void CreateSectionsFromChannels(Channel channel, List<Web.Models.Section> sections, bool isNewUser, ref IList<Topic> topics)
         {
-            var channelPageItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Pages.IChannel_Page>(channel.ChannelId);
+            var channelPageItem = GlobalService.GetItem<IChannel_Page>(channel.ChannelId ?? PreferencesUtil.GetPreferenceId(channel.ChannelCode));
             if (channelPageItem != null)
             {
                 Web.Models.Section sec = new Web.Models.Section();
@@ -656,10 +660,13 @@ namespace Informa.Web.Areas.Account.Controllers
                     Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic topicItem;
                     foreach (Topic topic in topics)
                     {
-                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
-                        taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
-                        if (!string.IsNullOrWhiteSpace(taxonomyId))
-                            sec.TaxonomyIds.Add(taxonomyId);
+                        topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
+                        if (topicItem != null)
+                        {
+                            taxonomyId = topicItem != null && topicItem.Taxonomies != null && topicItem.Taxonomies.Any() ? topicItem?.Taxonomies.FirstOrDefault()._Id.ToString() : string.Empty;
+                            if (!string.IsNullOrWhiteSpace(taxonomyId))
+                                sec.TaxonomyIds.Add(taxonomyId);
+                        }
                     }
                 }
                 else if (isNewUser)
@@ -726,7 +733,7 @@ namespace Informa.Web.Areas.Account.Controllers
             string taxonomyId = string.Empty;
             foreach (Topic topic in topics)
             {
-                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId);
+                topicItem = GlobalService.GetItem<Informa.Models.Informa.Models.sitecore.templates.User_Defined.Objects.Topics.ITopic>(topic.TopicId ?? PreferencesUtil.GetPreferenceId(topic.TopicCode));
                 if (topicItem != null)
                 {
                     Web.Models.Section sec = new Web.Models.Section();
