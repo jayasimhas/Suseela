@@ -126,7 +126,9 @@ namespace Informa.Web.ViewModels
         private string GetAuthorizationRequestUrl()
         {
             string CurVerticalName = GlobalService.GetVerticalRootAncestor(Sitecore.Context.Item.ID.ToGuid())?._Name;
-            return SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName);
+            var processId =  Guid.NewGuid().ToString();
+            StringExtensions.WriteSitecoreLogs(string.Format("Login-Request Sent At {0} - Process Id {1}", DateTime.Now.ToString(), processId), "ProcessUserRequest");
+            return SalesforceConfigurationContext.GetLoginEndPoints(SiteRootContext?.Item?.Publication_Code, GetCallbackUrl("/User/ProcessUserRequest"), HttpContext.Current.Request.Url.ToString().Contains("?") ? HttpContext.Current.Request.Url.ToString() + "&vid=" + CurVerticalName + "&processId=" + processId : HttpContext.Current.Request.Url.ToString() + "?vid=" + CurVerticalName + "&processId=" + processId);
         }
         private string GetCallbackUrl(string url)
         {

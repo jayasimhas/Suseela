@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Informa.Library.Salesforce.V2.ProductPreferences
 {
@@ -46,6 +47,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var request = SalesforceSavedSearchRequestFactory.CreateUpdateRequest(entity);
                     if (request != null)
                     {
@@ -59,7 +61,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var requestJson = JsonConvert.SerializeObject(request).ToString();
                             InfoLogger.Log(requestJson, this.GetType().Name);
                             var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = HttpClientExtension.PatchAsync(client, updateUserProductPreferenceEndPoints, content).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateUserSavedSearch-Time", sw, "SalesforceAPICall");
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateUserSavedSearch-Time", swMain, "SalesforceOuterCall");
                             InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
 
                             if (result.IsSuccessStatusCode)
@@ -101,6 +106,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     string updateUserProductPreferenceEndPoints = string.Empty;
                     string requestJson = string.Empty;
                     foreach (var item in optIns)
@@ -118,7 +124,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                                 requestJson = JsonConvert.SerializeObject(request).ToString();
                                 InfoLogger.Log(requestJson, this.GetType().Name);
                                 var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+                                Stopwatch sw = Stopwatch.StartNew();
                                 var result = HttpClientExtension.PatchAsync(client, updateUserProductPreferenceEndPoints, content).Result;
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateNewsletterUserOptIns-Time", sw, "SalesforceAPICall");
+                                Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateNewsletterUserOptIns-Time", swMain, "SalesforceOuterCall");
                                 InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
 
                                 if (!result.IsSuccessStatusCode)
@@ -148,6 +157,7 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
             {
                 try
                 {
+                    Stopwatch swMain = Stopwatch.StartNew();
                     var request = SalesforceContentNewsletterFactory.CreateUpdateRequest(optIn);
                     if (request != null)
                     {
@@ -161,7 +171,10 @@ namespace Informa.Library.Salesforce.V2.ProductPreferences
                             var requestJson = JsonConvert.SerializeObject(request).ToString();
                             InfoLogger.Log(requestJson, this.GetType().Name);
                             var content = new StringContent(requestJson, Encoding.UTF8, "application/json");
+                            Stopwatch sw = Stopwatch.StartNew();
                             var result = HttpClientExtension.PatchAsync(client, updateUserProductPreferenceEndPoints, content).Result;
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateOffersOptIns-Time", sw, "SalesforceAPICall");
+                            Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("Salesforce-UpdateOffersOptIns-Time", swMain, "SalesforceOuterCall");
                             InfoLogger.Log(result.ReasonPhrase, this.GetType().Name);
 
                             if (!result.IsSuccessStatusCode)

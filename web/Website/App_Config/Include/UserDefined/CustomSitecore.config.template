@@ -366,6 +366,7 @@ But you can also use "patch:attribute" for clarity:
       <setting name="Taxonomy.CommodityTaxonomyFolder" value="CommodityTaxonomyFolder"></setting>
       <setting name="Taxonomy.CommodityFactorsTaxonomyFolder" value="CommodityFactorsTaxonomyFolder"></setting>
       <setting name="Taxonomy.CompaniesTaxonomyFolder" value="CompaniesTaxonomyFolder"></setting>
+      <setting name="Taxonomy.MaritimeCompaniesTaxonomyFolder" value="MaritimeCompaniesTaxonomyFolder"></setting>
       <setting name="Taxonomy.CropProtectionaxonomyFolder" value="CropProtectionaxonomyFolder"></setting>
       <setting name="Taxonomy.IndustriesTaxonomyFolder" value="IndustriesTaxonomyFolder"></setting>
       <setting name="Taxonomy.HotTopicsTaxonomyFolder" value="HotTopicsTaxonomyFolder"></setting>
