@@ -17,6 +17,7 @@ using Jabberwocky.Glass.Models;
 using Sitecore.ContentSearch.Linq.Extensions;
 using Sitecore.Mvc.Extensions;
 using Informa.Models.Informa.Models.sitecore.templates.User_Defined.Components;
+using Informa.Library.Search.ComputedFields.SearchResults.Converter.MediaTypeIcon;
 
 namespace Informa.Web.TestData
 {
@@ -364,5 +365,7 @@ namespace Informa.Web.TestData
 		public string PageTitle { get; set; }
         public string SalesforceId { get; set; }
         public ISponsored_Content SponsoredContent { get; set; }
+        public MediaTypeIconData MediaTypeIconData { get; set; }
+        
     }
 }

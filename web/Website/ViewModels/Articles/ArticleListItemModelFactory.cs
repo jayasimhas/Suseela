@@ -79,6 +79,7 @@ namespace Informa.Web.ViewModels.Articles
             model.IsArticleBookmarked = IsSavedDocumentContext.IsSaved(article._Id);
             model.BookmarkText = TextTranslator.Translate("Bookmark");
             model.BookmarkedText = TextTranslator.Translate("Bookmarked");
+            model.MediaTypeIconData = ArticleService.GetMediaTypeIconData(article);
             model.PageTitle = curPage?.Title;
 
             if (curPage._TemplateId.Equals(ICompany_PageConstants.TemplateId.Guid))
