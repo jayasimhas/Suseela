@@ -1,4 +1,8 @@
 ﻿@model Informa.Web.ViewModels.Articles.IArticlePrologueShareViewModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <li class="action-flag action-flag--social">
 	<span class="action-flag__label">@Model.ShareText</span>
 
@@ -39,4 +43,6 @@
     </a>
 
 </li>
- 
+ @{
+     Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticlePrologueShare.cshtml", sw, "ArticlePrologueShare");
+}

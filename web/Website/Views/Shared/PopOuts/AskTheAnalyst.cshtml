@@ -1,4 +1,9 @@
 ﻿@model Informa.Web.ViewModels.PopOuts.IAsktheAnalystPopOutViewModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
+
 <div class="pop-out js-pop-out__ask-the-analyst">
     <div class="pop-out__form-error">
         <!--TODO Add error message-->
@@ -108,3 +113,7 @@
         </div>
     </div>
 </div>
+
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("AskTheAnalyst.cshtml", sw, "AskTheAnalyst");
+}

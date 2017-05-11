@@ -2,6 +2,10 @@
 @using Informa.Web.Models
 @using Sitecore.Resources.Media
 @inherits CustomGlassView<Informa.Web.ViewModels.Articles.ArticleBodyContentModel>
+@using System.Diagnostics
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 
 <div class="article-body-content">
     <h1>@Html.Raw(Model.Title)</h1>
@@ -235,3 +239,6 @@
             </tbody>
         </table>
     </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticleBodyContent.cshtml", sw, "ArticleBodyContent");
+}

@@ -1,4 +1,8 @@
 ﻿@model Informa.Web.ViewModels.Articles.RelatedArticlesModel
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 
 @if (Model.RelatedArticles != null && Model.RelatedArticles.Any())
 {
@@ -10,4 +14,7 @@
             Html.RenderPartial("Components/ListItemSimple", article);
         }
     </div>
+}
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticleRelatedList.cshtml", sw, "ArticleRelatedList");
 }

@@ -6,7 +6,7 @@
 				  dictionaryDomain="InVivoDictionary"
 				  hostName="${Site.Domain.InVivo}" targetHostName="${Site.Domain.InVivoTargetHostName}"
 				  rootPath="/sitecore/content/Pharma/InVivo" startItem="/home"
-				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
@@ -16,7 +16,7 @@
 				  dictionaryDomain="MedtechInsightDictionary"
 				  hostName="${Site.Domain.MedtechInsight}" targetHostName="${Site.Domain.MedtechInsightTargetHostName}"
 				  rootPath="/sitecore/content/Pharma/MedtechInsight" startItem="/home"
-				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
@@ -26,7 +26,7 @@
 				  dictionaryDomain="PinkSheetDictionary"
 				  hostName="${Site.Domain.PinkSheet}" targetHostName="${Site.Domain.PinkSheetTargetHostName}"
 				  rootPath="/sitecore/content/Pharma/PinkSheet" startItem="/home"
-				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
@@ -36,7 +36,7 @@
 				  dictionaryDomain="RoseSheetDictionary"
 				  hostName="${Site.Domain.RoseSheet}" targetHostName="${Site.Domain.RoseSheetTargetHostName}"
 				  rootPath="/sitecore/content/Pharma/RoseSheet" startItem="/home"
-				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
@@ -46,7 +46,7 @@
 				  dictionaryDomain="ScriptIntelligenceDictionary"
 				  hostName="${Site.Domain.Scrip}" targetHostName="${Site.Domain.ScripTargetHostName}"
 				  rootPath="/sitecore/content/Pharma/ScripIntelligence" startItem="/home"
-				  cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+				  cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
 				  enableTracking="true" allowDebug="true"
           enablePreview="true" enableWebEdit="true"
           enableDebugger="true" disableClientData="false">
@@ -56,7 +56,7 @@
          dictionaryDomain="CommoditiesDictionary"
          hostName="${Site.Domain.Commodities}" targetHostName="${Site.Domain.CommoditiesTargetHostName}"
          rootPath="/sitecore/content/Agri/IEG Vu" startItem="/home"
-         cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+         cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
          enableTracking="true" allowDebug="true"
          enablePreview="true" enableWebEdit="true"
          enableDebugger="true" disableClientData="false">
@@ -66,7 +66,7 @@
          dictionaryDomain="AgrowDictionary"
          hostName="${Site.Domain.Agrow}" targetHostName="${Site.Domain.AgrowTargetHostName}"
          rootPath="/sitecore/content/Agri/Agrow" startItem="/home"
-         cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+         cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
          enableTracking="true" allowDebug="true"
          enablePreview="true" enableWebEdit="true"
          enableDebugger="true" disableClientData="false">
@@ -76,7 +76,7 @@
    dictionaryDomain="AnimalPharmDictionary"
    hostName="${Site.Domain.AnimalPharm}" targetHostName="${Site.Domain.AnimalPharmTargetHostName}"
    rootPath="/sitecore/content/Agri/AnimalPharm" startItem="/home"
-   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
    enableTracking="true" allowDebug="true"
    enablePreview="true" enableWebEdit="true"
    enableDebugger="true" disableClientData="false">
@@ -86,7 +86,7 @@
    dictionaryDomain="PolicyandLegDictionary"
    hostName="${Site.Domain.PolicyandLeg}" targetHostName="${Site.Domain.PolicyandLegTargetHostName}"
    rootPath="/sitecore/content/Agri/PolicyandLeg" startItem="/home"
-   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
    enableTracking="true" allowDebug="true"
    enablePreview="true" enableWebEdit="true"
    enableDebugger="true" disableClientData="false">
@@ -96,7 +96,7 @@
    dictionaryDomain="InsuranceDayDictionary"
    hostName="${Site.Domain.InsuranceDay}" targetHostName="${Site.Domain.InsuranceDayTargetHostName}"
    rootPath="/sitecore/content/Maritime/InsuranceDay" startItem="/home"
-   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
    enableTracking="true" allowDebug="true"
    enablePreview="true" enableWebEdit="true"
    enableDebugger="true" disableClientData="false">
@@ -106,7 +106,7 @@
    dictionaryDomain="LloydslistDictionary"
    hostName="${Site.Domain.Lloydslist}" targetHostName="${Site.Domain.LloydslistTargetHostName}"
    rootPath="/sitecore/content/Maritime/Lloydslist" startItem="/home"
-   cacheHtml="true" htmlCacheSize="${Cache.HtmlCache.Website}" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+   cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
    enableTracking="true" allowDebug="true"
    enablePreview="true" enableWebEdit="true"
    enableDebugger="true" disableClientData="false">
@@ -116,7 +116,7 @@
             hostName="${Site.Domain.LegacyRedirect}"
             dictionaryDomain="LegacyRedirectDictionary"
             rootPath="/sitecore/content/Pharma/LegacyRedirect" startItem="/home"
-            cacheHtml="true" htmlCacheSize="50MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
+            cacheHtml="true" htmlCacheSize="200MB" registryCacheSize="0" viewStateCacheSize="0" xslCacheSize="25MB" filteredItemsCacheSize="10MB" cacheRenderingParameters="true" renderingParametersCacheSize="10MB"
             enableTracking="true" allowDebug="true"
             enablePreview="true" enableWebEdit="true"
             enableDebugger="true" disableClientData="false">
@@ -126,7 +126,7 @@
         <patch:attribute name="dictionaryDomain">ScriptIntelligenceDictionary</patch:attribute>
         <patch:attribute name="targetHostName">${project.domain}</patch:attribute>
         <patch:attribute name="hostName">${project.domain}</patch:attribute>
-        <patch:attribute name="htmlCacheSize">${Cache.HtmlCache.Website}</patch:attribute>
+        <patch:attribute name="htmlCacheSize">200MB</patch:attribute>
         <patch:attribute name="database">master</patch:attribute>
       </site>
     </sites>

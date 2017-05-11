@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
-  <cacheSize>${Cache.Prefetch.Master}</cacheSize>
+  <childLimit>500</childLimit>
+  <cacheSize>800MB</cacheSize>
 
   <template desc="reference">{EF295CD8-19D4-4E02-9438-94C926EF5284}</template>
   <template desc="menu item">{998B965E-6AB8-4568-810F-8101D60D0CC3}</template>
@@ -48,4 +49,8 @@
 
   <children desc="masters">{BAD98E0E-C1B5-4598-AC13-21B06218B30C}</children>
   <children desc="field types">{76E6D8C7-1F93-4712-872B-DA3C96B808F2}</children>
+
+  <item desc="GlobalDictionary">{97286D9D-452D-48E6-AD4E-682D52869459}</item>
+  <children desc="GlobalDictionaryitems">{97286D9D-452D-48E6-AD4E-682D52869459}</children>
+  
 </configuration>

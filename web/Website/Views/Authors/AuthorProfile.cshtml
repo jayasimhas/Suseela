@@ -1,5 +1,8 @@
 @model Informa.Web.ViewModels.Authors.AuthorProfileViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="profile">
     <script type="text/javascript">
         (function () { document.title = '@Model.FullName'; })(); 
@@ -106,3 +109,6 @@
     </div>
     @Html.Sitecore().Placeholder("profile-news")
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("AuthorProfile.cshtml", sw, "AuthorProfile");
+}

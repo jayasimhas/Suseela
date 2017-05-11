@@ -1,5 +1,8 @@
 @model Informa.Web.ViewModels.Articles.ArticlePrologueViewModel
-
+@using System.Diagnostics;
+@{
+    Stopwatch sw = Stopwatch.StartNew();
+}
 <div class="action-flags-bar article-prologue">
     <div class="action-flags article-prologue__share-bar">
         <ul>
@@ -15,3 +18,6 @@
 </div>
 @{ Html.RenderPartial("/Views/Article/ArticleTags.cshtml", Model.ArticleTagsViewModel); }
 </div>
+@{
+    Informa.Library.Utilities.Extensions.StringExtensions.WriteSitecoreLogs("ArticlePrologue.cshtml", sw, "ArticlePrologue");
+}
