@@ -332,6 +332,7 @@ var InformaFacetController = function ($scope, $rootScope, $location, $http, $an
                 _.each(subfacets, function (subfac) {
                     subfac.selected = false;
                 });
+                vm.update(parentId);
             });
         }
         

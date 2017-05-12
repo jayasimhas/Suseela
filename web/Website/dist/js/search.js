@@ -535,14 +535,19 @@ var InformaFacetController = function InformaFacetController($scope, $rootScope,
                 vm.update(parentId);
             });
         } else {
-            _.each(vm.facetGroups, function (group) {
-                if (group.id == "iegvu") {
-                    subfacets = group.facets;
-                }
-            });
+            _.each(facetIds, function (id) {
+                var splitName = id.split("-");
+                var parentId = splitName[0];
+                _.each(vm.facetGroups, function (group) {
+                    if (group.id == parentId) {
+                        subfacets = group.facets;
+                    }
+                });
 
-            _.each(subfacets, function (subfac) {
-                subfac.selected = false;
+                _.each(subfacets, function (subfac) {
+                    subfac.selected = false;
+                });
+                vm.update(parentId);
             });
         }
     };
